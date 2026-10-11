@@ -1,2 +1,6 @@
-e0f2b8b 2026-10-11T11:04:33+08:00 Codex implementation Implement the local RAG research assistant and course requirement fixes
-1ecdced 2026-10-07T20:52:49+08:00 JueBeiYi Initial commit
+实际Git记录快照，记录至 d014d1db8eb63df90b1ad5b4ad1cd98ac2250770。
+成员身份来自用户，Git作者未伪造成学生；本文件的归档提交由Git bundle完整保留。
+
+d014d1d 2026-10-11T15:29:28+08:00 Codex implementation <codex@local.invalid> Complete measured course studies and editable delivery artifacts
+e0f2b8b 2026-10-11T11:04:33+08:00 Codex implementation <codex@local.invalid> Implement the local RAG research assistant and course requirement fixes
+1ecdced 2026-10-07T20:52:49+08:00 JueBeiYi <144301617+JueBeiYi@users.noreply.github.com> Initial commit
