@@ -1,0 +1,68 @@
+{
+  "sources": [
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\frozen\\hybrid.jsonl",
+      "sha256": "3ad245338aae03e01ed4184799a25cff098f61f1258f6b6200ab8bd5935c4b4c"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\cases.jsonl",
+      "sha256": "b28ee3ca98d32012d241e3857bcbb9b7743d387d551d865e5e6504243a053e98"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\standard_chunks.jsonl",
+      "sha256": "8a42907ac80b58afa1df9332f1743afe035ba0f12497cea2bbbf9b911ea12287"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\snapshot.json",
+      "sha256": "898936eee57bc848d2483186d4fc43945f61c87fef21600042bc969f11f82254"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\scripts\\run_course_generation.py",
+      "sha256": "e7b8697e293f1077e3e02c9f173fc306e82c5d82b9c9197f4931a275417099d1"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\src\\generation\\context.py",
+      "sha256": "64b5f31fbd98a50682fef6cb89a8dc60f50f73c72c785d59c8664f85ceec8be7"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\src\\generation\\llm_client.py",
+      "sha256": "93bee13b4d0f5eb2e530b8932568c15b0afa3d84720568e004c8648774794e3c"
+    }
+  ],
+  "stage": "baseline",
+  "model": {
+    "backend": "ollama",
+    "model": "research-qwen:7b",
+    "digest": "7065f4bc9793a3db23e96080712d2cb6bfaee58d5087b91521cfaf334d880697",
+    "details": {
+      "parent_model": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "7.6B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 131072,
+      "embedding_length": 3584,
+      "runner": "llamacpp"
+    }
+  },
+  "parameters": [
+    [
+      "baseline_current",
+      {
+        "temperature": 0.1,
+        "top_p": 0.9,
+        "top_k_sampling": 40
+      }
+    ]
+  ],
+  "prompt_hash": "30a5e0b4470e6cabdc8d0a0908184776a986ff7bef94bc7956aefb41f446ae63",
+  "settings": {
+    "answer_tokens": 256,
+    "context_tokens": 4096,
+    "result_k": 5,
+    "answer_character_target": 150
+  }
+}

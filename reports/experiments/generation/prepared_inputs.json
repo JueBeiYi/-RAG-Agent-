@@ -1,0 +1,147 @@
+{
+  "created_at": "2026-10-11T03:28:39.928403+00:00",
+  "status": "prepared_not_generated",
+  "demo": false,
+  "source_files": [
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\frozen\\hybrid.jsonl",
+      "sha256": "3ad245338aae03e01ed4184799a25cff098f61f1258f6b6200ab8bd5935c4b4c"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\cases.jsonl",
+      "sha256": "b28ee3ca98d32012d241e3857bcbb9b7743d387d551d865e5e6504243a053e98"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\standard_chunks.jsonl",
+      "sha256": "8a42907ac80b58afa1df9332f1743afe035ba0f12497cea2bbbf9b911ea12287"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\snapshot.json",
+      "sha256": "898936eee57bc848d2483186d4fc43945f61c87fef21600042bc969f11f82254"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\scripts\\run_course_generation.py",
+      "sha256": "e7b8697e293f1077e3e02c9f173fc306e82c5d82b9c9197f4931a275417099d1"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\src\\generation\\context.py",
+      "sha256": "64b5f31fbd98a50682fef6cb89a8dc60f50f73c72c785d59c8664f85ceec8be7"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\src\\generation\\llm_client.py",
+      "sha256": "93bee13b4d0f5eb2e530b8932568c15b0afa3d84720568e004c8648774794e3c"
+    }
+  ],
+  "test_count": 60,
+  "dev_count": 20,
+  "selected_dev_cases": [
+    {
+      "case_id": "VT-F01",
+      "category": "factual"
+    },
+    {
+      "case_id": "VT-C01",
+      "category": "comparison"
+    },
+    {
+      "case_id": "VT-S03",
+      "category": "synthesis"
+    },
+    {
+      "case_id": "VT-R01",
+      "category": "reasoning"
+    }
+  ],
+  "context_hashes": {
+    "VT-F01": "a343d6d20cbbb2870d162c617bdc36c5168516f896483148cfe663e15547196f",
+    "VT-F02": "0af9b67902edbd3e7034281ddf35ff0b7d26d07e133f4789c054c19480a075d3",
+    "VT-F03": "d3c3f144e4f6cd92955661a0cf9e4ef2a722c6170fa7265513f56b9905f99e55",
+    "VT-F04": "f802f1587b9c279769a1e9b16ea4a594baf01d503092f82710532dd5013ba01b",
+    "VT-F05": "96af3f80adadd39f56e06444a95c17e61dc21bd37b3ffbe2841d17f38e52c69f",
+    "VT-F06": "ca6753c14dd8a6900c3e09ad8ff010acbf91d15a1cc09e4c000cf5cd4383abb6",
+    "VT-F07": "3ecb2ac46a7eccdc671846bf636358c741c2f99f57d28799b0b0d6bed9edb180",
+    "VT-F08": "bfdef7238b30ff2276772c1e6a754f445fc656241c4faf72911af45f7ae6fbf3",
+    "VT-F09": "74bd8d259ae8ebbca296429e2b3f074c8bb65406a0c4807b3a854276a8ffe555",
+    "VT-F10": "5f2b3abea2d5af33b71b0186325a664c6090a6188d9da5423d10669078ffaf63",
+    "VT-F11": "a1ca6f6a341708e4609a80d8e0dea8c16d18207fc9496220f6256d7a94cf4e9a",
+    "VT-F12": "01069a91298f90846002edbd2aea328de6844e8911f61ccea1268566bfe5e34a",
+    "VT-F13": "03a7ef7463cb94a7ef5c1ae92d0fb15b27fb18762648cd7aa4c2e0657519c67a",
+    "VT-F14": "cfc3561c92959104bccc6a639a939e29117d944d2ebcd6303464d473feb1704e",
+    "VT-F15": "62895ace7a0cb81c6ef3fae5666ee37cfae6021ce25d125eec1c3745e6f1ce27",
+    "VT-F16": "aa065f05cbb10b7a515a078c6631494c97076ab6e4c5f29d00e6645f768a0a27",
+    "VT-F17": "196e88b69f616a94fdcd7a48b8cbcdd398b78fc55d100fabe4f86e753453fb41",
+    "VT-F18": "b475ebc8f5f60f3bd9fbb7c343a182f408eac668386d0551827c82b348e2bc76",
+    "VT-F19": "c98ccd11dc14893998446ecc12531434bea7961067a400e42566664971c62751",
+    "VT-F20": "52bdd5259d3162c4a771b8c4832e59e12260baf0daf7c82dc1a592d67e1170ab",
+    "VT-F21": "59359feb9ad7f1dc867993f44e8b6cfd6bd13ff4cfe2be8fa1d127157eba5bd6",
+    "VT-F22": "5f1c2622e2f239cc02e9490ee31f6d179a972e60228d398454e3a432da498f4e",
+    "VT-F23": "cc603c8ca7a3da6a4ea9cca838d9a487d61d18c56702580fe4b2e0242dc3a491",
+    "VT-F24": "be123bbcfe9aa4dd2ffae70b9371cb7ca7492e0fc00a09e2e71fa1a80e48ff99",
+    "VT-F25": "7b83232ddcdbcb2ce77ecd17d35a6a8a8193f310156f50f1b6dcdd6b6be7e6e0",
+    "VT-F26": "e58867f72b30be07f3862ccd4db42dfa4b09ac7abec953e7d99a7dcb75061085",
+    "VT-F27": "2724f84f3e7774e7be171d17669146f7e4516d873bfa61c3bced1fb49e23737c",
+    "VT-F28": "d8ceabf9b6c4b7fa7d7d828692937ff78b78a0e1aa1e1f2ccc291fd428da8452",
+    "VT-F29": "dd46cc992c8c6d488a77e9026cacff79ac3bbf327299747ae26c19e452249956",
+    "VT-F30": "1cf5c61844103dc24b14144c9ffc4c33871b60fea5758b5d55b50e1173cebcd1",
+    "VT-C01": "bf389dad782a2d8826e7d2d5e78e514cef8b5c4381ed85dbc6c4e60b41a98e11",
+    "VT-C02": "7ebb3cf7c1253fdb55c5278372e4c44dfd5904aecdc535c34be12348a74284e9",
+    "VT-C03": "379708e22a98e331f4c417cc06be6e3bff8a0fc15526808260d69ee31a8bfc48",
+    "VT-C04": "d760483cfbf1d5780d47b3e38da6b09a5e8a75174f9c93e032553ffc25083afb",
+    "VT-C05": "50163e4f23a595375c12bfc1f53d776721069f2214b9956f6f8f5a737f0fe0e7",
+    "VT-C06": "28edcd1f82b05ee3c888d2279188ed04170b0c5bf360c8305f60af203edd80e6",
+    "VT-C07": "df5a6778f166d82fa4f5a9e68163929bb1caad36fc15757c06d9f282ea67d8f1",
+    "VT-C08": "50c71921e190c7b4ffef0c7c8c2db58a0df382fb06366d7b6398c95dfc72c5e5",
+    "VT-C09": "f15a00461c5498834024551438b5b7c0bac44fabb419081fe57eafeb921e02b4",
+    "VT-C10": "4853e8bff6a3420501eb4f3aa25f62a59256e98000e28f5829a6a87dc4023c18",
+    "VT-C11": "c6858d7907a6c376d765263d24a0027422be1230deecf0ff02a323b5f6542bc8",
+    "VT-C12": "7d5d115cc0785f32699fc5247ec9d43f5924c540c9aebe81832755168e85d254",
+    "VT-C13": "f46632fad28bf60bea26f691eff1b9e2f0d7cb512d5c2791ef73678ea9293418",
+    "VT-C14": "659ea450a6f840157db361b0e9362177bba28d33bd1b661f3ae7bcb83d2fd165",
+    "VT-C15": "3f10ef45adf0f7ee8f74d872562680aecc8bcd1bf0c824d713336d0939974133",
+    "VT-C16": "fd01899ffadc15f5f5cf9c7db92a4204eb1f98c690d323409ca430ce26a5b88c",
+    "VT-C17": "9abff37be6b6c5b4f90d272cf395b5ea8b58253bc5a0a760c2327a77c9c662e2",
+    "VT-C18": "70a5fdd0bc4f5ce032ab9844ea3ce25761e0c47fec56ceb6bfd73b675e64c411",
+    "VT-C19": "5f1d8bd9b5719d7c5d6852af688fecfb446cc911dfb0337f3b597e8abfc275e1",
+    "VT-C20": "e1fcbf558d7cf1bdd76ddc254deb13caec2b062adbdcc990c7c3c23658c38b3f",
+    "VT-S01": "6639fae1a9a54de68a2eedf98045897cc577bff77bf620c1263d30940a6d1460",
+    "VT-S02": "95b6bbbc834a63f315e216d8632ac413fccece4ede0673287e5296edd6b8a589",
+    "VT-S03": "8b93108b66dda8baab863b4d00ab9431a3aef50c9f05feeaf2696f697e763e7c",
+    "VT-S04": "1a6a414f7768e1b9b44241b725f248ba98398a34a5ede58d43b3748d731f66c4",
+    "VT-S05": "6ca1f65969d721dd00ef1237ed84cadb73e26739d53b1bb4ef0964343abae3ec",
+    "VT-S06": "514842d7e31d8e77065f2d91b07a83bfc0ab8e3f64465556ede5c4206500fc4d",
+    "VT-S07": "392cdf4f4b2ad3cbdf69462e0c55356fce5aa7c550e2aad37be317cff80ec697",
+    "VT-S08": "627c3b60615503a61c304455292edcaefed22ff530fcd7e448fb0fc3822ed0c3",
+    "VT-S09": "28edcd1f82b05ee3c888d2279188ed04170b0c5bf360c8305f60af203edd80e6",
+    "VT-S10": "42e9daf181a63c7f9baae3c9a164d5f38e2ed1a8b6263c8d04eb7590f92015d5",
+    "VT-S11": "638eb09865a32207220f82af6d04d367fe200f2f1f50c10a8fd4056788216e39",
+    "VT-S12": "0293a4649dabcd125084c9538c9ee504bff1b384d707ede6663dbcfe00b958ac",
+    "VT-S13": "b3fef041e0dde745b61fbbab9f10e62db834587f9abca31fd8000e591974108c",
+    "VT-S14": "9640d82bc674cae87f074f77e09c0cc57dd456357a4c7eb832c2c9fb54389cdb",
+    "VT-S15": "94235a69b2888a019c7885c2cd3aaf40c6dd728b8d4802a44fea06a300364db5",
+    "VT-R01": "dcbb9f80cef10363bc175fecb4959118dabf79dec8fa9ba36c62794c8ba3d4b2",
+    "VT-R02": "3d7edf5981a3893826b337a08c5deb45fad8f6be44e3bec1bc97d5455ed4ccf5",
+    "VT-R03": "08dca32377318e76ac3c8b2ef568fb982e7ddc91c191cec3670bda10d61b7938",
+    "VT-R04": "c5f87eefd553445d2ceb0d74852c863ee9de8ef2b6b935e96e568adca2b31396",
+    "VT-R05": "490a2b8896e6c1e35fd25cf3fe20e1b6a99a1e91f12189b7a0287869b1edf4d1",
+    "VT-R06": "4792d03ff5151f695f3e64437d001b484cf435946842f856947564b6e200522b",
+    "VT-R07": "4b92bdb43ec717aca0a9d56b543ae5fbb5b458dd652708460a4096dd17e1e10f",
+    "VT-R08": "1708e848195cc768232fd97b5870f50f440ec19ca9a5f6cecb4913cb86a021e4",
+    "VT-R09": "bfd74205cf280e7dce80eefcb6b3b207a4cfbc6062e53776f8d9b0392cd1f606",
+    "VT-R10": "9e3bd13eaf0089a2d4846be75578c4e3092ca5a2c1563fdc54fa05f4438bca01",
+    "VT-R11": "a99d5e6333dc6c3c90e63f8ce13637b1de41ae5b3fed996bcf4e7305ffe841ab",
+    "VT-R12": "8869ac51667bc7ae3a79888140d9264e5d099d4bcdddc1f84e5923b95ab87ce6",
+    "VT-R13": "bb27c701ac4f70893fad6add8c8decfd1b0bd160d1c79bbb846b9d3ff291077b",
+    "VT-R14": "32ba32bb38a3dfb13b9b7c7150cdc88c478c4d4c0aaffa29749a4cb2e033a079",
+    "VT-R15": "efa894ac2148b4f168ceaf42c33b8f279294cc9fef59f626017af231ad4909fc"
+  },
+  "dataset_hash": "9cd5bd8e8fd3a096d135adddef5b51ba52a1313650ebb5676bbb210a5df7d2aa",
+  "corpus_hash": "ca6bfa4ad20e50ef61be479bcd1e260093372a760bf974371e82f1f1d168581e",
+  "genuine_query_vector_count": 80,
+  "measurement_scope": "frozen retrieval / generation-only",
+  "generation_limits": {
+    "answer_tokens": 256,
+    "answer_character_target": 150
+  },
+  "human_source_review_pending": true,
+  "human_answer_scoring_pending": true
+}

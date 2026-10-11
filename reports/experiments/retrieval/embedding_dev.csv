@@ -1,0 +1,3 @@
+﻿case_count,error_count,hit_at_5,latency_mean_ms,latency_p50_ms,latency_p95_ms,model,mrr,query_count,recall_at_5,successful_count,variant
+20,0,0.4,12.123314995551482,11.759749962948263,16.47908508894034,moka-ai/m3e-base,0.27846491228070175,20,0.35,20,recursive-512
+20,0,0.35,63.850744999945164,12.281949981115758,68.16182999173253,BAAI/bge-large-zh-v1.5,0.2959938672438672,20,0.3,20,recursive-512

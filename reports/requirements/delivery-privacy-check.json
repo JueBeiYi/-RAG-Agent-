@@ -1,13 +1,6 @@
 {
   "known_credentials_checked": 1,
-  "changed_files": [
-    "reports\\ui\\standard-acceptance\\hybrid-record.json",
-    "reports\\ui\\standard-acceptance\\hybrid.json",
-    "reports\\ui\\standard-acceptance\\hybrid_rerank-record.json",
-    "reports\\ui\\standard-acceptance\\hybrid_rerank.json",
-    "reports\\ui\\standard-acceptance\\vector-record.json",
-    "reports\\ui\\standard-acceptance\\vector.json"
-  ],
+  "changed_files": [],
   "remaining_files": [],
   "passed": true,
   "policy": "Only known private values are checked; live runtime and model data are excluded."

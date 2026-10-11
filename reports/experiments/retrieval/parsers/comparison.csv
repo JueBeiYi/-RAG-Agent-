@@ -1,0 +1,4 @@
+﻿anchor_retention,bbox_blocks,formula_blocks,matched_anchors,pages_with_text,paper_count,parse_ms,parser,table_blocks,total_anchors
+1.0,3808,119,119,169,10,38564.769,pymupdf,157,119
+1.0,12586,231,119,169,10,29250.631999999998,pdfplumber,141,119
+0.957983193277311,0,1,114,169,10,9124.055,pypdf2,0,119

@@ -56,7 +56,8 @@ class Application:
                 doc = Document.model_validate_json(payload)
                 identity = {"embedding_fingerprint": self.retriever.embedder.fingerprint,
                             "chunk_strategy": settings.chunk_strategy, "chunk_size": settings.chunk_size,
-                            "chunk_overlap": settings.chunk_overlap, "pdf_parser": settings.pdf_parser}
+                            "chunk_overlap": settings.chunk_overlap, "pdf_parser": settings.pdf_parser,
+                            "chunker_implementation": "recursive-character-proposals-v1"}
                 if doc.status == "ready" and any(doc.metadata.get(k) != v for k, v in identity.items()):
                     doc.status, doc.error = "error", "模型权重或解析/分块配置已变更，请在论文库重新索引"
                     self.store.put_document(doc)
@@ -159,6 +160,7 @@ class Application:
                 self.retriever.index(chunks)
                 self._job(scope, job_id, stage="committing", progress=90)
                 doc.metadata.update(chunk_strategy=self.settings.chunk_strategy, chunk_size=self.settings.chunk_size,
+                                    chunker_implementation="recursive-character-proposals-v1",
                                     chunk_overlap=self.settings.chunk_overlap, pdf_parser=self.settings.pdf_parser,
                                     embedding_fingerprint=self.retriever.embedder.fingerprint,
                                     embedding_model=self.settings.embedding_model, embedding_backend=self.settings.embedding_backend)

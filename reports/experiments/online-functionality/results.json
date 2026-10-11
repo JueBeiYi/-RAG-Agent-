@@ -1,0 +1,203 @@
+{
+  "experiment_id": "online-functional-history-20261010",
+  "kind": "online_functional",
+  "study": "online_functional",
+  "demo": false,
+  "formal_models": true,
+  "created_at": "2026-10-11T10:26:46.873309+08:00",
+  "split": [
+    "functional"
+  ],
+  "delivery_scope": "线上真实功能样本 含问题和配置差异 不是固定测试集",
+  "config": {
+    "llm_backend": "ollama",
+    "llm_model": "research-qwen:7b",
+    "embedding_model": "BAAI/bge-m3"
+  },
+  "metrics": {
+    "sample_count": 10,
+    "latency_mean_ms": 52089.39080000855,
+    "input_tokens_total": 43908,
+    "output_tokens_total": 4634,
+    "average_agent_steps": 1.2
+  },
+  "records": [
+    {
+      "request_id": "b68e34a7df634d4992b3127b6ff336f1",
+      "created_at": "2026-10-10T01:27:56.295292+00:00",
+      "question": "Swin Transformer 的窗口移位机制有什么作用？请引用论文原文。",
+      "status": "done",
+      "elapsed_ms": 53130.70500001777,
+      "input_tokens": 2573,
+      "output_tokens": 284,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "agent_steps": 1,
+      "origin": "knowledge_rag",
+      "comparison_method": null,
+      "warnings": []
+    },
+    {
+      "request_id": "51617c72a0634eb3ad65e7b40e2baced",
+      "created_at": "2026-10-10T01:39:06.778295+00:00",
+      "question": "用中文简要解释 Swin Transformer 的窗口移位如何建立跨窗口联系，约120字，引用来源编号即可。",
+      "status": "done",
+      "elapsed_ms": 46472.48950006906,
+      "input_tokens": 2625,
+      "output_tokens": 84,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "agent_steps": 1,
+      "origin": "knowledge_rag",
+      "comparison_method": null,
+      "warnings": []
+    },
+    {
+      "request_id": "2c6dfa1536cd44b09afb0f8df77ca5fd",
+      "created_at": "2026-10-10T01:55:33.073134+00:00",
+      "question": "用中文简要解释 Swin Transformer 的窗口移位如何建立跨窗口联系，约120字，引用来源编号即可。",
+      "status": "done",
+      "elapsed_ms": 21538.982100086287,
+      "input_tokens": 2636,
+      "output_tokens": 88,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "agent_steps": 1,
+      "origin": "knowledge_rag",
+      "comparison_method": null,
+      "warnings": []
+    },
+    {
+      "request_id": "287d1a873c5d49928482b5931832de27",
+      "created_at": "2026-10-10T01:43:02.770588+00:00",
+      "question": "请比较论文《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》与《An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale》。比较维度：方法与创新、实验条件。用表格组织，每项事实引用服务器提供的证据编号。先核对任务、数据集、划分、指标定义和实验条件，确认可比时才计算差异；原文未说明或不能比较时明确标记，不补造数字。用中文简洁概述，表格两行，总字数约300字，重点说明局部窗口与全局注意力的差别。",
+      "status": "done",
+      "elapsed_ms": 9592.776599922217,
+      "input_tokens": 2966,
+      "output_tokens": 314,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "agent_steps": 1,
+      "origin": "knowledge_base",
+      "comparison_method": null,
+      "warnings": [
+        "模型未返回工具动作，使用明确的本地工具路由",
+        "模型综合未满足结构或证据要求，返回完整的带引用工具结果"
+      ]
+    },
+    {
+      "request_id": "54ffc841003946d89bd8a60ef731b060",
+      "created_at": "2026-10-10T02:00:33.436416+00:00",
+      "question": "请比较论文《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》与《An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale》。比较维度：方法与创新、实验条件。用表格组织，每项事实引用服务器提供的证据编号。先核对任务、数据集、划分、指标定义和实验条件，确认可比时才计算差异；原文未说明或不能比较时明确标记，不补造数字。用中文简洁概述，表格两行，总字数约300字，重点说明局部窗口与全局注意力的差别。",
+      "status": "done",
+      "elapsed_ms": 73313.9009999577,
+      "input_tokens": 7185,
+      "output_tokens": 858,
+      "tool_calls": 3,
+      "tool_successes": 2,
+      "agent_steps": 3,
+      "origin": "knowledge_base",
+      "comparison_method": "evidence_excerpts",
+      "warnings": [
+        "论文工具未完成，查询当前范围目录以消歧或重新选择论文",
+        "中文对比生成未完成：ValueError: 模型对比数字缺少本篇原文支撑；已降级为短原文摘录，结果不完整，需核查原文。",
+        "模型综合未满足结构或证据要求，返回完整的带引用工具结果"
+      ]
+    },
+    {
+      "request_id": "90009b0b7fac4c38811df8489ac73e65",
+      "created_at": "2026-10-10T07:09:05.230699+00:00",
+      "question": "请比较论文《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》与《An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale》。比较维度：方法与创新、实验条件。用表格组织，每项事实引用服务器提供的证据编号。先核对任务、数据集、划分、指标定义和实验条件，确认可比时才计算差异；原文未说明或不能比较时明确标记，不补造数字。用中文简洁概述，表格两行，总字数约300字，重点说明局部窗口与全局注意力的差别。",
+      "status": "done",
+      "elapsed_ms": 80267.14969996829,
+      "input_tokens": 3953,
+      "output_tokens": 488,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "agent_steps": 1,
+      "origin": "knowledge_base",
+      "comparison_method": "evidence_excerpts",
+      "warnings": [
+        "中文对比生成未完成：ValueError: 模型未返回完整中文对比表结构；已降级为短原文摘录，结果不完整，需核查原文。",
+        "模型综合未满足结构或证据要求，返回完整的带引用工具结果"
+      ]
+    },
+    {
+      "request_id": "8cf5f63d5209411d9a312f4a7ea79718",
+      "created_at": "2026-10-10T07:14:14.976229+00:00",
+      "question": "请比较论文《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》与《An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale》。比较维度：方法与创新、实验条件。用表格组织，每项事实引用服务器提供的证据编号。先核对任务、数据集、划分、指标定义和实验条件，确认可比时才计算差异；原文未说明或不能比较时明确标记，不补造数字。用中文简洁概述，表格两行，重点说明局部窗口与全局注意力的差别；实验条件只概述可确认的范围。",
+      "status": "done",
+      "elapsed_ms": 73364.22450002283,
+      "input_tokens": 6442,
+      "output_tokens": 598,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "agent_steps": 1,
+      "origin": "knowledge_base",
+      "comparison_method": "evidence_excerpts",
+      "warnings": [
+        "中文对比生成未完成：ValueError: 模型未返回完整中文对比表结构；已降级为短原文摘录，结果不完整，需核查原文。",
+        "模型综合未满足结构或证据要求，返回完整的带引用工具结果"
+      ]
+    },
+    {
+      "request_id": "a83112deab0c41d78594cd6ee8b0c99f",
+      "created_at": "2026-10-10T07:18:32.719406+00:00",
+      "question": "请比较论文《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》与《An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale》。比较维度：方法与创新、实验条件。用表格组织，每项事实引用服务器提供的证据编号。先核对任务、数据集、划分、指标定义和实验条件，确认可比时才计算差异；原文未说明或不能比较时明确标记，不补造数字。用中文简洁解释局部窗口与全局注意力的差别，实验条件只概述有证据的范围。",
+      "status": "done",
+      "elapsed_ms": 62505.0448999973,
+      "input_tokens": 6345,
+      "output_tokens": 1204,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "agent_steps": 1,
+      "origin": "knowledge_base",
+      "comparison_method": "evidence_excerpts",
+      "warnings": [
+        "中文对比生成未完成：ValueError: 模型未返回完整中文对比表结构；已降级为短原文摘录，结果不完整，需核查原文。",
+        "模型综合未满足结构或证据要求，返回完整的带引用工具结果"
+      ]
+    },
+    {
+      "request_id": "7837919cdc5f4ce591b358f1fa8b3ba6",
+      "created_at": "2026-10-10T07:23:54.056094+00:00",
+      "question": "请比较论文《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》与《An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale》。比较维度：方法与创新、实验条件。用表格组织，每项事实引用服务器提供的证据编号。先核对任务、数据集、划分、指标定义和实验条件，确认可比时才计算差异；原文未说明或不能比较时明确标记，不补造数字。用中文简洁解释局部窗口与全局注意力的差别，实验条件只概述有证据的范围。",
+      "status": "done",
+      "elapsed_ms": 60813.70970001444,
+      "input_tokens": 6759,
+      "output_tokens": 575,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "agent_steps": 1,
+      "origin": "knowledge_base",
+      "comparison_method": "evidence_excerpts",
+      "warnings": [
+        "中文对比生成未完成：ComparisonValidationError: 实验条件/P2：用户要求定性比较，请删除无关数值、窗口尺寸或分辨率，只说明机制和可确认的实验条件；已降级为短原文摘录，结果不完整，需核查原文。",
+        "模型综合未满足结构或证据要求，返回完整的带引用工具结果"
+      ]
+    },
+    {
+      "request_id": "e3012095efc349f89eb964d11ecb5b48",
+      "created_at": "2026-10-10T07:26:45.505788+00:00",
+      "question": "请比较论文《Swin Transformer: Hierarchical Vision Transformer using Shifted Windows》与《An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale》。比较维度：方法与创新、实验条件。用表格组织，每项事实引用服务器提供的证据编号。先核对任务、数据集、划分、指标定义和实验条件，确认可比时才计算差异；原文未说明或不能比较时明确标记，不补造数字。用中文简洁解释局部窗口与全局注意力的差别，实验条件只概述有证据的范围。",
+      "status": "done",
+      "elapsed_ms": 39894.925000029616,
+      "input_tokens": 2424,
+      "output_tokens": 141,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "agent_steps": 1,
+      "origin": "knowledge_base",
+      "comparison_method": "llm_grounded",
+      "warnings": []
+    }
+  ],
+  "review_status": {
+    "human_answer_review_pending": true
+  },
+  "notes": [
+    "耗时为真实在线请求的检索、模型、工具和传输总时间。",
+    "包含迭代过程的不完整对比，问题和配置不同，不作配置优劣的因果比较。",
+    "与冻结检索的生成阶段实验分开，不相加为独立测量。人工答案质量未评分。"
+  ]
+}

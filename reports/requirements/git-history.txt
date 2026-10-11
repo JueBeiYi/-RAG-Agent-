@@ -1,0 +1,2 @@
+e0f2b8b 2026-10-11T11:04:33+08:00 Codex implementation Implement the local RAG research assistant and course requirement fixes
+1ecdced 2026-10-07T20:52:49+08:00 JueBeiYi Initial commit

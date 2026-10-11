@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T11:02:15.713159+08:00",
+  "generated_at": "2026-10-11T15:28:32.862103+08:00",
   "source": {
     "path": "南京农业大学课程实践.docx",
     "sha256": "f62798820cafc546c593a74bfd599352d84f5aeecaa7d0415d8cba3c766089f9",
@@ -64,17 +64,17 @@
         },
         {
           "path": "src/services/application.py",
-          "line": 131,
+          "line": 132,
           "symbol": "def _ingest",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/services/application.py",
-          "line": 111,
+          "line": 112,
           "symbol": "def retry",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/frontend/sections_library.py",
@@ -479,8 +479,8 @@
       "source_text": "产出《分块策略对比实验报告》",
       "requirement": "Chunking strategy comparison report",
       "mandatory": true,
-      "implementation_status": "artifact_generation_supported",
-      "execution_status": "artifact_pending_external_delivery_task",
+      "implementation_status": "implemented",
+      "execution_status": "completed",
       "human_review_status": "pending",
       "code": [
         {
@@ -495,6 +495,9 @@
       "interpretation": "",
       "pending": [
         "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ],
+      "evidence_paths": [
+        "artifacts/delivery-final/分块策略对比实验报告.docx"
       ]
     },
     {
@@ -510,10 +513,10 @@
       "code": [
         {
           "path": "src/retrieval/embeddings.py",
-          "line": 71,
+          "line": 72,
           "symbol": "class Embedder",
           "exists": true,
-          "sha256": "102a18ec2e4d7865a5928ab53e7d3df8c59f94b772ef8661d27067a1f9edd41a"
+          "sha256": "a865cda1c16fe0bec2df3c484eded7499b2466cc99de7998760d0525d39ade21"
         },
         {
           "path": "src/evaluation/cli.py",
@@ -750,10 +753,10 @@
       "code": [
         {
           "path": "src/retrieval/reranking.py",
-          "line": 21,
+          "line": 22,
           "symbol": "class Reranker",
           "exists": true,
-          "sha256": "c89231d969b4a1ba7a72b311cf71499e797285ec207ebb35da51d7bf12ce6b57"
+          "sha256": "178b39a3bb8c66d4cd14150398643ce0c67ffabdb34697ae430565b5665b7169"
         },
         {
           "path": "src/retrieval/engine.py",
@@ -822,6 +825,7 @@
       "pending": [],
       "latest_experiment_evidence": [
         "reports/experiments/retrieval/m3/test/hybrid/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json",
         "reports/experiments/retrieval/m3/test/vector/results.json"
       ]
     },
@@ -885,6 +889,7 @@
       "pending": [],
       "latest_experiment_evidence": [
         "reports/experiments/retrieval/m3/test/hybrid/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json",
         "reports/experiments/retrieval/m3/test/vector/results.json"
       ]
     },
@@ -895,8 +900,8 @@
       "source_text": "分块策略对比实验报告",
       "requirement": "Chunking experiment report output",
       "mandatory": true,
-      "implementation_status": "artifact_generation_supported",
-      "execution_status": "artifact_pending_external_delivery_task",
+      "implementation_status": "implemented",
+      "execution_status": "completed",
       "human_review_status": "pending",
       "code": [
         {
@@ -911,6 +916,9 @@
       "interpretation": "",
       "pending": [
         "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ],
+      "evidence_paths": [
+        "artifacts/delivery-final/分块策略对比实验报告.docx"
       ]
     },
     {
@@ -1030,10 +1038,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 233,
+          "line": 265,
           "symbol": "def citations",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -1066,7 +1074,7 @@
       "requirement": "Temperature/Top-p/Top-k comparisons",
       "mandatory": true,
       "implementation_status": "implemented",
-      "execution_status": "previous_automated_executed",
+      "execution_status": "real_experiment_executed",
       "human_review_status": "pending",
       "code": [
         {
@@ -1093,8 +1101,9 @@
         }
       ],
       "interpretation": "Ollama receives all three parameters; cloud-compatible backend does not claim unsupported Top-k sampling.",
-      "pending": [
-        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      "pending": [],
+      "latest_experiment_evidence": [
+        "reports/experiments/generation/parameters/results.json"
       ]
     },
     {
@@ -1215,7 +1224,7 @@
       "requirement": "Embedding-similarity answer cache",
       "mandatory": true,
       "implementation_status": "implemented",
-      "execution_status": "previous_automated_executed",
+      "execution_status": "real_experiment_executed",
       "human_review_status": "pending",
       "code": [
         {
@@ -1255,6 +1264,9 @@
       "interpretation": "",
       "pending": [
         "Measure real-model cache cold/hot hit behavior and latency if making a performance claim."
+      ],
+      "latest_experiment_evidence": [
+        "reports/experiments/generation/cache/results.json"
       ]
     },
     {
@@ -1307,10 +1319,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 233,
+          "line": 265,
           "symbol": "def citations",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -1394,10 +1406,10 @@
       "code": [
         {
           "path": "src/services/application.py",
-          "line": 207,
+          "line": 209,
           "symbol": "def chat",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/observability/logger.py",
@@ -1456,6 +1468,7 @@
       "pending": [],
       "latest_experiment_evidence": [
         "reports/experiments/retrieval/m3/test/hybrid/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json",
         "reports/experiments/retrieval/m3/test/vector/results.json"
       ]
     },
@@ -1556,8 +1569,8 @@
       "source_text": "Prompt模板设计文档与实验对比记录",
       "requirement": "Prompt design documentation and parameter experiments",
       "mandatory": true,
-      "implementation_status": "artifact_generation_supported",
-      "execution_status": "artifact_pending_external_delivery_task",
+      "implementation_status": "implemented",
+      "execution_status": "completed",
       "human_review_status": "pending",
       "code": [
         {
@@ -1577,8 +1590,12 @@
       ],
       "evidence": [],
       "interpretation": "",
-      "pending": [
-        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      "pending": [],
+      "latest_experiment_evidence": [
+        "reports/experiments/generation/prompt/results.json"
+      ],
+      "evidence_paths": [
+        "artifacts/delivery-final/Prompt模板设计与实验记录.docx"
       ]
     },
     {
@@ -2229,7 +2246,7 @@
       "requirement": "Independent tool execution in parallel",
       "mandatory": true,
       "implementation_status": "implemented",
-      "execution_status": "previous_automated_executed",
+      "execution_status": "real_experiment_executed",
       "human_review_status": "pending",
       "code": [
         {
@@ -2264,6 +2281,9 @@
       "interpretation": "",
       "pending": [
         "Real-model parallel speedup needs independent multi-tool tasks and measured sequential/parallel runs."
+      ],
+      "latest_experiment_evidence": [
+        "reports/experiments/generation/parallel/results.json"
       ]
     },
     {
@@ -2913,14 +2933,14 @@
           "line": 89,
           "symbol": "def usage",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 120,
+          "line": 151,
           "symbol": "def trace",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -2993,7 +3013,7 @@
           "line": 89,
           "symbol": "def usage",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         },
         {
           "path": "src/frontend/sections_experiments.py",
@@ -3044,10 +3064,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 120,
+          "line": 151,
           "symbol": "def trace",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -3104,10 +3124,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 120,
+          "line": 151,
           "symbol": "def trace",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -3145,10 +3165,10 @@
       "code": [
         {
           "path": "src/services/application.py",
-          "line": 319,
+          "line": 321,
           "symbol": "def health",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/api/main.py",
@@ -3240,10 +3260,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 233,
+          "line": 265,
           "symbol": "def citations",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -3274,10 +3294,10 @@
       "code": [
         {
           "path": "src/frontend/ui.py",
-          "line": 120,
+          "line": 151,
           "symbol": "def trace",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -3397,7 +3417,7 @@
           "line": 20,
           "symbol": "class Application",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/api/main.py",
@@ -3446,10 +3466,10 @@
       "code": [
         {
           "path": "src/services/application.py",
-          "line": 189,
+          "line": 191,
           "symbol": "def _session_lock",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/core/storage.py",
@@ -3497,10 +3517,10 @@
         },
         {
           "path": "src/retrieval/embeddings.py",
-          "line": 108,
+          "line": 109,
           "symbol": "def encode",
           "exists": true,
-          "sha256": "102a18ec2e4d7865a5928ab53e7d3df8c59f94b772ef8661d27067a1f9edd41a"
+          "sha256": "a865cda1c16fe0bec2df3c484eded7499b2466cc99de7998760d0525d39ade21"
         }
       ],
       "evidence": [
@@ -3584,7 +3604,7 @@
           "line": 20,
           "symbol": "class Application",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         }
       ],
       "evidence": [
@@ -3721,10 +3741,11 @@
       "module": 5,
       "source_text": "RAG检索：Hit@5、MRR、Recall",
       "requirement": "60题Hit@5 MRR Recall三档",
-      "implementation_status": "partial",
-      "execution_status": "partial",
+      "implementation_status": "completed",
+      "execution_status": "completed",
       "evidence_paths": [
         "reports/experiments/retrieval/m3/test/hybrid/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json",
         "reports/experiments/retrieval/m3/test/vector/results.json"
       ],
       "interpretation": ""
@@ -3735,9 +3756,11 @@
       "module": 5,
       "source_text": "Agent决策：工具调用准确率、平均推理轮次",
       "requirement": "工具路由准确率与推理轮次",
-      "implementation_status": "pending",
-      "execution_status": "pending",
-      "evidence_paths": [],
+      "implementation_status": "completed",
+      "execution_status": "completed",
+      "evidence_paths": [
+        "reports/experiments/generation/agent/results.json"
+      ],
       "interpretation": ""
     },
     {
@@ -3759,9 +3782,11 @@
       "module": 5,
       "source_text": "答案质量：人工评分（正确性、完整性、引用准确性）",
       "requirement": "实际答案人工评分表",
-      "implementation_status": "pending",
-      "execution_status": "pending",
-      "evidence_paths": [],
+      "implementation_status": "human_scoring_pending",
+      "execution_status": "human_scoring_pending",
+      "evidence_paths": [
+        "reports/experiments/generation/baseline/human_scoring_60.csv"
+      ],
       "interpretation": "用户明确要求先生成可填写表；评分人、正确性、完整性、引用质量不代填。"
     },
     {
@@ -3773,7 +3798,8 @@
       "implementation_status": "completed",
       "execution_status": "completed",
       "evidence_paths": [
-        "reports/experiments/retrieval/dev-parameters/results.json"
+        "reports/experiments/retrieval/dev-parameters/results.json",
+        "reports/experiments/generation/parameters/results.json"
       ],
       "interpretation": ""
     },
@@ -3851,7 +3877,8 @@
       "implementation_status": "completed",
       "execution_status": "completed",
       "evidence_paths": [
-        "reports/experiments/retrieval/dev-parameters/results.json"
+        "reports/experiments/retrieval/dev-parameters/results.json",
+        "reports/experiments/generation/prompt/results.json"
       ],
       "interpretation": "同20dev题RRF60→20，Hit@5与Recall不变，MRR小幅变化；不夸大提升，不用不同题集作因果比较。"
     },
@@ -3861,9 +3888,11 @@
       "module": 5,
       "source_text": "产出《Bad Case分析报告》",
       "requirement": "产出《Bad Case分析报告》",
-      "implementation_status": "pending",
-      "execution_status": "pending",
-      "evidence_paths": [],
+      "implementation_status": "completed",
+      "execution_status": "completed",
+      "evidence_paths": [
+        "artifacts/delivery-final/Bad Case分析报告.docx"
+      ],
       "interpretation": ""
     },
     {
@@ -3872,9 +3901,11 @@
       "module": 5,
       "source_text": "系统评测报告（含评测数据、图表、Bad Case分析）",
       "requirement": "系统评测报告（含评测数据、图表、Bad Case分析）",
-      "implementation_status": "pending",
-      "execution_status": "pending",
-      "evidence_paths": [],
+      "implementation_status": "completed",
+      "execution_status": "completed",
+      "evidence_paths": [
+        "artifacts/delivery-final/系统评测报告.docx"
+      ],
       "interpretation": ""
     },
     {
@@ -3883,9 +3914,11 @@
       "module": 5,
       "source_text": "用户使用手册 + 技术设计文档",
       "requirement": "用户使用手册 + 技术设计文档",
-      "implementation_status": "pending",
-      "execution_status": "pending",
-      "evidence_paths": [],
+      "implementation_status": "completed",
+      "execution_status": "completed",
+      "evidence_paths": [
+        "artifacts/delivery-final/技术设计文档.docx"
+      ],
       "interpretation": ""
     },
     {
@@ -3894,9 +3927,11 @@
       "module": 5,
       "source_text": "系统评测报告",
       "requirement": "系统评测报告",
-      "implementation_status": "pending",
-      "execution_status": "pending",
-      "evidence_paths": [],
+      "implementation_status": "completed",
+      "execution_status": "completed",
+      "evidence_paths": [
+        "artifacts/delivery-final/系统评测报告.docx"
+      ],
       "interpretation": ""
     },
     {
@@ -3905,9 +3940,11 @@
       "module": 5,
       "source_text": "技术设计文档",
       "requirement": "技术设计文档",
-      "implementation_status": "pending",
-      "execution_status": "pending",
-      "evidence_paths": [],
+      "implementation_status": "completed",
+      "execution_status": "completed",
+      "evidence_paths": [
+        "artifacts/delivery-final/技术设计文档.docx"
+      ],
       "interpretation": ""
     },
     {
@@ -3916,9 +3953,11 @@
       "module": 5,
       "source_text": "演示PPT",
       "requirement": "演示PPT",
-      "implementation_status": "pending",
-      "execution_status": "pending",
-      "evidence_paths": [],
+      "implementation_status": "completed",
+      "execution_status": "completed",
+      "evidence_paths": [
+        "artifacts/delivery-final/演示PPT.pptx"
+      ],
       "interpretation": ""
     },
     {
@@ -3927,9 +3966,11 @@
       "module": 5,
       "source_text": "用户使用手册",
       "requirement": "用户使用手册",
-      "implementation_status": "pending",
-      "execution_status": "pending",
-      "evidence_paths": [],
+      "implementation_status": "completed",
+      "execution_status": "completed",
+      "evidence_paths": [
+        "artifacts/delivery-final/用户手册.docx"
+      ],
       "interpretation": ""
     },
     {
@@ -3943,15 +3984,16 @@
       "evidence_paths": [
         "README.md",
         "requirements.txt",
-        "docs/模型与API配置.md"
+        "docs/模型与API配置.md",
+        "reports/requirements/git-history.txt"
       ],
       "interpretation": ""
     },
     {
-      "id": "p101.delivery",
-      "source_paragraph_id": 101,
+      "id": "p84.delivery",
+      "source_paragraph_id": 84,
       "module": 5,
-      "source_text": "讲授阶段",
+      "source_text": "工业级交付标准。 项目的最终产出不是一份代码，而是一套完整的项目交付物：含技术设计文档、系统评测报告（含数据图表与Bad Case分析）、用户使用手册、Docker一键部署文件，以及演示PPT。学生在项目结束后获得的是一份可以直接向面试官展示的、具备完整工程质量的作品集素材。",
       "requirement": "Docker一键部署文件",
       "implementation_status": "provided_runtime_unverified",
       "execution_status": "provided_runtime_unverified",
@@ -3965,14 +4007,12 @@
   ],
   "summary": {
     "targeted_automated_executed": 10,
-    "real_experiment_executed": 10,
+    "real_experiment_executed": 13,
     "real_functional_executed": 27,
-    "artifact_pending_external_delivery_task": 3,
-    "previous_automated_executed": 30,
+    "completed": 27,
+    "previous_automated_executed": 27,
     "not_applicable_unselected_optional": 2,
-    "completed": 15,
-    "partial": 1,
-    "pending": 9,
+    "human_scoring_pending": 1,
     "provided_runtime_unverified": 1
   },
   "user_selected_pending": [

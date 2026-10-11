@@ -1,6 +1,14 @@
 # 智能科研助理
 
-通用论文知识库问答系统：RAG、手写 ReAct、八个本地工具、流式引用、会话记忆、证据审校、运行回放与可复现评测。代码覆盖课程五个模块；正式质量结论需要真实模型、10–20 篇论文和人工核对的 50+ 题，不预置虚构成绩。
+通用论文知识库问答系统：RAG、手写 ReAct、八个本地工具、流式引用、会话记忆、证据审校、运行回放与可复现评测。已实现课程五个模块并完成真实模型实验；当前包含 10 篇真实论文、80 道来源核对题及 60 题实际生成答案。题目仍待学生确认，答案人工质量评分按用户要求保留待填，不预置虚构成绩。
+
+## 课程交付
+
+最终材料位于 [artifacts/delivery-final](artifacts/delivery-final)：课程报告、系统评测报告、技术设计文档、用户手册、实验与 Bad Case 附件、分块策略对比实验报告、Prompt 模板设计与实验记录、Bad Case 分析报告，以及 17 页演示 PPT。逐条完成状态见[课程要求逐条验收](docs/课程要求逐条验收.md)，实际答案与可填写评分字段见[60 题人工评分表](reports/experiments/generation/baseline/human_scoring_60.csv)。人工评分、题集人工确认和实际提交日期仍待填写；Docker 部署文件已提供，本机未启动容器验证。
+
+最新生产索引含 **342 个片段**；三档检索测试和短答案生成实验使用冻结的历史 **359 个片段**索引。60 题生成实验只评测真实检索输入后的生成阶段，输出上限为 256 token，不代表最新生产索引的全流程质量结论。原始记录分别保存在 [retrieval](reports/experiments/retrieval)、[generation](reports/experiments/generation) 和[当前索引记录](reports/requirements/current-standard-index.json)。
+
+课程交付包包含源码、环境说明、真实实验记录、最终材料与真实 Git 历史，排除 API 密钥、模型权重、虚拟环境和运行缓存。论文原 PDF 通过 `data/corpus/manifest.json` 记录版本、来源与 SHA256；换电脑后执行 `.venv\Scripts\python.exe scripts/prepare_corpus.py download` 恢复固定版本，再在论文库导入，模型按下方说明准备。
 
 ## 快速运行
 
@@ -26,7 +34,7 @@
 
 ## 标准本地模式
 
-本机已缓存本地模型，并已在标准工作区导入 10 篇真实论文、建立 359 个检索片段。已有缓存可直接使用 `scripts/start.ps1 -Profile standard`；首次在其他电脑运行时，再准备 Ollama、模型依赖与权重。首次准备会联网、需要数 GB 空间，应用离线模式不会自动下载。模型与语料准备不等于完成正式答案质量评测，实际界面验证见[界面功能验收](docs/界面功能验收.md)。项目便携Ollama默认独立使用11435端口，避免与用户系统Ollama冲突；显式`RAG_OLLAMA_URL`仍优先。云端API Key、模型ID与服务URL的设置见[模型与API配置](docs/模型与API配置.md)。
+本机已缓存本地模型，并已在标准工作区导入 10 篇真实论文、建立 342 个最新检索片段。已有缓存可直接使用 `scripts/start.ps1 -Profile standard`；首次在其他电脑运行时，再准备 Ollama、模型依赖与权重。首次准备会联网、需要数 GB 空间，应用离线模式不会自动下载。模型与语料准备不等于完成正式答案质量评测，实际界面验证见[界面功能验收](docs/界面功能验收.md)。项目便携Ollama默认独立使用11435端口，避免与用户系统Ollama冲突；显式`RAG_OLLAMA_URL`仍优先。云端API Key、模型ID与服务URL的设置见[模型与API配置](docs/模型与API配置.md)。
 
 ```powershell
 .\scripts\setup.ps1 -Python 'C:\Path\To\Python312\python.exe' -Models

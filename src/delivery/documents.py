@@ -98,6 +98,7 @@ class Writer:
                 if widths:
                     cells[column].width = Cm(widths[column])
         for i, row in enumerate(table.rows):
+            row._tr.get_or_add_trPr().append(OxmlElement("w:cantSplit"))
             for j, cell in enumerate(row.cells):
                 cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
                 properties = cell._tc.get_or_add_tcPr()
@@ -152,6 +153,26 @@ class Writer:
             update = OxmlElement("w:updateFields"); settings.append(update)
         update.set(qn("w:val"), "true")
         self.doc.save(path)
+
+
+def _sampling_rows(results):
+    labels = {"baseline_current": "基线", "temperature_0.0": "温度0", "temperature_0.5": "温度0.5",
+              "top_p_0.7": "Top p 0.7", "top_k_20": "Top k 20", "naive_old_prompt": "旧规则",
+              "current_prompt_reused": "新规则 复用基线"}
+    rows = []
+    for result in results:
+        conditions = dict(result.get("config", {}).get("conditions", []))
+        if not conditions:
+            continue
+        if "current_prompt_reused" in result.get("condition_metrics", {}):
+            conditions["current_prompt_reused"] = next(iter(conditions.values()))
+        for name, config in conditions.items():
+            metrics = result.get("condition_metrics", {}).get(name, result["metrics"])
+            label = result.get("delivery_label", "实验") + " " + labels.get(name, name)
+            rows.append([label, metrics.get("case_count", "未记录"), config.get("temperature", "未记录"),
+                         config.get("top_p", "未记录"), config.get("top_k_sampling", "未记录"),
+                         f"{metrics['latency_mean_ms']:.1f}" if isinstance(metrics.get("latency_mean_ms"), (int, float)) else "未测量"])
+    return rows
 
 
 def _status_intro(writer, inputs):
@@ -231,9 +252,9 @@ def _experiment_metrics(writer, inputs):
               *[f"{r['metrics'][k]:.4f}" if isinstance(r["metrics"].get(k), (int, float)) else "未测量" for k in ("hit_at_5", "mrr", "recall_at_5", "latency_mean_ms")]] for r in retrieval], [4.7, 1.5, 2.1, 2, 2.5, 3.2])
     if generation:
         writer.heading("回答与Agent测量", 2)
-        writer.table(["实验", "题数", "回答完成率", "工具成功率", "用时ms"],
+        writer.table(["实验", "题数", "协议完成率", "工具成功率", "用时ms"],
             [[r.get("delivery_label", "实验"), r["metrics"].get("case_count", "未记录"),
-              *[f"{r['metrics'][k]:.4f}" if isinstance(r["metrics"].get(k), (int, float)) else "未测量" for k in ("answer_success_rate", "tool_success_rate", "latency_mean_ms")]] for r in generation], [4.5, 1.5, 3, 3, 4])
+              *[f"{r['metrics'][k]:.4f}" if isinstance(r["metrics"].get(k), (int, float)) else "未测量" for k in ("generation_protocol_success_rate", "tool_success_rate", "latency_mean_ms")]] for r in generation], [4.5, 1.5, 3, 3, 4])
     if online:
         writer.heading("真实线上功能样本", 2)
         writer.table(["样本数", "平均端到端秒", "输入Token总计", "输出Token总计", "平均步骤"],
@@ -293,7 +314,7 @@ def build_documents(inputs: DeliveryInputs, architecture: Path | None = None, re
     course.heading("1.1 项目背景", 2)
     course.text("科研论文分散在不同文档中，查找方法、核对实验条件和比较研究结果需要反复定位原文。"
                 "本项目构建通用论文知识库，结合检索增强生成与多工具调度，提供文档导入、科研问答、"
-                "来源核对、论文对比和实验记录功能。课程评测选定具体研究方向，以真实论文与人工标注题目检验系统。")
+                "来源核对、论文对比和实验记录功能。课程评测选定具体研究方向，以真实论文与来源核对题目检验系统。")
     course.heading("1.2 项目目标", 2)
     course.text("实现可运行、可追踪、可复跑的科研助理。回答引用服务器生成的证据编号，保留原件与页码或段落位置；"
                 "实验记录配置、语料和模型版本，使失败案例与改进结论可以核查。")
@@ -391,7 +412,7 @@ def build_documents(inputs: DeliveryInputs, architecture: Path | None = None, re
                       ("知识库与会话", "侧栏保存当前工作区访问令牌，用于恢复并访问对应资料。论文库支持PDF、DOCX、TXT和Markdown，等待索引状态就绪后提问。失败任务可重试，已就绪文档可按当前配置重建索引。"),
                       ("科研问答", "选择会话与论文范围，配置纯向量、混合或重排序，按需启用Agent。回答生成后展开证据，查看原文与PDF物理页高亮。关键事实应回到原文核对。"),
                       ("论文对比", "选择两篇已就绪文档及比较维度。相同任务、数据集、划分和指标条件下才解释数值差异，不可比或原文未给出时保留说明。"),
-                      ("实验与运行记录", "上传经人工核对的JSONL，先用dev调参，再固定配置跑test。可依次提交三档检索实验，查看逐题排名、失败、版本与导出。历史运行回放有明确运行ID。"),
+                      ("实验与运行记录", "上传已核对来源的JSONL，并注明助理或人工核对状态。先用dev调参，再固定配置跑test。可依次提交三档检索实验，查看逐题排名、失败、版本与导出。历史运行回放有明确运行ID。"),
                       ("常见问题", "API连接失败时检查服务地址与启动进程。模型未就绪时检查健康状态和本地模型缓存。空库先上传资料，扫描PDF先OCR。没有完整结束标记时应查看失败记录并重试。")]:
         manual.heading(title); manual.text(body)
     _screens(manual, inputs)
@@ -403,14 +424,13 @@ def build_documents(inputs: DeliveryInputs, architecture: Path | None = None, re
     chunk_results = [r for r in inputs.results if r.get("study") in {"chunking", "pdf", "embedding"} and r.get("kind") == "retrieval"]
     attachment.table(["实验", "策略或解析", "长度", "Hit@5", "MRR"], [[r.get("delivery_label", "实验"),
             r.get("config", {}).get("chunk_strategy", r.get("config", {}).get("pdf_parser", "未记录")),
-            r.get("config", {}).get("chunk_size", "未记录"), r["metrics"].get("hit_at_5", "未测量"),
-            r["metrics"].get("mrr", "未测量")] for r in chunk_results] or [["尚未执行", "待对比三策略与三解析器", "256 512 1024", "未测量", "未测量"]], [3, 4.8, 2.2, 2.7, 2.8])
+            r.get("config", {}).get("chunk_size", "未记录"),
+            *[f"{r['metrics'][key]:.4f}" if isinstance(r["metrics"].get(key), (int, float)) else "未测量" for key in ("hit_at_5", "mrr")]] for r in chunk_results] or [["尚未执行", "待对比三策略与三解析器", "256 512 1024", "未测量", "未测量"]], [3, 4.8, 2.2, 2.7, 2.8])
     attachment.text("分块实验固定语料与标注证据，比较固定切分256、512、1024，以及递归和句段边界分块。实际执行组合以表格为准。解析效果还需检查双栏、表格、公式；字符数较多不等于阅读顺序更正确。")
     attachment.heading("Prompt与生成参数实验")
     prompt_results = [r for r in inputs.results if r.get("study") in {"prompt", "generation", "context"} or r.get("kind") == "generation"]
-    attachment.table(["实验", "Temperature", "Top p", "Top k", "实际用时ms"], [[r.get("delivery_label", "实验"),
-            r.get("config", {}).get("temperature", "未记录"), r.get("config", {}).get("top_p", "未记录"),
-            r.get("config", {}).get("top_k_sampling", "未记录"), r["metrics"].get("latency_mean_ms", "未测量")] for r in prompt_results] or [["尚未执行", "待测量", "待测量", "待测量", "未测量"]], [4, 3, 2.5, 2.5, 3.5])
+    attachment.table(["实验", "Temperature", "Top p", "Top k", "实际用时ms"],
+            [[row[0], *row[2:]] for row in _sampling_rows(prompt_results)] or [["尚未执行", "待测量", "待测量", "待测量", "未测量"]], [4, 3, 2.5, 2.5, 3.5])
     attachment.text("比较上下文预算、引用约束和生成参数时，应保存Prompt版本、实际答案、模型Token与人工质量评分。只有耗时数据不能证明Prompt质量更好。")
     attachment.heading("Bad Case与优化记录")
     for row in _bad_case_rows(inputs):
@@ -489,12 +509,10 @@ def _independent_experiment_reports(inputs):
         prompt.text("生成研究固定真实论文检索的证据输入，并保存每题上下文哈希。采样参数、Prompt与上下文预算研究复用这些输入，避免重复编码和重排；其gen-only时间不包含实时检索。准备输入本身没有调用生成模型，也不算生成成绩。设计与复跑方法见docs/生成与Agent实验记录.md和scripts/run_course_generation.py。")
     chosen = [r for r in inputs.results if r.get("study") in {"prompt", "generation", "context"} or r.get("kind") == "generation"]
     prompt.table(["实验", "题数", "T", "Top p", "Top k", "用时ms"],
-        [[r.get("delivery_label", "实验"), r["metrics"].get("case_count", "未记录"),
-          r.get("config", {}).get("temperature", "未记录"), r.get("config", {}).get("top_p", "未记录"),
-          r.get("config", {}).get("top_k_sampling", "未记录"), r["metrics"].get("latency_mean_ms", "未测量")] for r in chosen]
+        _sampling_rows(chosen)
         or [["尚未执行", "无运行记录", "未测量", "未测量", "未测量", "未测量"]], [4.5, 1.5, 1.7, 2.2, 2.2, 3.5])
     prompt.heading("实验解释与人工评分")
-    prompt.text("Temperature改变采样随机性，Top p与Top k分别限制概率质量和候选词数。实验应逐次改变一个因素，不用单次耗时推断答案质量改善。人工按1至5分评正确性、完整性、引用质量和流畅性。")
+    prompt.text("Temperature改变采样随机性，Top p与Top k分别限制概率质量和候选词数。表格逐条件列出真实配置与生成阶段用时；新Prompt复用同4题基线答案，不重复计算样本。实验应逐次改变一个因素，不用单次耗时推断答案质量改善。人工按1至5分评正确性、完整性、引用质量和流畅性。")
     for finding in inputs.config.get("prompt_findings", []):
         prompt.text(finding)
     prompt.heading("原始记录")

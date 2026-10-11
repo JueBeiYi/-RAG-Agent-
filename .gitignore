@@ -11,6 +11,7 @@ artifacts/.delivery-build-*/
 artifacts/.delivery-stage*/
 artifacts/delivery-build/
 artifacts/delivery-qa/
+.chart-data-*/
 .idea/
 data/demo/workspace.json
 data/models/

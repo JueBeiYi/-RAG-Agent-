@@ -1,0 +1,551 @@
+{
+  "created_at": "2026-10-11T07:21:51.119000+00:00",
+  "status": "ready_with_declared_pending_human_fields",
+  "project_title": "智能科研助理 基于RAG与Agent的论文知识库问答系统",
+  "pending_human_fields": [
+    "project.submission_date",
+    "human_review.answer_quality_scores",
+    "human_review.question_and_evidence_confirmation"
+  ],
+  "source_files": [
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\parsers\\results.json",
+      "sha256": "1c7d39cc12db6b74afc69cedebeb26852a525a497c3f5a3eb4edae4cc9998294",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\vectorstores\\results.json",
+      "sha256": "409e8d6683134fef0f71ad96b9912491fe83f7638a62c54a87cdcd30c17f7967",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\dev-parameters\\results.json",
+      "sha256": "9351d14a2667757670bca4f9fce3fd3d6bcf8b8ec0dd3263017da6ff455ac82e",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\m3\\test\\vector\\results.json",
+      "sha256": "3339049611ce9673e8dc9c3e092ed3966937d16289abd2fb29192a6626f222fb",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\m3\\test\\hybrid\\results.json",
+      "sha256": "110f1b84d63823a218ce84d81475adbb6796ada1b690175338edf6b1aaeb7929",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\m3\\dev\\vector\\results.json",
+      "sha256": "5ca9560b4c6af10530eba69b0bac236790b607f75ea55ef27e5943b3798f3721",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\m3\\dev\\hybrid\\results.json",
+      "sha256": "9cb0f0e2b7c2a958bf6261698b1d2b5591804c52a0ade753263d2cb73682d292",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\online-functionality\\results.json",
+      "sha256": "8ae1cc9002be51a5acbbd852e687a6fb465828784e3e75c62535051695144f1f",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\chunking\\m3e\\fixed-256\\results.json",
+      "sha256": "2241777d81fd6a115c7bbe9ef371eaf48b9d747cae1cf7b0d7b7d787577eda32",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\chunking\\m3e\\fixed-512\\results.json",
+      "sha256": "eb12c79bcdc41222200b6fdc16bf7eb2478190b416f7f2ca80bd468cd0dc77bd",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\chunking\\m3e\\fixed-1024\\results.json",
+      "sha256": "4042ea6fcfd213a7d6d2b9f82139648e0b4bc933ff14827ea648d42b8d724495",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\chunking\\m3e\\recursive-512\\results.json",
+      "sha256": "b4f7928b0c26520e04876928eb048947ce6b0515138860be6bdadeb117c73d17",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\chunking\\m3e\\semantic-512\\results.json",
+      "sha256": "555113d655ed5952e98ca089fdd7f64a20b85d5d26a01be23d59506f65d7e5fd",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\encoding\\m3e\\results.json",
+      "sha256": "07fcf4c7a0cdab7afc664ef273bdf0c563a90edf019ed8803a49e9e2ed7aa347",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\chunking\\bge-zh\\recursive-512\\results.json",
+      "sha256": "0e19c8343bafb0a15ab943f5a0bac2b55b638c0a2af9419eb033e1f40a7adeff",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\encoding\\bge-zh\\results.json",
+      "sha256": "7893a910445d25f2b70d4ddade6a264b5d967f138e1e58b06c04ab65ad7f2274",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\m3\\test\\hybrid_rerank\\results.json",
+      "sha256": "072f54f196e7a6f0dfd058351ba3b606e530f1e33cbd2fabb8bfe48b045c7061",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\baseline\\results.json",
+      "sha256": "c4809af2c75a806c4f00b93e24ab8f18799480b7c470eabefc46f9e080e9bfa5",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\parameters\\results.json",
+      "sha256": "3c4ae71d14d3a62cfbdf580baf662a00b8a898540d0b0fbc2f046aa0273979be",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\prompt\\results.json",
+      "sha256": "997e073bf4e771026663970cc163220fc85a9cd6837321adc4f90bb64aeb19ad",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\agent\\results.json",
+      "sha256": "f95bb129ceeb11220c3ef53f4e649c3b10fee1c8aa45e078193cc3436a3074a8",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\parallel\\results.json",
+      "sha256": "31819715a25d0cd22c554459f2ca04bf92e22d5ebfb678e8c70c118664eea90b",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\cache\\results.json",
+      "sha256": "25724b6b19966e51f68884d0b33c578e61e4cf144b1f9451be7a034f7c9dc1c5",
+      "kind": "experiment",
+      "demo": false
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\testing\\full-suite-20261010.xml",
+      "sha256": "0f6197f59bd9559313a8a401c33d792e418456ca7153e3f5ab00a84f12fb226b",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\testing\\ui-final-critical-20261010.json",
+      "sha256": "afe4116ef43cef9ae0746bb0c521310bf1e36ce7a2550b068adcf86065b1acee",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\testing\\agent-generation-final-20261010.json",
+      "sha256": "c005c59eaacb68602387a80f8e9c870f55ae22ddeb1d6dc90dc0c61e1458ba28",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\ui\\workflow-tests-20261010.json",
+      "sha256": "919c6343ffb6ca36de6456118a0458b69d85bdddc48c589f9e8315fb5c8fa6c1",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\ui\\browser-standard-20261010.json",
+      "sha256": "3b4bc3ccdc1769c2aeb29b3457e9db88d6435e8d5120d7fe435193a2f79c7b93",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\datasets\\source_validation.json",
+      "sha256": "d44da522370c30bb1a0a38d7f04186af65ab50cecb4b638d329810d8950795a9",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\requirements\\implementation-audit.json",
+      "sha256": "a9a81e556c3793855d6a01a14fb1863c8371a3754fbf54a5dc4e8aa20de55638",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\testing\\requirement-gaps-20261010.xml",
+      "sha256": "da167f0b7e91fb9e75ca82b6ec6608c3ab34f4d46318b5c37b7d40a1a54b5dee",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\testing\\recursive-requirement-20261010.xml",
+      "sha256": "2d7801a6aa08218654c5825a51d2387877191e8710790fc0470eb530314ffb3b",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\testing\\per-tool-usage-20261010.xml",
+      "sha256": "8948628b2cb5b4abef6873030c0644e1adf3ae509a37199d77e78bce2f7e0f78",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\docs\\模型与API配置.md",
+      "sha256": "11190c79f52262bde456fa8ed22ec914638bde537da4066c64fff57eb0f86925",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\scripts\\deploy_docker.ps1",
+      "sha256": "00d40f49ba24428ab438769088a48e7577ef477040db8f13ee68179ad82617c7",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\prepared_inputs.json",
+      "sha256": "05bf54ea6f21c5ce4406c499d389f1a516a2c612ae15232dc813c4a6ebcbf7cc",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\docs\\生成与Agent实验记录.md",
+      "sha256": "9158b3bf68f531226d7f258aabe98d9c937873e6e4238c1c334c1bd28ae98cd7",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\scripts\\run_course_generation.py",
+      "sha256": "6107604eabbe77590279b5b3dcf6311e2b30d8e0c9f8bfce908b3002aa705eff",
+      "kind": "verification"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\requirements\\delivery-implementation-manifest.json",
+      "sha256": "0212b01bbf5b7f38480ae28beab95996284fb3e9ca7617cdeb824283011962ae",
+      "kind": "implementation"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\docs\\screenshots\\新版论文库.jpg",
+      "sha256": "55ffef3faaa7d629069bb98550dfeb4023cfadc98b7081048d8afb49bd04708a",
+      "kind": "screenshot"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\docs\\screenshots\\新版科研问答.jpg",
+      "sha256": "29cd5e8216cd8b3340c41993bfb968a514d2f037f64a382522b26498380c211b",
+      "kind": "screenshot"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\docs\\screenshots\\真实论文原页.jpg",
+      "sha256": "d13f82361e45ea86ce2b849b24e1782172c643792de9b2d76147d20e05485472",
+      "kind": "screenshot"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\docs\\screenshots\\新版论文对比.jpg",
+      "sha256": "b7c5faffddc817628ea8adefcee1dac9465a269b5b3dff4c675b354d10c4768a",
+      "kind": "screenshot"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\docs\\screenshots\\真实检索实验.jpg",
+      "sha256": "1972c51cd896f3cdcb7a41a66cd2393198533fe0729793ea15358d31c78dfbaf",
+      "kind": "screenshot"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\bad-cases\\actual-bad-cases.json",
+      "sha256": "35acad8703b10acc8fdc11046fc5cc31d35d35613b698a61ee96ff71f7277024",
+      "kind": "bad_case"
+    }
+  ],
+  "formal_result_count": 23,
+  "demo_result_count": 0,
+  "course_evaluation_complete": false,
+  "course_evaluation_note": "人工质量评分按用户选择待填写；题集证据待学生确认；Docker容器未在本机实跑。所有模型/解析数据均来自实际执行，旧359实验快照与新生产索引分开。",
+  "build_dir": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31",
+  "artifacts": {
+    "presentation": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final\\演示PPT.pptx",
+    "course_report": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final\\课程报告.docx",
+    "evaluation_report": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final\\系统评测报告.docx",
+    "technical_design": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final\\技术设计文档.docx",
+    "user_manual": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final\\用户手册.docx",
+    "experiment_attachment": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final\\实验与BadCase附件.docx",
+    "chunking_report": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final\\分块策略对比实验报告.docx",
+    "prompt_report": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final\\Prompt模板设计与实验记录.docx",
+    "bad_case_report": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final\\Bad Case分析报告.docx"
+  },
+  "rendering": {
+    "presentation": {
+      "status": "rendered_visual_review_passed",
+      "slide_count": 17,
+      "slide_images": [
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-01.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-02.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-03.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-04.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-05.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-06.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-07.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-08.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-09.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-10.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-11.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-12.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-13.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-14.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-15.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-16.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\slide-17.png"
+      ],
+      "visual_review": "completed",
+      "validation_receipt": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\pptx-validation.json",
+      "reviewed_at": "2026-10-11T07:28:31.940529+00:00",
+      "note": "17页均已检查；13页与前次已检查PNG的SHA256相同，4个修改页已重新检查。",
+      "unchanged_previously_reviewed_slides": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        17
+      ],
+      "revised_reviewed_slides": [
+        7,
+        8,
+        11,
+        16
+      ],
+      "reviewed_images_sha256": {
+        "slide-01.png": "3a667daaa1812210af18e4b98366ac1d4016c13a7774d75976fd746fde462a75",
+        "slide-02.png": "b5186f372654f7f6a33a2e839d4f7922485006b1b09c343970fdf7aaa254d5e0",
+        "slide-03.png": "b0c5c599900751e35ee3fd4d86f562fc33dfddde56051b408b726f8c67108fe3",
+        "slide-04.png": "cf579f085cea1a2e1290e95c8824bdc98262e4284003063fcedd8bad2abaf631",
+        "slide-05.png": "05632231fbf0656d90b669a28bb34444e51ef2049fdbfb15af1b447ba905b0c7",
+        "slide-06.png": "6d1999c9e2c71eddf606ad031e7fc25a92de762ca13ee225656441e376f6d5cd",
+        "slide-07.png": "7a58f0ad7dace200a2d2fb1c461dc0503f9662690b1007fd7881b41a681eab29",
+        "slide-08.png": "275977b0a858fde3459612bafb7c68ba2dc268e4a99dd6db2e7a2a4d5397a1b1",
+        "slide-09.png": "68d4ebe372dc2a01fb90211ebb31536721c485bbdfb1da40d10544e43404efcf",
+        "slide-10.png": "edd2ef303ed1cc456d61812999e5cdd2fa8d6df71a7b66da5d8de4c668102867",
+        "slide-11.png": "70c9fb47c7d560949cc17437d2dedff40965beed6d31f2018b40bc36c1747e63",
+        "slide-12.png": "517c26d4f2426aab802eb3e6a9db92d4bbf6097e86b591b6aed806d073ca7222",
+        "slide-13.png": "fee5a921ff48d46c62f613d787e20952b076735801419e3d671c307c7d7038bd",
+        "slide-14.png": "2ecee3b2e94036a6f9bfe0c470717f839df2f2bdf268469374214224b64be165",
+        "slide-15.png": "98d009b8c300d29248cbafe8b1834ab56909be04b0793c82137e5873af0f4ede",
+        "slide-16.png": "36ed830f84bfce437928275d7b5f20e76fdb53287576c2b8efa4e17d45efe119",
+        "slide-17.png": "3f39df7c4a2b8a859da825ff1d3d34b398b782db66525c5c3ec4a48bab18fb7f"
+      }
+    },
+    "course_report": {
+      "status": "rendered_visual_review_passed",
+      "page_count": 14,
+      "renderer": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\delivery-renderer\\extracted\\program\\soffice.exe",
+      "page_images": [
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-1.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-2.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-3.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-4.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-5.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-6.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-7.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-8.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-9.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-10.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-11.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-12.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-13.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render\\page-14.png"
+      ],
+      "log": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\course_report-render.log",
+      "visual_review": "completed",
+      "note": "逐页检查实际渲染图片，未见裁切、文字重叠、缺字或断裂表格。保留学校模板版式。",
+      "reviewed_at": "2026-10-11T07:28:31.943186+00:00",
+      "reviewed_images_sha256": {
+        "page-1.png": "3d9b40c8c528d2dd55d8ab29d7254166898d15fc611ad4e46f4256dbeb4ee7ae",
+        "page-2.png": "c61df6f5425ec40fec898e6bb5593442f859682da7fe25c58f20e0774c6fed13",
+        "page-3.png": "90702077baa38b6aba0e550937d670e961a9d8634c4723698135a9c1507a98ad",
+        "page-4.png": "8ec742dc00eb8dee2c89733ed70394a0b2e882a73b9c30b6b4cac8c1e38db03e",
+        "page-5.png": "4ed0d931c39b8976db6140a9d76182396249cea548b5696dc5920d4351754120",
+        "page-6.png": "9ffea7a2202ec328de086eae65e862ddc71d0a1d7b56d7b22fe9c1a4154809d7",
+        "page-7.png": "164ac21a4e6c486c102d0182e359439af939a3dc46f9f84b0003f411068fdad6",
+        "page-8.png": "abe2e1427804d41461e9921c68672d471ed8e63f4f00eb52b61029af9ac8e344",
+        "page-9.png": "f8c48b29bf844f57ed44adcc3ae3aaf0ee702700116d31d406883a3bc021dca0",
+        "page-10.png": "28b39b91b439068fd85023a8c79361ced1547dc283b261c9ba39544018b7feb5",
+        "page-11.png": "5cccdfc178e70a837b08930e4636756337fb53dcf0d3b749cae8133e8a149779",
+        "page-12.png": "b11e5f51dbf376cdafad2d16029cf9c621afef155c87ba9c888c054c23c72c40",
+        "page-13.png": "85e8a81afc68fd50671e3913366eb746febed726236be25cb0453b75e3aba177",
+        "page-14.png": "81d7077a0d56b62dfa2b9bb1dbee52df200af6c823c26dae13b80bc01d72676a"
+      }
+    },
+    "evaluation_report": {
+      "status": "rendered_visual_review_passed",
+      "page_count": 8,
+      "renderer": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\delivery-renderer\\extracted\\program\\soffice.exe",
+      "page_images": [
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\evaluation_report-render\\page-1.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\evaluation_report-render\\page-2.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\evaluation_report-render\\page-3.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\evaluation_report-render\\page-4.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\evaluation_report-render\\page-5.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\evaluation_report-render\\page-6.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\evaluation_report-render\\page-7.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\evaluation_report-render\\page-8.png"
+      ],
+      "log": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\evaluation_report-render.log",
+      "visual_review": "completed",
+      "note": "逐页检查实际渲染图片，未见裁切、文字重叠、缺字或断裂表格。保留学校模板版式。",
+      "reviewed_at": "2026-10-11T07:28:31.947407+00:00",
+      "reviewed_images_sha256": {
+        "page-1.png": "584c3a087181cc61f313aaa1103131912af0be78ed9d47e5a23dbd6a0037a43c",
+        "page-2.png": "d263d2bd4afbbaf38e3c7d543de3f7875ad7f835ac54806d4228d5304e985eb4",
+        "page-3.png": "42f08b3536d216ecb29fa442b58ac8dc085b3da86885345f67eebf7cbe9f3564",
+        "page-4.png": "cbb90fc118f1235396ae654f8284e00212ae97587f75cca06f18724f234f1510",
+        "page-5.png": "ecc1694964e250f98ae052bcaaff443f658fdf4f968d339a70ecbad47091dbf6",
+        "page-6.png": "38a3d5888920dc2215b479e030d292455891c0272c0efcd213b29815ddcb621e",
+        "page-7.png": "1c97f15053768121d0ff453a176e232b5066c7d179e0727fcc1d7620aeda36ea",
+        "page-8.png": "e353086e41db0aefc67cab4020dbb4622d8846e50a670a0d4e18dbfef0cfec88"
+      }
+    },
+    "technical_design": {
+      "status": "rendered_visual_review_passed",
+      "page_count": 2,
+      "renderer": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\delivery-renderer\\extracted\\program\\soffice.exe",
+      "page_images": [
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\technical_design-render\\page-1.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\technical_design-render\\page-2.png"
+      ],
+      "log": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\technical_design-render.log",
+      "visual_review": "completed",
+      "note": "逐页检查实际渲染图片，未见裁切、文字重叠、缺字或断裂表格。保留学校模板版式。",
+      "reviewed_at": "2026-10-11T07:28:31.949713+00:00",
+      "reviewed_images_sha256": {
+        "page-1.png": "62a1546393c0c773e45c365d46230279df53db8dbf2624e64d6f5943f032c9a7",
+        "page-2.png": "4d48ac2feb8ffe467291aa83da422ed735f487d8cf170002b06d236047ff9dcc"
+      }
+    },
+    "user_manual": {
+      "status": "rendered_visual_review_passed",
+      "page_count": 4,
+      "renderer": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\delivery-renderer\\extracted\\program\\soffice.exe",
+      "page_images": [
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\user_manual-render\\page-1.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\user_manual-render\\page-2.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\user_manual-render\\page-3.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\user_manual-render\\page-4.png"
+      ],
+      "log": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\user_manual-render.log",
+      "visual_review": "completed",
+      "note": "逐页检查实际渲染图片，未见裁切、文字重叠、缺字或断裂表格。保留学校模板版式。",
+      "reviewed_at": "2026-10-11T07:28:31.951147+00:00",
+      "reviewed_images_sha256": {
+        "page-1.png": "c111bde1627f0f96e6112126ec4a6287f08c1ea3b1a8d7f59e78d77602e8c2b8",
+        "page-2.png": "fcfd05db1cb0ab2bb0481a5df4749759b420ccd4060b7ae9f8389448fbee7adb",
+        "page-3.png": "46e52f5f112a96c51e2a073c3be95865153fb766c1ad0fb743a713b3705a62a5",
+        "page-4.png": "ad83a290705e516d8241c079b307007e2739a7d829a4a409152aa481ffe69576"
+      }
+    },
+    "experiment_attachment": {
+      "status": "rendered_visual_review_passed",
+      "page_count": 6,
+      "renderer": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\delivery-renderer\\extracted\\program\\soffice.exe",
+      "page_images": [
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\experiment_attachment-render\\page-1.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\experiment_attachment-render\\page-2.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\experiment_attachment-render\\page-3.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\experiment_attachment-render\\page-4.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\experiment_attachment-render\\page-5.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\experiment_attachment-render\\page-6.png"
+      ],
+      "log": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\experiment_attachment-render.log",
+      "visual_review": "completed",
+      "note": "逐页检查实际渲染图片，未见裁切、文字重叠、缺字或断裂表格。保留学校模板版式。",
+      "reviewed_at": "2026-10-11T07:28:31.952645+00:00",
+      "reviewed_images_sha256": {
+        "page-1.png": "96cb0fbd17851215e4e93821457d7d5a368be058a5eadce009ca4c11c06bc941",
+        "page-2.png": "5a6a51d5cccf83b4024fee77d50f07d601f12c97adb082a0ec6cf0ad09b9806d",
+        "page-3.png": "8ef3bf01f3a9ac5a0a01de31b7473e1fa49f224db332fa688f799aee579fe9f4",
+        "page-4.png": "cece410a56841e9c3dbd31d5f1a46b7dbe20d83728d033b65ae7ff419bea0fdd",
+        "page-5.png": "459c0fb5bdff2d821277c83b1a22c27ce849010d9225c39883363f4a4c32e318",
+        "page-6.png": "0f5875cb527060abaea9c73cad45a0cf2e91f092a8340ed13ceb8973427324e8"
+      }
+    },
+    "chunking_report": {
+      "status": "rendered_visual_review_passed",
+      "page_count": 2,
+      "renderer": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\delivery-renderer\\extracted\\program\\soffice.exe",
+      "page_images": [
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\chunking_report-render\\page-1.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\chunking_report-render\\page-2.png"
+      ],
+      "log": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\chunking_report-render.log",
+      "visual_review": "completed",
+      "note": "逐页检查实际渲染图片，未见裁切、文字重叠、缺字或断裂表格。保留学校模板版式。",
+      "reviewed_at": "2026-10-11T07:28:31.954921+00:00",
+      "reviewed_images_sha256": {
+        "page-1.png": "072b9a1d01a4896e84245faa5abb25725d222a1cbc76ba8d491e70b215619963",
+        "page-2.png": "bf2ae0f3a2350976ab445f3470d783a95299e0d53b12ce6579be88af6fb3b9b5"
+      }
+    },
+    "prompt_report": {
+      "status": "rendered_visual_review_passed",
+      "page_count": 2,
+      "renderer": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\delivery-renderer\\extracted\\program\\soffice.exe",
+      "page_images": [
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\prompt_report-render\\page-1.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\prompt_report-render\\page-2.png"
+      ],
+      "log": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\prompt_report-render.log",
+      "visual_review": "completed",
+      "note": "逐页检查实际渲染图片，未见裁切、文字重叠、缺字或断裂表格。保留学校模板版式。",
+      "reviewed_at": "2026-10-11T07:28:31.955966+00:00",
+      "reviewed_images_sha256": {
+        "page-1.png": "430cf0fdb87f621224557f196033fbf5f6631989e899bfdeb945da078f4fe784",
+        "page-2.png": "300b3b2094aced01046d0e59982886c5b28cc009c901ad59465070beffb059bb"
+      }
+    },
+    "bad_case_report": {
+      "status": "rendered_visual_review_passed",
+      "page_count": 3,
+      "renderer": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\delivery-renderer\\extracted\\program\\soffice.exe",
+      "page_images": [
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\bad_case_report-render\\page-1.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\bad_case_report-render\\page-2.png",
+        "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\bad_case_report-render\\page-3.png"
+      ],
+      "log": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\.delivery-build-d1f70d6b31\\bad_case_report-render.log",
+      "visual_review": "completed",
+      "note": "逐页检查实际渲染图片，未见裁切、文字重叠、缺字或断裂表格。保留学校模板版式。",
+      "reviewed_at": "2026-10-11T07:28:31.955966+00:00",
+      "reviewed_images_sha256": {
+        "page-1.png": "4096da50edb4fc1409a53a7609689606563bed631bcaf6a79ed80e97de4658e1",
+        "page-2.png": "3347ff538e13c109d2bcb0245db82fd45a5a3996bafef1c696e8b26a1eb73b3f",
+        "page-3.png": "7b42cf30d983426d3c82148c95dc51aec25275121cf685cba236dfe339946138"
+      }
+    }
+  },
+  "reference_template": {
+    "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\项目交付模板.docx",
+    "sha256": "a5516421466d4d75ce1ee253c588c0277753f7a6d1fed7957f2b27c7de3f67e8",
+    "unchanged": true
+  },
+  "artifact_sha256": {
+    "presentation": "cc49faad41cb31da6be6d1e6bacaf1eec37a1d44a96a81c1b699f3451c321224",
+    "course_report": "4c9d254add760c0173c72a3ad121f5674f6234d11e9b9636f0abfcfb98b4459c",
+    "evaluation_report": "7111ea1e9aed37d0e3868a8edabde518d35fb82f5df199e31e11756153924798",
+    "technical_design": "e20054a01f77793f3f67a417e0c8598bafbabdf4935ff2aa9a8d4ef9da93bc6a",
+    "user_manual": "61c4bab76440f98ed0848a66b096488690bcc867b0a28c4dcaff5e0288487f6b",
+    "experiment_attachment": "38d49b725dac6caa693263bc7d12e6a4d327b88637d50de13e4f2a89116837ec",
+    "chunking_report": "331f215e02f5ed83b645ff4ff12a5ec0c1a2761130c83c1bc244355913849f82",
+    "prompt_report": "f7b7ae0529a6619cf11d5c17d49565aafdec5d9a9ae418d8619b7af23fe06a2f",
+    "bad_case_report": "2f1fa81ca4af49de9c03d52cbf25a25724fc4bbbf693c45e7ae66902e884bcff"
+  },
+  "environment_pending": [
+    "Docker Engine容器实机启动未验证"
+  ],
+  "current_browser_verification": "新截图验证因电脑操作工具无法可靠确认当前浏览器地址而停止；材料保留2026-10-10真实历史截图。"
+}

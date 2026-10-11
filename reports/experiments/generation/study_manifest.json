@@ -1,0 +1,188 @@
+{
+  "created_at": "2026-10-11T03:33:18.419973+00:00",
+  "results": [
+    {
+      "study": "baseline",
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\baseline\\results.json",
+      "sha256": "c4809af2c75a806c4f00b93e24ab8f18799480b7c470eabefc46f9e080e9bfa5",
+      "status": "completed",
+      "metrics": {
+        "case_count": 60,
+        "run_count": 60,
+        "generation_protocol_success_rate": 1,
+        "latency_mean_ms": 3055.9623,
+        "latency_p50_ms": 2812.4005,
+        "latency_p95_ms": 4601.93225,
+        "prompt_tokens_total": 199507,
+        "completion_tokens_total": 4563,
+        "token_usage_known_count": 60,
+        "invalid_citation_run_count": 0,
+        "numeric_rule_review_run_count": 31,
+        "answers_with_source_markers": 55,
+        "output_truncation_count": 0,
+        "human_correctness_mean": null,
+        "human_completeness_mean": null,
+        "human_citation_quality_mean": null,
+        "human_scoring_completed_count": 0
+      }
+    },
+    {
+      "study": "parameters",
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\parameters\\results.json",
+      "sha256": "3c4ae71d14d3a62cfbdf580baf662a00b8a898540d0b0fbc2f046aa0273979be",
+      "status": "completed",
+      "metrics": {
+        "case_count": 4,
+        "run_count": 20,
+        "generation_protocol_success_rate": 1,
+        "latency_mean_ms": 2152.74825,
+        "latency_p50_ms": 2077.751,
+        "latency_p95_ms": 3837.7831000000006,
+        "prompt_tokens_total": 66360,
+        "completion_tokens_total": 1665,
+        "token_usage_known_count": 20,
+        "invalid_citation_run_count": 0,
+        "numeric_rule_review_run_count": 13,
+        "answers_with_source_markers": 20,
+        "output_truncation_count": 0,
+        "human_correctness_mean": null,
+        "human_completeness_mean": null,
+        "human_citation_quality_mean": null,
+        "human_scoring_completed_count": 0
+      }
+    },
+    {
+      "study": "prompt",
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\prompt\\results.json",
+      "sha256": "997e073bf4e771026663970cc163220fc85a9cd6837321adc4f90bb64aeb19ad",
+      "status": "completed",
+      "metrics": {
+        "case_count": 4,
+        "run_count": 8,
+        "generation_protocol_success_rate": 1,
+        "latency_mean_ms": 3403.202375,
+        "latency_p50_ms": 3484.344,
+        "latency_p95_ms": 3822.0932000000003,
+        "prompt_tokens_total": 26040,
+        "completion_tokens_total": 740,
+        "token_usage_known_count": 8,
+        "invalid_citation_run_count": 0,
+        "numeric_rule_review_run_count": 6,
+        "answers_with_source_markers": 8,
+        "output_truncation_count": 0,
+        "human_correctness_mean": null,
+        "human_completeness_mean": null,
+        "human_citation_quality_mean": null,
+        "human_scoring_completed_count": 0
+      }
+    },
+    {
+      "study": "small_sample_agent_routing",
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\agent\\results.json",
+      "sha256": "f95bb129ceeb11220c3ef53f4e649c3b10fee1c8aa45e078193cc3436a3074a8",
+      "status": "completed",
+      "metrics": {
+        "case_count": 5,
+        "run_count": 10,
+        "generation_protocol_success_rate": 1,
+        "latency_mean_ms": 1867.345660009475,
+        "latency_p50_ms": 1532.9819500497617,
+        "latency_p95_ms": 3931.9365700066573,
+        "prompt_tokens_total": 28214,
+        "completion_tokens_total": 719,
+        "token_usage_known_count": 10,
+        "invalid_citation_run_count": 0,
+        "numeric_rule_review_run_count": 6,
+        "answers_with_source_markers": 6,
+        "output_truncation_count": 0,
+        "human_correctness_mean": null,
+        "human_completeness_mean": null,
+        "human_citation_quality_mean": null,
+        "human_scoring_completed_count": 0,
+        "routing_exact_match": 1
+      }
+    },
+    {
+      "study": "actual_local_tool_parallelism",
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\parallel\\results.json",
+      "sha256": "31819715a25d0cd22c554459f2ca04bf92e22d5ebfb678e8c70c118664eea90b",
+      "status": "completed",
+      "metrics": {
+        "case_count": 10,
+        "run_count": 20,
+        "generation_protocol_success_rate": 1,
+        "latency_mean_ms": 22.642689995700493,
+        "latency_p50_ms": 22.405099996831268,
+        "latency_p95_ms": 28.94767492543906,
+        "prompt_tokens_total": 0,
+        "completion_tokens_total": 0,
+        "token_usage_known_count": 20,
+        "invalid_citation_run_count": 0,
+        "numeric_rule_review_run_count": 0,
+        "answers_with_source_markers": 0,
+        "output_truncation_count": 0,
+        "human_correctness_mean": null,
+        "human_completeness_mean": null,
+        "human_citation_quality_mean": null,
+        "human_scoring_completed_count": 0
+      }
+    },
+    {
+      "study": "exact_semantic_cache_cold_hot",
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\cache\\results.json",
+      "sha256": "25724b6b19966e51f68884d0b33c578e61e4cf144b1f9451be7a034f7c9dc1c5",
+      "status": "completed",
+      "metrics": {
+        "case_count": 1,
+        "run_count": 2,
+        "generation_protocol_success_rate": 1,
+        "latency_mean_ms": 1479.794800048694,
+        "latency_p50_ms": 1479.794800048694,
+        "latency_p95_ms": 2807.9433400416747,
+        "prompt_tokens_total": 3599,
+        "completion_tokens_total": 54,
+        "token_usage_known_count": 2,
+        "invalid_citation_run_count": 0,
+        "numeric_rule_review_run_count": 0,
+        "answers_with_source_markers": 1,
+        "output_truncation_count": 0,
+        "human_correctness_mean": null,
+        "human_completeness_mean": null,
+        "human_citation_quality_mean": null,
+        "human_scoring_completed_count": 0
+      }
+    }
+  ],
+  "scope": "",
+  "human_scoring_pending": true,
+  "source_files": [
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\frozen\\hybrid.jsonl",
+      "sha256": "3ad245338aae03e01ed4184799a25cff098f61f1258f6b6200ab8bd5935c4b4c"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\cases.jsonl",
+      "sha256": "b28ee3ca98d32012d241e3857bcbb9b7743d387d551d865e5e6504243a053e98"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\standard_chunks.jsonl",
+      "sha256": "8a42907ac80b58afa1df9332f1743afe035ba0f12497cea2bbbf9b911ea12287"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\snapshot.json",
+      "sha256": "898936eee57bc848d2483186d4fc43945f61c87fef21600042bc969f11f82254"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\scripts\\run_course_generation.py",
+      "sha256": "e7b8697e293f1077e3e02c9f173fc306e82c5d82b9c9197f4931a275417099d1"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\src\\generation\\context.py",
+      "sha256": "64b5f31fbd98a50682fef6cb89a8dc60f50f73c72c785d59c8664f85ceec8be7"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\src\\generation\\llm_client.py",
+      "sha256": "93bee13b4d0f5eb2e530b8932568c15b0afa3d84720568e004c8648774794e3c"
+    }
+  ]
+}

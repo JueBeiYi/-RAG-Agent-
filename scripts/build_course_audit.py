@@ -41,6 +41,12 @@ def main():
             entry["latest_experiment_evidence"] = measured
             entry["execution_status"] = "real_experiment_executed"
             entry["pending"] = [text for text in entry.get("pending", []) if not text.startswith("Complete formal experiments")]
+        output_name = {132: "分块策略对比实验报告.docx", 146: "分块策略对比实验报告.docx",
+                       170: "Prompt模板设计与实验记录.docx"}.get(entry["source_paragraph_id"])
+        if output_name and (artifacts / output_name).exists():
+            entry["implementation_status"] = "implemented"
+            entry["execution_status"] = "completed"
+            entry["evidence_paths"] = [str((artifacts / output_name).relative_to(ROOT)).replace("\\", "/")]
 
     def add(p, name, files, status="completed", note=""):
         existing = [file for file in files if (ROOT / file).exists()]

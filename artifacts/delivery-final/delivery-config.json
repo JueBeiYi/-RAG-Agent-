@@ -1,0 +1,289 @@
+{
+  "project_root": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-",
+  "output_dir": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final",
+  "course_template": "项目交付模板.docx",
+  "project": {
+    "title": "智能科研助理 基于RAG与Agent的论文知识库问答系统",
+    "course": "生产实习",
+    "college": "智慧农业学院（人工智能学院）",
+    "term": "2026至2027学年第一学期",
+    "credits": 1,
+    "deadline": "2026-10-10",
+    "submission_date": "待填写",
+    "members": [
+      {
+        "name": "赵志国",
+        "student_id": "11523122",
+        "class_name": "人工智能231",
+        "role": "拟定 文档检索与RAG",
+        "modules": "文档处理 检索 RAG 服务",
+        "contribution_percent": 40
+      },
+      {
+        "name": "林骋",
+        "student_id": "11523121",
+        "class_name": "人工智能231",
+        "role": "拟定 Agent与工具",
+        "modules": "ReAct 工具 路由 记忆",
+        "contribution_percent": 30
+      },
+      {
+        "name": "林弟伟",
+        "student_id": "11523120",
+        "class_name": "人工智能232",
+        "role": "拟定 前端与评测交付",
+        "modules": "界面 评测 文档 演示",
+        "contribution_percent": 30
+      }
+    ],
+    "report_date": "2026-10-11"
+  },
+  "results": [
+    {
+      "path": "reports/experiments/retrieval/parsers/results.json",
+      "label": "三解析器30次真实解析",
+      "study": "pdf",
+      "scope": "10篇论文×3解析器 自动锚点检查"
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/results.json",
+      "label": "Chroma与FAISS查询对比",
+      "study": "vector_store",
+      "scope": "20题dev 359块 仅库查询时间"
+    },
+    {
+      "path": "reports/experiments/retrieval/dev-parameters/results.json",
+      "label": "RRF与Top K开发集消融",
+      "study": "retrieval_parameters",
+      "scope": "20题dev 复用真实排序 零新增推理"
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/vector/results.json",
+      "label": "M3测试集纯向量",
+      "study": "retrieval",
+      "scope": "60题test 359旧持久块 不含共享编码"
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid/results.json",
+      "label": "M3测试集混合检索",
+      "study": "retrieval",
+      "scope": "60题test 359旧持久块 不含共享编码"
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/vector/results.json",
+      "label": "M3开发集纯向量",
+      "study": "retrieval",
+      "scope": "20题dev 359旧持久块 不含共享编码"
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/hybrid/results.json",
+      "label": "M3开发集混合检索",
+      "study": "retrieval",
+      "scope": "20题dev 359旧持久块 不含共享编码"
+    },
+    {
+      "path": "reports/experiments/online-functionality/results.json",
+      "label": "十次真实线上功能样本",
+      "study": "online_functionality",
+      "scope": "10次线上诊断 非受控性能基准"
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-256/results.json",
+      "label": "M3e分块 固定256",
+      "study": "chunking",
+      "scope": "同20题dev 同m3e 共享真实编码"
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-512/results.json",
+      "label": "M3e分块 固定512",
+      "study": "chunking",
+      "scope": "同20题dev 同m3e 共享真实编码"
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-1024/results.json",
+      "label": "M3e分块 固定1024",
+      "study": "chunking",
+      "scope": "同20题dev 同m3e 共享真实编码"
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/recursive-512/results.json",
+      "label": "M3e分块 递归512",
+      "study": "chunking",
+      "scope": "同20题dev 同m3e 共享真实编码"
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/semantic-512/results.json",
+      "label": "M3e分块 句段边界512",
+      "study": "chunking",
+      "scope": "同20题dev 同m3e 共享真实编码"
+    },
+    {
+      "path": "reports/experiments/retrieval/encoding/m3e/results.json",
+      "label": "M3e真实编码与完整窗口",
+      "study": "embedding",
+      "scope": "1836唯一文本共享编码 20查询单列"
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/bge-zh/recursive-512/results.json",
+      "label": "BGE-large与M3e同递归342块对比",
+      "study": "embedding",
+      "scope": "同20dev与同342块 不同真实模型"
+    },
+    {
+      "path": "reports/experiments/retrieval/encoding/bge-zh/results.json",
+      "label": "BGE-large真实编码速度",
+      "study": "embedding",
+      "scope": "20查询独立计时 文档编码分开"
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json",
+      "label": "M3测试集混合加重排",
+      "study": "retrieval",
+      "scope": "同60test 旧359索引 完整原token-ID精排"
+    },
+    {
+      "path": "reports/experiments/generation/baseline/results.json",
+      "label": "60题短答案生成基线",
+      "study": "generation",
+      "scope": "真实冻结检索输入 生成阶段 含待人工评分"
+    },
+    {
+      "path": "reports/experiments/generation/parameters/results.json",
+      "label": "五组生成参数单因素对比",
+      "study": "generation",
+      "scope": "同4dev×5配置 共20次模型回答"
+    },
+    {
+      "path": "reports/experiments/generation/prompt/results.json",
+      "label": "旧与新Prompt规则对比",
+      "study": "prompt",
+      "scope": "同4dev上下文 规则检查不当人工质量"
+    },
+    {
+      "path": "reports/experiments/generation/agent/results.json",
+      "label": "Agent与固定RAG路由样例",
+      "study": "routing",
+      "scope": "小规模固定问题组 不推广为全题准确率"
+    },
+    {
+      "path": "reports/experiments/generation/parallel/results.json",
+      "label": "本地工具串行与并行",
+      "study": "parallel",
+      "scope": "独立本地工具实际耗时 不冒充LLM并发加速"
+    },
+    {
+      "path": "reports/experiments/generation/cache/results.json",
+      "label": "真实查询缓存冷暖",
+      "study": "cache",
+      "scope": "真实模型冷请求和精确重复缓存请求"
+    }
+  ],
+  "bad_cases": "reports/experiments/bad-cases/actual-bad-cases.json",
+  "screenshots": [
+    {
+      "path": "docs/screenshots/新版论文库.jpg",
+      "title": "论文库与就绪状态",
+      "description": "2026-10-10历史截图，显示359片段；当前重建索引为342片段。可查找论文、下载原件、加入问答范围及重建索引。",
+      "kind": "real_application"
+    },
+    {
+      "path": "docs/screenshots/新版科研问答.jpg",
+      "title": "科研问答与引用",
+      "description": "上方显示实际中文回答与输入输出Token；中部来源编号映射论文物理页；下方展开执行过程并继续提问。该图为单次标准模式功能运行。",
+      "kind": "real_application"
+    },
+    {
+      "path": "docs/screenshots/真实论文原页.jpg",
+      "title": "PDF原页证据核对",
+      "description": "浏览器原文预览展示Swin论文物理第4页架构与正文，便于核对检索片段和论证出处。",
+      "kind": "real_application"
+    },
+    {
+      "path": "docs/screenshots/新版论文对比.jpg",
+      "title": "双论文证据比较",
+      "description": "保存的结果可以再次查看、下载Markdown和JSON。表格分别列出两篇论文的证据，条件未核齐时明确保留限制。",
+      "kind": "real_application"
+    },
+    {
+      "path": "docs/screenshots/真实检索实验.jpg",
+      "title": "实验记录与三档比较",
+      "description": "上方列出纯向量、混合、混合重排的真实运行；下方按相同题集比较。这张截图是4题功能验收，正式60题指标见系统评测报告。",
+      "kind": "real_application"
+    }
+  ],
+  "evidence_files": [
+    "reports/testing/full-suite-20261010.xml",
+    "reports/testing/ui-final-critical-20261010.json",
+    "reports/testing/agent-generation-final-20261010.json",
+    "reports/ui/workflow-tests-20261010.json",
+    "reports/ui/browser-standard-20261010.json",
+    "reports/datasets/source_validation.json",
+    "reports/requirements/implementation-audit.json",
+    "reports/testing/requirement-gaps-20261010.xml",
+    "reports/testing/recursive-requirement-20261010.xml",
+    "reports/testing/per-tool-usage-20261010.xml",
+    "docs/模型与API配置.md",
+    "scripts/deploy_docker.ps1",
+    "reports/experiments/generation/prepared_inputs.json",
+    "docs/生成与Agent实验记录.md",
+    "scripts/run_course_generation.py"
+  ],
+  "validation_summary": [
+    {
+      "name": "全套代码基线",
+      "result": "161项通过 0失败 0错误",
+      "source": "reports/testing/full-suite-20261010.xml"
+    },
+    {
+      "name": "界面与修改路径回归",
+      "result": "100项通过 与基线有覆盖重叠",
+      "source": "reports/testing/ui-final-critical-20261010.json"
+    },
+    {
+      "name": "Agent与生成修改回归",
+      "result": "84项通过 与修改路径回归重叠",
+      "source": "reports/testing/agent-generation-final-20261010.json"
+    },
+    {
+      "name": "页面与HTTP工作流",
+      "result": "真实HTTP后端AppTest通过 功能演示模式",
+      "source": "reports/ui/workflow-tests-20261010.json"
+    },
+    {
+      "name": "标准模式浏览器",
+      "result": "真实7B回答 原页 比较与下载已运行",
+      "source": "reports/ui/browser-standard-20261010.json"
+    }
+  ],
+  "evaluation_note": "人工质量评分按用户选择待填写；题集证据待学生确认；Docker容器未在本机实跑。所有模型/解析数据均来自实际执行，旧359实验快照与新生产索引分开。",
+  "findings": [
+    "M3固定60题测试集上，纯向量Hit@5为0.4167，混合检索为0.4333；MRR由0.2992提高到0.3538，Recall@5由0.3250提高到0.3583。此结论仅适用于359个旧持久分块与来源锚点草案标注。",
+    "检索阶段计时复用共享查询向量，不能用3.2ms或8.3ms宣称在线端到端延迟。三解析器记录覆盖10篇论文的30次实际解析，原文锚点保留检查不替代双栏、表格和公式语义人工核验。"
+  ],
+  "chunk_findings": [
+    "同一20题开发集与真实m3e下，固定256/512/1024的Hit@5为0.35/0.40/0.50，递归512为0.40，句段边界512为0.45。固定1024在该开发集的Hit@5较高，不能因此宣称所有领域或测试集均最佳。",
+    "五变体共1836个唯一文本只实际编码一次，总计约1056.06秒；查询20条单独编码约0.88秒。各变体复用共享向量，不能把每个检索阶段用时解释为重复完整建库成本。",
+    "新递归512产生342块，旧M3持久索引为359块。两个索引的策略版本不同，不跨组直接归因分块或模型效果。"
+  ],
+  "prompt_findings": [
+    "采用相同4题上下文做单因素参数与旧/新Prompt对比。自动指标只评格式、引用与数字规则。",
+    "60题生成基线使用256个输出token上限与100至150字提示，属于短答案生成研究；不冒充生产768上限的完整系统成绩。"
+  ],
+  "bad_case_findings": [
+    "保留所有实际失败类型。结构与引用规则通过不等于语义正确。",
+    "同20开发题RRF60与20的Hit@5均0.40、Recall@5均0.35，MRR从0.3148到0.3247。该改动小幅改善排序，未改善漏召回。"
+  ],
+  "runtime": {
+    "document_skill": "C:\\Users\\28031\\.codex\\plugins\\cache\\openai-primary-runtime\\documents\\26.1009.11318\\skills\\documents",
+    "presentation_skill": "C:\\Users\\28031\\.codex\\plugins\\cache\\openai-primary-runtime\\presentations\\26.1009.11318\\skills\\presentations",
+    "soffice": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\delivery-renderer\\extracted\\program\\soffice.exe",
+    "poppler_dir": "C:\\Users\\28031\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin"
+  },
+  "implementation_manifest": "reports/requirements/delivery-implementation-manifest.json",
+  "verification_files": [
+    "reports/requirements/implementation-audit.json",
+    "reports/requirements/course-audit.json",
+    "reports/testing/review-final-20261011.xml",
+    "reports/requirements/git-history.txt"
+  ]
+}

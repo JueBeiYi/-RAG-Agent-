@@ -1,0 +1,16 @@
+[
+  {
+    "model": "BAAI/bge-large-zh-v1.5",
+    "variant": "recursive-512",
+    "query_count": 20,
+    "case_count": 20,
+    "successful_count": 20,
+    "error_count": 0,
+    "hit_at_5": 0.35,
+    "mrr": 0.2959938672438672,
+    "recall_at_5": 0.3,
+    "latency_mean_ms": 63.850744999945164,
+    "latency_p50_ms": 12.281949981115758,
+    "latency_p95_ms": 68.16182999173253
+  }
+]

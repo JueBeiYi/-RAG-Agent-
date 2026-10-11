@@ -53,21 +53,22 @@
     {
       "name": "评测与项目交付",
       "status": "partial",
-      "verified": false,
+      "verified": true,
       "evidence": [
-        "reports/datasets/dataset_manifest.json",
-        "reports/experiments/retrieval/parsers/results.json",
-        "reports/experiments/bad-cases/actual-bad-cases.json"
+        "reports/experiments/retrieval/summary.json",
+        "reports/experiments/generation/study_manifest.json",
+        "reports/experiments/generation/baseline/human_scoring_60.csv"
       ],
       "pending": [
-        "正式实验与最终材料正在完成",
-        "人工评分按用户选择留待填写"
+        "人工评分按用户选择留待填写",
+        "实际提交日待填写"
       ]
     }
   ],
   "notes": [
     "代码实现、执行验证、人工评分分别判定。旧359块不是新递归切分构建的索引。",
     "真实学生协作记录和实际提交日未由编码助手推定。",
-    "可选联网搜索未选择。"
+    "可选联网搜索未选择。",
+    "2026-10-11生产索引已实际重建：10篇342块，token-ID窗口v3；旧359实验结果仍明确保留来源版本。"
   ]
 }

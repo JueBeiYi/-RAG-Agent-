@@ -1,0 +1,80 @@
+{
+  "created_at": "2026-10-11T02:59:44.434031+00:00",
+  "embedding_model": "BAAI/bge-large-zh-v1.5",
+  "artifact_revision": "79e7739b6ab944e86d6171e44d24c997fc1e0116-2d4f53504b43",
+  "embedding_fingerprint": "e16a06954f3402109e3a3698",
+  "product_embedding_fingerprint": "e16a06954f3402109e3a3698",
+  "embedding_backend": "sentence_transformers",
+  "dimension": 1024,
+  "cpu_threads": 8,
+  "model_batch_size": 1,
+  "window_token_cap": 512,
+  "complete_windows_preserve_tail": true,
+  "window_policy": "original-token-id-windows-v3 shared production helper; normalized weighted mean",
+  "short_encode_max_abs_deviation": 7.450580596923828e-09,
+  "short_adapter_check_count": 2,
+  "model_load_ms": 11680.94089999795,
+  "unique_document_text_count": 342,
+  "document_encoding_total_ms": 677882.8256999841,
+  "document_texts_per_second": 0.5045119702610102,
+  "query_count": 20,
+  "query_encoding_total_ms": 4248.597700032406,
+  "query_encoding_amortized_ms": 212.42988500162028,
+  "document_batches": [
+    {
+      "text_count": 64,
+      "window_count": 123,
+      "elapsed_ms": 137012.126000016,
+      "measured_at": "2026-10-11T02:50:38.913922+00:00"
+    },
+    {
+      "text_count": 64,
+      "window_count": 125,
+      "elapsed_ms": 139131.19179999921,
+      "measured_at": "2026-10-11T02:52:58.066765+00:00"
+    },
+    {
+      "text_count": 64,
+      "window_count": 127,
+      "elapsed_ms": 118003.94319999032,
+      "measured_at": "2026-10-11T02:54:56.101780+00:00"
+    },
+    {
+      "text_count": 64,
+      "window_count": 125,
+      "elapsed_ms": 112218.72340003029,
+      "measured_at": "2026-10-11T02:56:48.352131+00:00"
+    },
+    {
+      "text_count": 64,
+      "window_count": 118,
+      "elapsed_ms": 127614.35499996878,
+      "measured_at": "2026-10-11T02:58:56.028586+00:00"
+    },
+    {
+      "text_count": 22,
+      "window_count": 42,
+      "elapsed_ms": 43902.4862999795,
+      "measured_at": "2026-10-11T02:59:40.006280+00:00"
+    }
+  ],
+  "checkpoint_texts_reused": 0,
+  "document_speed_comparison_warning": "Models encode different total variant text counts; compare their identical20-query timing, not bulk doc TPS as a fair same-workload rank.",
+  "corpus_hash": "ca6bfa4ad20e50ef61be479bcd1e260093372a760bf974371e82f1f1d168581e",
+  "dataset_hash": "f4f0a2b910a6645787bfaf67622b14939c7c8350f62bf9237460852720b2bc39",
+  "variant_names": [
+    "recursive-512"
+  ],
+  "variant_definitions": [
+    {
+      "variant": "recursive-512",
+      "strategy": "recursive",
+      "chunk_size": 512,
+      "chunk_overlap": 64,
+      "chunk_count": 342,
+      "split_ms": 331.81130001321435,
+      "chunks_hash": "5fe163065ca8efd124a32c25a8ffbed8de8f482d69de0c551ffcdfb30a8b8c45",
+      "implementation_sha256": "c445d8d3e7af185f7fa11d8bed08c9676a4af05da883082822aff10271980a5f"
+    }
+  ]
+}

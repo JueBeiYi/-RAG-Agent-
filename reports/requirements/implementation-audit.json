@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-10T22:14:58+08:00",
+  "generated_at": "2026-10-11T15:22:20+08:00",
   "source": {
     "path": "南京农业大学课程实践.docx",
     "sha256": "f62798820cafc546c593a74bfd599352d84f5aeecaa7d0415d8cba3c766089f9",
@@ -116,17 +116,17 @@
         },
         {
           "path": "src/services/application.py",
-          "line": 131,
+          "line": 132,
           "symbol": "def _ingest",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/services/application.py",
-          "line": 111,
+          "line": 112,
           "symbol": "def retry",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/frontend/sections_library.py",
@@ -543,10 +543,10 @@
       "code": [
         {
           "path": "src/retrieval/embeddings.py",
-          "line": 71,
+          "line": 72,
           "symbol": "class Embedder",
           "exists": true,
-          "sha256": "102a18ec2e4d7865a5928ab53e7d3df8c59f94b772ef8661d27067a1f9edd41a"
+          "sha256": "a865cda1c16fe0bec2df3c484eded7499b2466cc99de7998760d0525d39ade21"
         },
         {
           "path": "src/evaluation/cli.py",
@@ -772,10 +772,10 @@
       "code": [
         {
           "path": "src/retrieval/reranking.py",
-          "line": 21,
+          "line": 22,
           "symbol": "class Reranker",
           "exists": true,
-          "sha256": "c89231d969b4a1ba7a72b311cf71499e797285ec207ebb35da51d7bf12ce6b57"
+          "sha256": "178b39a3bb8c66d4cd14150398643ce0c67ffabdb34697ae430565b5665b7169"
         },
         {
           "path": "src/retrieval/engine.py",
@@ -1048,10 +1048,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 233,
+          "line": 265,
           "symbol": "def citations",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -1325,10 +1325,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 233,
+          "line": 265,
           "symbol": "def citations",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -1412,10 +1412,10 @@
       "code": [
         {
           "path": "src/services/application.py",
-          "line": 207,
+          "line": 209,
           "symbol": "def chat",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/observability/logger.py",
@@ -2929,14 +2929,14 @@
           "line": 89,
           "symbol": "def usage",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 120,
+          "line": 151,
           "symbol": "def trace",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -3009,7 +3009,7 @@
           "line": 89,
           "symbol": "def usage",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         },
         {
           "path": "src/frontend/sections_experiments.py",
@@ -3060,10 +3060,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 120,
+          "line": 151,
           "symbol": "def trace",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -3120,10 +3120,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 120,
+          "line": 151,
           "symbol": "def trace",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -3161,10 +3161,10 @@
       "code": [
         {
           "path": "src/services/application.py",
-          "line": 319,
+          "line": 321,
           "symbol": "def health",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/api/main.py",
@@ -3256,10 +3256,10 @@
         },
         {
           "path": "src/frontend/ui.py",
-          "line": 233,
+          "line": 265,
           "symbol": "def citations",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -3290,10 +3290,10 @@
       "code": [
         {
           "path": "src/frontend/ui.py",
-          "line": 120,
+          "line": 151,
           "symbol": "def trace",
           "exists": true,
-          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+          "sha256": "2896434ba1c4ae3270d8601ba58de66aa7ede75fce069728e62c11a3293b2eeb"
         }
       ],
       "evidence": [
@@ -3413,7 +3413,7 @@
           "line": 20,
           "symbol": "class Application",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/api/main.py",
@@ -3462,10 +3462,10 @@
       "code": [
         {
           "path": "src/services/application.py",
-          "line": 189,
+          "line": 191,
           "symbol": "def _session_lock",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         },
         {
           "path": "src/core/storage.py",
@@ -3513,10 +3513,10 @@
         },
         {
           "path": "src/retrieval/embeddings.py",
-          "line": 108,
+          "line": 109,
           "symbol": "def encode",
           "exists": true,
-          "sha256": "102a18ec2e4d7865a5928ab53e7d3df8c59f94b772ef8661d27067a1f9edd41a"
+          "sha256": "a865cda1c16fe0bec2df3c484eded7499b2466cc99de7998760d0525d39ade21"
         }
       ],
       "evidence": [
@@ -3600,7 +3600,7 @@
           "line": 20,
           "symbol": "class Application",
           "exists": true,
-          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+          "sha256": "109371b305b8b60e9b5b132e07b21e95b3e8d11bc129c938378128ccaee95679"
         }
       ],
       "evidence": [

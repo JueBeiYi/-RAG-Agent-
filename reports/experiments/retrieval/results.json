@@ -1,0 +1,171 @@
+{
+  "kind": "minimal_course_retrieval_suite",
+  "created_at": "2026-10-11T03:17:12.694829+00:00",
+  "status": "completed",
+  "corpus_hash": "ca6bfa4ad20e50ef61be479bcd1e260093372a760bf974371e82f1f1d168581e",
+  "dataset_hash": "9cd5bd8e8fd3a096d135adddef5b51ba52a1313650ebb5676bbb210a5df7d2aa",
+  "groups": {
+    "m3_test": [
+      {
+        "mode": "vector",
+        "query_count": 60,
+        "case_count": 60,
+        "successful_count": 60,
+        "error_count": 0,
+        "hit_at_5": 0.4166666666666667,
+        "mrr": 0.2991954641219347,
+        "recall_at_5": 0.325,
+        "latency_mean_ms": 3.2001933451586715,
+        "latency_p50_ms": 3.168050025124103,
+        "latency_p95_ms": 4.028484923765063
+      },
+      {
+        "mode": "hybrid",
+        "query_count": 60,
+        "case_count": 60,
+        "successful_count": 60,
+        "error_count": 0,
+        "hit_at_5": 0.43333333333333335,
+        "mrr": 0.3538260959313591,
+        "recall_at_5": 0.35833333333333334,
+        "latency_mean_ms": 8.273711668637892,
+        "latency_p50_ms": 8.142099948599935,
+        "latency_p95_ms": 10.310965008102357
+      },
+      {
+        "mode": "hybrid_rerank",
+        "query_count": 60,
+        "case_count": 60,
+        "successful_count": 60,
+        "error_count": 0,
+        "hit_at_5": 0.6166666666666667,
+        "mrr": 0.43134695470221784,
+        "recall_at_5": 0.475,
+        "latency_mean_ms": 16708.40797998826,
+        "latency_p50_ms": 16307.859249936882,
+        "latency_p95_ms": 18625.25714495568
+      }
+    ],
+    "chunking_dev": [
+      {
+        "model": "moka-ai/m3e-base",
+        "variant": "fixed-256",
+        "query_count": 20,
+        "case_count": 20,
+        "successful_count": 20,
+        "error_count": 0,
+        "hit_at_5": 0.35,
+        "mrr": 0.2920634920634921,
+        "recall_at_5": 0.325,
+        "latency_mean_ms": 37.041039986070246,
+        "latency_p50_ms": 12.732399918604642,
+        "latency_p95_ms": 40.32636496122029
+      },
+      {
+        "model": "moka-ai/m3e-base",
+        "variant": "fixed-512",
+        "query_count": 20,
+        "case_count": 20,
+        "successful_count": 20,
+        "error_count": 0,
+        "hit_at_5": 0.4,
+        "mrr": 0.26994914807414805,
+        "recall_at_5": 0.375,
+        "latency_mean_ms": 9.853479999583215,
+        "latency_p50_ms": 8.534999971743673,
+        "latency_p95_ms": 16.18854001280852
+      },
+      {
+        "model": "moka-ai/m3e-base",
+        "variant": "fixed-1024",
+        "query_count": 20,
+        "case_count": 20,
+        "successful_count": 20,
+        "error_count": 0,
+        "hit_at_5": 0.5,
+        "mrr": 0.36036181139122314,
+        "recall_at_5": 0.4,
+        "latency_mean_ms": 10.673475003568456,
+        "latency_p50_ms": 11.638799973297864,
+        "latency_p95_ms": 14.308409969089553
+      },
+      {
+        "model": "moka-ai/m3e-base",
+        "variant": "recursive-512",
+        "query_count": 20,
+        "case_count": 20,
+        "successful_count": 20,
+        "error_count": 0,
+        "hit_at_5": 0.4,
+        "mrr": 0.27846491228070175,
+        "recall_at_5": 0.35,
+        "latency_mean_ms": 12.123314995551482,
+        "latency_p50_ms": 11.759749962948263,
+        "latency_p95_ms": 16.47908508894034
+      },
+      {
+        "model": "moka-ai/m3e-base",
+        "variant": "semantic-512",
+        "query_count": 20,
+        "case_count": 20,
+        "successful_count": 20,
+        "error_count": 0,
+        "hit_at_5": 0.45,
+        "mrr": 0.3077824463118581,
+        "recall_at_5": 0.4,
+        "latency_mean_ms": 10.183715011226013,
+        "latency_p50_ms": 9.433850063942373,
+        "latency_p95_ms": 14.625534997321669
+      }
+    ],
+    "embedding_dev": [
+      {
+        "model": "moka-ai/m3e-base",
+        "variant": "recursive-512",
+        "query_count": 20,
+        "case_count": 20,
+        "successful_count": 20,
+        "error_count": 0,
+        "hit_at_5": 0.4,
+        "mrr": 0.27846491228070175,
+        "recall_at_5": 0.35,
+        "latency_mean_ms": 12.123314995551482,
+        "latency_p50_ms": 11.759749962948263,
+        "latency_p95_ms": 16.47908508894034
+      },
+      {
+        "model": "BAAI/bge-large-zh-v1.5",
+        "variant": "recursive-512",
+        "query_count": 20,
+        "case_count": 20,
+        "successful_count": 20,
+        "error_count": 0,
+        "hit_at_5": 0.35,
+        "mrr": 0.2959938672438672,
+        "recall_at_5": 0.3,
+        "latency_mean_ms": 63.850744999945164,
+        "latency_p50_ms": 12.281949981115758,
+        "latency_p95_ms": 68.16182999173253
+      }
+    ]
+  },
+  "metrics": {
+    "paper_count": 10,
+    "test_count": 60,
+    "dev_count": 20
+  },
+  "source_labels_review_method": "assistant_source_checked",
+  "human_review_pending": true,
+  "expected_paths": {
+    "parsers": "parsers/results.json",
+    "vectorstores": "vectorstores/results.json",
+    "parameters": "dev-parameters/results.json",
+    "frozen": "frozen/metadata.json"
+  },
+  "notes": [
+    "Every recorded result came from real model/database work. No demo/hash embedding or lexical reranker substituted.",
+    "Query encoding reused across modes/databases and separately timed; compute latency is not full online end-to-end latency.",
+    "New recursive342 chunks are used for dev chunking/model comparisons; production359 chunks are a separately frozen legacy snapshot.",
+    "Labels still await human source review; retrieval numbers do not establish generated answer quality."
+  ]
+}

@@ -203,11 +203,12 @@ def deck_payload(inputs: DeliveryInputs) -> dict:
         "project": {"title": inputs.title, **inputs.project}, "modules": module_rows(inputs),
         "screenshots": inputs.screenshots[:5], "retrieval": selected,
         "generation": [{key: r.get(key) for key in ("kind", "metrics", "config", "source_path", "delivery_scope")}
-                       for r in inputs.formal_results if r.get("kind") == "generation"][:3],
+                       for r in inputs.formal_results if r.get("kind") == "generation"],
         "online": [{key: r.get(key) for key in ("kind", "metrics", "source_path", "delivery_scope")}
                    for r in inputs.formal_results if r.get("kind") in {"online_functionality", "online_functional"}],
         "experiments": [{"label": r.get("delivery_label", r.get("mode", "实验")), "kind": r.get("kind"),
                          "study": r.get("study"), "config": r.get("config", {}), "metrics": r["metrics"],
+                         "condition_metrics": r.get("condition_metrics", {}),
                          "demo": is_demo(r), "source_path": r["source_path"]} for r in inputs.results],
         "pending_fields": inputs.pending_fields, "bad_cases": inputs.bad_cases,
         "validation_summary": inputs.config.get("validation_summary", []),

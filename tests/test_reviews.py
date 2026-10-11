@@ -43,3 +43,16 @@ def test_review_import_only_named_reviewers_and_valid_scores(tmp_path):
         writer.writerows(rows)
     with pytest.raises(ValueError, match="评分"):
         import_reviews(result(), path)
+
+
+def test_reviewer_name_without_required_scores_is_still_pending(tmp_path):
+    data = result()
+    path = tmp_path / "review.csv"
+    export_review_sheet(data, path)
+    rows = list(csv.DictReader(path.open(encoding="utf-8-sig")))
+    for row in rows:
+        row["reviewer"] = "Reviewer"
+    with path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=rows[0].keys())
+        writer.writeheader(); writer.writerows(rows)
+    assert import_reviews(data, path)["review_status"]["human_answer_review_pending"] is True

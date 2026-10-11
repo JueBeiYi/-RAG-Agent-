@@ -1,0 +1,55 @@
+{
+  "kind": "vector_database_comparison",
+  "status": "completed",
+  "created_at": "2026-10-11T02:22:31.857359+00:00",
+  "corpus_hash": "ca6bfa4ad20e50ef61be479bcd1e260093372a760bf974371e82f1f1d168581e",
+  "dataset_hash": "f4f0a2b910a6645787bfaf67622b14939c7c8350f62bf9237460852720b2bc39",
+  "metrics": {
+    "query_count_per_backend": 20,
+    "chunk_count": 359
+  },
+  "records": [
+    {
+      "backend": "chroma",
+      "query_count": 20,
+      "chunk_count": 359,
+      "dimensions": 1024,
+      "build_and_persist_ms": 1165.0288000237197,
+      "restart_first_query_ms": 6.355700083076954,
+      "delete_ms": 45.11750000528991,
+      "restore_ms": 27.439899975433946,
+      "delete_probe_passed": true,
+      "case_count": 20,
+      "successful_count": 20,
+      "error_count": 0,
+      "hit_at_5": 0.35,
+      "mrr": 0.32360380116959064,
+      "recall_at_5": 0.275,
+      "latency_mean_ms": 2.2909099992830306,
+      "latency_p50_ms": 2.2617499926127493,
+      "latency_p95_ms": 2.5199599622283135
+    },
+    {
+      "backend": "faiss",
+      "query_count": 20,
+      "chunk_count": 359,
+      "dimensions": 1024,
+      "build_and_persist_ms": 156.44079993944615,
+      "restart_first_query_ms": 6.7146000219509006,
+      "delete_ms": 36.63970006164163,
+      "restore_ms": 28.55940000154078,
+      "delete_probe_passed": true,
+      "case_count": 20,
+      "successful_count": 20,
+      "error_count": 0,
+      "hit_at_5": 0.35,
+      "mrr": 0.32360380116959064,
+      "recall_at_5": 0.275,
+      "latency_mean_ms": 6.24553999514319,
+      "latency_p50_ms": 6.56435004202649,
+      "latency_p95_ms": 8.529019937850535
+    }
+  ],
+  "demo": false,
+  "model_inference_reused": true
+}

@@ -1,0 +1,1923 @@
+{
+  "experiment_id": "8c0bf81aef2b905069d6d4ca947715c1",
+  "created_at": "2026-10-11T03:33:12.776286+00:00",
+  "kind": "agent_parallel_tools",
+  "study": "actual_local_tool_parallelism",
+  "mode": "hybrid",
+  "status": "completed",
+  "demo": false,
+  "formal_models": false,
+  "scope": "",
+  "split": [
+    "dev"
+  ],
+  "dataset_hash": "1fba000db5319cbe86b8a3bd714537797a21757e7d2b9261f1c19d7da1464add",
+  "source_dataset_hash": "9cd5bd8e8fd3a096d135adddef5b51ba52a1313650ebb5676bbb210a5df7d2aa",
+  "corpus_hash": "ca6bfa4ad20e50ef61be479bcd1e260093372a760bf974371e82f1f1d168581e",
+  "index_version": "c12aecaeef244e66948a307155a3de58",
+  "config": {
+    "llm_backend": "none",
+    "workers": [
+      1,
+      2
+    ],
+    "tools": [
+      "calculator",
+      "extract_keywords"
+    ]
+  },
+  "config_hash": "0665b47f89f2b933e410bfa60119e01948a312d33ac4af415897cbadcdbb83e9",
+  "models": {
+    "retrieval_models": {
+      "embedding_model": "BAAI/bge-m3",
+      "embedding_fingerprint": "b7eb5e776f435d622695d731",
+      "embedding_artifact_revision": "5617a9f61b028005a4858fdac845db406aefb181-26159e7ad065",
+      "vector_backend": "chroma",
+      "reranker_backend": "not_called",
+      "query_encoding": {
+        "created_at": "2026-10-10T14:14:06.323350+00:00",
+        "model": "BAAI/bge-m3",
+        "fingerprint": "b7eb5e776f435d622695d731",
+        "artifact_revision": "5617a9f61b028005a4858fdac845db406aefb181-26159e7ad065",
+        "model_load_ms": 19052.128099952824,
+        "query_encoding_total_ms": 9033.197900047526,
+        "query_count": 80,
+        "encoding_batch_size": 1,
+        "cpu_threads": 8,
+        "encoding_window_tokens": 512,
+        "complete_window_count": 80,
+        "dimension": 1024,
+        "dataset_hash": "9cd5bd8e8fd3a096d135adddef5b51ba52a1313650ebb5676bbb210a5df7d2aa",
+        "query_encoding_amortized_ms": 112.91497375059407,
+        "amortized_time_is_not_individual_online_latency": true
+      }
+    },
+    "llm_actual": {
+      "backend": "ollama",
+      "model": "research-qwen:7b",
+      "digest": "7065f4bc9793a3db23e96080712d2cb6bfaee58d5087b91521cfaf334d880697",
+      "details": {
+        "parent_model": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 3584,
+        "runner": "llamacpp"
+      }
+    }
+  },
+  "source_files": [
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\retrieval\\frozen\\hybrid.jsonl",
+      "sha256": "3ad245338aae03e01ed4184799a25cff098f61f1258f6b6200ab8bd5935c4b4c"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\cases.jsonl",
+      "sha256": "b28ee3ca98d32012d241e3857bcbb9b7743d387d551d865e5e6504243a053e98"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\standard_chunks.jsonl",
+      "sha256": "8a42907ac80b58afa1df9332f1743afe035ba0f12497cea2bbbf9b911ea12287"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\benchmarks\\retrieval-cache\\snapshot.json",
+      "sha256": "898936eee57bc848d2483186d4fc43945f61c87fef21600042bc969f11f82254"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\scripts\\run_course_generation.py",
+      "sha256": "e7b8697e293f1077e3e02c9f173fc306e82c5d82b9c9197f4931a275417099d1"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\src\\generation\\context.py",
+      "sha256": "64b5f31fbd98a50682fef6cb89a8dc60f50f73c72c785d59c8664f85ceec8be7"
+    },
+    {
+      "path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\src\\generation\\llm_client.py",
+      "sha256": "93bee13b4d0f5eb2e530b8932568c15b0afa3d84720568e004c8648774794e3c"
+    }
+  ],
+  "metrics": {
+    "case_count": 10,
+    "run_count": 20,
+    "generation_protocol_success_rate": 1,
+    "latency_mean_ms": 22.642689995700493,
+    "latency_p50_ms": 22.405099996831268,
+    "latency_p95_ms": 28.94767492543906,
+    "prompt_tokens_total": 0,
+    "completion_tokens_total": 0,
+    "token_usage_known_count": 20,
+    "invalid_citation_run_count": 0,
+    "numeric_rule_review_run_count": 0,
+    "answers_with_source_markers": 0,
+    "output_truncation_count": 0,
+    "human_correctness_mean": null,
+    "human_completeness_mean": null,
+    "human_citation_quality_mean": null,
+    "human_scoring_completed_count": 0
+  },
+  "condition_metrics": {
+    "workers_1": {
+      "case_count": 10,
+      "run_count": 10,
+      "generation_protocol_success_rate": 1,
+      "latency_mean_ms": 24.124800006393343,
+      "latency_p50_ms": 24.79150000726804,
+      "latency_p95_ms": 29.457455087685958,
+      "prompt_tokens_total": 0,
+      "completion_tokens_total": 0,
+      "token_usage_known_count": 10,
+      "invalid_citation_run_count": 0,
+      "numeric_rule_review_run_count": 0,
+      "answers_with_source_markers": 0,
+      "output_truncation_count": 0,
+      "human_correctness_mean": null,
+      "human_completeness_mean": null,
+      "human_citation_quality_mean": null,
+      "human_scoring_completed_count": 0
+    },
+    "workers_2": {
+      "case_count": 10,
+      "run_count": 10,
+      "generation_protocol_success_rate": 1,
+      "latency_mean_ms": 21.160579985007644,
+      "latency_p50_ms": 20.464150002226233,
+      "latency_p95_ms": 27.460719918599356,
+      "prompt_tokens_total": 0,
+      "completion_tokens_total": 0,
+      "token_usage_known_count": 10,
+      "invalid_citation_run_count": 0,
+      "numeric_rule_review_run_count": 0,
+      "answers_with_source_markers": 0,
+      "output_truncation_count": 0,
+      "human_correctness_mean": null,
+      "human_completeness_mean": null,
+      "human_citation_quality_mean": null,
+      "human_scoring_completed_count": 0
+    }
+  },
+  "records": [
+    {
+      "case_id": "parallel-0",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 28.618100099265575,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.33
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 27.91
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-1",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 28.45999994315207,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.22
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 27.95
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-2",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 22.84929994493723,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.22
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 22.33
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-3",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 27.772899949923158,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.21
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 27.37
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-4",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 23.100699996575713,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.3
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 22.6
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-5",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 18.158099963329732,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.34
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 17.7
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-6",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 21.87030005734414,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.37
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 21.32
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-7",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 26.48230001796037,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.64
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 25.5
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-8",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 30.144200078211725,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.26
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 29.65
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-9",
+      "condition": "workers_1",
+      "split": "dev",
+      "elapsed_ms": 13.792100013233721,
+      "success": true,
+      "workers": 1,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.15
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 13.51
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-0",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 14.93009994737804,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.23
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 14.85
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-1",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 21.960900048725307,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.14
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 21.8
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-2",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 25.47200000844896,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.33
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 25.35
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-3",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 28.884699917398393,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.27
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 28.83
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-4",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 19.12770001217723,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.19
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 19.01
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-5",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 18.132500001229346,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.21
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 18.04
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-6",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 25.72029992006719,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.17
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 25.62
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-7",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 17.16859999578446,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.35
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 17.08
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-8",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 18.408400006592274,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.29
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 18.31
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    },
+    {
+      "case_id": "parallel-9",
+      "condition": "workers_2",
+      "split": "dev",
+      "elapsed_ms": 21.800599992275238,
+      "success": true,
+      "workers": 2,
+      "outputs": [
+        {
+          "tool": "calculator",
+          "content": "`sqrt(16)+2**5` = **36**",
+          "data": {
+            "expression": "sqrt(16)+2**5",
+            "value": 36.0,
+            "display_value": "36",
+            "display_precision": "12 significant digits for floats",
+            "origin": "calculator",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 0.19
+        },
+        {
+          "tool": "extract_keywords",
+          "content": "用户输入关键词（词频候选，不代表论文事实）：\n- **br**：40 次\n- **tasks**：8 次\n- **image**：7 次\n- **pre-training**：7 次\n- **transformer**：6 次\n- **size**：6 次\n- **vit**：6 次\n- **et**：6 次\n- **al.**：6 次\n- **beit**：5 次",
+          "data": {
+            "keywords": [
+              {
+                "term": "br",
+                "count": 40
+              },
+              {
+                "term": "tasks",
+                "count": 8
+              },
+              {
+                "term": "image",
+                "count": 7
+              },
+              {
+                "term": "pre-training",
+                "count": 7
+              },
+              {
+                "term": "transformer",
+                "count": 6
+              },
+              {
+                "term": "size",
+                "count": 6
+              },
+              {
+                "term": "vit",
+                "count": 6
+              },
+              {
+                "term": "et",
+                "count": 6
+              },
+              {
+                "term": "al.",
+                "count": 6
+              },
+              {
+                "term": "beit",
+                "count": 5
+              }
+            ],
+            "method": "input_term_frequency",
+            "origin": "user_input",
+            "input_text": "xi|zi)]\n|\n{z\n}\nStage 1: Visual Token Reconstruction\n\n(xi,˜xi)∈D\n\n4\n\n4\n\n\u0001\n\n+\nlog pθ(ˆzi|˜xi)\n|\n{z\n}\nStage 2: Masked Image Modeling\n\n(3)\n\n}\n\nwhere the second term is our BEIT pre-training objective.\n\n2.5\nPre-Training Setup\n\nThe network architecture of BEIT follows that of ViT-Base [DBK^{+}20] for a fair comparison. We\nuse a 12-layer Transformer with 768 hidden size, and 12 attention heads. The intermediate size of\nfeed-forward networks is 3072. We employ the default 16 × 16 input patch size. We directly borrow\nthe image tokenizer trained by [RPG^{+}21]. The vocabulary size of visual tokens is 8192.\n\nWe pretrain BEIT on the training set of ImageNet-1K [RDS^{+}15], which contains about 1.2M\nimages. Our augmentation policy includes random resized cropping, horizontal ﬂipping, color\njittering [WXYL18]. Notice that we do not use the labels for self-supervised learning. We use the\n224 × 224 resolution in our experiments. So the input is split to 14 × 14 image patches, and the same\namount of visual tokens. We randomly mask at most 75 patches (i.e., roughly 40% of total image\npatches).\n\nThe pre-training runs for about 500k steps (i.e., 800 epochs) with 2k batch size. Adam [LH19] with\nβ1 = 0.9, β2 = 0.999 is employed for optimization. The learning rate is set to 1.5e-3, with a warmup\nof 10 epochs, and cosine learning rate decay. The weight decay is 0.05. We employ stochastic\ndepth [HSL^{+}16] with a 0.1 rate, and disable dropout. The 500k training steps take about ﬁve days\nusing 16 Nvidia Telsa V100 32GB GPU cards.\n\nWe ﬁnd that proper initialization is important to stabilize Transformer, especially for large-scale pre-\ntraining. We ﬁrst randomly initialize all the parameters within a small range, such as [−0.02, 0.02].\nThen, for the l-th Transformer layer, we rescale the output matrices (i.e., the last linear projection\nwithin each sub-layer) of the self-attention module and the feed-forward network by\n1\n√\n\n2l^{.}\n\n2.6\nFine-Tuning BEIT on Downstream Vision Tasks\n\nAfter pre-training BEIT, we append a task layer upon the Transformer, and ﬁne-tune the parameters\non downstream tasks, like BERT. We take image classiﬁcation and semantic segmentation as examples\nin our work. It is straightforward to leverage the pre-training-then-ﬁne-tuning paradigm on other\nvision tasks with BEIT.\n| ResNet101* [22]<br>ResNet101 [22]<br>ResNeXt101-32x4d* [73]<br>ResNeXt101-32x4d [73]<br>T2T-ViTt-19 [75]<br>ViT-Small/16 [13] | 44.7<br>44.7<br>44.2<br>44.2<br>39.0<br>48.8 | 7.9<br>7.9<br>8.0<br>8.0<br>9.8<br>9.9 | 22.6<br>20.2<br>21.2<br>19.4<br>18.6<br>19.2 |\n| PVT-Medium (ours) | 44.2 | 6.7 | 18.8 |\n| ResNeXt101-64x4d* [73]<br>ResNeXt101-64x4d [73]<br>ViT-Base/16 [13]<br>T2T-ViTt-24 [75]<br>TNT-B [19]<br>DeiT-Base/16 [63] | 83.5<br>83.5<br>86.6<br>64.0<br>66.0<br>86.6 | 15.6<br>15.6<br>17.6<br>15.0<br>14.1<br>17.6 | 20.4<br>18.5<br>18.2<br>17.8<br>17.2<br>18.2 |\n| PVT-Large (ours) | 61.4 | 9.8 | 18.3 |\n\nTable 2: Image classiﬁcation performance on the Ima-\ngeNet validation set. “#Param” refers to the number of\nparameters. “GFLOPs” is calculated under the input scale\nof 224 × 224. “*” indicates the performance of the method\ntrained under the strategy of its original paper.\n\nthe GFLOPs are roughly similar, the top-1 error of PVT-\nSmall reaches 20.2, which is 1.3 points higher than that of\nResNet50 [22] (20.2 vs. 21.5). Meanwhile, under similar or\nlower complexity, PVT models archive performances com-\nparable to the recently proposed Transformer-based mod-\nels, such as ViT [13] and DeiT [63] (PVT-Large: 18.3 vs.\nViT(DeiT)-Base/16: 18.3). Here, we clarify that these re-\nsults are within our expectations, because the pyramid struc-\nture is beneﬁcial to dense prediction tasks, but brings little\nimprovements to image classiﬁcation.\n\nNote that ViT and DeiT have limitations as they are\nspeciﬁcally designed for classiﬁcation tasks, and thus are\nnot suitable for dense prediction tasks, which usually re-\nquire effective feature pyramids.\n\n5.2. Object Detection\nthe pre-trained position embeddings may no longer be meaningful. We therefore perform\n2D interpolation of the pre-trained position embeddings, according to their location in the original\nimage. Note that this resolution adjustment and patch extraction are the only points at which an\ninductive bias about the 2D structure of the images is manually injected into the Vision Transformer.\n\n4\nEXPERIMENTS\n\nWe evaluate the representation learning capabilities of ResNet, Vision Transformer (ViT), and the\nhybrid. To understand the data requirements of each model, we pre-train on datasets of varying size\nand evaluate many benchmark tasks. When considering the computational cost of pre-training the\nmodel, ViT performs very favourably, attaining state of the art on most recognition benchmarks at\na lower pre-training cost. Lastly, we perform a small experiment using self-supervision, and show\nthat self-supervised ViT holds promise for the future.\n\n4.1\nSETUP\n\nDatasets. To explore model scalability, we use the ILSVRC-2012 ImageNet dataset with 1k classes\nand 1.3M images (we refer to it as ImageNet in what follows), its superset ImageNet-21k with\n21k classes and 14M images (Deng et al., 2009), and JFT (Sun et al., 2017) with 18k classes and\n303M high-resolution images. We de-duplicate the pre-training datasets w.r.t. the test sets of the\ndownstream tasks following Kolesnikov et al. (2020). We transfer the models trained on these\ndataset to several benchmark tasks: ImageNet on the original validation labels and the cleaned-up\nReaL labels (Beyer et al., 2020), CIFAR-10/100 (Krizhevsky, 2009), Oxford-IIIT Pets (Parkhi et al.,\n2012), and Oxford Flowers-102 (Nilsback & Zisserman, 2008). For these datasets, pre-processing\nfollows Kolesnikov et al. (2020).\n\n4\n\n4\n\nPublished as a conference paper at ICLR 2021\n\nModel\nLayers\nHidden size D\n\nViT-Base\n12\n768\nViT-Large\n24\n1024\nViT-Huge\n32\n1280\n\nMLP size\nHeads\nParams\n\n3072\n12\n86M\n4096\n16\n307M\n5120\n16\n632M\n\nTable 1: Details of Vision Transformer model variants.",
+            "task_completed": true
+          },
+          "citations": [],
+          "error": "",
+          "retryable": false,
+          "elapsed_ms": 21.74
+        }
+      ],
+      "local_tools_only": true,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "usage_estimated": false
+    }
+  ],
+  "measurement_scope": "actual local independent tools; excludes LLM and retrieval",
+  "review_status": {
+    "source_checked": true,
+    "source_review_method": "assistant_source_checked",
+    "human_source_review_pending": true,
+    "human_answer_review_pending": true,
+    "human_scoring_completed": false
+  },
+  "notes": [
+    "Frozen real retrieval inputs remain identical across parameter and Prompt conditions.",
+    "Latency includes local model generation/stream handling only, not online retrieval or end-to-end browser time.",
+    "Citation/number checks are automated rules, not correctness/completeness scores; derived arithmetic can trigger numeric review.",
+    "Human reviewers and all answer quality scores are intentionally blank/pending."
+  ],
+  "small_sample": true,
+  "artifacts": {
+    "measured_chart": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\reports\\experiments\\generation\\figures\\parallel.png"
+  }
+}

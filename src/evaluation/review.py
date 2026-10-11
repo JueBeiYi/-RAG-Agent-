@@ -45,5 +45,8 @@ def import_reviews(result: dict, path: Path) -> dict:
                 review[field] = row[field]
         index[key]["human_review"] = review
     updated["metrics"] = summarise_generation(updated["records"])
-    updated["review_status"]["human_answer_review_pending"] = any(not r.get("human_review", {}).get("reviewer") for r in updated["records"])
+    updated["review_status"]["human_answer_review_pending"] = any(
+        not r.get("human_review", {}).get("reviewer") or
+        any(r.get("human_review", {}).get(field) is None for field in SCORE_FIELDS[:3])
+        for r in updated["records"])
     return updated

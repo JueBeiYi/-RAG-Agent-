@@ -1,0 +1,72 @@
+[
+  {
+    "model": "moka-ai/m3e-base",
+    "variant": "fixed-256",
+    "query_count": 20,
+    "case_count": 20,
+    "successful_count": 20,
+    "error_count": 0,
+    "hit_at_5": 0.35,
+    "mrr": 0.2920634920634921,
+    "recall_at_5": 0.325,
+    "latency_mean_ms": 37.041039986070246,
+    "latency_p50_ms": 12.732399918604642,
+    "latency_p95_ms": 40.32636496122029
+  },
+  {
+    "model": "moka-ai/m3e-base",
+    "variant": "fixed-512",
+    "query_count": 20,
+    "case_count": 20,
+    "successful_count": 20,
+    "error_count": 0,
+    "hit_at_5": 0.4,
+    "mrr": 0.26994914807414805,
+    "recall_at_5": 0.375,
+    "latency_mean_ms": 9.853479999583215,
+    "latency_p50_ms": 8.534999971743673,
+    "latency_p95_ms": 16.18854001280852
+  },
+  {
+    "model": "moka-ai/m3e-base",
+    "variant": "fixed-1024",
+    "query_count": 20,
+    "case_count": 20,
+    "successful_count": 20,
+    "error_count": 0,
+    "hit_at_5": 0.5,
+    "mrr": 0.36036181139122314,
+    "recall_at_5": 0.4,
+    "latency_mean_ms": 10.673475003568456,
+    "latency_p50_ms": 11.638799973297864,
+    "latency_p95_ms": 14.308409969089553
+  },
+  {
+    "model": "moka-ai/m3e-base",
+    "variant": "recursive-512",
+    "query_count": 20,
+    "case_count": 20,
+    "successful_count": 20,
+    "error_count": 0,
+    "hit_at_5": 0.4,
+    "mrr": 0.27846491228070175,
+    "recall_at_5": 0.35,
+    "latency_mean_ms": 12.123314995551482,
+    "latency_p50_ms": 11.759749962948263,
+    "latency_p95_ms": 16.47908508894034
+  },
+  {
+    "model": "moka-ai/m3e-base",
+    "variant": "semantic-512",
+    "query_count": 20,
+    "case_count": 20,
+    "successful_count": 20,
+    "error_count": 0,
+    "hit_at_5": 0.45,
+    "mrr": 0.3077824463118581,
+    "recall_at_5": 0.4,
+    "latency_mean_ms": 10.183715011226013,
+    "latency_p50_ms": 9.433850063942373,
+    "latency_p95_ms": 14.625534997321669
+  }
+]

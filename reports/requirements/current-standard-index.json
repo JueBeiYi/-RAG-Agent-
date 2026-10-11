@@ -1,0 +1,24 @@
+{
+  "document_count": 10,
+  "ready_count": 10,
+  "chunks": 342,
+  "embedding_fingerprint": "13d11d3f8af52181bc4c055c",
+  "chunker_implementation": "recursive-character-proposals-v1",
+  "reindexed_documents": 10,
+  "elapsed_ms": 683992.497,
+  "index_version": "118143e8a61e4d6395247883ad9f25b9",
+  "preserved_document_ids": [
+    "27977edd73f940a191e86007f706b89b",
+    "3943ca14c42e437caf11995d3d1d4dcd",
+    "44d19d0b5eab4e9c9fd4fbf650400a6f",
+    "61b9c994c0a147cea974f05797f739ce",
+    "928cbf0cfbdb48139a911fd6a81639c2",
+    "a29cd5df12a6457195da637225431997",
+    "b6ff334b89e641898588e5e723b74ed9",
+    "bbcf8e37202c46b481216f0e0d4b859a",
+    "dd0232ffde86499388194f71ac7012ef",
+    "f16b642c2e6a4ff0a7083343fe8cb9cc"
+  ],
+  "preserved_history": true,
+  "scope": "private workspace omitted"
+}

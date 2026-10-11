@@ -97,7 +97,7 @@ if (payload.retrieval.length) {
   chartOwners.push(presentation.slides.items.length);
   text(retrieval, `每个实验题数 ${payload.retrieval.map(r => r.metrics.case_count).join("  ")}`, 83, 612, 1100, 35, 21, false, MUTED);
 } else {
-  lines(retrieval, ["尚未提供可对比的真实模型检索结果", "功能演示分数不进入正式检索图表", "固定语料与人工标注题目后再记录差异"], 245, 29, 90);
+  lines(retrieval, ["尚未提供可对比的真实模型检索结果", "功能演示分数不进入正式检索图表", "固定语料与来源核对题目后再记录差异"], 245, 29, 90);
 }
 const retrievalImage = payload.retrieval.length ? path.join(config.build_dir, "retrieval-results.png") : null;
 if (retrievalImage) await fs.writeFile(retrievalImage, new Uint8Array(await (await presentation.export({ slide: retrieval, format: "png", scale: 1.5 })).arrayBuffer()));
@@ -109,19 +109,24 @@ if (studies.length) table(parameter, ["实验", "分块策略与长度", "Hit@5"
   typeof r.metrics.hit_at_5 === "number" ? r.metrics.hit_at_5.toFixed(4) : "未测量"]), [390, 480, 260]);
 else lines(parameter, ["三种分块策略与 256 512 1024 长度", "相同语料与题集 独立映射原文证据", "尚未提供真实结果的实验保留为待执行"], 235, 28, 98);
 
-const promptRuns = payload.experiments.filter(r => !r.demo && ["prompt", "context", "generation"].includes(r.study)).slice(0, 6);
-const promptSlide = slide("生成参数与证据约束", "参数实验保留真实答案 人工质量评分单独填写", promptRuns.map(r => r.source_path));
-if (promptRuns.length) table(promptSlide, ["实验", "T  p  k", "平均用时ms"], promptRuns.map(r => [r.label,
-  `${r.config.temperature ?? "未记"}  ${r.config.top_p ?? "未记"}  ${r.config.top_k_sampling ?? "未记"}`,
-  typeof r.metrics.latency_mean_ms === "number" ? r.metrics.latency_mean_ms.toFixed(1) : "未测量"]), [450, 320, 360]);
+const promptRuns = payload.experiments.filter(r => !r.demo && (r.config.conditions || []).length > 1).slice(0, 1);
+const promptSlide = slide("生成参数与证据约束", "同4题开发集 五组单因素对比 人工质量评分单独填写", promptRuns.map(r => r.source_path));
+if (promptRuns.length) table(promptSlide, ["条件", "T  p  k", "生成阶段平均ms"], promptRuns.flatMap(r => r.config.conditions.map(([name, c]) => [name,
+  `${c.temperature}  ${c.top_p}  ${c.top_k_sampling}`,
+  typeof r.condition_metrics[name]?.latency_mean_ms === "number" ? r.condition_metrics[name].latency_mean_ms.toFixed(1) : "未测量"])), [450, 320, 360]);
 else lines(promptSlide, ["来源编号由服务分配 回答后核对", "事实依据不足时说明证据限制", "当前尚未提供真实生成参数测量"], 235, 28, 98);
 
 const agent = slide("Agent 与回答质量", "执行成功与证据覆盖分别统计 答案质量仍需人工评分", payload.generation.map(r => r.source_path));
 if (payload.generation.length) {
   const r = payload.generation[0];
-  const pairs = [["回答完成率", r.metrics.answer_success_rate], ["工具成功率", r.metrics.tool_success_rate], ["路由覆盖", r.metrics.routing_recall], ["证据覆盖", r.metrics.citation_evidence_recall]].filter(pair => typeof pair[1] === "number");
-  table(agent, ["指标", "实际测量"], pairs.map(([name, value]) => [name, value.toFixed(4)]), [660, 470]);
-  text(agent, `平均耗时 ${Number(r.metrics.latency_mean_ms || 0).toFixed(1)} ms`, 83, 535, 1110, 40, 25);
+  const route = payload.generation.find(x => typeof x.metrics.routing_exact_match === "number");
+  const pairs = [["60题生成协议完成率", `${(100 * r.metrics.generation_protocol_success_rate).toFixed(1)}%`],
+    ["含来源编号的答案数", `${r.metrics.answers_with_source_markers} / ${r.metrics.run_count}`],
+    ["无效来源编号请求数", String(r.metrics.invalid_citation_run_count)],
+    ["5个路由样例匹配率", route ? `${(100 * route.metrics.routing_exact_match).toFixed(1)}%` : "未测量"],
+    ["已完成人工评分", `${r.metrics.human_scoring_completed_count} / ${r.metrics.case_count}`]];
+  table(agent, ["指标", "实际测量"], pairs, [660, 470]);
+  text(agent, "协议与编号规则通过不代表答案正确 5个样例不推断全题准确率", 83, 606, 1110, 40, 23, false, MUTED);
 } else lines(agent, ["工具路由 并行 缓存与会话隔离均可独立评测", "正确性 完整性 引用质量 流畅性由人工评分", "当前尚未提供真实生成评测结果"], 232, 28, 98);
 
 if (payload.online.length) {

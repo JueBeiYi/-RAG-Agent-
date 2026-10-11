@@ -376,8 +376,13 @@ def scoring_csv(path, records):
         writer.writeheader()
         for record in records:
             row = {key: record.get(key, "") for key in columns}
-            for key in ("relevant_sources", "citations"):
-                row[key] = json.dumps(public(row[key]), ensure_ascii=False)
+            row["relevant_sources"] = json.dumps(public(row["relevant_sources"]), ensure_ascii=False)
+            # Keep the editable worksheet readable and below spreadsheet cell
+            # limits. Full immutable evidence stays in baseline/results.json.
+            row["citations"] = "；".join(
+                f"[{citation.get('citation_id', '')}] {citation.get('name', '')} · 物理页{citation.get('page_start', '?')}"
+                + (f"至{citation['page_end']}" if citation.get('page_end') and citation.get('page_end') != citation.get('page_start') else "")
+                for citation in (record.get("citations") or []))
             previous = existing.get(record["case_id"], {})
             for key in review_fields:
                 row[key] = previous.get(key, "")
