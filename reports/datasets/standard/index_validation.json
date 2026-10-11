@@ -1,0 +1,845 @@
+{
+  "checked_at": "2026-10-09T13:23:17.082746+00:00",
+  "scope_fingerprint": "6973ba6a6a62bd3eb9e31239",
+  "index_version": "c12aecaeef244e66948a307155a3de58",
+  "case_count": 80,
+  "chunk_count": 359,
+  "referenced_document_count": 10,
+  "dataset_sha256": "fd8e955da53c752039c39d1cc42f52454fd5cc4d32ca51380ca05cbce9bb7869",
+  "all_actual_ids_ready": true,
+  "all_actual_evidence_mapped": true,
+  "review_method": "assistant_source_checked",
+  "human_review_pending": true,
+  "cases": [
+    {
+      "case_id": "VT-F01",
+      "matching_chunk_ids": [
+        [
+          "695c042d9270fb14e010d7b1c182a22b"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F02",
+      "matching_chunk_ids": [
+        [
+          "eab386f11c7d05b7aa1776775e029b40",
+          "fc802b7964f00711990d93792c4001d1"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F03",
+      "matching_chunk_ids": [
+        [
+          "a834a103b4c9961378c8efbb9036d62f",
+          "c02c163fd018ad5f97ec71df3d7669ba"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F04",
+      "matching_chunk_ids": [
+        [
+          "7057cd772325d7a4ee14ff77881b2162"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F05",
+      "matching_chunk_ids": [
+        [
+          "84e9cc22359e3c412e57ed90c53f0462"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F06",
+      "matching_chunk_ids": [
+        [
+          "474071093c00bb66e281a79b141a8b7b",
+          "84e9cc22359e3c412e57ed90c53f0462"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F07",
+      "matching_chunk_ids": [
+        [
+          "ce23eb8ea27382b262a9245afb28b0ba"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F08",
+      "matching_chunk_ids": [
+        [
+          "6ca465975df294260815f4fbf28ddbb6",
+          "9494b0828c451e44ee8969ac1d62ea89"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F09",
+      "matching_chunk_ids": [
+        [
+          "2939e3cc1de3adbe6119c6919b351f7b",
+          "ae04d8d7f4855b5f03df04ed603776d0"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F10",
+      "matching_chunk_ids": [
+        [
+          "7d6868e4025c18dddb2be6e7a616f5da"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F11",
+      "matching_chunk_ids": [
+        [
+          "725ab5e9149374576df6dbf9df3bb80f"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F12",
+      "matching_chunk_ids": [
+        [
+          "476767612ad063f22bdec27226ef12c5",
+          "ce6d27b8708829891840cfaf44218332"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F13",
+      "matching_chunk_ids": [
+        [
+          "aae1446e0bf4f500e2caaf776ef4cfb5"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F14",
+      "matching_chunk_ids": [
+        [
+          "6e679442ee8330b8f46f470bcee77dfb"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F15",
+      "matching_chunk_ids": [
+        [
+          "3a8473c570cab729d4cc3f9e64bb2984",
+          "9c5a41198cb7afa88ad108e15b306c7c"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F16",
+      "matching_chunk_ids": [
+        [
+          "4fc9fae5aec8ec878821341bb11fd8c3",
+          "b4e7dc9118770d1f7a6fb93b7fb92c20"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F17",
+      "matching_chunk_ids": [
+        [
+          "af6c58d17fdd4fdee6a3777de4aa5bed"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F18",
+      "matching_chunk_ids": [
+        [
+          "240e95c9f444a6d0eefd878ce19e6756"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F19",
+      "matching_chunk_ids": [
+        [
+          "6766f61ed285aa1a328e456e1bc50b0d",
+          "8517f8373d282bfef23206a0189cfe60",
+          "ca68f9ce428fd445547b0a1e25d44b7d",
+          "d7ee3b52a5635cda00f8f087b575bbdb"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F20",
+      "matching_chunk_ids": [
+        [
+          "6223c961c464376332c68ad65120a983",
+          "62cdb79a6989540ca32109968308f80d",
+          "ea79fe79d94dc6c6c36a131bdbb019d6"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F21",
+      "matching_chunk_ids": [
+        [
+          "5254f0ce87791312f8f4578ba93f7d29",
+          "6e83c9735625da42064d6c27395c78b0",
+          "954f4ae24119ade9a4fa60b22fb01656"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F22",
+      "matching_chunk_ids": [
+        [
+          "2b40a7aee275fdcd51feb052a2670bdf",
+          "e0f27bf1ae03110938e216540ce04c27"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F23",
+      "matching_chunk_ids": [
+        [
+          "bc5a29f220d7eb88574f23e37e51bf53"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F24",
+      "matching_chunk_ids": [
+        [
+          "2b40a7aee275fdcd51feb052a2670bdf",
+          "e0f27bf1ae03110938e216540ce04c27"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F25",
+      "matching_chunk_ids": [
+        [
+          "795163cd4a76f1764fd0831192d908e9"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F26",
+      "matching_chunk_ids": [
+        [
+          "b04d102e4994ab8e74314a7e75810654",
+          "bb639ad035dc154926db9436c93254eb"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F27",
+      "matching_chunk_ids": [
+        [
+          "795163cd4a76f1764fd0831192d908e9"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F28",
+      "matching_chunk_ids": [
+        [
+          "2d5efb783c5d59d3ca2f6f8836ad8040"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F29",
+      "matching_chunk_ids": [
+        [
+          "09077b5bfefe899d14d2d99528a50fc1",
+          "2cd1fb9e5c6f1793e9f157553602671d",
+          "9b69ecaaf83d98bba0bf7ce31c7598bf"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-F30",
+      "matching_chunk_ids": [
+        [
+          "2d5efb783c5d59d3ca2f6f8836ad8040"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C01",
+      "matching_chunk_ids": [
+        [
+          "eab386f11c7d05b7aa1776775e029b40",
+          "fc802b7964f00711990d93792c4001d1"
+        ],
+        [
+          "84e9cc22359e3c412e57ed90c53f0462"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C02",
+      "matching_chunk_ids": [
+        [
+          "ec35d00132768eff20cd409062330d61"
+        ],
+        [
+          "b52d82e1efb60d4e8e443d3fd872e8c2"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C03",
+      "matching_chunk_ids": [
+        [
+          "725ab5e9149374576df6dbf9df3bb80f"
+        ],
+        [
+          "6ca465975df294260815f4fbf28ddbb6",
+          "9494b0828c451e44ee8969ac1d62ea89"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C04",
+      "matching_chunk_ids": [
+        [
+          "6766f61ed285aa1a328e456e1bc50b0d",
+          "8517f8373d282bfef23206a0189cfe60",
+          "ca68f9ce428fd445547b0a1e25d44b7d",
+          "d7ee3b52a5635cda00f8f087b575bbdb"
+        ],
+        [
+          "a834a103b4c9961378c8efbb9036d62f",
+          "c02c163fd018ad5f97ec71df3d7669ba",
+          "eab386f11c7d05b7aa1776775e029b40"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C05",
+      "matching_chunk_ids": [
+        [
+          "272ce9594982717f79fe4cde63c8c18b",
+          "d4613fb08238e9a49e34a606155cea58"
+        ],
+        [
+          "7d6868e4025c18dddb2be6e7a616f5da"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C06",
+      "matching_chunk_ids": [
+        [
+          "aae1446e0bf4f500e2caaf776ef4cfb5"
+        ],
+        [
+          "eab386f11c7d05b7aa1776775e029b40"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C07",
+      "matching_chunk_ids": [
+        [
+          "af6c58d17fdd4fdee6a3777de4aa5bed"
+        ],
+        [
+          "a834a103b4c9961378c8efbb9036d62f"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C08",
+      "matching_chunk_ids": [
+        [
+          "bb639ad035dc154926db9436c93254eb"
+        ],
+        [
+          "6766f61ed285aa1a328e456e1bc50b0d",
+          "8517f8373d282bfef23206a0189cfe60",
+          "ca68f9ce428fd445547b0a1e25d44b7d",
+          "d7ee3b52a5635cda00f8f087b575bbdb"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C09",
+      "matching_chunk_ids": [
+        [
+          "2cd1fb9e5c6f1793e9f157553602671d"
+        ],
+        [
+          "474071093c00bb66e281a79b141a8b7b"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C10",
+      "matching_chunk_ids": [
+        [
+          "984ef6223458b6799097ab4f3da7636e"
+        ],
+        [
+          "0a2b74e28a3132c2233511b6dd1e5b20",
+          "154adb4a4005bb0a0342fb8bb3139401",
+          "6e679442ee8330b8f46f470bcee77dfb"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C11",
+      "matching_chunk_ids": [
+        [
+          "a834a103b4c9961378c8efbb9036d62f",
+          "c02c163fd018ad5f97ec71df3d7669ba"
+        ],
+        [
+          "6223c961c464376332c68ad65120a983",
+          "62cdb79a6989540ca32109968308f80d"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C12",
+      "matching_chunk_ids": [
+        [
+          "bc5a29f220d7eb88574f23e37e51bf53"
+        ],
+        [
+          "6ca465975df294260815f4fbf28ddbb6",
+          "9494b0828c451e44ee8969ac1d62ea89"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C13",
+      "matching_chunk_ids": [
+        [
+          "795163cd4a76f1764fd0831192d908e9"
+        ],
+        [
+          "aff0c43836ee5286c0e56da93c09c424",
+          "f8588105170689c70eb782b303286a33"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C14",
+      "matching_chunk_ids": [
+        [
+          "7b045e070b86941c41efd4dfbbd69374",
+          "fc802b7964f00711990d93792c4001d1"
+        ],
+        [
+          "2cd1fb9e5c6f1793e9f157553602671d"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C15",
+      "matching_chunk_ids": [
+        [
+          "2939e3cc1de3adbe6119c6919b351f7b",
+          "ae04d8d7f4855b5f03df04ed603776d0"
+        ],
+        [
+          "476767612ad063f22bdec27226ef12c5",
+          "ce6d27b8708829891840cfaf44218332"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C16",
+      "matching_chunk_ids": [
+        [
+          "1b414224121c29a79736d05a4a9101d1",
+          "954f4ae24119ade9a4fa60b22fb01656"
+        ],
+        [
+          "3a8473c570cab729d4cc3f9e64bb2984",
+          "9c5a41198cb7afa88ad108e15b306c7c"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C17",
+      "matching_chunk_ids": [
+        [
+          "89da0d853891581c2ef1c80a727a1b47"
+        ],
+        [
+          "21f0b302de8e124cc0391771b6fb2d97",
+          "3065939df419ebf88cebf81c4cc733e4"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C18",
+      "matching_chunk_ids": [
+        [
+          "ae6224809523909e8cfd33af0c9becdd",
+          "bc7366aa4ccb306e486e8c9200c0cde0"
+        ],
+        [
+          "bb639ad035dc154926db9436c93254eb"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C19",
+      "matching_chunk_ids": [
+        [
+          "af6c58d17fdd4fdee6a3777de4aa5bed"
+        ],
+        [
+          "bc5a29f220d7eb88574f23e37e51bf53"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-C20",
+      "matching_chunk_ids": [
+        [
+          "370ab24540992dbc2b0d6f7abc4da5da"
+        ],
+        [
+          "6223c961c464376332c68ad65120a983",
+          "62cdb79a6989540ca32109968308f80d"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S01",
+      "matching_chunk_ids": [
+        [
+          "eab386f11c7d05b7aa1776775e029b40",
+          "fc802b7964f00711990d93792c4001d1"
+        ],
+        [
+          "474071093c00bb66e281a79b141a8b7b",
+          "84e9cc22359e3c412e57ed90c53f0462"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S02",
+      "matching_chunk_ids": [
+        [
+          "b52d82e1efb60d4e8e443d3fd872e8c2"
+        ],
+        [
+          "7d6868e4025c18dddb2be6e7a616f5da"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S03",
+      "matching_chunk_ids": [
+        [
+          "aae1446e0bf4f500e2caaf776ef4cfb5"
+        ],
+        [
+          "6766f61ed285aa1a328e456e1bc50b0d",
+          "8517f8373d282bfef23206a0189cfe60",
+          "ca68f9ce428fd445547b0a1e25d44b7d",
+          "d7ee3b52a5635cda00f8f087b575bbdb"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S04",
+      "matching_chunk_ids": [
+        [
+          "272ce9594982717f79fe4cde63c8c18b",
+          "d4613fb08238e9a49e34a606155cea58"
+        ],
+        [
+          "7d6868e4025c18dddb2be6e7a616f5da"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S05",
+      "matching_chunk_ids": [
+        [
+          "474071093c00bb66e281a79b141a8b7b"
+        ],
+        [
+          "2d5efb783c5d59d3ca2f6f8836ad8040"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S06",
+      "matching_chunk_ids": [
+        [
+          "af6c58d17fdd4fdee6a3777de4aa5bed"
+        ],
+        [
+          "795163cd4a76f1764fd0831192d908e9"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S07",
+      "matching_chunk_ids": [
+        [
+          "370ab24540992dbc2b0d6f7abc4da5da"
+        ],
+        [
+          "6223c961c464376332c68ad65120a983",
+          "62cdb79a6989540ca32109968308f80d"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S08",
+      "matching_chunk_ids": [
+        [
+          "ec35d00132768eff20cd409062330d61"
+        ],
+        [
+          "141a8ce5d6701a26f67a9fdb8e238f84",
+          "21f0b302de8e124cc0391771b6fb2d97",
+          "3065939df419ebf88cebf81c4cc733e4"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S09",
+      "matching_chunk_ids": [
+        [
+          "984ef6223458b6799097ab4f3da7636e"
+        ],
+        [
+          "aae1446e0bf4f500e2caaf776ef4cfb5",
+          "f048b6da44f28d495ce2af9b3c0fc437",
+          "f389ccf36547d312aa9f8a1f7975712a"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S10",
+      "matching_chunk_ids": [
+        [
+          "bb639ad035dc154926db9436c93254eb"
+        ],
+        [
+          "1b414224121c29a79736d05a4a9101d1",
+          "6e83c9735625da42064d6c27395c78b0"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S11",
+      "matching_chunk_ids": [
+        [
+          "9fe5f8b1e418473cf94a74a3f05af983",
+          "a6b72b109e1f90152a072abdd82c176d"
+        ],
+        [
+          "6e83c9735625da42064d6c27395c78b0"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S12",
+      "matching_chunk_ids": [
+        [
+          "6ca465975df294260815f4fbf28ddbb6",
+          "9494b0828c451e44ee8969ac1d62ea89"
+        ],
+        [
+          "2b40a7aee275fdcd51feb052a2670bdf",
+          "e0f27bf1ae03110938e216540ce04c27"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S13",
+      "matching_chunk_ids": [
+        [
+          "6e679442ee8330b8f46f470bcee77dfb"
+        ],
+        [
+          "474071093c00bb66e281a79b141a8b7b",
+          "84e9cc22359e3c412e57ed90c53f0462"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S14",
+      "matching_chunk_ids": [
+        [
+          "3065939df419ebf88cebf81c4cc733e4"
+        ],
+        [
+          "984ef6223458b6799097ab4f3da7636e"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-S15",
+      "matching_chunk_ids": [
+        [
+          "9fe5f8b1e418473cf94a74a3f05af983",
+          "a6b72b109e1f90152a072abdd82c176d"
+        ],
+        [
+          "7e87367f355863c152f4027e64c5a4ff",
+          "bb639ad035dc154926db9436c93254eb",
+          "fa13e4540e63173fe3007a4b3820c663"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R01",
+      "matching_chunk_ids": [
+        [
+          "a834a103b4c9961378c8efbb9036d62f"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R02",
+      "matching_chunk_ids": [
+        [
+          "a834a103b4c9961378c8efbb9036d62f"
+        ],
+        [
+          "695c042d9270fb14e010d7b1c182a22b",
+          "ec35d00132768eff20cd409062330d61"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R03",
+      "matching_chunk_ids": [
+        [
+          "476767612ad063f22bdec27226ef12c5",
+          "ce6d27b8708829891840cfaf44218332"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R04",
+      "matching_chunk_ids": [
+        [
+          "3a8473c570cab729d4cc3f9e64bb2984",
+          "9c5a41198cb7afa88ad108e15b306c7c"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R05",
+      "matching_chunk_ids": [
+        [
+          "370ab24540992dbc2b0d6f7abc4da5da"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R06",
+      "matching_chunk_ids": [
+        [
+          "6223c961c464376332c68ad65120a983"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R07",
+      "matching_chunk_ids": [
+        [
+          "240e95c9f444a6d0eefd878ce19e6756"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R08",
+      "matching_chunk_ids": [
+        [
+          "795163cd4a76f1764fd0831192d908e9"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R09",
+      "matching_chunk_ids": [
+        [
+          "bc5a29f220d7eb88574f23e37e51bf53"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R10",
+      "matching_chunk_ids": [
+        [
+          "2cd1fb9e5c6f1793e9f157553602671d"
+        ],
+        [
+          "141a8ce5d6701a26f67a9fdb8e238f84",
+          "21f0b302de8e124cc0391771b6fb2d97",
+          "3065939df419ebf88cebf81c4cc733e4"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R11",
+      "matching_chunk_ids": [
+        [
+          "fc802b7964f00711990d93792c4001d1"
+        ],
+        [
+          "7057cd772325d7a4ee14ff77881b2162"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R12",
+      "matching_chunk_ids": [
+        [
+          "5254f0ce87791312f8f4578ba93f7d29",
+          "6e83c9735625da42064d6c27395c78b0",
+          "954f4ae24119ade9a4fa60b22fb01656"
+        ],
+        [
+          "2939e3cc1de3adbe6119c6919b351f7b",
+          "bb2302a3096f27bd36166b829e50ce87"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R13",
+      "matching_chunk_ids": [
+        [
+          "725ab5e9149374576df6dbf9df3bb80f"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R14",
+      "matching_chunk_ids": [
+        [
+          "2cd1fb9e5c6f1793e9f157553602671d"
+        ]
+      ]
+    },
+    {
+      "case_id": "VT-R15",
+      "matching_chunk_ids": [
+        [
+          "240e95c9f444a6d0eefd878ce19e6756",
+          "af6c58d17fdd4fdee6a3777de4aa5bed"
+        ]
+      ]
+    }
+  ]
+}

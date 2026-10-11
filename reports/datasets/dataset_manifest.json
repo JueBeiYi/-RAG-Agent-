@@ -1,0 +1,42 @@
+{
+  "case_count": 80,
+  "split_counts": {
+    "dev": 20,
+    "test": 60
+  },
+  "category_counts": {
+    "factual": 30,
+    "comparison": 20,
+    "synthesis": 15,
+    "reasoning": 15
+  },
+  "split_category_counts": {
+    "dev/factual": 8,
+    "test/factual": 22,
+    "dev/comparison": 4,
+    "test/comparison": 16,
+    "test/synthesis": 11,
+    "dev/synthesis": 4,
+    "dev/reasoning": 4,
+    "test/reasoning": 11
+  },
+  "short_quoted_word_count_per_paper": {
+    "vit": 17,
+    "deit": 12,
+    "swin": 17,
+    "pvt": 17,
+    "t2t": 13,
+    "cait": 15,
+    "cvt": 18,
+    "crossvit": 13,
+    "levit": 14,
+    "beit": 23
+  },
+  "dataset_sha256": "9357cdddf6c24323370e2402166342ef5896edd47ab72496cbb0e9a4176deea4",
+  "review_method": "assistant_source_checked",
+  "human_review_pending": true,
+  "scope_of_claim": "Source-checked draft benchmark, not human consensus labels or formal model scores",
+  "test_policy": "Use dev only for tuning; freeze models/config before 60 test cases. Source preparation agent has read the labels.",
+  "relevance_policy": "Short literal anchors plus physical page; mapped source paragraph further narrows relevance after ingestion.",
+  "source_version_policy": "All page numbers refer to the exact downloaded arXiv PDF version and SHA256 in corpus manifest."
+}

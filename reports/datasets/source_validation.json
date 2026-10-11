@@ -1,0 +1,3350 @@
+{
+  "checked_at": "2026-10-08T08:41:46.999204+00:00",
+  "paper_count": 10,
+  "total_physical_pages": 169,
+  "case_count": 80,
+  "evidence_count": 119,
+  "short_quote_words": {
+    "vit": 17,
+    "deit": 12,
+    "swin": 17,
+    "pvt": 17,
+    "t2t": 13,
+    "cait": 15,
+    "cvt": 18,
+    "crossvit": 13,
+    "levit": 14,
+    "beit": 23
+  },
+  "all_hashes_verified": true,
+  "all_original_physical_pages_verified": true,
+  "all_loaded_evidence_verified": true,
+  "chunking_matrix": [
+    {
+      "strategy": "fixed",
+      "chunk_size": 256,
+      "chunk_overlap": 64,
+      "chunk_count": 724,
+      "case_count": 80,
+      "evidence_count": 119,
+      "unmapped_evidence_count": 0
+    },
+    {
+      "strategy": "fixed",
+      "chunk_size": 512,
+      "chunk_overlap": 64,
+      "chunk_count": 314,
+      "case_count": 80,
+      "evidence_count": 119,
+      "unmapped_evidence_count": 0
+    },
+    {
+      "strategy": "fixed",
+      "chunk_size": 1024,
+      "chunk_overlap": 64,
+      "chunk_count": 150,
+      "case_count": 80,
+      "evidence_count": 119,
+      "unmapped_evidence_count": 0
+    },
+    {
+      "strategy": "recursive",
+      "chunk_size": 256,
+      "chunk_overlap": 64,
+      "chunk_count": 895,
+      "case_count": 80,
+      "evidence_count": 119,
+      "unmapped_evidence_count": 0
+    },
+    {
+      "strategy": "recursive",
+      "chunk_size": 512,
+      "chunk_overlap": 64,
+      "chunk_count": 359,
+      "case_count": 80,
+      "evidence_count": 119,
+      "unmapped_evidence_count": 0
+    },
+    {
+      "strategy": "recursive",
+      "chunk_size": 1024,
+      "chunk_overlap": 64,
+      "chunk_count": 159,
+      "case_count": 80,
+      "evidence_count": 119,
+      "unmapped_evidence_count": 0
+    },
+    {
+      "strategy": "semantic",
+      "chunk_size": 256,
+      "chunk_overlap": 64,
+      "chunk_count": 779,
+      "case_count": 80,
+      "evidence_count": 119,
+      "unmapped_evidence_count": 0
+    },
+    {
+      "strategy": "semantic",
+      "chunk_size": 512,
+      "chunk_overlap": 64,
+      "chunk_count": 326,
+      "case_count": 80,
+      "evidence_count": 119,
+      "unmapped_evidence_count": 0
+    },
+    {
+      "strategy": "semantic",
+      "chunk_size": 1024,
+      "chunk_overlap": 64,
+      "chunk_count": 153,
+      "case_count": 80,
+      "evidence_count": 119,
+      "unmapped_evidence_count": 0
+    }
+  ],
+  "evidence_checks": [
+    {
+      "case_id": "VT-F01",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 5,
+      "quote": "ViT-Base",
+      "paragraph_candidates": [
+        99
+      ],
+      "bbox_candidates": [
+        [
+          177.11099243164062,
+          100.58499145507812,
+          298.3636474609375,
+          129.4774169921875
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F02",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 2,
+      "quote": "JFT-300M",
+      "paragraph_candidates": [
+        22,
+        29
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          112.16444396972656,
+          504.0033874511719,
+          187.87997436523438
+        ],
+        [
+          108.00006103515625,
+          656.5521240234375,
+          504.0033874511719,
+          732.2687377929688
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F03",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 3,
+      "quote": "1D",
+      "paragraph_candidates": [
+        60,
+        66
+      ],
+      "bbox_candidates": [
+        [
+          107.99996948242188,
+          493.1304016113281,
+          504.0032958984375,
+          582.8289794921875
+        ],
+        [
+          107.99996948242188,
+          650.5753784179688,
+          504.0032653808594,
+          693.4139404296875
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F04",
+      "evidence_number": 1,
+      "paper_key": "deit",
+      "physical_page": 1,
+      "quote": "83.1%",
+      "paragraph_candidates": [
+        15
+      ],
+      "bbox_candidates": [
+        [
+          158.675048828125,
+          385.9526062011719,
+          452.57568359375,
+          427.79498291015625
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F05",
+      "evidence_number": 1,
+      "paper_key": "deit",
+      "physical_page": 2,
+      "quote": "53",
+      "paragraph_candidates": [
+        25
+      ],
+      "bbox_candidates": [
+        [
+          133.76800537109375,
+          532.5372314453125,
+          477.4778747558594,
+          638.140869140625
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F06",
+      "evidence_number": 1,
+      "paper_key": "deit",
+      "physical_page": 3,
+      "quote": "distillation",
+      "paragraph_candidates": [
+        31,
+        32,
+        34
+      ],
+      "bbox_candidates": [
+        [
+          147.656005859375,
+          212.45631408691406,
+          477.4783020019531,
+          270.2399597167969
+        ],
+        [
+          147.656005859375,
+          279.25738525390625,
+          477.4776916503906,
+          301.1749572753906
+        ],
+        [
+          133.76800537109375,
+          364.09332275390625,
+          477.4779052734375,
+          457.7428283691406
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F07",
+      "evidence_number": 1,
+      "paper_key": "swin",
+      "physical_page": 3,
+      "quote": "48",
+      "paragraph_candidates": [
+        39
+      ],
+      "bbox_candidates": [
+        [
+          308.8619689941406,
+          366.8796081542969,
+          545.115966796875,
+          484.4391174316406
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F08",
+      "evidence_number": 1,
+      "paper_key": "swin",
+      "physical_page": 5,
+      "quote": "SW-MSA",
+      "paragraph_candidates": [
+        110
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          177.97242736816406,
+          286.3650207519531,
+          211.84506225585938
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F09",
+      "evidence_number": 1,
+      "paper_key": "swin",
+      "physical_page": 6,
+      "quote": "81.3",
+      "paragraph_candidates": [
+        142,
+        147
+      ],
+      "bbox_candidates": [
+        [
+          50.11201477050781,
+          366.556640625,
+          286.3651428222656,
+          533.7030639648438
+        ],
+        [
+          310.239990234375,
+          83.95498657226562,
+          543.7340087890625,
+          294.6650085449219
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F10",
+      "evidence_number": 1,
+      "paper_key": "pvt",
+      "physical_page": 4,
+      "quote": "four stages",
+      "paragraph_candidates": [
+        126,
+        130
+      ],
+      "bbox_candidates": [
+        [
+          50.11198425292969,
+          306.3915100097656,
+          545.1155395507812,
+          340.3560485839844
+        ],
+        [
+          50.11198425292969,
+          436.5624694824219,
+          286.3651428222656,
+          542.1669311523438
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F11",
+      "evidence_number": 1,
+      "paper_key": "pvt",
+      "physical_page": 5,
+      "quote": "Reshape",
+      "paragraph_candidates": [
+        171,
+        172
+      ],
+      "bbox_candidates": [
+        [
+          89.6190185546875,
+          435.9687194824219,
+          286.36236572265625,
+          448.550537109375
+        ],
+        [
+          50.11199951171875,
+          453.45245361328125,
+          286.3666076660156,
+          501.9000244140625
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F12",
+      "evidence_number": 1,
+      "paper_key": "pvt",
+      "physical_page": 7,
+      "quote": "20.2",
+      "paragraph_candidates": [
+        208,
+        210
+      ],
+      "bbox_candidates": [
+        [
+          50.90599822998047,
+          71.99999237060547,
+          285.5679931640625,
+          329.53399658203125
+        ],
+        [
+          50.11199951171875,
+          423.71038818359375,
+          286.3664855957031,
+          541.2688598632812
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F13",
+      "evidence_number": 1,
+      "paper_key": "t2t",
+      "physical_page": 2,
+      "quote": "soft split",
+      "paragraph_candidates": [
+        27
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          440.4303283691406,
+          286.36676025390625,
+          713.4068603515625
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F14",
+      "evidence_number": 1,
+      "paper_key": "t2t",
+      "physical_page": 1,
+      "quote": "deep-narrow",
+      "paragraph_candidates": [
+        9
+      ],
+      "bbox_candidates": [
+        [
+          50.112098693847656,
+          254.1461181640625,
+          286.3652648925781,
+          622.7634887695312
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F15",
+      "evidence_number": 1,
+      "paper_key": "t2t",
+      "physical_page": 6,
+      "quote": "81.5",
+      "paragraph_candidates": [
+        145,
+        146,
+        153,
+        157
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          385.79559326171875,
+          286.3652038574219,
+          575.1759643554688
+        ],
+        [
+          50.11201477050781,
+          580.4404296875,
+          286.36517333984375,
+          686.135009765625
+        ],
+        [
+          316.6570129394531,
+          124.50898742675781,
+          535.322998046875,
+          186.2490234375
+        ],
+        [
+          331.7879943847656,
+          308.9940185546875,
+          520.1929931640625,
+          358.77899169921875
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F16",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 4,
+      "quote": "per-channel",
+      "paragraph_candidates": [
+        62,
+        64
+      ],
+      "bbox_candidates": [
+        [
+          133.7679901123047,
+          261.5247497558594,
+          477.48382568359375,
+          358.581787109375
+        ],
+        [
+          133.76805114746094,
+          439.7150573730469,
+          477.4779968261719,
+          497.5957336425781
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F17",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 5,
+      "quote": "class-attention stage",
+      "paragraph_candidates": [
+        83,
+        84
+      ],
+      "bbox_candidates": [
+        [
+          146.2220001220703,
+          544.1905517578125,
+          477.48065185546875,
+          578.2368774414062
+        ],
+        [
+          133.7679901123047,
+          588.19921875,
+          477.477783203125,
+          669.8928833007812
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F18",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 4,
+      "quote": "0.1",
+      "paragraph_candidates": [
+        73
+      ],
+      "bbox_candidates": [
+        [
+          133.76803588867188,
+          546.0509643554688,
+          477.48419189453125,
+          675.5646362304688
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F19",
+      "evidence_number": 1,
+      "paper_key": "cvt",
+      "physical_page": 4,
+      "quote": "Convolutional Projection",
+      "paragraph_candidates": [
+        73,
+        92,
+        93,
+        94,
+        96
+      ],
+      "bbox_candidates": [
+        [
+          50.111968994140625,
+          119.7396240234375,
+          286.3658752441406,
+          502.3544921875
+        ],
+        [
+          308.8619079589844,
+          274.24700927734375,
+          508.7413330078125,
+          285.2059020996094
+        ],
+        [
+          308.86187744140625,
+          291.3857421875,
+          545.114990234375,
+          339.2556457519531
+        ],
+        [
+          308.86187744140625,
+          339.2056884765625,
+          545.11669921875,
+          458.8075256347656
+        ],
+        [
+          308.86187744140625,
+          491.30157470703125,
+          545.1150512695312,
+          586.9934692382812
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F20",
+      "evidence_number": 1,
+      "paper_key": "cvt",
+      "physical_page": 8,
+      "quote": "81.6",
+      "paragraph_candidates": [
+        160,
+        167,
+        170,
+        172
+      ],
+      "bbox_candidates": [
+        [
+          50.430855887276785,
+          296.343017578125,
+          286.0476989746094,
+          346.27040405273436
+        ],
+        [
+          308.8716634114583,
+          105.69298553466797,
+          546.2820027669271,
+          155.36898295084634
+        ],
+        [
+          308.8716634114583,
+          220.98101806640625,
+          546.2820027669271,
+          247.20501708984375
+        ],
+        [
+          308.8716634114583,
+          318.9129943847656,
+          546.2820027669271,
+          398.2090148925781
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F21",
+      "evidence_number": 1,
+      "paper_key": "cvt",
+      "physical_page": 7,
+      "quote": "87.7",
+      "paragraph_candidates": [
+        139,
+        141,
+        145
+      ],
+      "bbox_candidates": [
+        [
+          53.45800018310547,
+          294.0670166015625,
+          541.7650146484375,
+          370.5710144042969
+        ],
+        [
+          53.45800018310547,
+          411.48699951171875,
+          541.7650146484375,
+          446.97599029541016
+        ],
+        [
+          50.112030029296875,
+          665.9295043945312,
+          286.3656921386719,
+          713.7994995117188
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F22",
+      "evidence_number": 1,
+      "paper_key": "crossvit",
+      "physical_page": 1,
+      "quote": "dual-branch",
+      "paragraph_candidates": [
+        8
+      ],
+      "bbox_candidates": [
+        [
+          50.16019821166992,
+          259.61138916015625,
+          286.5452880859375,
+          568.374267578125
+        ]
+      ],
+      "pdf_sha256": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F23",
+      "evidence_number": 1,
+      "paper_key": "crossvit",
+      "physical_page": 4,
+      "quote": "Cross-Attention Fusion",
+      "paragraph_candidates": [
+        124
+      ],
+      "bbox_candidates": [
+        [
+          308.87890625,
+          438.11749267578125,
+          545.4610595703125,
+          663.4505004882812
+        ]
+      ],
+      "pdf_sha256": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F24",
+      "evidence_number": 1,
+      "paper_key": "crossvit",
+      "physical_page": 1,
+      "quote": "linear",
+      "paragraph_candidates": [
+        8
+      ],
+      "bbox_candidates": [
+        [
+          50.16019821166992,
+          259.61138916015625,
+          286.5452880859375,
+          568.374267578125
+        ]
+      ],
+      "pdf_sha256": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F25",
+      "evidence_number": 1,
+      "paper_key": "levit",
+      "physical_page": 6,
+      "quote": "3×3",
+      "paragraph_candidates": [
+        178
+      ],
+      "bbox_candidates": [
+        [
+          71.99998474121094,
+          126.84981536865234,
+          300.6429443359375,
+          232.81320190429688
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F26",
+      "evidence_number": 1,
+      "paper_key": "levit",
+      "physical_page": 2,
+      "quote": "per-head",
+      "paragraph_candidates": [
+        40
+      ],
+      "bbox_candidates": [
+        [
+          75.9850082397461,
+          436.04449462890625,
+          300.64166259765625,
+          536.2890014648438
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F27",
+      "evidence_number": 1,
+      "paper_key": "levit",
+      "physical_page": 6,
+      "quote": "average pooling",
+      "paragraph_candidates": [
+        179
+      ],
+      "bbox_candidates": [
+        [
+          71.99998474121094,
+          240.48802185058594,
+          300.642822265625,
+          346.3221435546875
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F28",
+      "evidence_number": 1,
+      "paper_key": "beit",
+      "physical_page": 3,
+      "quote": "dVAE",
+      "paragraph_candidates": [
+        63
+      ],
+      "bbox_candidates": [
+        [
+          107.69100189208984,
+          361.69775390625,
+          505.7483825683594,
+          449.5340881347656
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F29",
+      "evidence_number": 1,
+      "paper_key": "beit",
+      "physical_page": 4,
+      "quote": "40%",
+      "paragraph_candidates": [
+        86,
+        113
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          95.99491882324219,
+          505.74322509765625,
+          118.2314224243164
+        ],
+        [
+          291.2070617675781,
+          334.86346435546875,
+          501.7657470703125,
+          383.8065490722656
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-F30",
+      "evidence_number": 1,
+      "paper_key": "beit",
+      "physical_page": 3,
+      "quote": "8192",
+      "paragraph_candidates": [
+        64
+      ],
+      "bbox_candidates": [
+        [
+          107.53199768066406,
+          455.5998229980469,
+          505.7435302734375,
+          498.65008544921875
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C01",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 2,
+      "quote": "JFT-300M",
+      "paragraph_candidates": [
+        22,
+        29
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          112.16444396972656,
+          504.0033874511719,
+          187.87997436523438
+        ],
+        [
+          108.00006103515625,
+          656.5521240234375,
+          504.0033874511719,
+          732.2687377929688
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C01",
+      "evidence_number": 2,
+      "paper_key": "deit",
+      "physical_page": 2,
+      "quote": "sole training",
+      "paragraph_candidates": [
+        25
+      ],
+      "bbox_candidates": [
+        [
+          133.76800537109375,
+          532.5372314453125,
+          477.4778747558594,
+          638.140869140625
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C02",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 4,
+      "quote": "global",
+      "paragraph_candidates": [
+        87
+      ],
+      "bbox_candidates": [
+        [
+          108.00003051757812,
+          172.65240478515625,
+          504.00408935546875,
+          270.3768615722656
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C02",
+      "evidence_number": 2,
+      "paper_key": "swin",
+      "physical_page": 1,
+      "quote": "hierarchical Transformer",
+      "paragraph_candidates": [
+        10
+      ],
+      "bbox_candidates": [
+        [
+          50.111961364746094,
+          254.53204345703125,
+          286.3650817871094,
+          587.284423828125
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C03",
+      "evidence_number": 1,
+      "paper_key": "pvt",
+      "physical_page": 5,
+      "quote": "Reshape",
+      "paragraph_candidates": [
+        171,
+        172
+      ],
+      "bbox_candidates": [
+        [
+          89.6190185546875,
+          435.9687194824219,
+          286.36236572265625,
+          448.550537109375
+        ],
+        [
+          50.11199951171875,
+          453.45245361328125,
+          286.3666076660156,
+          501.9000244140625
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C03",
+      "evidence_number": 2,
+      "paper_key": "swin",
+      "physical_page": 5,
+      "quote": "SW-MSA",
+      "paragraph_candidates": [
+        110
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          177.97242736816406,
+          286.3650207519531,
+          211.84506225585938
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C04",
+      "evidence_number": 1,
+      "paper_key": "cvt",
+      "physical_page": 4,
+      "quote": "Convolutional Projection",
+      "paragraph_candidates": [
+        73,
+        92,
+        93,
+        94,
+        96
+      ],
+      "bbox_candidates": [
+        [
+          50.111968994140625,
+          119.7396240234375,
+          286.3658752441406,
+          502.3544921875
+        ],
+        [
+          308.8619079589844,
+          274.24700927734375,
+          508.7413330078125,
+          285.2059020996094
+        ],
+        [
+          308.86187744140625,
+          291.3857421875,
+          545.114990234375,
+          339.2556457519531
+        ],
+        [
+          308.86187744140625,
+          339.2056884765625,
+          545.11669921875,
+          458.8075256347656
+        ],
+        [
+          308.86187744140625,
+          491.30157470703125,
+          545.1150512695312,
+          586.9934692382812
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C04",
+      "evidence_number": 2,
+      "paper_key": "vit",
+      "physical_page": 3,
+      "quote": "linear",
+      "paragraph_candidates": [
+        52,
+        56,
+        60,
+        65
+      ],
+      "bbox_candidates": [
+        [
+          143.28152465820312,
+          189.5870819091797,
+          347.2178039550781,
+          202.52574157714844
+        ],
+        [
+          108.0,
+          266.32147216796875,
+          504.00335693359375,
+          320.1190490722656
+        ],
+        [
+          107.99996948242188,
+          493.1304016113281,
+          504.0032958984375,
+          582.8289794921875
+        ],
+        [
+          107.99996948242188,
+          622.6793823242188,
+          503.999755859375,
+          643.6009521484375
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C05",
+      "evidence_number": 1,
+      "paper_key": "crossvit",
+      "physical_page": 3,
+      "quote": "dual-branch",
+      "paragraph_candidates": [
+        58
+      ],
+      "bbox_candidates": [
+        [
+          308.87847900390625,
+          368.6348876953125,
+          545.3561401367188,
+          510.1175231933594
+        ]
+      ],
+      "pdf_sha256": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C05",
+      "evidence_number": 2,
+      "paper_key": "pvt",
+      "physical_page": 4,
+      "quote": "four stages",
+      "paragraph_candidates": [
+        126,
+        130
+      ],
+      "bbox_candidates": [
+        [
+          50.11198425292969,
+          306.3915100097656,
+          545.1155395507812,
+          340.3560485839844
+        ],
+        [
+          50.11198425292969,
+          436.5624694824219,
+          286.3651428222656,
+          542.1669311523438
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C06",
+      "evidence_number": 1,
+      "paper_key": "t2t",
+      "physical_page": 2,
+      "quote": "soft split",
+      "paragraph_candidates": [
+        27
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          440.4303283691406,
+          286.36676025390625,
+          713.4068603515625
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C06",
+      "evidence_number": 2,
+      "paper_key": "vit",
+      "physical_page": 3,
+      "quote": "fixed-size patches",
+      "paragraph_candidates": [
+        56
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          266.32147216796875,
+          504.00335693359375,
+          320.1190490722656
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C07",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 5,
+      "quote": "Later class",
+      "paragraph_candidates": [
+        80
+      ],
+      "bbox_candidates": [
+        [
+          133.76800537109375,
+          386.3062438964844,
+          477.4822692871094,
+          468.0968933105469
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C07",
+      "evidence_number": 2,
+      "paper_key": "vit",
+      "physical_page": 3,
+      "quote": "prepend",
+      "paragraph_candidates": [
+        61
+      ],
+      "bbox_candidates": [
+        [
+          107.99998474121094,
+          589.2933959960938,
+          504.0030517578125,
+          610.7239990234375
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C08",
+      "evidence_number": 1,
+      "paper_key": "levit",
+      "physical_page": 2,
+      "quote": "pyramid",
+      "paragraph_candidates": [
+        37
+      ],
+      "bbox_candidates": [
+        [
+          72.0,
+          127.20948791503906,
+          300.6419982910156,
+          280.6342468261719
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C08",
+      "evidence_number": 2,
+      "paper_key": "cvt",
+      "physical_page": 4,
+      "quote": "Convolutional Projection",
+      "paragraph_candidates": [
+        73,
+        92,
+        93,
+        94,
+        96
+      ],
+      "bbox_candidates": [
+        [
+          50.111968994140625,
+          119.7396240234375,
+          286.3658752441406,
+          502.3544921875
+        ],
+        [
+          308.8619079589844,
+          274.24700927734375,
+          508.7413330078125,
+          285.2059020996094
+        ],
+        [
+          308.86187744140625,
+          291.3857421875,
+          545.114990234375,
+          339.2556457519531
+        ],
+        [
+          308.86187744140625,
+          339.2056884765625,
+          545.11669921875,
+          458.8075256347656
+        ],
+        [
+          308.86187744140625,
+          491.30157470703125,
+          545.1150512695312,
+          586.9934692382812
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C09",
+      "evidence_number": 1,
+      "paper_key": "beit",
+      "physical_page": 5,
+      "quote": "not use the labels",
+      "paragraph_candidates": [
+        144
+      ],
+      "bbox_candidates": [
+        [
+          107.53199768066406,
+          173.5447540283203,
+          504.1701965332031,
+          239.56210327148438
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C09",
+      "evidence_number": 2,
+      "paper_key": "deit",
+      "physical_page": 3,
+      "quote": "teacher",
+      "paragraph_candidates": [
+        31
+      ],
+      "bbox_candidates": [
+        [
+          147.656005859375,
+          212.45631408691406,
+          477.4783020019531,
+          270.2399597167969
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C10",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 3,
+      "quote": "stability",
+      "paragraph_candidates": [
+        40
+      ],
+      "bbox_candidates": [
+        [
+          133.76800537109375,
+          303.1654357910156,
+          487.56976318359375,
+          420.72491455078125
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C10",
+      "evidence_number": 2,
+      "paper_key": "t2t",
+      "physical_page": 1,
+      "quote": "local",
+      "paragraph_candidates": [
+        9,
+        15,
+        16
+      ],
+      "bbox_candidates": [
+        [
+          50.112098693847656,
+          254.1461181640625,
+          286.3652648925781,
+          622.7634887695312
+        ],
+        [
+          308.86199951171875,
+          499.68829345703125,
+          545.1151733398438,
+          665.06787109375
+        ],
+        [
+          308.86199951171875,
+          667.5792846679688,
+          545.1151123046875,
+          713.4068603515625
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C11",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 3,
+      "quote": "1D",
+      "paragraph_candidates": [
+        60,
+        66
+      ],
+      "bbox_candidates": [
+        [
+          107.99996948242188,
+          493.1304016113281,
+          504.0032958984375,
+          582.8289794921875
+        ],
+        [
+          107.99996948242188,
+          650.5753784179688,
+          504.0032653808594,
+          693.4139404296875
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C11",
+      "evidence_number": 2,
+      "paper_key": "cvt",
+      "physical_page": 8,
+      "quote": "N/A",
+      "paragraph_candidates": [
+        159,
+        160
+      ],
+      "bbox_candidates": [
+        [
+          50.430855887276785,
+          267.23101806640625,
+          286.0476989746094,
+          293.3059997558594
+        ],
+        [
+          50.430855887276785,
+          296.343017578125,
+          286.0476989746094,
+          346.27040405273436
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C12",
+      "evidence_number": 1,
+      "paper_key": "crossvit",
+      "physical_page": 4,
+      "quote": "Cross-Attention Fusion",
+      "paragraph_candidates": [
+        124
+      ],
+      "bbox_candidates": [
+        [
+          308.87890625,
+          438.11749267578125,
+          545.4610595703125,
+          663.4505004882812
+        ]
+      ],
+      "pdf_sha256": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C12",
+      "evidence_number": 2,
+      "paper_key": "swin",
+      "physical_page": 5,
+      "quote": "SW-MSA",
+      "paragraph_candidates": [
+        110
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          177.97242736816406,
+          286.3650207519531,
+          211.84506225585938
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C13",
+      "evidence_number": 1,
+      "paper_key": "levit",
+      "physical_page": 6,
+      "quote": "average pooling",
+      "paragraph_candidates": [
+        179
+      ],
+      "bbox_candidates": [
+        [
+          71.99998474121094,
+          240.48802185058594,
+          300.642822265625,
+          346.3221435546875
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C13",
+      "evidence_number": 2,
+      "paper_key": "deit",
+      "physical_page": 7,
+      "quote": "tokens",
+      "paragraph_candidates": [
+        83,
+        84,
+        86,
+        88
+      ],
+      "bbox_candidates": [
+        [
+          291.1646728515625,
+          372.1697082519531,
+          314.021484375,
+          388.4559020996094
+        ],
+        [
+          291.1646728515625,
+          372.1697082519531,
+          383.46063232421875,
+          388.4559020996094
+        ],
+        [
+          133.76800537109375,
+          402.3326110839844,
+          477.47967529296875,
+          472.24383544921875
+        ],
+        [
+          133.76800537109375,
+          590.6201782226562,
+          477.4778137207031,
+          672.3138427734375
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C14",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 1,
+      "quote": "supervised",
+      "paragraph_candidates": [
+        14
+      ],
+      "bbox_candidates": [
+        [
+          107.99993896484375,
+          607.3014526367188,
+          504.00335693359375,
+          661.1000366210938
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C14",
+      "evidence_number": 2,
+      "paper_key": "beit",
+      "physical_page": 5,
+      "quote": "not use the labels",
+      "paragraph_candidates": [
+        144
+      ],
+      "bbox_candidates": [
+        [
+          107.53199768066406,
+          173.5447540283203,
+          504.1701965332031,
+          239.56210327148438
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C15",
+      "evidence_number": 1,
+      "paper_key": "swin",
+      "physical_page": 6,
+      "quote": "81.3",
+      "paragraph_candidates": [
+        142,
+        147
+      ],
+      "bbox_candidates": [
+        [
+          50.11201477050781,
+          366.556640625,
+          286.3651428222656,
+          533.7030639648438
+        ],
+        [
+          310.239990234375,
+          83.95498657226562,
+          543.7340087890625,
+          294.6650085449219
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C15",
+      "evidence_number": 2,
+      "paper_key": "pvt",
+      "physical_page": 7,
+      "quote": "20.2",
+      "paragraph_candidates": [
+        208,
+        210
+      ],
+      "bbox_candidates": [
+        [
+          50.90599822998047,
+          71.99999237060547,
+          285.5679931640625,
+          329.53399658203125
+        ],
+        [
+          50.11199951171875,
+          423.71038818359375,
+          286.3664855957031,
+          541.2688598632812
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C16",
+      "evidence_number": 1,
+      "paper_key": "cvt",
+      "physical_page": 7,
+      "quote": "81.6",
+      "paragraph_candidates": [
+        139
+      ],
+      "bbox_candidates": [
+        [
+          53.45800018310547,
+          294.0670166015625,
+          541.7650146484375,
+          370.5710144042969
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C16",
+      "evidence_number": 2,
+      "paper_key": "t2t",
+      "physical_page": 6,
+      "quote": "81.5",
+      "paragraph_candidates": [
+        145,
+        146,
+        153,
+        157
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          385.79559326171875,
+          286.3652038574219,
+          575.1759643554688
+        ],
+        [
+          50.11201477050781,
+          580.4404296875,
+          286.36517333984375,
+          686.135009765625
+        ],
+        [
+          316.6570129394531,
+          124.50898742675781,
+          535.322998046875,
+          186.2490234375
+        ],
+        [
+          331.7879943847656,
+          308.9940185546875,
+          520.1929931640625,
+          358.77899169921875
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C17",
+      "evidence_number": 1,
+      "paper_key": "deit",
+      "physical_page": 17,
+      "quote": "25",
+      "paragraph_candidates": [
+        211
+      ],
+      "bbox_candidates": [
+        [
+          133.76797485351562,
+          435.88104248046875,
+          477.4798278808594,
+          553.5366821289062
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C17",
+      "evidence_number": 2,
+      "paper_key": "beit",
+      "physical_page": 6,
+      "quote": "10",
+      "paragraph_candidates": [
+        168,
+        169
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          444.5858154296875,
+          504.3441162109375,
+          521.8569946289062
+        ],
+        [
+          107.6709976196289,
+          533.4775390625,
+          505.7388000488281,
+          652.6220092773438
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C18",
+      "evidence_number": 1,
+      "paper_key": "pvt",
+      "physical_page": 1,
+      "quote": "pyramid",
+      "paragraph_candidates": [
+        1,
+        31,
+        35
+      ],
+      "bbox_candidates": [
+        [
+          74.05799865722656,
+          105.9219970703125,
+          521.171875,
+          120.26819610595703
+        ],
+        [
+          50.11199951171875,
+          346.427978515625,
+          545.1137084960938,
+          440.7389831542969
+        ],
+        [
+          50.11199188232422,
+          485.6865234375,
+          286.3651123046875,
+          686.9310913085938
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C18",
+      "evidence_number": 2,
+      "paper_key": "levit",
+      "physical_page": 2,
+      "quote": "speed",
+      "paragraph_candidates": [
+        37,
+        38
+      ],
+      "bbox_candidates": [
+        [
+          72.0,
+          127.20948791503906,
+          300.6419982910156,
+          280.6342468261719
+        ],
+        [
+          72.0,
+          282.6266174316406,
+          300.64208984375,
+          388.2301330566406
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C19",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 5,
+      "quote": "class-attention stage",
+      "paragraph_candidates": [
+        83,
+        84
+      ],
+      "bbox_candidates": [
+        [
+          146.2220001220703,
+          544.1905517578125,
+          477.48065185546875,
+          578.2368774414062
+        ],
+        [
+          133.7679901123047,
+          588.19921875,
+          477.477783203125,
+          669.8928833007812
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C19",
+      "evidence_number": 2,
+      "paper_key": "crossvit",
+      "physical_page": 4,
+      "quote": "Cross-Attention Fusion",
+      "paragraph_candidates": [
+        124
+      ],
+      "bbox_candidates": [
+        [
+          308.87890625,
+          438.11749267578125,
+          545.4610595703125,
+          663.4505004882812
+        ]
+      ],
+      "pdf_sha256": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C20",
+      "evidence_number": 1,
+      "paper_key": "swin",
+      "physical_page": 8,
+      "quote": "rel. pos.",
+      "paragraph_candidates": [
+        167
+      ],
+      "bbox_candidates": [
+        [
+          57.685001373291016,
+          72.49798583984375,
+          278.7900085449219,
+          173.135986328125
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-C20",
+      "evidence_number": 2,
+      "paper_key": "cvt",
+      "physical_page": 8,
+      "quote": "N/A",
+      "paragraph_candidates": [
+        159,
+        160
+      ],
+      "bbox_candidates": [
+        [
+          50.430855887276785,
+          267.23101806640625,
+          286.0476989746094,
+          293.3059997558594
+        ],
+        [
+          50.430855887276785,
+          296.343017578125,
+          286.0476989746094,
+          346.27040405273436
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S01",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 2,
+      "quote": "JFT-300M",
+      "paragraph_candidates": [
+        22,
+        29
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          112.16444396972656,
+          504.0033874511719,
+          187.87997436523438
+        ],
+        [
+          108.00006103515625,
+          656.5521240234375,
+          504.0033874511719,
+          732.2687377929688
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S01",
+      "evidence_number": 2,
+      "paper_key": "deit",
+      "physical_page": 3,
+      "quote": "distillation",
+      "paragraph_candidates": [
+        31,
+        32,
+        34
+      ],
+      "bbox_candidates": [
+        [
+          147.656005859375,
+          212.45631408691406,
+          477.4783020019531,
+          270.2399597167969
+        ],
+        [
+          147.656005859375,
+          279.25738525390625,
+          477.4776916503906,
+          301.1749572753906
+        ],
+        [
+          133.76800537109375,
+          364.09332275390625,
+          477.4779052734375,
+          457.7428283691406
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S02",
+      "evidence_number": 1,
+      "paper_key": "swin",
+      "physical_page": 1,
+      "quote": "hierarchical Transformer",
+      "paragraph_candidates": [
+        10
+      ],
+      "bbox_candidates": [
+        [
+          50.111961364746094,
+          254.53204345703125,
+          286.3650817871094,
+          587.284423828125
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S02",
+      "evidence_number": 2,
+      "paper_key": "pvt",
+      "physical_page": 4,
+      "quote": "four stages",
+      "paragraph_candidates": [
+        126,
+        130
+      ],
+      "bbox_candidates": [
+        [
+          50.11198425292969,
+          306.3915100097656,
+          545.1155395507812,
+          340.3560485839844
+        ],
+        [
+          50.11198425292969,
+          436.5624694824219,
+          286.3651428222656,
+          542.1669311523438
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S03",
+      "evidence_number": 1,
+      "paper_key": "t2t",
+      "physical_page": 2,
+      "quote": "soft split",
+      "paragraph_candidates": [
+        27
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          440.4303283691406,
+          286.36676025390625,
+          713.4068603515625
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S03",
+      "evidence_number": 2,
+      "paper_key": "cvt",
+      "physical_page": 4,
+      "quote": "Convolutional Projection",
+      "paragraph_candidates": [
+        73,
+        92,
+        93,
+        94,
+        96
+      ],
+      "bbox_candidates": [
+        [
+          50.111968994140625,
+          119.7396240234375,
+          286.3658752441406,
+          502.3544921875
+        ],
+        [
+          308.8619079589844,
+          274.24700927734375,
+          508.7413330078125,
+          285.2059020996094
+        ],
+        [
+          308.86187744140625,
+          291.3857421875,
+          545.114990234375,
+          339.2556457519531
+        ],
+        [
+          308.86187744140625,
+          339.2056884765625,
+          545.11669921875,
+          458.8075256347656
+        ],
+        [
+          308.86187744140625,
+          491.30157470703125,
+          545.1150512695312,
+          586.9934692382812
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S04",
+      "evidence_number": 1,
+      "paper_key": "crossvit",
+      "physical_page": 3,
+      "quote": "dual-branch",
+      "paragraph_candidates": [
+        58
+      ],
+      "bbox_candidates": [
+        [
+          308.87847900390625,
+          368.6348876953125,
+          545.3561401367188,
+          510.1175231933594
+        ]
+      ],
+      "pdf_sha256": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S04",
+      "evidence_number": 2,
+      "paper_key": "pvt",
+      "physical_page": 4,
+      "quote": "four stages",
+      "paragraph_candidates": [
+        126,
+        130
+      ],
+      "bbox_candidates": [
+        [
+          50.11198425292969,
+          306.3915100097656,
+          545.1155395507812,
+          340.3560485839844
+        ],
+        [
+          50.11198425292969,
+          436.5624694824219,
+          286.3651428222656,
+          542.1669311523438
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S05",
+      "evidence_number": 1,
+      "paper_key": "deit",
+      "physical_page": 3,
+      "quote": "teacher",
+      "paragraph_candidates": [
+        31
+      ],
+      "bbox_candidates": [
+        [
+          147.656005859375,
+          212.45631408691406,
+          477.4783020019531,
+          270.2399597167969
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S05",
+      "evidence_number": 2,
+      "paper_key": "beit",
+      "physical_page": 3,
+      "quote": "dVAE",
+      "paragraph_candidates": [
+        63
+      ],
+      "bbox_candidates": [
+        [
+          107.69100189208984,
+          361.69775390625,
+          505.7483825683594,
+          449.5340881347656
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S06",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 5,
+      "quote": "class-attention stage",
+      "paragraph_candidates": [
+        83,
+        84
+      ],
+      "bbox_candidates": [
+        [
+          146.2220001220703,
+          544.1905517578125,
+          477.48065185546875,
+          578.2368774414062
+        ],
+        [
+          133.7679901123047,
+          588.19921875,
+          477.477783203125,
+          669.8928833007812
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S06",
+      "evidence_number": 2,
+      "paper_key": "levit",
+      "physical_page": 6,
+      "quote": "average pooling",
+      "paragraph_candidates": [
+        179
+      ],
+      "bbox_candidates": [
+        [
+          71.99998474121094,
+          240.48802185058594,
+          300.642822265625,
+          346.3221435546875
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S07",
+      "evidence_number": 1,
+      "paper_key": "swin",
+      "physical_page": 8,
+      "quote": "rel. pos.",
+      "paragraph_candidates": [
+        167
+      ],
+      "bbox_candidates": [
+        [
+          57.685001373291016,
+          72.49798583984375,
+          278.7900085449219,
+          173.135986328125
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S07",
+      "evidence_number": 2,
+      "paper_key": "cvt",
+      "physical_page": 8,
+      "quote": "N/A",
+      "paragraph_candidates": [
+        159,
+        160
+      ],
+      "bbox_candidates": [
+        [
+          50.430855887276785,
+          267.23101806640625,
+          286.0476989746094,
+          293.3059997558594
+        ],
+        [
+          50.430855887276785,
+          296.343017578125,
+          286.0476989746094,
+          346.27040405273436
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S08",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 4,
+      "quote": "prediction",
+      "paragraph_candidates": [
+        90
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          383.8912353515625,
+          504.0034484863281,
+          492.4837341308594
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S08",
+      "evidence_number": 2,
+      "paper_key": "beit",
+      "physical_page": 6,
+      "quote": "fine-tune",
+      "paragraph_candidates": [
+        167,
+        168,
+        171
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          389.08355712890625,
+          504.00439453125,
+          431.73907470703125
+        ],
+        [
+          108.0,
+          444.5858154296875,
+          504.3441162109375,
+          521.8569946289062
+        ],
+        [
+          108.0,
+          681.7696533203125,
+          504.3929443359375,
+          722.1663818359375
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S09",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 3,
+      "quote": "stability",
+      "paragraph_candidates": [
+        40
+      ],
+      "bbox_candidates": [
+        [
+          133.76800537109375,
+          303.1654357910156,
+          487.56976318359375,
+          420.72491455078125
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S09",
+      "evidence_number": 2,
+      "paper_key": "t2t",
+      "physical_page": 2,
+      "quote": "deep-narrow",
+      "paragraph_candidates": [
+        27,
+        28,
+        29
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          440.4303283691406,
+          286.36676025390625,
+          713.4068603515625
+        ],
+        [
+          308.86199951171875,
+          310.50726318359375,
+          545.1151123046875,
+          416.1117858886719
+        ],
+        [
+          308.86199951171875,
+          418.3321838378906,
+          545.1151733398438,
+          571.7576293945312
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S10",
+      "evidence_number": 1,
+      "paper_key": "levit",
+      "physical_page": 2,
+      "quote": "IO-bound",
+      "paragraph_candidates": [
+        38
+      ],
+      "bbox_candidates": [
+        [
+          72.0,
+          282.6266174316406,
+          300.64208984375,
+          388.2301330566406
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S10",
+      "evidence_number": 2,
+      "paper_key": "cvt",
+      "physical_page": 7,
+      "quote": "FLOPs",
+      "paragraph_candidates": [
+        133,
+        144,
+        148
+      ],
+      "bbox_candidates": [
+        [
+          305.822998046875,
+          75.37007141113281,
+          539.5243530273438,
+          97.13357543945312
+        ],
+        [
+          50.112030029296875,
+          592.8465576171875,
+          286.3651428222656,
+          664.6275024414062
+        ],
+        [
+          308.8620300292969,
+          507.80853271484375,
+          545.115234375,
+          531.7684936523438
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S11",
+      "evidence_number": 1,
+      "paper_key": "pvt",
+      "physical_page": 7,
+      "quote": "segmentation",
+      "paragraph_candidates": [
+        215,
+        216,
+        217
+      ],
+      "bbox_candidates": [
+        [
+          308.8618469238281,
+          338.9574279785156,
+          545.1151123046875,
+          432.60595703125
+        ],
+        [
+          308.86187744140625,
+          444.0167236328125,
+          437.9248352050781,
+          454.9756164550781
+        ],
+        [
+          308.86187744140625,
+          463.4823913574219,
+          545.1150512695312,
+          713.4068603515625
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S11",
+      "evidence_number": 2,
+      "paper_key": "cvt",
+      "physical_page": 8,
+      "quote": "CIFAR",
+      "paragraph_candidates": [
+        153
+      ],
+      "bbox_candidates": [
+        [
+          50.430855887276785,
+          76.58099746704102,
+          286.0476989746094,
+          99.36798095703125
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S12",
+      "evidence_number": 1,
+      "paper_key": "swin",
+      "physical_page": 5,
+      "quote": "SW-MSA",
+      "paragraph_candidates": [
+        110
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          177.97242736816406,
+          286.3650207519531,
+          211.84506225585938
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S12",
+      "evidence_number": 2,
+      "paper_key": "crossvit",
+      "physical_page": 1,
+      "quote": "linear",
+      "paragraph_candidates": [
+        8
+      ],
+      "bbox_candidates": [
+        [
+          50.16019821166992,
+          259.61138916015625,
+          286.5452880859375,
+          568.374267578125
+        ]
+      ],
+      "pdf_sha256": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S13",
+      "evidence_number": 1,
+      "paper_key": "t2t",
+      "physical_page": 1,
+      "quote": "deep-narrow",
+      "paragraph_candidates": [
+        9
+      ],
+      "bbox_candidates": [
+        [
+          50.112098693847656,
+          254.1461181640625,
+          286.3652648925781,
+          622.7634887695312
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S13",
+      "evidence_number": 2,
+      "paper_key": "deit",
+      "physical_page": 3,
+      "quote": "distillation",
+      "paragraph_candidates": [
+        31,
+        32,
+        34
+      ],
+      "bbox_candidates": [
+        [
+          147.656005859375,
+          212.45631408691406,
+          477.4783020019531,
+          270.2399597167969
+        ],
+        [
+          147.656005859375,
+          279.25738525390625,
+          477.4776916503906,
+          301.1749572753906
+        ],
+        [
+          133.76800537109375,
+          364.09332275390625,
+          477.4779052734375,
+          457.7428283691406
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S14",
+      "evidence_number": 1,
+      "paper_key": "beit",
+      "physical_page": 6,
+      "quote": "large size",
+      "paragraph_candidates": [
+        169
+      ],
+      "bbox_candidates": [
+        [
+          107.6709976196289,
+          533.4775390625,
+          505.7388000488281,
+          652.6220092773438
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S14",
+      "evidence_number": 2,
+      "paper_key": "cait",
+      "physical_page": 3,
+      "quote": "stability",
+      "paragraph_candidates": [
+        40
+      ],
+      "bbox_candidates": [
+        [
+          133.76800537109375,
+          303.1654357910156,
+          487.56976318359375,
+          420.72491455078125
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S15",
+      "evidence_number": 1,
+      "paper_key": "pvt",
+      "physical_page": 7,
+      "quote": "segmentation",
+      "paragraph_candidates": [
+        215,
+        216,
+        217
+      ],
+      "bbox_candidates": [
+        [
+          308.8618469238281,
+          338.9574279785156,
+          545.1151123046875,
+          432.60595703125
+        ],
+        [
+          308.86187744140625,
+          444.0167236328125,
+          437.9248352050781,
+          454.9756164550781
+        ],
+        [
+          308.86187744140625,
+          463.4823913574219,
+          545.1150512695312,
+          713.4068603515625
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-S15",
+      "evidence_number": 2,
+      "paper_key": "levit",
+      "physical_page": 1,
+      "quote": "CPU",
+      "paragraph_candidates": [
+        9,
+        14,
+        33
+      ],
+      "bbox_candidates": [
+        [
+          71.99998474121094,
+          404.7183837890625,
+          300.64239501953125,
+          546.1878662109375
+        ],
+        [
+          356.12664794921875,
+          264.8540344238281,
+          515.7923583984375,
+          276.4193115234375
+        ],
+        [
+          310.60498046875,
+          412.0394592285156,
+          539.25146484375,
+          469.822021484375
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R01",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 3,
+      "quote": "HW/P",
+      "paragraph_candidates": [
+        60
+      ],
+      "bbox_candidates": [
+        [
+          107.99996948242188,
+          493.1304016113281,
+          504.0032958984375,
+          582.8289794921875
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R02",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 3,
+      "quote": "HW/P",
+      "paragraph_candidates": [
+        60
+      ],
+      "bbox_candidates": [
+        [
+          107.99996948242188,
+          493.1304016113281,
+          504.0032958984375,
+          582.8289794921875
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R02",
+      "evidence_number": 2,
+      "paper_key": "vit",
+      "physical_page": 4,
+      "quote": "interpolation",
+      "paragraph_candidates": [
+        90
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          383.8912353515625,
+          504.0034484863281,
+          492.4837341308594
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R03",
+      "evidence_number": 1,
+      "paper_key": "pvt",
+      "physical_page": 7,
+      "quote": "20.2",
+      "paragraph_candidates": [
+        208,
+        210
+      ],
+      "bbox_candidates": [
+        [
+          50.90599822998047,
+          71.99999237060547,
+          285.5679931640625,
+          329.53399658203125
+        ],
+        [
+          50.11199951171875,
+          423.71038818359375,
+          286.3664855957031,
+          541.2688598632812
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R04",
+      "evidence_number": 1,
+      "paper_key": "t2t",
+      "physical_page": 6,
+      "quote": "78.1",
+      "paragraph_candidates": [
+        145,
+        153
+      ],
+      "bbox_candidates": [
+        [
+          50.11199951171875,
+          385.79559326171875,
+          286.3652038574219,
+          575.1759643554688
+        ],
+        [
+          316.6570129394531,
+          124.50898742675781,
+          535.322998046875,
+          186.2490234375
+        ]
+      ],
+      "pdf_sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R05",
+      "evidence_number": 1,
+      "paper_key": "swin",
+      "physical_page": 8,
+      "quote": "80.2",
+      "paragraph_candidates": [
+        167
+      ],
+      "bbox_candidates": [
+        [
+          57.685001373291016,
+          72.49798583984375,
+          278.7900085449219,
+          173.135986328125
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R06",
+      "evidence_number": 1,
+      "paper_key": "cvt",
+      "physical_page": 8,
+      "quote": "78.0",
+      "paragraph_candidates": [
+        159
+      ],
+      "bbox_candidates": [
+        [
+          50.430855887276785,
+          267.23101806640625,
+          286.0476989746094,
+          293.3059997558594
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R07",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 5,
+      "quote": "expressive",
+      "paragraph_candidates": [
+        77
+      ],
+      "bbox_candidates": [
+        [
+          133.76800537109375,
+          223.2614288330078,
+          477.4841613769531,
+          257.1340637207031
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R08",
+      "evidence_number": 1,
+      "paper_key": "levit",
+      "physical_page": 6,
+      "quote": "stride 2",
+      "paragraph_candidates": [
+        178
+      ],
+      "bbox_candidates": [
+        [
+          71.99998474121094,
+          126.84981536865234,
+          300.6429443359375,
+          232.81320190429688
+        ]
+      ],
+      "pdf_sha256": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R09",
+      "evidence_number": 1,
+      "paper_key": "crossvit",
+      "physical_page": 4,
+      "quote": "Cross-Attention Fusion",
+      "paragraph_candidates": [
+        124
+      ],
+      "bbox_candidates": [
+        [
+          308.87890625,
+          438.11749267578125,
+          545.4610595703125,
+          663.4505004882812
+        ]
+      ],
+      "pdf_sha256": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R10",
+      "evidence_number": 1,
+      "paper_key": "beit",
+      "physical_page": 5,
+      "quote": "not use the labels",
+      "paragraph_candidates": [
+        144
+      ],
+      "bbox_candidates": [
+        [
+          107.53199768066406,
+          173.5447540283203,
+          504.1701965332031,
+          239.56210327148438
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R10",
+      "evidence_number": 2,
+      "paper_key": "beit",
+      "physical_page": 6,
+      "quote": "labeled data",
+      "paragraph_candidates": [
+        167,
+        169
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          389.08355712890625,
+          504.00439453125,
+          431.73907470703125
+        ],
+        [
+          107.6709976196289,
+          533.4775390625,
+          505.7388000488281,
+          652.6220092773438
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R11",
+      "evidence_number": 1,
+      "paper_key": "vit",
+      "physical_page": 2,
+      "quote": "88.55%",
+      "paragraph_candidates": [
+        22
+      ],
+      "bbox_candidates": [
+        [
+          108.0,
+          112.16444396972656,
+          504.0033874511719,
+          187.87997436523438
+        ]
+      ],
+      "pdf_sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R11",
+      "evidence_number": 2,
+      "paper_key": "deit",
+      "physical_page": 1,
+      "quote": "85.2%",
+      "paragraph_candidates": [
+        16
+      ],
+      "bbox_candidates": [
+        [
+          158.675048828125,
+          429.7875671386719,
+          452.5756530761719,
+          504.50787353515625
+        ]
+      ],
+      "pdf_sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R12",
+      "evidence_number": 1,
+      "paper_key": "cvt",
+      "physical_page": 7,
+      "quote": "87.7",
+      "paragraph_candidates": [
+        139,
+        141,
+        145
+      ],
+      "bbox_candidates": [
+        [
+          53.45800018310547,
+          294.0670166015625,
+          541.7650146484375,
+          370.5710144042969
+        ],
+        [
+          53.45800018310547,
+          411.48699951171875,
+          541.7650146484375,
+          446.97599029541016
+        ],
+        [
+          50.112030029296875,
+          665.9295043945312,
+          286.3656921386719,
+          713.7994995117188
+        ]
+      ],
+      "pdf_sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R12",
+      "evidence_number": 2,
+      "paper_key": "swin",
+      "physical_page": 6,
+      "quote": "87.3",
+      "paragraph_candidates": [
+        143,
+        148
+      ],
+      "bbox_candidates": [
+        [
+          50.11201477050781,
+          559.8916015625,
+          286.36602783203125,
+          713.4071044921875
+        ],
+        [
+          310.239990234375,
+          306.12200927734375,
+          543.7340087890625,
+          406.4460144042969
+        ]
+      ],
+      "pdf_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R13",
+      "evidence_number": 1,
+      "paper_key": "pvt",
+      "physical_page": 5,
+      "quote": "Reshape",
+      "paragraph_candidates": [
+        171,
+        172
+      ],
+      "bbox_candidates": [
+        [
+          89.6190185546875,
+          435.9687194824219,
+          286.36236572265625,
+          448.550537109375
+        ],
+        [
+          50.11199951171875,
+          453.45245361328125,
+          286.3666076660156,
+          501.9000244140625
+        ]
+      ],
+      "pdf_sha256": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R14",
+      "evidence_number": 1,
+      "paper_key": "beit",
+      "physical_page": 5,
+      "quote": "75",
+      "paragraph_candidates": [
+        144
+      ],
+      "bbox_candidates": [
+        [
+          107.53199768066406,
+          173.5447540283203,
+          504.1701965332031,
+          239.56210327148438
+        ]
+      ],
+      "pdf_sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    },
+    {
+      "case_id": "VT-R15",
+      "evidence_number": 1,
+      "paper_key": "cait",
+      "physical_page": 5,
+      "quote": "contradictory",
+      "paragraph_candidates": [
+        79,
+        80
+      ],
+      "bbox_candidates": [
+        [
+          133.76800537109375,
+          304.1594543457031,
+          477.4776916503906,
+          373.8979797363281
+        ],
+        [
+          133.76800537109375,
+          386.3062438964844,
+          477.4822692871094,
+          468.0968933105469
+        ]
+      ],
+      "pdf_sha256": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+      "exact_anchor_on_pdf_page": true,
+      "exact_anchor_in_loaded_block": true,
+      "human_review_pending": true
+    }
+  ],
+  "review_method": "assistant_source_checked",
+  "human_review_pending": true,
+  "dataset_sha256": "9357cdddf6c24323370e2402166342ef5896edd47ab72496cbb0e9a4176deea4",
+  "corpus_manifest_sha256": "4391d662fc77655c608161d99bac67cd3d766c2c0c0150bd3c68ab5fd038b89a",
+  "not_an_answer_quality_score": true,
+  "notes": [
+    "此验证确认原件、定位锚点与分块映射，不冒充人工评分或正式模型效果。",
+    "简短锚点可能匹配同页多个段落；候选段落与坐标全部保留，人工复核时需确认真正支持答案的段落。"
+  ]
+}

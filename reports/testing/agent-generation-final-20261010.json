@@ -1,0 +1,12 @@
+{
+  "seconds": 10.555,
+  "failures": 0,
+  "purpose": "Final provider JSON schema, dataset identifier and comparison evidence regression; overlaps the changed-path regression",
+  "errors": 0,
+  "skipped": 0,
+  "scope": [
+    "agent",
+    "generation"
+  ],
+  "tests": 84
+}

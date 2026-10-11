@@ -1,0 +1,227 @@
+{
+  "title": "4题标准模型功能验收，非正式80题评测",
+  "created_at": "2026-10-10T01:46:57.880969+00:00",
+  "purpose": "验证三种检索模式、真实结果持久化与JSON/CSV/XLSX导出；不得用4题数据宣称课程性能达标。",
+  "dataset_path": "reports\\ui\\standard-acceptance-4.jsonl",
+  "fixture_sha256": "dd96d03afea572baaa4cb84499898d79d6ef176d52c8bcc832d6d40bc81b2970",
+  "case_ids": [
+    "VT-F01",
+    "VT-C01",
+    "VT-S03",
+    "VT-R01"
+  ],
+  "categories": [
+    "factual",
+    "comparison",
+    "synthesis",
+    "reasoning"
+  ],
+  "review_method": "assistant_source_checked",
+  "human_review_pending": true,
+  "human_review_claim": false,
+  "notes": [
+    "原始JSONL完整保留source_provenance。API结果保留检索证据但未复制标注溯源扩展字段，以本summary与原JSONL为核对依据。",
+    "只测检索，无模型答案自动评分，无人工答案评分。",
+    "全部在相同现存10篇真实论文、359片段索引上依次执行；知识库未修改。",
+    "MRR按完整返回排序统计；Hit@5/Recall@5仅按前五条和原有严格证据匹配规则统计。",
+    "4题样本前五条命中偏低，仍需开发集调试与完整保留测试集验收。",
+    "时间含运行时模型状态影响，不用于公平速度排名。"
+  ],
+  "experiments": [
+    {
+      "mode": "vector",
+      "api_experiment_id": "07839397025b4878b3ff7c0bfdf59479",
+      "result_experiment_id": "7c8f8349-17d3-4424-b111-f4933cea5911",
+      "status": "done",
+      "metrics": {
+        "case_count": 4,
+        "successful_count": 4,
+        "error_count": 0,
+        "hit_at_5": 0.0,
+        "mrr": 0.06593567251461988,
+        "recall_at_5": 0.0,
+        "latency_mean_ms": 263.35725,
+        "latency_p50_ms": 267.633,
+        "latency_p95_ms": 312.19795,
+        "by_category": {
+          "comparison": {
+            "hit_at_5": 0.0,
+            "mrr": 0.0,
+            "recall_at_5": 0.0
+          },
+          "factual": {
+            "hit_at_5": 0.0,
+            "mrr": 0.05263157894736842,
+            "recall_at_5": 0.0
+          },
+          "reasoning": {
+            "hit_at_5": 0.0,
+            "mrr": 0.1111111111111111,
+            "recall_at_5": 0.0
+          },
+          "synthesis": {
+            "hit_at_5": 0.0,
+            "mrr": 0.1,
+            "recall_at_5": 0.0
+          }
+        }
+      },
+      "dataset_hash": "4b7b1aea1c4b8e3a7cb07c1f8f7b964cfa1dd9a11428f9fbb74d02cae1e83a64",
+      "corpus_hash": "ca6bfa4ad20e50ef61be479bcd1e260093372a760bf974371e82f1f1d168581e",
+      "index_version": "c12aecaeef244e66948a307155a3de58",
+      "config_hash": "7326966f15866b9df8201974fb569086f57ffe4d0535a15f81687679e04aa4ac",
+      "exports": [
+        {
+          "format": "json",
+          "path": "reports\\ui\\standard-acceptance\\vector.json",
+          "bytes": 892434,
+          "sha256": "0eb956c78481dd73f2d4c9bc203ddfe2b6f5fd5df3f549cbd8b94c5688936c79"
+        },
+        {
+          "format": "csv",
+          "path": "reports\\ui\\standard-acceptance\\vector.csv",
+          "bytes": 5801,
+          "sha256": "cf0c4e797ee14b47cabbad72943a482d10f7b84b24d14aadd7901b583213a106"
+        },
+        {
+          "format": "xlsx",
+          "path": "reports\\ui\\standard-acceptance\\vector.xlsx",
+          "bytes": 12236,
+          "sha256": "8b584cf6424f71efcc078178ba0af0d6cee707476aaf64742319291f5943b0cc"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid",
+      "api_experiment_id": "2320116b48be4d358b60218b69e0e426",
+      "result_experiment_id": "484e1704-67f9-441f-b34e-67dfd6943c95",
+      "status": "done",
+      "metrics": {
+        "case_count": 4,
+        "successful_count": 4,
+        "error_count": 0,
+        "hit_at_5": 0.25,
+        "mrr": 0.13375350140056022,
+        "recall_at_5": 0.25,
+        "latency_mean_ms": 337.44525,
+        "latency_p50_ms": 334.9925,
+        "latency_p95_ms": 452.05145,
+        "by_category": {
+          "comparison": {
+            "hit_at_5": 0.0,
+            "mrr": 0.0,
+            "recall_at_5": 0.0
+          },
+          "factual": {
+            "hit_at_5": 1.0,
+            "mrr": 0.3333333333333333,
+            "recall_at_5": 1.0
+          },
+          "reasoning": {
+            "hit_at_5": 0.0,
+            "mrr": 0.14285714285714285,
+            "recall_at_5": 0.0
+          },
+          "synthesis": {
+            "hit_at_5": 0.0,
+            "mrr": 0.058823529411764705,
+            "recall_at_5": 0.0
+          }
+        }
+      },
+      "dataset_hash": "4b7b1aea1c4b8e3a7cb07c1f8f7b964cfa1dd9a11428f9fbb74d02cae1e83a64",
+      "corpus_hash": "ca6bfa4ad20e50ef61be479bcd1e260093372a760bf974371e82f1f1d168581e",
+      "index_version": "c12aecaeef244e66948a307155a3de58",
+      "config_hash": "7326966f15866b9df8201974fb569086f57ffe4d0535a15f81687679e04aa4ac",
+      "exports": [
+        {
+          "format": "json",
+          "path": "reports\\ui\\standard-acceptance\\hybrid.json",
+          "bytes": 874577,
+          "sha256": "96daaecfb29dcede3565f5ce6289a7d812ee9aa462863be2e00b18c13e0124fb"
+        },
+        {
+          "format": "csv",
+          "path": "reports\\ui\\standard-acceptance\\hybrid.csv",
+          "bytes": 5817,
+          "sha256": "a1500023d6c7be5a6f8ecdd07467aeb077f64037f8bc542a94f34348c3eacf69"
+        },
+        {
+          "format": "xlsx",
+          "path": "reports\\ui\\standard-acceptance\\hybrid.xlsx",
+          "bytes": 12385,
+          "sha256": "8e1ff080977a0e25340601c4b870d716d9e322554a24ca0ce0675e9b79d4b6ad"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "api_experiment_id": "3a1d9e7272e5470189f28fbaef0a1abe",
+      "result_experiment_id": "fce282c3-6ace-4aac-8bd3-69b61ff0543c",
+      "status": "done",
+      "metrics": {
+        "case_count": 4,
+        "successful_count": 4,
+        "error_count": 0,
+        "hit_at_5": 0.25,
+        "mrr": 0.1919642857142857,
+        "recall_at_5": 0.25,
+        "latency_mean_ms": 11902.1735,
+        "latency_p50_ms": 11902.848,
+        "latency_p95_ms": 12079.25055,
+        "by_category": {
+          "comparison": {
+            "hit_at_5": 0.0,
+            "mrr": 0.0,
+            "recall_at_5": 0.0
+          },
+          "factual": {
+            "hit_at_5": 1.0,
+            "mrr": 0.5,
+            "recall_at_5": 1.0
+          },
+          "reasoning": {
+            "hit_at_5": 0.0,
+            "mrr": 0.125,
+            "recall_at_5": 0.0
+          },
+          "synthesis": {
+            "hit_at_5": 0.0,
+            "mrr": 0.14285714285714285,
+            "recall_at_5": 0.0
+          }
+        }
+      },
+      "dataset_hash": "4b7b1aea1c4b8e3a7cb07c1f8f7b964cfa1dd9a11428f9fbb74d02cae1e83a64",
+      "corpus_hash": "ca6bfa4ad20e50ef61be479bcd1e260093372a760bf974371e82f1f1d168581e",
+      "index_version": "c12aecaeef244e66948a307155a3de58",
+      "config_hash": "7326966f15866b9df8201974fb569086f57ffe4d0535a15f81687679e04aa4ac",
+      "exports": [
+        {
+          "format": "json",
+          "path": "reports\\ui\\standard-acceptance\\hybrid_rerank.json",
+          "bytes": 875795,
+          "sha256": "c94349436d580bb764c802178538c049b7f3688619b81eb75ca5a792b1a78bae"
+        },
+        {
+          "format": "csv",
+          "path": "reports\\ui\\standard-acceptance\\hybrid_rerank.csv",
+          "bytes": 5792,
+          "sha256": "21476b188358998c69f90f3eb01daab3b90fbb4c309adbc274ba9f03101f97ce"
+        },
+        {
+          "format": "xlsx",
+          "path": "reports\\ui\\standard-acceptance\\hybrid_rerank.xlsx",
+          "bytes": 12380,
+          "sha256": "efdf4d9ec0d15c246a4d48ecfed7066350fd9f1908674fdd20f8cc3883c07337"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "run_count": 3,
+    "case_executions": 12,
+    "error_count": 0,
+    "exports_verified": 9
+  }
+}

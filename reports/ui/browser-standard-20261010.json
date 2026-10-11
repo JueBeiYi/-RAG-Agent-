@@ -1,0 +1,210 @@
+{
+  "created_at": "2026-10-10T09:50:15.218487+08:00",
+  "mode": "standard",
+  "llm_model": "research-qwen:7b",
+  "purpose": "真实浏览器标准模式功能验收，不代替正式质量评测或人工语义评分",
+  "question_run": {
+    "request_id": "51617c72a0634eb3ad65e7b40e2baced",
+    "session_id": "49972dc729a0456ebdd0fac7a78b1c4a",
+    "question": "用中文简要解释 Swin Transformer 的窗口移位如何建立跨窗口联系，约120字，引用来源编号即可。",
+    "status": "done",
+    "answer": "Swin Transformer 通过窗口移位机制在连续的 Swin Transformer 块中交替使用两种分区配置，引入了跨窗口连接。具体来说，第一模块采用常规窗口分区策略，第二个模块则将窗口分区向左上方移动一定像素，从而连接相邻窗口中的特征。这种机制使得模型能够更有效地建模，同时保持计算的高效性 [S1]。",
+    "metrics": {
+      "input_tokens": 2625,
+      "output_tokens": 84,
+      "estimated": false,
+      "retrieval_ms": 38462.37039996777,
+      "elapsed_ms": 46414.0,
+      "first_token_ms": 44573.88669997454,
+      "cache_hit": false,
+      "retrieved_count": 5,
+      "top1_score": 0.8418879242785904,
+      "index_version": "c12aecaeef244e66948a307155a3de58",
+      "model": "research-qwen:7b",
+      "demo": false,
+      "retrieval_stages": {
+        "mode": "hybrid_rerank",
+        "candidate_k": 20,
+        "candidates": 20,
+        "results": 5,
+        "vector_ms": 22067.657799925655,
+        "bm25_ms": 825.1783000305295,
+        "rerank_ms": 15552.95590008609,
+        "elapsed_ms": 38455.89059998747,
+        "warning": "",
+        "index_version": "c12aecaeef244e66948a307155a3de58",
+        "embedding_fingerprint": "b7eb5e776f435d622695d731",
+        "score_is_probability": false
+      },
+      "agent_steps": 1,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "tool_success_rate": 1.0,
+      "memory_tokens": 374,
+      "retry_count": 0,
+      "recovered_tools": 0,
+      "failed_attempt_usage_unknown": false,
+      "compressed_messages": 0,
+      "warnings": [],
+      "end_to_end_ms": 46455.33450006042
+    },
+    "origin": "knowledge_rag"
+  },
+  "question_sources": [
+    {
+      "citation_id": "S1",
+      "document_id": "3943ca14c42e437caf11995d3d1d4dcd",
+      "chunk_id": "f74ee3ed9b4db5c3d36072a160ed225c",
+      "name": "swin_2103.14030v2.pdf",
+      "page_start": 4,
+      "page_end": 4
+    },
+    {
+      "citation_id": "S2",
+      "document_id": "3943ca14c42e437caf11995d3d1d4dcd",
+      "chunk_id": "5b2190c15c1bf71ecbcbb256a76584f0",
+      "name": "swin_2103.14030v2.pdf",
+      "page_start": 2,
+      "page_end": 2
+    },
+    {
+      "citation_id": "S3",
+      "document_id": "3943ca14c42e437caf11995d3d1d4dcd",
+      "chunk_id": "8dd855dd9760dfc7ffb293e30e8defd0",
+      "name": "swin_2103.14030v2.pdf",
+      "page_start": 3,
+      "page_end": 4
+    },
+    {
+      "citation_id": "S4",
+      "document_id": "3943ca14c42e437caf11995d3d1d4dcd",
+      "chunk_id": "b52d82e1efb60d4e8e443d3fd872e8c2",
+      "name": "swin_2103.14030v2.pdf",
+      "page_start": 1,
+      "page_end": 1
+    }
+  ],
+  "browser_pdf_preview": {
+    "paper_key": "swin",
+    "physical_page": 4,
+    "verified": "通过界面输入物理页码，实际图文与架构图已在浏览器截图核对",
+    "screenshot": "docs/screenshots/真实论文原页.jpg"
+  },
+  "browser_download": {
+    "path": "C:\\Users\\28031\\Downloads\\swin_2103.14030v2.pdf",
+    "sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+    "manifest_sha256": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+    "match": true
+  },
+  "responsive_check": {
+    "viewport_width": 390,
+    "viewport_height": 844,
+    "observed": "折叠菜单后论文库控件纵向堆叠，可以浏览和操作；测试后已恢复桌面默认视窗"
+  },
+  "comparison": {
+    "request_id": "e3012095efc349f89eb964d11ecb5b48",
+    "method": "llm_grounded",
+    "answer": "**基于原文证据的中文对比**\n\n| 比较维度 | Swin Transformer: Hierarchical Vision Transformer using Shifted Windows | An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale |\n| --- | --- | --- |\n| 方法与创新 | Swin Transformer 通过分层窗口机制提高效率，适用于多种视觉任务 [S1] | Vision Transformer 直接应用于图像序列，无需额外修改，适用于多种图像识别基准 [S5] |\n| 实验条件 | Swin Transformer 在 ImageNet-1K 等任务上进行评估 [S1] | Vision Transformer 在 ImageNet、CIFAR-100 等基准上进行预训练和迁移评估 [S5] |\n\n尚未完整核验任务、数据集版本、划分、指标与训练条件一致；不计算跨论文指标差值，也不据此排名。",
+    "source_document_ids": [
+      "3943ca14c42e437caf11995d3d1d4dcd",
+      "f16b642c2e6a4ff0a7083343fe8cb9cc"
+    ],
+    "status": "真实浏览器功能通过，语义待人工复核",
+    "structured_candidate_accepted": true,
+    "session_id": "f9e38dc3142642bb89d4cfc24b7cfab8",
+    "auto_selected_new_result": true,
+    "generation_attempts": 1,
+    "screenshot": "docs/screenshots/新版论文对比.jpg",
+    "metrics": {
+      "elapsed_ms": 39834.25,
+      "agent_steps": 1,
+      "tool_calls": 1,
+      "tool_successes": 1,
+      "retry_count": 0,
+      "recovered_tools": 0,
+      "tool_success_rate": 1.0,
+      "memory_tokens": 0,
+      "compressed_messages": 0,
+      "input_tokens": 2424,
+      "output_tokens": 141,
+      "estimated": false,
+      "usage": {
+        "input_tokens": 2424,
+        "output_tokens": 141,
+        "estimated": false
+      },
+      "warnings": [],
+      "comparison_method": "llm_grounded",
+      "comparison_fallback_count": 0,
+      "failed_attempt_usage_unknown": false,
+      "end_to_end_ms": 39870.32220000401
+    },
+    "original_failed_requests": [
+      "287d1a873c5d49928482b5931832de27",
+      "54ffc841003946d89bd8a60ef731b060",
+      "90009b0b7fac4c38811df8489ac73e65",
+      "8cf5f63d5209411d9a312f4a7ea79718",
+      "a83112deab0c41d78594cd6ee8b0c99f",
+      "7837919cdc5f4ce591b358f1fa8b3ba6"
+    ],
+    "export": {
+      "json_contains_current_request": true,
+      "markdown_has_chinese_table": true,
+      "markdown_sha256": "98ed76262bd66e9be633ba35c9ed1b9681dfc17bea50d1f32437f7aace7f0572",
+      "markdown_path": "C:\\Users\\28031\\Downloads\\论文对比.md",
+      "json_sha256": "9c07f51d2dc5278cf78f95e9e5367e7bf7a650cebb3130d7527bf358025247c5",
+      "json_path": "C:\\Users\\28031\\Downloads\\论文对比.json"
+    },
+    "semantic_review": "来源和数值规则通过，不等同于语义正确性；预训练与下游评估数据角色仍需人工逐句核对。",
+    "elapsed_ms": 39894.925000029616
+  },
+  "retrieval_acceptance": "reports/ui/standard-acceptance/summary.json",
+  "limits": [
+    "UI自动工作流在独立demo workspace执行；真实浏览器此处核对标准问答、PDF页与下载。",
+    "4题三档是功能验收样本，80题测试集与人工复核没有由本记录替代。"
+  ],
+  "browser_experiment_export": {
+    "path": "C:\\Users\\28031\\Downloads\\实验结果.xlsx",
+    "format": "xlsx",
+    "sha256": "c40a223b84fa2b2c62c4ad721ceb1222baad808b3b04f75322a17045744078bd",
+    "sheets": [
+      "cases",
+      "metrics",
+      "metadata"
+    ],
+    "cases": 4,
+    "screenshot": "docs/screenshots/真实检索实验.jpg",
+    "experiment_id": "3a1d9e7272e5470189f28fbaef0a1abe"
+  },
+  "new_session_sync": {
+    "status": "真实浏览器通过",
+    "session_id": "1100af5868884f2f810aee7eb75d1766",
+    "request_id": "2c6dfa1536cd44b09afb0f8df77ca5fd",
+    "question_saved_to_new_session": true,
+    "screenshot": "docs/screenshots/新版科研问答.jpg",
+    "semantic_review": "来源存在性与真实页面验证，未由功能验收替代人工语义评分"
+  },
+  "source_drawer": {
+    "status": "真实浏览器通过",
+    "default_tab": "原文页面",
+    "physical_page": 4,
+    "source_id": "S1",
+    "screenshot": "docs/screenshots/新版原文证据.jpg"
+  },
+  "library_filter_sync": {
+    "query": "Swin",
+    "selected_document_id": "3943ca14c42e437caf11995d3d1d4dcd",
+    "combo_and_heading_match": true,
+    "screenshot": "docs/screenshots/新版论文库.jpg"
+  },
+  "experiment_selection_sync": {
+    "screenshot": "docs/screenshots/真实检索实验.jpg",
+    "selected_experiment_ids": [
+      "3a1d9e7272e5470189f28fbaef0a1abe",
+      "07839397025b4878b3ff7c0bfdf59479",
+      "2320116b48be4d358b60218b69e0e426"
+    ],
+    "chart": "grouped, stack=false",
+    "status": "真实浏览器通过"
+  }
+}

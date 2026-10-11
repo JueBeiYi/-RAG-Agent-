@@ -1,0 +1,125 @@
+{
+  "created_at": "2026-10-09T13:28:36.293617+00:00",
+  "exit_code": 0,
+  "engine": "Streamlit AppTest with real HTTP backend",
+  "backend": "dedicated ephemeral local demo API",
+  "scope_policy": "Only unpredictable workspaces created by these tests are modified/deleted",
+  "coverage": [
+    "sessions",
+    "document metadata/preview/reindex/retry",
+    "chat/evidence/scope isolation",
+    "comparison persistence",
+    "three-mode experiments",
+    "exports",
+    "run replay/deletion",
+    "offline recovery"
+  ],
+  "limits": "OS file-picker and download-manager interactions are not emulated by AppTest; actual upload/export HTTP payloads are checked. Cancellation uses a bounded controlled-stream pause only in the automatically owned test API. Pixel layout requires browser inspection.",
+  "results": [
+    {
+      "test": "tests/test_frontend_workflows.py::test_session_create_rename_search_switch_exports_and_delete",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 2.095,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_documents_metadata_chunks_preview_persistence_reindex_retry_download_and_delete",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 3.05,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_question_document_selection_evidence_history_navigation_and_token_isolation",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 2.365,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_comparison_persists_across_pages_and_exports_both_paper_evidences",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.272,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_experiments_reject_unreviewed_data_run_three_modes_details_and_exports",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 3.554,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_run_replay_export_delete_and_service_offline_recovery",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 7.69,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_private_demo_http_contract_supports_ui_actions_without_user_data",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.11,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_private_http_cancellation_is_scoped_and_releases_session_lock",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.158,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_ui_can_cancel_active_request_then_retry_without_duplicate_question",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.759,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_incomparable_experiments_warn_and_refuse_comparison_chart[dataset]",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.002,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_incomparable_experiments_warn_and_refuse_comparison_chart[corpus]",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.109,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_incomparable_experiments_warn_and_refuse_comparison_chart[split]",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.148,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_duplicate_paper_titles_remain_unambiguous_in_document_and_chat_selectors",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.886,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_comparison_disables_identical_papers_or_empty_dimensions_without_creating_runs",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 0.523,
+      "failure": ""
+    },
+    {
+      "test": "tests/test_frontend_workflows.py::test_chat_retrieval_and_agent_controls_change_real_execution",
+      "phase": "call",
+      "outcome": "passed",
+      "duration_seconds": 1.289,
+      "failure": ""
+    }
+  ]
+}

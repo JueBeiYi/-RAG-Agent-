@@ -1,0 +1,1 @@
+"""Research assistant course project."""

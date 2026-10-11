@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-10-11T10:26:46.873309+08:00",
+  "audit": "reports/requirements/implementation-audit.json",
+  "modules": [
+    {
+      "name": "文档处理与检索代码",
+      "status": "implemented",
+      "verified": true,
+      "evidence": [
+        "reports/requirements/implementation-audit.json",
+        "reports/ui/browser-standard-20261010.json",
+        "reports/testing/requirement-gaps-20261010.xml",
+        "reports/testing/recursive-requirement-20261010.xml",
+        "reports/testing/per-tool-usage-20261010.xml"
+      ]
+    },
+    {
+      "name": "RAG生成代码",
+      "status": "implemented",
+      "verified": true,
+      "evidence": [
+        "reports/requirements/implementation-audit.json",
+        "reports/ui/browser-standard-20261010.json",
+        "reports/testing/requirement-gaps-20261010.xml",
+        "reports/testing/recursive-requirement-20261010.xml",
+        "reports/testing/per-tool-usage-20261010.xml"
+      ]
+    },
+    {
+      "name": "Agent决策代码",
+      "status": "implemented",
+      "verified": true,
+      "evidence": [
+        "reports/requirements/implementation-audit.json",
+        "reports/ui/browser-standard-20261010.json",
+        "reports/testing/requirement-gaps-20261010.xml",
+        "reports/testing/recursive-requirement-20261010.xml",
+        "reports/testing/per-tool-usage-20261010.xml"
+      ]
+    },
+    {
+      "name": "系统集成与界面代码",
+      "status": "implemented",
+      "verified": true,
+      "evidence": [
+        "reports/requirements/implementation-audit.json",
+        "reports/ui/browser-standard-20261010.json",
+        "reports/testing/requirement-gaps-20261010.xml",
+        "reports/testing/recursive-requirement-20261010.xml",
+        "reports/testing/per-tool-usage-20261010.xml"
+      ]
+    },
+    {
+      "name": "评测与项目交付",
+      "status": "partial",
+      "verified": false,
+      "evidence": [
+        "reports/datasets/dataset_manifest.json",
+        "reports/experiments/retrieval/parsers/results.json",
+        "reports/experiments/bad-cases/actual-bad-cases.json"
+      ],
+      "pending": [
+        "正式实验与最终材料正在完成",
+        "人工评分按用户选择留待填写"
+      ]
+    }
+  ],
+  "notes": [
+    "代码实现、执行验证、人工评分分别判定。旧359块不是新递归切分构建的索引。",
+    "真实学生协作记录和实际提交日未由编码助手推定。",
+    "可选联网搜索未选择。"
+  ]
+}

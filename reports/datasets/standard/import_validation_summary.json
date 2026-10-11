@@ -1,0 +1,12 @@
+{
+  "ready": true,
+  "demo": false,
+  "document_count": 10,
+  "ready_documents": 10,
+  "chunk_count": 359,
+  "preexisting_document_count": 0,
+  "preexisting_document_ids_preserved": true,
+  "source_80_sha256_unchanged": true,
+  "all_official_titles_authors_years_applied": true,
+  "workspace_token_stored": false
+}

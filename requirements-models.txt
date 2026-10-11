@@ -1,0 +1,4 @@
+-r requirements.txt
+sentence-transformers>=3.3,<6
+chromadb>=0.6,<2
+faiss-cpu>=1.9,<2

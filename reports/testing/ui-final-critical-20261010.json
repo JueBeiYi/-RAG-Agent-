@@ -1,0 +1,14 @@
+{
+  "purpose": "Final changed-path regression; does not replace human semantic scoring or count together with the 161-test baseline",
+  "scope": [
+    "agent",
+    "generation",
+    "frontend_selection_sync",
+    "frontend_edge_cases"
+  ],
+  "tests": 100,
+  "seconds": 35.16,
+  "failures": 0,
+  "skipped": 0,
+  "errors": 0
+}

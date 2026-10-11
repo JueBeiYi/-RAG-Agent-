@@ -1,0 +1,56 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_models:/root/.ollama
+    # CPU is portable by default. Enable the gpu override on a configured NVIDIA host.
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      RAG_OLLAMA_URL: http://ollama:11434
+      RAG_DATA_DIR: /app/data/runtime
+      RAG_PROFILE: ${RAG_PROFILE:-standard}
+      HF_HOME: /models/huggingface
+    volumes:
+      - app_data:/app/data/runtime
+      - hf_models:/models/huggingface
+    depends_on:
+      - ollama
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      start_period: 30s
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: ["python", "-m", "streamlit", "run", "src/frontend/app.py", "--server.address", "0.0.0.0", "--server.headless", "true"]
+    environment:
+      RAG_API_URL: http://api:8000
+    ports:
+      - "127.0.0.1:8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+  prepare:
+    profiles: ["setup"]
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: ["python", "scripts/prepare_models.py", "--manifest", "/models/huggingface/manifest.json"]
+    environment:
+      RAG_OLLAMA_URL: http://ollama:11434
+      HF_HOME: /models/huggingface
+    volumes:
+      - hf_models:/models/huggingface
+    depends_on:
+      - ollama
+volumes:
+  ollama_models:
+  app_data:
+  hf_models:

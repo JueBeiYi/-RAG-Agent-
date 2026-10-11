@@ -1,0 +1,3657 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-10T22:14:58+08:00",
+  "source": {
+    "path": "南京农业大学课程实践.docx",
+    "sha256": "f62798820cafc546c593a74bfd599352d84f5aeecaa7d0415d8cba3c766089f9",
+    "paragraph_id_convention": "Zero-based index of all w:p elements in word/document.xml, including blank/table paragraphs.",
+    "source_paragraph_count": 338
+  },
+  "scope": {
+    "modules": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "excluded": [
+      "module5 formal evaluation execution",
+      "DOCX/PPT delivery",
+      "student identity/signature",
+      "student Git history"
+    ]
+  },
+  "policy": [
+    "Implemented code, executed evidence and human review are independent statuses.",
+    "Historical passing tests are explicitly prior records; this audit does not rerun the full suite.",
+    "4-case real-model samples are functional evidence, not a 50+ case performance conclusion.",
+    "65%/85% and 80% savings in background prose are not project results or scoring requirements.",
+    "Optional web search is not marked as a missing mandatory feature.",
+    "No workspace token, API key or private runtime scope is included."
+  ],
+  "gap_fixes": [
+    "question-input keywords",
+    "explicit general-concept model-only route",
+    "per-call/per-tool Token accounting",
+    "actual RecursiveCharacterTextSplitter proposals with source/atomic protections"
+  ],
+  "validation": {
+    "concrete_paragraphs": 79,
+    "missing_source_paragraph_ids": [],
+    "unresolved_code_references": [],
+    "new_targeted_test_record": "reports/testing/requirement-gaps-20261010.xml"
+  },
+  "summary": {
+    "requirement_items": 82,
+    "implementation_status": {
+      "implemented": 77,
+      "artifact_generation_supported": 3,
+      "optional_not_selected": 1,
+      "implemented_offline_optional_search_unselected": 1
+    },
+    "execution_status": {
+      "previous_automated_executed": 36,
+      "real_functional_executed": 30,
+      "targeted_automated_executed": 11,
+      "artifact_pending_external_delivery_task": 3,
+      "not_applicable_unselected_optional": 2
+    },
+    "human_review_pending_items": 19
+  },
+  "requirements": [
+    {
+      "id": "p68.background_direct_model_example",
+      "source_paragraph_id": 68,
+      "module": 3,
+      "source_text": "工具选择路由：根据用户问题的语义特征，动态判断应调用何种工具。例如，对于“3.14乘以2.56”自动路由至计算器工具（节省80% Token消耗），对于“对比论文A和B的实验结果”自动调用论文对比工具+RAG联合检索，对于“深度学习是什么”则直接由模型自身知识回答（无需检索，节省时间）。",
+      "requirement": "General-knowledge direct-model route background example",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/router.py",
+          "line": 51,
+          "symbol": "def use_model_knowledge",
+          "exists": true,
+          "sha256": "3ca46462e6a7b9054ad1aab7b23ce721e3d80d0d67011ab5ba6537f9859c53ce"
+        },
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 407,
+          "symbol": "def _stream_model_knowledge",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_general_definition_streams_model_without_retrieval_and_labels_origin",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Functional routing example only. Background 80% Token savings is not a measured project result or required grade threshold.",
+      "pending": []
+    },
+    {
+      "id": "p124.batch_import",
+      "source_paragraph_id": 124,
+      "module": 1,
+      "source_text": "实现PDF加载器，对比PyPDF2、pdfplumber、pymupdf三种方案，选最优方案，实现Word文档加载器（python-docx），实现TXT/Markdown等纯文本加载器，实现批量文档导入与状态追踪（进度显示、失败重试机制）",
+      "requirement": "Batch import, progress and failed-job retry",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/api/main.py",
+          "line": 75,
+          "symbol": "async def upload",
+          "exists": true,
+          "sha256": "7606af2a115aab3bd0e9180c6ecc35090e3f0d7eb355f66e8ab32fe958eded5d"
+        },
+        {
+          "path": "src/services/application.py",
+          "line": 131,
+          "symbol": "def _ingest",
+          "exists": true,
+          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+        },
+        {
+          "path": "src/services/application.py",
+          "line": 111,
+          "symbol": "def retry",
+          "exists": true,
+          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+        },
+        {
+          "path": "src/frontend/sections_library.py",
+          "line": 155,
+          "symbol": "def library_page",
+          "exists": true,
+          "sha256": "a5f10112b7c8ed87e21168eeca73d80abe3b9299ff47c5d983ccbcb21437f135"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_upload_concurrency_deduplicates_and_profile_change_requires_reindex",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/datasets/standard/import_validation_summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p124.other_formats",
+      "source_paragraph_id": 124,
+      "module": 1,
+      "source_text": "实现PDF加载器，对比PyPDF2、pdfplumber、pymupdf三种方案，选最优方案，实现Word文档加载器（python-docx），实现TXT/Markdown等纯文本加载器，实现批量文档导入与状态追踪（进度显示、失败重试机制）",
+      "requirement": "Word/TXT/Markdown loaders",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/data_loader/loaders.py",
+          "line": 294,
+          "symbol": "def load_blocks",
+          "exists": true,
+          "sha256": "d9ef2ecfb3a9b919be6e1aee17de1c364ad9ab7eda4654ec33a83cbbac6f2f10"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_docx_interleaved_paragraphs_tables_and_no_invented_pages",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_markdown_sections_table_formula_and_provenance",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_text_chinese_encoding_and_empty_file",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p124.pdf_parsers",
+      "source_paragraph_id": 124,
+      "module": 1,
+      "source_text": "实现PDF加载器，对比PyPDF2、pdfplumber、pymupdf三种方案，选最优方案，实现Word文档加载器（python-docx），实现TXT/Markdown等纯文本加载器，实现批量文档导入与状态追踪（进度显示、失败重试机制）",
+      "requirement": "PDF loader: PyPDF2/pdfplumber/PyMuPDF",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/data_loader/loaders.py",
+          "line": 294,
+          "symbol": "def load_blocks",
+          "exists": true,
+          "sha256": "d9ef2ecfb3a9b919be6e1aee17de1c364ad9ab7eda4654ec33a83cbbac6f2f10"
+        },
+        {
+          "path": "src/evaluation/cli.py",
+          "line": 17,
+          "symbol": "PRESETS =",
+          "exists": true,
+          "sha256": "905d001b08a0222fd49fee78f45f0e96c93cdacc568a77f29e571e9ae2ce346d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_three_pdf_parsers_extract_real_page_numbers",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "All three parsers exist; selecting the best parser requires results, not character counts alone.",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p126.three_strategies",
+      "source_paragraph_id": 126,
+      "module": 1,
+      "source_text": "实现3种以上切分策略：",
+      "requirement": "At least three splitting strategies",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/chunking/strategies.py",
+          "line": 107,
+          "symbol": "def split_blocks",
+          "exists": true,
+          "sha256": "c445d8d3e7af185f7fa11d8bed08c9676a4af05da883082822aff10271980a5f"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_chunking_keeps_tail_and_real_multpage_provenance",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/recursive-requirement-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_chunking_keeps_tail_and_real_multpage_provenance",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p127.fixed_sizes",
+      "source_paragraph_id": 127,
+      "module": 1,
+      "source_text": "固定大小切分（对比chunk_size=256/512/1024的效果）",
+      "requirement": "Fixed sizes 256/512/1024 and comparison",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/chunking/strategies.py",
+          "line": 107,
+          "symbol": "def split_blocks",
+          "exists": true,
+          "sha256": "c445d8d3e7af185f7fa11d8bed08c9676a4af05da883082822aff10271980a5f"
+        },
+        {
+          "path": "src/evaluation/cli.py",
+          "line": 17,
+          "symbol": "PRESETS =",
+          "exists": true,
+          "sha256": "905d001b08a0222fd49fee78f45f0e96c93cdacc568a77f29e571e9ae2ce346d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_chunking_keeps_tail_and_real_multpage_provenance",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/recursive-requirement-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_chunking_keeps_tail_and_real_multpage_provenance",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Sizes count reproducible lightweight Chinese-character/English-word/punctuation units, not provider tokens.",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p128.recursive",
+      "source_paragraph_id": 128,
+      "module": 1,
+      "source_text": "递归字符切分（RecursiveCharacterTextSplitter）",
+      "requirement": "Recursive character/separator splitting",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/chunking/strategies.py",
+          "line": 107,
+          "symbol": "def split_blocks",
+          "exists": true,
+          "sha256": "c445d8d3e7af185f7fa11d8bed08c9676a4af05da883082822aff10271980a5f"
+        },
+        {
+          "path": "src/chunking/strategies.py",
+          "line": 19,
+          "symbol": "def _recursive_boundaries",
+          "exists": true,
+          "sha256": "c445d8d3e7af185f7fa11d8bed08c9676a4af05da883082822aff10271980a5f"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_chunking_keeps_tail_and_real_multpage_provenance",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/recursive-requirement-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_chunking_keeps_tail_and_real_multpage_provenance",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/recursive-requirement-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_recursive_splitter_candidates_preserve_all_source_positions_and_budget",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/recursive-requirement-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_recursive_proposals_do_not_split_short_table_rows_or_formula",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Gap repaired: actual RecursiveCharacterTextSplitter proposes recursive boundaries using count_tokens/add_start_index/strip_whitespace=False. Offsets are validated against unchanged text; source/page/atomic-row protections remain.",
+      "pending": []
+    },
+    {
+      "id": "p129.semantic_boundaries",
+      "source_paragraph_id": 129,
+      "module": 1,
+      "source_text": "语义切分（基于句子边界、段落边界）",
+      "requirement": "Sentence/paragraph boundary splitting",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/chunking/strategies.py",
+          "line": 107,
+          "symbol": "def split_blocks",
+          "exists": true,
+          "sha256": "c445d8d3e7af185f7fa11d8bed08c9676a4af05da883082822aff10271980a5f"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_chunking_keeps_tail_and_real_multpage_provenance",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/recursive-requirement-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_chunking_keeps_tail_and_real_multpage_provenance",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "The course describes sentence/paragraph boundaries. This implementation is not embedding-based semantic clustering.",
+      "pending": []
+    },
+    {
+      "id": "p130.chunk_recall_study",
+      "source_paragraph_id": 130,
+      "module": 1,
+      "source_text": "设计对比实验：同一文档用不同策略切分后，测试检索召回率差异",
+      "requirement": "Same-document recall comparison",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/evaluation/cli.py",
+          "line": 17,
+          "symbol": "PRESETS =",
+          "exists": true,
+          "sha256": "905d001b08a0222fd49fee78f45f0e96c93cdacc568a77f29e571e9ae2ce346d"
+        },
+        {
+          "path": "src/evaluation/metrics.py",
+          "line": 51,
+          "symbol": "def map_evidence_to_chunks",
+          "exists": true,
+          "sha256": "abe70ea75983dda39120062cb959492caffdb9722eed79040062ddb4f0399356"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_ground_truth_survives_changed_chunk_ids_and_boundaries",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p131.academic_layout",
+      "source_paragraph_id": 131,
+      "module": 1,
+      "source_text": "针对学术论文特点优化：处理双栏排版、跨页表格、公式保留等场景",
+      "requirement": "Double columns, cross-page tables and formula preservation",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/data_loader/loaders.py",
+          "line": 294,
+          "symbol": "def load_blocks",
+          "exists": true,
+          "sha256": "d9ef2ecfb3a9b919be6e1aee17de1c364ad9ab7eda4654ec33a83cbbac6f2f10"
+        },
+        {
+          "path": "src/chunking/strategies.py",
+          "line": 107,
+          "symbol": "def split_blocks",
+          "exists": true,
+          "sha256": "c445d8d3e7af185f7fa11d8bed08c9676a4af05da883082822aff10271980a5f"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_pymupdf_two_columns_read_left_before_right",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_pymupdf_ruled_tables_keep_rows_and_cross_page_provenance",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_markdown_sections_table_formula_and_provenance",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Human-check complex real-paper tables and formulas against original physical pages; OCR is intentionally outside the text-layer parser."
+      ]
+    },
+    {
+      "id": "p132.chunk_report",
+      "source_paragraph_id": 132,
+      "module": 1,
+      "source_text": "产出《分块策略对比实验报告》",
+      "requirement": "Chunking strategy comparison report",
+      "mandatory": true,
+      "implementation_status": "artifact_generation_supported",
+      "execution_status": "artifact_pending_external_delivery_task",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/evaluation/cli.py",
+          "line": 17,
+          "symbol": "PRESETS =",
+          "exists": true,
+          "sha256": "905d001b08a0222fd49fee78f45f0e96c93cdacc568a77f29e571e9ae2ce346d"
+        }
+      ],
+      "evidence": [],
+      "interpretation": "",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p134.embedding_comparison",
+      "source_paragraph_id": 134,
+      "module": 1,
+      "source_text": "接入Embedding模型（对比bge-large-zh、m3e-base的效果与速度）",
+      "requirement": "BGE-large-zh and M3E-base quality/speed comparison",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/retrieval/embeddings.py",
+          "line": 71,
+          "symbol": "class Embedder",
+          "exists": true,
+          "sha256": "102a18ec2e4d7865a5928ab53e7d3df8c59f94b772ef8661d27067a1f9edd41a"
+        },
+        {
+          "path": "src/evaluation/cli.py",
+          "line": 17,
+          "symbol": "PRESETS =",
+          "exists": true,
+          "sha256": "905d001b08a0222fd49fee78f45f0e96c93cdacc568a77f29e571e9ae2ce346d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_embedding_fingerprint_separates_models",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_real_embedding_window_policy_does_not_drop_tail",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p135.vector_stores",
+      "source_paragraph_id": 135,
+      "module": 1,
+      "source_text": "向量数据库选型与操作封装（Chroma轻量级 vs FAISS高性能）",
+      "requirement": "Vector store selection and encapsulation",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/retrieval/vectorstores.py",
+          "line": 103,
+          "symbol": "class ChromaVectors",
+          "exists": true,
+          "sha256": "affe699effe73b438029db8cf66f50086f4c10c1378afedf58ee79a55e276296"
+        },
+        {
+          "path": "src/retrieval/vectorstores.py",
+          "line": 193,
+          "symbol": "class FaissVectors",
+          "exists": true,
+          "sha256": "affe699effe73b438029db8cf66f50086f4c10c1378afedf58ee79a55e276296"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_optional_real_vector_adapter_persistence_filter_update_delete",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Chroma and FAISS adapters are implemented. The course does not require two simultaneous production stores.",
+      "pending": []
+    },
+    {
+      "id": "p136.incremental",
+      "source_paragraph_id": 136,
+      "module": 1,
+      "source_text": "实现批量向量化与索引构建（支持增量更新，新文档加入时无需重建全量索引）",
+      "requirement": "Batch embedding, index construction and incremental updates",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/retrieval/engine.py",
+          "line": 59,
+          "symbol": "def index",
+          "exists": true,
+          "sha256": "fca1e4e4210d99d6cfdd5a1dd0308dc88d83502a7b64e7e070af9d3c2da843d4"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_incremental_index_reuses_vectors_and_replacement_removes_old_rows",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_atomic_commit_publishes_version_and_invalidates",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_atomic_commit_publishes_version_and_invalidates",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/datasets/standard/import_validation_summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p137.vector_topk",
+      "source_paragraph_id": 137,
+      "module": 1,
+      "source_text": "实现基于向量相似度的Top-K检索",
+      "requirement": "Similarity Top-K retrieval",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/retrieval/engine.py",
+          "line": 125,
+          "symbol": "def search",
+          "exists": true,
+          "sha256": "fca1e4e4210d99d6cfdd5a1dd0308dc88d83502a7b64e7e070af9d3c2da843d4"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_search_modes_persistence_and_scope_isolation",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/standard-acceptance/summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p139.bm25",
+      "source_paragraph_id": 139,
+      "module": 1,
+      "source_text": "实现BM25关键词检索（使用rank_bm25）",
+      "requirement": "rank_bm25 keyword search",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/retrieval/engine.py",
+          "line": 102,
+          "symbol": "def _bm25",
+          "exists": true,
+          "sha256": "fca1e4e4210d99d6cfdd5a1dd0308dc88d83502a7b64e7e070af9d3c2da843d4"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_search_modes_persistence_and_scope_isolation",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/standard-acceptance/summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p140.rrf",
+      "source_paragraph_id": 140,
+      "module": 1,
+      "source_text": "实现RRF（倒数排名融合）算法，融合向量与BM25的检索结果",
+      "requirement": "Handwritten RRF",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/retrieval/rrf.py",
+          "line": 6,
+          "symbol": "def reciprocal_rank_fusion",
+          "exists": true,
+          "sha256": "6cbe3dfc15d92331eec083ec2e96b629f81f075022e52524ccff65129a06c842"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_rrf_combines_independent_ranks_and_deduplicates",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p141.rerank",
+      "source_paragraph_id": 141,
+      "module": 1,
+      "source_text": "接入重排序模型（如bge-reranker-base/v2），对检索结果进行精排",
+      "requirement": "Real reranker adapter",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/retrieval/reranking.py",
+          "line": 21,
+          "symbol": "class Reranker",
+          "exists": true,
+          "sha256": "c89231d969b4a1ba7a72b311cf71499e797285ec207ebb35da51d7bf12ce6b57"
+        },
+        {
+          "path": "src/retrieval/engine.py",
+          "line": 125,
+          "symbol": "def search",
+          "exists": true,
+          "sha256": "fca1e4e4210d99d6cfdd5a1dd0308dc88d83502a7b64e7e070af9d3c2da843d4"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_rerank_failure_returns_hybrid_results_and_visible_warning",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/standard-acceptance/summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p142.three_tier_eval",
+      "source_paragraph_id": 142,
+      "module": 1,
+      "source_text": "设计检索质量评估实验：对比纯向量 → 混合检索 → 混合+重排序三档效果，记录Hit@5、MRR等指标",
+      "requirement": "Vector/hybrid/hybrid-rerank Hit@5/MRR comparison",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/evaluation/cli.py",
+          "line": 17,
+          "symbol": "PRESETS =",
+          "exists": true,
+          "sha256": "905d001b08a0222fd49fee78f45f0e96c93cdacc568a77f29e571e9ae2ce346d"
+        },
+        {
+          "path": "src/evaluation/runner.py",
+          "line": 82,
+          "symbol": "def run_retrieval",
+          "exists": true,
+          "sha256": "65999288e810c2a15ea99e7cd86fd46706dbc3f26ac721b65a62bb91d8c3a1f9"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_runner_real_ranking_and_demo_label",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/standard-acceptance/summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "Existing 4-case standard-mode results prove execution only; they do not satisfy a formal 50+ case quality claim.",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p144.retrieval_code",
+      "source_paragraph_id": 144,
+      "module": 1,
+      "source_text": "完整的检索层模块代码（支持混合检索+Rerank）",
+      "requirement": "Complete hybrid+rerank module code",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/retrieval/engine.py",
+          "line": 125,
+          "symbol": "def search",
+          "exists": true,
+          "sha256": "fca1e4e4210d99d6cfdd5a1dd0308dc88d83502a7b64e7e070af9d3c2da843d4"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_search_modes_persistence_and_scope_isolation",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p145.retrieval_benchmark",
+      "source_paragraph_id": 145,
+      "module": 1,
+      "source_text": "检索性能基准测试数据（三档对比）",
+      "requirement": "Three-tier benchmark data",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/evaluation/runner.py",
+          "line": 195,
+          "symbol": "def export_result",
+          "exists": true,
+          "sha256": "65999288e810c2a15ea99e7cd86fd46706dbc3f26ac721b65a62bb91d8c3a1f9"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/ui/standard-acceptance/summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p146.chunk_report_output",
+      "source_paragraph_id": 146,
+      "module": 1,
+      "source_text": "分块策略对比实验报告",
+      "requirement": "Chunking experiment report output",
+      "mandatory": true,
+      "implementation_status": "artifact_generation_supported",
+      "execution_status": "artifact_pending_external_delivery_task",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/evaluation/cli.py",
+          "line": 17,
+          "symbol": "PRESETS =",
+          "exists": true,
+          "sha256": "905d001b08a0222fd49fee78f45f0e96c93cdacc568a77f29e571e9ae2ce346d"
+        }
+      ],
+      "evidence": [],
+      "interpretation": "",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p151.rag_prompt",
+      "source_paragraph_id": 151,
+      "module": 2,
+      "source_text": "设计RAG专用Prompt模板，包含：系统角色设定、检索上下文、用户问题、输出格式要求",
+      "requirement": "Role/context/question/output RAG prompt",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/context.py",
+          "line": 14,
+          "symbol": "SYSTEM_PROMPT",
+          "exists": true,
+          "sha256": "64b5f31fbd98a50682fef6cb89a8dc60f50f73c72c785d59c8664f85ceec8be7"
+        },
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_full_upload_chat_cache_delete_and_scope",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p152.context_budget",
+      "source_paragraph_id": 152,
+      "module": 2,
+      "source_text": "实现上下文的智能拼接策略：按相关性排序、动态截断超长上下文",
+      "requirement": "Ranked context assembly and dynamic truncation",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/context.py",
+          "line": 43,
+          "symbol": "def build_context",
+          "exists": true,
+          "sha256": "64b5f31fbd98a50682fef6cb89a8dc60f50f73c72c785d59c8664f85ceec8be7"
+        },
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_cross_page_context_and_budget_preserve_true_location",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_cross_page_context_and_budget_preserve_true_location",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_preserves_budget_cropped_cross_page_sources_in_true_rag_stream",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_preserves_budget_cropped_cross_page_sources_in_true_rag_stream",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p153.source_locations",
+      "source_paragraph_id": 153,
+      "module": 2,
+      "source_text": "设计引用溯源机制：答案中标注信息来源（文档名+页码），确保可追溯",
+      "requirement": "Document-name and physical-page citations",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/context.py",
+          "line": 107,
+          "symbol": "def normalise_page_references",
+          "exists": true,
+          "sha256": "64b5f31fbd98a50682fef6cb89a8dc60f50f73c72c785d59c8664f85ceec8be7"
+        },
+        {
+          "path": "src/frontend/ui.py",
+          "line": 233,
+          "symbol": "def citations",
+          "exists": true,
+          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_page_claims_use_server_location_and_keep_unknown_sources_visible",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_page_claims_use_server_location_and_keep_unknown_sources_visible",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "For Word/TXT/Markdown, real paragraph locations replace unavailable physical pages; page numbers are not fabricated.",
+      "pending": []
+    },
+    {
+      "id": "p154.sampling_parameters",
+      "source_paragraph_id": 154,
+      "module": 2,
+      "source_text": "对比不同生成参数（Temperature、Top-p、Top-k）对回答质量的影响",
+      "requirement": "Temperature/Top-p/Top-k comparisons",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/generation/llm_client.py",
+          "line": 39,
+          "symbol": "def _body",
+          "exists": true,
+          "sha256": "93bee13b4d0f5eb2e530b8932568c15b0afa3d84720568e004c8648774794e3c"
+        },
+        {
+          "path": "src/evaluation/cli.py",
+          "line": 17,
+          "symbol": "PRESETS =",
+          "exists": true,
+          "sha256": "905d001b08a0222fd49fee78f45f0e96c93cdacc568a77f29e571e9ae2ce346d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_structured_completion_requests_provider_json_grammar",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Ollama receives all three parameters; cloud-compatible backend does not claim unsupported Top-k sampling.",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p156.streaming",
+      "source_paragraph_id": 156,
+      "module": 2,
+      "source_text": "实现流式输出（SSE / Streamlit打字机效果）",
+      "requirement": "SSE/model streaming and Streamlit output",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/llm_client.py",
+          "line": 115,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "93bee13b4d0f5eb2e530b8932568c15b0afa3d84720568e004c8648774794e3c"
+        },
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        },
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 469,
+          "symbol": "def _stream_knowledge",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        },
+        {
+          "path": "src/frontend/sections_chat.py",
+          "line": 273,
+          "symbol": "def question_page",
+          "exists": true,
+          "sha256": "02c5907b1a37dfc14250d84b22494d82969df3984d415fffca3d51c407ce49f9"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_streams_rag_tokens_and_preserves_history_without_resaving",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_streams_rag_tokens_and_preserves_history_without_resaving",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p157.stream_citations",
+      "source_paragraph_id": 157,
+      "module": 2,
+      "source_text": "实现流式+引用：先快速输出答案文本，引用标记在对应位置动态出现",
+      "requirement": "Streaming answer with inline reference positions",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        },
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 469,
+          "symbol": "def _stream_knowledge",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_streams_rag_tokens_and_preserves_history_without_resaving",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_streams_rag_tokens_and_preserves_history_without_resaving",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "Source table is sent before answer tokens; inline reference marks appear during the answer. Split transport references are held until complete.",
+      "pending": []
+    },
+    {
+      "id": "p159.semantic_cache",
+      "source_paragraph_id": 159,
+      "module": 2,
+      "source_text": "实现语义缓存：相同或高度相似的问题直接返回缓存答案（Embedding相似度匹配），节省计算与时间",
+      "requirement": "Embedding-similarity answer cache",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/generation/cache.py",
+          "line": 12,
+          "symbol": "class SemanticCache",
+          "exists": true,
+          "sha256": "3728ec581c7a33c5f111ecebbf1c4922d91cd11c76e52811192d54590a087a16"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_semantic_cache_blocks_negative_intent_and_revision",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_semantic_cache_blocks_negative_intent_and_revision",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_optional_cache_failure_does_not_drop_completed_answer",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_optional_cache_failure_does_not_drop_completed_answer",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Measure real-model cache cold/hot hit behavior and latency if making a performance claim."
+      ]
+    },
+    {
+      "id": "p161.empty_retrieval",
+      "source_paragraph_id": 161,
+      "module": 2,
+      "source_text": "检索无结果时，回退到纯模型生成（带“当前知识库中未找到相关文档”的明确提示）",
+      "requirement": "Explicit ungrounded-model fallback for empty retrieval",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_calculator_and_empty_knowledge_base",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p162.low_relevance",
+      "source_paragraph_id": 162,
+      "module": 2,
+      "source_text": "检索结果相关性低时，提示用户并展示检索到的相关内容供用户确认",
+      "requirement": "Low-relevance warning and inspectable sources",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        },
+        {
+          "path": "src/frontend/ui.py",
+          "line": 233,
+          "symbol": "def citations",
+          "exists": true,
+          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_search_modes_persistence_and_scope_isolation",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Calibrate minimum_relevance on dev data; backend scores are not answer-correctness probabilities."
+      ]
+    },
+    {
+      "id": "p163.model_failure",
+      "source_paragraph_id": 163,
+      "module": 2,
+      "source_text": "模型API调用失败时，返回友好的错误提示与重试建议",
+      "requirement": "Friendly provider failure and retry advice",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/llm_client.py",
+          "line": 14,
+          "symbol": "class ModelUnavailable",
+          "exists": true,
+          "sha256": "93bee13b4d0f5eb2e530b8932568c15b0afa3d84720568e004c8648774794e3c"
+        },
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_provider_partial_eof_and_errors_fail",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_provider_partial_eof_and_errors_fail",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_llm_failure_returns_tools_and_discloses_fallback",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_llm_failure_returns_tools_and_discloses_fallback",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p165.request_log",
+      "source_paragraph_id": 165,
+      "module": 2,
+      "source_text": "记录每次RAG请求的完整日志：用户问题、检索到的Top-k文档、生成回答、响应耗时、Token消耗",
+      "requirement": "Questions, retrieved Top-K, answers, latency and Token logs",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/services/application.py",
+          "line": 207,
+          "symbol": "def chat",
+          "exists": true,
+          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+        },
+        {
+          "path": "src/observability/logger.py",
+          "line": 8,
+          "symbol": "class RequestLogger",
+          "exists": true,
+          "sha256": "1f7d9f836bfeda31c4e001f2af26c83277a9c0c71f53872a17c5d0d4e0b4c032"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_explicit_empty_selection_clears_previous_scope_and_log_failure_unlocks",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Complete events include the RAG done event and ranked hits; JSON logs are supplementary to scoped SQLite records.",
+      "pending": []
+    },
+    {
+      "id": "p166.top1_distribution",
+      "source_paragraph_id": 166,
+      "module": 2,
+      "source_text": "实现简单的检索质量自评：记录每次检索的Top-1置信度分数分布",
+      "requirement": "Top-1 score records and distribution output",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        },
+        {
+          "path": "src/evaluation/runner.py",
+          "line": 195,
+          "symbol": "def export_result",
+          "exists": true,
+          "sha256": "65999288e810c2a15ea99e7cd86fd46706dbc3f26ac721b65a62bb91d8c3a1f9"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_search_timing_and_warnings_are_thread_local",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Histogram labels disclose backend-specific scores; they are not calibrated confidence probabilities.",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p168.rag_code",
+      "source_paragraph_id": 168,
+      "module": 2,
+      "source_text": "完整的RAG问答模块代码（含流式输出+引用溯源）",
+      "requirement": "RAG module including streaming and source attribution",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_full_upload_chat_cache_delete_and_scope",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p169.cache_degradation_output",
+      "source_paragraph_id": 169,
+      "module": 2,
+      "source_text": "缓存机制与降级策略的实现",
+      "requirement": "Implemented cache and fallback mechanisms",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        },
+        {
+          "path": "src/generation/cache.py",
+          "line": 12,
+          "symbol": "class SemanticCache",
+          "exists": true,
+          "sha256": "3728ec581c7a33c5f111ecebbf1c4922d91cd11c76e52811192d54590a087a16"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_semantic_cache_blocks_negative_intent_and_revision",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_semantic_cache_blocks_negative_intent_and_revision",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_provider_partial_eof_and_errors_fail",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_provider_partial_eof_and_errors_fail",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p170.prompt_experiment_record",
+      "source_paragraph_id": 170,
+      "module": 2,
+      "source_text": "Prompt模板设计文档与实验对比记录",
+      "requirement": "Prompt design documentation and parameter experiments",
+      "mandatory": true,
+      "implementation_status": "artifact_generation_supported",
+      "execution_status": "artifact_pending_external_delivery_task",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "docs/技术设计文档.md",
+          "line": 11,
+          "symbol": "生成与证据",
+          "exists": true,
+          "sha256": "51c31063863b9d62496e71fc8d99378b406ba0a38e56f78f910519a73c96cddd"
+        },
+        {
+          "path": "src/evaluation/cli.py",
+          "line": 17,
+          "symbol": "PRESETS =",
+          "exists": true,
+          "sha256": "905d001b08a0222fd49fee78f45f0e96c93cdacc568a77f29e571e9ae2ce346d"
+        }
+      ],
+      "evidence": [],
+      "interpretation": "",
+      "pending": [
+        "Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review."
+      ]
+    },
+    {
+      "id": "p175.react",
+      "source_paragraph_id": 175,
+      "module": 3,
+      "source_text": "手写ReAct循环核心逻辑：",
+      "requirement": "Handwritten ReAct orchestration",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "No high-level agent framework replaces the loop. About 200 lines in background prose is not a line-count constraint.",
+      "pending": []
+    },
+    {
+      "id": "p176.decision",
+      "source_paragraph_id": 176,
+      "module": 3,
+      "source_text": "Thought（推理当前状态，规划下一步行动）",
+      "requirement": "Short observable next-action decision",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_and_json_tool_call_parsing",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_and_json_tool_call_parsing",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Public task decision summaries are recorded; private chain-of-thought is neither requested nor fabricated.",
+      "pending": []
+    },
+    {
+      "id": "p177.action",
+      "source_paragraph_id": 177,
+      "module": 3,
+      "source_text": "Action（选择并执行工具）",
+      "requirement": "Tool selection and execution",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        },
+        {
+          "path": "src/agent/executor.py",
+          "line": 12,
+          "symbol": "class ToolExecutor",
+          "exists": true,
+          "sha256": "027c52cf5c8766e198cb027ef70e21da909758b39b403bcbce5b1d39b97f0220"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p178.observation",
+      "source_paragraph_id": 178,
+      "module": 3,
+      "source_text": "Observation（观察工具返回结果，决定继续或终止）",
+      "requirement": "Tool observations determine continuation/termination",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 150,
+          "symbol": "def _append_observations",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        },
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p179.termination",
+      "source_paragraph_id": 179,
+      "module": 3,
+      "source_text": "循环终止条件的设计（最大迭代次数、任务完成标志）",
+      "requirement": "Maximum iterations, completion, repeat and timeout termination",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_stops_repeated_model_action",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_stops_repeated_model_action",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p180.agent_prompt",
+      "source_paragraph_id": 180,
+      "module": 3,
+      "source_text": "理解并设计Agent的System Prompt结构（角色定义 + 可用工具描述 + 输出格式约束）",
+      "requirement": "Agent role/tools/output schema prompt",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 19,
+          "symbol": "SYSTEM_PROMPT",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        },
+        {
+          "path": "src/agent/tools/local.py",
+          "line": 832,
+          "symbol": "def create_registry",
+          "exists": true,
+          "sha256": "78a25d3d3e1b9480fce2e05b1074867c6e04696f6fec455097b24f21ee1f8b23"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_and_json_tool_call_parsing",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_and_json_tool_call_parsing",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p182.rag_tool",
+      "source_paragraph_id": 182,
+      "module": 3,
+      "source_text": "知识库检索工具：封装模块二的RAG引擎，作为Agent最核心的工具",
+      "requirement": "RAG engine wrapped as the core knowledge tool",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/tools/local.py",
+          "line": 77,
+          "symbol": "def knowledge_qa",
+          "exists": true,
+          "sha256": "78a25d3d3e1b9480fce2e05b1074867c6e04696f6fec455097b24f21ee1f8b23"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_fast_rag_records_actual_tokens_per_tool_call",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p183.metadata_tool",
+      "source_paragraph_id": 183,
+      "module": 3,
+      "source_text": "论文元信息提取工具：从已上传论文中提取标题、作者、年份、摘要、DOI",
+      "requirement": "Title/authors/year/abstract/DOI metadata tool",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/data_loader/loaders.py",
+          "line": 332,
+          "symbol": "def extract_metadata",
+          "exists": true,
+          "sha256": "d9ef2ecfb3a9b919be6e1aee17de1c364ad9ab7eda4654ec33a83cbbac6f2f10"
+        },
+        {
+          "path": "src/agent/tools/local.py",
+          "line": 88,
+          "symbol": "def paper_metadata",
+          "exists": true,
+          "sha256": "78a25d3d3e1b9480fce2e05b1074867c6e04696f6fec455097b24f21ee1f8b23"
+        },
+        {
+          "path": "src/api/main.py",
+          "line": 141,
+          "symbol": "def update_metadata",
+          "exists": true,
+          "sha256": "7606af2a115aab3bd0e9180c6ecc35090e3f0d7eb355f66e8ab32fe958eded5d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_metadata_does_not_invent_missing_fields",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_metadata_does_not_fill_unknown_doi",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_metadata_does_not_fill_unknown_doi",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/datasets/standard/import_validation_summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Unlabelled PDF author lines may be unrecognised; current official corpus metadata was source-checked/applied. Human spot-check automatic fields."
+      ]
+    },
+    {
+      "id": "p184.comparison_tool",
+      "source_paragraph_id": 184,
+      "module": 3,
+      "source_text": "论文对比工具：接受两篇论文ID，对比方法、数据集、实验结果",
+      "requirement": "Two-paper methods/dataset/results comparison",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/agent/tools/local.py",
+          "line": 545,
+          "symbol": "def compare_papers",
+          "exists": true,
+          "sha256": "78a25d3d3e1b9480fce2e05b1074867c6e04696f6fec455097b24f21ee1f8b23"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_standard_comparison_produces_requested_chinese_rows_real_sources_and_usage",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_standard_comparison_produces_requested_chinese_rows_real_sources_and_usage",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Human-check comparison semantics and experimental comparability; source/numeric checks do not prove every statement correct."
+      ]
+    },
+    {
+      "id": "p185.keywords_tool",
+      "source_paragraph_id": 185,
+      "module": 3,
+      "source_text": "关键词提取工具：从用户问题或文档中提取核心关键词",
+      "requirement": "Keywords from either user question or document",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/tools/local.py",
+          "line": 697,
+          "symbol": "def extract_keywords",
+          "exists": true,
+          "sha256": "78a25d3d3e1b9480fce2e05b1074867c6e04696f6fec455097b24f21ee1f8b23"
+        },
+        {
+          "path": "src/agent/router.py",
+          "line": 68,
+          "symbol": "def route",
+          "exists": true,
+          "sha256": "3ca46462e6a7b9054ad1aab7b23ce721e3d80d0d67011ab5ba6537f9859c53ce"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_keywords_accept_question_without_documents_or_fake_citations",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Gap repaired: query input requires no uploaded document and produces no fabricated paper citation.",
+      "pending": []
+    },
+    {
+      "id": "p186.summary_tool",
+      "source_paragraph_id": 186,
+      "module": 3,
+      "source_text": "摘要生成工具：针对特定论文生成结构化摘要（背景-方法-结果-结论）",
+      "requirement": "Structured background/method/result/conclusion summary",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/agent/tools/local.py",
+          "line": 266,
+          "symbol": "def summarize_paper",
+          "exists": true,
+          "sha256": "78a25d3d3e1b9480fce2e05b1074867c6e04696f6fec455097b24f21ee1f8b23"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_standard_summary_uses_llm_four_required_sections_real_sources_and_usage",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_standard_summary_uses_llm_four_required_sections_real_sources_and_usage",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_standard_summary_can_mark_missing_conclusion_without_fabrication",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_standard_summary_can_mark_missing_conclusion_without_fabrication",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Human-check generated summary meaning on actual papers. Evidence excerpts are explicitly a fallback, not equivalent to successful model synthesis."
+      ]
+    },
+    {
+      "id": "p187.time_tool",
+      "source_paragraph_id": 187,
+      "module": 3,
+      "source_text": "当前时间工具：返回系统当前时间",
+      "requirement": "Real current time tool",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/tools/local.py",
+          "line": 740,
+          "symbol": "def current_time",
+          "exists": true,
+          "sha256": "78a25d3d3e1b9480fce2e05b1074867c6e04696f6fec455097b24f21ee1f8b23"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_current_time_uses_real_clock_and_timezone",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_current_time_uses_real_clock_and_timezone",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p188.optional_web_search",
+      "source_paragraph_id": 188,
+      "module": 3,
+      "source_text": "联网搜索工具：调用DuckDuckGo或学术搜索API（可选，需联网）",
+      "requirement": "Optional DuckDuckGo/academic search tool",
+      "mandatory": false,
+      "implementation_status": "optional_not_selected",
+      "execution_status": "not_applicable_unselected_optional",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/core/config.py",
+          "line": 53,
+          "symbol": "network_search_enabled",
+          "exists": true,
+          "sha256": "4e070e92b8d2c83bc801ca06a64baec00ceb12ae1ff000500c32fc8d9bdf6672"
+        }
+      ],
+      "evidence": [],
+      "interpretation": "No web-search handler is registered in this implementation. Offline mode and the eight local tools do not require it; an unused config flag is not an implemented search feature.",
+      "pending": []
+    },
+    {
+      "id": "p190.tool_routing",
+      "source_paragraph_id": 190,
+      "module": 3,
+      "source_text": "实现工具选择路由：根据问题类型快速路由到对应工具，减少无效推理轮次",
+      "requirement": "Fast question-type routing",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/router.py",
+          "line": 68,
+          "symbol": "def route",
+          "exists": true,
+          "sha256": "3ca46462e6a7b9054ad1aab7b23ce721e3d80d0d67011ab5ba6537f9859c53ce"
+        },
+        {
+          "path": "src/agent/router.py",
+          "line": 51,
+          "symbol": "def use_model_knowledge",
+          "exists": true,
+          "sha256": "3ca46462e6a7b9054ad1aab7b23ce721e3d80d0d67011ab5ba6537f9859c53ce"
+        },
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_router_resolves_paper_titles_and_independent_tasks",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_router_resolves_paper_titles_and_independent_tasks",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_general_definition_route_keeps_selected_papers_and_references_grounded",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_general_definition_streams_model_without_retrieval_and_labels_origin",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Gap repaired: explicit general definitions (e.g. deep learning) can call the model directly. Selected/named papers and referential/latest questions stay grounded. Demo does not pretend to perform real general-knowledge inference.",
+      "pending": []
+    },
+    {
+      "id": "p191.parallel_tools",
+      "source_paragraph_id": 191,
+      "module": 3,
+      "source_text": "实现并行工具调用：当Agent判断需要多个独立工具时，并行执行以提升效率",
+      "requirement": "Independent tool execution in parallel",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/agent/executor.py",
+          "line": 80,
+          "symbol": "def batch",
+          "exists": true,
+          "sha256": "027c52cf5c8766e198cb027ef70e21da909758b39b403bcbce5b1d39b97f0220"
+        },
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_executor_dispatches_independent_tasks_concurrently",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_executor_dispatches_independent_tasks_concurrently",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Real-model parallel speedup needs independent multi-tool tasks and measured sequential/parallel runs."
+      ]
+    },
+    {
+      "id": "p193.timeout_recovery",
+      "source_paragraph_id": 193,
+      "module": 3,
+      "source_text": "工具调用超时 → 重试或跳过",
+      "requirement": "Timeout retry or skip with bounded workers",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/executor.py",
+          "line": 80,
+          "symbol": "def batch",
+          "exists": true,
+          "sha256": "027c52cf5c8766e198cb027ef70e21da909758b39b403bcbce5b1d39b97f0220"
+        },
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 542,
+          "symbol": "def _rag_stream_with_retry",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_timeout_preserves_worker_limit_and_error_is_visible",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_timeout_preserves_worker_limit_and_error_is_visible",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_never_retries_task_still_running_after_timeout",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_never_retries_task_still_running_after_timeout",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_true_rag_stream_retries_completed_transient_errors_before_answer",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_true_rag_stream_retries_completed_transient_errors_before_answer",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/per-tool-usage-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_true_rag_stream_retries_completed_transient_errors_before_answer",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p194.exception_alternative",
+      "source_paragraph_id": 194,
+      "module": 3,
+      "source_text": "工具返回异常 → 记录错误并尝试替代工具",
+      "requirement": "Error logs and alternative tools",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 161,
+          "symbol": "def _recovery_calls",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_compare_failure_recovers_each_scoped_paper_and_merges_evidence",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_compare_failure_recovers_each_scoped_paper_and_merges_evidence",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_metadata_failure_uses_catalog_without_crossing_selection",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_metadata_failure_uses_catalog_without_crossing_selection",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p195.loop_guard",
+      "source_paragraph_id": 195,
+      "module": 3,
+      "source_text": "Agent陷入死循环 → 强制终止并提示用户",
+      "requirement": "Forced stop and user warning for repeated actions",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_stops_repeated_model_action",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_stops_repeated_model_action",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p197.session_isolation",
+      "source_paragraph_id": 197,
+      "module": 3,
+      "source_text": "实现会话隔离（不同用户/不同会话互不干扰）",
+      "requirement": "User/session isolation",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/memory.py",
+          "line": 49,
+          "symbol": "def load",
+          "exists": true,
+          "sha256": "7c37a7257c11f39f0509306017fa14aeb482c143ceed92c71f44296fd53e578e"
+        },
+        {
+          "path": "src/core/storage.py",
+          "line": 161,
+          "symbol": "def get_memory",
+          "exists": true,
+          "sha256": "92b36f33f33677950b0f093000efa490c752a40cd37dbd7cb5dfc5ffee12190e"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_session_memory_isolation",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p198.memory_window",
+      "source_paragraph_id": 198,
+      "module": 3,
+      "source_text": "实现滑动窗口Token管理（自动截断超长的对话历史）",
+      "requirement": "Token-bounded recent window",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/memory.py",
+          "line": 49,
+          "symbol": "def load",
+          "exists": true,
+          "sha256": "7c37a7257c11f39f0509306017fa14aeb482c143ceed92c71f44296fd53e578e"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Conservative token estimates are labelled; provider Token usage is separately measured.",
+      "pending": []
+    },
+    {
+      "id": "p199.memory_compression",
+      "source_paragraph_id": 199,
+      "module": 3,
+      "source_text": "实现对话摘要压缩（对长对话进行阶段性总结，压缩后替换原始历史）",
+      "requirement": "Archived-dialogue summary compression",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/memory.py",
+          "line": 49,
+          "symbol": "def load",
+          "exists": true,
+          "sha256": "7c37a7257c11f39f0509306017fa14aeb482c143ceed92c71f44296fd53e578e"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Extractive archived excerpts compress history and preserve originals. They are background, not original-paper evidence or a claimed abstractive LLM summary.",
+      "pending": []
+    },
+    {
+      "id": "p201.react_code_output",
+      "source_paragraph_id": 201,
+      "module": 3,
+      "source_text": "ReAct核心循环代码",
+      "requirement": "ReAct code output",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p202.eight_tools_output",
+      "source_paragraph_id": 202,
+      "module": 3,
+      "source_text": "8个已注册可调用的工具",
+      "requirement": "Eight registered callable tools",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/tools/local.py",
+          "line": 832,
+          "symbol": "def create_registry",
+          "exists": true,
+          "sha256": "78a25d3d3e1b9480fce2e05b1074867c6e04696f6fec455097b24f21ee1f8b23"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "The source lists six required tools plus optional web search but requests eight outputs. Required six + calculator (background example) + local paper catalog = eight working offline tools. Catalog is an explicit compatibility choice, not a source-prescribed tool.",
+      "pending": []
+    },
+    {
+      "id": "p203.decision_optimisation_output",
+      "source_paragraph_id": 203,
+      "module": 3,
+      "source_text": "Agent决策优化（路由、并行、错误恢复）实现代码",
+      "requirement": "Routing/parallel/recovery code output",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        },
+        {
+          "path": "src/agent/executor.py",
+          "line": 12,
+          "symbol": "class ToolExecutor",
+          "exists": true,
+          "sha256": "027c52cf5c8766e198cb027ef70e21da909758b39b403bcbce5b1d39b97f0220"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_executor_dispatches_independent_tasks_concurrently",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_executor_dispatches_independent_tasks_concurrently",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_stops_repeated_model_action",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_stops_repeated_model_action",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p204.memory_output",
+      "source_paragraph_id": 204,
+      "module": 3,
+      "source_text": "对话记忆管理模块",
+      "requirement": "Conversation memory module output",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/memory.py",
+          "line": 49,
+          "symbol": "def load",
+          "exists": true,
+          "sha256": "7c37a7257c11f39f0509306017fa14aeb482c143ceed92c71f44296fd53e578e"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p209.core_rag_tool",
+      "source_paragraph_id": 209,
+      "module": 4,
+      "source_text": "将RAG检索模块封装为Agent的核心Tool之一",
+      "requirement": "RAG as core Agent tool",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/tools/local.py",
+          "line": 77,
+          "symbol": "def knowledge_qa",
+          "exists": true,
+          "sha256": "78a25d3d3e1b9480fce2e05b1074867c6e04696f6fec455097b24f21ee1f8b23"
+        },
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_registry_has_eight_callable_tools",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p210.rag_web_routing",
+      "source_paragraph_id": 210,
+      "module": 4,
+      "source_text": "Agent决策逻辑的精细化调优：何时走RAG、何时走联网搜索",
+      "requirement": "RAG/search routing when optional networking is chosen",
+      "mandatory": false,
+      "implementation_status": "implemented_offline_optional_search_unselected",
+      "execution_status": "not_applicable_unselected_optional",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/router.py",
+          "line": 68,
+          "symbol": "def route",
+          "exists": true,
+          "sha256": "3ca46462e6a7b9054ad1aab7b23ce721e3d80d0d67011ab5ba6537f9859c53ce"
+        },
+        {
+          "path": "src/core/config.py",
+          "line": 53,
+          "symbol": "network_search_enabled",
+          "exists": true,
+          "sha256": "4e070e92b8d2c83bc801ca06a64baec00ceb12ae1ff000500c32fc8d9bdf6672"
+        }
+      ],
+      "evidence": [],
+      "interpretation": "Mandatory local routing exists (p190); RAG-versus-web tuning is conditional on choosing the optional p188 tool. No phantom web feature is counted.",
+      "pending": []
+    },
+    {
+      "id": "p211.context_integration",
+      "source_paragraph_id": 211,
+      "module": 4,
+      "source_text": "将记忆管理模块接入Agent，使Agent能感知对话上下文",
+      "requirement": "Agent uses isolated conversation context",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        },
+        {
+          "path": "src/agent/memory.py",
+          "line": 49,
+          "symbol": "def load",
+          "exists": true,
+          "sha256": "7c37a7257c11f39f0509306017fa14aeb482c143ceed92c71f44296fd53e578e"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_streams_rag_tokens_and_preserves_history_without_resaving",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_streams_rag_tokens_and_preserves_history_without_resaving",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p212.unified_data",
+      "source_paragraph_id": 212,
+      "module": 4,
+      "source_text": "确保各模块间的数据格式统一（统一的Message/Context数据结构）",
+      "requirement": "Unified Message/Context/Chunk/Event structures",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/core/schemas.py",
+          "line": 35,
+          "symbol": "class Chunk",
+          "exists": true,
+          "sha256": "6f52565275f5a6cdb054c19d03294e5f7916c0bb37d617305b6ab1a33b078dfc"
+        },
+        {
+          "path": "src/agent/registry.py",
+          "line": 9,
+          "symbol": "class ToolContext",
+          "exists": true,
+          "sha256": "9491eea21f8376157a9ca4eec618b3379e4072a0d930ab4b8ae4a150d07c7390"
+        },
+        {
+          "path": "src/core/schemas.py",
+          "line": 92,
+          "symbol": "def event",
+          "exists": true,
+          "sha256": "6f52565275f5a6cdb054c19d03294e5f7916c0bb37d617305b6ab1a33b078dfc"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p215.tokens_per_tool",
+      "source_paragraph_id": 215,
+      "module": 4,
+      "source_text": "每次Agent推理的Token消耗（按工具调用分别统计）",
+      "requirement": "Per-call and per-tool Token metrics shown in frontend",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "targeted_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 447,
+          "symbol": "def _record_tool_usage",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        },
+        {
+          "path": "src/frontend/ui.py",
+          "line": 89,
+          "symbol": "def usage",
+          "exists": true,
+          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+        },
+        {
+          "path": "src/frontend/ui.py",
+          "line": 120,
+          "symbol": "def trace",
+          "exists": true,
+          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/requirement-gaps-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_fast_rag_records_actual_tokens_per_tool_call",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_true_rag_stream_retries_completed_transient_errors_before_answer",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_true_rag_stream_retries_completed_transient_errors_before_answer",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/per-tool-usage-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_true_rag_stream_retries_completed_transient_errors_before_answer",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_accounts_for_summary_llm_tokens_in_addition_to_planning",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_accounts_for_summary_llm_tokens_in_addition_to_planning",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/per-tool-usage-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_accounts_for_summary_llm_tokens_in_addition_to_planning",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Gap repaired: tool_end.usage and done.metrics.tool_token_usage include known amounts, estimates and unknown-call counts. Planning/synthesis usage is separate; non-LLM local tools use zero LLM Token. New frontend presentation awaits its owner's targeted UI check.",
+      "pending": []
+    },
+    {
+      "id": "p216.retrieval_metrics",
+      "source_paragraph_id": 216,
+      "module": 4,
+      "source_text": "RAG检索命中率与响应延迟",
+      "requirement": "Retrieval latency and labelled Hit@5 display",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/generation/rag_pipeline.py",
+          "line": 31,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "04e8bf6efcb810ff5eb3fb13d7f224cd2bd4e4eaeb971945637e86b5ecbff5a5"
+        },
+        {
+          "path": "src/frontend/ui.py",
+          "line": 89,
+          "symbol": "def usage",
+          "exists": true,
+          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+        },
+        {
+          "path": "src/frontend/sections_experiments.py",
+          "line": 295,
+          "symbol": "def experiments_page",
+          "exists": true,
+          "sha256": "d218a8a4b86eee79a8e98dc773f2913b05feb6c018dc0225bac2431480fad89b"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_search_timing_and_warnings_are_thread_local",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/standard-acceptance/summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "Latency/relevance are available per request. True hit rate requires labelled experiment cases; ordinary live requests do not invent correctness labels.",
+      "pending": []
+    },
+    {
+      "id": "p217.decision_trace",
+      "source_paragraph_id": 217,
+      "module": 4,
+      "source_text": "Agent决策路径（Thought → Action → Observation 全链路轨迹）",
+      "requirement": "Decision/Action/Observation trace",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        },
+        {
+          "path": "src/frontend/ui.py",
+          "line": 120,
+          "symbol": "def trace",
+          "exists": true,
+          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_native_tool_call_response_protocol_and_bounded_steps",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "Shows genuine task stages/actions/observations and parallel calls as an expandable event trajectory; private reasoning is not fabricated.",
+      "pending": []
+    },
+    {
+      "id": "p218.tool_metrics",
+      "source_paragraph_id": 218,
+      "module": 4,
+      "source_text": "工具调用成功率与耗时",
+      "requirement": "Tool success rate and execution time",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/agent/react_loop.py",
+          "line": 189,
+          "symbol": "def stream",
+          "exists": true,
+          "sha256": "79a8992c468af6d804218c76d310c594134a415698f90fbf87c2aaa14c100cac"
+        },
+        {
+          "path": "src/agent/executor.py",
+          "line": 12,
+          "symbol": "class ToolExecutor",
+          "exists": true,
+          "sha256": "027c52cf5c8766e198cb027ef70e21da909758b39b403bcbce5b1d39b97f0220"
+        },
+        {
+          "path": "src/frontend/ui.py",
+          "line": 120,
+          "symbol": "def trace",
+          "exists": true,
+          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_timeout_preserves_worker_limit_and_error_is_visible",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_timeout_preserves_worker_limit_and_error_is_visible",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p219.health",
+      "source_paragraph_id": 219,
+      "module": 4,
+      "source_text": "实现简单的健康检查接口（检查LLM服务、向量数据库连接状态）",
+      "requirement": "LLM/vector/store health endpoint",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/services/application.py",
+          "line": 319,
+          "symbol": "def health",
+          "exists": true,
+          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+        },
+        {
+          "path": "src/api/main.py",
+          "line": 67,
+          "symbol": "def health",
+          "exists": true,
+          "sha256": "7606af2a115aab3bd0e9180c6ecc35090e3f0d7eb355f66e8ab32fe958eded5d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_full_upload_chat_cache_delete_and_scope",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/datasets/standard/import_validation_summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p222.document_panel",
+      "source_paragraph_id": 222,
+      "module": 4,
+      "source_text": "左侧面板：文档上传与管理（批量上传、进度条、文档列表、删除功能）",
+      "requirement": "Upload/progress/list/delete document management",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/frontend/sections_library.py",
+          "line": 155,
+          "symbol": "def library_page",
+          "exists": true,
+          "sha256": "a5f10112b7c8ed87e21168eeca73d80abe3b9299ff47c5d983ccbcb21437f135"
+        },
+        {
+          "path": "src/api/main.py",
+          "line": 75,
+          "symbol": "async def upload",
+          "exists": true,
+          "sha256": "7606af2a115aab3bd0e9180c6ecc35090e3f0d7eb355f66e8ab32fe958eded5d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "Current product uses a dedicated paper-library page plus navigation/sidebar rather than placing all document controls on the chat's left edge.",
+      "pending": []
+    },
+    {
+      "id": "p223.chat_panel",
+      "source_paragraph_id": 223,
+      "module": 4,
+      "source_text": "中央主区域：对话窗口（支持流式输出打字机效果、Markdown渲染、引用标记）",
+      "requirement": "Streaming Markdown chat and references",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/frontend/sections_chat.py",
+          "line": 273,
+          "symbol": "def question_page",
+          "exists": true,
+          "sha256": "02c5907b1a37dfc14250d84b22494d82969df3984d415fffca3d51c407ce49f9"
+        },
+        {
+          "path": "src/frontend/ui.py",
+          "line": 233,
+          "symbol": "def citations",
+          "exists": true,
+          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p224.process_panel",
+      "source_paragraph_id": 224,
+      "module": 4,
+      "source_text": "右侧/底部面板：Agent推理过程可视化（展示Thought/Action/Observation轨迹树）",
+      "requirement": "Inspectable Agent execution-process panel",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/frontend/ui.py",
+          "line": 120,
+          "symbol": "def trace",
+          "exists": true,
+          "sha256": "57f60b6665254c0cdb87e285c71b0dda610f16f75676fcfea413d37a3f6ba7b0"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "Expandable real-event trajectory replaces a literal tree diagram; no synthetic Thought trace is used.",
+      "pending": []
+    },
+    {
+      "id": "p225.history",
+      "source_paragraph_id": 225,
+      "module": 4,
+      "source_text": "实现对话历史管理（新建会话、切换历史会话、删除会话）",
+      "requirement": "Create/switch/delete historical sessions",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/frontend/sections_chat.py",
+          "line": 273,
+          "symbol": "def question_page",
+          "exists": true,
+          "sha256": "02c5907b1a37dfc14250d84b22494d82969df3984d415fffca3d51c407ce49f9"
+        },
+        {
+          "path": "src/api/main.py",
+          "line": 287,
+          "symbol": "def delete_session",
+          "exists": true,
+          "sha256": "7606af2a115aab3bd0e9180c6ecc35090e3f0d7eb355f66e8ab32fe958eded5d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_new_session_explicitly_updates_browser_value_and_stays_selected",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p226.knowledge_management",
+      "source_paragraph_id": 226,
+      "module": 4,
+      "source_text": "实现知识库管理面板（查看已上传文档列表及向量化状态）",
+      "requirement": "Uploaded documents and index state",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/frontend/sections_library.py",
+          "line": 155,
+          "symbol": "def library_page",
+          "exists": true,
+          "sha256": "a5f10112b7c8ed87e21168eeca73d80abe3b9299ff47c5d983ccbcb21437f135"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/datasets/standard/import_validation_summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p228.end_to_end",
+      "source_paragraph_id": 228,
+      "module": 4,
+      "source_text": "完整流程测试：上传论文 → 构建索引 → 发起对话 → Agent决策 → 返回答案",
+      "requirement": "Upload/index/chat/decision/answer integration",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/services/application.py",
+          "line": 20,
+          "symbol": "class Application",
+          "exists": true,
+          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+        },
+        {
+          "path": "src/api/main.py",
+          "line": 37,
+          "symbol": "def create_app",
+          "exists": true,
+          "sha256": "7606af2a115aab3bd0e9180c6ecc35090e3f0d7eb355f66e8ab32fe958eded5d"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_full_upload_chat_cache_delete_and_scope",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/datasets/standard/import_validation_summary.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p229.concurrency",
+      "source_paragraph_id": 229,
+      "module": 4,
+      "source_text": "多用户并发场景测试（如适用）",
+      "requirement": "Concurrent/multi-user scenario as applicable",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/services/application.py",
+          "line": 189,
+          "symbol": "def _session_lock",
+          "exists": true,
+          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+        },
+        {
+          "path": "src/core/storage.py",
+          "line": 18,
+          "symbol": "class Storage",
+          "exists": true,
+          "sha256": "92b36f33f33677950b0f093000efa490c752a40cd37dbd7cb5dfc5ffee12190e"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_upload_concurrency_deduplicates_and_profile_change_requires_reindex",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "Scoped concurrent-import and session-lock tests exist; these are not throughput/load-test claims.",
+      "pending": []
+    },
+    {
+      "id": "p230.edge_cases",
+      "source_paragraph_id": 230,
+      "module": 4,
+      "source_text": "边缘场景测试：空知识库提问、超大文档上传、超长对话",
+      "requirement": "Empty library, large documents and long dialogue",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "previous_automated_executed",
+      "human_review_status": "pending",
+      "code": [
+        {
+          "path": "src/api/main.py",
+          "line": 75,
+          "symbol": "async def upload",
+          "exists": true,
+          "sha256": "7606af2a115aab3bd0e9180c6ecc35090e3f0d7eb355f66e8ab32fe958eded5d"
+        },
+        {
+          "path": "src/agent/memory.py",
+          "line": 49,
+          "symbol": "def load",
+          "exists": true,
+          "sha256": "7c37a7257c11f39f0509306017fa14aeb482c143ceed92c71f44296fd53e578e"
+        },
+        {
+          "path": "src/retrieval/embeddings.py",
+          "line": 108,
+          "symbol": "def encode",
+          "exists": true,
+          "sha256": "102a18ec2e4d7865a5928ab53e7d3df8c59f94b772ef8661d27067a1f9edd41a"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_agent_calculator_and_empty_knowledge_base",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/agent-generation-final-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_memory_compression_budget_and_scope_isolation",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_real_embedding_window_policy_does_not_drop_tail",
+          "passed_in_record": true
+        }
+      ],
+      "interpretation": "",
+      "pending": [
+        "Actual 50MB-scale document stress and long real-model conversation quality remain separate from limit guards/unit tests."
+      ]
+    },
+    {
+      "id": "p232.web_app_output",
+      "source_paragraph_id": 232,
+      "module": 4,
+      "source_text": "完整的Web应用界面（可交互演示）",
+      "requirement": "Interactive application output",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/frontend/app.py",
+          "line": 17,
+          "symbol": "st.set_page_config",
+          "exists": true,
+          "sha256": "91f83536eb57f8d032ed5629abdb7d91672b84422846e4b6801d08647431ff57"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p233.integration_output",
+      "source_paragraph_id": 233,
+      "module": 4,
+      "source_text": "系统集成代码（所有模块打通）",
+      "requirement": "Integrated module code output",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "src/services/application.py",
+          "line": 20,
+          "symbol": "class Application",
+          "exists": true,
+          "sha256": "d808d5e265e33ba4d7ab1638e51bfc83095c007dd02ae5764a774b8b8f13e8d7"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/testing/full-suite-20261010.xml",
+          "kind": "automated_test",
+          "test": "test_full_upload_chat_cache_delete_and_scope",
+          "passed_in_record": true
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    },
+    {
+      "id": "p234.test_records_output",
+      "source_paragraph_id": 234,
+      "module": 4,
+      "source_text": "端到端测试记录",
+      "requirement": "End-to-end test records",
+      "mandatory": true,
+      "implementation_status": "implemented",
+      "execution_status": "real_functional_executed",
+      "human_review_status": "not_required_for_code_presence",
+      "code": [
+        {
+          "path": "docs/界面功能验收.md",
+          "line": 1,
+          "symbol": "#",
+          "exists": true,
+          "sha256": "8d93cf78c654041a987a0a5445ec391e96be65b32a38ad1fc55cecc56567f01e"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/ui/workflow-tests-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        },
+        {
+          "path": "reports/ui/browser-standard-20261010.json",
+          "kind": "real_functional_record",
+          "claim_scope": "functional_not_formal_quality"
+        }
+      ],
+      "interpretation": "",
+      "pending": []
+    }
+  ]
+}

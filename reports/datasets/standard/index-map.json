@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-10-09T13:21:44.694315+00:00",
+  "base_url": "http://127.0.0.1:8000",
+  "document_ids": {
+    "vit": "f16b642c2e6a4ff0a7083343fe8cb9cc",
+    "deit": "928cbf0cfbdb48139a911fd6a81639c2",
+    "swin": "3943ca14c42e437caf11995d3d1d4dcd",
+    "pvt": "27977edd73f940a191e86007f706b89b",
+    "t2t": "b6ff334b89e641898588e5e723b74ed9",
+    "cait": "bbcf8e37202c46b481216f0e0d4b859a",
+    "cvt": "44d19d0b5eab4e9c9fd4fbf650400a6f",
+    "crossvit": "dd0232ffde86499388194f71ac7012ef",
+    "levit": "a29cd5df12a6457195da637225431997",
+    "beit": "61b9c994c0a147cea974f05797f739ce"
+  },
+  "corpus_hashes": {
+    "vit": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+    "deit": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb",
+    "swin": "dfdc7631fe2a35bb5892080b9c0eeadc4432d55cf1856f84bc88802efa877a7c",
+    "pvt": "902d623f188b69400a24dad00ac695eb3b7340ae79e735a2818fb2dca12dfa0f",
+    "t2t": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6",
+    "cait": "1b19d6662fa46bfaa45d180ae48d24b60b4ab201e0e056f5cc8b09074937f202",
+    "cvt": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+    "crossvit": "c733f2896531c46deead61af3fcd8620c0d1987229deca8cb70bd1c15eaf0528",
+    "levit": "e22a2b01258eef843860c1a9ad7ec08ca1578532814fcfb3741d160651905117",
+    "beit": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c"
+  },
+  "note": "No workspace token is stored; IDs belong to the workspace used during import."
+}

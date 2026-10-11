@@ -1,0 +1,14 @@
+.git
+.venv
+data/runtime
+data/models
+data/tools
+artifacts
+reports
+.idea
+reports/runs
+__pycache__
+.pytest_cache
+*.docx
+*.pdf
+.env
