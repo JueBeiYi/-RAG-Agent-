@@ -13,7 +13,8 @@ def main():
     output = ROOT / "artifacts/course-submission"
     output.mkdir(parents=True, exist_ok=True)
     history = output / "仓库历史.bundle"
-    subprocess.run(["git", "bundle", "create", str(history), "--all"], cwd=ROOT, check=True)
+    branch = subprocess.check_output(["git", "symbolic-ref", "--short", "HEAD"], cwd=ROOT, text=True).strip()
+    subprocess.run(["git", "bundle", "create", str(history), branch], cwd=ROOT, check=True)
     roots = ["src", "scripts", "tests", "docs", "reports", "docker", ".github", ".streamlit", "artifacts/delivery-final"]
     singles = ["README.md", ".gitignore", ".dockerignore", ".env.example", "pyproject.toml", "requirements.txt",
                "requirements-models.txt", "requirements-tested.txt", "config.yaml", "config.standard.yaml",
@@ -30,6 +31,7 @@ def main():
         package.writestr("恢复Git历史.txt", "真实历史包含原始提交和Codex实现提交，未伪造成员协作历史。\n"
                          "git clone -b codex/course-practice-completion 仓库历史.bundle restored-repository\n")
     receipt = {"archive": str(archive), "file_count": len(set(files)) + 2, "bytes": archive.stat().st_size,
+               "git_history_scope": branch,
                "sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
                "excluded": [".venv", "data/models", "data/tools", "data/runtime", ".env", ".idea", "临时渲染工作目录"],
                "human_scoring": "人工评分状态见评分说明；AI辅助分数不计入人工完成数"}
