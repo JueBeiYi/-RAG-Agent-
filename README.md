@@ -4,7 +4,7 @@
 
 ## 课程交付
 
-最终材料位于 [artifacts/delivery-final](artifacts/delivery-final)：课程报告、系统评测报告、技术设计文档、用户手册、实验与 Bad Case 附件、分块策略对比实验报告、Prompt 模板设计与实验记录、Bad Case 分析报告，以及 17 页演示 PPT。逐条完成状态见[课程要求逐条验收](docs/课程要求逐条验收.md)，实际答案与可填写评分字段见[60 题人工评分表](reports/experiments/generation/baseline/human_scoring_60.csv)。人工评分、题集人工确认和实际提交日期仍待填写；Docker 部署文件已提供，本机未启动容器验证。
+最终材料位于 [artifacts/delivery-final](artifacts/delivery-final)：课程报告、系统评测报告、技术设计文档、用户手册、实验与 Bad Case 附件、分块策略对比实验报告、Prompt 模板设计与实验记录、Bad Case 分析报告，以及 17 页演示 PPT。逐条完成状态见[课程要求逐条验收](docs/课程要求逐条验收.md)，实际答案及2026-10-14已填写的AI辅助分数见[60题评分表](reports/experiments/generation/baseline/human_scoring_60.csv)，[评分说明](docs/人工评分说明.md)说明逐题依据及人工复核方法。人工评分、题集人工确认和实际提交日期仍待填写；Docker 部署文件已提供，本机未启动容器验证。Word与PPT保留2026-10-11验收快照。
 
 最新生产索引含 **342 个片段**；三档检索测试和短答案生成实验使用冻结的历史 **359 个片段**索引。60 题生成实验只评测真实检索输入后的生成阶段，输出上限为 256 token，不代表最新生产索引的全流程质量结论。原始记录分别保存在 [retrieval](reports/experiments/retrieval)、[generation](reports/experiments/generation) 和[当前索引记录](reports/requirements/current-standard-index.json)。
 

@@ -1,0 +1,52 @@
+{
+  "grading_date": "2026-10-14",
+  "reviewer": "Codex AI辅助评分",
+  "grading_method": "ai_assisted",
+  "case_count": 60,
+  "human_answer_review_pending": true,
+  "human_scoring_completed_count": 0,
+  "means": {
+    "correctness_1_to_5": 3.5,
+    "completeness_1_to_5": 2.9833,
+    "citation_quality_1_to_5": 3.0333,
+    "fluency_1_to_5": 4.5833
+  },
+  "score_distribution": {
+    "correctness_1_to_5": {
+      "1": 5,
+      "2": 11,
+      "3": 13,
+      "4": 11,
+      "5": 20
+    },
+    "completeness_1_to_5": {
+      "1": 4,
+      "2": 21,
+      "3": 14,
+      "4": 14,
+      "5": 7
+    },
+    "citation_quality_1_to_5": {
+      "1": 12,
+      "2": 13,
+      "3": 13,
+      "4": 5,
+      "5": 17
+    },
+    "fluency_1_to_5": {
+      "2": 1,
+      "3": 5,
+      "4": 12,
+      "5": 42
+    }
+  },
+  "category_counts": {
+    "factual": 22,
+    "comparison": 16,
+    "synthesis": 11,
+    "reasoning": 11
+  },
+  "source_results_sha256": "c4809af2c75a806c4f00b93e24ab8f18799480b7c470eabefc46f9e080e9bfa5",
+  "scored_csv_sha256": "36dc9b15761016b74b98836534e85b8bd4a9dac2dea1d40c5126ebefc187a6dc",
+  "scope": "历史359片段冻结真实检索输入上的60题短答案生成研究，输出上限256 token；非最新342片段在线系统的全流程成绩。"
+}

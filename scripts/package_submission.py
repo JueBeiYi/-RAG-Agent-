@@ -32,7 +32,7 @@ def main():
     receipt = {"archive": str(archive), "file_count": len(set(files)) + 2, "bytes": archive.stat().st_size,
                "sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
                "excluded": [".venv", "data/models", "data/tools", "data/runtime", ".env", ".idea", "临时渲染工作目录"],
-               "human_scoring": "按用户选择提供空白人工评分字段，未代填"}
+               "human_scoring": "人工评分状态见评分说明；AI辅助分数不计入人工完成数"}
     (output / "提交包清单.json").write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(receipt, ensure_ascii=False))
 

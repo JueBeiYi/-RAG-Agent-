@@ -547,5 +547,30 @@
   "environment_pending": [
     "Docker Engine容器实机启动未验证"
   ],
-  "current_browser_verification": "新截图验证因电脑操作工具无法可靠确认当前浏览器地址而停止；材料保留2026-10-10真实历史截图。"
+  "current_browser_verification": "新截图验证因电脑操作工具无法可靠确认当前浏览器地址而停止；材料保留2026-10-10真实历史截图。",
+  "followup_ai_grading": {
+    "date": "2026-10-14",
+    "case_count": 60,
+    "grading_method": "ai_assisted",
+    "human_answer_review_pending": true,
+    "note": "本次更新评分表和导入功能；Word/PPT与source_files保留2026-10-11构建快照，其旧源码及哈希可从Git提交d014d1db恢复。",
+    "files": [
+      {
+        "path": "reports/experiments/generation/baseline/human_scoring_60.csv",
+        "sha256": "36dc9b15761016b74b98836534e85b8bd4a9dac2dea1d40c5126ebefc187a6dc"
+      },
+      {
+        "path": "reports/experiments/generation/baseline/ai_scored_results.json",
+        "sha256": "f4ad9f6f1a4ed792f0ae0d4a39544b6add07372c95efadc920d812a2745e2531"
+      },
+      {
+        "path": "reports/experiments/generation/baseline/ai_review_summary.json",
+        "sha256": "de87cb18cde5a93eace55425be3e0307fde33d6da64f4dccaebaee51eccd1dac"
+      },
+      {
+        "path": "docs/人工评分说明.md",
+        "sha256": "58728bcc05204b2d6b495d0fc4b9b397288ced1e977e737962fe99fab0b6aeb1"
+      }
+    ]
+  }
 }

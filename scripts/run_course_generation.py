@@ -360,8 +360,8 @@ class Checkpoint:
 def scoring_csv(path, records):
     columns = ["case_id", "category", "split", "question", "answer", "reference_answer", "relevant_sources", "citations",
                "success", "error", "source_checked", "review_method", "human_review_pending", "reviewer",
-               "correctness_1_to_5", "completeness_1_to_5", "citation_quality_1_to_5", "fluency_1_to_5", "bad_case_type", "root_cause", "review_notes"]
-    review_fields = ("reviewer", "correctness_1_to_5", "completeness_1_to_5", "citation_quality_1_to_5", "fluency_1_to_5", "bad_case_type", "root_cause", "review_notes")
+               "correctness_1_to_5", "completeness_1_to_5", "citation_quality_1_to_5", "fluency_1_to_5", "bad_case_type", "root_cause", "review_notes", "grading_method", "grading_date", "grading_evidence"]
+    review_fields = ("reviewer", "correctness_1_to_5", "completeness_1_to_5", "citation_quality_1_to_5", "fluency_1_to_5", "bad_case_type", "root_cause", "review_notes", "grading_method", "grading_date", "grading_evidence")
     existing = {}
     if Path(path).exists():
         with Path(path).open(encoding="utf-8-sig", newline="") as file:

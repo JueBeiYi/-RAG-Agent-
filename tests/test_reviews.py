@@ -56,3 +56,27 @@ def test_reviewer_name_without_required_scores_is_still_pending(tmp_path):
         writer = csv.DictWriter(handle, fieldnames=rows[0].keys())
         writer.writeheader(); writer.writerows(rows)
     assert import_reviews(data, path)["review_status"]["human_answer_review_pending"] is True
+
+
+def test_ai_scores_do_not_complete_human_review_and_survive_export(tmp_path):
+    data = result()
+    path = tmp_path / "review.csv"
+    export_review_sheet(data, path)
+    rows = list(csv.DictReader(path.open(encoding="utf-8-sig")))
+    for row in rows:
+        row.update(reviewer="Codex AI辅助评分", grading_method="ai_assisted", correctness_1_to_5="4",
+                   completeness_1_to_5="3", citation_quality_1_to_5="2", fluency_1_to_5="5")
+    with path.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=rows[0].keys())
+        writer.writeheader(); writer.writerows(rows)
+    reviewed = import_reviews(data, path)
+    assert reviewed["metrics"]["ai_scoring_completed_count"] == 2
+    assert reviewed["metrics"]["ai_correctness_1_to_5_mean"] == 4
+    assert reviewed["metrics"]["human_correctness_1_to_5_count"] == 0
+    assert reviewed["review_status"]["human_answer_review_pending"] is True
+    assert reviewed["review_status"]["ai_answer_scoring_completed"] is True
+    assert reviewed["records"][0]["human_review"] == {}
+    export_review_sheet(reviewed, path)
+    exported = list(csv.DictReader(path.open(encoding="utf-8-sig")))
+    assert exported[0]["grading_method"] == "ai_assisted"
+    assert exported[0]["correctness_1_to_5"] == "4.0"
