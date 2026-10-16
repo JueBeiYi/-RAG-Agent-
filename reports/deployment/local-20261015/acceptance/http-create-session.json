@@ -1,0 +1,21 @@
+{
+  "name": "create-session",
+  "method": "POST",
+  "url": "http://127.0.0.1:8000/sessions",
+  "at": "2026-10-15T09:22:48.690426+00:00",
+  "status": 200,
+  "seconds": 0.02,
+  "request": {
+    "title": "本地127实际运行验收"
+  },
+  "content_type": "application/json",
+  "response": {
+    "id": "b1161e90198f484db09499120f2f0410",
+    "title": "本地127实际运行验收",
+    "created_at": "2026-10-15T09:22:48.674795+00:00",
+    "messages": [],
+    "memory": {},
+    "document_ids": [],
+    "title_custom": true
+  }
+}

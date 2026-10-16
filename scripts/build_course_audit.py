@@ -24,6 +24,8 @@ def main():
         results.append((str(path.relative_to(ROOT)).replace("\\", "/"), item))
     artifacts = ROOT / "artifacts/delivery-final"
     entries = list(base["requirements"])
+    quality_path = ROOT / "reports/experiments/generation/quality-comparison/ai_quality_summary.json"
+    quality_summary = read(quality_path) if quality_path.exists() else {}
 
     def evidence(prefix):
         return [name for name, _ in results if prefix in name]
@@ -47,6 +49,21 @@ def main():
             entry["implementation_status"] = "implemented"
             entry["execution_status"] = "completed"
             entry["evidence_paths"] = [str((artifacts / output_name).relative_to(ROOT)).replace("\\", "/")]
+        study = {154: "parameters", 170: "prompt"}.get(entry["source_paragraph_id"])
+        if study:
+            studies = [item for name, item in results if f"generation/{study}/" in name]
+            quality_keys = ("human_correctness_mean", "human_completeness_mean", "human_citation_quality_mean")
+            conditions = [metrics for item in studies for metrics in item.get("condition_metrics", {}).values()]
+            if studies and (not conditions or any(any(metrics.get(key) is None for key in quality_keys) for metrics in conditions)):
+                entry["execution_status"] = "quality_comparison_pending"
+                entry["pending"] = [*entry.get("pending", []), "补充各条件实际回答的质量评价及对比结论；已有真实回答可复用，无需重跑生成。"]
+                entry["interpretation"] = "真实生成与耗时/Token记录已完成；引用编号合法率和数字规则检查不能替代答案正确性、完整性与引用支撑程度的评价。"
+            reviewed = [item for item in quality_summary.get("conditions", []) if item.get("study") == study]
+            if reviewed and all(item.get("n", 0) > 0 and all(item.get(key + "_mean") is not None for key in ("correctness", "completeness", "citation_quality")) for item in reviewed):
+                entry["execution_status"] = "ai_quality_comparison_completed"
+                entry["latest_quality_evidence"] = [str(quality_path.relative_to(ROOT)).replace("\\", "/"), "docs/生成参数与Prompt质量比较.md"]
+                entry["pending"] = [item for item in entry.get("pending", []) if not item.startswith("补充各条件实际回答")]
+                entry["interpretation"] = "现有真实回答已完成统一AI质量评审及条件比较；每条件4题、单次生成，仅作探索性结论。AI评审来源保留，不计入真人评分。"
 
     def add(p, name, files, status="completed", note=""):
         existing = [file for file in files if (ROOT / file).exists()]
@@ -66,7 +83,14 @@ def main():
     add(248, "工具路由准确率与推理轮次", evidence("generation/agent/"))
     add(249, "真实在线平均延迟与Token", ["reports/experiments/online-functionality/results.json"], note="10次真实线上样本；冻结检索生成实验另列，不能冒充在线端到端。")
     forms = [str(p.relative_to(ROOT)).replace("\\", "/") for p in (ROOT / "reports/experiments/generation").rglob("human_scoring_60.csv")]
-    add(250, "实际答案人工评分表", forms, "human_scoring_pending", "用户明确要求先生成可填写表；评分人、正确性、完整性、引用质量不代填。")
+    ai_summary_path = ROOT / "reports/experiments/generation/baseline/ai_review_summary.json"
+    ai_summary = read(ai_summary_path) if ai_summary_path.exists() else {}
+    baseline = next((item for name, item in results if name == "reports/experiments/generation/baseline/results.json"), {})
+    human_count = baseline.get("metrics", {}).get("human_scoring_completed_count", 0)
+    case_count = baseline.get("metrics", {}).get("case_count", 60)
+    add(250, "实际答案人工评分", forms + ([str(ai_summary_path.relative_to(ROOT)).replace("\\", "/")] if ai_summary else []),
+        "completed" if human_count >= case_count else "human_scoring_pending",
+        f"{ai_summary.get('case_count', 0)}题AI辅助评分已完成；真实人工评分{human_count}/{case_count}题。AI评分单独标注，不计入课程要求的人工评分。")
     add(251, "真实参数性能图表", evidence("retrieval/dev-parameters/") + evidence("generation/parameters/"))
     for p in (254, 255, 256, 257, 258):
         add(p, source[p], ["reports/experiments/bad-cases/actual-bad-cases.json"])
@@ -80,11 +104,20 @@ def main():
         add(p, source[p], [str(match.relative_to(ROOT)).replace("\\", "/") for match in matches])
     add(294, "代码仓库 README 依赖 配置与真实Git历史", ["README.md", "requirements.txt", "docs/模型与API配置.md", "reports/requirements/git-history.txt"])
     add(84, "Docker一键部署文件", ["docker/Dockerfile", "docker/docker-compose.yml", "scripts/deploy_docker.ps1"],
-        "provided_runtime_unverified", "Compose与启动脚本静态校验通过；本机没有Docker Engine，不声明容器已实机启动。")
+        "provided_runtime_unverified", "部署文件与Compose配置校验通过，WSL/Docker已安装但容器未实测；2026-10-15用户取消Docker验收，改为本地127运行留证，不将本地运行写成容器验收。")
+    local_runtime_path = ROOT / "reports/deployment/local-20261015/runtime-record.json"
+    local_runtime = read(local_runtime_path) if local_runtime_path.exists() else {}
     report = {"generated_at": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(), "source": base["source"],
               "requirements": entries, "summary": dict(Counter(item["execution_status"] for item in entries)),
-              "user_selected_pending": ["人工评分先提供可填写表", "实际提交日期待填写"],
+              "course_evaluation_complete": human_count >= case_count and not any(item["execution_status"] == "quality_comparison_pending" for item in entries),
+              "pending_tasks": [item["requirement"] for item in entries if item["execution_status"] in {"human_scoring_pending", "quality_comparison_pending", "provided_runtime_unverified"}],
+              "human_fields_pending": ["实际成员职责确认（现为拟定，40/30/30比例已由用户提供）", "实际提交日期待填写"],
               "unverified_environment": ["Docker Engine容器实机运行"],
+              "local_runtime_acceptance": {"status": local_runtime.get("status", "not_recorded"), "evidence_path": str(local_runtime_path.relative_to(ROOT)).replace("\\", "/"),
+                                           "captured_at": local_runtime.get("captured_at"), "ui_url": local_runtime.get("ui_url"), "api_url": local_runtime.get("api_url"),
+                                           "model": local_runtime.get("actual_model"), "unique_check_count": local_runtime.get("unique_check_count"),
+                                           "scope": "用户选择本地127验收；Docker验收已取消，本地通过不替代课程原文中的容器实测证明。"},
+              "artifact_scope": "Word/PPT保留2026-10-11生成快照；2026-10-14的AI评分已另存，最终提交文档需同步后续结果。本次仅核对证据，不重跑模型、全量测试或容器。",
               "scope": "仅题目一；原文其他三道题为替代选题，不是额外必做项目。"}
     target = ROOT / "reports/requirements/course-audit.json"
     target.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -95,7 +128,9 @@ def main():
               "implemented_offline_optional_search_unselected": "离线已实现，联网可选", "targeted_automated_executed": "定向验证通过",
               "real_experiment_executed": "真实实验已执行", "real_functional_executed": "真实功能已验证", "previous_automated_executed": "已有验证通过",
               "artifact_pending_external_delivery_task": "等待最终材料", "not_applicable_unselected_optional": "未选择可选项",
-              "completed": "已完成", "partial": "部分完成", "pending": "待完成", "human_scoring_pending": "评分表已提供，人工待填",
+              "completed": "已完成", "partial": "部分完成", "pending": "待完成", "human_scoring_pending": "人工评分待完成",
+              "quality_comparison_pending": "实验已执行，质量对比待补",
+              "ai_quality_comparison_completed": "AI质量对比已完成",
               "provided_runtime_unverified": "文件已提供，实机未验"}
     for entry in entries:
         paths = entry.get("evidence_paths", entry.get("latest_experiment_evidence", []))
@@ -103,7 +138,9 @@ def main():
             paths = [item["path"] for item in entry.get("code", [])][:2]
         description = entry["source_text"].replace("|", "／").replace("\n", " ")
         lines.append(f"| P{entry['source_paragraph_id']} | {description} | {labels.get(entry['implementation_status'], entry['implementation_status'])} | {labels.get(entry['execution_status'], entry['execution_status'])} | {'; '.join(paths)} |")
-    lines += ["", "人工评分按用户选择保留待填；自动引用/数字检查不等同于正确性评分。Docker一键部署文件已提供，本机未做容器实机启动。实际提交日不从截止日期推定。", "",
+    lines += ["", f"60题基线已有{ai_summary.get('case_count', 0)}题AI辅助评分，真实人工评分{human_count}/{case_count}题；AI辅助评分、自动引用/数字检查均不等同于课程要求的人工评分。参数与Prompt质量比较以表中状态及latest_quality_evidence为准。Docker一键部署文件已提供，未做容器实机启动。实际提交日不从截止日期推定。", "",
+              "Word/PPT是2026-10-11快照；2026-10-14 AI评分另存，最终提交材料需同步。详细结论见docs/剩余任务与验收结论.md。", "",
+              f"本地127实际运行：{local_runtime.get('status', 'not_recorded')}；记录见reports/deployment/local-20261015/运行记录.md。Docker验收已按用户要求取消，不将本地运行视为容器实测。", "",
               "现有359片段实验属于旧持久索引，最新生产索引状态以reports/requirements/current-standard-index.json为准。历史引用仍按原始PDF物理页追溯。"]
     (ROOT / "docs/课程要求逐条验收.md").write_text("\n".join(lines), encoding="utf-8")
     print(json.dumps({"requirements": len(entries), "summary": report["summary"]}, ensure_ascii=False))

@@ -1,0 +1,5 @@
+﻿dimension,n,mean,std,min,max,scale_min,scale_max,grading_method,grading_date
+correctness_1_to_5,60,3.5,1.3466845666427971,1.0,5.0,1,5,ai_assisted,2026-10-14
+completeness_1_to_5,60,2.9833333333333334,1.1570222836971427,1.0,5.0,1,5,ai_assisted,2026-10-14
+citation_quality_1_to_5,60,3.033333333333333,1.5066706664613674,1.0,5.0,1,5,ai_assisted,2026-10-14
+fluency_1_to_5,60,4.583333333333333,0.7199733202840949,2.0,5.0,1,5,ai_assisted,2026-10-14

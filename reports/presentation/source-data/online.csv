@@ -1,0 +1,2 @@
+﻿sample_count,latency_mean_ms,input_tokens_total,output_tokens_total,average_agent_steps
+10,52089.39080000855,43908,4634,1.2

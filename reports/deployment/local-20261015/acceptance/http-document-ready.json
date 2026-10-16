@@ -1,0 +1,36 @@
+{
+  "name": "document-ready",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/documents/c2662c09f3784936ac1ee32898beaff3",
+  "at": "2026-10-15T09:22:48.504699+00:00",
+  "status": 200,
+  "seconds": 0.013,
+  "request": null,
+  "content_type": "application/json",
+  "response": {
+    "document_id": "c2662c09f3784936ac1ee32898beaff3",
+    "name": "cvt_2103.15808v1.pdf",
+    "content_hash": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+    "format": "pdf",
+    "title": "CvT: Introducing Convolutions to Vision Transformers",
+    "authors": [],
+    "year": 2021,
+    "abstract": "We present in this paper a new architecture, named Con-\nvolutional vision Transformer (CvT), that improves Vision\nTransformer (ViT) in performance and efﬁciency by intro-\nducing convolutions into ViT to yield the best of both de-\nsigns. This is accomplished through two primary modiﬁca-\ntions: a hierarchy of Transformers containing a new convo-\nlutional token embedding, and a convolutional Transformer\nblock leveraging a convolutional projection. These changes\nintroduce desirable properties of convolutional neural net-\nworks (CNNs) to the ViT architecture (i.e. shift, scale,\nand distortion invariance) while maintaining the merits of\nTransformers (i.e. dynamic attention, global context, and\nbetter generalization). We validate CvT by conducting ex-\ntensive experiments, showing that this approach achieves\nstate-of-the-art performance over other Vision Transform-\ners and ResNets on ImageNet-1k, with fewer parame-\nters and lower FLOPs.\nIn addition, performance gains\nare maintained when pretrained on larger datasets (e.g.\nImageNet-22k) and ﬁne-tuned to downstream tasks. Pre-\ntrained on ImageNet-22k, our CvT-W24 obtains a top-1 ac-\ncuracy of 87.7% on the ImageNet-1k val set. Finally, our\nresults show that the positional encoding, a crucial com-\nponent in existing Vision Transformers, can be safely re-\nmoved in our model, simplifying the design for higher res-\nolution vision tasks.\nCode will be released at https:\n//github.com/leoxiaobin/CvT.\n1. Introduction\nTransformers [31, 10] have recently dominated a wide\nrange of tasks in natural language processing (NLP) [32].\nThe Vision Transformer (ViT) [11] is the ﬁrst computer vi-\nsion model to rely exclusively on the Transformer archi-\ntecture to obtain competitive image classiﬁcation perfor-\nmance at large scale. The ViT design adapts Transformer\n*This work is done when Haiping Wu was an intern at Microsoft.\n†Corresponding author",
+    "doi": "",
+    "status": "ready",
+    "error": "",
+    "chunks": 29,
+    "created_at": "2026-10-15T09:21:16.810653+00:00",
+    "metadata": {
+      "page_count": 10,
+      "chunk_strategy": "recursive",
+      "chunk_size": 512,
+      "chunker_implementation": "recursive-character-proposals-v1",
+      "chunk_overlap": 64,
+      "pdf_parser": "pymupdf",
+      "embedding_fingerprint": "13d11d3f8af52181bc4c055c",
+      "embedding_model": "BAAI/bge-m3",
+      "embedding_backend": "sentence_transformers"
+    }
+  }
+}

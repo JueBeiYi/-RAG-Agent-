@@ -1,0 +1,109 @@
+﻿id,source_paragraph_id,module,requirement,source_text,mandatory,implementation_status,execution_status,evidence_paths,interpretation,pending
+p68.background_direct_model_example,68,3,General-knowledge direct-model route background example,工具选择路由：根据用户问题的语义特征，动态判断应调用何种工具。例如，对于“3.14乘以2.56”自动路由至计算器工具（节省80% Token消耗），对于“对比论文A和B的实验结果”自动调用论文对比工具+RAG联合检索，对于“深度学习是什么”则直接由模型自身知识回答（无需检索，节省时间）。,True,implemented,targeted_automated_executed,,Functional routing example only. Background 80% Token savings is not a measured project result or required grade threshold.,[]
+p124.batch_import,124,1,"Batch import, progress and failed-job retry",实现PDF加载器，对比PyPDF2、pdfplumber、pymupdf三种方案，选最优方案，实现Word文档加载器（python-docx），实现TXT/Markdown等纯文本加载器，实现批量文档导入与状态追踪（进度显示、失败重试机制）,True,implemented,real_experiment_executed,,,[]
+p124.other_formats,124,1,Word/TXT/Markdown loaders,实现PDF加载器，对比PyPDF2、pdfplumber、pymupdf三种方案，选最优方案，实现Word文档加载器（python-docx），实现TXT/Markdown等纯文本加载器，实现批量文档导入与状态追踪（进度显示、失败重试机制）,True,implemented,real_experiment_executed,,,[]
+p124.pdf_parsers,124,1,PDF loader: PyPDF2/pdfplumber/PyMuPDF,实现PDF加载器，对比PyPDF2、pdfplumber、pymupdf三种方案，选最优方案，实现Word文档加载器（python-docx），实现TXT/Markdown等纯文本加载器，实现批量文档导入与状态追踪（进度显示、失败重试机制）,True,implemented,real_experiment_executed,,"All three parsers exist; selecting the best parser requires results, not character counts alone.",[]
+p126.three_strategies,126,1,At least three splitting strategies,实现3种以上切分策略：,True,implemented,targeted_automated_executed,,,[]
+p127.fixed_sizes,127,1,Fixed sizes 256/512/1024 and comparison,固定大小切分（对比chunk_size=256/512/1024的效果）,True,implemented,real_experiment_executed,,"Sizes count reproducible lightweight Chinese-character/English-word/punctuation units, not provider tokens.",[]
+p128.recursive,128,1,Recursive character/separator splitting,递归字符切分（RecursiveCharacterTextSplitter）,True,implemented,targeted_automated_executed,,Gap repaired: actual RecursiveCharacterTextSplitter proposes recursive boundaries using count_tokens/add_start_index/strip_whitespace=False. Offsets are validated against unchanged text; source/page/atomic-row protections remain.,[]
+p129.semantic_boundaries,129,1,Sentence/paragraph boundary splitting,语义切分（基于句子边界、段落边界）,True,implemented,targeted_automated_executed,,The course describes sentence/paragraph boundaries. This implementation is not embedding-based semantic clustering.,[]
+p130.chunk_recall_study,130,1,Same-document recall comparison,设计对比实验：同一文档用不同策略切分后，测试检索召回率差异,True,implemented,real_experiment_executed,,,[]
+p131.academic_layout,131,1,"Double columns, cross-page tables and formula preservation",针对学术论文特点优化：处理双栏排版、跨页表格、公式保留等场景,True,implemented,real_functional_executed,,,"[""Human-check complex real-paper tables and formulas against original physical pages; OCR is intentionally outside the text-layer parser.""]"
+p132.chunk_report,132,1,Chunking strategy comparison report,产出《分块策略对比实验报告》,True,implemented,completed,"[""artifacts/delivery-final/分块策略对比实验报告.docx""]",,"[""Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review.""]"
+p134.embedding_comparison,134,1,BGE-large-zh and M3E-base quality/speed comparison,接入Embedding模型（对比bge-large-zh、m3e-base的效果与速度）,True,implemented,real_experiment_executed,,,[]
+p135.vector_stores,135,1,Vector store selection and encapsulation,向量数据库选型与操作封装（Chroma轻量级 vs FAISS高性能）,True,implemented,real_experiment_executed,,Chroma and FAISS adapters are implemented. The course does not require two simultaneous production stores.,[]
+p136.incremental,136,1,"Batch embedding, index construction and incremental updates",实现批量向量化与索引构建（支持增量更新，新文档加入时无需重建全量索引）,True,implemented,real_functional_executed,,,[]
+p137.vector_topk,137,1,Similarity Top-K retrieval,实现基于向量相似度的Top-K检索,True,implemented,real_functional_executed,,,[]
+p139.bm25,139,1,rank_bm25 keyword search,实现BM25关键词检索（使用rank_bm25）,True,implemented,real_functional_executed,,,[]
+p140.rrf,140,1,Handwritten RRF,实现RRF（倒数排名融合）算法，融合向量与BM25的检索结果,True,implemented,previous_automated_executed,,,[]
+p141.rerank,141,1,Real reranker adapter,接入重排序模型（如bge-reranker-base/v2），对检索结果进行精排,True,implemented,real_functional_executed,,,[]
+p142.three_tier_eval,142,1,Vector/hybrid/hybrid-rerank Hit@5/MRR comparison,设计检索质量评估实验：对比纯向量 → 混合检索 → 混合+重排序三档效果，记录Hit@5、MRR等指标,True,implemented,real_experiment_executed,,Existing 4-case standard-mode results prove execution only; they do not satisfy a formal 50+ case quality claim.,[]
+p144.retrieval_code,144,1,Complete hybrid+rerank module code,完整的检索层模块代码（支持混合检索+Rerank）,True,implemented,previous_automated_executed,,,[]
+p145.retrieval_benchmark,145,1,Three-tier benchmark data,检索性能基准测试数据（三档对比）,True,implemented,real_experiment_executed,,,[]
+p146.chunk_report_output,146,1,Chunking experiment report output,分块策略对比实验报告,True,implemented,completed,"[""artifacts/delivery-final/分块策略对比实验报告.docx""]",,"[""Complete formal experiments on fixed source-checked cases; assistant source checking is not student/teacher human review.""]"
+p151.rag_prompt,151,2,Role/context/question/output RAG prompt,设计RAG专用Prompt模板，包含：系统角色设定、检索上下文、用户问题、输出格式要求,True,implemented,real_functional_executed,,,[]
+p152.context_budget,152,2,Ranked context assembly and dynamic truncation,实现上下文的智能拼接策略：按相关性排序、动态截断超长上下文,True,implemented,previous_automated_executed,,,[]
+p153.source_locations,153,2,Document-name and physical-page citations,设计引用溯源机制：答案中标注信息来源（文档名+页码），确保可追溯,True,implemented,real_functional_executed,,"For Word/TXT/Markdown, real paragraph locations replace unavailable physical pages; page numbers are not fabricated.",[]
+p154.sampling_parameters,154,2,Temperature/Top-p/Top-k comparisons,对比不同生成参数（Temperature、Top-p、Top-k）对回答质量的影响,True,implemented,ai_quality_comparison_completed,,现有真实回答已完成统一AI质量评审及条件比较；每条件4题、单次生成，仅作探索性结论。AI评审来源保留，不计入真人评分。,[]
+p156.streaming,156,2,SSE/model streaming and Streamlit output,实现流式输出（SSE / Streamlit打字机效果）,True,implemented,real_functional_executed,,,[]
+p157.stream_citations,157,2,Streaming answer with inline reference positions,实现流式+引用：先快速输出答案文本，引用标记在对应位置动态出现,True,implemented,real_functional_executed,,Source table is sent before answer tokens; inline reference marks appear during the answer. Split transport references are held until complete.,[]
+p159.semantic_cache,159,2,Embedding-similarity answer cache,实现语义缓存：相同或高度相似的问题直接返回缓存答案（Embedding相似度匹配），节省计算与时间,True,implemented,real_experiment_executed,,,"[""Measure real-model cache cold/hot hit behavior and latency if making a performance claim.""]"
+p161.empty_retrieval,161,2,Explicit ungrounded-model fallback for empty retrieval,检索无结果时，回退到纯模型生成（带“当前知识库中未找到相关文档”的明确提示）,True,implemented,previous_automated_executed,,,[]
+p162.low_relevance,162,2,Low-relevance warning and inspectable sources,检索结果相关性低时，提示用户并展示检索到的相关内容供用户确认,True,implemented,previous_automated_executed,,,"[""Calibrate minimum_relevance on dev data; backend scores are not answer-correctness probabilities.""]"
+p163.model_failure,163,2,Friendly provider failure and retry advice,模型API调用失败时，返回友好的错误提示与重试建议,True,implemented,previous_automated_executed,,,[]
+p165.request_log,165,2,"Questions, retrieved Top-K, answers, latency and Token logs",记录每次RAG请求的完整日志：用户问题、检索到的Top-k文档、生成回答、响应耗时、Token消耗,True,implemented,previous_automated_executed,,Complete events include the RAG done event and ranked hits; JSON logs are supplementary to scoped SQLite records.,[]
+p166.top1_distribution,166,2,Top-1 score records and distribution output,实现简单的检索质量自评：记录每次检索的Top-1置信度分数分布,True,implemented,real_experiment_executed,,Histogram labels disclose backend-specific scores; they are not calibrated confidence probabilities.,[]
+p168.rag_code,168,2,RAG module including streaming and source attribution,完整的RAG问答模块代码（含流式输出+引用溯源）,True,implemented,real_functional_executed,,,[]
+p169.cache_degradation_output,169,2,Implemented cache and fallback mechanisms,缓存机制与降级策略的实现,True,implemented,previous_automated_executed,,,[]
+p170.prompt_experiment_record,170,2,Prompt design documentation and parameter experiments,Prompt模板设计文档与实验对比记录,True,implemented,ai_quality_comparison_completed,"[""artifacts/delivery-final/Prompt模板设计与实验记录.docx""]",现有真实回答已完成统一AI质量评审及条件比较；每条件4题、单次生成，仅作探索性结论。AI评审来源保留，不计入真人评分。,[]
+p175.react,175,3,Handwritten ReAct orchestration,手写ReAct循环核心逻辑：,True,implemented,previous_automated_executed,,No high-level agent framework replaces the loop. About 200 lines in background prose is not a line-count constraint.,[]
+p176.decision,176,3,Short observable next-action decision,Thought（推理当前状态，规划下一步行动）,True,implemented,previous_automated_executed,,Public task decision summaries are recorded; private chain-of-thought is neither requested nor fabricated.,[]
+p177.action,177,3,Tool selection and execution,Action（选择并执行工具）,True,implemented,targeted_automated_executed,,,[]
+p178.observation,178,3,Tool observations determine continuation/termination,Observation（观察工具返回结果，决定继续或终止）,True,implemented,previous_automated_executed,,,[]
+p179.termination,179,3,"Maximum iterations, completion, repeat and timeout termination",循环终止条件的设计（最大迭代次数、任务完成标志）,True,implemented,previous_automated_executed,,,[]
+p180.agent_prompt,180,3,Agent role/tools/output schema prompt,理解并设计Agent的System Prompt结构（角色定义 + 可用工具描述 + 输出格式约束）,True,implemented,previous_automated_executed,,,[]
+p182.rag_tool,182,3,RAG engine wrapped as the core knowledge tool,知识库检索工具：封装模块二的RAG引擎，作为Agent最核心的工具,True,implemented,real_functional_executed,,,[]
+p183.metadata_tool,183,3,Title/authors/year/abstract/DOI metadata tool,论文元信息提取工具：从已上传论文中提取标题、作者、年份、摘要、DOI,True,implemented,real_functional_executed,,,"[""Unlabelled PDF author lines may be unrecognised; current official corpus metadata was source-checked/applied. Human spot-check automatic fields.""]"
+p184.comparison_tool,184,3,Two-paper methods/dataset/results comparison,论文对比工具：接受两篇论文ID，对比方法、数据集、实验结果,True,implemented,real_functional_executed,,,"[""Human-check comparison semantics and experimental comparability; source/numeric checks do not prove every statement correct.""]"
+p185.keywords_tool,185,3,Keywords from either user question or document,关键词提取工具：从用户问题或文档中提取核心关键词,True,implemented,targeted_automated_executed,,Gap repaired: query input requires no uploaded document and produces no fabricated paper citation.,[]
+p186.summary_tool,186,3,Structured background/method/result/conclusion summary,摘要生成工具：针对特定论文生成结构化摘要（背景-方法-结果-结论）,True,implemented,previous_automated_executed,,,"[""Human-check generated summary meaning on actual papers. Evidence excerpts are explicitly a fallback, not equivalent to successful model synthesis.""]"
+p187.time_tool,187,3,Real current time tool,当前时间工具：返回系统当前时间,True,implemented,previous_automated_executed,,,[]
+p188.optional_web_search,188,3,Optional DuckDuckGo/academic search tool,联网搜索工具：调用DuckDuckGo或学术搜索API（可选，需联网）,False,optional_not_selected,not_applicable_unselected_optional,,No web-search handler is registered in this implementation. Offline mode and the eight local tools do not require it; an unused config flag is not an implemented search feature.,[]
+p190.tool_routing,190,3,Fast question-type routing,实现工具选择路由：根据问题类型快速路由到对应工具，减少无效推理轮次,True,implemented,targeted_automated_executed,,Gap repaired: explicit general definitions (e.g. deep learning) can call the model directly. Selected/named papers and referential/latest questions stay grounded. Demo does not pretend to perform real general-knowledge inference.,[]
+p191.parallel_tools,191,3,Independent tool execution in parallel,实现并行工具调用：当Agent判断需要多个独立工具时，并行执行以提升效率,True,implemented,real_experiment_executed,,,"[""Real-model parallel speedup needs independent multi-tool tasks and measured sequential/parallel runs.""]"
+p193.timeout_recovery,193,3,Timeout retry or skip with bounded workers,工具调用超时 → 重试或跳过,True,implemented,targeted_automated_executed,,,[]
+p194.exception_alternative,194,3,Error logs and alternative tools,工具返回异常 → 记录错误并尝试替代工具,True,implemented,previous_automated_executed,,,[]
+p195.loop_guard,195,3,Forced stop and user warning for repeated actions,Agent陷入死循环 → 强制终止并提示用户,True,implemented,previous_automated_executed,,,[]
+p197.session_isolation,197,3,User/session isolation,实现会话隔离（不同用户/不同会话互不干扰）,True,implemented,previous_automated_executed,,,[]
+p198.memory_window,198,3,Token-bounded recent window,实现滑动窗口Token管理（自动截断超长的对话历史）,True,implemented,previous_automated_executed,,Conservative token estimates are labelled; provider Token usage is separately measured.,[]
+p199.memory_compression,199,3,Archived-dialogue summary compression,实现对话摘要压缩（对长对话进行阶段性总结，压缩后替换原始历史）,True,implemented,previous_automated_executed,,"Extractive archived excerpts compress history and preserve originals. They are background, not original-paper evidence or a claimed abstractive LLM summary.",[]
+p201.react_code_output,201,3,ReAct code output,ReAct核心循环代码,True,implemented,previous_automated_executed,,,[]
+p202.eight_tools_output,202,3,Eight registered callable tools,8个已注册可调用的工具,True,implemented,targeted_automated_executed,,"The source lists six required tools plus optional web search but requests eight outputs. Required six + calculator (background example) + local paper catalog = eight working offline tools. Catalog is an explicit compatibility choice, not a source-prescribed tool.",[]
+p203.decision_optimisation_output,203,3,Routing/parallel/recovery code output,Agent决策优化（路由、并行、错误恢复）实现代码,True,implemented,previous_automated_executed,,,[]
+p204.memory_output,204,3,Conversation memory module output,对话记忆管理模块,True,implemented,previous_automated_executed,,,[]
+p209.core_rag_tool,209,4,RAG as core Agent tool,将RAG检索模块封装为Agent的核心Tool之一,True,implemented,real_functional_executed,,,[]
+p210.rag_web_routing,210,4,RAG/search routing when optional networking is chosen,Agent决策逻辑的精细化调优：何时走RAG、何时走联网搜索,False,implemented_offline_optional_search_unselected,not_applicable_unselected_optional,,Mandatory local routing exists (p190); RAG-versus-web tuning is conditional on choosing the optional p188 tool. No phantom web feature is counted.,[]
+p211.context_integration,211,4,Agent uses isolated conversation context,将记忆管理模块接入Agent，使Agent能感知对话上下文,True,implemented,previous_automated_executed,,,[]
+p212.unified_data,212,4,Unified Message/Context/Chunk/Event structures,确保各模块间的数据格式统一（统一的Message/Context数据结构）,True,implemented,previous_automated_executed,,,[]
+p215.tokens_per_tool,215,4,Per-call and per-tool Token metrics shown in frontend,每次Agent推理的Token消耗（按工具调用分别统计）,True,implemented,targeted_automated_executed,,"Gap repaired: tool_end.usage and done.metrics.tool_token_usage include known amounts, estimates and unknown-call counts. Planning/synthesis usage is separate; non-LLM local tools use zero LLM Token. New frontend presentation awaits its owner's targeted UI check.",[]
+p216.retrieval_metrics,216,4,Retrieval latency and labelled Hit@5 display,RAG检索命中率与响应延迟,True,implemented,real_functional_executed,,Latency/relevance are available per request. True hit rate requires labelled experiment cases; ordinary live requests do not invent correctness labels.,[]
+p217.decision_trace,217,4,Decision/Action/Observation trace,Agent决策路径（Thought → Action → Observation 全链路轨迹）,True,implemented,real_functional_executed,,Shows genuine task stages/actions/observations and parallel calls as an expandable event trajectory; private reasoning is not fabricated.,[]
+p218.tool_metrics,218,4,Tool success rate and execution time,工具调用成功率与耗时,True,implemented,real_functional_executed,,,[]
+p219.health,219,4,LLM/vector/store health endpoint,实现简单的健康检查接口（检查LLM服务、向量数据库连接状态）,True,implemented,real_functional_executed,,,[]
+p222.document_panel,222,4,Upload/progress/list/delete document management,左侧面板：文档上传与管理（批量上传、进度条、文档列表、删除功能）,True,implemented,real_functional_executed,,Current product uses a dedicated paper-library page plus navigation/sidebar rather than placing all document controls on the chat's left edge.,[]
+p223.chat_panel,223,4,Streaming Markdown chat and references,中央主区域：对话窗口（支持流式输出打字机效果、Markdown渲染、引用标记）,True,implemented,real_functional_executed,,,[]
+p224.process_panel,224,4,Inspectable Agent execution-process panel,右侧/底部面板：Agent推理过程可视化（展示Thought/Action/Observation轨迹树）,True,implemented,real_functional_executed,,Expandable real-event trajectory replaces a literal tree diagram; no synthetic Thought trace is used.,[]
+p225.history,225,4,Create/switch/delete historical sessions,实现对话历史管理（新建会话、切换历史会话、删除会话）,True,implemented,real_functional_executed,,,[]
+p226.knowledge_management,226,4,Uploaded documents and index state,实现知识库管理面板（查看已上传文档列表及向量化状态）,True,implemented,real_functional_executed,,,[]
+p228.end_to_end,228,4,Upload/index/chat/decision/answer integration,完整流程测试：上传论文 → 构建索引 → 发起对话 → Agent决策 → 返回答案,True,implemented,real_functional_executed,,,[]
+p229.concurrency,229,4,Concurrent/multi-user scenario as applicable,多用户并发场景测试（如适用）,True,implemented,previous_automated_executed,,Scoped concurrent-import and session-lock tests exist; these are not throughput/load-test claims.,[]
+p230.edge_cases,230,4,"Empty library, large documents and long dialogue",边缘场景测试：空知识库提问、超大文档上传、超长对话,True,implemented,previous_automated_executed,,,"[""Actual 50MB-scale document stress and long real-model conversation quality remain separate from limit guards/unit tests.""]"
+p232.web_app_output,232,4,Interactive application output,完整的Web应用界面（可交互演示）,True,implemented,real_functional_executed,,,[]
+p233.integration_output,233,4,Integrated module code output,系统集成代码（所有模块打通）,True,implemented,real_functional_executed,,,[]
+p234.test_records_output,234,4,End-to-end test records,端到端测试记录,True,implemented,real_functional_executed,,,[]
+p239.delivery,239,5,具体研究方向与10篇真实论文,选择一个具体的研究方向（如“Transformer在计算机视觉中的应用”），收集10-20篇相关论文,,completed,completed,"[""data/corpus/manifest.json""]",视觉Transformer架构与数据效率，原文和版本哈希已固定。,
+p240.delivery,240,5,80题评测集与20dev/60test划分,基于这些论文构建50+问答对的评测集，覆盖以下类型：,,completed,completed,"[""reports/datasets/dataset_manifest.json""]",,
+p241.delivery,241,5,事实性问题（“这篇论文用了什么数据集？”）,事实性问题（“这篇论文用了什么数据集？”）,,completed,completed,"[""reports/datasets/dataset_manifest.json""]",,
+p242.delivery,242,5,对比性问题（“论文A和论文B的方法有什么区别？”）,对比性问题（“论文A和论文B的方法有什么区别？”）,,completed,completed,"[""reports/datasets/dataset_manifest.json""]",,
+p243.delivery,243,5,归纳性问题（“这一方向主流的评估指标有哪些？”）,归纳性问题（“这一方向主流的评估指标有哪些？”）,,completed,completed,"[""reports/datasets/dataset_manifest.json""]",,
+p244.delivery,244,5,推理性问题（“为什么作者选择XX方法而不是YY方法？”）,推理性问题（“为什么作者选择XX方法而不是YY方法？”）,,completed,completed,"[""reports/datasets/dataset_manifest.json""]",,
+p247.delivery,247,5,60题Hit@5 MRR Recall三档,RAG检索：Hit@5、MRR、Recall,,completed,completed,"[""reports/experiments/retrieval/m3/test/hybrid/results.json"", ""reports/experiments/retrieval/m3/test/hybrid_rerank/results.json"", ""reports/experiments/retrieval/m3/test/vector/results.json""]",,
+p248.delivery,248,5,工具路由准确率与推理轮次,Agent决策：工具调用准确率、平均推理轮次,,completed,completed,"[""reports/experiments/generation/agent/results.json""]",,
+p249.delivery,249,5,真实在线平均延迟与Token,端到端响应：平均延迟、Token消耗统计,,completed,completed,"[""reports/experiments/online-functionality/results.json""]",10次真实线上样本；冻结检索生成实验另列，不能冒充在线端到端。,
+p250.delivery,250,5,实际答案人工评分,答案质量：人工评分（正确性、完整性、引用准确性）,,human_scoring_pending,human_scoring_pending,"[""reports/experiments/generation/baseline/human_scoring_60.csv"", ""reports/experiments/generation/baseline/ai_review_summary.json""]",60题AI辅助评分已完成；真实人工评分0/60题。AI评分单独标注，不计入课程要求的人工评分。,
+p251.delivery,251,5,真实参数性能图表,绘制性能图表（对比不同参数配置下的表现）,,completed,completed,"[""reports/experiments/retrieval/dev-parameters/results.json"", ""reports/experiments/generation/parameters/results.json""]",,
+p254.delivery,254,5,检索失败（未召回相关文档）,检索失败（未召回相关文档）,,completed,completed,"[""reports/experiments/bad-cases/actual-bad-cases.json""]",,
+p255.delivery,255,5,生成错误（回答不准确或遗漏关键信息）,生成错误（回答不准确或遗漏关键信息）,,completed,completed,"[""reports/experiments/bad-cases/actual-bad-cases.json""]",,
+p256.delivery,256,5,引用错误（标注了错误的来源）,引用错误（标注了错误的来源）,,completed,completed,"[""reports/experiments/bad-cases/actual-bad-cases.json""]",,
+p257.delivery,257,5,Agent决策错误（选错了工具或陷入了无效循环）,Agent决策错误（选错了工具或陷入了无效循环）,,completed,completed,"[""reports/experiments/bad-cases/actual-bad-cases.json""]",,
+p258.delivery,258,5,对每类Bad Case进行根因分析，提出改进方案,对每类Bad Case进行根因分析，提出改进方案,,completed,completed,"[""reports/experiments/bad-cases/actual-bad-cases.json""]",,
+p259.delivery,259,5,至少一轮真实优化前后记录,实施至少一轮迭代优化，记录优化前后的对比数据,,completed,completed,"[""reports/experiments/retrieval/dev-parameters/results.json"", ""reports/experiments/generation/prompt/results.json""]",同20dev题RRF60→20，Hit@5与Recall不变，MRR小幅变化；不夸大提升，不用不同题集作因果比较。,
+p260.delivery,260,5,产出《Bad Case分析报告》,产出《Bad Case分析报告》,,completed,completed,"[""artifacts/delivery-final/Bad Case分析报告.docx""]",,
+p262.delivery,262,5,系统评测报告（含评测数据、图表、Bad Case分析）,系统评测报告（含评测数据、图表、Bad Case分析）,,completed,completed,"[""artifacts/delivery-final/系统评测报告.docx""]",,
+p263.delivery,263,5,用户使用手册 + 技术设计文档,用户使用手册 + 技术设计文档,,completed,completed,"[""artifacts/delivery-final/技术设计文档.docx""]",,
+p296.delivery,296,5,系统评测报告,系统评测报告,,completed,completed,"[""artifacts/delivery-final/系统评测报告.docx""]",,
+p299.delivery,299,5,技术设计文档,技术设计文档,,completed,completed,"[""artifacts/delivery-final/技术设计文档.docx""]",,
+p302.delivery,302,5,演示PPT,演示PPT,,completed,completed,"[""artifacts/delivery-final/演示PPT.pptx""]",,
+p305.delivery,305,5,用户使用手册,用户使用手册,,completed,completed,"[""artifacts/delivery-final/用户手册.docx""]",,
+p294.delivery,294,5,代码仓库 README 依赖 配置与真实Git历史,含README、requirements.txt、环境配置说明、Git提交历史,,completed,completed,"[""README.md"", ""requirements.txt"", ""docs/模型与API配置.md"", ""reports/requirements/git-history.txt""]",,
+p84.delivery,84,5,Docker一键部署文件,工业级交付标准。 项目的最终产出不是一份代码，而是一套完整的项目交付物：含技术设计文档、系统评测报告（含数据图表与Bad Case分析）、用户使用手册、Docker一键部署文件，以及演示PPT。学生在项目结束后获得的是一份可以直接向面试官展示的、具备完整工程质量的作品集素材。,,provided_runtime_unverified,provided_runtime_unverified,"[""docker/Dockerfile"", ""docker/docker-compose.yml"", ""scripts/deploy_docker.ps1""]",Compose与启动脚本静态校验通过；本机没有Docker Engine，不声明容器已实机启动。,

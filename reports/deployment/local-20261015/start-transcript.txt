@@ -1,0 +1,30 @@
+**********************
+PowerShell transcript start
+Start time: 20261015171946
+Username: JUEBEIYI\28031
+RunAs User: JUEBEIYI\28031
+Configuration Name: 
+Machine: JUEBEIYI (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Users\28031\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.dll -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+New-Item -ItemType Directory -Force reports/deployment/local-20261015 | Out-Null; Start-Transcript -Path reports/deployment/local-20261015/start-transcript.txt -Force | Out-Null; try { & ./scripts/start.ps1 -Profile standard -ApiPort 8000 -UiPort 8501 -ModelPort 11435 } finally { Stop-Transcript | Out-Null }
+Process ID: 35600
+PSVersion: 7.6.5
+PSEdition: Core
+GitCommitId: 7.6.5
+OS: Microsoft Windows 10.0.26200
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+PS>TerminatingError(Invoke-RestMethod): "The request was canceled due to the configured HttpClient.Timeout of 1 seconds elapsing."
+PS>TerminatingError(Invoke-RestMethod): "The request was canceled due to the configured HttpClient.Timeout of 1 seconds elapsing."
+PS>TerminatingError(Invoke-RestMethod): "The request was canceled due to the configured HttpClient.Timeout of 2 seconds elapsing."
+UI: http://127.0.0.1:8501   API docs: http://127.0.0.1:8000/docs
+Profile: standard. Logs: D:\codex workshop\personal page\RAG Agent ass\-RAG-Agent-\data\runtime. Stop with scripts/stop.ps1.
+The local workspace is saved privately and restored across browser refreshes. Different profiles keep separate data.
+**********************
+PowerShell transcript end
+End time: 20261015171956
+**********************

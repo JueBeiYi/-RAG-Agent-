@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">智能科研助理 · Research Assistant</title>
+  <desc id="desc">基于 RAG 与 Agent 的论文知识库问答系统。抽象论文、证据与工具节点仅作为项目视觉标识。</desc>
+  <rect x="1" y="1" width="1278" height="358" rx="24" fill="#102A43" stroke="#35516A"/>
+  <circle cx="1178" cy="38" r="170" fill="#19BFA7" opacity=".04"/>
+  <circle cx="1000" cy="336" r="184" fill="#609EF0" opacity=".04"/>
+
+  <g font-family="Inter,Segoe UI,Arial,PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif">
+    <rect x="48" y="40" width="4" height="18" rx="2" fill="#61DEC5"/>
+    <text x="66" y="55" font-size="14" letter-spacing="2.5" fill="#91B1CA">研知 · RESEARCH COPILOT</text>
+    <text x="46" y="135" font-size="54" font-weight="700" letter-spacing="2" fill="#F4F8FC">智能科研助理</text>
+    <text x="49" y="177" font-size="27" font-weight="400" letter-spacing=".5" fill="#B6CDD9">Research Assistant</text>
+    <rect x="48" y="205" width="166" height="38" rx="19" fill="#123F47" stroke="#3E8D87"/>
+    <text x="131" y="230" text-anchor="middle" font-size="16" font-weight="600" letter-spacing="1" fill="#8AE9D5">RAG × Agent</text>
+    <text x="48" y="296" font-size="16" fill="#D6E5F0">让论文可检索，让回答有依据</text>
+    <text x="48" y="324" font-size="12" letter-spacing="1.2" fill="#89A8BF">EVIDENCE / TOOLS / EVALUATION</text>
+  </g>
+
+  <g fill="none" stroke="#62BEB5" stroke-width="1.6" stroke-linecap="round" opacity=".58">
+    <path d="M880 103 L997 160 M1106 91 L1053 145 M1166 210 L1071 195 M962 286 L1010 224 M833 235 L991 200"/>
+    <path d="M880 103 L833 235 L962 286 L1166 210 L1106 91 Z" stroke-dasharray="3 7" opacity=".36"/>
+  </g>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <rect x="984" y="130" width="102" height="108" rx="15" fill="#153A50" stroke="#73D4C1" stroke-width="1.5"/>
+    <path d="M1007 155 H1046 L1062 171 V208 H1007 Z" fill="#D4F6ED"/>
+    <path d="M1046 155 V172 H1062" fill="none" stroke="#4A827E" stroke-width="1.6"/>
+    <path d="M1018 181 H1049 M1018 190 H1049 M1018 199 H1039" stroke="#497B7B" stroke-width="2" stroke-linecap="round"/>
+
+    <g transform="translate(845 68)">
+      <rect width="70" height="70" rx="16" fill="#16334C" stroke="#52799C"/>
+      <path d="M23 18 H43 L49 24 V51 H23 Z M43 18 V25 H49 M30 33 H42 M30 40 H42" fill="none" stroke="#B7D7F3" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1075 60)">
+      <rect width="62" height="62" rx="15" fill="#143C40" stroke="#459C91"/>
+      <path d="M21 32 L28 39 L42 24" fill="none" stroke="#86E4CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(1134 178)">
+      <rect width="64" height="64" rx="15" fill="#17364C" stroke="#527C9E"/>
+      <path d="M18 22 H46 M18 32 H46 M18 42 H46" stroke="#BAD9F3" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="26" cy="22" r="4" fill="#1A4057" stroke="#BAD9F3" stroke-width="2"/>
+      <circle cx="38" cy="32" r="4" fill="#1A4057" stroke="#BAD9F3" stroke-width="2"/>
+      <circle cx="29" cy="42" r="4" fill="#1A4057" stroke="#BAD9F3" stroke-width="2"/>
+    </g>
+    <g transform="translate(931 255)">
+      <rect width="62" height="62" rx="15" fill="#143C40" stroke="#459C91"/>
+      <path d="M18 43 V32 M31 43 V19 M44 43 V26" stroke="#86E4CC" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(804 206)">
+      <rect width="58" height="58" rx="14" fill="#16334C" stroke="#52799C"/>
+      <circle cx="27" cy="25" r="9" fill="none" stroke="#B7D7F3" stroke-width="2"/>
+      <path d="M34 32 L42 40" stroke="#B7D7F3" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <text x="1127" y="291" text-anchor="middle" font-size="10" letter-spacing="1.2" fill="#8FB7C7">EVIDENCE NETWORK</text>
+  </g>
+</svg>

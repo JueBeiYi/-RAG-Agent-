@@ -1,0 +1,60 @@
+{
+  "description": "README presentation assets. UI images are historical project screenshots; retrieval plot is copied from the course report.",
+  "assets": [
+    {
+      "asset": "library.jpg",
+      "source": "docs/screenshots/新版论文库.jpg",
+      "sha256": "55ffef3faaa7d629069bb98550dfeb4023cfadc98b7081048d8afb49bd04708a",
+      "source_sha256": "55ffef3faaa7d629069bb98550dfeb4023cfadc98b7081048d8afb49bd04708a",
+      "size": [
+        1280,
+        720
+      ],
+      "transform": "none; byte-identical copy"
+    },
+    {
+      "asset": "chat.jpg",
+      "source": "docs/screenshots/新版科研问答.jpg",
+      "sha256": "29cd5e8216cd8b3340c41993bfb968a514d2f037f64a382522b26498380c211b",
+      "source_sha256": "29cd5e8216cd8b3340c41993bfb968a514d2f037f64a382522b26498380c211b",
+      "size": [
+        1280,
+        720
+      ],
+      "transform": "none; byte-identical copy"
+    },
+    {
+      "asset": "comparison.jpg",
+      "source": "docs/screenshots/新版论文对比.jpg",
+      "sha256": "b7c5faffddc817628ea8adefcee1dac9465a269b5b3dff4c675b354d10c4768a",
+      "source_sha256": "b7c5faffddc817628ea8adefcee1dac9465a269b5b3dff4c675b354d10c4768a",
+      "size": [
+        1280,
+        720
+      ],
+      "transform": "none; byte-identical copy"
+    },
+    {
+      "asset": "evidence.jpg",
+      "source": "docs/screenshots/新版原文证据.jpg",
+      "sha256": "d7410157edf593e5315bab8b71490f64cdd8dff8e209297eaa082e0ae64e9335",
+      "source_sha256": "d7410157edf593e5315bab8b71490f64cdd8dff8e209297eaa082e0ae64e9335",
+      "size": [
+        1280,
+        720
+      ],
+      "transform": "none; byte-identical copy"
+    },
+    {
+      "asset": "retrieval-results.png",
+      "source": "课程报告_LaTeX_20261015/figures/fig07_retrieval.png",
+      "sha256": "951f677894505da21254155383b0381cf4431484c2a0cbf3a3b5c3158a6b4a7c",
+      "source_sha256": "951f677894505da21254155383b0381cf4431484c2a0cbf3a3b5c3158a6b4a7c",
+      "size": [
+        3200,
+        1320
+      ],
+      "transform": "none; byte-identical copy"
+    }
+  ]
+}

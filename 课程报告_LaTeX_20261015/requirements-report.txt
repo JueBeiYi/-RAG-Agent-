@@ -1,0 +1,4 @@
+# Python >= 3.10; figure regeneration only.
+matplotlib>=3.6
+numpy>=1.23
+Pillow>=9.2

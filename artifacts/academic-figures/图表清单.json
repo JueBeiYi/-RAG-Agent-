@@ -1,0 +1,664 @@
+{
+  "generated_at": "2026-10-15T16:59:58.287049",
+  "figure_count": 25,
+  "table_count": 16,
+  "pdf_pages": 41,
+  "png_dpi": 300,
+  "png_pixels": [
+    4000,
+    2250
+  ],
+  "ai_review_is_human_review": false,
+  "items": [
+    {
+      "id": "01_system_evidence",
+      "title": "从论文证据到可追溯回答",
+      "category": "系统与数据",
+      "kind": "figure",
+      "caption": "系统结构图说明模块关系；节点不代表所有模块已完成最终课程验收。",
+      "scope": "系统设计示意；评分来源为AI辅助评审，人工评分状态另列。",
+      "sources": [
+        "docs/课程要求逐条验收.md"
+      ],
+      "png": "figures/01_system_evidence.png",
+      "svg": "figures/01_system_evidence.svg",
+      "pdf_page": 1
+    },
+    {
+      "id": "02_corpus",
+      "title": "10篇固定版本论文构成评测语料",
+      "category": "系统与数据",
+      "kind": "figure",
+      "caption": "共169个物理页；页数来自真实解析记录，不是正文页码或提取质量评分。",
+      "scope": "原始论文版本固定；当前生产索引342片段，正式历史检索实验359片段。",
+      "sources": [
+        "reports/experiments/retrieval/parsers/results.json",
+        "data/corpus/manifest.json"
+      ],
+      "png": "figures/02_corpus.png",
+      "svg": "figures/02_corpus.svg",
+      "pdf_page": 2
+    },
+    {
+      "id": "03_dataset",
+      "title": "评测题集覆盖四类科研问题",
+      "category": "系统与数据",
+      "kind": "figure",
+      "caption": "题型与集合划分来自真实题目记录；参数探索使用dev，三档主要检索结果使用独立test。",
+      "scope": "80题 = dev 20 + test 60；参考答案与证据由助手核对，真人答案评分尚未完成。",
+      "sources": [
+        "reports/datasets/dataset_manifest.json",
+        "reports/experiments/retrieval/m3/test/vector/results.json",
+        "reports/experiments/retrieval/m3/dev/vector/results.json"
+      ],
+      "png": "figures/03_dataset.png",
+      "svg": "figures/03_dataset.svg",
+      "pdf_page": 3
+    },
+    {
+      "id": "04_retrieval_ablation",
+      "title": "重排提升历史测试集的检索覆盖",
+      "category": "检索实验",
+      "kind": "figure",
+      "caption": "向量→混合+重排，Hit@5增加20.0个百分点；该结论对应历史索引，不直接代表当前342片段版本。",
+      "scope": "test n=60；历史359片段；MRR为源评测定义的倒数排名均值。",
+      "sources": [
+        "reports/experiments/retrieval/m3/test/vector/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json"
+      ],
+      "png": "figures/04_retrieval_ablation.png",
+      "svg": "figures/04_retrieval_ablation.svg",
+      "pdf_page": 4
+    },
+    {
+      "id": "05_retrieval_uncertainty",
+      "title": "逐题重采样显示指标的不确定范围",
+      "category": "检索实验",
+      "kind": "figure",
+      "caption": "区间按每种模式的60道实际题目重采样估计；这是题目抽样不确定性，不是多次运行方差，也不是显著性检验。",
+      "scope": "5,000次percentile bootstrap；固定seed 20261015；test n=60；359片段。",
+      "sources": [
+        "reports/experiments/retrieval/m3/test/vector/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json"
+      ],
+      "png": "figures/05_retrieval_uncertainty.png",
+      "svg": "figures/05_retrieval_uncertainty.svg",
+      "pdf_page": 5
+    },
+    {
+      "id": "06_category_heatmap",
+      "title": "不同题型的检索难度存在差异",
+      "category": "检索实验",
+      "kind": "figure",
+      "caption": "题型样本量不同，颜色展示Hit@5，不将不同题型直接作为可互换的难度标尺。",
+      "scope": "test：事实22 / 对比16 / 综合11 / 推理11；历史359片段。",
+      "sources": [
+        "reports/experiments/retrieval/m3/test/vector/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json"
+      ],
+      "png": "figures/06_category_heatmap.png",
+      "svg": "figures/06_category_heatmap.svg",
+      "pdf_page": 6
+    },
+    {
+      "id": "07_score_distribution",
+      "title": "Top-1原始得分分布反映不同评分机制",
+      "category": "检索实验",
+      "kind": "figure",
+      "caption": "向量相似度、RRF融合分与重排分不是同一量纲，不以原始得分的高低推断检索模式优劣。",
+      "scope": "test n=60 / 模式；Top-1原始score从逐题检索记录提取。",
+      "sources": [
+        "reports/experiments/retrieval/m3/test/vector/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json"
+      ],
+      "png": "figures/07_score_distribution.png",
+      "svg": "figures/07_score_distribution.svg",
+      "pdf_page": 7
+    },
+    {
+      "id": "T01_retrieval",
+      "title": "三档检索性能汇总",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "所有指标来自同一冻结检索实验；不能与异构在线请求均时直接比较。",
+      "scope": "历史359片段；本表计时遵循原始离线检索实验口径，不等于在线问答总耗时。",
+      "sources": [
+        "reports/experiments/retrieval/m3/test/vector/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid/results.json",
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json"
+      ],
+      "png": "tables/T01_retrieval.png",
+      "svg": "tables/T01_retrieval.svg",
+      "pdf_page": 8
+    },
+    {
+      "id": "08_parser_tradeoff",
+      "title": "解析速度与证据锚点保留率需要同时考虑",
+      "category": "文档与索引",
+      "kind": "figure",
+      "caption": "锚点保留是证据片段的代理指标；表格/公式块数是检测数量，不能单独解释为语义准确率或版面还原率。",
+      "scope": "n=10篇 / 解析器；169页；119个标注的来源锚点（非本轮真人答案评分）。",
+      "sources": [
+        "reports/experiments/retrieval/parsers/results.json"
+      ],
+      "png": "figures/08_parser_tradeoff.png",
+      "svg": "figures/08_parser_tradeoff.svg",
+      "pdf_page": 9
+    },
+    {
+      "id": "T02_parsers",
+      "title": "解析器的结构与证据保留统计",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "PyPDF2未提供块坐标；不将0块简单视为整页正文丢失。",
+      "scope": "3×10篇真实解析；来源锚点由助手核对。",
+      "sources": [
+        "reports/experiments/retrieval/parsers/results.json"
+      ],
+      "png": "tables/T02_parsers.png",
+      "svg": "tables/T02_parsers.svg",
+      "pdf_page": 10
+    },
+    {
+      "id": "09_chunking",
+      "title": "分块策略改变证据命中与排序表现",
+      "category": "文档与索引",
+      "kind": "figure",
+      "caption": "固定、递归与语义切分使用各自真实索引；这里是dev探索结果，不能代替最终test性能。",
+      "scope": "dev n=20；m3e-base；长度参数为应用token预算，详见配置和分块报告。",
+      "sources": [
+        "reports/experiments/retrieval/chunking/m3e/fixed-256/results.json",
+        "reports/experiments/retrieval/chunking/m3e/fixed-512/results.json",
+        "reports/experiments/retrieval/chunking/m3e/fixed-1024/results.json",
+        "reports/experiments/retrieval/chunking/m3e/recursive-512/results.json",
+        "reports/experiments/retrieval/chunking/m3e/semantic-512/results.json"
+      ],
+      "png": "figures/09_chunking.png",
+      "svg": "figures/09_chunking.svg",
+      "pdf_page": 11
+    },
+    {
+      "id": "T03_chunking",
+      "title": "五种分块配置的开发集结果",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "分块索引规模、编码统计与完整配置可在配套数据表追溯。",
+      "scope": "dev n=20 / 配置；不同分块索引；未复用虚构编码耗时。",
+      "sources": [
+        "reports/experiments/retrieval/chunking/m3e/fixed-256/results.json",
+        "reports/experiments/retrieval/chunking/m3e/fixed-512/results.json",
+        "reports/experiments/retrieval/chunking/m3e/fixed-1024/results.json",
+        "reports/experiments/retrieval/chunking/m3e/recursive-512/results.json",
+        "reports/experiments/retrieval/chunking/m3e/semantic-512/results.json"
+      ],
+      "png": "tables/T03_chunking.png",
+      "svg": "tables/T03_chunking.svg",
+      "pdf_page": 12
+    },
+    {
+      "id": "10_embedding",
+      "title": "Embedding比较采用一致的递归分块",
+      "category": "文档与索引",
+      "kind": "figure",
+      "caption": "模型比较使用同一342片段与20题dev；向量库/主测试中的359片段实验另有范围，不混合排名。",
+      "scope": "dev n=20；342片段；recursive-512；模型速度另列编码/查询数据表。",
+      "sources": [
+        "reports/experiments/retrieval/chunking/m3e/recursive-512/results.json",
+        "reports/experiments/retrieval/chunking/bge-zh/recursive-512/results.json"
+      ],
+      "png": "figures/10_embedding.png",
+      "svg": "figures/10_embedding.svg",
+      "pdf_page": 13
+    },
+    {
+      "id": "T04_embeddings",
+      "title": "Embedding检索质量与排序耗时",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "编码总时间、模型加载时间与摊销查询时间是不同计时阶段，不应相加后冒充在线均时。",
+      "scope": "dev n=20；ranking_only_precomputed_vectors；实际查询编码另见编码速度图。",
+      "sources": [
+        "reports/experiments/retrieval/chunking/m3e/recursive-512/results.json",
+        "reports/experiments/retrieval/chunking/bge-zh/recursive-512/results.json"
+      ],
+      "png": "tables/T04_embeddings.png",
+      "svg": "tables/T04_embeddings.svg",
+      "pdf_page": 14
+    },
+    {
+      "id": "11_vectorstores",
+      "title": "向量库比较复用同一份真实向量",
+      "category": "文档与索引",
+      "kind": "figure",
+      "caption": "同一359片段与真实Embedding；结果反映当前数据规模和运行条件，不能外推大规模数据库吞吐。",
+      "scope": "dev n=20 / 后端；359片段；模型推理复用。",
+      "sources": [
+        "reports/experiments/retrieval/vectorstores/chroma/results.json",
+        "reports/experiments/retrieval/vectorstores/faiss/results.json"
+      ],
+      "png": "figures/11_vectorstores.png",
+      "svg": "figures/11_vectorstores.svg",
+      "pdf_page": 15
+    },
+    {
+      "id": "T05_vectorstores",
+      "title": "向量库质量与时延汇总",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "本表仅描述已有小规模后端实验。",
+      "scope": "dev n=20；历史359片段。",
+      "sources": [
+        "reports/experiments/retrieval/vectorstores/chroma/results.json",
+        "reports/experiments/retrieval/vectorstores/faiss/results.json"
+      ],
+      "png": "tables/T05_vectorstores.png",
+      "svg": "tables/T05_vectorstores.svg",
+      "pdf_page": 16
+    },
+    {
+      "id": "12_rrf_grid",
+      "title": "检索参数探索保留完整的比较矩阵",
+      "category": "检索实验",
+      "kind": "figure",
+      "caption": "在同一20题dev上，RRF 60→20使MRR@20从0.3148变为0.3247；Hit@5与Recall@5不变，不能夸大为全面提升。",
+      "scope": "20道dev题；复用真实排名；额外模型调用0次；Top-K改变评价截断位置。",
+      "sources": [
+        "reports/experiments/retrieval/dev-parameters/results.json"
+      ],
+      "png": "figures/12_rrf_grid.png",
+      "svg": "figures/12_rrf_grid.svg",
+      "pdf_page": 17
+    },
+    {
+      "id": "T06_rrf",
+      "title": "RRF与Top-K参数网格完整结果",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "一次受控优化已记录；这里的微小变化不构成统计显著性结论。",
+      "scope": "dev n=20；3×3网格；无额外Embedding调用。",
+      "sources": [
+        "reports/experiments/retrieval/dev-parameters/results.json"
+      ],
+      "png": "tables/T06_rrf.png",
+      "svg": "tables/T06_rrf.svg",
+      "pdf_page": 18
+    },
+    {
+      "id": "13_baseline_quality",
+      "title": "答案质量评审揭示完整性与引用短板",
+      "category": "答案质量",
+      "kind": "figure",
+      "caption": "评分由Codex AI辅助完成，保留逐题证据与评语；可用于质量分析，不能改称真人评分。流畅性较高不表示事实与引用可靠。",
+      "scope": "AI n=60；真人评分n=0；历史359片段冻结检索；256输出token上限。",
+      "sources": [
+        "reports/experiments/generation/baseline/ai_review_summary.json",
+        "reports/experiments/generation/baseline/human_scoring_60.csv"
+      ],
+      "png": "figures/13_baseline_quality.png",
+      "svg": "figures/13_baseline_quality.svg",
+      "pdf_page": 19
+    },
+    {
+      "id": "14_quality_distribution",
+      "title": "评分分布比单一平均分更完整",
+      "category": "答案质量",
+      "kind": "figure",
+      "caption": "1–5分为有序评分；分布展示回答质量差异，不假设评分间隔对应等量的真实能力变化。",
+      "scope": "每维n=60；AI辅助评审；分布使用逐题评分原值。",
+      "sources": [
+        "reports/experiments/generation/baseline/ai_review_summary.json",
+        "reports/experiments/generation/baseline/human_scoring_60.csv"
+      ],
+      "png": "figures/14_quality_distribution.png",
+      "svg": "figures/14_quality_distribution.svg",
+      "pdf_page": 20
+    },
+    {
+      "id": "15_quality_by_category",
+      "title": "质量评审按问题类型展开",
+      "category": "答案质量",
+      "kind": "figure",
+      "caption": "不同题型的样本量与内容不同，均值用于定位薄弱环节，不推断系统在某类任务上已稳定达到该分数。",
+      "scope": "AI辅助评审；事实22 / 对比16 / 综合11 / 推理11；每维1–5分。",
+      "sources": [
+        "reports/experiments/generation/baseline/ai_review_summary.json",
+        "reports/experiments/generation/baseline/human_scoring_60.csv"
+      ],
+      "png": "figures/15_quality_by_category.png",
+      "svg": "figures/15_quality_by_category.svg",
+      "pdf_page": 21
+    },
+    {
+      "id": "T07_baseline_quality",
+      "title": "60题答案质量评审汇总",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "完整逐题回答、证据、评分和Bad Case记录保存在配套工作簿及源CSV。",
+      "scope": "评分日期2026-10-14；历史短答案实验；真人评分待完成。",
+      "sources": [
+        "reports/experiments/generation/baseline/ai_review_summary.json",
+        "reports/experiments/generation/baseline/human_scoring_60.csv"
+      ],
+      "png": "tables/T07_baseline_quality.png",
+      "svg": "tables/T07_baseline_quality.svg",
+      "pdf_page": 22
+    },
+    {
+      "id": "16_generation_parameters",
+      "title": "生成参数的质量差异需结合实际回答解释",
+      "category": "生成与Prompt",
+      "kind": "figure",
+      "caption": "已有回答按统一量表评审，重复回答复用评分；样本仅4题且无固定采样seed，结果为探索性比较，不宣称稳定最优或统计显著。",
+      "scope": "dev n=4 / 条件；AI评审；历史359片段冻结检索；256输出token上限。",
+      "sources": [
+        "reports/experiments/generation/quality-comparison/ai_quality_summary.json",
+        "reports/experiments/generation/quality-comparison/ai_quality_rows.json"
+      ],
+      "png": "figures/16_generation_parameters.png",
+      "svg": "figures/16_generation_parameters.svg",
+      "pdf_page": 23
+    },
+    {
+      "id": "T08_parameters",
+      "title": "生成参数质量与成本汇总",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "完整Temperature、Top-p、Top-k参数与逐题评语见配套数据表。",
+      "scope": "dev n=4 / 条件；单次采样；不据此声称普遍参数最优。",
+      "sources": [
+        "reports/experiments/generation/quality-comparison/ai_quality_summary.json",
+        "reports/experiments/generation/quality-comparison/ai_quality_rows.json"
+      ],
+      "png": "tables/T08_parameters.png",
+      "svg": "tables/T08_parameters.svg",
+      "pdf_page": 24
+    },
+    {
+      "id": "17_prompt_quality",
+      "title": "提示词比较同时观察事实与引用表现",
+      "category": "生成与Prompt",
+      "kind": "figure",
+      "caption": "已有回答按统一量表评审，重复回答复用评分；样本仅4题且无固定采样seed，结果为探索性比较，不宣称稳定最优或统计显著。",
+      "scope": "dev n=4 / 条件；AI评审；历史359片段冻结检索；256输出token上限。",
+      "sources": [
+        "reports/experiments/generation/quality-comparison/ai_quality_summary.json",
+        "reports/experiments/generation/quality-comparison/ai_quality_rows.json"
+      ],
+      "png": "figures/17_prompt_quality.png",
+      "svg": "figures/17_prompt_quality.svg",
+      "pdf_page": 25
+    },
+    {
+      "id": "T09_prompt",
+      "title": "Prompt质量与成本汇总",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "完整Temperature、Top-p、Top-k参数与逐题评语见配套数据表。",
+      "scope": "dev n=4 / 条件；单次采样；不据此声称普遍参数最优。",
+      "sources": [
+        "reports/experiments/generation/quality-comparison/ai_quality_summary.json",
+        "reports/experiments/generation/quality-comparison/ai_quality_rows.json"
+      ],
+      "png": "tables/T09_prompt.png",
+      "svg": "tables/T09_prompt.svg",
+      "pdf_page": 26
+    },
+    {
+      "id": "18_agent",
+      "title": "Agent路由带来不同的Token与时延结构",
+      "category": "Agent与性能",
+      "kind": "figure",
+      "caption": "5个探针上的Agent工具路由精确匹配率为1.00；这是小样本路由结果，不等于所有问题的答案正确率。",
+      "scope": "n=5 / 方式；Agent包含路由与本地工具，固定RAG为对照；不外推大规模收益。",
+      "sources": [
+        "reports/experiments/generation/agent/results.json"
+      ],
+      "png": "figures/18_agent.png",
+      "svg": "figures/18_agent.svg",
+      "pdf_page": 27
+    },
+    {
+      "id": "T10_agent",
+      "title": "Agent与固定RAG的探针结果",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "路由匹配与生成质量是不同指标；不得把路由匹配率写成答案正确率。",
+      "scope": "Agent路由exact-match=1.00；小样本功能探针。",
+      "sources": [
+        "reports/experiments/generation/agent/results.json"
+      ],
+      "png": "tables/T10_agent.png",
+      "svg": "tables/T10_agent.svg",
+      "pdf_page": 28
+    },
+    {
+      "id": "19_parallel",
+      "title": "独立本地工具并行的实测耗时",
+      "category": "Agent与性能",
+      "kind": "figure",
+      "caption": "每条连线对应同一轮工具请求；菱形为均值。仅测计算器与关键词等本地工具，不包含LLM并发推理。",
+      "scope": "10轮 / 方式；共20次；无LLM调用；工具任务非常短，线程调度开销不可忽略。",
+      "sources": [
+        "reports/experiments/generation/parallel/results.json"
+      ],
+      "png": "figures/19_parallel.png",
+      "svg": "figures/19_parallel.svg",
+      "pdf_page": 29
+    },
+    {
+      "id": "20_cache",
+      "title": "精确重复缓存避免重复生成",
+      "category": "Agent与性能",
+      "kind": "figure",
+      "caption": "本图仅有一次冷请求和一次精确重复，是缓存功能证据；不能据此宣称语义近邻缓存命中率或稳定加速倍数。",
+      "scope": "n=1问题 / 2次请求；首次生成含LLM调用，重复命中新增token=0。",
+      "sources": [
+        "reports/experiments/generation/cache/results.json"
+      ],
+      "png": "figures/20_cache.png",
+      "svg": "figures/20_cache.svg",
+      "pdf_page": 30
+    },
+    {
+      "id": "21_online_latency",
+      "title": "在线请求耗时分布保留任务差异",
+      "category": "Agent与性能",
+      "kind": "figure",
+      "caption": "10次请求的任务、工具与上下文不同；平均延迟是该批功能验证的描述统计，不是受控负载测试或正式性能上界。",
+      "scope": "真实在线n=10；当前实验记录时间与索引范围详见源文件。",
+      "sources": [
+        "reports/experiments/online-functionality/results.json"
+      ],
+      "png": "figures/21_online_latency.png",
+      "svg": "figures/21_online_latency.svg",
+      "pdf_page": 31
+    },
+    {
+      "id": "T11_runtime",
+      "title": "本地工具与缓存功能探针汇总",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "缓存精确重复只说明这一样例命中；并行实验不调用LLM。",
+      "scope": "并行：10轮 / 条件；缓存：1次 / 条件；全部保留各自计时范围。",
+      "sources": [
+        "reports/experiments/generation/parallel/results.json",
+        "reports/experiments/generation/cache/results.json"
+      ],
+      "png": "tables/T11_runtime.png",
+      "svg": "tables/T11_runtime.svg",
+      "pdf_page": 32
+    },
+    {
+      "id": "22_encoding_speed",
+      "title": "Embedding速度比较区分推理阶段",
+      "category": "文档与索引",
+      "kind": "figure",
+      "caption": "左图为相同20个查询的真实编码总耗时除以20；右图编码文本集合不同（m3e为五种分块去重1836条，BGE为342条），仅作过程描述。",
+      "scope": "CPU 8线程；batch=1；512-token窗口；摊销查询时间不是逐请求在线延迟。",
+      "sources": [
+        "reports/experiments/retrieval/encoding/m3e/results.json",
+        "reports/experiments/retrieval/encoding/bge-zh/results.json"
+      ],
+      "png": "figures/22_encoding_speed.png",
+      "svg": "figures/22_encoding_speed.svg",
+      "pdf_page": 33
+    },
+    {
+      "id": "T14_encoding",
+      "title": "Embedding实际编码与加载统计",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "m3e文档为五分块方案的去重文本；BGE文档为递归方案，长度分布不同。",
+      "scope": "8 CPU线程；batch=1；模型加载、文档编码、查询编码为不同阶段。",
+      "sources": [
+        "reports/experiments/retrieval/encoding/m3e/results.json",
+        "reports/experiments/retrieval/encoding/bge-zh/results.json"
+      ],
+      "png": "tables/T14_encoding.png",
+      "svg": "tables/T14_encoding.svg",
+      "pdf_page": 34
+    },
+    {
+      "id": "23_generation_tradeoff",
+      "title": "质量变化与采样成本需要联合解读",
+      "category": "生成与Prompt",
+      "kind": "figure",
+      "caption": "气泡面积对应平均输出token；纵轴仅为三个同量表维度的描述性均值，不是额外人工标注指标。样本量不足以支持参数稳定最优结论。",
+      "scope": "AI评审；dev n=4 / 条件；延迟受输出长度与运行顺序影响。",
+      "sources": [
+        "reports/experiments/generation/quality-comparison/ai_quality_summary.json",
+        "reports/experiments/generation/parameters/results.json"
+      ],
+      "png": "figures/23_generation_tradeoff.png",
+      "svg": "figures/23_generation_tradeoff.svg",
+      "pdf_page": 35
+    },
+    {
+      "id": "24_online_resources",
+      "title": "Token与推理轮次保留逐请求记录",
+      "category": "Agent与性能",
+      "kind": "figure",
+      "caption": "总输入43,908 token、输出4,634 token，平均Agent轮次1.2；任务与上下文不同，不解释为同一任务的受控开销对比。",
+      "scope": "10次真实在线请求；Token来源与估算标记保存在原始日志。",
+      "sources": [
+        "reports/experiments/online-functionality/results.json"
+      ],
+      "png": "figures/24_online_resources.png",
+      "svg": "figures/24_online_resources.svg",
+      "pdf_page": 36
+    },
+    {
+      "id": "T15_online",
+      "title": "真实在线功能样本的资源统计",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "每次请求的具体问题、时延、工具执行和警告见配套数据工作簿。",
+      "scope": "不等同于受控性能基准、并发负载测试或端到端准确率。",
+      "sources": [
+        "reports/experiments/online-functionality/results.json"
+      ],
+      "png": "tables/T15_online.png",
+      "svg": "tables/T15_online.svg",
+      "pdf_page": 37
+    },
+    {
+      "id": "25_bad_case_profile",
+      "title": "质量诊断同时记录失败类型",
+      "category": "答案质量",
+      "kind": "figure",
+      "caption": "类别直接从评分表拆分多标签；同一回答可同时计入检索、生成与引用问题，各类合计可以超过60。未标记不等于全面无误。",
+      "scope": "AI辅助评审n=60；历史短答案；同一回答可贡献多个标签。",
+      "sources": [
+        "reports/experiments/generation/baseline/human_scoring_60.csv"
+      ],
+      "png": "figures/25_bad_case_profile.png",
+      "svg": "figures/25_bad_case_profile.svg",
+      "pdf_page": 38
+    },
+    {
+      "id": "T16_bad_case_actions",
+      "title": "Bad Case根因与改进记录",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "修复过程与剩余回答质量问题同时保留，方便说明工程迭代与研究局限。",
+      "scope": "每类的实际请求、原始记录与改进证据详见源表；不声称已消除全部同类问题。",
+      "sources": [
+        "reports/experiments/bad-cases/actual-bad-cases.json"
+      ],
+      "png": "tables/T16_bad_case_actions.png",
+      "svg": "tables/T16_bad_case_actions.svg",
+      "pdf_page": 39
+    },
+    {
+      "id": "T12_experimental_scope",
+      "title": "展示与汇报应保留的实验边界",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "Bad Case根因与修复记录另见配套表；当前图册不改写历史实验和课程验收事实。",
+      "scope": "课程明确要求真人评分；本轮输出保持AI来源。Docker运行状态仍为未验证。",
+      "sources": [
+        "reports/experiments/bad-cases/actual-bad-cases.json",
+        "reports/requirements/course-audit.json"
+      ],
+      "png": "tables/T12_experimental_scope.png",
+      "svg": "tables/T12_experimental_scope.svg",
+      "pdf_page": 40
+    },
+    {
+      "id": "T13_key_parameters",
+      "title": "关键参数与实验配置",
+      "category": "结果表",
+      "kind": "table",
+      "caption": "Top-k采样与检索返回Top-K含义不同；生产answer_tokens=768不等于历史生成研究的256。",
+      "scope": "历史正式检索运行配置；当前生产配置及其他研究配置分别保留，不能默认为同一运行。",
+      "sources": [
+        "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json",
+        "reports/experiments/generation/parameters/results.json"
+      ],
+      "png": "tables/T13_key_parameters.png",
+      "svg": "tables/T13_key_parameters.svg",
+      "pdf_page": 41
+    }
+  ],
+  "source_hashes": {
+    "docs/课程要求逐条验收.md": "2485afb60b7397ec85c6223cd806021f86d53ac776cdd415e3ccd1eb168f4914",
+    "reports/experiments/retrieval/parsers/results.json": "1c7d39cc12db6b74afc69cedebeb26852a525a497c3f5a3eb4edae4cc9998294",
+    "data/corpus/manifest.json": "4391d662fc77655c608161d99bac67cd3d766c2c0c0150bd3c68ab5fd038b89a",
+    "reports/datasets/dataset_manifest.json": "427c326edd3975fd2c45eabba5f3b5fadbce1a35c04e72b07eb4ef460e45a075",
+    "reports/experiments/retrieval/m3/test/vector/results.json": "3339049611ce9673e8dc9c3e092ed3966937d16289abd2fb29192a6626f222fb",
+    "reports/experiments/retrieval/m3/dev/vector/results.json": "5ca9560b4c6af10530eba69b0bac236790b607f75ea55ef27e5943b3798f3721",
+    "reports/experiments/retrieval/m3/test/hybrid/results.json": "110f1b84d63823a218ce84d81475adbb6796ada1b690175338edf6b1aaeb7929",
+    "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json": "072f54f196e7a6f0dfd058351ba3b606e530f1e33cbd2fabb8bfe48b045c7061",
+    "reports/experiments/retrieval/chunking/m3e/fixed-256/results.json": "2241777d81fd6a115c7bbe9ef371eaf48b9d747cae1cf7b0d7b7d787577eda32",
+    "reports/experiments/retrieval/chunking/m3e/fixed-512/results.json": "eb12c79bcdc41222200b6fdc16bf7eb2478190b416f7f2ca80bd468cd0dc77bd",
+    "reports/experiments/retrieval/chunking/m3e/fixed-1024/results.json": "4042ea6fcfd213a7d6d2b9f82139648e0b4bc933ff14827ea648d42b8d724495",
+    "reports/experiments/retrieval/chunking/m3e/recursive-512/results.json": "b4f7928b0c26520e04876928eb048947ce6b0515138860be6bdadeb117c73d17",
+    "reports/experiments/retrieval/chunking/m3e/semantic-512/results.json": "555113d655ed5952e98ca089fdd7f64a20b85d5d26a01be23d59506f65d7e5fd",
+    "reports/experiments/retrieval/chunking/bge-zh/recursive-512/results.json": "0e19c8343bafb0a15ab943f5a0bac2b55b638c0a2af9419eb033e1f40a7adeff",
+    "reports/experiments/retrieval/vectorstores/chroma/results.json": "94132b93ead1cd66d469ac354e3318b5dba23517830428d08f4b71b6e0e21cbd",
+    "reports/experiments/retrieval/vectorstores/faiss/results.json": "c4545a736b4dead5edb1c4ec28b009b7789ccc81ee2e01c6c4f5f0b47cb3c6e9",
+    "reports/experiments/retrieval/dev-parameters/results.json": "9351d14a2667757670bca4f9fce3fd3d6bcf8b8ec0dd3263017da6ff455ac82e",
+    "reports/experiments/generation/baseline/ai_review_summary.json": "de87cb18cde5a93eace55425be3e0307fde33d6da64f4dccaebaee51eccd1dac",
+    "reports/experiments/generation/baseline/human_scoring_60.csv": "36dc9b15761016b74b98836534e85b8bd4a9dac2dea1d40c5126ebefc187a6dc",
+    "reports/experiments/generation/quality-comparison/ai_quality_summary.json": "60e8fd157274a99c040c485a3de5aabc4288eac60018d131058b528f48c31937",
+    "reports/experiments/generation/quality-comparison/ai_quality_rows.json": "c9344f8b2531cde1af95df596c3c18948000979c43876a770a2007d63f830df8",
+    "reports/experiments/generation/agent/results.json": "f95bb129ceeb11220c3ef53f4e649c3b10fee1c8aa45e078193cc3436a3074a8",
+    "reports/experiments/generation/parallel/results.json": "31819715a25d0cd22c554459f2ca04bf92e22d5ebfb678e8c70c118664eea90b",
+    "reports/experiments/generation/cache/results.json": "25724b6b19966e51f68884d0b33c578e61e4cf144b1f9451be7a034f7c9dc1c5",
+    "reports/experiments/online-functionality/results.json": "8ae1cc9002be51a5acbbd852e687a6fb465828784e3e75c62535051695144f1f",
+    "reports/experiments/retrieval/encoding/m3e/results.json": "07fcf4c7a0cdab7afc664ef273bdf0c563a90edf019ed8803a49e9e2ed7aa347",
+    "reports/experiments/retrieval/encoding/bge-zh/results.json": "7893a910445d25f2b70d4ddade6a264b5d967f138e1e58b06c04ab65ad7f2274",
+    "reports/experiments/generation/parameters/results.json": "3c4ae71d14d3a62cfbdf580baf662a00b8a898540d0b0fbc2f046aa0273979be",
+    "reports/experiments/bad-cases/actual-bad-cases.json": "35acad8703b10acc8fdc11046fc5cc31d35d35613b698a61ee96ff71f7277024",
+    "reports/requirements/course-audit.json": "8275ab3cbc2ec37e5729f3d3dfb06adbb10fbd3bed608d0bb711b52be2351bab"
+  },
+  "bootstrap": {
+    "seed": 20261015,
+    "resamples": 5000,
+    "interval": "95% percentile; query sampling, not run variance"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "frontend-health",
+  "method": "GET",
+  "url": "http://127.0.0.1:8501/_stcore/health",
+  "at": "2026-10-15T09:21:16.663420+00:00",
+  "status": 200,
+  "seconds": 0.012,
+  "request": null,
+  "content_type": "text/plain; charset=utf-8",
+  "response": "ok"
+}

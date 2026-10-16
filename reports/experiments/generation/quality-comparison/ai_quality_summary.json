@@ -1,0 +1,206 @@
+{
+  "created_date": "2026-10-15",
+  "grading_method": "ai_assisted",
+  "reviewer": "Codex AI辅助评审",
+  "score_scale": {
+    "min": 1,
+    "max": 5,
+    "anchor": {
+      "1": "错误或缺失严重",
+      "2": "局部正确但核心机制/证据存在严重问题",
+      "3": "部分正确，存在重要遗漏或错误",
+      "4": "基本正确，有次要遗漏或证据缺口",
+      "5": "正确完整且该维度没有实质问题"
+    }
+  },
+  "rubric": {
+    "correctness": "事实和推导是否正确；对机制误判与过度概括扣分。",
+    "completeness": "是否覆盖问题要求及关键条件；不同于文字长度。",
+    "citation_quality": "实际引用编号/页码/片段是否支持相应断言；来源存在不等于语义支持。",
+    "fluency": "语言是否清楚连贯；不替代事实正确性。"
+  },
+  "metric_definitions": {
+    "quality_three_dimension_mean": "正确性、完整性、引用质量三维等权算术平均，仅作描述性汇总，不是课程官方总分。",
+    "latency_mean_ms": "已有单次生成记录elapsed_ms的条件内算术平均；不含在线检索重算。",
+    "completion_tokens_mean": "模型返回completion_tokens的条件内算术平均。"
+  },
+  "scope": {
+    "case_count_per_condition": 4,
+    "case_ids": [
+      "VT-F01",
+      "VT-C01",
+      "VT-S03",
+      "VT-R01"
+    ],
+    "split": "dev",
+    "runs_per_case_condition": 1,
+    "frozen_chunk_count": 359,
+    "answer_token_limit": 256,
+    "context_token_budget": 4096,
+    "model": "research-qwen:7b / Qwen2.5-7B-Instruct Q4_K_M",
+    "measurement": "frozen-retrieval / generation-only; no online embedding or reranking",
+    "sampling_seed": null,
+    "run_order": "condition-major",
+    "condition_record_count": 28,
+    "historical_model_call_count": 24,
+    "unique_answer_review_count": 17,
+    "prompt_current_reused_count": 4
+  },
+  "conditions": [
+    {
+      "study": "parameters",
+      "condition": "baseline_current",
+      "n": 4,
+      "correctness_mean": 4.25,
+      "completeness_mean": 4,
+      "citation_quality_mean": 3.5,
+      "fluency_mean": 5,
+      "temperature": 0.1,
+      "top_p": 0.9,
+      "top_k_sampling": 40,
+      "latency_mean_ms": 3255.3725,
+      "completion_tokens_mean": 84.25,
+      "quality_three_dimension_mean": 3.9166666666666665
+    },
+    {
+      "study": "parameters",
+      "condition": "temperature_0.0",
+      "n": 4,
+      "correctness_mean": 3.75,
+      "completeness_mean": 3.75,
+      "citation_quality_mean": 3.5,
+      "fluency_mean": 4.75,
+      "temperature": 0.0,
+      "top_p": 0.9,
+      "top_k_sampling": 40,
+      "latency_mean_ms": 2502.66175,
+      "completion_tokens_mean": 115,
+      "quality_three_dimension_mean": 3.6666666666666665
+    },
+    {
+      "study": "parameters",
+      "condition": "temperature_0.5",
+      "n": 4,
+      "correctness_mean": 3.75,
+      "completeness_mean": 3.5,
+      "citation_quality_mean": 3.25,
+      "fluency_mean": 5,
+      "temperature": 0.5,
+      "top_p": 0.9,
+      "top_k_sampling": 40,
+      "latency_mean_ms": 1415.2555,
+      "completion_tokens_mean": 59.5,
+      "quality_three_dimension_mean": 3.5
+    },
+    {
+      "study": "parameters",
+      "condition": "top_p_0.7",
+      "n": 4,
+      "correctness_mean": 3.75,
+      "completeness_mean": 3.5,
+      "citation_quality_mean": 3.25,
+      "fluency_mean": 5,
+      "temperature": 0.1,
+      "top_p": 0.7,
+      "top_k_sampling": 40,
+      "latency_mean_ms": 1705.13175,
+      "completion_tokens_mean": 73.25,
+      "quality_three_dimension_mean": 3.5
+    },
+    {
+      "study": "parameters",
+      "condition": "top_k_20",
+      "n": 4,
+      "correctness_mean": 4.25,
+      "completeness_mean": 4,
+      "citation_quality_mean": 3.5,
+      "fluency_mean": 5,
+      "temperature": 0.1,
+      "top_p": 0.9,
+      "top_k_sampling": 20,
+      "latency_mean_ms": 1885.3197499999999,
+      "completion_tokens_mean": 84.25,
+      "quality_three_dimension_mean": 3.9166666666666665
+    },
+    {
+      "study": "prompt",
+      "condition": "naive_old_prompt",
+      "n": 4,
+      "correctness_mean": 4.25,
+      "completeness_mean": 3.75,
+      "citation_quality_mean": 2.5,
+      "fluency_mean": 5,
+      "temperature": 0.1,
+      "top_p": 0.9,
+      "top_k_sampling": 40,
+      "latency_mean_ms": 3551.03225,
+      "completion_tokens_mean": 100.75,
+      "quality_three_dimension_mean": 3.5
+    },
+    {
+      "study": "prompt",
+      "condition": "current_prompt_reused",
+      "n": 4,
+      "correctness_mean": 4.25,
+      "completeness_mean": 4,
+      "citation_quality_mean": 3.5,
+      "fluency_mean": 5,
+      "temperature": 0.1,
+      "top_p": 0.9,
+      "top_k_sampling": 40,
+      "latency_mean_ms": 3255.3725,
+      "completion_tokens_mean": 84.25,
+      "quality_three_dimension_mean": 3.9166666666666665
+    }
+  ],
+  "source_files": [
+    {
+      "path": "reports/experiments/generation/parameters/results.json",
+      "sha256": "3c4ae71d14d3a62cfbdf580baf662a00b8a898540d0b0fbc2f046aa0273979be"
+    },
+    {
+      "path": "reports/experiments/generation/parameters/records.jsonl",
+      "sha256": "7c1607c2e47f71807adcf65534a0763f94d00d8690d7dc8537a061818409c079"
+    },
+    {
+      "path": "reports/experiments/generation/prompt/results.json",
+      "sha256": "997e073bf4e771026663970cc163220fc85a9cd6837321adc4f90bb64aeb19ad"
+    },
+    {
+      "path": "reports/experiments/generation/prompt/records.jsonl",
+      "sha256": "80a81cff13145395a15af2d0dce5ea7b89e59244f29205fc18f258223622200c"
+    },
+    {
+      "path": "data/corpus/beit_2106.08254v2.pdf",
+      "sha256": "6455f47a0ad99294c9e1eb8a361da558f87f9e4446f5d6c0b02c20646a93741c"
+    },
+    {
+      "path": "data/corpus/cvt_2103.15808v1.pdf",
+      "sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e"
+    },
+    {
+      "path": "data/corpus/deit_2012.12877v2.pdf",
+      "sha256": "a0fbdd27c115594326fd75b3a0f569fb94cbf0b5c34c84fdc204d993064188bb"
+    },
+    {
+      "path": "data/corpus/t2t_2101.11986v3.pdf",
+      "sha256": "66163ef50be6ec80518cd8acfff3444b39a6d1a3461c1dea3974ff3408193dc6"
+    },
+    {
+      "path": "data/corpus/vit_2010.11929v2.pdf",
+      "sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6"
+    }
+  ],
+  "findings": [
+    "当前Prompt修正了事实题S4错引，引用质量均分从2.50提高至3.50；正确性均分均为4.25，不能声称所有维度同步提高。",
+    "参数条件正确性均分为3.75—4.25；温度0.5样本的输出更短、记录耗时更低，但不能据此归因参数导致速度改善或确立最优参数。",
+    "综合题冻结Top5没有CvT，所有条件都受到证据覆盖缺口影响；调采样参数无法弥补检索缺失。"
+  ],
+  "limitations": [
+    "每条件仅4题，每题一次，未固定seed；同一题跨条件配对但不是独立重复试验。",
+    "人工评审人数为0，本文件记录的是AI辅助评审；用户采用该评分用于展示不改变其来源。",
+    "Prompt当前条件复用参数基线，不是4次新增调用；去重评分复用不增加样本量。",
+    "延迟为串行历史生成阶段实测值，受模型热身、上下文缓存和运行顺序影响；不能当作可控端到端速度排名。",
+    "不计算显著性、置信区间或总体准确率；不外推到当前342片段索引或生产768-token配置。"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "name": "nau-rag-acceptance",
+  "networks": {
+    "default": {
+      "name": "nau-rag-acceptance_default",
+      "ipam": {}
+    }
+  },
+  "services": {
+    "api": {
+      "command": null,
+      "entrypoint": null,
+      "environment": {
+        "HF_HOME": "/models/huggingface",
+        "HF_HUB_CACHE": "/models/huggingface/hub",
+        "RAG_CONFIG": "/app/config.standard.yaml",
+        "RAG_DATA_DIR": "/app/data/runtime",
+        "RAG_LLM_MODEL": "research-qwen:7b",
+        "RAG_OLLAMA_URL": "http://ollama:11434",
+        "RAG_PROFILE": "standard"
+      },
+      "image": "rag-course:standard",
+      "networks": {
+        "default": null
+      },
+      "volumes": [
+        {
+          "type": "volume",
+          "source": "app_data",
+          "target": "/app/data/runtime",
+          "volume": {}
+        },
+        {
+          "type": "bind",
+          "source": "D:/codex workshop/personal page/RAG Agent ass/-RAG-Agent-/data/models/hub",
+          "target": "/models/huggingface/hub",
+          "bind": {}
+        }
+      ],
+      "build": {
+        "context": "D:\\codex workshop\\personal page\\RAG Agent ass",
+        "dockerfile": "docker/Dockerfile",
+        "args": {
+          "INSTALL_MODELS": "true"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import json,urllib.request; r=json.load(urllib.request.urlopen('http://localhost:8000/health', timeout=4)); assert r.get('ready'), r"
+        ],
+        "timeout": "5s",
+        "interval": "10s",
+        "retries": 12,
+        "start_period": "1m0s"
+      },
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 8000,
+          "published": "8015",
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "frontend": {
+      "command": [
+        "python",
+        "-m",
+        "streamlit",
+        "run",
+        "src/frontend/app.py",
+        "--server.address",
+        "0.0.0.0",
+        "--server.headless",
+        "true"
+      ],
+      "entrypoint": null,
+      "environment": {
+        "RAG_API_URL": "http://api:8000"
+      },
+      "image": "rag-course:standard",
+      "networks": {
+        "default": null
+      },
+      "depends_on": {
+        "api": {
+          "condition": "service_healthy",
+          "required": true
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=4)"
+        ],
+        "timeout": "5s",
+        "interval": "10s",
+        "retries": 6,
+        "start_period": "20s"
+      },
+      "ports": [
+        {
+          "mode": "ingress",
+          "host_ip": "127.0.0.1",
+          "target": 8501,
+          "published": "8515",
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "ollama": {
+      "profiles": [
+        "models"
+      ],
+      "command": null,
+      "entrypoint": null,
+      "image": "ollama/ollama:latest",
+      "networks": {
+        "default": null
+      },
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "D:/codex workshop/personal page/RAG Agent ass/-RAG-Agent-/data/models/ollama",
+          "target": "/root/.ollama/models",
+          "bind": {}
+        }
+      ]
+    }
+  },
+  "volumes": {
+    "app_data": {
+      "name": "nau-rag-acceptance_app_data"
+    }
+  },
+  "x-application": {
+    "build": {
+      "args": {
+        "INSTALL_MODELS": "true"
+      },
+      "context": "..",
+      "dockerfile": "docker/Dockerfile"
+    },
+    "image": "rag-course:standard"
+  }
+}

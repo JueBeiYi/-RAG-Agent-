@@ -1,0 +1,41 @@
+使用编译器：C:\Program Files\WindowsApps\OpenAI.Codex_26.1007.9446.0_x64__2p2nqsd0c76g0\app\resources\tectonic\tectonic.exe
+note: Running TeX ...
+Fontconfig error: Cannot load default config file: No such file: (null)
+warning: main.tex:140: Underfull \hbox (badness 10000) in paragraph at lines 140--140
+warning: main.tex:140: Underfull \hbox (badness 10000) in paragraph at lines 140--140
+warning: main.tex:140: Underfull \hbox (badness 1038) in paragraph at lines 140--140
+warning: main.tex:140: Underfull \hbox (badness 10000) in paragraph at lines 140--140
+warning: main.tex:154: Underfull \hbox (badness 1097) in paragraph at lines 154--154
+warning: main.tex:154: Underfull \hbox (badness 1097) in paragraph at lines 154--154
+warning: main.tex:154: Underfull \hbox (badness 1097) in paragraph at lines 154--154
+warning: main.tex:160: Underfull \hbox (badness 1097) in paragraph at lines 160--160
+warning: main.tex:160: Underfull \hbox (badness 1097) in paragraph at lines 160--160
+warning: main.tex:172: Underfull \hbox (badness 1097) in paragraph at lines 172--172
+warning: main.tex:179: Underfull \hbox (badness 10000) in paragraph at lines 179--179
+warning: main.tex:179: Underfull \hbox (badness 10000) in paragraph at lines 179--179
+warning: main.tex:200: Underfull \hbox (badness 1460) in paragraph at lines 196--200
+warning: main.tex:200: Underfull \hbox (badness 1122) in paragraph at lines 196--200
+warning: main.tex:200: Underfull \hbox (badness 1418) in paragraph at lines 196--200
+warning: main.tex:358: Underfull \hbox (badness 1320) in paragraph at lines 355--358
+warning: main.tex:618: Underfull \hbox (badness 10000) in paragraph at lines 618--618
+warning: main.tex:663: Underfull \hbox (badness 1436) in paragraph at lines 662--663
+warning: main.tex:664: Underfull \hbox (badness 2418) in paragraph at lines 663--664
+warning: main.tex:671: Underfull \hbox (badness 1983) in paragraph at lines 670--671
+warning: main.tex:757: Underfull \hbox (badness 10000) in paragraph at lines 756--757
+warning: main.tex:760: Underfull \hbox (badness 10000) in paragraph at lines 759--760
+warning: main.tex:761: Underfull \hbox (badness 10000) in paragraph at lines 760--761
+warning: main.tex:762: Underfull \hbox (badness 10000) in paragraph at lines 761--762
+warning: main.tex:762: Underfull \hbox (badness 10000) in paragraph at lines 761--762
+warning: main.tex:762: Underfull \hbox (badness 10000) in paragraph at lines 761--762
+warning: main.tex:765: Underfull \hbox (badness 10000) in paragraph at lines 764--765
+warning: main.tex:766: Underfull \hbox (badness 10000) in paragraph at lines 765--766
+warning: main.tex:766: Underfull \hbox (badness 10000) in paragraph at lines 765--766
+warning: main.tex:767: Underfull \hbox (badness 10000) in paragraph at lines 766--767
+note: Running xdvipdfmx ...
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+note: Writing `main.pdf` (5.279092788696289 MiB)
+note: Writing `main.out` (4.2568359375 KiB)
+note: Writing `main.log` (35.0498046875 KiB)
+note: Writing `main.toc` (3.255859375 KiB)
+note: Writing `main.aux` (23.716796875 KiB)
+编译成功：D:\codex workshop\personal page\RAG Agent ass\-RAG-Agent-\课程报告_LaTeX_20261015\main.pdf

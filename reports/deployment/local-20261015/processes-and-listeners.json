@@ -1,0 +1,29 @@
+[
+  {
+    "pid": 22028,
+    "parent_pid": 35600,
+    "executable": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\tools\\ollama-v0.40.1\\ollama.exe",
+    "command_line": "\"D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\tools\\ollama-v0.40.1\\ollama.exe\" serve",
+    "created_at": "2026-10-15T17:19:50.8469270+08:00",
+    "port": 11435,
+    "address": "127.0.0.1"
+  },
+  {
+    "pid": 16072,
+    "parent_pid": 35784,
+    "executable": "C:\\Users\\28031\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "command_line": "\"C:\\Users\\28031\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -m streamlit run src/frontend/app.py --server.address 127.0.0.1 --server.port 8501 --server.headless true",
+    "created_at": "2026-10-15T17:19:56.7914710+08:00",
+    "port": 8501,
+    "address": "127.0.0.1"
+  },
+  {
+    "pid": 31932,
+    "parent_pid": 23464,
+    "executable": "C:\\Users\\28031\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "command_line": "\"C:\\Users\\28031\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\" -m uvicorn src.api.main:app --host 127.0.0.1 --port 8000",
+    "created_at": "2026-10-15T17:19:54.1742690+08:00",
+    "port": 8000,
+    "address": "127.0.0.1"
+  }
+]

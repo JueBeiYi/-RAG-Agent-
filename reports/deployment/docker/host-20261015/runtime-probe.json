@@ -1,0 +1,90 @@
+{
+  "status": "actual_probe_recorded_not_container_acceptance",
+  "commands": [
+    {
+      "name": "wsl-version",
+      "argv": [
+        "wsl.exe",
+        "--version"
+      ],
+      "started_at": "2026-10-15T09:16:12.028166+00:00",
+      "exit_code": 0,
+      "stdout": "WSL 版本: 3.0.3.0\r\n内核版本: 6.18.54.1-1\r\nWSLg 版本: 1.0.79\r\nMSRDC 版本: 1.2.7391\r\nDirect3D 版本: 1.611.1-81528511\r\nDXCore 版本: 10.0.26100.1-240331-1435.ge-release\r\nWindows 版本: 10.0.26200.9711\r\n",
+      "stderr": ""
+    },
+    {
+      "name": "wsl-status",
+      "argv": [
+        "wsl.exe",
+        "--status"
+      ],
+      "started_at": "2026-10-15T09:16:12.247568+00:00",
+      "exit_code": 0,
+      "stdout": "默认版本: 2\r\n当前计算机配置不支持 WSL1。\r\n若要使用 WSL1，请启用“Windows Subsystem for Linux”可选组件。\r\nWSL2 无法启动，因为此计算机上未启用虚拟化。\r\n请确保计算机固件设置中“虚拟机平台”可选组件已启用，且虚拟化已开启。\r\n\r\n通过运行以下命令启用“虚拟机平台”: wsl.exe --install --no-distribution\r\n\r\n有关信息，请访问 https://aka.ms/enablevirtualization\r\n",
+      "stderr": ""
+    },
+    {
+      "name": "docker-client",
+      "argv": [
+        "C:/Program Files/Docker/Docker/resources/bin/docker.exe",
+        "--version"
+      ],
+      "started_at": "2026-10-15T09:16:12.603179+00:00",
+      "exit_code": 0,
+      "stdout": "Docker version 29.8.2, build 7fc2dff\n",
+      "stderr": ""
+    },
+    {
+      "name": "compose-version",
+      "argv": [
+        "C:/Program Files/Docker/Docker/resources/bin/docker.exe",
+        "compose",
+        "version"
+      ],
+      "started_at": "2026-10-15T09:16:12.652964+00:00",
+      "exit_code": 0,
+      "stdout": "Docker Compose version v5.6.0\n",
+      "stderr": ""
+    },
+    {
+      "name": "desktop-start",
+      "argv": [
+        "C:/Program Files/Docker/Docker/resources/bin/docker.exe",
+        "desktop",
+        "start",
+        "--timeout",
+        "45"
+      ],
+      "started_at": "2026-10-15T09:16:12.752187+00:00",
+      "exit_code": 1,
+      "stdout": "✗ Failed to start Docker Desktop\r\n",
+      "stderr": "Docker Desktop is still starting: context deadline exceeded\n"
+    },
+    {
+      "name": "docker-version",
+      "argv": [
+        "C:/Program Files/Docker/Docker/resources/bin/docker.exe",
+        "version"
+      ],
+      "started_at": "2026-10-15T09:16:58.137138+00:00",
+      "exit_code": null,
+      "timed_out": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "docker-info",
+      "argv": [
+        "C:/Program Files/Docker/Docker/resources/bin/docker.exe",
+        "info",
+        "--format",
+        "{{.ServerVersion}}"
+      ],
+      "started_at": "2026-10-15T09:17:28.167298+00:00",
+      "exit_code": null,
+      "timed_out": true,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

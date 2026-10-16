@@ -1,0 +1,10 @@
+{
+  "started_at": "2026-10-15T17:17:01.7779546+08:00",
+  "status": "restart_required_no_containers_started",
+  "profile": "standard",
+  "api_port": 8015,
+  "frontend_port": 8515,
+  "project": "nau-rag-acceptance",
+  "reboot_performed": false,
+  "reason": "Windows virtual machine components have not become active in the current boot."
+}

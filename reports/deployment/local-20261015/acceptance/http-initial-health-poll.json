@@ -1,0 +1,73 @@
+{
+  "name": "initial-health-poll",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/health",
+  "at": "2026-10-15T09:21:16.649717+00:00",
+  "status": 200,
+  "seconds": 0.131,
+  "request": null,
+  "content_type": "application/json",
+  "response": {
+    "alive": true,
+    "ready": true,
+    "llm": {
+      "ready": true,
+      "backend": "ollama",
+      "models": [
+        "research-qwen:7b"
+      ],
+      "message": "模型已准备"
+    },
+    "retrieval": {
+      "ready": true,
+      "demo": false,
+      "embedding": {
+        "backend": "sentence_transformers",
+        "model": "BAAI/bge-m3",
+        "demo": false,
+        "available": true,
+        "loaded": false,
+        "model_cached": true,
+        "ready": true,
+        "offline": true,
+        "fingerprint": "13d11d3f8af52181bc4c055c",
+        "artifact_revision": "5617a9f61b028005a4858fdac845db406aefb181-26159e7ad065",
+        "encoding_window_tokens": 512,
+        "window_policy_version": "original-token-id-windows-v3",
+        "long_input_policy": "original token-ID windows + weighted mean (all tokens and UNK retained, no decode roundtrip)",
+        "long_inputs_processed": 0,
+        "last_windows": 0
+      },
+      "vectors": {
+        "backend": "chroma",
+        "ready": true,
+        "available": true,
+        "loaded": true,
+        "demo": false,
+        "fingerprint": "13d11d3f8af52181bc4c055c",
+        "persistent_path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\standard\\indices",
+        "vectors": 342
+      },
+      "reranker": {
+        "backend": "cross_encoder",
+        "model": "BAAI/bge-reranker-base",
+        "available": true,
+        "model_cached": true,
+        "ready": true,
+        "loaded": false,
+        "demo": false,
+        "score_is_probability": false,
+        "window_policy_version": "original-token-id-windows-v3",
+        "long_input_policy": "original query/document token-ID windows + max logit; no decode expansion or silent truncation"
+      },
+      "warning": "",
+      "score_is_probability": false
+    },
+    "storage": {
+      "ready": true,
+      "backend": "sqlite"
+    },
+    "demo": false,
+    "offline": true
+  }
+}

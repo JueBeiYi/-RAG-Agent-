@@ -1,0 +1,3905 @@
+{
+  "started_at": "2026-10-15T09:21:16.498540+00:00",
+  "status": "passed",
+  "profile": "standard",
+  "api_url": "http://127.0.0.1:8000",
+  "ui_url": "http://127.0.0.1:8501",
+  "workspace_sha256": "cc2354ff8ade5c10d5dd9ee1afa9c32ca1c48ff8948c80f498e642dbf2d9e80b",
+  "scope_policy": "A newly generated private workspace; never uses production workspace tokens.",
+  "acceptance_scope": "Actual local API/UI health, real-model readiness, real PDF parsing/indexing, retrieval, SSE generation, citations, original-file hash, PDF physical-page preview, saved conversation/run and export. Process and port evidence is captured separately by the local launcher; no restart is claimed.",
+  "checks": [
+    {
+      "name": "api-is-local-loopback",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.514432+00:00",
+      "detail": null
+    },
+    {
+      "name": "ui-is-local-loopback",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.514432+00:00",
+      "detail": null
+    },
+    {
+      "name": "real-source-pdf-exists",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.515435+00:00",
+      "detail": {
+        "filename": "cvt_2103.15808v1.pdf"
+      }
+    },
+    {
+      "name": "initial-backend-ready",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.649717+00:00",
+      "detail": {
+        "attempts": 1,
+        "health": {
+          "alive": true,
+          "ready": true,
+          "llm": {
+            "ready": true,
+            "backend": "ollama",
+            "models": [
+              "research-qwen:7b"
+            ],
+            "message": "模型已准备"
+          },
+          "retrieval": {
+            "ready": true,
+            "demo": false,
+            "embedding": {
+              "backend": "sentence_transformers",
+              "model": "BAAI/bge-m3",
+              "demo": false,
+              "available": true,
+              "loaded": false,
+              "model_cached": true,
+              "ready": true,
+              "offline": true,
+              "fingerprint": "13d11d3f8af52181bc4c055c",
+              "artifact_revision": "5617a9f61b028005a4858fdac845db406aefb181-26159e7ad065",
+              "encoding_window_tokens": 512,
+              "window_policy_version": "original-token-id-windows-v3",
+              "long_input_policy": "original token-ID windows + weighted mean (all tokens and UNK retained, no decode roundtrip)",
+              "long_inputs_processed": 0,
+              "last_windows": 0
+            },
+            "vectors": {
+              "backend": "chroma",
+              "ready": true,
+              "available": true,
+              "loaded": true,
+              "demo": false,
+              "fingerprint": "13d11d3f8af52181bc4c055c",
+              "persistent_path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\standard\\indices",
+              "vectors": 342
+            },
+            "reranker": {
+              "backend": "cross_encoder",
+              "model": "BAAI/bge-reranker-base",
+              "available": true,
+              "model_cached": true,
+              "ready": true,
+              "loaded": false,
+              "demo": false,
+              "score_is_probability": false,
+              "window_policy_version": "original-token-id-windows-v3",
+              "long_input_policy": "original query/document token-ID windows + max logit; no decode expansion or silent truncation"
+            },
+            "warning": "",
+            "score_is_probability": false
+          },
+          "storage": {
+            "ready": true,
+            "backend": "sqlite"
+          },
+          "demo": false,
+          "offline": true
+        }
+      }
+    },
+    {
+      "name": "frontend-ready",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.663420+00:00",
+      "detail": null
+    },
+    {
+      "name": "public-config",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.682461+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "real-model-and-retrieval-backends",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.684203+00:00",
+      "detail": {
+        "alive": true,
+        "ready": true,
+        "llm": {
+          "ready": true,
+          "backend": "ollama",
+          "models": [
+            "research-qwen:7b"
+          ],
+          "message": "模型已准备"
+        },
+        "retrieval": {
+          "ready": true,
+          "demo": false,
+          "embedding": {
+            "backend": "sentence_transformers",
+            "model": "BAAI/bge-m3",
+            "demo": false,
+            "available": true,
+            "loaded": false,
+            "model_cached": true,
+            "ready": true,
+            "offline": true,
+            "fingerprint": "13d11d3f8af52181bc4c055c",
+            "artifact_revision": "5617a9f61b028005a4858fdac845db406aefb181-26159e7ad065",
+            "encoding_window_tokens": 512,
+            "window_policy_version": "original-token-id-windows-v3",
+            "long_input_policy": "original token-ID windows + weighted mean (all tokens and UNK retained, no decode roundtrip)",
+            "long_inputs_processed": 0,
+            "last_windows": 0
+          },
+          "vectors": {
+            "backend": "chroma",
+            "ready": true,
+            "available": true,
+            "loaded": true,
+            "demo": false,
+            "fingerprint": "13d11d3f8af52181bc4c055c",
+            "persistent_path": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\data\\runtime\\standard\\indices",
+            "vectors": 342
+          },
+          "reranker": {
+            "backend": "cross_encoder",
+            "model": "BAAI/bge-reranker-base",
+            "available": true,
+            "model_cached": true,
+            "ready": true,
+            "loaded": false,
+            "demo": false,
+            "score_is_probability": false,
+            "window_policy_version": "original-token-id-windows-v3",
+            "long_input_policy": "original query/document token-ID windows + max logit; no decode expansion or silent truncation"
+          },
+          "warning": "",
+          "score_is_probability": false
+        },
+        "storage": {
+          "ready": true,
+          "backend": "sqlite"
+        },
+        "demo": false,
+        "offline": true
+      }
+    },
+    {
+      "name": "upload",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.841004+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.852641+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:16.854702+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "queued",
+        "stage": "queued",
+        "progress": 0,
+        "updated_at": "2026-10-15T09:21:16.826643+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:18.994320+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:18.994320+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "parsing",
+        "progress": 10,
+        "updated_at": "2026-10-15T09:21:16.884629+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:21.456411+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:21.457659+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "parsing",
+        "progress": 10,
+        "updated_at": "2026-10-15T09:21:16.884629+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:23.467826+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:23.470158+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:25.483312+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:25.485472+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:27.498362+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:27.500355+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:29.515472+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:29.518867+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:31.530779+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:31.533265+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:33.546697+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:33.548852+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:35.585975+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:35.587969+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:37.619351+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:37.623930+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:39.723663+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:39.726765+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:41.756044+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:41.761688+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:43.800278+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:43.807579+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:45.822467+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:45.826066+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:47.841280+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:47.847477+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:51.781052+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:51.784173+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:53.823487+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:53.828470+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:55.847622+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:55.851909+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:57.868028+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:57.873347+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:21:59.887443+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:21:59.891596+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:01.906573+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:01.912555+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:03.927587+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:03.935457+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:05.949563+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:05.954107+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:07.972216+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:07.977512+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:09.990309+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:09.997249+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:12.012020+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:12.019259+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:14.036528+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:14.043505+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:16.058713+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:16.064694+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:18.081777+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:18.089274+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:20.108936+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:20.115419+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:22.131114+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:22.138458+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:24.156100+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:24.162255+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:26.178461+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:26.185437+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:28.201722+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:28.208713+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:30.223116+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:30.230157+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:32.245390+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:32.253869+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:34.272229+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:34.278641+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:36.297502+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:36.305730+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:38.325089+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:38.333223+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:40.351395+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:40.358374+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:42.375353+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:42.383255+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:44.400641+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:44.410059+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:46.427541+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-within-time-budget",
+      "passed": true,
+      "at": "2026-10-15T09:22:46.436296+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "running",
+        "stage": "embedding",
+        "progress": 55,
+        "updated_at": "2026-10-15T09:21:21.776914+00:00"
+      }
+    },
+    {
+      "name": "indexing-job",
+      "passed": true,
+      "at": "2026-10-15T09:22:48.473394+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "indexing-completed",
+      "passed": true,
+      "at": "2026-10-15T09:22:48.478869+00:00",
+      "detail": {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "done",
+        "stage": "ready",
+        "progress": 100,
+        "updated_at": "2026-10-15T09:22:48.017763+00:00",
+        "chunks": 29
+      }
+    },
+    {
+      "name": "document-ready",
+      "passed": true,
+      "at": "2026-10-15T09:22:48.505741+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "parsed-and-indexed",
+      "passed": true,
+      "at": "2026-10-15T09:22:48.521265+00:00",
+      "detail": {
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "content_hash": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+        "format": "pdf",
+        "title": "CvT: Introducing Convolutions to Vision Transformers",
+        "authors": [],
+        "year": 2021,
+        "abstract": "We present in this paper a new architecture, named Con-\nvolutional vision Transformer (CvT), that improves Vision\nTransformer (ViT) in performance and efﬁciency by intro-\nducing convolutions into ViT to yield the best of both de-\nsigns. This is accomplished through two primary modiﬁca-\ntions: a hierarchy of Transformers containing a new convo-\nlutional token embedding, and a convolutional Transformer\nblock leveraging a convolutional projection. These changes\nintroduce desirable properties of convolutional neural net-\nworks (CNNs) to the ViT architecture (i.e. shift, scale,\nand distortion invariance) while maintaining the merits of\nTransformers (i.e. dynamic attention, global context, and\nbetter generalization). We validate CvT by conducting ex-\ntensive experiments, showing that this approach achieves\nstate-of-the-art performance over other Vision Transform-\ners and ResNets on ImageNet-1k, with fewer parame-\nters and lower FLOPs.\nIn addition, performance gains\nare maintained when pretrained on larger datasets (e.g.\nImageNet-22k) and ﬁne-tuned to downstream tasks. Pre-\ntrained on ImageNet-22k, our CvT-W24 obtains a top-1 ac-\ncuracy of 87.7% on the ImageNet-1k val set. Finally, our\nresults show that the positional encoding, a crucial com-\nponent in existing Vision Transformers, can be safely re-\nmoved in our model, simplifying the design for higher res-\nolution vision tasks.\nCode will be released at https:\n//github.com/leoxiaobin/CvT.\n1. Introduction\nTransformers [31, 10] have recently dominated a wide\nrange of tasks in natural language processing (NLP) [32].\nThe Vision Transformer (ViT) [11] is the ﬁrst computer vi-\nsion model to rely exclusively on the Transformer archi-\ntecture to obtain competitive image classiﬁcation perfor-\nmance at large scale. The ViT design adapts Transformer\n*This work is done when Haiping Wu was an intern at Microsoft.\n†Corresponding author",
+        "doi": "",
+        "status": "ready",
+        "error": "",
+        "chunks": 29,
+        "created_at": "2026-10-15T09:21:16.810653+00:00",
+        "metadata": {
+          "page_count": 10,
+          "chunk_strategy": "recursive",
+          "chunk_size": 512,
+          "chunker_implementation": "recursive-character-proposals-v1",
+          "chunk_overlap": 64,
+          "pdf_parser": "pymupdf",
+          "embedding_fingerprint": "13d11d3f8af52181bc4c055c",
+          "embedding_model": "BAAI/bge-m3",
+          "embedding_backend": "sentence_transformers"
+        }
+      }
+    },
+    {
+      "name": "chunks-before-0",
+      "passed": true,
+      "at": "2026-10-15T09:22:48.646811+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "chunk-text-real-and-readable",
+      "passed": true,
+      "at": "2026-10-15T09:22:48.655756+00:00",
+      "detail": null
+    },
+    {
+      "name": "create-session",
+      "passed": true,
+      "at": "2026-10-15T09:22:48.691501+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "rag-stream",
+      "passed": true,
+      "at": "2026-10-15T09:23:22.960063+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "sse-completed-without-error",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.013792+00:00",
+      "detail": [
+        {
+          "type": "answer_delta",
+          "text": "页",
+          "request_id": "07f1ece54da7477091852bd2cf455c8b"
+        },
+        {
+          "type": "usage",
+          "input_tokens": 3537,
+          "output_tokens": 395,
+          "estimated": false,
+          "request_id": "07f1ece54da7477091852bd2cf455c8b"
+        },
+        {
+          "type": "done",
+          "answer": "CvT论文提出了一种新的架构，通过引入卷积改进了Vision Transformer (ViT) 的性能和效率。具体来说，CvT在ViT中引入了两种核心方法：卷积令牌嵌入（Convolutional Token Embedding）和卷积投影（Convolutional Projection）。\n\n1. **卷积令牌嵌入**：在每个Transformer模块的开始部分，引入了一个卷积令牌嵌入，它执行重叠卷积操作，步长为1，作用于2D重塑的令牌映射（即将展平的令牌序列重新映射回空间网格）。这使得模型不仅能够捕捉局部信息，还能逐步减少序列长度，同时增加令牌特征的维度，从而实现空间下采样，同时增加特征图的数量，类似于卷积神经网络（CNNs）[S1]。\n\n2. **卷积投影**：在Transformer模块中的每个自注意力块之前的线性投影被替换为提出的卷积投影，它在2D重塑的令牌映射上应用一个s × s深度可分离卷积操作。这使得模型能够进一步捕捉局部空间上下文，减少注意力机制中的语义模糊性。同时，它允许通过使用卷积的步长对键和值矩阵进行下采样，从而提高效率4倍以上，性能下降可以忽略不计[S1]。\n\n综上所述，CvT通过引入卷积，不仅保持了Transformer的动态注意力、全局上下文和更好的泛化能力，还引入了卷积神经网络的局部不变性、尺度不变性和扭曲不变性，从而在ImageNet-1k和ImageNet-22k上取得了最先进的性能，参数更少，计算量更低[S1]。\n\n参考文献：\n[S1] cvt_2103.15808v1.pdf | 第1页-第8页",
+          "citations": [
+            {
+              "citation_id": "S1",
+              "document_id": "c2662c09f3784936ac1ee32898beaff3",
+              "chunk_id": "ee76cb90302d0a0f008bef808a792758",
+              "name": "cvt_2103.15808v1.pdf",
+              "text": "|  | T2T-ViT -14 [41][arxiv 2021]<br>t<br>T2T-ViT -19 [41][arxiv 2021]<br>t<br>T2T-ViT -24 [41][arxiv 2021]<br>t | 22<br>39<br>64 | 2242 6.1<br>2242 9.8<br>2242 15.0 | 80.7<br>81.4<br>82.2 | –<br>–<br>– | –<br>–<br>– |\n|  | TNT-S [14][arxiv 2021]<br>TNT-B [14][arxiv 2021] | 24<br>66 | 2242 5.2<br>2242 14.1 | 81.3<br>82.8 | –<br>– | –<br>– |\n\n| Ours: CvT-13 20 2242 4.5 81.6 86.7 70.4<br>Ours: CvT-21 32 2242 7.1 82.5 87.2 71.3<br>Convolutional Transformers<br>Ours: CvT-13 20 3842 16.3 83.0 87.9 71.9<br>↑384<br>Ours: CvT-21 32 3842 24.9 83.3 87.7 71.9<br>↑384<br>Ours: CvT-13-NAS 18 2242 4.1 82.2 87.5 71.3 | Ours: CvT-13<br>Ours: CvT-21<br>Ours: CvT-13<br>↑384<br>Ours: CvT-21<br>↑384 | 20<br>32<br>20<br>32 | 2242 4.5<br>2242 7.1<br>3842 16.3<br>3842 24.9 | 81.6<br>82.5<br>83.0<br>83.3 | 86.7<br>87.2<br>87.9<br>87.7 | 70.4<br>71.3<br>71.9<br>71.9 |\n| --- | --- | --- | --- | --- | --- | --- |\n|  | Ours: CvT-13-NAS | 18 | 2242 4.1 | 82.2 | 87.5 | 71.3 |\n| Convolution Networks BiT-M [18] 928 4802 837 85.4 – –<br>22k ↑480 |  |  |  |  |  |  |\n\n| Transformers<br>22k | ViT-B/16 [11]<br>↑384<br>ViT-L/16 [11]<br>↑384<br>ViT-H/16 [11]<br>↑384 | 86<br>307<br>632 | 3842 55.5<br>3842 191.1<br>3842 – | 84.0<br>85.2<br>85.1 | 88.4<br>88.4<br>88.7 | –<br>–<br>– |",
+              "page_start": 7,
+              "page_end": 7,
+              "paragraph": 138,
+              "bbox": [
+                53.45800018310547,
+                138.34703063964844,
+                541.7650146484375,
+                408.45001220703125
+              ],
+              "sources": [
+                {
+                  "text": "|  | T2T-ViT -14 [41][arxiv 2021]<br>t<br>T2T-ViT -19 [41][arxiv 2021]<br>t<br>T2T-ViT -24 [41][arxiv 2021]<br>t | 22<br>39<br>64 | 2242 6.1<br>2242 9.8<br>2242 15.0 | 80.7<br>81.4<br>82.2 | –<br>–<br>– | –<br>–<br>– |\n|  | TNT-S [14][arxiv 2021]<br>TNT-B [14][arxiv 2021] | 24<br>66 | 2242 5.2<br>2242 14.1 | 81.3<br>82.8 | –<br>– | –<br>– |",
+                  "page": 7,
+                  "paragraph": 138,
+                  "section": "Method Type\nNetwork",
+                  "bbox": [
+                    53.45800018310547,
+                    138.34703063964844,
+                    541.7650146484375,
+                    291.0299987792969
+                  ],
+                  "kind": "table"
+                },
+                {
+                  "text": "| Ours: CvT-13 20 2242 4.5 81.6 86.7 70.4<br>Ours: CvT-21 32 2242 7.1 82.5 87.2 71.3<br>Convolutional Transformers<br>Ours: CvT-13 20 3842 16.3 83.0 87.9 71.9<br>↑384<br>Ours: CvT-21 32 3842 24.9 83.3 87.7 71.9<br>↑384<br>Ours: CvT-13-NAS 18 2242 4.1 82.2 87.5 71.3 | Ours: CvT-13<br>Ours: CvT-21<br>Ours: CvT-13<br>↑384<br>Ours: CvT-21<br>↑384 | 20<br>32<br>20<br>32 | 2242 4.5<br>2242 7.1<br>3842 16.3<br>3842 24.9 | 81.6<br>82.5<br>83.0<br>83.3 | 86.7<br>87.2<br>87.9<br>87.7 | 70.4<br>71.3<br>71.9<br>71.9 |\n| --- | --- | --- | --- | --- | --- | --- |\n|  | Ours: CvT-13-NAS | 18 | 2242 4.1 | 82.2 | 87.5 | 71.3 |\n| Convolution Networks BiT-M [18] 928 4802 837 85.4 – –<br>22k ↑480 |  |  |  |  |  |  |",
+                  "page": 7,
+                  "paragraph": 139,
+                  "section": "Method Type\nNetwork",
+                  "bbox": [
+                    53.45800018310547,
+                    294.0670166015625,
+                    541.7650146484375,
+                    370.5710144042969
+                  ],
+                  "kind": "table"
+                },
+                {
+                  "text": "| Transformers<br>22k | ViT-B/16 [11]<br>↑384<br>ViT-L/16 [11]<br>↑384<br>ViT-H/16 [11]<br>↑384 | 86<br>307<br>632 | 3842 55.5<br>3842 191.1<br>3842 – | 84.0<br>85.2<br>85.1 | 88.4<br>88.4<br>88.7 | –<br>–<br>– |",
+                  "page": 7,
+                  "paragraph": 140,
+                  "section": "Method Type\nNetwork",
+                  "bbox": [
+                    53.45800018310547,
+                    373.60797119140625,
+                    541.7650146484375,
+                    408.45001220703125
+                  ],
+                  "kind": "table"
+                }
+              ],
+              "verified": true
+            },
+            {
+              "citation_id": "S2",
+              "document_id": "c2662c09f3784936ac1ee32898beaff3",
+              "chunk_id": "7659943a9c05e4aad94b024ef64fe7b3",
+              "name": "cvt_2103.15808v1.pdf",
+              "text": "| --- | --- | --- |\n\n| ViT-B/16 [11]<br>ViT-L/16 [11]<br>ViT-H/16 [11] | 86<br>307<br>632 | 98.95 91.67 94.43 99.38<br>99.16 93.44 94.73 99.61<br>99.27 93.82 94.82 99.51 |\n| --- | --- | --- |\n\n| Ours: CvT-13<br>Ours: CvT-21<br>Ours: CvT-W24 | 20<br>32<br>277 | 98.83 91.11 93.25 99.50<br>99.16 92.88 94.03 99.62<br>99.39 94.09 94.73 99.72 |\n| --- | --- | --- |\n\nTable 4: Top-1 accuracy on downstream tasks. All the mod-\nels are pre-trained on ImageNet-22k data\n\n| Method | Model | Param<br>(M) | Pos. Emb. | ImageNet<br>Top-1 (%) |\n| --- | --- | --- | --- | --- |\n\n| a<br>b | DeiT-S<br>DeiT-S | 22<br>22 | Default<br>N/A | 79.8<br>78.0 |\n| --- | --- | --- | --- | --- |\n\n| c<br>d<br>e<br>f | CvT-13<br>CvT-13<br>CvT-13<br>CvT-13 | 20<br>20<br>20<br>20 | Every stage<br>First stage<br>Last stage<br>N/A | 81.5<br>81.4<br>81.4<br>81.6 |\n| --- | --- | --- | --- | --- |\n\nTable 5: Ablations on position embedding.\n\nmodel. Then, we study the impact of each of the proposed\nConvolutional Token Embedding and Convolutional Projec-\ntion components.",
+              "page_start": 8,
+              "page_end": 8,
+              "paragraph": 154,
+              "bbox": [
+                50.111995697021484,
+                102.57232920328777,
+                286.3650817871094,
+                425.50146484375
+              ],
+              "sources": [
+                {
+                  "text": "| --- | --- | --- |",
+                  "page": 8,
+                  "paragraph": 154,
+                  "section": "4.4. Ablation Study",
+                  "bbox": [
+                    50.430855887276785,
+                    102.57232920328777,
+                    286.0476989746094,
+                    114.781005859375
+                  ],
+                  "kind": "table"
+                },
+                {
+                  "text": "| ViT-B/16 [11]<br>ViT-L/16 [11]<br>ViT-H/16 [11] | 86<br>307<br>632 | 98.95 91.67 94.43 99.38<br>99.16 93.44 94.73 99.61<br>99.27 93.82 94.82 99.51 |\n| --- | --- | --- |",
+                  "page": 8,
+                  "paragraph": 155,
+                  "section": "4.4. Ablation Study",
+                  "bbox": [
+                    50.430855887276785,
+                    117.81800079345703,
+                    286.0476989746094,
+                    151.0159912109375
+                  ],
+                  "kind": "table"
+                },
+                {
+                  "text": "| Ours: CvT-13<br>Ours: CvT-21<br>Ours: CvT-W24 | 20<br>32<br>277 | 98.83 91.11 93.25 99.50<br>99.16 92.88 94.03 99.62<br>99.39 94.09 94.73 99.72 |\n| --- | --- | --- |",
+                  "page": 8,
+                  "paragraph": 156,
+                  "section": "4.4. Ablation Study",
+                  "bbox": [
+                    50.430855887276785,
+                    155.36898295084634,
+                    286.0476989746094,
+                    187.82832845052084
+                  ],
+                  "kind": "table"
+                },
+                {
+                  "text": "Table 4: Top-1 accuracy on downstream tasks. All the mod-\nels are pre-trained on ImageNet-22k data",
+                  "page": 8,
+                  "paragraph": 157,
+                  "section": "4.4. Ablation Study",
+                  "bbox": [
+                    50.11199951171875,
+                    192.9395751953125,
+                    286.3650817871094,
+                    216.89952087402344
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "| Method | Model | Param<br>(M) | Pos. Emb. | ImageNet<br>Top-1 (%) |\n| --- | --- | --- | --- | --- |",
+                  "page": 8,
+                  "paragraph": 158,
+                  "section": "4.4. Ablation Study",
+                  "bbox": [
+                    50.430855887276785,
+                    238.11900329589844,
+                    286.0476989746094,
+                    264.1939697265625
+                  ],
+                  "kind": "table"
+                },
+                {
+                  "text": "| a<br>b | DeiT-S<br>DeiT-S | 22<br>22 | Default<br>N/A | 79.8<br>78.0 |\n| --- | --- | --- | --- | --- |",
+                  "page": 8,
+                  "paragraph": 159,
+                  "section": "4.4. Ablation Study",
+                  "bbox": [
+                    50.430855887276785,
+                    267.23101806640625,
+                    286.0476989746094,
+                    293.3059997558594
+                  ],
+                  "kind": "table"
+                },
+                {
+                  "text": "| c<br>d<br>e<br>f | CvT-13<br>CvT-13<br>CvT-13<br>CvT-13 | 20<br>20<br>20<br>20 | Every stage<br>First stage<br>Last stage<br>N/A | 81.5<br>81.4<br>81.4<br>81.6 |\n| --- | --- | --- | --- | --- |",
+                  "page": 8,
+                  "paragraph": 160,
+                  "section": "4.4. Ablation Study",
+                  "bbox": [
+                    50.430855887276785,
+                    296.343017578125,
+                    286.0476989746094,
+                    346.27040405273436
+                  ],
+                  "kind": "table"
+                },
+                {
+                  "text": "Table 5: Ablations on position embedding.",
+                  "page": 8,
+                  "paragraph": 161,
+                  "section": "4.4. Ablation Study",
+                  "bbox": [
+                    83.10199737548828,
+                    352.2155456542969,
+                    253.37274169921875,
+                    364.2204895019531
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "model. Then, we study the impact of each of the proposed\nConvolutional Token Embedding and Convolutional Projec-\ntion components.",
+                  "page": 8,
+                  "paragraph": 162,
+                  "section": "4.4. Ablation Study",
+                  "bbox": [
+                    50.111995697021484,
+                    389.5865478515625,
+                    286.36505126953125,
+                    425.50146484375
+                  ],
+                  "kind": "text"
+                }
+              ],
+              "verified": true
+            },
+            {
+              "citation_id": "S3",
+              "document_id": "c2662c09f3784936ac1ee32898beaff3",
+              "chunk_id": "fa963f3857eedc255af24d9c0ff8e650",
+              "name": "cvt_2103.15808v1.pdf",
+              "text": "CvT: Introducing Convolutions to Vision Transformers\n\nHaiping Wu^{1}^{,}^{2}^{*}\nBin Xiao^{2}^{†}\nNoel Codella^{2}\n\nLu Yuan^{2}\n\n1McGill University\n\nMengchen Liu^{2}\nXiyang Dai^{2}\n\nLei Zhang^{2}\n\n2Microsoft Cloud + AI\n\nhaiping.wu2@mail.mcgill.ca, {bixi, ncodella, mengcliu, xidai, luyuan, leizhang}@microsoft.com\n\narXiv:2103.15808v1  [cs.CV]  29 Mar 2021\n\nAbstract\n\nWe present in this paper a new architecture, named Con-\nvolutional vision Transformer (CvT), that improves Vision\nTransformer (ViT) in performance and efﬁciency by intro-\nducing convolutions into ViT to yield the best of both de-\nsigns. This is accomplished through two primary modiﬁca-\ntions: a hierarchy of Transformers containing a new convo-\nlutional token embedding, and a convolutional Transformer\nblock leveraging a convolutional projection. These changes\nintroduce desirable properties of convolutional neural net-\nworks (CNNs) to the ViT architecture (i.e. shift, scale,\nand distortion invariance) while maintaining the merits of\nTransformers (i.e. dynamic attention, global context, and\nbetter generalization). We validate CvT by conducting ex-\ntensive experiments, showing that this approach achieves\nstate-of-the-art performance over other Vision Transform-\ners and ResNets on ImageNet-1k, with fewer parame-\nters and lower FLOPs.\nIn addition, performance gains\nare maintained when pretrained on larger datasets (e.g.\nImageNet-22k) and ﬁne-tuned to downstream tasks. Pre-\ntrained on ImageNet-22k, our CvT-W24 obtains a top-1 ac-\ncuracy of 87.7% on the ImageNet-1k val set. Finally, our\nresults show that the positional encoding, a crucial com-\nponent in existing Vision Transformers, can be safely re-\nmoved in our model, simplifying the design for higher res-\nolution vision tasks.\nCode will be released at https:\n//github.com/leoxiaobin/CvT.\n\n1. Introduction\n\nTransformers [31, 10] have recently dominated a wide\nrange of tasks in natural language processing (NLP) [32].\nThe Vision Transformer (ViT) [11] is the ﬁrst computer vi-\nsion model to rely exclusively on the Transformer archi-\ntecture to obtain competitive image classiﬁcation perfor-\nmance at large scale. The ViT design adapts Transformer\n\n*This work is done when Haiping Wu was an intern at Microsoft.\n†Corresponding author\n\n1\n\n1\n\nCvT\nDeiT\n\nT2T\nPVT\n\nTNT\n\nCvT\nViT\nBiT\n\n88\n\n88",
+              "page_start": 1,
+              "page_end": 1,
+              "paragraph": 1,
+              "bbox": [
+                10.940000534057617,
+                105.9219970703125,
+                557.8576049804688,
+                743.6874389648438
+              ],
+              "sources": [
+                {
+                  "text": "CvT: Introducing Convolutions to Vision Transformers",
+                  "page": 1,
+                  "paragraph": 1,
+                  "section": "CvT: Introducing Convolutions to Vision Transformers",
+                  "bbox": [
+                    129.24000549316406,
+                    105.9219970703125,
+                    465.9884033203125,
+                    120.26819610595703
+                  ],
+                  "kind": "heading"
+                },
+                {
+                  "text": "Haiping Wu^{1}^{,}^{2}^{*}\nBin Xiao^{2}^{†}\nNoel Codella^{2}",
+                  "page": 1,
+                  "paragraph": 2,
+                  "section": "CvT: Introducing Convolutions to Vision Transformers",
+                  "bbox": [
+                    80.92200469970703,
+                    143.08770751953125,
+                    322.568115234375,
+                    158.15048217773438
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "Lu Yuan^{2}",
+                  "page": 1,
+                  "paragraph": 3,
+                  "section": "CvT: Introducing Convolutions to Vision Transformers",
+                  "bbox": [
+                    253.79896545410156,
+                    157.69247436523438,
+                    298.8700866699219,
+                    172.09848022460938
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "1McGill University",
+                  "page": 1,
+                  "paragraph": 4,
+                  "section": "CvT: Introducing Convolutions to Vision Transformers",
+                  "bbox": [
+                    168.46998596191406,
+                    171.63949584960938,
+                    260.72601318359375,
+                    186.04550170898438
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "Mengchen Liu^{2}\nXiyang Dai^{2}",
+                  "page": 1,
+                  "paragraph": 5,
+                  "section": "CvT: Introducing Convolutions to Vision Transformers",
+                  "bbox": [
+                    351.20098876953125,
+                    143.74447631835938,
+                    513.8010864257812,
+                    158.15048217773438
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "Lei Zhang^{2}",
+                  "page": 1,
+                  "paragraph": 6,
+                  "section": "CvT: Introducing Convolutions to Vision Transformers",
+                  "bbox": [
+                    311.3249816894531,
+                    157.69247436523438,
+                    365.027099609375,
+                    172.09848022460938
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "2Microsoft Cloud + AI",
+                  "page": 1,
+                  "paragraph": 7,
+                  "section": "CvT: Introducing Convolutions to Vision Transformers",
+                  "bbox": [
+                    335.4449768066406,
+                    171.63949584960938,
+                    444.880615234375,
+                    186.04550170898438
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "haiping.wu2@mail.mcgill.ca, {bixi, ncodella, mengcliu, xidai, luyuan, leizhang}@microsoft.com",
+                  "page": 1,
+                  "paragraph": 8,
+                  "section": "CvT: Introducing Convolutions to Vision Transformers",
+                  "bbox": [
+                    59.077972412109375,
+                    189.37503051757812,
+                    557.8576049804688,
+                    198.4767608642578
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "arXiv:2103.15808v1  [cs.CV]  29 Mar 2021",
+                  "page": 1,
+                  "paragraph": 9,
+                  "section": "arXiv:2103.15808v1  [cs.CV]  29 Mar 2021",
+                  "bbox": [
+                    10.940000534057617,
+                    207.82000732421875,
+                    37.619998931884766,
+                    560.0
+                  ],
+                  "kind": "heading"
+                },
+                {
+                  "text": "Abstract",
+                  "page": 1,
+                  "paragraph": 10,
+                  "section": "Abstract",
+                  "bbox": [
+                    145.99493408203125,
+                    228.5042724609375,
+                    190.480224609375,
+                    240.45947265625
+                  ],
+                  "kind": "heading"
+                },
+                {
+                  "text": "We present in this paper a new architecture, named Con-\nvolutional vision Transformer (CvT), that improves Vision\nTransformer (ViT) in performance and efﬁciency by intro-\nducing convolutions into ViT to yield the best of both de-\nsigns. This is accomplished through two primary modiﬁca-\ntions: a hierarchy of Transformers containing a new convo-\nlutional token embedding, and a convolutional Transformer\nblock leveraging a convolutional projection. These changes\nintroduce desirable properties of convolutional neural net-\nworks (CNNs) to the ViT architecture (i.e. shift, scale,\nand distortion invariance) while maintaining the merits of\nTransformers (i.e. dynamic attention, global context, and\nbetter generalization). We validate CvT by conducting ex-\ntensive experiments, showing that this approach achieves\nstate-of-the-art performance over other Vision Transform-\ners and ResNets on ImageNet-1k, with fewer parame-\nters and lower FLOPs.\nIn addition, performance gains\nare maintained when pretrained on larger datasets (e.g.\nImageNet-22k) and ﬁne-tuned to downstream tasks. Pre-\ntrained on ImageNet-22k, our CvT-W24 obtains a top-1 ac-\ncuracy of 87.7% on the ImageNet-1k val set. Finally, our\nresults show that the positional encoding, a crucial com-\nponent in existing Vision Transformers, can be safely re-\nmoved in our model, simplifying the design for higher res-\nolution vision tasks.\nCode will be released at https:\n//github.com/leoxiaobin/CvT.",
+                  "page": 1,
+                  "paragraph": 11,
+                  "section": "Abstract",
+                  "bbox": [
+                    50.111907958984375,
+                    254.80914306640625,
+                    286.3650207519531,
+                    563.6505126953125
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "1. Introduction",
+                  "page": 1,
+                  "paragraph": 12,
+                  "section": "Abstract",
+                  "bbox": [
+                    50.111907958984375,
+                    590.9610595703125,
+                    126.94798278808594,
+                    602.916259765625
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "Transformers [31, 10] have recently dominated a wide\nrange of tasks in natural language processing (NLP) [32].\nThe Vision Transformer (ViT) [11] is the ﬁrst computer vi-\nsion model to rely exclusively on the Transformer archi-\ntecture to obtain competitive image classiﬁcation perfor-\nmance at large scale. The ViT design adapts Transformer",
+                  "page": 1,
+                  "paragraph": 13,
+                  "section": "Abstract",
+                  "bbox": [
+                    50.111907958984375,
+                    610.8114624023438,
+                    286.364990234375,
+                    682.5924072265625
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "*This work is done when Haiping Wu was an intern at Microsoft.\n†Corresponding author",
+                  "page": 1,
+                  "paragraph": 14,
+                  "section": "Abstract",
+                  "bbox": [
+                    60.97100067138672,
+                    693.9786376953125,
+                    269.3213806152344,
+                    713.2396240234375
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "1",
+                  "page": 1,
+                  "paragraph": 15,
+                  "section": "Abstract",
+                  "bbox": [
+                    295.1210021972656,
+                    731.6824951171875,
+                    300.102294921875,
+                    743.6874389648438
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "1",
+                  "page": 1,
+                  "paragraph": 16,
+                  "section": "Abstract",
+                  "bbox": [
+                    295.1210021972656,
+                    731.6824951171875,
+                    300.102294921875,
+                    743.6874389648438
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "CvT\nDeiT",
+                  "page": 1,
+                  "paragraph": 17,
+                  "section": "Abstract",
+                  "bbox": [
+                    463.8348693847656,
+                    229.52223205566406,
+                    473.5455322265625,
+                    241.9552764892578
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "T2T\nPVT",
+                  "page": 1,
+                  "paragraph": 18,
+                  "section": "Abstract",
+                  "bbox": [
+                    496.3757019042969,
+                    229.52223205566406,
+                    505.30517578125,
+                    241.9552764892578
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "TNT",
+                  "page": 1,
+                  "paragraph": 19,
+                  "section": "Abstract",
+                  "bbox": [
+                    528.1306762695312,
+                    229.52223205566406,
+                    537.3204956054688,
+                    235.22743225097656
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "CvT\nViT\nBiT",
+                  "page": 1,
+                  "paragraph": 20,
+                  "section": "Abstract",
+                  "bbox": [
+                    337.9715270996094,
+                    232.76112365722656,
+                    425.8020324707031,
+                    240.0511016845703
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "88",
+                  "page": 1,
+                  "paragraph": 21,
+                  "section": "Abstract",
+                  "bbox": [
+                    316.9858093261719,
+                    253.76768493652344,
+                    322.2464904785156,
+                    260.1067810058594
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "88",
+                  "page": 1,
+                  "paragraph": 22,
+                  "section": "Abstract",
+                  "bbox": [
+                    316.9858093261719,
+                    253.76768493652344,
+                    322.2464904785156,
+                    260.1067810058594
+                  ],
+                  "kind": "text"
+                }
+              ],
+              "verified": true
+            },
+            {
+              "citation_id": "S4",
+              "document_id": "c2662c09f3784936ac1ee32898beaff3",
+              "chunk_id": "928481b1acb4cbe8d8fd140b88280170",
+              "name": "cvt_2103.15808v1.pdf",
+              "text": "|  | 14 × 14 | Conv. Proj.<br>MHSA<br>MLP |  3 × 3, 384 <br>H = 6, D = 384 × 10<br> 3 3<br>R = 4<br>3 |  3 × 3, 384 <br>H = 6, D = 384 × 16<br> 3 3<br>R = 4<br>3 |  3 × 3, 1024 <br>H = 16, D = 1024 × 20<br> 3 3<br>R = 4<br>3 |\n| Head | 1 × 1 | Linear | 1000 |  |  |\n| Params |  |  | 19.98 M | 31.54 M | 276.7 M |\n| FLOPs |  |  | 4.53 G | 7.13 G | 60.86 G |\n\nTable 2: Architectures for ImageNet classiﬁcation. Input image size is 224 × 224 by default. Conv. Embed.: Convolutional\nToken Embedding. Conv. Proj.: Convolutional Projection. Hi and Di is the number of heads and embedding feature\ndimension in the ith MHSA module. Ri is the feature dimension expansion ratio in the ith MLP layer.\n\nstrate that the fusion of local neighboring information plays\nan important role on the performance.\n\n4. Experiments\n\nIn this section, we evaluate the CvT model on large-scale\nimage classiﬁcation datasets and transfer to various down-\nstream datasets. In addition, we perform through ablation\nstudies to validate the design of the proposed architecture.\n\n4.1. Setup\n\nFor evaluation, we use the ImageNet dataset, with 1.3M\nimages and 1k classes, as well as its superset ImageNet-22k\nwith 22k classes and 14M images [9]. We further trans-\nfer the models pretrained on ImageNet-22k to downstream\ntasks, including CIFAR-10/100 [19], Oxford-IIIT-Pet [23],\nOxford-IIIT-Flower [22], following [18, 11].\n\nModel Variants\nWe instantiate models with different pa-\nrameters and FLOPs by varying the number of Transformer\nblocks of each stage and the hidden feature dimension used,\nas shown in Table 2. Three stages are adapted. We de-\nﬁne CvT-13 and CvT-21 as basic models, with 19.98M and\n31.54M paramters. CvT-X stands for Convolutional vision\nTransformer with X Transformer Blocks in total. Addition-\nally, we experiment with a wider model with a larger token\ndimension for each stage, namely CvT-W24 (W stands for\nWide), resulting 298.3M parameters, to validate the scaling\nability of the proposed architecture.\n\nTraining\nAdamW [21] optimizer is used with the weight\ndecay of 0.05 for our CvT-13, and 0.1 for our CvT-21 and\nCvT-W24.\nWe",
+              "page_start": 6,
+              "page_end": 6,
+              "paragraph": 116,
+              "bbox": [
+                50.11199951171875,
+                72.18353271484375,
+                548.197265625,
+                713.7993774414062
+              ],
+              "sources": [
+                {
+                  "text": "|  | 14 × 14 | Conv. Proj.<br>MHSA<br>MLP |  3 × 3, 384 <br>H = 6, D = 384 × 10<br> 3 3<br>R = 4<br>3 |  3 × 3, 384 <br>H = 6, D = 384 × 16<br> 3 3<br>R = 4<br>3 |  3 × 3, 1024 <br>H = 16, D = 1024 × 20<br> 3 3<br>R = 4<br>3 |\n| Head | 1 × 1 | Linear | 1000 |  |  |\n| Params |  |  | 19.98 M | 31.54 M | 276.7 M |\n| FLOPs |  |  | 4.53 G | 7.13 G | 60.86 G |",
+                  "page": 6,
+                  "paragraph": 116,
+                  "section": "3.2.2\nEfﬁciency Considerations",
+                  "bbox": [
+                    52.17464065551758,
+                    72.18353271484375,
+                    548.197265625,
+                    236.0640869140625
+                  ],
+                  "kind": "table"
+                },
+                {
+                  "text": "Table 2: Architectures for ImageNet classiﬁcation. Input image size is 224 × 224 by default. Conv. Embed.: Convolutional\nToken Embedding. Conv. Proj.: Convolutional Projection. Hi and Di is the number of heads and embedding feature\ndimension in the ith MHSA module. Ri is the feature dimension expansion ratio in the ith MLP layer.",
+                  "page": 6,
+                  "paragraph": 117,
+                  "section": "3.2.2\nEfﬁciency Considerations",
+                  "bbox": [
+                    50.11199951171875,
+                    242.68353271484375,
+                    545.1119995117188,
+                    280.093505859375
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "strate that the fusion of local neighboring information plays\nan important role on the performance.",
+                  "page": 6,
+                  "paragraph": 118,
+                  "section": "3.2.2\nEfﬁciency Considerations",
+                  "bbox": [
+                    50.112060546875,
+                    300.0685729980469,
+                    286.3651123046875,
+                    324.02850341796875
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "4. Experiments",
+                  "page": 6,
+                  "paragraph": 119,
+                  "section": "3.2.2\nEfﬁciency Considerations",
+                  "bbox": [
+                    50.112060546875,
+                    336.43316650390625,
+                    127.1513671875,
+                    348.38836669921875
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "In this section, we evaluate the CvT model on large-scale\nimage classiﬁcation datasets and transfer to various down-\nstream datasets. In addition, we perform through ablation\nstudies to validate the design of the proposed architecture.",
+                  "page": 6,
+                  "paragraph": 120,
+                  "section": "3.2.2\nEfﬁciency Considerations",
+                  "bbox": [
+                    50.112060546875,
+                    355.4885559082031,
+                    286.36517333984375,
+                    403.35845947265625
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "4.1. Setup",
+                  "page": 6,
+                  "paragraph": 121,
+                  "section": "3.2.2\nEfﬁciency Considerations",
+                  "bbox": [
+                    50.112060546875,
+                    412.54278564453125,
+                    96.08464813232422,
+                    423.5016784667969
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "For evaluation, we use the ImageNet dataset, with 1.3M\nimages and 1k classes, as well as its superset ImageNet-22k\nwith 22k classes and 14M images [9]. We further trans-\nfer the models pretrained on ImageNet-22k to downstream\ntasks, including CIFAR-10/100 [19], Oxford-IIIT-Pet [23],\nOxford-IIIT-Flower [22], following [18, 11].",
+                  "page": 6,
+                  "paragraph": 122,
+                  "section": "3.2.2\nEfﬁciency Considerations",
+                  "bbox": [
+                    50.112060546875,
+                    429.8374938964844,
+                    286.365234375,
+                    501.6183776855469
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "Model Variants\nWe instantiate models with different pa-\nrameters and FLOPs by varying the number of Transformer\nblocks of each stage and the hidden feature dimension used,\nas shown in Table 2. Three stages are adapted. We de-\nﬁne CvT-13 and CvT-21 as basic models, with 19.98M and\n31.54M paramters. CvT-X stands for Convolutional vision\nTransformer with X Transformer Blocks in total. Addition-\nally, we experiment with a wider model with a larger token\ndimension for each stage, namely CvT-W24 (W stands for\nWide), resulting 298.3M parameters, to validate the scaling\nability of the proposed architecture.",
+                  "page": 6,
+                  "paragraph": 123,
+                  "section": "3.2.2\nEfﬁciency Considerations",
+                  "bbox": [
+                    50.112060546875,
+                    512.0174560546875,
+                    286.3658752441406,
+                    643.5744018554688
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "Training\nAdamW [21] optimizer is used with the weight\ndecay of 0.05 for our CvT-13, and 0.1 for our CvT-21 and\nCvT-W24.\nWe",
+                  "page": 6,
+                  "paragraph": 124,
+                  "section": "3.2.2\nEfﬁciency Considerations",
+                  "bbox": [
+                    50.112060546875,
+                    653.973388671875,
+                    286.36517333984375,
+                    713.7993774414062
+                  ],
+                  "kind": "text"
+                }
+              ],
+              "verified": true
+            },
+            {
+              "citation_id": "S5",
+              "document_id": "c2662c09f3784936ac1ee32898beaff3",
+              "chunk_id": "c4d48f39523acbb924aeeee666deee6b",
+              "name": "cvt_2103.15808v1.pdf",
+              "text": "concurrently maintain-\ning a high degree of computational and memory efﬁciency.\nTo verify our hypothesises, we present a new architecture,\ncalled the Convolutional vision Transformer (CvT), which\nincorporates convolutions into the Transformer that is in-\nherently efﬁcient, both in terms of ﬂoating point operations\n(FLOPs) and parameters.\n\nThe CvT design introduces convolutions to two core sec-\ntions of the ViT architecture. First, we partition the Trans-\nformers into multiple stages that form a hierarchical struc-\nture of Transformers. The beginning of each stage consists\nof a convolutional token embedding that performs an over-\nlapping convolution operation with stride on a 2D-reshaped\ntoken map (i.e., reshaping ﬂattened token sequences back\nto the spatial grid), followed by layer normalization. This\nallows the model to not only capture local information, but\nalso progressively decrease the sequence length while si-\nmultaneously increasing the dimension of token features\nacross stages, achieving spatial downsampling while con-\ncurrently increasing the number of feature maps, as is per-\nformed in CNNs [20]. Second, the linear projection prior\nto every self-attention block in the Transformer module is\nreplaced with our proposed convolutional projection, which\nemploys a s × s depth-wise separable convolution [5] oper-\nation on an 2D-reshaped token map. This allows the model\nto further capture local spatial context and reduce seman-\ntic ambiguity in the attention mechanism. It also permits\nmanagement of computational complexity, as the stride of\nconvolution can be used to subsample the key and value ma-\ntrices to improve efﬁciency by 4× or more, with minimal\ndegradation of performance.\n\nIn summary, our proposed Convolutional vision Trans-\n\n2\n\n2\n\nformer (CvT) employs a",
+              "page_start": 2,
+              "page_end": 2,
+              "paragraph": 53,
+              "bbox": [
+                50.11198425292969,
+                202.2703857421875,
+                545.11572265625,
+                743.6871948242188
+              ],
+              "sources": [
+                {
+                  "text": "concurrently maintain-\ning a high degree of computational and memory efﬁciency.\nTo verify our hypothesises, we present a new architecture,\ncalled the Convolutional vision Transformer (CvT), which\nincorporates convolutions into the Transformer that is in-\nherently efﬁcient, both in terms of ﬂoating point operations\n(FLOPs) and parameters.",
+                  "page": 2,
+                  "paragraph": 53,
+                  "section": "Abstract",
+                  "bbox": [
+                    50.11199188232422,
+                    301.0325622558594,
+                    286.3651428222656,
+                    408.67840576171875
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "The CvT design introduces convolutions to two core sec-\ntions of the ViT architecture. First, we partition the Trans-\nformers into multiple stages that form a hierarchical struc-\nture of Transformers. The beginning of each stage consists\nof a convolutional token embedding that performs an over-\nlapping convolution operation with stride on a 2D-reshaped\ntoken map (i.e., reshaping ﬂattened token sequences back\nto the spatial grid), followed by layer normalization. This\nallows the model to not only capture local information, but\nalso progressively decrease the sequence length while si-\nmultaneously increasing the dimension of token features\nacross stages, achieving spatial downsampling while con-\ncurrently increasing the number of feature maps, as is per-\nformed in CNNs [20]. Second, the linear projection prior\nto every self-attention block in the Transformer module is\nreplaced with our proposed convolutional projection, which\nemploys a s × s depth-wise separable convolution [5] oper-\nation on an 2D-reshaped token map. This allows the model\nto further capture local spatial context and reduce seman-\ntic ambiguity in the attention mechanism. It also permits\nmanagement of computational complexity, as the stride of\nconvolution can be used to subsample the key and value ma-\ntrices to improve efﬁciency by 4× or more, with minimal\ndegradation of performance.",
+                  "page": 2,
+                  "paragraph": 54,
+                  "section": "Abstract",
+                  "bbox": [
+                    50.11198425292969,
+                    411.74945068359375,
+                    286.3669738769531,
+                    698.7233276367188
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "In summary, our proposed Convolutional vision Trans-",
+                  "page": 2,
+                  "paragraph": 55,
+                  "section": "Abstract",
+                  "bbox": [
+                    62.066986083984375,
+                    701.7943725585938,
+                    286.36492919921875,
+                    713.79931640625
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "2",
+                  "page": 2,
+                  "paragraph": 56,
+                  "section": "Abstract",
+                  "bbox": [
+                    295.1209411621094,
+                    731.6822509765625,
+                    300.10223388671875,
+                    743.6871948242188
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "2",
+                  "page": 2,
+                  "paragraph": 57,
+                  "section": "Abstract",
+                  "bbox": [
+                    295.1209411621094,
+                    731.6822509765625,
+                    300.10223388671875,
+                    743.6871948242188
+                  ],
+                  "kind": "text"
+                },
+                {
+                  "text": "former (CvT) employs a",
+                  "page": 2,
+                  "paragraph": 58,
+                  "section": "Abstract",
+                  "bbox": [
+                    308.8619384765625,
+                    202.2703857421875,
+                    545.11572265625,
+                    417.51324462890625
+                  ],
+                  "kind": "text"
+                }
+              ],
+              "verified": true
+            }
+          ],
+          "metrics": {
+            "input_tokens": 3537,
+            "output_tokens": 395,
+            "estimated": false,
+            "retrieval_ms": 19279.397999998764,
+            "elapsed_ms": 34104.68229999242,
+            "first_token_ms": 26042.447899992112,
+            "cache_hit": false,
+            "retrieved_count": 5,
+            "top1_score": 0.16043693490613045,
+            "index_version": "0c9328ac22034fedb044501e11fbeb0f",
+            "model": "research-qwen:7b",
+            "demo": false,
+            "retrieval_stages": {
+              "mode": "hybrid_rerank",
+              "candidate_k": 20,
+              "candidates": 20,
+              "results": 5,
+              "vector_ms": 190.68379999953322,
+              "bm25_ms": 774.248700006865,
+              "rerank_ms": 18278.70390001044,
+              "elapsed_ms": 19263.391800006502,
+              "warning": "",
+              "index_version": "0c9328ac22034fedb044501e11fbeb0f",
+              "embedding_fingerprint": "13d11d3f8af52181bc4c055c",
+              "score_is_probability": false
+            },
+            "end_to_end_ms": 34152.859299996635
+          },
+          "hits": [
+            {
+              "chunk": {
+                "chunk_id": "ee76cb90302d0a0f008bef808a792758",
+                "document_id": "c2662c09f3784936ac1ee32898beaff3",
+                "scope": "[REDACTED]",
+                "name": "cvt_2103.15808v1.pdf",
+                "text": "|  | T2T-ViT -14 [41][arxiv 2021]<br>t<br>T2T-ViT -19 [41][arxiv 2021]<br>t<br>T2T-ViT -24 [41][arxiv 2021]<br>t | 22<br>39<br>64 | 2242 6.1<br>2242 9.8<br>2242 15.0 | 80.7<br>81.4<br>82.2 | –<br>–<br>– | –<br>–<br>– |\n|  | TNT-S [14][arxiv 2021]<br>TNT-B [14][arxiv 2021] | 24<br>66 | 2242 5.2<br>2242 14.1 | 81.3<br>82.8 | –<br>– | –<br>– |\n\n| Ours: CvT-13 20 2242 4.5 81.6 86.7 70.4<br>Ours: CvT-21 32 2242 7.1 82.5 87.2 71.3<br>Convolutional Transformers<br>Ours: CvT-13 20 3842 16.3 83.0 87.9 71.9<br>↑384<br>Ours: CvT-21 32 3842 24.9 83.3 87.7 71.9<br>↑384<br>Ours: CvT-13-NAS 18 2242 4.1 82.2 87.5 71.3 | Ours: CvT-13<br>Ours: CvT-21<br>Ours: CvT-13<br>↑384<br>Ours: CvT-21<br>↑384 | 20<br>32<br>20<br>32 | 2242 4.5<br>2242 7.1<br>3842 16.3<br>3842 24.9 | 81.6<br>82.5<br>83.0<br>83.3 | 86.7<br>87.2<br>87.9<br>87.7 | 70.4<br>71.3<br>71.9<br>71.9 |\n| --- | --- | --- | --- | --- | --- | --- |\n|  | Ours: CvT-13-NAS | 18 | 2242 4.1 | 82.2 | 87.5 | 71.3 |\n| Convolution Networks BiT-M [18] 928 4802 837 85.4 – –<br>22k ↑480 |  |  |  |  |  |  |\n\n| Transformers<br>22k | ViT-B/16 [11]<br>↑384<br>ViT-L/16 [11]<br>↑384<br>ViT-H/16 [11]<br>↑384 | 86<br>307<br>632 | 3842 55.5<br>3842 191.1<br>3842 – | 84.0<br>85.2<br>85.1 | 88.4<br>88.4<br>88.7 | –<br>–<br>– |",
+                "page_start": 7,
+                "page_end": 7,
+                "paragraph": 138,
+                "section": "Method Type\nNetwork",
+                "bbox": [
+                  53.45800018310547,
+                  138.34703063964844,
+                  541.7650146484375,
+                  408.45001220703125
+                ],
+                "sources": [
+                  {
+                    "text": "|  | T2T-ViT -14 [41][arxiv 2021]<br>t<br>T2T-ViT -19 [41][arxiv 2021]<br>t<br>T2T-ViT -24 [41][arxiv 2021]<br>t | 22<br>39<br>64 | 2242 6.1<br>2242 9.8<br>2242 15.0 | 80.7<br>81.4<br>82.2 | –<br>–<br>– | –<br>–<br>– |\n|  | TNT-S [14][arxiv 2021]<br>TNT-B [14][arxiv 2021] | 24<br>66 | 2242 5.2<br>2242 14.1 | 81.3<br>82.8 | –<br>– | –<br>– |",
+                    "page": 7,
+                    "paragraph": 138,
+                    "section": "Method Type\nNetwork",
+                    "bbox": [
+                      53.45800018310547,
+                      138.34703063964844,
+                      541.7650146484375,
+                      291.0299987792969
+                    ],
+                    "kind": "table"
+                  },
+                  {
+                    "text": "| Ours: CvT-13 20 2242 4.5 81.6 86.7 70.4<br>Ours: CvT-21 32 2242 7.1 82.5 87.2 71.3<br>Convolutional Transformers<br>Ours: CvT-13 20 3842 16.3 83.0 87.9 71.9<br>↑384<br>Ours: CvT-21 32 3842 24.9 83.3 87.7 71.9<br>↑384<br>Ours: CvT-13-NAS 18 2242 4.1 82.2 87.5 71.3 | Ours: CvT-13<br>Ours: CvT-21<br>Ours: CvT-13<br>↑384<br>Ours: CvT-21<br>↑384 | 20<br>32<br>20<br>32 | 2242 4.5<br>2242 7.1<br>3842 16.3<br>3842 24.9 | 81.6<br>82.5<br>83.0<br>83.3 | 86.7<br>87.2<br>87.9<br>87.7 | 70.4<br>71.3<br>71.9<br>71.9 |\n| --- | --- | --- | --- | --- | --- | --- |\n|  | Ours: CvT-13-NAS | 18 | 2242 4.1 | 82.2 | 87.5 | 71.3 |\n| Convolution Networks BiT-M [18] 928 4802 837 85.4 – –<br>22k ↑480 |  |  |  |  |  |  |",
+                    "page": 7,
+                    "paragraph": 139,
+                    "section": "Method Type\nNetwork",
+                    "bbox": [
+                      53.45800018310547,
+                      294.0670166015625,
+                      541.7650146484375,
+                      370.5710144042969
+                    ],
+                    "kind": "table"
+                  },
+                  {
+                    "text": "| Transformers<br>22k | ViT-B/16 [11]<br>↑384<br>ViT-L/16 [11]<br>↑384<br>ViT-H/16 [11]<br>↑384 | 86<br>307<br>632 | 3842 55.5<br>3842 191.1<br>3842 – | 84.0<br>85.2<br>85.1 | 88.4<br>88.4<br>88.7 | –<br>–<br>– |",
+                    "page": 7,
+                    "paragraph": 140,
+                    "section": "Method Type\nNetwork",
+                    "bbox": [
+                      53.45800018310547,
+                      373.60797119140625,
+                      541.7650146484375,
+                      408.45001220703125
+                    ],
+                    "kind": "table"
+                  }
+                ],
+                "strategy": "recursive",
+                "index_version": "0c9328ac22034fedb044501e11fbeb0f"
+              },
+              "score": 0.16043693490613045,
+              "vector_score": null,
+              "bm25_score": 1.2925449426589881,
+              "rrf_score": 0.01639344262295082,
+              "rerank_score": -1.6549806594848633,
+              "ranks": {
+                "bm25": 1
+              }
+            },
+            {
+              "chunk": {
+                "chunk_id": "7659943a9c05e4aad94b024ef64fe7b3",
+                "document_id": "c2662c09f3784936ac1ee32898beaff3",
+                "scope": "[REDACTED]",
+                "name": "cvt_2103.15808v1.pdf",
+                "text": "| --- | --- | --- |\n\n| ViT-B/16 [11]<br>ViT-L/16 [11]<br>ViT-H/16 [11] | 86<br>307<br>632 | 98.95 91.67 94.43 99.38<br>99.16 93.44 94.73 99.61<br>99.27 93.82 94.82 99.51 |\n| --- | --- | --- |\n\n| Ours: CvT-13<br>Ours: CvT-21<br>Ours: CvT-W24 | 20<br>32<br>277 | 98.83 91.11 93.25 99.50<br>99.16 92.88 94.03 99.62<br>99.39 94.09 94.73 99.72 |\n| --- | --- | --- |\n\nTable 4: Top-1 accuracy on downstream tasks. All the mod-\nels are pre-trained on ImageNet-22k data\n\n| Method | Model | Param<br>(M) | Pos. Emb. | ImageNet<br>Top-1 (%) |\n| --- | --- | --- | --- | --- |\n\n| a<br>b | DeiT-S<br>DeiT-S | 22<br>22 | Default<br>N/A | 79.8<br>78.0 |\n| --- | --- | --- | --- | --- |\n\n| c<br>d<br>e<br>f | CvT-13<br>CvT-13<br>CvT-13<br>CvT-13 | 20<br>20<br>20<br>20 | Every stage<br>First stage<br>Last stage<br>N/A | 81.5<br>81.4<br>81.4<br>81.6 |\n| --- | --- | --- | --- | --- |\n\nTable 5: Ablations on position embedding.\n\nmodel. Then, we study the impact of each of the proposed\nConvolutional Token Embedding and Convolutional Projec-\ntion components.",
+                "page_start": 8,
+                "page_end": 8,
+                "paragraph": 154,
+                "section": "4.4. Ablation Study",
+                "bbox": [
+                  50.111995697021484,
+                  102.57232920328777,
+                  286.3650817871094,
+                  425.50146484375
+                ],
+                "sources": [
+                  {
+                    "text": "| --- | --- | --- |",
+                    "page": 8,
+                    "paragraph": 154,
+                    "section": "4.4. Ablation Study",
+                    "bbox": [
+                      50.430855887276785,
+                      102.57232920328777,
+                      286.0476989746094,
+                      114.781005859375
+                    ],
+                    "kind": "table"
+                  },
+                  {
+                    "text": "| ViT-B/16 [11]<br>ViT-L/16 [11]<br>ViT-H/16 [11] | 86<br>307<br>632 | 98.95 91.67 94.43 99.38<br>99.16 93.44 94.73 99.61<br>99.27 93.82 94.82 99.51 |\n| --- | --- | --- |",
+                    "page": 8,
+                    "paragraph": 155,
+                    "section": "4.4. Ablation Study",
+                    "bbox": [
+                      50.430855887276785,
+                      117.81800079345703,
+                      286.0476989746094,
+                      151.0159912109375
+                    ],
+                    "kind": "table"
+                  },
+                  {
+                    "text": "| Ours: CvT-13<br>Ours: CvT-21<br>Ours: CvT-W24 | 20<br>32<br>277 | 98.83 91.11 93.25 99.50<br>99.16 92.88 94.03 99.62<br>99.39 94.09 94.73 99.72 |\n| --- | --- | --- |",
+                    "page": 8,
+                    "paragraph": 156,
+                    "section": "4.4. Ablation Study",
+                    "bbox": [
+                      50.430855887276785,
+                      155.36898295084634,
+                      286.0476989746094,
+                      187.82832845052084
+                    ],
+                    "kind": "table"
+                  },
+                  {
+                    "text": "Table 4: Top-1 accuracy on downstream tasks. All the mod-\nels are pre-trained on ImageNet-22k data",
+                    "page": 8,
+                    "paragraph": 157,
+                    "section": "4.4. Ablation Study",
+                    "bbox": [
+                      50.11199951171875,
+                      192.9395751953125,
+                      286.3650817871094,
+                      216.89952087402344
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "| Method | Model | Param<br>(M) | Pos. Emb. | ImageNet<br>Top-1 (%) |\n| --- | --- | --- | --- | --- |",
+                    "page": 8,
+                    "paragraph": 158,
+                    "section": "4.4. Ablation Study",
+                    "bbox": [
+                      50.430855887276785,
+                      238.11900329589844,
+                      286.0476989746094,
+                      264.1939697265625
+                    ],
+                    "kind": "table"
+                  },
+                  {
+                    "text": "| a<br>b | DeiT-S<br>DeiT-S | 22<br>22 | Default<br>N/A | 79.8<br>78.0 |\n| --- | --- | --- | --- | --- |",
+                    "page": 8,
+                    "paragraph": 159,
+                    "section": "4.4. Ablation Study",
+                    "bbox": [
+                      50.430855887276785,
+                      267.23101806640625,
+                      286.0476989746094,
+                      293.3059997558594
+                    ],
+                    "kind": "table"
+                  },
+                  {
+                    "text": "| c<br>d<br>e<br>f | CvT-13<br>CvT-13<br>CvT-13<br>CvT-13 | 20<br>20<br>20<br>20 | Every stage<br>First stage<br>Last stage<br>N/A | 81.5<br>81.4<br>81.4<br>81.6 |\n| --- | --- | --- | --- | --- |",
+                    "page": 8,
+                    "paragraph": 160,
+                    "section": "4.4. Ablation Study",
+                    "bbox": [
+                      50.430855887276785,
+                      296.343017578125,
+                      286.0476989746094,
+                      346.27040405273436
+                    ],
+                    "kind": "table"
+                  },
+                  {
+                    "text": "Table 5: Ablations on position embedding.",
+                    "page": 8,
+                    "paragraph": 161,
+                    "section": "4.4. Ablation Study",
+                    "bbox": [
+                      83.10199737548828,
+                      352.2155456542969,
+                      253.37274169921875,
+                      364.2204895019531
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "model. Then, we study the impact of each of the proposed\nConvolutional Token Embedding and Convolutional Projec-\ntion components.",
+                    "page": 8,
+                    "paragraph": 162,
+                    "section": "4.4. Ablation Study",
+                    "bbox": [
+                      50.111995697021484,
+                      389.5865478515625,
+                      286.36505126953125,
+                      425.50146484375
+                    ],
+                    "kind": "text"
+                  }
+                ],
+                "strategy": "recursive",
+                "index_version": "0c9328ac22034fedb044501e11fbeb0f"
+              },
+              "score": 0.1234079294959083,
+              "vector_score": 0.4875788688659668,
+              "bm25_score": 1.2714722528063729,
+              "rrf_score": 0.030017921146953404,
+              "rerank_score": -1.9605463743209839,
+              "ranks": {
+                "vector": 12,
+                "bm25": 2
+              }
+            },
+            {
+              "chunk": {
+                "chunk_id": "fa963f3857eedc255af24d9c0ff8e650",
+                "document_id": "c2662c09f3784936ac1ee32898beaff3",
+                "scope": "[REDACTED]",
+                "name": "cvt_2103.15808v1.pdf",
+                "text": "CvT: Introducing Convolutions to Vision Transformers\n\nHaiping Wu^{1}^{,}^{2}^{*}\nBin Xiao^{2}^{†}\nNoel Codella^{2}\n\nLu Yuan^{2}\n\n1McGill University\n\nMengchen Liu^{2}\nXiyang Dai^{2}\n\nLei Zhang^{2}\n\n2Microsoft Cloud + AI\n\nhaiping.wu2@mail.mcgill.ca, {bixi, ncodella, mengcliu, xidai, luyuan, leizhang}@microsoft.com\n\narXiv:2103.15808v1  [cs.CV]  29 Mar 2021\n\nAbstract\n\nWe present in this paper a new architecture, named Con-\nvolutional vision Transformer (CvT), that improves Vision\nTransformer (ViT) in performance and efﬁciency by intro-\nducing convolutions into ViT to yield the best of both de-\nsigns. This is accomplished through two primary modiﬁca-\ntions: a hierarchy of Transformers containing a new convo-\nlutional token embedding, and a convolutional Transformer\nblock leveraging a convolutional projection. These changes\nintroduce desirable properties of convolutional neural net-\nworks (CNNs) to the ViT architecture (i.e. shift, scale,\nand distortion invariance) while maintaining the merits of\nTransformers (i.e. dynamic attention, global context, and\nbetter generalization). We validate CvT by conducting ex-\ntensive experiments, showing that this approach achieves\nstate-of-the-art performance over other Vision Transform-\ners and ResNets on ImageNet-1k, with fewer parame-\nters and lower FLOPs.\nIn addition, performance gains\nare maintained when pretrained on larger datasets (e.g.\nImageNet-22k) and ﬁne-tuned to downstream tasks. Pre-\ntrained on ImageNet-22k, our CvT-W24 obtains a top-1 ac-\ncuracy of 87.7% on the ImageNet-1k val set. Finally, our\nresults show that the positional encoding, a crucial com-\nponent in existing Vision Transformers, can be safely re-\nmoved in our model, simplifying the design for higher res-\nolution vision tasks.\nCode will be released at https:\n//github.com/leoxiaobin/CvT.\n\n1. Introduction\n\nTransformers [31, 10] have recently dominated a wide\nrange of tasks in natural language processing (NLP) [32].\nThe Vision Transformer (ViT) [11] is the ﬁrst computer vi-\nsion model to rely exclusively on the Transformer archi-\ntecture to obtain competitive image classiﬁcation perfor-\nmance at large scale. The ViT design adapts Transformer\n\n*This work is done when Haiping Wu was an intern at Microsoft.\n†Corresponding author\n\n1\n\n1\n\nCvT\nDeiT\n\nT2T\nPVT\n\nTNT\n\nCvT\nViT\nBiT\n\n88\n\n88",
+                "page_start": 1,
+                "page_end": 1,
+                "paragraph": 1,
+                "section": "CvT: Introducing Convolutions to Vision Transformers",
+                "bbox": [
+                  10.940000534057617,
+                  105.9219970703125,
+                  557.8576049804688,
+                  743.6874389648438
+                ],
+                "sources": [
+                  {
+                    "text": "CvT: Introducing Convolutions to Vision Transformers",
+                    "page": 1,
+                    "paragraph": 1,
+                    "section": "CvT: Introducing Convolutions to Vision Transformers",
+                    "bbox": [
+                      129.24000549316406,
+                      105.9219970703125,
+                      465.9884033203125,
+                      120.26819610595703
+                    ],
+                    "kind": "heading"
+                  },
+                  {
+                    "text": "Haiping Wu^{1}^{,}^{2}^{*}\nBin Xiao^{2}^{†}\nNoel Codella^{2}",
+                    "page": 1,
+                    "paragraph": 2,
+                    "section": "CvT: Introducing Convolutions to Vision Transformers",
+                    "bbox": [
+                      80.92200469970703,
+                      143.08770751953125,
+                      322.568115234375,
+                      158.15048217773438
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "Lu Yuan^{2}",
+                    "page": 1,
+                    "paragraph": 3,
+                    "section": "CvT: Introducing Convolutions to Vision Transformers",
+                    "bbox": [
+                      253.79896545410156,
+                      157.69247436523438,
+                      298.8700866699219,
+                      172.09848022460938
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "1McGill University",
+                    "page": 1,
+                    "paragraph": 4,
+                    "section": "CvT: Introducing Convolutions to Vision Transformers",
+                    "bbox": [
+                      168.46998596191406,
+                      171.63949584960938,
+                      260.72601318359375,
+                      186.04550170898438
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "Mengchen Liu^{2}\nXiyang Dai^{2}",
+                    "page": 1,
+                    "paragraph": 5,
+                    "section": "CvT: Introducing Convolutions to Vision Transformers",
+                    "bbox": [
+                      351.20098876953125,
+                      143.74447631835938,
+                      513.8010864257812,
+                      158.15048217773438
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "Lei Zhang^{2}",
+                    "page": 1,
+                    "paragraph": 6,
+                    "section": "CvT: Introducing Convolutions to Vision Transformers",
+                    "bbox": [
+                      311.3249816894531,
+                      157.69247436523438,
+                      365.027099609375,
+                      172.09848022460938
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "2Microsoft Cloud + AI",
+                    "page": 1,
+                    "paragraph": 7,
+                    "section": "CvT: Introducing Convolutions to Vision Transformers",
+                    "bbox": [
+                      335.4449768066406,
+                      171.63949584960938,
+                      444.880615234375,
+                      186.04550170898438
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "haiping.wu2@mail.mcgill.ca, {bixi, ncodella, mengcliu, xidai, luyuan, leizhang}@microsoft.com",
+                    "page": 1,
+                    "paragraph": 8,
+                    "section": "CvT: Introducing Convolutions to Vision Transformers",
+                    "bbox": [
+                      59.077972412109375,
+                      189.37503051757812,
+                      557.8576049804688,
+                      198.4767608642578
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "arXiv:2103.15808v1  [cs.CV]  29 Mar 2021",
+                    "page": 1,
+                    "paragraph": 9,
+                    "section": "arXiv:2103.15808v1  [cs.CV]  29 Mar 2021",
+                    "bbox": [
+                      10.940000534057617,
+                      207.82000732421875,
+                      37.619998931884766,
+                      560.0
+                    ],
+                    "kind": "heading"
+                  },
+                  {
+                    "text": "Abstract",
+                    "page": 1,
+                    "paragraph": 10,
+                    "section": "Abstract",
+                    "bbox": [
+                      145.99493408203125,
+                      228.5042724609375,
+                      190.480224609375,
+                      240.45947265625
+                    ],
+                    "kind": "heading"
+                  },
+                  {
+                    "text": "We present in this paper a new architecture, named Con-\nvolutional vision Transformer (CvT), that improves Vision\nTransformer (ViT) in performance and efﬁciency by intro-\nducing convolutions into ViT to yield the best of both de-\nsigns. This is accomplished through two primary modiﬁca-\ntions: a hierarchy of Transformers containing a new convo-\nlutional token embedding, and a convolutional Transformer\nblock leveraging a convolutional projection. These changes\nintroduce desirable properties of convolutional neural net-\nworks (CNNs) to the ViT architecture (i.e. shift, scale,\nand distortion invariance) while maintaining the merits of\nTransformers (i.e. dynamic attention, global context, and\nbetter generalization). We validate CvT by conducting ex-\ntensive experiments, showing that this approach achieves\nstate-of-the-art performance over other Vision Transform-\ners and ResNets on ImageNet-1k, with fewer parame-\nters and lower FLOPs.\nIn addition, performance gains\nare maintained when pretrained on larger datasets (e.g.\nImageNet-22k) and ﬁne-tuned to downstream tasks. Pre-\ntrained on ImageNet-22k, our CvT-W24 obtains a top-1 ac-\ncuracy of 87.7% on the ImageNet-1k val set. Finally, our\nresults show that the positional encoding, a crucial com-\nponent in existing Vision Transformers, can be safely re-\nmoved in our model, simplifying the design for higher res-\nolution vision tasks.\nCode will be released at https:\n//github.com/leoxiaobin/CvT.",
+                    "page": 1,
+                    "paragraph": 11,
+                    "section": "Abstract",
+                    "bbox": [
+                      50.111907958984375,
+                      254.80914306640625,
+                      286.3650207519531,
+                      563.6505126953125
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "1. Introduction",
+                    "page": 1,
+                    "paragraph": 12,
+                    "section": "Abstract",
+                    "bbox": [
+                      50.111907958984375,
+                      590.9610595703125,
+                      126.94798278808594,
+                      602.916259765625
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "Transformers [31, 10] have recently dominated a wide\nrange of tasks in natural language processing (NLP) [32].\nThe Vision Transformer (ViT) [11] is the ﬁrst computer vi-\nsion model to rely exclusively on the Transformer archi-\ntecture to obtain competitive image classiﬁcation perfor-\nmance at large scale. The ViT design adapts Transformer",
+                    "page": 1,
+                    "paragraph": 13,
+                    "section": "Abstract",
+                    "bbox": [
+                      50.111907958984375,
+                      610.8114624023438,
+                      286.364990234375,
+                      682.5924072265625
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "*This work is done when Haiping Wu was an intern at Microsoft.\n†Corresponding author",
+                    "page": 1,
+                    "paragraph": 14,
+                    "section": "Abstract",
+                    "bbox": [
+                      60.97100067138672,
+                      693.9786376953125,
+                      269.3213806152344,
+                      713.2396240234375
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "1",
+                    "page": 1,
+                    "paragraph": 15,
+                    "section": "Abstract",
+                    "bbox": [
+                      295.1210021972656,
+                      731.6824951171875,
+                      300.102294921875,
+                      743.6874389648438
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "1",
+                    "page": 1,
+                    "paragraph": 16,
+                    "section": "Abstract",
+                    "bbox": [
+                      295.1210021972656,
+                      731.6824951171875,
+                      300.102294921875,
+                      743.6874389648438
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "CvT\nDeiT",
+                    "page": 1,
+                    "paragraph": 17,
+                    "section": "Abstract",
+                    "bbox": [
+                      463.8348693847656,
+                      229.52223205566406,
+                      473.5455322265625,
+                      241.9552764892578
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "T2T\nPVT",
+                    "page": 1,
+                    "paragraph": 18,
+                    "section": "Abstract",
+                    "bbox": [
+                      496.3757019042969,
+                      229.52223205566406,
+                      505.30517578125,
+                      241.9552764892578
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "TNT",
+                    "page": 1,
+                    "paragraph": 19,
+                    "section": "Abstract",
+                    "bbox": [
+                      528.1306762695312,
+                      229.52223205566406,
+                      537.3204956054688,
+                      235.22743225097656
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "CvT\nViT\nBiT",
+                    "page": 1,
+                    "paragraph": 20,
+                    "section": "Abstract",
+                    "bbox": [
+                      337.9715270996094,
+                      232.76112365722656,
+                      425.8020324707031,
+                      240.0511016845703
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "88",
+                    "page": 1,
+                    "paragraph": 21,
+                    "section": "Abstract",
+                    "bbox": [
+                      316.9858093261719,
+                      253.76768493652344,
+                      322.2464904785156,
+                      260.1067810058594
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "88",
+                    "page": 1,
+                    "paragraph": 22,
+                    "section": "Abstract",
+                    "bbox": [
+                      316.9858093261719,
+                      253.76768493652344,
+                      322.2464904785156,
+                      260.1067810058594
+                    ],
+                    "kind": "text"
+                  }
+                ],
+                "strategy": "recursive",
+                "index_version": "0c9328ac22034fedb044501e11fbeb0f"
+              },
+              "score": 0.12262966637668805,
+              "vector_score": 0.5162010788917542,
+              "bm25_score": 1.2237701447553646,
+              "rrf_score": 0.029850746268656716,
+              "rerank_score": -1.9677602052688599,
+              "ranks": {
+                "vector": 7,
+                "bm25": 7
+              }
+            },
+            {
+              "chunk": {
+                "chunk_id": "928481b1acb4cbe8d8fd140b88280170",
+                "document_id": "c2662c09f3784936ac1ee32898beaff3",
+                "scope": "[REDACTED]",
+                "name": "cvt_2103.15808v1.pdf",
+                "text": "|  | 14 × 14 | Conv. Proj.<br>MHSA<br>MLP |  3 × 3, 384 <br>H = 6, D = 384 × 10<br> 3 3<br>R = 4<br>3 |  3 × 3, 384 <br>H = 6, D = 384 × 16<br> 3 3<br>R = 4<br>3 |  3 × 3, 1024 <br>H = 16, D = 1024 × 20<br> 3 3<br>R = 4<br>3 |\n| Head | 1 × 1 | Linear | 1000 |  |  |\n| Params |  |  | 19.98 M | 31.54 M | 276.7 M |\n| FLOPs |  |  | 4.53 G | 7.13 G | 60.86 G |\n\nTable 2: Architectures for ImageNet classiﬁcation. Input image size is 224 × 224 by default. Conv. Embed.: Convolutional\nToken Embedding. Conv. Proj.: Convolutional Projection. Hi and Di is the number of heads and embedding feature\ndimension in the ith MHSA module. Ri is the feature dimension expansion ratio in the ith MLP layer.\n\nstrate that the fusion of local neighboring information plays\nan important role on the performance.\n\n4. Experiments\n\nIn this section, we evaluate the CvT model on large-scale\nimage classiﬁcation datasets and transfer to various down-\nstream datasets. In addition, we perform through ablation\nstudies to validate the design of the proposed architecture.\n\n4.1. Setup\n\nFor evaluation, we use the ImageNet dataset, with 1.3M\nimages and 1k classes, as well as its superset ImageNet-22k\nwith 22k classes and 14M images [9]. We further trans-\nfer the models pretrained on ImageNet-22k to downstream\ntasks, including CIFAR-10/100 [19], Oxford-IIIT-Pet [23],\nOxford-IIIT-Flower [22], following [18, 11].\n\nModel Variants\nWe instantiate models with different pa-\nrameters and FLOPs by varying the number of Transformer\nblocks of each stage and the hidden feature dimension used,\nas shown in Table 2. Three stages are adapted. We de-\nﬁne CvT-13 and CvT-21 as basic models, with 19.98M and\n31.54M paramters. CvT-X stands for Convolutional vision\nTransformer with X Transformer Blocks in total. Addition-\nally, we experiment with a wider model with a larger token\ndimension for each stage, namely CvT-W24 (W stands for\nWide), resulting 298.3M parameters, to validate the scaling\nability of the proposed architecture.\n\nTraining\nAdamW [21] optimizer is used with the weight\ndecay of 0.05 for our CvT-13, and 0.1 for our CvT-21 and\nCvT-W24.\nWe",
+                "page_start": 6,
+                "page_end": 6,
+                "paragraph": 116,
+                "section": "3.2.2\nEfﬁciency Considerations",
+                "bbox": [
+                  50.11199951171875,
+                  72.18353271484375,
+                  548.197265625,
+                  713.7993774414062
+                ],
+                "sources": [
+                  {
+                    "text": "|  | 14 × 14 | Conv. Proj.<br>MHSA<br>MLP |  3 × 3, 384 <br>H = 6, D = 384 × 10<br> 3 3<br>R = 4<br>3 |  3 × 3, 384 <br>H = 6, D = 384 × 16<br> 3 3<br>R = 4<br>3 |  3 × 3, 1024 <br>H = 16, D = 1024 × 20<br> 3 3<br>R = 4<br>3 |\n| Head | 1 × 1 | Linear | 1000 |  |  |\n| Params |  |  | 19.98 M | 31.54 M | 276.7 M |\n| FLOPs |  |  | 4.53 G | 7.13 G | 60.86 G |",
+                    "page": 6,
+                    "paragraph": 116,
+                    "section": "3.2.2\nEfﬁciency Considerations",
+                    "bbox": [
+                      52.17464065551758,
+                      72.18353271484375,
+                      548.197265625,
+                      236.0640869140625
+                    ],
+                    "kind": "table"
+                  },
+                  {
+                    "text": "Table 2: Architectures for ImageNet classiﬁcation. Input image size is 224 × 224 by default. Conv. Embed.: Convolutional\nToken Embedding. Conv. Proj.: Convolutional Projection. Hi and Di is the number of heads and embedding feature\ndimension in the ith MHSA module. Ri is the feature dimension expansion ratio in the ith MLP layer.",
+                    "page": 6,
+                    "paragraph": 117,
+                    "section": "3.2.2\nEfﬁciency Considerations",
+                    "bbox": [
+                      50.11199951171875,
+                      242.68353271484375,
+                      545.1119995117188,
+                      280.093505859375
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "strate that the fusion of local neighboring information plays\nan important role on the performance.",
+                    "page": 6,
+                    "paragraph": 118,
+                    "section": "3.2.2\nEfﬁciency Considerations",
+                    "bbox": [
+                      50.112060546875,
+                      300.0685729980469,
+                      286.3651123046875,
+                      324.02850341796875
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "4. Experiments",
+                    "page": 6,
+                    "paragraph": 119,
+                    "section": "3.2.2\nEfﬁciency Considerations",
+                    "bbox": [
+                      50.112060546875,
+                      336.43316650390625,
+                      127.1513671875,
+                      348.38836669921875
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "In this section, we evaluate the CvT model on large-scale\nimage classiﬁcation datasets and transfer to various down-\nstream datasets. In addition, we perform through ablation\nstudies to validate the design of the proposed architecture.",
+                    "page": 6,
+                    "paragraph": 120,
+                    "section": "3.2.2\nEfﬁciency Considerations",
+                    "bbox": [
+                      50.112060546875,
+                      355.4885559082031,
+                      286.36517333984375,
+                      403.35845947265625
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "4.1. Setup",
+                    "page": 6,
+                    "paragraph": 121,
+                    "section": "3.2.2\nEfﬁciency Considerations",
+                    "bbox": [
+                      50.112060546875,
+                      412.54278564453125,
+                      96.08464813232422,
+                      423.5016784667969
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "For evaluation, we use the ImageNet dataset, with 1.3M\nimages and 1k classes, as well as its superset ImageNet-22k\nwith 22k classes and 14M images [9]. We further trans-\nfer the models pretrained on ImageNet-22k to downstream\ntasks, including CIFAR-10/100 [19], Oxford-IIIT-Pet [23],\nOxford-IIIT-Flower [22], following [18, 11].",
+                    "page": 6,
+                    "paragraph": 122,
+                    "section": "3.2.2\nEfﬁciency Considerations",
+                    "bbox": [
+                      50.112060546875,
+                      429.8374938964844,
+                      286.365234375,
+                      501.6183776855469
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "Model Variants\nWe instantiate models with different pa-\nrameters and FLOPs by varying the number of Transformer\nblocks of each stage and the hidden feature dimension used,\nas shown in Table 2. Three stages are adapted. We de-\nﬁne CvT-13 and CvT-21 as basic models, with 19.98M and\n31.54M paramters. CvT-X stands for Convolutional vision\nTransformer with X Transformer Blocks in total. Addition-\nally, we experiment with a wider model with a larger token\ndimension for each stage, namely CvT-W24 (W stands for\nWide), resulting 298.3M parameters, to validate the scaling\nability of the proposed architecture.",
+                    "page": 6,
+                    "paragraph": 123,
+                    "section": "3.2.2\nEfﬁciency Considerations",
+                    "bbox": [
+                      50.112060546875,
+                      512.0174560546875,
+                      286.3658752441406,
+                      643.5744018554688
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "Training\nAdamW [21] optimizer is used with the weight\ndecay of 0.05 for our CvT-13, and 0.1 for our CvT-21 and\nCvT-W24.\nWe",
+                    "page": 6,
+                    "paragraph": 124,
+                    "section": "3.2.2\nEfﬁciency Considerations",
+                    "bbox": [
+                      50.112060546875,
+                      653.973388671875,
+                      286.36517333984375,
+                      713.7993774414062
+                    ],
+                    "kind": "text"
+                  }
+                ],
+                "strategy": "recursive",
+                "index_version": "0c9328ac22034fedb044501e11fbeb0f"
+              },
+              "score": 0.11836541516734243,
+              "vector_score": 0.48426973819732666,
+              "bm25_score": 1.245229006587229,
+              "rrf_score": 0.029138513513513514,
+              "rerank_score": -2.0080010890960693,
+              "ranks": {
+                "vector": 14,
+                "bm25": 4
+              }
+            },
+            {
+              "chunk": {
+                "chunk_id": "c4d48f39523acbb924aeeee666deee6b",
+                "document_id": "c2662c09f3784936ac1ee32898beaff3",
+                "scope": "[REDACTED]",
+                "name": "cvt_2103.15808v1.pdf",
+                "text": "concurrently maintain-\ning a high degree of computational and memory efﬁciency.\nTo verify our hypothesises, we present a new architecture,\ncalled the Convolutional vision Transformer (CvT), which\nincorporates convolutions into the Transformer that is in-\nherently efﬁcient, both in terms of ﬂoating point operations\n(FLOPs) and parameters.\n\nThe CvT design introduces convolutions to two core sec-\ntions of the ViT architecture. First, we partition the Trans-\nformers into multiple stages that form a hierarchical struc-\nture of Transformers. The beginning of each stage consists\nof a convolutional token embedding that performs an over-\nlapping convolution operation with stride on a 2D-reshaped\ntoken map (i.e., reshaping ﬂattened token sequences back\nto the spatial grid), followed by layer normalization. This\nallows the model to not only capture local information, but\nalso progressively decrease the sequence length while si-\nmultaneously increasing the dimension of token features\nacross stages, achieving spatial downsampling while con-\ncurrently increasing the number of feature maps, as is per-\nformed in CNNs [20]. Second, the linear projection prior\nto every self-attention block in the Transformer module is\nreplaced with our proposed convolutional projection, which\nemploys a s × s depth-wise separable convolution [5] oper-\nation on an 2D-reshaped token map. This allows the model\nto further capture local spatial context and reduce seman-\ntic ambiguity in the attention mechanism. It also permits\nmanagement of computational complexity, as the stride of\nconvolution can be used to subsample the key and value ma-\ntrices to improve efﬁciency by 4× or more, with minimal\ndegradation of performance.\n\nIn summary, our proposed Convolutional vision Trans-\n\n2\n\n2\n\nformer (CvT) employs all the beneﬁts of CNNs: local re-\nceptive ﬁelds, shared weights, and spatial subsampling,\nwhile keeping all the advantages of Transformers: dynamic\nattention, global context fusion, and better generalization.\nOur results demonstrate that this approach attains state-of-\nart performance when CvT is pre-trained with ImageNet-\n1k, while being lightweight and efﬁcient: CvT improves the\nperformance compared to CNN-based models (e.g. ResNet)\nand prior Transformer-based models (e.g. ViT, DeiT) while\nutilizing fewer FLOPS and parameters. In addition, CvT\nachieves state-of-the-art performance when evaluated at\nlarger scale pretraining (e.g. on the public ImageNet-22k\ndataset). Finally, we demonstrate that in this new design, we\ncan drop the positional embedding for tokens without any\ndegradation to model performance. This not only simpliﬁes\nthe architecture design, but also makes it readily capable of\naccommodating variable resolutions of input images that is\ncritical to many vision tasks.\n\n2. Related Work",
+                "page_start": 2,
+                "page_end": 2,
+                "paragraph": 53,
+                "section": "Abstract",
+                "bbox": [
+                  50.11198425292969,
+                  202.2703857421875,
+                  545.11572265625,
+                  743.6871948242188
+                ],
+                "sources": [
+                  {
+                    "text": "concurrently maintain-\ning a high degree of computational and memory efﬁciency.\nTo verify our hypothesises, we present a new architecture,\ncalled the Convolutional vision Transformer (CvT), which\nincorporates convolutions into the Transformer that is in-\nherently efﬁcient, both in terms of ﬂoating point operations\n(FLOPs) and parameters.",
+                    "page": 2,
+                    "paragraph": 53,
+                    "section": "Abstract",
+                    "bbox": [
+                      50.11199188232422,
+                      301.0325622558594,
+                      286.3651428222656,
+                      408.67840576171875
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "The CvT design introduces convolutions to two core sec-\ntions of the ViT architecture. First, we partition the Trans-\nformers into multiple stages that form a hierarchical struc-\nture of Transformers. The beginning of each stage consists\nof a convolutional token embedding that performs an over-\nlapping convolution operation with stride on a 2D-reshaped\ntoken map (i.e., reshaping ﬂattened token sequences back\nto the spatial grid), followed by layer normalization. This\nallows the model to not only capture local information, but\nalso progressively decrease the sequence length while si-\nmultaneously increasing the dimension of token features\nacross stages, achieving spatial downsampling while con-\ncurrently increasing the number of feature maps, as is per-\nformed in CNNs [20]. Second, the linear projection prior\nto every self-attention block in the Transformer module is\nreplaced with our proposed convolutional projection, which\nemploys a s × s depth-wise separable convolution [5] oper-\nation on an 2D-reshaped token map. This allows the model\nto further capture local spatial context and reduce seman-\ntic ambiguity in the attention mechanism. It also permits\nmanagement of computational complexity, as the stride of\nconvolution can be used to subsample the key and value ma-\ntrices to improve efﬁciency by 4× or more, with minimal\ndegradation of performance.",
+                    "page": 2,
+                    "paragraph": 54,
+                    "section": "Abstract",
+                    "bbox": [
+                      50.11198425292969,
+                      411.74945068359375,
+                      286.3669738769531,
+                      698.7233276367188
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "In summary, our proposed Convolutional vision Trans-",
+                    "page": 2,
+                    "paragraph": 55,
+                    "section": "Abstract",
+                    "bbox": [
+                      62.066986083984375,
+                      701.7943725585938,
+                      286.36492919921875,
+                      713.79931640625
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "2",
+                    "page": 2,
+                    "paragraph": 56,
+                    "section": "Abstract",
+                    "bbox": [
+                      295.1209411621094,
+                      731.6822509765625,
+                      300.10223388671875,
+                      743.6871948242188
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "2",
+                    "page": 2,
+                    "paragraph": 57,
+                    "section": "Abstract",
+                    "bbox": [
+                      295.1209411621094,
+                      731.6822509765625,
+                      300.10223388671875,
+                      743.6871948242188
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "former (CvT) employs all the beneﬁts of CNNs: local re-\nceptive ﬁelds, shared weights, and spatial subsampling,\nwhile keeping all the advantages of Transformers: dynamic\nattention, global context fusion, and better generalization.\nOur results demonstrate that this approach attains state-of-\nart performance when CvT is pre-trained with ImageNet-\n1k, while being lightweight and efﬁcient: CvT improves the\nperformance compared to CNN-based models (e.g. ResNet)\nand prior Transformer-based models (e.g. ViT, DeiT) while\nutilizing fewer FLOPS and parameters. In addition, CvT\nachieves state-of-the-art performance when evaluated at\nlarger scale pretraining (e.g. on the public ImageNet-22k\ndataset). Finally, we demonstrate that in this new design, we\ncan drop the positional embedding for tokens without any\ndegradation to model performance. This not only simpliﬁes\nthe architecture design, but also makes it readily capable of\naccommodating variable resolutions of input images that is\ncritical to many vision tasks.",
+                    "page": 2,
+                    "paragraph": 58,
+                    "section": "Abstract",
+                    "bbox": [
+                      308.8619384765625,
+                      202.2703857421875,
+                      545.11572265625,
+                      417.51324462890625
+                    ],
+                    "kind": "text"
+                  },
+                  {
+                    "text": "2. Related Work",
+                    "page": 2,
+                    "paragraph": 59,
+                    "section": "Abstract",
+                    "bbox": [
+                      308.8619384765625,
+                      430.94989013671875,
+                      391.9744873046875,
+                      442.90509033203125
+                    ],
+                    "kind": "text"
+                  }
+                ],
+                "strategy": "recursive",
+                "index_version": "0c9328ac22034fedb044501e11fbeb0f"
+              },
+              "score": 0.06842804615535988,
+              "vector_score": 0.551414430141449,
+              "bm25_score": 1.1700309041460126,
+              "rrf_score": 0.030886196246139225,
+              "rerank_score": -2.611090660095215,
+              "ranks": {
+                "vector": 1,
+                "bm25": 9
+              }
+            }
+          ],
+          "warnings": [],
+          "origin": "knowledge_rag",
+          "audit": {
+            "invalid_ids": [],
+            "used_ids": [
+              "S1"
+            ],
+            "needs_review": [
+              "1. **卷积令牌嵌入**：在每个Transformer模块的开始部分，引入了一个卷积令牌嵌入，它执行重叠卷积操作，步长为1，作用于2D重塑的令牌映射（即将展平的令牌序列重新映射回空间网格）。",
+              "2. **卷积投影**：在Transformer模块中的每个自注意力块之前的线性投影被替换为提出的卷积投影，它在2D重塑的令牌映射上应用一个s × s深度可分离卷积操作。",
+              "同时，它允许通过使用卷积的步长对键和值矩阵进行下采样，从而提高效率4倍以上，性能下降可以忽略不计[S1]。",
+              "综上所述，CvT通过引入卷积，不仅保持了Transformer的动态注意力、全局上下文和更好的泛化能力，还引入了卷积神经网络的局部不变性、尺度不变性和扭曲不变性，从而在ImageNet-1k和ImageNet-22k上取得了最先进的性能，参数更少，计算量更低[S1]。",
+              "[S1] cvt_2103.15808v1.pdf | 第1页-第8页"
+            ],
+            "claims": [
+              {
+                "claim": "1. **卷积令牌嵌入**：在每个Transformer模块的开始部分，引入了一个卷积令牌嵌入，它执行重叠卷积操作，步长为1，作用于2D重塑的令牌映射（即将展平的令牌序列重新映射回空间网格）。",
+                "source_ids": [],
+                "status": "待核实",
+                "missing_numbers": [
+                  "1",
+                  "2"
+                ]
+              },
+              {
+                "claim": "这使得模型不仅能够捕捉局部信息，还能逐步减少序列长度，同时增加令牌特征的维度，从而实现空间下采样，同时增加特征图的数量，类似于卷积神经网络（CNNs）[S1]。",
+                "source_ids": [
+                  "S1"
+                ],
+                "status": "来源存在，语义需核查",
+                "missing_numbers": []
+              },
+              {
+                "claim": "2. **卷积投影**：在Transformer模块中的每个自注意力块之前的线性投影被替换为提出的卷积投影，它在2D重塑的令牌映射上应用一个s × s深度可分离卷积操作。",
+                "source_ids": [],
+                "status": "待核实",
+                "missing_numbers": [
+                  "2"
+                ]
+              },
+              {
+                "claim": "同时，它允许通过使用卷积的步长对键和值矩阵进行下采样，从而提高效率4倍以上，性能下降可以忽略不计[S1]。",
+                "source_ids": [
+                  "S1"
+                ],
+                "status": "待核实",
+                "missing_numbers": [
+                  "4"
+                ]
+              },
+              {
+                "claim": "综上所述，CvT通过引入卷积，不仅保持了Transformer的动态注意力、全局上下文和更好的泛化能力，还引入了卷积神经网络的局部不变性、尺度不变性和扭曲不变性，从而在ImageNet-1k和ImageNet-22k上取得了最先进的性能，参数更少，计算量更低[S1]。",
+                "source_ids": [
+                  "S1"
+                ],
+                "status": "待核实",
+                "missing_numbers": [
+                  "1"
+                ]
+              },
+              {
+                "claim": "[S1] cvt_2103.15808v1.pdf | 第1页-第8页",
+                "source_ids": [
+                  "S1"
+                ],
+                "status": "待核实",
+                "missing_numbers": [
+                  "2103.15808",
+                  "1",
+                  "1",
+                  "8"
+                ]
+              }
+            ],
+            "method": "来源存在性与数字断言规则检查；不等同于语义正确性证明",
+            "page_reference_corrections": []
+          },
+          "request_id": "07f1ece54da7477091852bd2cf455c8b"
+        }
+      ]
+    },
+    {
+      "name": "answer-streamed",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.057104+00:00",
+      "detail": null
+    },
+    {
+      "name": "retrieval-returned-real-chunks",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.085430+00:00",
+      "detail": null
+    },
+    {
+      "name": "answer-from-real-model-with-evidence",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.105501+00:00",
+      "detail": {
+        "origin": "knowledge_rag",
+        "metrics": {
+          "input_tokens": 3537,
+          "output_tokens": 395,
+          "estimated": false,
+          "retrieval_ms": 19279.397999998764,
+          "elapsed_ms": 34104.68229999242,
+          "first_token_ms": 26042.447899992112,
+          "cache_hit": false,
+          "retrieved_count": 5,
+          "top1_score": 0.16043693490613045,
+          "index_version": "0c9328ac22034fedb044501e11fbeb0f",
+          "model": "research-qwen:7b",
+          "demo": false,
+          "retrieval_stages": {
+            "mode": "hybrid_rerank",
+            "candidate_k": 20,
+            "candidates": 20,
+            "results": 5,
+            "vector_ms": 190.68379999953322,
+            "bm25_ms": 774.248700006865,
+            "rerank_ms": 18278.70390001044,
+            "elapsed_ms": 19263.391800006502,
+            "warning": "",
+            "index_version": "0c9328ac22034fedb044501e11fbeb0f",
+            "embedding_fingerprint": "13d11d3f8af52181bc4c055c",
+            "score_is_probability": false
+          },
+          "end_to_end_ms": 34152.859299996635
+        }
+      }
+    },
+    {
+      "name": "citations-point-to-persisted-chunks",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.128175+00:00",
+      "detail": [
+        {
+          "citation_id": "S1",
+          "document_id": "c2662c09f3784936ac1ee32898beaff3",
+          "chunk_id": "ee76cb90302d0a0f008bef808a792758",
+          "page_start": 7,
+          "paragraph": 138
+        },
+        {
+          "citation_id": "S2",
+          "document_id": "c2662c09f3784936ac1ee32898beaff3",
+          "chunk_id": "7659943a9c05e4aad94b024ef64fe7b3",
+          "page_start": 8,
+          "paragraph": 154
+        },
+        {
+          "citation_id": "S3",
+          "document_id": "c2662c09f3784936ac1ee32898beaff3",
+          "chunk_id": "fa963f3857eedc255af24d9c0ff8e650",
+          "page_start": 1,
+          "paragraph": 1
+        },
+        {
+          "citation_id": "S4",
+          "document_id": "c2662c09f3784936ac1ee32898beaff3",
+          "chunk_id": "928481b1acb4cbe8d8fd140b88280170",
+          "page_start": 6,
+          "paragraph": 116
+        },
+        {
+          "citation_id": "S5",
+          "document_id": "c2662c09f3784936ac1ee32898beaff3",
+          "chunk_id": "c4d48f39523acbb924aeeee666deee6b",
+          "page_start": 2,
+          "paragraph": 53
+        }
+      ]
+    },
+    {
+      "name": "answer-cites-available-sources",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.151002+00:00",
+      "detail": {
+        "invalid_ids": [],
+        "used_ids": [
+          "S1"
+        ],
+        "needs_review": [
+          "1. **卷积令牌嵌入**：在每个Transformer模块的开始部分，引入了一个卷积令牌嵌入，它执行重叠卷积操作，步长为1，作用于2D重塑的令牌映射（即将展平的令牌序列重新映射回空间网格）。",
+          "2. **卷积投影**：在Transformer模块中的每个自注意力块之前的线性投影被替换为提出的卷积投影，它在2D重塑的令牌映射上应用一个s × s深度可分离卷积操作。",
+          "同时，它允许通过使用卷积的步长对键和值矩阵进行下采样，从而提高效率4倍以上，性能下降可以忽略不计[S1]。",
+          "综上所述，CvT通过引入卷积，不仅保持了Transformer的动态注意力、全局上下文和更好的泛化能力，还引入了卷积神经网络的局部不变性、尺度不变性和扭曲不变性，从而在ImageNet-1k和ImageNet-22k上取得了最先进的性能，参数更少，计算量更低[S1]。",
+          "[S1] cvt_2103.15808v1.pdf | 第1页-第8页"
+        ],
+        "claims": [
+          {
+            "claim": "1. **卷积令牌嵌入**：在每个Transformer模块的开始部分，引入了一个卷积令牌嵌入，它执行重叠卷积操作，步长为1，作用于2D重塑的令牌映射（即将展平的令牌序列重新映射回空间网格）。",
+            "source_ids": [],
+            "status": "待核实",
+            "missing_numbers": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "claim": "这使得模型不仅能够捕捉局部信息，还能逐步减少序列长度，同时增加令牌特征的维度，从而实现空间下采样，同时增加特征图的数量，类似于卷积神经网络（CNNs）[S1]。",
+            "source_ids": [
+              "S1"
+            ],
+            "status": "来源存在，语义需核查",
+            "missing_numbers": []
+          },
+          {
+            "claim": "2. **卷积投影**：在Transformer模块中的每个自注意力块之前的线性投影被替换为提出的卷积投影，它在2D重塑的令牌映射上应用一个s × s深度可分离卷积操作。",
+            "source_ids": [],
+            "status": "待核实",
+            "missing_numbers": [
+              "2"
+            ]
+          },
+          {
+            "claim": "同时，它允许通过使用卷积的步长对键和值矩阵进行下采样，从而提高效率4倍以上，性能下降可以忽略不计[S1]。",
+            "source_ids": [
+              "S1"
+            ],
+            "status": "待核实",
+            "missing_numbers": [
+              "4"
+            ]
+          },
+          {
+            "claim": "综上所述，CvT通过引入卷积，不仅保持了Transformer的动态注意力、全局上下文和更好的泛化能力，还引入了卷积神经网络的局部不变性、尺度不变性和扭曲不变性，从而在ImageNet-1k和ImageNet-22k上取得了最先进的性能，参数更少，计算量更低[S1]。",
+            "source_ids": [
+              "S1"
+            ],
+            "status": "待核实",
+            "missing_numbers": [
+              "1"
+            ]
+          },
+          {
+            "claim": "[S1] cvt_2103.15808v1.pdf | 第1页-第8页",
+            "source_ids": [
+              "S1"
+            ],
+            "status": "待核实",
+            "missing_numbers": [
+              "2103.15808",
+              "1",
+              "1",
+              "8"
+            ]
+          }
+        ],
+        "method": "来源存在性与数字断言规则检查；不等同于语义正确性证明",
+        "page_reference_corrections": []
+      }
+    },
+    {
+      "name": "source-download",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.672492+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "original-file-hash-matches",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.686788+00:00",
+      "detail": {
+        "bytes": 990969,
+        "sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+        "content_type": "application/pdf"
+      }
+    },
+    {
+      "name": "citation-page-preview",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.879552+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "citation-preview-is-png",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.906401+00:00",
+      "detail": null
+    },
+    {
+      "name": "request-id-recorded",
+      "passed": true,
+      "at": "2026-10-15T09:23:23.926870+00:00",
+      "detail": null
+    },
+    {
+      "name": "persisted-run",
+      "passed": true,
+      "at": "2026-10-15T09:23:24.056716+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "run-record-saved",
+      "passed": true,
+      "at": "2026-10-15T09:23:24.075509+00:00",
+      "detail": null
+    },
+    {
+      "name": "persisted-session",
+      "passed": true,
+      "at": "2026-10-15T09:23:24.129841+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    },
+    {
+      "name": "conversation-saved",
+      "passed": true,
+      "at": "2026-10-15T09:23:24.160153+00:00",
+      "detail": null
+    },
+    {
+      "name": "session-export",
+      "passed": true,
+      "at": "2026-10-15T09:23:24.220664+00:00",
+      "detail": {
+        "status": 200,
+        "response": null
+      }
+    }
+  ],
+  "requests": [
+    {
+      "name": "initial-health-poll",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/health",
+      "status": 200,
+      "seconds": 0.131,
+      "at": "2026-10-15T09:21:16.649717+00:00"
+    },
+    {
+      "name": "frontend-health",
+      "method": "GET",
+      "url": "http://127.0.0.1:8501/_stcore/health",
+      "status": 200,
+      "seconds": 0.012,
+      "at": "2026-10-15T09:21:16.663420+00:00"
+    },
+    {
+      "name": "public-config",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/config",
+      "status": 200,
+      "seconds": 0.016,
+      "at": "2026-10-15T09:21:16.680049+00:00"
+    },
+    {
+      "name": "upload",
+      "method": "POST",
+      "url": "http://127.0.0.1:8000/documents",
+      "status": 200,
+      "seconds": 0.037,
+      "at": "2026-10-15T09:21:16.839868+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.011,
+      "at": "2026-10-15T09:21:16.852641+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.137,
+      "at": "2026-10-15T09:21:18.993818+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.46,
+      "at": "2026-10-15T09:21:21.455356+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.008,
+      "at": "2026-10-15T09:21:23.467826+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.01,
+      "at": "2026-10-15T09:21:25.483312+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.009,
+      "at": "2026-10-15T09:21:27.497365+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.009,
+      "at": "2026-10-15T09:21:29.514227+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.006,
+      "at": "2026-10-15T09:21:31.529728+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.01,
+      "at": "2026-10-15T09:21:33.545618+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.032,
+      "at": "2026-10-15T09:21:35.585975+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.027,
+      "at": "2026-10-15T09:21:37.619351+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.093,
+      "at": "2026-10-15T09:21:39.722652+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.023,
+      "at": "2026-10-15T09:21:41.754965+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.031,
+      "at": "2026-10-15T09:21:43.799173+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.009,
+      "at": "2026-10-15T09:21:45.822467+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.01,
+      "at": "2026-10-15T09:21:47.840273+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 1.924,
+      "at": "2026-10-15T09:21:51.780047+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.035,
+      "at": "2026-10-15T09:21:53.823487+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:21:55.847622+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.008,
+      "at": "2026-10-15T09:21:57.867028+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:21:59.886447+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:22:01.906573+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.009,
+      "at": "2026-10-15T09:22:03.927587+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.008,
+      "at": "2026-10-15T09:22:05.949563+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.008,
+      "at": "2026-10-15T09:22:07.971218+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:22:09.990309+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.008,
+      "at": "2026-10-15T09:22:12.012020+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.009,
+      "at": "2026-10-15T09:22:14.035532+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.006,
+      "at": "2026-10-15T09:22:16.057717+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.009,
+      "at": "2026-10-15T09:22:18.081777+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.008,
+      "at": "2026-10-15T09:22:20.107939+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.009,
+      "at": "2026-10-15T09:22:22.131114+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.01,
+      "at": "2026-10-15T09:22:24.155104+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:22:26.177460+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.008,
+      "at": "2026-10-15T09:22:28.201722+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:22:30.223116+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.008,
+      "at": "2026-10-15T09:22:32.245390+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.008,
+      "at": "2026-10-15T09:22:34.271232+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.009,
+      "at": "2026-10-15T09:22:36.297502+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:22:38.324089+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:22:40.350308+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:22:42.375353+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:22:44.400641+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.007,
+      "at": "2026-10-15T09:22:46.426541+00:00"
+    },
+    {
+      "name": "indexing-job",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+      "status": 200,
+      "seconds": 0.027,
+      "at": "2026-10-15T09:22:48.472295+00:00"
+    },
+    {
+      "name": "document-ready",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/documents/c2662c09f3784936ac1ee32898beaff3",
+      "status": 200,
+      "seconds": 0.013,
+      "at": "2026-10-15T09:22:48.504699+00:00"
+    },
+    {
+      "name": "chunks-before-0",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/documents/c2662c09f3784936ac1ee32898beaff3/chunks?offset=0&limit=100",
+      "status": 200,
+      "seconds": 0.064,
+      "at": "2026-10-15T09:22:48.600061+00:00"
+    },
+    {
+      "name": "create-session",
+      "method": "POST",
+      "url": "http://127.0.0.1:8000/sessions",
+      "status": 200,
+      "seconds": 0.02,
+      "at": "2026-10-15T09:22:48.690426+00:00"
+    },
+    {
+      "name": "rag-stream",
+      "method": "POST",
+      "url": "http://127.0.0.1:8000/sessions/b1161e90198f484db09499120f2f0410/chat",
+      "status": 200,
+      "seconds": 34.238,
+      "at": "2026-10-15T09:23:22.944549+00:00"
+    },
+    {
+      "name": "source-download",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/documents/c2662c09f3784936ac1ee32898beaff3/file",
+      "status": 200,
+      "seconds": 0.488,
+      "at": "2026-10-15T09:23:23.671424+00:00"
+    },
+    {
+      "name": "citation-page-preview",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/documents/c2662c09f3784936ac1ee32898beaff3/preview?page=7&chunk_id=ee76cb90302d0a0f008bef808a792758",
+      "status": 200,
+      "seconds": 0.177,
+      "at": "2026-10-15T09:23:23.878453+00:00"
+    },
+    {
+      "name": "persisted-run",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/runs/07f1ece54da7477091852bd2cf455c8b",
+      "status": 200,
+      "seconds": 0.065,
+      "at": "2026-10-15T09:23:24.016640+00:00"
+    },
+    {
+      "name": "persisted-session",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/sessions/b1161e90198f484db09499120f2f0410",
+      "status": 200,
+      "seconds": 0.023,
+      "at": "2026-10-15T09:23:24.123267+00:00"
+    },
+    {
+      "name": "session-export",
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/sessions/b1161e90198f484db09499120f2f0410/export?format=json",
+      "status": 200,
+      "seconds": 0.022,
+      "at": "2026-10-15T09:23:24.213224+00:00"
+    }
+  ],
+  "deployment": "local-loopback",
+  "transport": "HTTP against loopback URLs; fresh private workspace",
+  "document": {
+    "filename": "cvt_2103.15808v1.pdf",
+    "bytes": 990969,
+    "sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+    "kind": "real research-paper PDF",
+    "document_id": "c2662c09f3784936ac1ee32898beaff3"
+  },
+  "answer": {
+    "answer": "CvT论文提出了一种新的架构，通过引入卷积改进了Vision Transformer (ViT) 的性能和效率。具体来说，CvT在ViT中引入了两种核心方法：卷积令牌嵌入（Convolutional Token Embedding）和卷积投影（Convolutional Projection）。\n\n1. **卷积令牌嵌入**：在每个Transformer模块的开始部分，引入了一个卷积令牌嵌入，它执行重叠卷积操作，步长为1，作用于2D重塑的令牌映射（即将展平的令牌序列重新映射回空间网格）。这使得模型不仅能够捕捉局部信息，还能逐步减少序列长度，同时增加令牌特征的维度，从而实现空间下采样，同时增加特征图的数量，类似于卷积神经网络（CNNs）[S1]。\n\n2. **卷积投影**：在Transformer模块中的每个自注意力块之前的线性投影被替换为提出的卷积投影，它在2D重塑的令牌映射上应用一个s × s深度可分离卷积操作。这使得模型能够进一步捕捉局部空间上下文，减少注意力机制中的语义模糊性。同时，它允许通过使用卷积的步长对键和值矩阵进行下采样，从而提高效率4倍以上，性能下降可以忽略不计[S1]。\n\n综上所述，CvT通过引入卷积，不仅保持了Transformer的动态注意力、全局上下文和更好的泛化能力，还引入了卷积神经网络的局部不变性、尺度不变性和扭曲不变性，从而在ImageNet-1k和ImageNet-22k上取得了最先进的性能，参数更少，计算量更低[S1]。\n\n参考文献：\n[S1] cvt_2103.15808v1.pdf | 第1页-第8页",
+    "origin": "knowledge_rag",
+    "metrics": {
+      "input_tokens": 3537,
+      "output_tokens": 395,
+      "estimated": false,
+      "retrieval_ms": 19279.397999998764,
+      "elapsed_ms": 34104.68229999242,
+      "first_token_ms": 26042.447899992112,
+      "cache_hit": false,
+      "retrieved_count": 5,
+      "top1_score": 0.16043693490613045,
+      "index_version": "0c9328ac22034fedb044501e11fbeb0f",
+      "model": "research-qwen:7b",
+      "demo": false,
+      "retrieval_stages": {
+        "mode": "hybrid_rerank",
+        "candidate_k": 20,
+        "candidates": 20,
+        "results": 5,
+        "vector_ms": 190.68379999953322,
+        "bm25_ms": 774.248700006865,
+        "rerank_ms": 18278.70390001044,
+        "elapsed_ms": 19263.391800006502,
+        "warning": "",
+        "index_version": "0c9328ac22034fedb044501e11fbeb0f",
+        "embedding_fingerprint": "13d11d3f8af52181bc4c055c",
+        "score_is_probability": false
+      },
+      "end_to_end_ms": 34152.859299996635
+    },
+    "audit": {
+      "invalid_ids": [],
+      "used_ids": [
+        "S1"
+      ],
+      "needs_review": [
+        "1. **卷积令牌嵌入**：在每个Transformer模块的开始部分，引入了一个卷积令牌嵌入，它执行重叠卷积操作，步长为1，作用于2D重塑的令牌映射（即将展平的令牌序列重新映射回空间网格）。",
+        "2. **卷积投影**：在Transformer模块中的每个自注意力块之前的线性投影被替换为提出的卷积投影，它在2D重塑的令牌映射上应用一个s × s深度可分离卷积操作。",
+        "同时，它允许通过使用卷积的步长对键和值矩阵进行下采样，从而提高效率4倍以上，性能下降可以忽略不计[S1]。",
+        "综上所述，CvT通过引入卷积，不仅保持了Transformer的动态注意力、全局上下文和更好的泛化能力，还引入了卷积神经网络的局部不变性、尺度不变性和扭曲不变性，从而在ImageNet-1k和ImageNet-22k上取得了最先进的性能，参数更少，计算量更低[S1]。",
+        "[S1] cvt_2103.15808v1.pdf | 第1页-第8页"
+      ],
+      "claims": [
+        {
+          "claim": "1. **卷积令牌嵌入**：在每个Transformer模块的开始部分，引入了一个卷积令牌嵌入，它执行重叠卷积操作，步长为1，作用于2D重塑的令牌映射（即将展平的令牌序列重新映射回空间网格）。",
+          "source_ids": [],
+          "status": "待核实",
+          "missing_numbers": [
+            "1",
+            "2"
+          ]
+        },
+        {
+          "claim": "这使得模型不仅能够捕捉局部信息，还能逐步减少序列长度，同时增加令牌特征的维度，从而实现空间下采样，同时增加特征图的数量，类似于卷积神经网络（CNNs）[S1]。",
+          "source_ids": [
+            "S1"
+          ],
+          "status": "来源存在，语义需核查",
+          "missing_numbers": []
+        },
+        {
+          "claim": "2. **卷积投影**：在Transformer模块中的每个自注意力块之前的线性投影被替换为提出的卷积投影，它在2D重塑的令牌映射上应用一个s × s深度可分离卷积操作。",
+          "source_ids": [],
+          "status": "待核实",
+          "missing_numbers": [
+            "2"
+          ]
+        },
+        {
+          "claim": "同时，它允许通过使用卷积的步长对键和值矩阵进行下采样，从而提高效率4倍以上，性能下降可以忽略不计[S1]。",
+          "source_ids": [
+            "S1"
+          ],
+          "status": "待核实",
+          "missing_numbers": [
+            "4"
+          ]
+        },
+        {
+          "claim": "综上所述，CvT通过引入卷积，不仅保持了Transformer的动态注意力、全局上下文和更好的泛化能力，还引入了卷积神经网络的局部不变性、尺度不变性和扭曲不变性，从而在ImageNet-1k和ImageNet-22k上取得了最先进的性能，参数更少，计算量更低[S1]。",
+          "source_ids": [
+            "S1"
+          ],
+          "status": "待核实",
+          "missing_numbers": [
+            "1"
+          ]
+        },
+        {
+          "claim": "[S1] cvt_2103.15808v1.pdf | 第1页-第8页",
+          "source_ids": [
+            "S1"
+          ],
+          "status": "待核实",
+          "missing_numbers": [
+            "2103.15808",
+            "1",
+            "1",
+            "8"
+          ]
+        }
+      ],
+      "method": "来源存在性与数字断言规则检查；不等同于语义正确性证明",
+      "page_reference_corrections": []
+    }
+  },
+  "finished_at": "2026-10-15T09:23:24.251190+00:00",
+  "passed_check_count": 120,
+  "failed_check_count": 0
+}

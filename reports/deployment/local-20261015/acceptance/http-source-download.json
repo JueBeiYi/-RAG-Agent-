@@ -1,0 +1,15 @@
+{
+  "name": "source-download",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/documents/c2662c09f3784936ac1ee32898beaff3/file",
+  "at": "2026-10-15T09:23:23.671424+00:00",
+  "status": 200,
+  "seconds": 0.488,
+  "request": null,
+  "content_type": "application/pdf",
+  "response": {
+    "bytes": 990969,
+    "sha256": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+    "content_type": "application/pdf"
+  }
+}

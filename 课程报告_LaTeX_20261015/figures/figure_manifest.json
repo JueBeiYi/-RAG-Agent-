@@ -1,0 +1,695 @@
+{
+  "created_date": "2026-10-15",
+  "builder": "build_figures.py",
+  "font_size_pt": 11,
+  "palette": [
+    "#193A56",
+    "#168980",
+    "#D38C3C",
+    "#7F6DAD",
+    "#5688AD"
+  ],
+  "data_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+  "source_hashes": [
+    {
+      "path": "data/corpus/manifest.json",
+      "sha256": "4391d662fc77655c608161d99bac67cd3d766c2c0c0150bd3c68ab5fd038b89a",
+      "bytes": 26770
+    },
+    {
+      "path": "reports/datasets/dataset_manifest.json",
+      "sha256": "427c326edd3975fd2c45eabba5f3b5fadbce1a35c04e72b07eb4ef460e45a075",
+      "bytes": 1331
+    },
+    {
+      "path": "reports/requirements/current-standard-index.json",
+      "sha256": "c8973d01f7165ba66b225443e40dc6104a56282f7ea00a8c9be24fcbd186af6c",
+      "bytes": 821
+    },
+    {
+      "path": "reports/experiments/retrieval/frozen/metadata.json",
+      "sha256": "2186ef34f80328fceaee850364a94576df877d5554e609baead724110b18b7f4",
+      "bytes": 2987
+    },
+    {
+      "path": "reports/experiments/retrieval/parsers/results.json",
+      "sha256": "1c7d39cc12db6b74afc69cedebeb26852a525a497c3f5a3eb4edae4cc9998294",
+      "bytes": 19310
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/vector/results.json",
+      "sha256": "3339049611ce9673e8dc9c3e092ed3966937d16289abd2fb29192a6626f222fb",
+      "bytes": 12711336
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid/results.json",
+      "sha256": "110f1b84d63823a218ce84d81475adbb6796ada1b690175338edf6b1aaeb7929",
+      "bytes": 12530326
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json",
+      "sha256": "072f54f196e7a6f0dfd058351ba3b606e530f1e33cbd2fabb8bfe48b045c7061",
+      "bytes": 12312942
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/vector/results.json",
+      "sha256": "5ca9560b4c6af10530eba69b0bac236790b607f75ea55ef27e5943b3798f3721",
+      "bytes": 4322243
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/hybrid/results.json",
+      "sha256": "9cb0f0e2b7c2a958bf6261698b1d2b5591804c52a0ade753263d2cb73682d292",
+      "bytes": 4273375
+    },
+    {
+      "path": "reports/experiments/retrieval/encoding/m3e/results.json",
+      "sha256": "07fcf4c7a0cdab7afc664ef273bdf0c563a90edf019ed8803a49e9e2ed7aa347",
+      "bytes": 6542
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-256/results.json",
+      "sha256": "2241777d81fd6a115c7bbe9ef371eaf48b9d747cae1cf7b0d7b7d787577eda32",
+      "bytes": 2748648
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-512/results.json",
+      "sha256": "eb12c79bcdc41222200b6fdc16bf7eb2478190b416f7f2ca80bd468cd0dc77bd",
+      "bytes": 4755999
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-1024/results.json",
+      "sha256": "4042ea6fcfd213a7d6d2b9f82139648e0b4bc933ff14827ea648d42b8d724495",
+      "bytes": 8581431
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/recursive-512/results.json",
+      "sha256": "b4f7928b0c26520e04876928eb048947ce6b0515138860be6bdadeb117c73d17",
+      "bytes": 4545648
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/semantic-512/results.json",
+      "sha256": "555113d655ed5952e98ca089fdd7f64a20b85d5d26a01be23d59506f65d7e5fd",
+      "bytes": 4664351
+    },
+    {
+      "path": "reports/experiments/retrieval/encoding/bge-zh/results.json",
+      "sha256": "7893a910445d25f2b70d4ddade6a264b5d967f138e1e58b06c04ab65ad7f2274",
+      "bytes": 2879
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/bge-zh/recursive-512/results.json",
+      "sha256": "0e19c8343bafb0a15ab943f5a0bac2b55b638c0a2af9419eb033e1f40a7adeff",
+      "bytes": 4304779
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/results.json",
+      "sha256": "409e8d6683134fef0f71ad96b9912491fe83f7638a62c54a87cdcd30c17f7967",
+      "bytes": 1740
+    },
+    {
+      "path": "reports/experiments/retrieval/dev-parameters/results.json",
+      "sha256": "9351d14a2667757670bca4f9fce3fd3d6bcf8b8ec0dd3263017da6ff455ac82e",
+      "bytes": 35479
+    },
+    {
+      "path": "reports/experiments/generation/baseline/results.json",
+      "sha256": "c4809af2c75a806c4f00b93e24ab8f18799480b7c470eabefc46f9e080e9bfa5",
+      "bytes": 3245669
+    },
+    {
+      "path": "reports/experiments/generation/parameters/results.json",
+      "sha256": "3c4ae71d14d3a62cfbdf580baf662a00b8a898540d0b0fbc2f046aa0273979be",
+      "bytes": 1171365
+    },
+    {
+      "path": "reports/experiments/generation/prompt/results.json",
+      "sha256": "997e073bf4e771026663970cc163220fc85a9cd6837321adc4f90bb64aeb19ad",
+      "bytes": 480419
+    },
+    {
+      "path": "reports/experiments/generation/agent/results.json",
+      "sha256": "f95bb129ceeb11220c3ef53f4e649c3b10fee1c8aa45e078193cc3436a3074a8",
+      "bytes": 480053
+    },
+    {
+      "path": "reports/experiments/generation/parallel/results.json",
+      "sha256": "31819715a25d0cd22c554459f2ca04bf92e22d5ebfb678e8c70c118664eea90b",
+      "bytes": 182498
+    },
+    {
+      "path": "reports/experiments/generation/cache/results.json",
+      "sha256": "25724b6b19966e51f68884d0b33c578e61e4cf144b1f9451be7a034f7c9dc1c5",
+      "bytes": 76571
+    },
+    {
+      "path": "reports/experiments/generation/baseline/ai_review_summary.json",
+      "sha256": "de87cb18cde5a93eace55425be3e0307fde33d6da64f4dccaebaee51eccd1dac",
+      "bytes": 1314
+    },
+    {
+      "path": "reports/experiments/generation/baseline/human_scoring_60.csv",
+      "sha256": "36dc9b15761016b74b98836534e85b8bd4a9dac2dea1d40c5126ebefc187a6dc",
+      "bytes": 98397
+    },
+    {
+      "path": "reports/experiments/online-functionality/results.json",
+      "sha256": "8ae1cc9002be51a5acbbd852e687a6fb465828784e3e75c62535051695144f1f",
+      "bytes": 11670
+    },
+    {
+      "path": "reports/experiments/bad-cases/actual-bad-cases.json",
+      "sha256": "35acad8703b10acc8fdc11046fc5cc31d35d35613b698a61ee96ff71f7277024",
+      "bytes": 5016
+    },
+    {
+      "path": "reports/requirements/course-audit.json",
+      "sha256": "8275ab3cbc2ec37e5729f3d3dfb06adbb10fbd3bed608d0bb711b52be2351bab",
+      "bytes": 152492
+    },
+    {
+      "path": "reports/experiments/generation/quality-comparison/ai_quality_summary.json",
+      "sha256": "60e8fd157274a99c040c485a3de5aabc4288eac60018d131058b528f48c31937",
+      "bytes": 7602
+    },
+    {
+      "path": "reports/experiments/generation/quality-comparison/ai_quality_rows.json",
+      "sha256": "c9344f8b2531cde1af95df596c3c18948000979c43876a770a2007d63f830df8",
+      "bytes": 80355
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig01_architecture",
+      "files": [
+        "figures/fig01_architecture.pdf",
+        "figures/fig01_architecture.png",
+        "figures/fig01_architecture.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "production_index",
+        "local_runtime",
+        "acceptance"
+      ],
+      "parameters": {},
+      "note": "依据真实模块职责与数据流绘制；箭头表示主要数据或调用关系，不表示并发时序。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 4.65,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig02_dataset",
+      "files": [
+        "figures/fig02_dataset.pdf",
+        "figures/fig02_dataset.png",
+        "figures/fig02_dataset.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "dataset",
+        "corpus"
+      ],
+      "parameters": {},
+      "note": "80题分为20题开发集和60题测试集；物理页统计对应固定arXiv版本。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.35,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig03_parsers",
+      "files": [
+        "figures/fig03_parsers.pdf",
+        "figures/fig03_parsers.png",
+        "figures/fig03_parsers.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "parsers"
+      ],
+      "parameters": {},
+      "note": "30次解析；锚点保留是自动代理指标，不等于版面、表格或公式语义完全正确。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.1,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig04_chunking",
+      "files": [
+        "figures/fig04_chunking.pdf",
+        "figures/fig04_chunking.png",
+        "figures/fig04_chunking.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "chunking"
+      ],
+      "parameters": {},
+      "note": "只对比同m3e模型的5种分块变体，不混入不同模型。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.3,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig05_embeddings",
+      "files": [
+        "figures/fig05_embeddings.pdf",
+        "figures/fig05_embeddings.png",
+        "figures/fig05_embeddings.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "embeddings"
+      ],
+      "parameters": {},
+      "note": "查询编码在相同20条查询上比较；没有比较1836条与342条文档的总编码时间。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.25,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig06_vectorstores",
+      "files": [
+        "figures/fig06_vectorstores.pdf",
+        "figures/fig06_vectorstores.png",
+        "figures/fig06_vectorstores.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "vectorstores"
+      ],
+      "parameters": {},
+      "note": "不含共享向量编码；两种库在此20题上的检索质量相同。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.05,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig07_retrieval",
+      "files": [
+        "figures/fig07_retrieval.pdf",
+        "figures/fig07_retrieval.png",
+        "figures/fig07_retrieval.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "retrieval_test"
+      ],
+      "parameters": {},
+      "note": "实际60题结果；耗时排除共享查询编码，非完整在线端到端延迟。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.3,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig08_retrieval_ci",
+      "files": [
+        "figures/fig08_retrieval_ci.pdf",
+        "figures/fig08_retrieval_ci.png",
+        "figures/fig08_retrieval_ci.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "retrieval_records"
+      ],
+      "parameters": {
+        "bootstrap_samples": 5000,
+        "seed": 20261015,
+        "interval": "95% percentile",
+        "resampling_unit": "question",
+        "metric_order": [
+          "hit_at_5",
+          "mrr",
+          "recall_at_5"
+        ],
+        "mode_order": [
+          "vector",
+          "hybrid",
+          "hybrid_rerank"
+        ]
+      },
+      "note": "逐题非参数bootstrap百分位区间；仅描述此冻结题集抽样不确定性，不构成显著性检验。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.25,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig09_retrieval_categories",
+      "files": [
+        "figures/fig09_retrieval_categories.pdf",
+        "figures/fig09_retrieval_categories.png",
+        "figures/fig09_retrieval_categories.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "retrieval_category"
+      ],
+      "parameters": {},
+      "note": "各问题类别的Hit@5；类别样本量不同，不宜直接比较方差或显著性。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 2.65,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig10_rrf",
+      "files": [
+        "figures/fig10_rrf.pdf",
+        "figures/fig10_rrf.png",
+        "figures/fig10_rrf.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "rrf_grid"
+      ],
+      "parameters": {},
+      "note": "复用真实向量/BM25排名，无新增模型调用；RRF60到20仅小幅改善MRR，Hit@5与Recall@5不变。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.05,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig11_ai_quality",
+      "files": [
+        "figures/fig11_ai_quality.pdf",
+        "figures/fig11_ai_quality.png",
+        "figures/fig11_ai_quality.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "baseline_ai_quality",
+        "baseline_ai_distribution"
+      ],
+      "parameters": {},
+      "note": "AI辅助评审明确保留来源；流畅性不等同事实正确性。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.3,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig12_gen_parameters",
+      "files": [
+        "figures/fig12_gen_parameters.pdf",
+        "figures/fig12_gen_parameters.png",
+        "figures/fig12_gen_parameters.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "quality_conditions"
+      ],
+      "parameters": {
+        "score_range": [
+          1,
+          5
+        ],
+        "case_count_per_condition": 4
+      },
+      "note": "5个单因素配置，每配置同4题，各题每配置仅一次历史生成；AI辅助质量评分。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.15,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig13_prompt",
+      "files": [
+        "figures/fig13_prompt.pdf",
+        "figures/fig13_prompt.png",
+        "figures/fig13_prompt.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "prompt_ai_quality"
+      ],
+      "parameters": {},
+      "note": "当前Prompt复用参数基线的4条回答；引用质量均分2.50到3.50仅描述这4题，不推断总体收益。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.15,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig14_agent",
+      "files": [
+        "figures/fig14_agent.pdf",
+        "figures/fig14_agent.png",
+        "figures/fig14_agent.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "agent",
+        "generation_records"
+      ],
+      "parameters": {},
+      "note": "冻结检索输入/生成阶段与真实工具路由样例；Agent在该小样本中减少输入Token但耗时更长，路由匹配不等于答案语义正确。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.25,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig15_runtime_probes",
+      "files": [
+        "figures/fig15_runtime_probes.pdf",
+        "figures/fig15_runtime_probes.png",
+        "figures/fig15_runtime_probes.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "parallel",
+        "cache"
+      ],
+      "parameters": {},
+      "note": "并行实验仅本地工具，不是LLM并发；缓存仅精确重复1对请求，不能据此推广语义缓存命中率。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.05,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig16_local_run",
+      "files": [
+        "figures/fig16_local_run.pdf",
+        "figures/fig16_local_run.png",
+        "figures/fig16_local_run.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "local_runtime"
+      ],
+      "parameters": {
+        "sample_count": 1,
+        "timings_overlap": true
+      },
+      "note": "2026-10-15回环本地、独立单篇29块验收请求；耗时口径重叠，不可相加，也不是稳定均值。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 3.05,
+      "raster_dpi": 400
+    },
+    {
+      "id": "fig17_badcase",
+      "files": [
+        "figures/fig17_badcase.pdf",
+        "figures/fig17_badcase.png",
+        "figures/fig17_badcase.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "baseline_ai_scores"
+      ],
+      "parameters": {
+        "multilabel": true,
+        "denominator": 60,
+        "counts": {
+          "检索失败": 16,
+          "生成错误": 45,
+          "引用错误": 36,
+          "Agent 决策错误": 0,
+          "无明显问题": 13
+        }
+      },
+      "note": "60题AI评审中的原始多标签计数，标签并非互斥；Agent决策标签为0不等于专项Agent样例无错误。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 2.75,
+      "raster_dpi": 400
+    },
+    {
+      "id": "ui01_library",
+      "files": [
+        "figures/ui01_library.pdf",
+        "figures/ui01_library.png",
+        "figures/ui01_library.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "original-ui/新版论文库.jpg"
+      ],
+      "parameters": {
+        "original_image_sha256": "55ffef3faaa7d629069bb98550dfeb4023cfadc98b7081048d8afb49bd04708a",
+        "annotation": "external labels and arrows; original screenshot pixels unchanged"
+      },
+      "note": "2026-10-10历史真实页面，非2026-10-15新生成回答。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 5.5,
+      "raster_dpi": 400
+    },
+    {
+      "id": "ui02_chat",
+      "files": [
+        "figures/ui02_chat.pdf",
+        "figures/ui02_chat.png",
+        "figures/ui02_chat.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "original-ui/新版科研问答.jpg"
+      ],
+      "parameters": {
+        "original_image_sha256": "29cd5e8216cd8b3340c41993bfb968a514d2f037f64a382522b26498380c211b",
+        "annotation": "external labels and arrows; original screenshot pixels unchanged"
+      },
+      "note": "2026-10-10历史真实页面，非2026-10-15新生成回答。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 5.5,
+      "raster_dpi": 400
+    },
+    {
+      "id": "ui03_comparison",
+      "files": [
+        "figures/ui03_comparison.pdf",
+        "figures/ui03_comparison.png",
+        "figures/ui03_comparison.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "original-ui/新版论文对比.jpg"
+      ],
+      "parameters": {
+        "original_image_sha256": "b7c5faffddc817628ea8adefcee1dac9465a269b5b3dff4c675b354d10c4768a",
+        "annotation": "external labels and arrows; original screenshot pixels unchanged"
+      },
+      "note": "2026-10-10历史真实页面，非2026-10-15新生成回答。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 5.5,
+      "raster_dpi": 400
+    },
+    {
+      "id": "ui04_evidence",
+      "files": [
+        "figures/ui04_evidence.pdf",
+        "figures/ui04_evidence.png",
+        "figures/ui04_evidence.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "original-ui/新版原文证据.jpg"
+      ],
+      "parameters": {
+        "original_image_sha256": "d7410157edf593e5315bab8b71490f64cdd8dff8e209297eaa082e0ae64e9335",
+        "annotation": "external labels and arrows; original screenshot pixels unchanged"
+      },
+      "note": "2026-10-10历史真实页面，非2026-10-15新生成回答。",
+      "native_width_inches": 8.0,
+      "native_height_inches": 5.5,
+      "raster_dpi": 400
+    },
+    {
+      "id": "ui05_local",
+      "files": [
+        "figures/ui05_local.jpg"
+      ],
+      "source": "reports/deployment/local-20261015/本地界面运行截图.jpg",
+      "sha256": "cf084fcbd650e6e915c3088dc485261c19b5feef7d143bfca7e54d9c3d29058a",
+      "note": "2026-10-15真实本地运行页面；既有历史会话不视为此次新生成。"
+    }
+  ],
+  "bootstrap_intervals": [
+    {
+      "mode": "vector",
+      "metric": "hit_at_5",
+      "n": 60,
+      "mean": 0.4166666666666667,
+      "ci95_low": 0.3,
+      "ci95_high": 0.5333333333333333
+    },
+    {
+      "mode": "hybrid",
+      "metric": "hit_at_5",
+      "n": 60,
+      "mean": 0.43333333333333335,
+      "ci95_low": 0.31666666666666665,
+      "ci95_high": 0.5666666666666667
+    },
+    {
+      "mode": "hybrid_rerank",
+      "metric": "hit_at_5",
+      "n": 60,
+      "mean": 0.6166666666666667,
+      "ci95_low": 0.48333333333333334,
+      "ci95_high": 0.7333333333333333
+    },
+    {
+      "mode": "vector",
+      "metric": "mrr",
+      "n": 60,
+      "mean": 0.2991954641219347,
+      "ci95_low": 0.2119006059300177,
+      "ci95_high": 0.39096786159102326
+    },
+    {
+      "mode": "hybrid",
+      "metric": "mrr",
+      "n": 60,
+      "mean": 0.35382609593135916,
+      "ci95_low": 0.2557550461843225,
+      "ci95_high": 0.4595554046039243
+    },
+    {
+      "mode": "hybrid_rerank",
+      "metric": "mrr",
+      "n": 60,
+      "mean": 0.43134695470221784,
+      "ci95_low": 0.33157044721847356,
+      "ci95_high": 0.5336003421529737
+    },
+    {
+      "mode": "vector",
+      "metric": "recall_at_5",
+      "n": 60,
+      "mean": 0.325,
+      "ci95_low": 0.225,
+      "ci95_high": 0.43333333333333335
+    },
+    {
+      "mode": "hybrid",
+      "metric": "recall_at_5",
+      "n": 60,
+      "mean": 0.35833333333333334,
+      "ci95_low": 0.25,
+      "ci95_high": 0.475
+    },
+    {
+      "mode": "hybrid_rerank",
+      "metric": "recall_at_5",
+      "n": 60,
+      "mean": 0.475,
+      "ci95_low": 0.36666666666666664,
+      "ci95_high": 0.5833333333333334
+    }
+  ]
+}

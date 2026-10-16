@@ -1,0 +1,184 @@
+﻿study,condition,case_id,category,split,question,answer,reference_answer,elapsed_ms,first_token_ms,prompt_tokens,completion_tokens,success,error,truncated,expected_tools,invoked_tools,cache_hit,actual_model_calls,workers,local_tools_only,llm_called
+baseline,baseline_current,VT-F02,factual,test,ViT 原文介绍的两种大规模预训练数据来源是什么，哪一种是内部数据？,ViT 原文介绍的两种大规模预训练数据来源是 JFT-300M 和 ImageNet。其中，JFT-300M 是内部数据（[原文第1页]）。证据来源：[1],公开的ImageNet-21k与内部的JFT-300M；不能把使用内部JFT数据的结果描述成仅用ImageNet-1K训练。,6540.716,5509.84429998789,2050,53,True,,False,,,,,,,
+baseline,baseline_current,VT-F03,factual,test,ViT 方法部分默认使用什么位置编码？作者是否报告更复杂二维编码有显著收益？,[宋1] 中未明确说明 ViT 方法部分默认使用何种位置编码，也未报告更复杂的二维编码有显著收益。[S1],使用可学习的一维位置嵌入。作者在该实验设置下未观察到更复杂二维感知位置编码的显著收益。,2446.656,1772.618499933742,4040,34,True,,False,,,,,,,
+baseline,baseline_current,VT-F05,factual,test,DeiT 引言报告单节点训练使用多少GPU、预训练耗时多久，且可选微调多久？,DeiT 在单节点训练时使用了 8 块 GPU，预训练耗时 53 小时，可选微调耗时 20 小时。[S1],单个8-GPU节点；预训练约53小时，可选更高分辨率微调约20小时。属于论文硬件与训练设置下的耗时。,2232.193,1334.224299993366,3108,45,True,,False,,,,,,,
+baseline,baseline_current,VT-F06,factual,test,DeiT 的蒸馏token学习什么目标，它与class token如何交互？,DeiT 的蒸馏token在输出时的目标是重现教师网络预测的（硬）标签，而不是真实标签。它与class token类似，通过自我注意机制与其他嵌入相互作用，并在网络的最后一层输出。[S1],蒸馏token学习教师给出的标签预测；class token面向真实标签。两个token通过Transformer注意力交互。,2519.532,1442.1957000158727,3192,52,True,,False,,,,,,,
+baseline,baseline_current,VT-F08,factual,test,Swin 中 W-MSA 与 SW-MSA 分别对应什么窗口划分，为什么交替使用？,W-MSA 使用常规窗口划分，而 SW-MSA 使用移位窗口划分。交替使用是为了在保持非重叠窗口高效计算的同时，引入相邻窗口间的连接，从而增强模型的建模能力。[S3],W-MSA使用常规非重叠窗口，SW-MSA使用移位窗口。交替划分使原先不同窗口的token能够建立连接。,2618.543,1584.7737999865785,3599,52,True,,False,,,,,,,
+baseline,baseline_current,VT-F09,factual,test,Swin 表1中只用ImageNet-1K、224分辨率的Swin-T，其参数量、计算量和top-1是多少？,根据表1(a)中的数据，使用ImageNet-1K和224分辨率训练的Swin-T模型的参数量为86M，计算量为55.4G，top-1准确率为82.2%。[S4],约29M参数、4.5G FLOPs、81.3% top-1；应同时保留ImageNet-1K和224×224的条件。,2738.485,1602.726300014183,3647,58,True,,False,,,,,,,
+baseline,baseline_current,VT-F11,factual,test,PVT 的 SRA 如何减少高分辨率注意力的资源开销？Q是否也同样降采样？,PVT 的 SRA 通过在注意力操作前对 key 和 value 进行空间降采样，从而大大减少了计算/内存开销。[S1] Q 和 K 也会进行降采样处理。[S1],SRA对K/V的空间维度进行压缩，以较少的K/V位置参与注意力；Q保留原来的查询位置，不是把三者同时按同一分辨率缩小。,2356.982,1347.2610999597237,3001,52,True,,False,,,,,,,
+baseline,baseline_current,VT-F12,factual,test,PVT 表2中 PVT-Small 的20.2是什么指标？其参数量和GFLOPs是多少？,PVT-Small 的20.2是Top-1错误率 [S1]。其参数量为24.5M，GFLOPs为3.8 [S1]。,20.2%是top-1错误率，而非准确率；对应24.5M参数和3.8 GFLOPs，计算量按224×224输入报告。,2483.517,1639.3890000181273,3734,43,True,,False,,,,,,,
+baseline,baseline_current,VT-F14,factual,test,T2T-ViT 通过骨干架构实验选择了什么宽度与深度组合？,T2T-ViT 选择了深度窄（Deep-narrow）的结构，具体参数为隐藏维度256-512，MLP大小512-1536。[S1],选择更深、更窄的骨干结构，用较窄隐藏维度与较多层数获得更好的参数和MACs利用率。,2699.762,1781.1197000555694,3793,47,True,,False,,,,,,,
+baseline,baseline_current,VT-F15,factual,test,T2T-ViT 表2中默认分辨率的T2T-ViT-14，top-1、参数量和MACs分别是多少？,T2T-ViT 表2中默认分辨率的T2T-ViT-14，top-1准确率为81.5%，参数量为21.5 M，MACs为4.8 G。（来源：[S4] t2t_2101.11986v3.pdf 第8页）,在从头训练ImageNet的默认224分辨率设置中，top-1为81.5%，参数21.5M，MACs为4.8G；384分辨率行是另一设置。,2499.174,1045.5019000219181,2050,76,True,,False,,,,,,,
+baseline,baseline_current,VT-F17,factual,test,CaiT 将处理分成哪两个阶段？class-attention阶段更新哪些token？,CaiT 将处理分成两个阶段：自注意力阶段和类注意力阶段。类注意力阶段更新类嵌入（class embedding）。[S2],先处理不含CLS的patch自注意力，再通过class-attention汇总到CLS。在class-attention阶段，前向残差更新只作用于CLS。,2129.838,1464.0056999633089,3297,34,True,,False,,,,,,,
+baseline,baseline_current,VT-F18,factual,test,CaiT 文中 LayerScale 初始epsilon在深度18及以下、深度24和更深网络如何设置？,"根据[S2]（物理页4至5），CaiT 文中的 LayerScale 初始 epsilon (ε) 在不同深度下的设置如下：
+- 深度18及以下：ε = 0.1
+- 深度24：ε = 10^(-5)
+- 深度更深：ε = 10^(-6)
+
+[S2]",文中采用：到深度18设0.1，深度24设10的负5次方，更深网络设10的负6次方。不要把深度24与更深网络混为同一档。,3284.74,1650.7673000451177,3756,83,True,,False,,,,,,,
+baseline,baseline_current,VT-F20,factual,test,CvT 默认是否保留位置嵌入？表5移除位置嵌入后的CvT-13准确率是多少？,CvT 默认不保留位置嵌入。表5显示移除位置嵌入后的CvT-13准确率为81.6%。[S1],默认移除位置嵌入。表5中无位置嵌入的CvT-13为81.6% top-1，这结论限定于该卷积架构和实验。,2326.831,1598.2873000903055,3501,38,True,,False,,,,,,,
+baseline,baseline_current,VT-F21,factual,test,CvT 表3中CvT-W24的87.7%是在什么预训练、分辨率和模型规模条件下得到的？,CvT-W24的87.7% Top-1精度是在预训练于ImageNet-22k数据集、输入分辨率为384×384、并应用于ImageNet-1k验证集条件下获得的。[S2],ImageNet-22k预训练、ImageNet-1k微调评价、384×384输入；约277M参数和193.2G FLOPs，top-1为87.7%。,2797.079,1652.5459999684244,3732,58,True,,False,,,,,,,
+baseline,baseline_current,VT-F22,factual,test,CrossViT 为什么使用两个分支？两个分支的patch尺寸是否相同？,CrossViT 使用两个分支是为了学习多尺度特征，提高图像识别的准确性。[S1] 两个分支的 patch 尺寸不同，这使得平滑学习特征变得困难。[S4],用两条计算规模不同的分支处理小patch和大patch，以学习互补的多尺度表示；patch尺寸不同。,2595.481,1595.7062999950722,3380,46,True,,False,,,,,,,
+baseline,baseline_current,VT-F23,factual,test,CrossViT 跨分支融合时谁作为查询，读取另一分支的什么信息？,CrossViT 中的跨分支融合通过交叉注意力机制进行，具体来说，一个分支作为查询（query），读取另一个分支的键值（key-value）信息。[S1],各分支的CLS充当查询，从另一分支的patch token读取信息；避免让所有patch彼此建立完整跨分支注意力矩阵。,2524.348,1613.9552999520674,3465,42,True,,False,,,,,,,
+baseline,baseline_current,VT-F24,factual,test,CrossViT 文中线性时间与内存复杂度的声明，具体针对哪一部分？,CrossViT 文中并未直接声明线性时间与内存复杂度的具体部分。相关描述集中在模型架构和训练设置上，但未明确指出线性复杂度的具体实现位置。[S1]等来源主要讨论了模型的性能提升和架构设计，但未详细说明线性复杂度的实现细节。,针对以单个代理token作为查询的跨分支注意力融合；不能据此声称整个模型内所有自注意力都线性。,2864.106,1365.7775000901893,3754,70,True,,False,,,,,,,
+baseline,baseline_current,VT-F25,factual,test,LeViT 文中以LeViT-256说明的输入stem有多少个卷积层？卷积核、stride及通道序列是什么？,LeViT-256的输入stem包含2个卷积层，卷积核大小为7×7，stride为2，通道序列从64->128。来源：[levit_2104.01136v2.pdf 第7页]。证据不足，原文未详细列出具体参数。,四层3×3、stride为2的卷积；该LeViT-256示例的通道由3依次变为32、64、128、256，使空间分辨率逐步缩小。,2544.328,1039.8174000438303,2050,75,True,,False,,,,,,,
+baseline,baseline_current,VT-F26,factual,test,LeViT 用什么位置机制替代ViT的位置嵌入？是否每个注意力头共享同一偏置表？,LeViT 使用注意力偏置（attention bias）替代了 ViT 的位置嵌入，而不是每个注意力头共享同一偏置表。[S1],使用可学习、按注意力头设置的平移不变attention bias，代替ViT的位置嵌入；偏置按head设置。,2243.48,1521.8496000161394,3300,35,True,,False,,,,,,,
+baseline,baseline_current,VT-F27,factual,test,LeViT 是否保留分类token？其分类读出采用什么方式？,LeViT 保留分类 token，并采用两个头进行分类和蒸馏任务，在测试时两个头的输出结果取平均。[S2],移除分类token，使用空间平均池化形成分类表示，以便保持BCHW张量形式。,2225.517,1539.1354000894353,3299,33,True,,False,,,,,,,
+baseline,baseline_current,VT-F29,factual,test,BEiT 遮挡建模大约遮挡多少比例的patch，使用何种遮挡布局？,BEiT 遮挡建模时随机遮挡最多 75 个 patch，大约是总 patch 数的 40%。[S2],约40%的patch，采用块状遮挡而非仅把每个位置当独立随机点；被遮挡patch替换为可学习mask嵌入。,2571.042,1816.8142000213265,3875,36,True,,False,,,,,,,
+baseline,baseline_current,VT-F30,factual,test,BEiT 使用多大的离散视觉词表？224×224图像、16×16 patch对应多少个视觉token？,BEiT 使用的离散视觉词表大小为 8192 个词。对于 224×224 的图像，使用 16×16 的 patch 时，对应 14×14=196 个视觉 token。[S1],词表有8192项；224/16=14，得到14×14=196个视觉token，与patch位置一一对应。,3151.487,1874.1054999409243,3914,65,True,,False,,,,,,,
+baseline,baseline_current,VT-C02,comparison,test,ViT 与 Swin 如何组织空间特征和注意力范围？,ViT 使用全局注意力机制，计算每个令牌与其他所有令牌的关系，而Swin Transformer则通过非重叠窗口内的局部注意力机制来高效建模空间特征。Swin Transformer通过在连续自注意力层之间移动窗口分割来组织注意力范围，这使得模型具有线性计算复杂度，适用于密集预测任务。[S1],ViT的patch序列通常保持单尺度并使用全局自注意力；Swin逐级合并patch形成层次表示，在局部窗口内计算注意力并通过移位连接窗口。,3163.651,1616.592500009574,3082,74,True,,False,,,,,,,
+baseline,baseline_current,VT-C04,comparison,test,CvT 与 ViT 在最初token形成和注意力投影上有什么差别？,"CvT 在最初 token 形成上使用了 convolutional token embedding，而 ViT 使用的是 non-overlapping 的 token embedding [S4]。在注意力投影上，CvT 使用了 convolutional projection，而 ViT 使用的是 linear projection [S4]。
+
+[S4] cvt_2103.15808v1.pdf | 第1–2页",ViT将固定patch展开后线性投影，标准注意力使用线性Q/K/V投影；CvT采用卷积token嵌入和卷积投影，把局部空间信息注入两个位置。,3007.739,1311.977400095202,2813,85,True,,False,,,,,,,
+baseline,baseline_current,VT-C05,comparison,test,CrossViT 与 PVT 的多尺度表示如何形成？,CrossViT 和 PVT 均采用了多尺度表示，但具体实现方式不同。CrossViT 通过多尺度变压器编码器和交叉注意力机制融合不同尺度的特征，而 PVT 则通过分层次的变压器编码器处理不同尺度的特征。[S1],CrossViT同时运行不同patch尺度的双分支并交互；PVT在四个阶段逐步降低空间分辨率，产生金字塔特征。并行多尺度与逐级多尺度不能混同。,3112.065,1791.4773999946192,3881,63,True,,False,,,,,,,
+baseline,baseline_current,VT-C06,comparison,test,T2T-ViT 与 ViT 为什么对局部结构的建模方式不同？,T2T-ViT 通过 Tokens-to-Token (T2T) 过程逐步将图像分割为标记并结构化聚合标记，而 ViT 直接将图像分割为标记。T2T-ViT 能够同时建模全局关系和图像的结构信息，而 ViT 主要建模全局关系，对局部结构的建模能力较弱。[S1],ViT直接把固定patch映射为token；T2T通过重构与重叠切分反复聚合相邻区域，将边缘等局部结构逐渐编码进token。,2641.441,920.3391000628471,3700,86,True,,False,,,,,,,
+baseline,baseline_current,VT-C07,comparison,test,CaiT 与 ViT 在class token进入网络的时机上有何区别？,"CaiT 在变压器中间阶段插入了class token，而ViT则在输入阶段就引入了class token。[S1]指出，CaiT通过在变压器中间阶段插入class token，消除了变压器前几层的不一致性，使其完全用于patch之间的自注意力。[S1] (第5页)
+
+因此，CaiT与ViT在class token进入网络的时机上有所不同，CaiT选择在中间阶段插入class token，而ViT则在输入阶段就引入了class token。[S1] (第5页)",ViT从输入开始加入可学习class token；CaiT先执行仅patch的自注意力，到后面的class-attention阶段才引入CLS并汇总分类信息。,3897.563,1413.54840004351,3134,122,True,,False,,,,,,,
+baseline,baseline_current,VT-C09,comparison,test,BEiT 与 DeiT 提升数据效率的训练信号有什么差别？,BEiT 与 DeiT 在提升数据效率的训练信号上有所不同。BEiT 通过自我监督预训练和中间微调来提高性能，而 DeiT 则从零开始训练。[S1] 中提到，BEiT 的自我监督预训练和中间微调比从零开始训练的 DeiT 收敛更快，并且在少量 epochs 内就能达到合理的效果。[S1],BEiT先以遮挡位置的离散视觉token作为自监督目标，不使用预训练图像标签；DeiT使用分类标签并可结合教师预测进行蒸馏。,3490.397,1730.4651000304148,3646,89,True,,False,,,,,,,
+baseline,baseline_current,VT-C10,comparison,test,CaiT 与 T2T-ViT 分别针对哪一种ViT瓶颈？,CaiT 和 T2T-ViT 分别针对 ViT 的计算量大和结构信息建模不足的瓶颈。T2T-ViT 通过引入 Tokens-to-Token 模块和深窄结构设计，显著减少了参数量和计算量，同时提高了性能。[S1],CaiT关注更深Transformer的优化稳定性与分类汇总目标；T2T-ViT关注直接patch切分缺少局部结构，以及骨干在有限计算和样本下的效率。,3106.841,1841.7383000487462,3753,64,True,,False,,,,,,,
+baseline,baseline_current,VT-C11,comparison,test,ViT 的位置嵌入与 CvT 的默认设置是否一致？,ViT 默认包含位置嵌入，而CvT 默认移除了位置嵌入。[S1] 表5和表6的实验结果表明，移除CvT中的位置嵌入不会影响模型性能。,不一致。ViT默认加入可学习一维位置嵌入；CvT借助卷积空间先验默认不加位置嵌入，该结论不适用于所有Transformer。,2268.874,1319.3465999793261,2862,49,True,,False,,,,,,,
+baseline,baseline_current,VT-C12,comparison,test,CrossViT 与 Swin 如何让原先分开的区域交换信息？,CrossViT 和 Swin 通过跨注意力机制让不同分支的信息进行交换。CrossViT 在每个多尺度 Transformer 编码器中加入跨注意力模块，使小分支和大分支能够学习互补的特征。[S1] 中提到，CrossViT 的小分支生成更多低级特征，而大分支生成更抽象的特征，两者互补使整体效果更好。[S1],CrossViT通过各分支CLS读取另一分支patch；Swin通过交替移位窗口让邻近窗口成员重新组合。前者是跨分支融合，后者是跨窗口连接。,2953.259,1194.4244999904186,3328,88,True,,False,,,,,,,
+baseline,baseline_current,VT-C13,comparison,test,LeViT 与 DeiT 的分类表示读出方式有何不同？,LeViT 和 DeiT 在分类表示读出方式上没有直接对比，但根据[S1]中的信息，LeViT 在训练过程中使用了 distillation 方法，训练了单独的头用于分类和蒸馏任务，测试时将两个头的输出进行平均。而 DeiT 的非线性激活函数使用了 GELU，LeViT 则全部使用了 Hardswish。[S1],LeViT去掉分类token并进行空间平均池化；DeiT保留class与蒸馏token，并可结合两个分类头的预测。,3602.693,1812.5634000170976,3769,91,True,,False,,,,,,,
+baseline,baseline_current,VT-C14,comparison,test,ViT 主要监督预训练与 BEiT 的遮挡预训练在标签使用上有什么区别？,ViT 主要监督预训练使用 ImageNet-22K 的大量标注数据进行预训练，而 BEiT 的遮挡预训练仅使用 ImageNet-1K 的少量标注数据进行预训练。[S1],ViT本文主要以图像分类标签进行监督训练；BEiT遮挡预训练不使用图像类别标签，以图像tokenizer产生的离散目标学习表示。ViT也包含小规模自监督探索，不能说它完全未讨论自监督。,2356.303,1375.0337000237778,3039,50,True,,False,,,,,,,
+baseline,baseline_current,VT-C15,comparison,test,Swin-T表1的81.3与PVT-Small表2的20.2能直接相减比较准确率吗？正确统一指标后是多少？,"不能直接相减比较准确率，因为它们针对不同的任务。Swin-T的81.3是ImageNet上的top-1准确率，而PVT-Small的20.2是ImageNet上的top-1错误率。正确统一指标后，Swin-T的准确率为78.7%，PVT-Small的准确率为80.2%。（来源：表2 PVT-Medium 8.0, 表2 PVT-Large 9.8, 表2 ResNet101 7.9, 表2 ResNeXt101-32x4d 8.0, 表2 ResNeXt101-64x4d 15.6, 表2 ViT-Small/16 9.9）",不能直接相减：81.3是top-1准确率，20.2是top-1错误率。PVT对应79.8%准确率，报告值相差1.5个百分点；不同训练配方使这不成为架构机制的因果证据。,4596.407,1007.6983999460936,2050,178,True,,False,,,,,,,
+baseline,baseline_current,VT-C16,comparison,test,比较CvT-13与T2T-ViT-14的默认ImageNet结果：精度和参数如何，计算量列能否不加说明直接等同？,"CvT-13在ImageNet上的Top-1精度为81.6%，参数少1.7%，计算量少0.2%。T2T-ViT-14的Top-1精度为81.5%，参数少1.5%，计算量少1.3%。两者精度相近，但CvT-13在参数和计算量上略占优势。
+
+参考文献：[41]",CvT-13为81.6%、约20M参数、4.5G FLOPs；T2T-ViT-14为81.5%、21.5M参数、4.8G MACs。报告中的FLOPs与MACs口径不同，不能直接据数值宣称相同计算量。,2827.722,972.8976000333205,2050,96,True,,False,,,,,,,
+baseline,baseline_current,VT-C17,comparison,test,DeiT与BEiT提高到384分辨率的额外微调，各在文中报告多少轮？,DeiT在384分辨率下的额外微调进行了10个epoch（约25个批次），而BEiT在384分辨率下的额外微调进行了更多的轮次，具体数值未在文中明确给出。[S2],DeiT报告额外25个epoch；BEiT报告额外10个epoch。它们继承各自前序训练设置，不能仅按微调轮数判断整体训练成本。,2586.483,1508.3040000172332,3666,53,True,,False,,,,,,,
+baseline,baseline_current,VT-C18,comparison,test,PVT 与 LeViT 都使用分辨率逐步下降的结构，主要应用目标是否相同？,证据不足，无法直接比较PVT与LeViT的主要应用目标。[S1]中提到LeViT的设计优化了高通量环境下的速度与准确性trade-off，而PVT的具体目标未在提供的证据中提及。[S3]中LeViT的目标是优化速度与效率之间的权衡，但PVT的具体应用目标未明确说明。因此无法直接得出两者的应用目标是否相同。[S1],PVT着重通用视觉骨干及密集预测所需特征金字塔；LeViT主要针对高速度图像分类的精度与推理延迟权衡。共享金字塔思想不意味着已在同一任务上充分比较。,2883.31,978.0812000390142,3218,95,True,,False,,,,,,,
+baseline,baseline_current,VT-C20,comparison,test,Swin 的相对位置偏置与 CvT 不加位置嵌入，是否表示二者都忽略空间关系？,Swin 的相对位置偏置机制并未忽略空间关系，而是通过相对位置偏置矩阵来捕捉局部空间上下文。而 CvT 通过移除位置嵌入，证明了卷积操作本身能够有效捕捉局部信息，从而不需要位置嵌入来建模空间关系。[S1][S2],不是。Swin在窗口注意力中使用相对位置偏置；CvT通过卷积建模局部空间关系，才在该架构上省去显式位置嵌入。,2715.009,1377.8308000182733,3097,69,True,,False,,,,,,,
+baseline,baseline_current,VT-S01,synthesis,test,结合ViT与DeiT，归纳让视觉Transformer得到较强分类效果的两条不同路径。,"让视觉Transformer（ViT）获得较强分类效果的两条不同路径分别是：
+
+1. [S1] 通过架构设计优化，如T2T-ViT采用深度窄架构设计，减少冗余并提高特征丰富性。
+2. [S3] 采用卷积嵌入，如CrossViT通过在Transformer中引入卷积层作为patch tokenizer，显著提升分类性能。
+
+[S1] [S3]",一条是ViT展示的大规模预训练与下游迁移；另一条是DeiT在ImageNet范围内优化训练配方并用教师蒸馏。二者的数据与成本条件应同时说明。,3315.622,1522.8274000110105,3240,92,True,,False,,,,,,,
+baseline,baseline_current,VT-S02,synthesis,test,根据Swin和PVT，总结为什么层次化表示对通用视觉骨干有帮助。,层次化表示有助于通用视觉骨干，因为它可以处理视觉元素的尺度变化，并且具有线性计算复杂度，适用于不同规模的建模。Swin Transformer 通过从小尺寸 patch 开始，逐步在更深的 Transformer 层中合并相邻 patch，构建了层次化的特征图，这使得模型能够方便地利用特征金字塔网络等密集预测技术。[S1] [S3],多级空间分辨率为不同尺度视觉实体和密集预测提供特征；同时，Swin局部窗口、PVT空间压缩注意力等设计控制高分辨率阶段成本。收益应按任务和设置评价。,2484.528,778.0340999597684,3030,87,True,,False,,,,,,,
+baseline,baseline_current,VT-S04,synthesis,test,结合CrossViT和PVT，为多尺度Transformer表示给出一个简要分类。,CrossViT 和 PVT 均采用多尺度 Transformer 表示，但具体实现有所不同。CrossViT 通过多尺度 Transformer 编码器和交叉注意力机制融合不同尺度的特征，而 PVT 则通过不同大小的 patch 令牌处理和多尺度特征融合。[S1],可分为并行分支式和逐级金字塔式：CrossViT同时处理大小patch并交换信息；PVT逐阶段减小空间尺度输出多级特征。该分类描述这两篇，不穷尽所有设计。,1954.842,627.6672000531107,3727,68,True,,False,,,,,,,
+baseline,baseline_current,VT-S05,synthesis,test,归纳DeiT与BEiT提供的两种可区别于单纯监督分类的学习信号。,DeiT和BEiT通过不同的方式提供学习信号。DeiT采用随机初始化，而BEiT通过预训练提供学习信号。BEiT的预训练信号包括自监督学习，如掩码图像建模，而DeiT则没有利用预训练信号。[S1],DeiT的教师预测通过蒸馏token传递；BEiT预测被遮挡位置的离散视觉token。前者是教师监督，后者的预训练信号由图像自身及tokenizer产生。,2754.224,1552.4183999514207,3396,61,True,,False,,,,,,,
+baseline,baseline_current,VT-S06,synthesis,test,结合CaiT和LeViT，总结图像级表示除了从网络输入一路携带CLS外，还可以怎样获得。,"CaiT通过在patch embeddings之后插入CLS，并冻结patch embeddings来获得图像级表示，而LeViT则没有直接提及除CLS外的其他机制。[S1]指出CaiT在patch embeddings之后插入CLS，并冻结它们以节省计算，从而让网络后期部分专注于总结信息供线性分类器使用。[S1]
+
+证据不足时明确说明：
+LeViT未在提供的信息中提及除CLS外的其他机制获得图像级表示。[S2]",CaiT在后段用class-attention读取patch生成CLS；LeViT不使用分类token，而在空间维度平均池化。两种方法分别保持注意力读出或直接池化。,3714.016,1620.0621000025421,3477,106,True,,False,,,,,,,
+baseline,baseline_current,VT-S08,synthesis,test,综合ViT与BEiT，概括预训练模型迁移到图像分类下游任务的共同步骤及训练目标差别。,"预训练模型迁移到图像分类下游任务的共同步骤包括：首先进行自监督预训练，然后在特定数据集上微调模型参数。BEiT与ViT的主要差别在于训练目标：BEiT通过恢复掩蔽图像块来学习图像表示，而ViT通过学习图像补丁来直接接受图像数据。[S1][S4]
+
+证据充足，但具体步骤和目标差别主要集中在BEiT上，关于ViT的具体预训练步骤和目标在提供的文献中未详细说明。",共同步骤是先学习编码器，再附加或替换任务预测头并微调。ViT主要监督预训练；BEiT先做遮挡视觉token预测，再使用任务标签微调。,3432.542,1191.2460000021383,3055,110,True,,False,,,,,,,
+baseline,baseline_current,VT-S10,synthesis,test,结合LeViT与CvT，归纳评价效率时应记录哪些信息。,评价LeViT与CvT的效率时，应记录模型的参数量、FLOPs、以及在ImageNet上的top-1精度。[S1]指出LeViT在效率和准确性之间取得了良好的平衡，而[S2]提供了具体数值比较。因此，主要信息包括模型架构、参数量、FLOPs和ImageNet上的性能。[S1][S2],既记录参数量和运算统计，也记录真实硬件、batch设置和实际吞吐或延迟。LeViT指出矩阵计算与卷积访问模式影响硬件效率；CvT的FLOPs与参数表不能直接替代实际延迟测量。,3326.443,1564.4307000329718,3576,87,True,,False,,,,,,,
+baseline,baseline_current,VT-S11,synthesis,test,PVT和CvT除ImageNet主分类评测外，分别用什么任务类型检验模型？,"PVT在Mask R-CNN任务中进行了验证[S2]。CvT则在ImageNet、ImageNet-Real和ImageNet-V2数据集上进行了主分类评测，在CIFAR-10/100、Oxford-IIIT Pet和Oxford-IIIT Flowers-102等下游任务上进行了迁移测试[S1, S4]。证据不足时明确说明。[S1, S4]",PVT还以COCO目标检测/实例分割和ADE20K语义分割检验通用骨干；CvT报告CIFAR、Pets、Flowers等分类迁移任务。应区分密集预测与分类迁移。,3516.19,1605.4557000752538,3434,94,True,,False,,,,,,,
+baseline,baseline_current,VT-S12,synthesis,test,综合Swin与CrossViT，说明高效的信息交换设计为何必须注明它适用的模块。,"高效的信息交换设计在Swin和CrossViT中均显著提升了模型性能，但Swin使用了基于窗口的自注意力机制，而CrossViT则采用了交叉注意力机制。这些机制分别在不同的模块中有效，Swin中的Shifted Window机制在Swin-T、Swin-S和Swin-B模型中表现突出，CrossViT中的交叉注意力机制则在多个模型中展示了其优势。因此，高效的信息交换设计的具体效果需注明适用的模块，以确保不同模型间的可比性和准确性。[S2][S3]
+
+证据充足，已按要求概述。",Swin的移位窗口让局部窗口跨层连接；CrossViT用单CLS查询做跨尺度融合。各自控制了特定注意力模块的开销，不能把一处线性机制当成整个网络所有运算的复杂度。,4220.282,1641.1731999833137,3606,129,True,,False,,,,,,,
+baseline,baseline_current,VT-S13,synthesis,test,根据T2T-ViT和DeiT，归纳在不借助更大外部图像数据集时改善分类的两个方向。,"改善分类的两个方向包括：
+1. 采用更高效的架构设计，如T2T-ViT通过深度窄化结构减少通道维度并增加层深度，从而减少冗余并提高特征丰富度。
+2. 使用知识蒸馏技术，如DeiT通过添加KD令牌来改进原始ViT，但T2T-ViT不依赖于CNN作为教师模型。[S1]",T2T改造局部结构编码和骨干宽深；DeiT优化数据增强/正则化配方并加入教师蒸馏。二者从架构与训练两侧改善ImageNet范围内的数据利用。,3222.651,1545.319400029257,3755,85,True,,False,,,,,,,
+baseline,baseline_current,VT-S15,synthesis,test,综合PVT与LeViT，在选层次Transformer时应分别关注哪些任务证据？,综合PVT与LeViT，在选择层次Transformer时，应关注模型的速度和准确性。LeViT在高通量环境下表现出色，速度-准确性折中优势明显，而PVT则相对较慢。[S1]指出LeViT通过DeiT-like的蒸馏技术，在仅使用ImageNet训练时能获得更高的准确性。因此，在选择层次Transformer时，应优先考虑速度和准确性之间的平衡。[S1],需要密集预测时关注PVT在检测/分割中的多尺度骨干证据；需要快速分类时关注LeViT在目标硬件上的精度-速度证据。相同层次结构思想不保证跨任务同样最佳。,2992.752,1103.3455999568105,2993,95,True,,False,,,,,,,
+baseline,baseline_current,VT-R02,reasoning,test,ViT保持16×16 patch，把图像从224提高到384时，patch数如何变化？只按patch两两注意力项估算增长倍率。,"当图像尺寸从224×224提高到384×384时，patch尺寸保持16×16不变。因此，patch的数量会相应增加。具体变化为：
+
+- 图像尺寸224×224时，patch数量为：\(\frac{224}{16} \times \frac{224}{16} = 14 \times 14 = 196\)
+- 图像尺寸384×384时，patch数量为：\(\frac{384}{16} \times \frac{384}{16} = 24 \times 24 = 576\)
+
+patch数量从196增加到576，增长倍率为：\(\frac{576}{196} \approx 2.94\)
+
+[S1]",从196个patch变成576个；两两项约增长为(576/196)²≈8.637倍。这里只估算patch-pair项，未计CLS、线性投影和MLP，不是端到端FLOPs或实测延迟。,5586.716,1644.771600025706,3624,197,True,,False,,,,,,,
+baseline,baseline_current,VT-R03,reasoning,test,PVT表2报告PVT-Small的top-1错误率20.2%，换算为top-1准确率是多少？,PVT-Small的top-1错误率为20.2%，换算为top-1准确率即为80.8%。[S1],在该单标签分类评价中，准确率=100%-20.2%=79.8%。这是由错误率换算，不能把20.2%直接当准确率。,2665.455,1902.3824000032619,3946,36,True,,False,,,,,,,
+baseline,baseline_current,VT-R05,reasoning,test,Swin表4不移位80.2%、移位81.3%，差值与相对提升分别是多少？,"Swin表4中，不移位的准确率为80.2%，移位的准确率为81.3%。差值为1.1%，相对提升约为1.36%。
+
+参考来源：[S4] swin_2103.14030v2.pdf 第7页",差值1.1个百分点；相对提升为1.1/80.2≈1.372%。论文报告的+1.1应理解为准确率百分点，不能混同相对百分比。,3118.205,1706.2463000183925,4059,71,True,,False,,,,,,,
+baseline,baseline_current,VT-R06,reasoning,test,CvT表5移除位置嵌入，DeiT-S从79.8到78.0，而CvT-13从每阶段位置嵌入81.5到无嵌入81.6。分别变化多少，能否推广成位置编码总是无用？,"移除位置嵌入后，DeiT-S的性能从79.8下降到78.0，下降了1.8%；而CvT-13从每阶段使用位置嵌入的81.5下降到无嵌入的81.6，下降了0.1%。这表明CvT模型中位置嵌入的移除对性能影响较小，但不能直接推广成位置编码总是无用，因为不同模型和架构的具体表现会有所不同。[S1][S3]
+
+证据显示CvT模型中移除位置嵌入影响较小，但不能一概而论位置嵌入总是无用。不同模型的具体表现会有所不同。[S1][S3]",DeiT-S下降1.8个百分点，CvT-13上升0.1个百分点。不能普遍推广；结果支持卷积先验改变该模型对显式位置嵌入的依赖。,4706.912,1594.2020999500528,3303,157,True,,False,,,,,,,
+baseline,baseline_current,VT-R07,reasoning,test,CaiT为何说增加LayerScale不改变架构表达能力，却仍可能改善训练？,"CaiT通过在每个残差块的输出后添加一个可学习的对角矩阵（LayerScale），不改变整体架构表达能力，但能改善训练动态。这使得可以训练更深、容量更高的图像变压器，从而提高准确性。[S1]2
+
+实验要求：[S1]2",作者指出缩放权重可以并入之前的SA/FFN矩阵，故可表示的函数没有因此扩张；其作用在于改变残差贡献、初始化和优化过程，从而有利于深网络训练。,2790.109,1469.799799961038,3302,67,True,,False,,,,,,,
+baseline,baseline_current,VT-R09,reasoning,test,CrossViT为何用单个CLS查询就能将跨分支融合的注意力项从平方量级降为线性？,CrossViT 使用跨注意力机制，通过 CLS 令牌在两个分支之间交换信息。CLS 令牌作为查询，可以线性地融合来自不同分支的 patch 令牌，从而将复杂度从平方量级降低到线性量级。[S1],固定数量的CLS查询读取另一分支N个patch，查询-键组合数随N增长；如果双方所有patch两两注意，则组合数为两分支token数的乘积。结论限定于该融合模块。,2671.84,1482.0346999913454,3140,59,True,,False,,,,,,,
+baseline,baseline_current,VT-R10,reasoning,test,BEiT称预训练不使用标签，这是否证明它在ImageNet下游微调也完全不使用类别标签？,证据不足直接证明BEiT在ImageNet下游微调过程中完全不使用类别标签。[S1]中提到BEiT在ImageNet上进行了下游微调，并取得了较好的效果，但未明确说明微调过程中是否使用了类别标签。因此，无法从现有证据得出BEiT在下游微调过程中完全不使用类别标签的结论。[S1],不是。标签不参与遮挡自监督预训练；文中后续ImageNet微调使用带标签数据。必须区分学习阶段，不能把预训练约束套到整个流程。,3412.724,1734.3319000210613,3571,80,True,,False,,,,,,,
+baseline,baseline_current,VT-R11,reasoning,test,ViT介绍88.55%的ImageNet结果，DeiT摘要最高85.2%；能仅凭这两个数证明ViT在相同数据预算下更好么？,不能仅凭这两个数值证明ViT在相同数据预算下更好。ImageNet结果受到多种因素影响，包括模型大小、训练数据量、预训练数据集等。需要综合比较多个模型在相同条件下的表现，才能得出结论。参考表6和表4中的数据。,不能。ViT对应大规模预训练与迁移路线，DeiT强调无外部数据的ImageNet训练；数据、变体和设置不同，这两个最高数不构成同预算实验。,2245.197,1057.7612000051886,2050,62,True,,False,,,,,,,
+baseline,baseline_current,VT-R12,reasoning,test,CvT-W24的87.7和Swin最高87.3，能证明卷积投影机制本身优于移位窗口吗？,"证据不足直接证明卷积投影机制本身优于移位窗口机制。CvT-W24在ImageNet-1k上的表现（87.7%）确实优于Swin-B（87.3%），但这主要是由于更大的模型容量和预训练数据集（ImageNet-22K）的影响。直接比较这两种机制的有效性需要更详细的设计实验，控制模型容量和其他变量，这超出了现有数据的范围。
+
+参考来源：
+- [S4] swin_2103.14030v2.pdf
+- [S5] swin_2103.14030v2.pdf",不能。即使任务指标可描述性比较，模型容量、训练配方及其他架构部件仍不同；0.4个百分点的报告差值不能隔离这两个机制的因果作用，需要受控消融。,4494.726,1627.2982000373304,4052,142,True,,False,,,,,,,
+baseline,baseline_current,VT-R13,reasoning,test,按PVT的二维SRA，空间压缩ratio为8且高宽均可整除时，K/V位置数约为原来的多少？能因此称全模型对分辨率线性吗？,"根据公式 [S5] 中的 SRA（Spatial Reduction Attention）层，其空间压缩 ratio 为 8 时，K/V 的位置数会减少到原来的 \( \frac{1}{8} \)。具体来说，如果输入特征图的高宽均为 32，则压缩后变为 4×4，位置数减少到原来的 1/8。
+
+然而，这并不能直接说明全模型对分辨率是线性关系。PVT 通过金字塔结构和 SRA 层有效降低了计算和内存成本，但具体到全模型对分辨率的依赖关系还需更多实验数据支持。[S5]",K/V的高宽各缩小8倍，位置数为原来的1/64。固定ratio只降低注意力项的系数，不能自动证明整个网络对任意图像尺寸具有线性复杂度。,4166.12,1510.4785000439733,3123,135,True,,False,,,,,,,
+baseline,baseline_current,VT-R15,reasoning,test,按CaiT作者解释，为什么把patch自注意力与分类汇总分开有利于设计更深的分类Transformer？,CaiT作者认为，将patch自注意力与分类汇总分开，可以避免在处理类嵌入时同时引导注意力过程，从而有利于设计更深的分类Transformer。具体来说，通过在Transformer的后期阶段仅更新类嵌入，可以减少计算负担并提高性能。[S1],它减少同一组层同时承担patch间建模和为分类器汇总这两个目标的牵制：先处理patch，再由后段class-attention读取分类表示。这是作者给出的设计理由，不能解释成所有任务已验证相同收益。,2962.048,1706.0319000156596,3423,64,True,,False,,,,,,,
+parameters,baseline_current,VT-F01,factual,dev,ViT 原文表1中 ViT-Base 的层数、隐藏维度、注意力头数与参数量分别是多少？,根据[S3]中的表1，ViT-Base的层数为12层，隐藏维度为768，注意力头数为12，参数量为86M。[S3],12层，隐藏维度768，12个注意力头，约86M参数；这是表1中的基础变体配置。,2603.773,1665.1750000892207,3637,46,True,,False,,,,,,,
+parameters,baseline_current,VT-C01,comparison,dev,ViT 与 DeiT 在训练数据依赖上的主要差别是什么？,"ViT 和 DeiT 在训练数据依赖上的主要差别在于 DeiT 不需要大量的训练数据即可进行训练。[S1]指出 DeiT 通过改进的训练和特定的蒸馏技术，能够在较少的数据下达到良好的性能。相比之下，ViT 和其他 CNN 结构通常需要大量优化和架构搜索来达到最佳性能。[S3]明确指出 DeiT 通过现有的数据增强和正则化策略进行训练，没有引入显著的架构变化，从而减少了对大量数据的依赖。[S1, S3]",ViT展示大规模ImageNet-21k/JFT预训练再迁移的收益；DeiT着重仅用ImageNet训练，通过训练配方和蒸馏提升数据效率。不能据此把两文最高分当相同数据设置。,3818.929,1525.3804000094533,3106,116,True,,False,,,,,,,
+parameters,baseline_current,VT-S03,synthesis,dev,从T2T-ViT与CvT归纳把局部先验引入token处理的两种办法。,T2T-ViT通过分层的Tokens-to-Token (T2T) 模块逐步将图像结构化为tokens，利用相邻tokens的信息来减少tokens的长度，从而引入局部先验信息。[S1] CvT（Convolutional Vision Transformer）则直接使用卷积操作来处理tokens，通过局部卷积操作引入局部先验信息。[S4],T2T递归重构、重叠切分和聚合相邻token；CvT在token嵌入及注意力投影中使用卷积。两者都关注局部结构，但实现操作不同。,3248.455,1604.0868000127375,3355,84,True,,False,,,,,,,
+parameters,baseline_current,VT-R01,reasoning,dev,按ViT的patch划分公式，224×224图像与16×16 patch产生多少个patch token？加入class token后序列长多少？,根据公式 \( N = \frac{H \times W}{P^2} \)，对于224×224的图像和16×16的patch，会产生 \(\frac{224 \times 224}{16 \times 16} = 196\) 个patch token。加入class token后，序列长度为197个token。[S1],224/16=14；patch数14×14=196，加入一个class token后为197。这是公式计算，不是论文单独测量的实验指标。,3350.333,1559.852100093849,3174,91,True,,False,,,,,,,
+parameters,temperature_0.0,VT-F01,factual,dev,ViT 原文表1中 ViT-Base 的层数、隐藏维度、注意力头数与参数量分别是多少？,根据[S3]中的表1，ViT-Base的层数为12层，隐藏维度为768，注意力头数为12，参数量为86M。[S3],12层，隐藏维度768，12个注意力头，约86M参数；这是表1中的基础变体配置。,1165.947,270.3007999807596,3637,46,True,,False,,,,,,,
+parameters,temperature_0.0,VT-C01,comparison,dev,ViT 与 DeiT 在训练数据依赖上的主要差别是什么？,"ViT 和 DeiT 在训练数据依赖上的主要差别在于 DeiT 不需要大量的训练数据即可进行训练。[S1]指出，DeiT 通过改进的训练和特定的蒸馏程序，能够在较少的数据下达到良好的效果。相比之下，ViT 和其他 CNN 结构通常需要大量优化和架构搜索，这可能会导致过拟合。[S3]明确指出，DeiT 通过现有的数据增强和正则化策略进行训练，没有引入显著的架构变化，因此对训练数据的依赖较低。[S1, S3]",ViT展示大规模ImageNet-21k/JFT预训练再迁移的收益；DeiT着重仅用ImageNet训练，通过训练配方和蒸馏提升数据效率。不能据此把两文最高分当相同数据设置。,2578.916,231.92789999302477,3106,121,True,,False,,,,,,,
+parameters,temperature_0.0,VT-S03,synthesis,dev,从T2T-ViT与CvT归纳把局部先验引入token处理的两种办法。,"T2T-ViT通过分层的Tokens-to-Token（T2T）模块逐步将图像结构化为tokens，同时减少token长度，从而引入局部先验信息。具体而言，T2T模块将输入图像首先软分割为patches，然后展开为token序列，通过递归聚合相邻tokens来减少token长度，从而捕捉局部结构信息（[S1]（物理页3至4））。
+
+CvT则通过直接将图像分割为固定长度的tokens，然后应用Transformer层来建模全局关系，但未特别强调局部结构的建模（[S1]（物理页3至4））。
+
+综上，T2T-ViT和CvT在处理tokens时均引入了局部先验，但T2T-ViT更系统地通过分层的T2T模块逐步建模局部结构，而CvT则直接分割图像为tokens，较少关注局部结构的建模。[S1]",T2T递归重构、重叠切分和聚合相邻token；CvT在token嵌入及注意力投影中使用卷积。两者都关注局部结构，但实现操作不同。,4196.011,211.9615999981761,3355,202,True,,False,,,,,,,
+parameters,temperature_0.0,VT-R01,reasoning,dev,按ViT的patch划分公式，224×224图像与16×16 patch产生多少个patch token？加入class token后序列长多少？,根据公式 \( N = \frac{H \times W}{P^2} \)，对于224×224的图像和16×16的patch，会产生 \(\frac{224 \times 224}{16 \times 16} = 196\) 个patch token。加入class token后，序列长度为197个token。[S1],224/16=14；patch数14×14=196，加入一个class token后为197。这是公式计算，不是论文单独测量的实验指标。,2069.773,287.83179994206876,3174,91,True,,False,,,,,,,
+parameters,temperature_0.5,VT-F01,factual,dev,ViT 原文表1中 ViT-Base 的层数、隐藏维度、注意力头数与参数量分别是多少？,ViT-Base 的层数为12层，隐藏维度为768，注意力头数为12，参数量为86M。[S3],12层，隐藏维度768，12个注意力头，约86M参数；这是表1中的基础变体配置。,972.413,247.35149997286499,3637,38,True,,False,,,,,,,
+parameters,temperature_0.5,VT-C01,comparison,dev,ViT 与 DeiT 在训练数据依赖上的主要差别是什么？,ViT 和 DeiT 在训练数据依赖上的主要差别在于 DeiT 不需要非常大量的数据即可训练，而 ViT 则需要优化。[S1],ViT展示大规模ImageNet-21k/JFT预训练再迁移的收益；DeiT着重仅用ImageNet训练，通过训练配方和蒸馏提升数据效率。不能据此把两文最高分当相同数据设置。,948.991,255.36150007974356,3106,36,True,,False,,,,,,,
+parameters,temperature_0.5,VT-S03,synthesis,dev,从T2T-ViT与CvT归纳把局部先验引入token处理的两种办法。,T2T-ViT通过分层的Tokens-to-Token（T2T）模块逐步将图像结构化为tokens，利用相邻tokens的信息来减少token长度，从而引入局部先验信息。而CvT则采用直接将图像分割为固定长度tokens的方式，未明确提及如何引入局部先验信息。[S1],T2T递归重构、重叠切分和聚合相邻token；CvT在token嵌入及注意力投影中使用卷积。两者都关注局部结构，但实现操作不同。,1647.849,225.82180006429553,3355,73,True,,False,,,,,,,
+parameters,temperature_0.5,VT-R01,reasoning,dev,按ViT的patch划分公式，224×224图像与16×16 patch产生多少个patch token？加入class token后序列长多少？,根据公式 \( N = \frac{H \times W}{P^2} \)，对于224×224的图像和16×16的patch，会产生 \(\frac{224 \times 224}{16 \times 16} = 196\) 个patch token。加入class token后，序列长度为197个token。[S1],224/16=14；patch数14×14=196，加入一个class token后为197。这是公式计算，不是论文单独测量的实验指标。,2091.769,241.56840005889535,3174,91,True,,False,,,,,,,
+parameters,top_p_0.7,VT-F01,factual,dev,ViT 原文表1中 ViT-Base 的层数、隐藏维度、注意力头数与参数量分别是多少？,根据[S3]中的表1，ViT-Base的层数为12层，隐藏维度为768，注意力头数为12，参数量为86M。[S3],12层，隐藏维度768，12个注意力头，约86M参数；这是表1中的基础变体配置。,1196.081,238.57980000320822,3637,46,True,,False,,,,,,,
+parameters,top_p_0.7,VT-C01,comparison,dev,ViT 与 DeiT 在训练数据依赖上的主要差别是什么？,ViT 和 DeiT 在训练数据依赖上的主要差别在于 DeiT 不需要大量的数据即可训练，而 ViT 则需要优化的架构和长时间的训练。[S1],ViT展示大规模ImageNet-21k/JFT预训练再迁移的收益；DeiT着重仅用ImageNet训练，通过训练配方和蒸馏提升数据效率。不能据此把两文最高分当相同数据设置。,1067.238,252.70979991182685,3106,41,True,,False,,,,,,,
+parameters,top_p_0.7,VT-S03,synthesis,dev,从T2T-ViT与CvT归纳把局部先验引入token处理的两种办法。,T2T-ViT通过分层的Tokens-to-Token (T2T) 模块逐步将图像结构化为tokens，同时减少token长度，从而引入局部先验信息。具体而言，T2T过程包括重构和软分割两步，首先将tokens重构为图像，然后通过软分割将图像分割为序列的tokens。CvT则通过直接将图像分割为固定长度的tokens，再应用Transformer层来建模全局关系，但未明确提及如何引入局部先验信息。[S1],T2T递归重构、重叠切分和聚合相邻token；CvT在token嵌入及注意力投影中使用卷积。两者都关注局部结构，但实现操作不同。,2471.479,209.5243000658229,3355,115,True,,False,,,,,,,
+parameters,top_p_0.7,VT-R01,reasoning,dev,按ViT的patch划分公式，224×224图像与16×16 patch产生多少个patch token？加入class token后序列长多少？,根据公式 \( N = \frac{H \times W}{P^2} \)，对于224×224的图像和16×16的patch，会产生 \(\frac{224 \times 224}{16 \times 16} = 196\) 个patch token。加入class token后，序列长度为197个token。[S1],224/16=14；patch数14×14=196，加入一个class token后为197。这是公式计算，不是论文单独测量的实验指标。,2085.729,256.9095999933779,3174,91,True,,False,,,,,,,
+parameters,top_k_20,VT-F01,factual,dev,ViT 原文表1中 ViT-Base 的层数、隐藏维度、注意力头数与参数量分别是多少？,根据[S3]中的表1，ViT-Base的层数为12层，隐藏维度为768，注意力头数为12，参数量为86M。[S3],12层，隐藏维度768，12个注意力头，约86M参数；这是表1中的基础变体配置。,1140.81,221.2405001046136,3637,46,True,,False,,,,,,,
+parameters,top_k_20,VT-C01,comparison,dev,ViT 与 DeiT 在训练数据依赖上的主要差别是什么？,ViT 和 DeiT 在训练数据依赖上的主要差别在于 DeiT 不需要大量的训练数据即可进行训练，而 ViT 则需要较多的数据。[S1] 中提到 DeiT 通过改进的训练和特定的蒸馏方法，能够在较少数据的情况下取得良好效果。,ViT展示大规模ImageNet-21k/JFT预训练再迁移的收益；DeiT着重仅用ImageNet训练，通过训练配方和蒸馏提升数据效率。不能据此把两文最高分当相同数据设置。,1448.356,213.59050006140023,3106,62,True,,False,,,,,,,
+parameters,top_k_20,VT-S03,synthesis,dev,从T2T-ViT与CvT归纳把局部先验引入token处理的两种办法。,T2T-ViT通过分层的Tokens-to-Token（T2T）模块逐步将图像结构化为tokens，同时减少token长度，从而引入局部先验信息。具体而言，T2T过程包括重塑和软分割两步，重塑将tokens转换为图像，软分割则将图像分割为tokens，此过程可递归进行以捕捉局部结构。[S1] CvT（Convolutional Vision Transformer）则直接使用卷积操作提取局部特征，但不进行分层的tokens处理。[S4] 两者均尝试将局部先验引入token处理，但实现方式不同。[S1],T2T递归重构、重叠切分和聚合相邻token；CvT在token嵌入及注意力投影中使用卷积。两者都关注局部结构，但实现操作不同。,2936.979,180.80089997965842,3355,138,True,,False,,,,,,,
+parameters,top_k_20,VT-R01,reasoning,dev,按ViT的patch划分公式，224×224图像与16×16 patch产生多少个patch token？加入class token后序列长多少？,根据公式 \( N = \frac{H \times W}{P^2} \)，对于224×224的图像和16×16的patch，会产生 \(\frac{224 \times 224}{16 \times 16} = 196\) 个patch token。加入class token后，序列长度为197个token。[S1],224/16=14；patch数14×14=196，加入一个class token后为197。这是公式计算，不是论文单独测量的实验指标。,2015.134,211.0785999102518,3174,91,True,,False,,,,,,,
+prompt,naive_old_prompt,VT-F01,factual,dev,ViT 原文表1中 ViT-Base 的层数、隐藏维度、注意力头数与参数量分别是多少？,根据[S4] vit_2010.11929v2.pdf | 第5页 的表1，ViT-Base 的层数为12层，隐藏维度为768，注意力头数为12个，参数量为86M。来源编号[S4]。,12层，隐藏维度768，12个注意力头，约86M参数；这是表1中的基础变体配置。,2968.428,1627.5457000592723,3511,68,True,,False,,,,,,,
+prompt,naive_old_prompt,VT-C01,comparison,dev,ViT 与 DeiT 在训练数据依赖上的主要差别是什么？,"ViT 和 DeiT 在训练数据依赖上的主要差别在于 DeiT 不需要大量的训练数据即可进行训练。[S3]（第17页）
+
+DeiT 通过改进的训练和特别的蒸馏程序，能够在较少的数据下进行训练。[S3]（第17页）而 ViT 在训练时依赖于较大的数据集。[S4]（第4页）
+
+综上，DeiT 相较于 ViT 在训练数据依赖上具有较低的依赖性。",ViT展示大规模ImageNet-21k/JFT预训练再迁移的收益；DeiT着重仅用ImageNet训练，通过训练配方和蒸馏提升数据效率。不能据此把两文最高分当相同数据设置。,3618.355,1469.8154999641702,2980,109,True,,False,,,,,,,
+prompt,naive_old_prompt,VT-S03,synthesis,dev,从T2T-ViT与CvT归纳把局部先验引入token处理的两种办法。,T2T-ViT与CvT均通过局部先验信息提升token处理效果。T2T-ViT采用Tokens-to-Token模块，将图像逐步转换为token，并通过重结构化和软分割逐步减少token长度（[S1]（物理页3至4））。CvT则通过特定设计的token处理方式，引入局部先验信息（[S2]（物理页4至5））。两者均在token处理中融入了局部结构信息，以提高模型性能。来源编号为[S1]和[S2]。,T2T递归重构、重叠切分和聚合相邻token；CvT在token嵌入及注意力投影中使用卷积。两者都关注局部结构，但实现操作不同。,3823.797,1594.5515000494197,3229,113,True,,False,,,,,,,
+prompt,naive_old_prompt,VT-R01,reasoning,dev,按ViT的patch划分公式，224×224图像与16×16 patch产生多少个patch token？加入class token后序列长多少？,"根据公式 \(N = \frac{H \times W}{P^2}\)，对于224×224的图像和16×16的patch，会产生 \(\frac{224 \times 224}{16 \times 16} = 196\) 个patch token。加入class token后，序列长度为197个token。
+
+证据来源：[S2] deit_2012.12877v2.pdf | 第5页",224/16=14；patch数14×14=196，加入一个class token后为197。这是公式计算，不是论文单独测量的实验指标。,3793.549,1573.7577999243513,3048,113,True,,False,,,,,,,
+prompt,current_prompt_reused,VT-F01,factual,dev,ViT 原文表1中 ViT-Base 的层数、隐藏维度、注意力头数与参数量分别是多少？,根据[S3]中的表1，ViT-Base的层数为12层，隐藏维度为768，注意力头数为12，参数量为86M。[S3],12层，隐藏维度768，12个注意力头，约86M参数；这是表1中的基础变体配置。,2603.773,1665.1750000892207,3637,46,True,,False,,,,,,,
+prompt,current_prompt_reused,VT-C01,comparison,dev,ViT 与 DeiT 在训练数据依赖上的主要差别是什么？,"ViT 和 DeiT 在训练数据依赖上的主要差别在于 DeiT 不需要大量的训练数据即可进行训练。[S1]指出 DeiT 通过改进的训练和特定的蒸馏技术，能够在较少的数据下达到良好的性能。相比之下，ViT 和其他 CNN 结构通常需要大量优化和架构搜索来达到最佳性能。[S3]明确指出 DeiT 通过现有的数据增强和正则化策略进行训练，没有引入显著的架构变化，从而减少了对大量数据的依赖。[S1, S3]",ViT展示大规模ImageNet-21k/JFT预训练再迁移的收益；DeiT着重仅用ImageNet训练，通过训练配方和蒸馏提升数据效率。不能据此把两文最高分当相同数据设置。,3818.929,1525.3804000094533,3106,116,True,,False,,,,,,,
+prompt,current_prompt_reused,VT-S03,synthesis,dev,从T2T-ViT与CvT归纳把局部先验引入token处理的两种办法。,T2T-ViT通过分层的Tokens-to-Token (T2T) 模块逐步将图像结构化为tokens，利用相邻tokens的信息来减少tokens的长度，从而引入局部先验信息。[S1] CvT（Convolutional Vision Transformer）则直接使用卷积操作来处理tokens，通过局部卷积操作引入局部先验信息。[S4],T2T递归重构、重叠切分和聚合相邻token；CvT在token嵌入及注意力投影中使用卷积。两者都关注局部结构，但实现操作不同。,3248.455,1604.0868000127375,3355,84,True,,False,,,,,,,
+prompt,current_prompt_reused,VT-R01,reasoning,dev,按ViT的patch划分公式，224×224图像与16×16 patch产生多少个patch token？加入class token后序列长多少？,根据公式 \( N = \frac{H \times W}{P^2} \)，对于224×224的图像和16×16的patch，会产生 \(\frac{224 \times 224}{16 \times 16} = 196\) 个patch token。加入class token后，序列长度为197个token。[S1],224/16=14；patch数14×14=196，加入一个class token后为197。这是公式计算，不是论文单独测量的实验指标。,3350.333,1559.852100093849,3174,91,True,,False,,,,,,,
+agent,fixed_rag,route-concept,factual,dev,什么是自注意力？,自注意力机制是Transformer模型中的关键组件，它允许模型在处理序列数据时，能够关注到序列中的任意位置。具体来说，自注意力机制通过计算查询（query）、键（key）和值（value）之间的相似度，生成加权和，从而生成每个位置的表示。这一机制使得模型能够捕捉到长距离依赖关系，而无需依赖于序列的位置信息。[S1],,2061.32,266.8934999965131,3612,89,True,,False,[],[],,,,,
+agent,agent,route-concept,concept,dev,什么是自注意力？,"**模型一般知识回答 · 未检索当前知识库**
+
+自注意力是一种机制，用于在处理序列数据（如文本或时间序列）时，让模型能够关注序列中的不同元素。它在Transformer模型中特别重要，是该模型的核心组成部分之一。
+
+自注意力机制包括三个主要步骤：查询（Query）、键（Key）和值（Value）。对于序列中的每个元素，都会生成一个查询、一个键和一个值。查询与所有键进行点积操作，然后对结果进行softmax归一化，得到一个权重向量。这个权重向量用于加权求和对应的值，从而得到该元素的加权表示。
+
+具体来说，假设有一个长度为L的序列，自注意力机制可以表示为：
+
+1. 计算查询、键和值：对于序列中的每个位置i，计算查询Q_i、键K_i和值V_i。
+2. 计算注意力权重：对于每个位置i，计算其与其他所有位置j的注意力权重，公式为：\[ \text{Attention}(Q_i, K_j) = \frac{\exp(Q_i \cdot K_j^T / \sqrt{d_k})}{\sum_{j=1}^{L} \exp(Q_i \cdot K_j^T / \",,5221.580500015989,,69,256,True,,,[],[],,,,,
+agent,fixed_rag,route-calculator,factual,dev,计算 `3.14*2.56`,3.14 × 2.56 = 8.0464 [S1],,724.406,268.64090003073215,3620,23,True,,False,"[""calculator""]",[],,,,,
+agent,agent,route-calculator,calculator,dev,计算 `3.14*2.56`,计算结果为 8.0384。,,1523.6799000995234,,2116,39,True,,,"[""calculator""]","[""calculator""]",,,,,
+agent,fixed_rag,route-time,factual,dev,当前时间是什么？,当前时间无法从给定的文献中获取，因此无法回答。[S1]、[S2]、[S3]、[S4]、[S5],,1012.245,209.16700002271682,3612,40,True,,False,"[""current_time""]",[],,,,,
+agent,agent,route-time,time,dev,当前时间是什么？,当前时间是 2026-10-11 11:33:04（Asia/Shanghai，UTC+0800）。,,1521.3413999881595,,2111,58,True,,,"[""current_time""]","[""current_time""]",,,,,
+agent,fixed_rag,route-query_keywords,factual,dev,从问题中提取关键词：Swin Transformer uses shifted windows in vision tasks,证据不足，文中未提及Swin Transformer或其在视觉任务中使用移位窗口的相关信息。[S1]至[S5]讨论了BEIT、PVT和ViT等模型的预训练和微调过程，但未涉及Swin Transformer的具体细节。,,1542.284,225.8054999401793,3624,60,True,,False,"[""extract_keywords""]",[],,,,,
+agent,agent,route-query_keywords,query_keywords,dev,从问题中提取关键词：Swin Transformer uses shifted windows in vision tasks,"提取到的关键词有：swin, transformer, uses, shifted, windows。",,2355.705099995248,,2176,52,True,,,"[""extract_keywords""]","[""extract_keywords""]",,,,,
+agent,fixed_rag,route-paper_fact,factual,dev,ViT 原文表1中 ViT-Base 的层数、隐藏维度、注意力头数与参数量分别是多少？,ViT-Base 的层数为12层，隐藏维度为768，注意力头数为12，参数量为86M。[S3],12层，隐藏维度768，12个注意力头，约86M参数；这是表1中的基础变体配置。,929.844,187.90419993456453,3637,38,True,,False,"[""knowledge_qa""]",[],,,,,
+agent,agent,route-paper_fact,paper_fact,dev,ViT 原文表1中 ViT-Base 的层数、隐藏维度、注意力头数与参数量分别是多少？,根据[S3]中的表1，ViT-Base的层数为12层，隐藏维度为768，注意力头数为12，参数量为86M。[S3]vit_2010.11929v2.pdf 表1,,1781.0506999958307,,3637,64,True,,,"[""knowledge_qa""]","[""knowledge_qa""]",,,,,
+parallel,workers_1,parallel-0,,dev,,,,28.618100099265575,,0,0,True,,,,,,,1,True,False
+parallel,workers_1,parallel-1,,dev,,,,28.45999994315207,,0,0,True,,,,,,,1,True,False
+parallel,workers_1,parallel-2,,dev,,,,22.84929994493723,,0,0,True,,,,,,,1,True,False
+parallel,workers_1,parallel-3,,dev,,,,27.772899949923158,,0,0,True,,,,,,,1,True,False
+parallel,workers_1,parallel-4,,dev,,,,23.100699996575713,,0,0,True,,,,,,,1,True,False
+parallel,workers_1,parallel-5,,dev,,,,18.158099963329732,,0,0,True,,,,,,,1,True,False
+parallel,workers_1,parallel-6,,dev,,,,21.87030005734414,,0,0,True,,,,,,,1,True,False
+parallel,workers_1,parallel-7,,dev,,,,26.48230001796037,,0,0,True,,,,,,,1,True,False
+parallel,workers_1,parallel-8,,dev,,,,30.144200078211725,,0,0,True,,,,,,,1,True,False
+parallel,workers_1,parallel-9,,dev,,,,13.792100013233721,,0,0,True,,,,,,,1,True,False
+parallel,workers_2,parallel-0,,dev,,,,14.93009994737804,,0,0,True,,,,,,,2,True,False
+parallel,workers_2,parallel-1,,dev,,,,21.960900048725307,,0,0,True,,,,,,,2,True,False
+parallel,workers_2,parallel-2,,dev,,,,25.47200000844896,,0,0,True,,,,,,,2,True,False
+parallel,workers_2,parallel-3,,dev,,,,28.884699917398393,,0,0,True,,,,,,,2,True,False
+parallel,workers_2,parallel-4,,dev,,,,19.12770001217723,,0,0,True,,,,,,,2,True,False
+parallel,workers_2,parallel-5,,dev,,,,18.132500001229346,,0,0,True,,,,,,,2,True,False
+parallel,workers_2,parallel-6,,dev,,,,25.72029992006719,,0,0,True,,,,,,,2,True,False
+parallel,workers_2,parallel-7,,dev,,,,17.16859999578446,,0,0,True,,,,,,,2,True,False
+parallel,workers_2,parallel-8,,dev,,,,18.408400006592274,,0,0,True,,,,,,,2,True,False
+parallel,workers_2,parallel-9,,dev,,,,21.800599992275238,,0,0,True,,,,,,,2,True,False
+cache,cold_exact_query,VT-F08,factual,test,Swin 中 W-MSA 与 SW-MSA 分别对应什么窗口划分，为什么交替使用？,W-MSA 使用常规窗口划分，而 SW-MSA 使用移位窗口划分。交替使用是为了在保持非重叠窗口高效计算的同时，引入跨窗口连接，增强模型的建模能力 [S1]。[S1],W-MSA使用常规非重叠窗口，SW-MSA使用移位窗口。交替划分使原先不同窗口的token能够建立连接。,2955.5154000408947,1836.2076999619603,3599,54,True,,False,,,False,1,,,
+cache,hot_exact_repeat,VT-F08,,test,Swin 中 W-MSA 与 SW-MSA 分别对应什么窗口划分，为什么交替使用？,W-MSA 使用常规窗口划分，而 SW-MSA 使用移位窗口划分。交替使用是为了在保持非重叠窗口高效计算的同时，引入跨窗口连接，增强模型的建模能力 [S1]。[S1],,4.074200056493282,,0,0,True,,,,,True,0,,,

@@ -1,124 +1,223 @@
-# 智能科研助理
+<div align="center">
 
-通用论文知识库问答系统：RAG、手写 ReAct、八个本地工具、流式引用、会话记忆、证据审校、运行回放与可复现评测。已实现课程五个模块并完成真实模型实验；当前包含 10 篇真实论文、80 道来源核对题及 60 题实际生成答案。题目仍待学生确认，答案人工质量评分按用户要求保留待填，不预置虚构成绩。
+<img src="docs/assets/readme/hero.svg" alt="智能科研助理 · 基于 RAG 与 Agent 的论文知识库问答系统" width="100%">
 
-## 课程交付
+**把论文阅读、证据检索、工具协同与实验复现，连接在同一个工作台。**
 
-最终材料位于 [artifacts/delivery-final](artifacts/delivery-final)：课程报告、系统评测报告、技术设计文档、用户手册、实验与 Bad Case 附件、分块策略对比实验报告、Prompt 模板设计与实验记录、Bad Case 分析报告，以及 17 页演示 PPT。逐条完成状态见[课程要求逐条验收](docs/课程要求逐条验收.md)，实际答案及2026-10-14已填写的AI辅助分数见[60题评分表](reports/experiments/generation/baseline/human_scoring_60.csv)，[评分说明](docs/人工评分说明.md)说明逐题依据及人工复核方法。人工评分、题集人工确认和实际提交日期仍待填写；Docker 部署文件已提供，本机未启动容器验证。Word与PPT保留2026-10-11验收快照。
+<p>
+  <img src="https://img.shields.io/badge/Python-3.10%E2%80%933.13-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.10–3.13">
+  <img src="https://img.shields.io/badge/API-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/UI-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit">
+  <img src="https://img.shields.io/badge/Local_LLM-Qwen2.5_7B-7367B9?style=flat-square" alt="Local Qwen2.5 7B">
+  <a href="https://github.com/JueBeiYi/-RAG-Agent-/actions/workflows/tests.yml"><img src="https://github.com/JueBeiYi/-RAG-Agent-/actions/workflows/tests.yml/badge.svg" alt="Python checks"></a>
+</p>
 
-最新生产索引含 **342 个片段**；三档检索测试和短答案生成实验使用冻结的历史 **359 个片段**索引。60 题生成实验只评测真实检索输入后的生成阶段，输出上限为 256 token，不代表最新生产索引的全流程质量结论。原始记录分别保存在 [retrieval](reports/experiments/retrieval)、[generation](reports/experiments/generation) 和[当前索引记录](reports/requirements/current-standard-index.json)。
+[快速开始](#快速开始) · [界面预览](#界面预览) · [模型与 API](#模型与-api) · [实测结果](#实测结果) · [报告与文档](#报告与文档)
 
-课程交付包包含源码、环境说明、真实实验记录、最终材料与真实 Git 历史，排除 API 密钥、模型权重、虚拟环境和运行缓存。论文原 PDF 通过 `data/corpus/manifest.json` 记录版本、来源与 SHA256；换电脑后执行 `.venv\Scripts\python.exe scripts/prepare_corpus.py download` 恢复固定版本，再在论文库导入，模型按下方说明准备。
+**10 篇固定版本论文 · 80 道评测题 · 8 个本地工具 · 33 类本地验收检查**
 
-## 快速运行
+</div>
 
-推荐 Python 3.12，支持 3.10–3.13。本机已有 `.venv`、模型与真实论文索引，可直接启动标准模式；已有服务运行时直接打开界面，无需重复启动：
+## 项目亮点
+
+面向通用论文知识库的科研助理，结合检索增强生成（RAG）与手写 ReAct 控制器。支持在本地运行真实模型，也可显式连接兼容 Chat Completions 的云端接口。复现实验使用视觉 Transformer 专题，系统可以导入其他研究方向的论文。
+
+| 能力 | 实现内容 |
+| :--- | :--- |
+| **论文管理** | PDF / DOCX / TXT / Markdown 导入，批量进度与失败重试，元信息编辑，原件与片段查看 |
+| **多路检索** | 向量检索、BM25、手写 RRF 融合、Cross-Encoder 重排；Chroma / FAISS 后端适配 |
+| **证据问答** | SSE 流式回答、来源编号、物理页预览、上下文预算、引用规则审校与指纹缓存 |
+| **Agent 协同** | 8 个工具、参数 schema 校验、快捷路由与有界规划、受限并行、窗口及摘录记忆 |
+| **论文对比** | 按选定维度组织证据；条件不齐或生成失败时呈现实际状态与可回查摘录 |
+| **实验复现** | 开发/测试集划分，检索消融、参数与 Prompt 比较，逐题记录、资源用量和图表导出 |
+
+八个工具：`knowledge_qa` · `paper_metadata` · `compare_papers` · `extract_keywords` · `summarize_paper` · `current_time` · `calculator` · `paper_catalog_search`。目录检索使用本地论文库。
+
+## 界面预览
+
+以下为实际界面截图，展示论文库、科研问答、结构化对比与原文证据。截图中的 359 个片段属于当时索引快照；最新本地运行另有[实际验收记录](docs/本地127运行验收.md)。
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/assets/readme/library.jpg" alt="论文库：文档、索引与元信息" width="100%"><br><b>论文库</b> · 文档管理与索引状态</td>
+    <td width="50%"><img src="docs/assets/readme/chat.jpg" alt="科研问答：回答、来源与执行轨迹" width="100%"><br><b>科研问答</b> · 回答、来源与执行轨迹</td>
+  </tr>
+  <tr>
+    <td><img src="docs/assets/readme/comparison.jpg" alt="论文对比：维度与结构化证据" width="100%"><br><b>论文对比</b> · 比较维度与证据组织</td>
+    <td><img src="docs/assets/readme/evidence.jpg" alt="原文证据：来源、物理页与预览" width="100%"><br><b>原文证据</b> · 来源定位与物理页预览</td>
+  </tr>
+</table>
+
+## 快速开始
+
+推荐 **Python 3.12**，支持 3.10–3.13。以下命令使用 Windows PowerShell；Linux / macOS 的手动启动方式见[用户手册](docs/用户使用手册.md)。
 
 ```powershell
-.\scripts\start.ps1 -Profile standard
-# 需要停止本项目进程时执行
-.\scripts\stop.ps1
+git clone https://github.com/JueBeiYi/-RAG-Agent-.git research-assistant
+cd research-assistant
 ```
 
-界面：http://127.0.0.1:8501，接口文档：http://127.0.0.1:8000/docs。需要单独检查 demo 时可用 `scripts/start.ps1 -Profile demo -ApiPort 8003 -UiPort 8503`；demo 使用哈希向量、关键词重排与原文抽取，不执行大模型推理，不能作为正式模型质量评测。
+### 路径一：先体验完整流程
 
-其他电脑首次准备基础环境：
+在同一个 PowerShell 终端依次执行，无需模型权重和 API Key：
 
 ```powershell
-.\scripts\setup.ps1 -Python 'C:\Path\To\Python312\python.exe'
+.\scripts\setup.ps1 -Python python
 .\scripts\start.ps1 -Profile demo
-.venv\Scripts\python.exe scripts/seed_demo.py
+.venv\Scripts\python.exe scripts/seed_demo.py --scope $env:RAG_WORKSPACE_TOKEN
 ```
 
-打开侧栏“工作区设置与恢复”，填写演示脚本打印的工作区标识并点击“连接此工作区”；也可保存或恢复工作区配置文件。`DEMO_` 资料均为明确标注的虚构文本，不是课程论文语料。配置文件用于恢复对应资料与历史，请自行保管。
+打开 **[工作台](http://127.0.0.1:8501)**，进入论文库或科研问答。接口文档为 **[API Docs](http://127.0.0.1:8000/docs)**。
 
-## 标准本地模式
+> `demo` 使用哈希向量、关键词重排和原文抽取，资料以 `DEMO_` 标记。它用于体验界面与控制流程；真实大模型推理请使用下面的标准模式。
 
-本机已缓存本地模型，并已在标准工作区导入 10 篇真实论文、建立 342 个最新检索片段。已有缓存可直接使用 `scripts/start.ps1 -Profile standard`；首次在其他电脑运行时，再准备 Ollama、模型依赖与权重。首次准备会联网、需要数 GB 空间，应用离线模式不会自动下载。模型与语料准备不等于完成正式答案质量评测，实际界面验证见[界面功能验收](docs/界面功能验收.md)。项目便携Ollama默认独立使用11435端口，避免与用户系统Ollama冲突；显式`RAG_OLLAMA_URL`仍优先。云端API Key、模型ID与服务URL的设置见[模型与API配置](docs/模型与API配置.md)。
+### 路径二：使用真实本地模型
+
+<details>
+<summary><b>展开标准模式配置：BGE-M3 + 重排模型 + Qwen2.5 7B</b></summary>
+
+先安装并启动 Ollama，确认系统服务在 `http://127.0.0.1:11434` 可用；需要手动启动时，在另一个终端运行 `ollama serve`。首次准备会下载模型权重。
 
 ```powershell
-.\scripts\setup.ps1 -Python 'C:\Path\To\Python312\python.exe' -Models
-.venv\Scripts\python.exe scripts/prepare_models.py --models BAAI/bge-m3 BAAI/bge-large-zh-v1.5 moka-ai/m3e-base BAAI/bge-reranker-base --cache-dir data/models/hub --ollama qwen2.5:7b-instruct-q4_K_M
+.\scripts\setup.ps1 -Python python -Models
+.venv\Scripts\python.exe scripts/prepare_models.py --models BAAI/bge-m3 BAAI/bge-reranker-base --cache-dir data/models/hub
+ollama pull qwen2.5:7b-instruct-q4_K_M
+
+$env:RAG_LLM_BACKEND='ollama'
+$env:RAG_LLM_MODEL='qwen2.5:7b-instruct-q4_K_M'
+$env:RAG_OLLAMA_URL='http://127.0.0.1:11434'
+$env:RAG_OFFLINE='true'
 .\scripts\start.ps1 -Profile standard
 ```
 
-启动脚本会检查端口占用；已有服务运行时可使用 `-ApiPort` 和 `-UiPort` 选择不同端口。`config.standard.yaml` 使用 Chroma、bge-m3、bge-reranker-base 和 Qwen2.5 7B Q4，处理英文论文与中文提问；`config.yaml` 保留 bge-large-zh-v1.5 课程基线，m3e-base 用于课程比较。Embedding 与重排默认 CPU，Ollama 按本机资源使用 GPU。启动器优先复用项目中的模型清单、本地缓存与标准工作区；本机已验证的本地 LLM 名称为 `research-qwen:7b`，启动器从模型清单自动选用。模型清单保存实际 snapshot revision，可用本地 snapshot 路径固定版本。
-
-更换模型权重、分块或解析配置后，旧文档会提示重新索引。未准备模型时健康接口明确显示未就绪。配置由 config.yaml 和 RAG_字段名大写环境变量控制；`.env.example` 只作示例，不会自动启用云端。
-
-Linux/macOS 手动运行：
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements-models.txt
-python scripts/prepare_models.py --models BAAI/bge-m3 BAAI/bge-large-zh-v1.5 moka-ai/m3e-base BAAI/bge-reranker-base
-ollama pull qwen2.5:7b-instruct-q4_K_M
-RAG_CONFIG=config.standard.yaml python -m uvicorn src.api.main:app --host 127.0.0.1 --port 8000
-# 另一个终端
-python -m streamlit run src/frontend/app.py --server.address 127.0.0.1 --server.port 8501
-```
-
-## 应用功能
-
-四个页面：论文库、科研问答、论文对比、实验与运行记录。支持 PDF/DOCX/TXT/Markdown、导入进度与重试、论文元信息编辑、原文与片段分页、索引重建、会话搜索/改名/导出、三档检索、流式回答、来源抽屉、运行回放与真实指标。论文选择跨页面保留，切换工作区会清理当前界面状态；同名记录可以明确区分。
-
-八工具：知识库问答、论文元信息、论文对比、关键词、结构化摘要、当前时间、安全计算器、本地论文目录。当前注册这八个本地工具；离线模式使用本地文档与模型。
-
-PDF 使用物理页码；跨页证据可以选择各页查看。其他格式使用段落，不编造页码。证据审校检查来源和数字支撑，不能证明全部语义正确。扫描 PDF 需先 OCR；公式、复杂表格要结合原页核查。比较论文时实验条件不同不能直接排名。
-
-标准模式的论文对比按用户选择的维度生成中文证据表，每篇分别检索并核对来源；作者署名、同等贡献说明与参考文献不作为实验事实。模型未完成、返回结构不合格或引用不可靠时，结果会明确标为“原文摘录降级 · 对比不完整”，保留可回查的短证据和实际用量，不把降级片段当作完整解释。任务、数据集版本、划分、指标与训练条件未完整核对时，不自动计算跨论文差值或排名。
-
-评测集可上传文件或粘贴 JSONL。“依次运行三档对比”显示实际任务状态，完成后可逐题排查并导出 JSON/CSV/XLSX。语料、题集或数据划分不同的实验会拒绝绘制方法优劣图。对比答案和运行记录可以恢复、导出或按确认操作删除；“请求停止”会在可停止的事件边界结束执行，当前模型或工具可能仍需释放资源。
-
-## 数据与评测
-
-在具体方向收集 10–20 篇论文后导入，生成 80 题标注模板（20 dev、60 test）：
+进入论文库上传自己的文档，等待索引就绪后提问。也可恢复项目的固定论文版本：
 
 ```powershell
-.venv\Scripts\python.exe scripts/build_dataset.py --scope YOUR_WORKSPACE_TOKEN --output reports/evaluation_cases.jsonl
-.venv\Scripts\python.exe scripts/evaluate.py validate reports/evaluation_cases.jsonl
-.venv\Scripts\python.exe scripts/evaluate.py retrieval --cases reports/evaluation_cases.jsonl --scope YOUR_WORKSPACE_TOKEN --split test --mode hybrid_rerank --output reports/runs/final
-.venv\Scripts\python.exe scripts/evaluate.py matrix --cases reports/evaluation_cases.jsonl --scope YOUR_WORKSPACE_TOKEN --split dev --preset chunking --output reports/runs/chunking
-.venv\Scripts\python.exe scripts/evaluate.py generation --cases reports/evaluation_cases.jsonl --scope YOUR_WORKSPACE_TOKEN --split test --output reports/runs/answers
+.venv\Scripts\python.exe scripts/prepare_corpus.py download
 ```
 
-模板 reviewed=false，须填写参考答案、真实文档ID、页/段、原文摘录、预期工具，并人工核对。未经核对的题不能正式评测。dev 调参后冻结配置，再比较两版在 test 上的真实结果；测试集用于修复后必须标明已经暴露。
+下载后的 PDF 位于 `data/corpus/`，在论文库重新导入即可。原论文的版本、来源及 SHA256 保存在[语料清单](data/corpus/manifest.json)。模型权重、运行数据库和本机索引由各自环境准备，不随 Git 仓库分发。
 
-实验预设覆盖三解析器、三分块与256/512/1024、两Embedding、三档检索、生成参数、路由、并行、缓存和上下文。分块大小是**轻量 token**（中文字符/英文词/标点），区别于模型 tokenizer；超长编码完整分窗聚合，拒绝静默截尾。独立 CLI 请在无索引变更时运行，参数变体使用隔离索引。
+本项目已验证的便携方案独立使用 `127.0.0.1:11435`，模型标签为 `research-qwen:7b`；启动器读取本机模型清单。它与上述系统 Ollama 方案的地址和标签分别配置。详见[模型与 API 配置](docs/模型与API配置.md)。
 
-记录 Hit@5、MRR、Recall@5、工具准确率、轮次、延迟、Token、配置/语料hash、索引版本、模型revision。答案正确性、完整性、引用准确性需人工据原文评分。完整操作见[评测说明](docs/评测说明.md)。
+</details>
 
-## 测试
+已有服务运行时直接打开页面。需要切换运行模式时，先执行 `.\scripts\stop.ps1`；端口被占用时可使用 `-ApiPort`、`-UiPort` 和 `-ModelPort` 指定项目端口。
+
+## 模型与 API
+
+**本地模型无需云端 API Key。** 云端模型参数在启动后端的终端中设置；页面中的后端服务地址用于连接本项目 API。
+
+| 环境变量 | 云端模式配置 |
+| :--- | :--- |
+| `RAG_LLM_BACKEND` | `cloud` |
+| `RAG_LLM_MODEL` | 服务商实际支持的模型 ID |
+| `RAG_CLOUD_URL` | API 基础地址，如 `https://your-provider.example/v1` |
+| `RAG_CLOUD_API_KEY` | 本机安全输入的 API Key |
+| `RAG_OFFLINE` | `false`，显式允许向配置服务发送问题及检索上下文 |
+
+基础地址不附加 `/chat/completions`；`.env.example` 只提供字段示例，应用不会自动加载 `.env`。完整启动命令、安全输入方式及恢复本地模式见[配置指南](docs/模型与API配置.md)。
+
+## 工作原理
+
+下图展示知识库问答主链路。Agent 的元信息、目录、时间及计算等工具按任务路由，执行轨迹与问答记录一同保存。
+
+```mermaid
+flowchart LR
+    A["PDF / DOCX / TXT / MD"] --> B["解析 · 分块 · 来源定位"]
+    B --> C["BGE-M3 向量索引"]
+    B --> D["BM25 稀疏索引"]
+    Q["问题与会话"] --> E["手写 Agent<br/>路由 · 工具 · 记忆"]
+    E --> F["RRF 融合<br/>可选 Cross-Encoder 重排"]
+    C --> F
+    D --> F
+    F --> G["证据预算 · 来源编号"]
+    G --> H["Ollama / 云端模型"]
+    H --> I["SSE 回答<br/>引用预览 · 运行记录"]
+    classDef source fill:#edf5f5,stroke:#168980,color:#17324d;
+    classDef process fill:#edf2f8,stroke:#49729a,color:#17324d;
+    classDef model fill:#f2eef8,stroke:#8871af,color:#17324d;
+    class A,B,C,D source;
+    class Q,E,F,G,I process;
+    class H model;
+```
+
+超长编码采用原始 token-ID 分窗并聚合，检索与生成配置写入指纹；原文位置从解析传播到引用预览。PDF 展示物理页，其他文档使用段落位置。扫描 PDF 需先进行 OCR，复杂公式与表格应结合原页核查。
+
+## 实测结果
+
+评测使用 **10 篇固定版本论文、80 题**，划分为 **20 题开发集 + 60 题测试集**。题型覆盖事实、比较、综合与推理。
+
+| 检索模式 | Hit@5 | MRR | Recall@5 | 排序均时 / ms |
+| :--- | ---: | ---: | ---: | ---: |
+| 向量检索 | 0.4167 | 0.2992 | 0.3250 | 3.20 |
+| 混合检索 · RRF | 0.4333 | 0.3538 | 0.3583 | 8.27 |
+| 混合检索 + 重排 | **0.6167** | **0.4313** | **0.4750** | 16,708.41 |
+
+<img src="docs/assets/readme/retrieval-results.png" alt="同一60题测试集上的检索质量与排序耗时比较" width="100%">
+
+以上为同一冻结 **359 片段**索引上的测试结果；排序时间排除共享查询编码，重排在 CPU 执行。生产语料的后续快照为 **342 片段**，与历史实验分别记录。题集已被助手接触，结果不作为独立盲测。参见[检索原始记录](reports/experiments/retrieval/m3/test)与[完整评测说明](docs/评测说明.md)。
+
+**答案质量。** 60 条实际短答案的 AI 辅助评审中，正确性、完整性、引用支撑、流畅性均分分别为 **3.50 / 2.98 / 3.03 / 4.58**（满分 5 分）。这项研究使用冻结检索输入，只计生成阶段，输出上限 256 token。生成参数及 Prompt 比较每条件仅 4 题，属于探索性结果。评分来源明确保留，独立人工评分尚未执行。详见[评分依据](docs/人工评分说明.md)和[参数与 Prompt 比较](docs/生成参数与Prompt质量比较.md)。
+
+**实际本地运行。** 2026-10-15 使用真实 CvT PDF、独立 29 片段工作区，完成 **33 类检查，0 失败**，覆盖上传、索引、真实 SSE 生成、引用页预览、原件哈希及记录保存。该次问答耗时 **34.15 s**，实际输入 / 输出 **3537 / 395 token**。这是单次流程记录，回答仍保留自动审校待核查项。详见[本地验收](docs/本地127运行验收.md)与[结构化记录](reports/deployment/local-20261015/runtime-record.json)。
+
+## 报告与文档
+
+| 材料 | 内容与入口 |
+| :--- | :--- |
+| **最新课程报告** | [39 页 PDF](课程报告_LaTeX_20261015/main.pdf) · [LaTeX 源文件](课程报告_LaTeX_20261015/main.tex) · [编译说明](课程报告_LaTeX_20261015/README.md)；22 幅图、27 张编号表 |
+| **学术图表素材** | [图表目录](artifacts/academic-figures) · [矢量图册](artifacts/academic-figures/科研助理实验图表集.pdf) · [可编辑 Excel](artifacts/academic-figures/学术图表数据与结果.xlsx)；25 幅图、16 张表 |
+| **演示与 Word 材料** | [课程交付目录](artifacts/delivery-final)，含 17 页 PPT、报告、设计、手册及实验附件；保留 2026-10-11 快照 |
+| **设计与使用** | [技术设计](docs/技术设计文档.md) · [用户手册](docs/用户使用手册.md) · [模型与 API](docs/模型与API配置.md) |
+| **课程与验收** | [项目规划](docs/课程实践项目规划.md) · [逐条验收](docs/课程要求逐条验收.md) · [界面验收](docs/界面功能验收.md) · [本地运行](docs/本地127运行验收.md) |
+| **数据与复现** | [论文清单](data/corpus/manifest.json) · [题集](reports/datasets) · [实验记录](reports/experiments) · [图表数据快照](reports/presentation/source-data/experiments.json) |
+
+课程报告文件夹包含全部 TeX、图件、数值快照和编译脚本。图表可从已有记录重新生成，无需重复调用模型：
 
 ```powershell
-New-Item -ItemType Directory data/runtime -Force | Out-Null
+.venv\Scripts\python.exe scripts/build_generation_quality_comparison.py
+.venv\Scripts\python.exe scripts/collect_presentation_data.py
+.venv\Scripts\python.exe scripts/build_academic_figures.py
+```
+
+图表生成依赖与使用方法见[素材说明](artifacts/academic-figures/使用说明.md)；报告自身的图表重建与 XeLaTeX / Tectonic 编译见其目录内 README。
+
+## 项目结构
+
+```text
+src/
+├── core/          配置、数据结构与持久化
+├── data_loader/   文档适配与来源定位
+├── chunking/      固定、递归与句段分块
+├── retrieval/     编码、BM25、RRF、向量库与重排
+├── generation/    上下文、提示词、LLM、引用与缓存
+├── agent/         工具注册、路由、执行、记忆与 ReAct
+├── services/      应用编排
+├── api/           HTTP 与 SSE
+├── frontend/      四页交互工作台
+└── evaluation/    题集、指标、评分与导出
+scripts/           准备、启动、评测、验收及制图
+tests/             单元、接口、前端与集成检查
+reports/           实际实验、验收记录与数据快照
+artifacts/         Word / PPT / PDF / Excel 交付材料
+课程报告_LaTeX_20261015/   独立报告源文件与全部图表
+```
+
+<details>
+<summary><b>开发验证与可选部署</b></summary>
+
+基础依赖准备后运行：
+
+```powershell
 .venv\Scripts\python.exe -m pytest --basetemp data/runtime/pytest-check
 .venv\Scripts\python.exe scripts/check_ui_workflows.py --report reports/ui/workflow-tests.json
-# 旧入口继续兼容相同完整流程
-.venv\Scripts\python.exe scripts/smoke_ui.py --report reports/ui/workflow-tests.json
-# 如需连接已有的专用demo API，可显式加 --api http://127.0.0.1:8003
 ```
 
-UI 集成检查默认临时启动独立随机端口的 demo API，只在自行创建的随机工作区操作与清理测试数据，不停止已有服务。当前覆盖 16 个完整工作流，报告保存真实执行时间与逐项结果。显式 `--api` 只允许本机 demo 服务；用于控制流时序的两项取消测试仅在自动创建的测试服务中执行。Chroma/FAISS 测试在对应包安装时运行。当前界面结果与浏览器实际文件传输证据见[界面功能验收](docs/界面功能验收.md)；早期实现记录保留在[实现与验证记录](docs/实现与验证记录.md)。
+UI 检查临时启动独立 demo API，在新建工作区内操作与清理数据。GitHub Actions 执行 Python 编译及测试；需要真实模型的实验由对应脚本显式运行。
 
-requirements-tested.txt 记录已有环境的依赖版本；标准模型环境按 requirements-models.txt 准备。依赖清单与模型权重清单用途不同，模型是否可用以本地模型准备记录和健康检查为准。
+Docker 配置位于 `docker/`。当前实际部署验收采用本地 `127.0.0.1`，容器运行尚未实测；有可用 Docker Engine 的环境可使用 `scripts/deploy_docker.ps1`。详见[部署状态](docs/Docker实际部署验收.md)。
 
-## Docker
+</details>
 
-当前 Windows 环境未执行 Docker；已核对Compose配置与一键部署脚本语法，容器运行状态不冒充验证通过。有Docker Engine的环境可直接执行`.\scripts\deploy_docker.ps1 -Profile standard`；无模型演示用`-Profile demo`，已配置NVIDIA容器运行时可加`-Gpu`。首次标准部署会下载权重。等价分步命令如下。
-
-```bash
-docker compose -f docker/docker-compose.yml up -d --build ollama
-docker compose -f docker/docker-compose.yml --profile setup run --rm prepare
-docker compose -f docker/docker-compose.yml exec ollama ollama pull qwen2.5:7b-instruct-q4_K_M
-docker compose -f docker/docker-compose.yml up -d api frontend
-```
-
-模型与数据均使用持久化卷。首次联网准备后，本地问答链路可以断网；功能检查可以在创建服务前设置 RAG_PROFILE=demo。
-
-## 代码
-
-`src/core` 数据与配置，`data_loader/chunking/retrieval` 文档检索，`generation` RAG与引用，`agent` 手写决策和工具，`services/api` 任务与SSE，`frontend` 四页界面，`evaluation` 评测。脚本、测试和Docker分别位于 scripts、tests、docker。
-
-详见[技术设计](docs/技术设计文档.md)、[用户手册](docs/用户使用手册.md)和[课程规划](docs/课程实践项目规划.md)。
+原论文版权归作者及出版方；仓库通过版本清单恢复原始资料。请遵循对应来源条款。提交实际答案质量结论时，应保留实验条件、评分来源和原文证据。

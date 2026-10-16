@@ -1,0 +1,10 @@
+﻿execution_status,requirement_count
+targeted_automated_executed,10
+real_experiment_executed,12
+real_functional_executed,27
+completed,26
+previous_automated_executed,27
+ai_quality_comparison_completed,2
+not_applicable_unselected_optional,2
+human_scoring_pending,1
+provided_runtime_unverified,1

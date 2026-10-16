@@ -1,55 +1,65 @@
+x-application: &application
+  image: ${RAG_DOCKER_IMAGE:-rag-course}:${RAG_IMAGE_TAG:-standard}
+  build:
+    context: ..
+    dockerfile: docker/Dockerfile
+    args:
+      INSTALL_MODELS: ${RAG_INSTALL_MODELS:-true}
+
 services:
   ollama:
     image: ollama/ollama:latest
+    profiles: ["models"]
     volumes:
-      - ollama_models:/root/.ollama
+      - ${RAG_OLLAMA_MODELS_SOURCE:-ollama_models}:/root/.ollama/models
     # CPU is portable by default. Enable the gpu override on a configured NVIDIA host.
   api:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
+    <<: *application
     ports:
-      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:${RAG_API_PORT:-8000}:8000"
     environment:
       RAG_OLLAMA_URL: http://ollama:11434
       RAG_DATA_DIR: /app/data/runtime
       RAG_PROFILE: ${RAG_PROFILE:-standard}
+      RAG_CONFIG: /app/config.standard.yaml
+      RAG_LLM_MODEL: ${RAG_LLM_MODEL:-qwen2.5:7b-instruct-q4_K_M}
       HF_HOME: /models/huggingface
+      HF_HUB_CACHE: /models/huggingface/hub
     volumes:
       - app_data:/app/data/runtime
-      - hf_models:/models/huggingface
-    depends_on:
-      - ollama
+      - ${RAG_HF_HUB_SOURCE:-hf_models}:/models/huggingface/hub
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
-      interval: 15s
+      test: ["CMD", "python", "-c", "import json,urllib.request; r=json.load(urllib.request.urlopen('http://localhost:8000/health', timeout=4)); assert r.get('ready'), r"]
+      interval: 10s
       timeout: 5s
-      start_period: 30s
+      start_period: 60s
+      retries: 12
   frontend:
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
+    image: ${RAG_DOCKER_IMAGE:-rag-course}:${RAG_IMAGE_TAG:-standard}
     command: ["python", "-m", "streamlit", "run", "src/frontend/app.py", "--server.address", "0.0.0.0", "--server.headless", "true"]
     environment:
       RAG_API_URL: http://api:8000
     ports:
-      - "127.0.0.1:8501:8501"
+      - "127.0.0.1:${RAG_FRONTEND_PORT:-8501}:8501"
     depends_on:
       api:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=4)"]
+      interval: 10s
+      timeout: 5s
+      start_period: 20s
+      retries: 6
   prepare:
+    <<: *application
     profiles: ["setup"]
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
-    command: ["python", "scripts/prepare_models.py", "--manifest", "/models/huggingface/manifest.json"]
+    command: ["python", "scripts/prepare_models.py", "--models", "BAAI/bge-m3", "BAAI/bge-reranker-base", "--manifest", "/models/huggingface/hub/.docker-manifest.json"]
     environment:
       RAG_OLLAMA_URL: http://ollama:11434
       HF_HOME: /models/huggingface
+      HF_HUB_CACHE: /models/huggingface/hub
     volumes:
-      - hf_models:/models/huggingface
-    depends_on:
-      - ollama
+      - ${RAG_HF_HUB_SOURCE:-hf_models}:/models/huggingface/hub
 volumes:
   ollama_models:
   app_data:

@@ -1,4 +1,5 @@
 .git
+.gitignore
 .venv
 data/runtime
 data/models
@@ -12,3 +13,6 @@ __pycache__
 *.docx
 *.pdf
 .env
+node_modules
+*.zip
+*.bundle

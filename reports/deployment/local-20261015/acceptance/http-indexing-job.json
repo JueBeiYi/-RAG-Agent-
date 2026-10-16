@@ -1,0 +1,22 @@
+{
+  "name": "indexing-job",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/jobs/08b1537555394437b9c2121d76eb0674",
+  "at": "2026-10-15T09:22:48.472295+00:00",
+  "status": 200,
+  "seconds": 0.027,
+  "request": null,
+  "content_type": "application/json",
+  "response": {
+    "job_id": "08b1537555394437b9c2121d76eb0674",
+    "id": "08b1537555394437b9c2121d76eb0674",
+    "created_at": "2026-10-15T09:21:16.826643+00:00",
+    "document_id": "c2662c09f3784936ac1ee32898beaff3",
+    "name": "cvt_2103.15808v1.pdf",
+    "status": "done",
+    "stage": "ready",
+    "progress": 100,
+    "updated_at": "2026-10-15T09:22:48.017763+00:00",
+    "chunks": 29
+  }
+}

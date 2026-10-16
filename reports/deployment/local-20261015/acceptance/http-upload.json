@@ -1,0 +1,46 @@
+{
+  "name": "upload",
+  "method": "POST",
+  "url": "http://127.0.0.1:8000/documents",
+  "at": "2026-10-15T09:21:16.839868+00:00",
+  "status": 200,
+  "seconds": 0.037,
+  "request": {
+    "file_bytes": 991193
+  },
+  "content_type": "application/json",
+  "response": {
+    "jobs": [
+      {
+        "job_id": "08b1537555394437b9c2121d76eb0674",
+        "id": "08b1537555394437b9c2121d76eb0674",
+        "created_at": "2026-10-15T09:21:16.826643+00:00",
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "status": "queued",
+        "stage": "queued",
+        "progress": 0,
+        "updated_at": "2026-10-15T09:21:16.826643+00:00"
+      }
+    ],
+    "documents": [
+      {
+        "document_id": "c2662c09f3784936ac1ee32898beaff3",
+        "name": "cvt_2103.15808v1.pdf",
+        "content_hash": "8fd5b7527ea9a2dc492cf6c9d63a160b688a73542e71e402339c6b774fbb802e",
+        "format": "pdf",
+        "title": "",
+        "authors": [],
+        "year": null,
+        "abstract": "",
+        "doi": "",
+        "status": "queued",
+        "error": "",
+        "chunks": 0,
+        "created_at": "2026-10-15T09:21:16.810653+00:00",
+        "metadata": {},
+        "duplicate": false
+      }
+    ]
+  }
+}

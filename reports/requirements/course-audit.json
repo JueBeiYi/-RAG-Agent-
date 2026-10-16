@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T15:28:32.862103+08:00",
+  "generated_at": "2026-10-15T21:06:30.615394+08:00",
   "source": {
     "path": "南京农业大学课程实践.docx",
     "sha256": "f62798820cafc546c593a74bfd599352d84f5aeecaa7d0415d8cba3c766089f9",
@@ -1074,7 +1074,7 @@
       "requirement": "Temperature/Top-p/Top-k comparisons",
       "mandatory": true,
       "implementation_status": "implemented",
-      "execution_status": "real_experiment_executed",
+      "execution_status": "ai_quality_comparison_completed",
       "human_review_status": "pending",
       "code": [
         {
@@ -1100,10 +1100,14 @@
           "passed_in_record": true
         }
       ],
-      "interpretation": "Ollama receives all three parameters; cloud-compatible backend does not claim unsupported Top-k sampling.",
+      "interpretation": "现有真实回答已完成统一AI质量评审及条件比较；每条件4题、单次生成，仅作探索性结论。AI评审来源保留，不计入真人评分。",
       "pending": [],
       "latest_experiment_evidence": [
         "reports/experiments/generation/parameters/results.json"
+      ],
+      "latest_quality_evidence": [
+        "reports/experiments/generation/quality-comparison/ai_quality_summary.json",
+        "docs/生成参数与Prompt质量比较.md"
       ]
     },
     {
@@ -1570,7 +1574,7 @@
       "requirement": "Prompt design documentation and parameter experiments",
       "mandatory": true,
       "implementation_status": "implemented",
-      "execution_status": "completed",
+      "execution_status": "ai_quality_comparison_completed",
       "human_review_status": "pending",
       "code": [
         {
@@ -1589,13 +1593,17 @@
         }
       ],
       "evidence": [],
-      "interpretation": "",
+      "interpretation": "现有真实回答已完成统一AI质量评审及条件比较；每条件4题、单次生成，仅作探索性结论。AI评审来源保留，不计入真人评分。",
       "pending": [],
       "latest_experiment_evidence": [
         "reports/experiments/generation/prompt/results.json"
       ],
       "evidence_paths": [
         "artifacts/delivery-final/Prompt模板设计与实验记录.docx"
+      ],
+      "latest_quality_evidence": [
+        "reports/experiments/generation/quality-comparison/ai_quality_summary.json",
+        "docs/生成参数与Prompt质量比较.md"
       ]
     },
     {
@@ -3781,13 +3789,14 @@
       "source_paragraph_id": 250,
       "module": 5,
       "source_text": "答案质量：人工评分（正确性、完整性、引用准确性）",
-      "requirement": "实际答案人工评分表",
+      "requirement": "实际答案人工评分",
       "implementation_status": "human_scoring_pending",
       "execution_status": "human_scoring_pending",
       "evidence_paths": [
-        "reports/experiments/generation/baseline/human_scoring_60.csv"
+        "reports/experiments/generation/baseline/human_scoring_60.csv",
+        "reports/experiments/generation/baseline/ai_review_summary.json"
       ],
-      "interpretation": "用户明确要求先生成可填写表；评分人、正确性、完整性、引用质量不代填。"
+      "interpretation": "60题AI辅助评分已完成；真实人工评分0/60题。AI评分单独标注，不计入课程要求的人工评分。"
     },
     {
       "id": "p251.delivery",
@@ -4002,25 +4011,42 @@
         "docker/docker-compose.yml",
         "scripts/deploy_docker.ps1"
       ],
-      "interpretation": "Compose与启动脚本静态校验通过；本机没有Docker Engine，不声明容器已实机启动。"
+      "interpretation": "部署文件与Compose配置校验通过，WSL/Docker已安装但容器未实测；2026-10-15用户取消Docker验收，改为本地127运行留证，不将本地运行写成容器验收。"
     }
   ],
   "summary": {
     "targeted_automated_executed": 10,
-    "real_experiment_executed": 13,
+    "real_experiment_executed": 12,
     "real_functional_executed": 27,
-    "completed": 27,
+    "completed": 26,
     "previous_automated_executed": 27,
+    "ai_quality_comparison_completed": 2,
     "not_applicable_unselected_optional": 2,
     "human_scoring_pending": 1,
     "provided_runtime_unverified": 1
   },
-  "user_selected_pending": [
-    "人工评分先提供可填写表",
+  "course_evaluation_complete": false,
+  "pending_tasks": [
+    "实际答案人工评分",
+    "Docker一键部署文件"
+  ],
+  "human_fields_pending": [
+    "实际成员职责确认（现为拟定，40/30/30比例已由用户提供）",
     "实际提交日期待填写"
   ],
   "unverified_environment": [
     "Docker Engine容器实机运行"
   ],
+  "local_runtime_acceptance": {
+    "status": "passed",
+    "evidence_path": "reports/deployment/local-20261015/runtime-record.json",
+    "captured_at": "2026-10-15T21:05:14.0950206+08:00",
+    "ui_url": "http://127.0.0.1:8501",
+    "api_url": "http://127.0.0.1:8000",
+    "model": "research-qwen:7b",
+    "unique_check_count": 33,
+    "scope": "用户选择本地127验收；Docker验收已取消，本地通过不替代课程原文中的容器实测证明。"
+  },
+  "artifact_scope": "Word/PPT保留2026-10-11生成快照；2026-10-14的AI评分已另存，最终提交文档需同步后续结果。本次仅核对证据，不重跑模型、全量测试或容器。",
   "scope": "仅题目一；原文其他三道题为替代选题，不是额外必做项目。"
 }

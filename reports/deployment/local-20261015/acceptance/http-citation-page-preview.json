@@ -1,0 +1,15 @@
+{
+  "name": "citation-page-preview",
+  "method": "GET",
+  "url": "http://127.0.0.1:8000/documents/c2662c09f3784936ac1ee32898beaff3/preview?page=7&chunk_id=ee76cb90302d0a0f008bef808a792758",
+  "at": "2026-10-15T09:23:23.878453+00:00",
+  "status": 200,
+  "seconds": 0.177,
+  "request": null,
+  "content_type": "image/png",
+  "response": {
+    "bytes": 225573,
+    "sha256": "465d8fed8ff2d9c4c76e020d2e02b64326b82312e73f5253909b60f0d8c8a35f",
+    "content_type": "image/png"
+  }
+}

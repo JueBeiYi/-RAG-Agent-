@@ -1,0 +1,162 @@
+{
+  "created_at": "2026-10-15T21:05:14.520321+08:00",
+  "status": "passed",
+  "files": [
+    {
+      "path": "acceptance/acceptance.json",
+      "bytes": 173656,
+      "sha256": "e8dbe5438c99e7546c25424b05d8544cae147fc60dc030b1ec700847ef4072a7"
+    },
+    {
+      "path": "acceptance/citation-page-preview.png",
+      "bytes": 225573,
+      "sha256": "465d8fed8ff2d9c4c76e020d2e02b64326b82312e73f5253909b60f0d8c8a35f"
+    },
+    {
+      "path": "acceptance/http-chunks-before-0.json",
+      "bytes": 240087,
+      "sha256": "58da1833e132dea5340c1f5f784d2209afc1f203c347363fc2a029509b5fb048"
+    },
+    {
+      "path": "acceptance/http-citation-page-preview.json",
+      "bytes": 491,
+      "sha256": "df544a3222c21aff36c10a4e4ff7f1874cecb995f7d5ecec22ebbf4cd7611725"
+    },
+    {
+      "path": "acceptance/http-create-session.json",
+      "bytes": 546,
+      "sha256": "dc9da0bf5a44017bc5bb778b2e6e6173462b84eb35228074f286424d894c58f8"
+    },
+    {
+      "path": "acceptance/http-document-ready.json",
+      "bytes": 3104,
+      "sha256": "546f300dbc45da907d8a38a975f80d101d24291e3db74cd07320b84814d12de8"
+    },
+    {
+      "path": "acceptance/http-frontend-health.json",
+      "bytes": 276,
+      "sha256": "6bc1ded12639630b9e6c0ab0a3cfbee1821deb0bc2467b6a0f1c3f3def6e1293"
+    },
+    {
+      "path": "acceptance/http-indexing-job.json",
+      "bytes": 676,
+      "sha256": "841dc19292dd5d599dc0a29f426d1cb789719e9088c6371f2d1ead103e3ea885"
+    },
+    {
+      "path": "acceptance/http-initial-health-poll.json",
+      "bytes": 2263,
+      "sha256": "2b05ee203d9f961e1642bb6875b1b986594809c41198425beb2d0b2af4c4f610"
+    },
+    {
+      "path": "acceptance/http-persisted-run.json",
+      "bytes": 230924,
+      "sha256": "99d1ef3d076ca172994b75d392b2a3d49bd11d76a74b6e7709423ee0da717a4b"
+    },
+    {
+      "path": "acceptance/http-persisted-session.json",
+      "bytes": 48684,
+      "sha256": "6cb9b8d404c5b8622326d8d53a3d290a57c608da82d7bbe59e9f8859727496c6"
+    },
+    {
+      "path": "acceptance/http-public-config.json",
+      "bytes": 1636,
+      "sha256": "01c04765d2292422d85aa3c4eef6a1a667222acdd4a46057118180f7b03469bb"
+    },
+    {
+      "path": "acceptance/http-rag-stream.json",
+      "bytes": 143922,
+      "sha256": "3689229db41c16d969e232d937ef97132d2ad1dca80374ae534c0f1869a38ac5"
+    },
+    {
+      "path": "acceptance/http-session-export.json",
+      "bytes": 48671,
+      "sha256": "212462dcb2fdbaf637f687062add8f687e8c1621ed35e11143e82f738b6904bf"
+    },
+    {
+      "path": "acceptance/http-source-download.json",
+      "bytes": 445,
+      "sha256": "376ee40515c6a4f8e077e46da2b30eb5286e210048b91cd89cc3fe6604500387"
+    },
+    {
+      "path": "acceptance/http-upload.json",
+      "bytes": 1294,
+      "sha256": "4638e12ff8e6de5d924f33ffc77e5e6a60d2c026c7500c6509cbce0e55231c48"
+    },
+    {
+      "path": "acceptance/rag-events.json",
+      "bytes": 170673,
+      "sha256": "221e79de4cd522f2afff718e496dd55cd1699f6c62c9841fd1c1976e3a1c6e33"
+    },
+    {
+      "path": "acceptance/验收记录.md",
+      "bytes": 5072,
+      "sha256": "32f8fcac51dc3b2347e94b97cac01cbabde022a7590cf26d100a99eed3853e0a"
+    },
+    {
+      "path": "api.stderr.log",
+      "bytes": 1141,
+      "sha256": "e054396969f04ffc3a657957de88fe9259a8564f06eee91455661b71ad44bd00"
+    },
+    {
+      "path": "api.stdout.log",
+      "bytes": 5948,
+      "sha256": "c67af5fb509db4581377621b3535e75c9d1988533b931a967e904d797eb12cc9"
+    },
+    {
+      "path": "health.json",
+      "bytes": 1881,
+      "sha256": "af3b647144dbfb484999ed2bb30ecb4fad62171694fa0a9ecb398201d304851b"
+    },
+    {
+      "path": "ollama-11435.stderr.log",
+      "bytes": 21981,
+      "sha256": "7c2ec368ad95d4652838706a58991fa19f6f6db05a3e09f1563b1bc9e6f47d4a"
+    },
+    {
+      "path": "ollama-11435.stdout.log",
+      "bytes": 1097,
+      "sha256": "3cc838b689f2ace04ef4ac810a2469d320281c2bf226b3b5e81f59412ac54a0f"
+    },
+    {
+      "path": "ollama-model-ps.json",
+      "bytes": 22,
+      "sha256": "7f9fc2997f5fc9f5a40bc2302e51ed9331c744cd56a88e709136d1762ff7be89"
+    },
+    {
+      "path": "processes-and-listeners.json",
+      "bytes": 1400,
+      "sha256": "0fb68aff31b46027c0c9b47b8a347e12f1284d30e99af495cc261ce52666d764"
+    },
+    {
+      "path": "runtime-record.json",
+      "bytes": 2379,
+      "sha256": "a02168f35fe3267bb38f2b5eee392a53d55abc1452e5f2dd4ff7fcec02c19ec9"
+    },
+    {
+      "path": "start-transcript.txt",
+      "bytes": 1828,
+      "sha256": "b548a21f20288d191a3d0c07b792af763347b8027ef4649f56ac68e6da8c21c6"
+    },
+    {
+      "path": "ui.stderr.log",
+      "bytes": 66,
+      "sha256": "f40b89e3aa7f65ab33ab9cd7cc80442561e2ec7df551b22aa5c2ba728078914f"
+    },
+    {
+      "path": "ui.stdout.log",
+      "bytes": 92,
+      "sha256": "72b838d46ea9daf705222e804df43c0a7274a6a5877a3ca7e436deb50eb81aa1"
+    },
+    {
+      "path": "本地界面运行截图.jpg",
+      "bytes": 29002,
+      "sha256": "cf084fcbd650e6e915c3088dc485261c19b5feef7d143bfca7e54d9c3d29058a"
+    },
+    {
+      "path": "运行记录.md",
+      "bytes": 3304,
+      "sha256": "5f786521bd2e4a3a2f547b9f91b29451463c3c8f9ae09f1c9fe127678b6925fc"
+    }
+  ],
+  "known_private_workspace_values_found": 0
+}

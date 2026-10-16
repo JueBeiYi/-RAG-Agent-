@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-10-15T13:52:36.327014+00:00",
+  "compiler": "Tectonic 0.17.0+20260731",
+  "compiler_provenance": "installed Codex application bundled runtime",
+  "compiler_sha256": "d0f279b9f1d874124919d1030c6f8a2b5ce313a2487fd220f267525faf9b842f",
+  "entry": "main.tex",
+  "command": "tectonic --keep-logs --keep-intermediates main.tex",
+  "exit_code": 0,
+  "tex_sha256": "c571fca2149d14bdca88c906001520e5ac59699a136c91a277d805f6b03bbafe",
+  "pdf_sha256": "6c6f5f302d8d9ef162e344af62f71dacc143cb054762bd07f5638207ec0337e5",
+  "checks": {
+    "pdf_pages": 39,
+    "figure_count": 22,
+    "numbered_table_count": 27,
+    "missing_figures": [],
+    "duplicate_labels": [],
+    "unresolved_refs": [],
+    "unresolved_citations": [],
+    "unresolved_template": false,
+    "overfull_boxes": 0,
+    "missing_characters": 0,
+    "pdf_unresolved_marks": 0
+  },
+  "visual_review": {
+    "all_pages_rendered": true,
+    "page_count": 39,
+    "status": "reviewed; no remaining clipping, overlap, isolated closing lines or missing glyphs"
+  },
+  "notes": [
+    "The built-in single-source diagnostic compiler cannot include project image files. Final PDF was compiled in the complete local report directory.",
+    "Benign underfull-box spacing notices and a CJK font-family redefinition notice remain in the compile log; no overfull boxes, unresolved references or missing characters."
+  ]
+}

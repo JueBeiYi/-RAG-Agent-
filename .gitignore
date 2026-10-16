@@ -21,3 +21,27 @@ data/runtime/
 reports/runs/
 *.log
 .streamlit/secrets.toml
+
+# Downloadable source papers and local course handouts.
+/data/corpus/*.pdf
+/*.pdf
+
+# Reproducible render QA, drafts and duplicate archives stay local.
+/artifacts/.delivery-reference-render/
+/artifacts/delivery-qa-config.json
+/artifacts/*.zip
+/docs/report-drafts/
+/reports/presentation/qa/
+/reports/testing/latex-*/
+/artifacts/academic-figures/workbook-previews/
+
+# Large aggregates can be rebuilt from the original reports/experiments files.
+/reports/presentation/source-data/raw-results.json
+/artifacts/academic-figures/data/raw-results.json
+
+# Preserve the single sanitized report compilation log with its delivery manifest.
+!/课程报告_LaTeX_20261015/build-records/main.log
+
+# Embedded experiment runtime databases and caches are machine-local.
+**/.runtime/
+node_modules/

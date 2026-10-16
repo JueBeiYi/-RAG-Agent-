@@ -1,0 +1,4 @@
+﻿parser,paper_count,parse_ms,anchor_retention,matched_anchors,total_anchors,table_blocks,formula_blocks,pages_with_text,bbox_blocks
+pymupdf,10,38564.769,1.0,119,119,157,119,169,3808
+pdfplumber,10,29250.631999999998,1.0,119,119,141,231,169,12586
+pypdf2,10,9124.055,0.957983193277311,114,119,0,1,169,0

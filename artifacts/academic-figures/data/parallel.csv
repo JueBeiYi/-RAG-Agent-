@@ -1,0 +1,3 @@
+﻿study,condition,case_count,run_count,generation_protocol_success_rate,latency_mean_ms,latency_p50_ms,latency_p95_ms,prompt_tokens_total,completion_tokens_total,token_usage_known_count,invalid_citation_run_count,numeric_rule_review_run_count,answers_with_source_markers,output_truncation_count,human_correctness_mean,human_completeness_mean,human_citation_quality_mean,human_scoring_completed_count,measurement_scope
+parallel,workers_1,10,10,1,24.124800006393343,24.79150000726804,29.457455087685958,0,0,10,0,0,0,0,,,,0,actual local independent tools; excludes LLM and retrieval
+parallel,workers_2,10,10,1,21.160579985007644,20.464150002226233,27.460719918599356,0,0,10,0,0,0,0,,,,0,actual local independent tools; excludes LLM and retrieval
