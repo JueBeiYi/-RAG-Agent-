@@ -166,6 +166,7 @@ flowchart LR
 
 | 材料 | 内容与入口 |
 | :--- | :--- |
+| **课设答辩PPT** | [22页可编辑答辩稿](artifacts/defense/课设答辩_智能科研助理.pptx) · [使用说明](artifacts/defense/README.md)；18页主体、4页备答，逐页讲稿与来源备注 |
 | **最新课程报告** | [47 页 PDF](artifacts/course-report/main.pdf) · [LaTeX 源文件](artifacts/course-report/main.tex) · [编译说明](artifacts/course-report/README.md)；26 幅编号图（21 幅学术图及 5 幅界面图）、29 张编号表 |
 | **学术图表素材** | [图表目录](artifacts/academic-figures) · [矢量图册](artifacts/academic-figures/科研助理实验图表集.pdf) · [可编辑 Excel](artifacts/academic-figures/学术图表数据与结果.xlsx)；25 幅图、16 张表 |
 | **演示与 Word 材料** | [课程交付目录](artifacts/delivery-final)，含 17 页 PPT、报告、设计、手册及实验附件；保留 2026-10-11 快照 |

@@ -2,6 +2,7 @@
 
 | 目录 | 内容 | 使用入口 |
 | --- | --- | --- |
+| `defense/` | 当前课设答辩：22页可编辑PPT，18页主体、4页备答，含逐页讲稿与来源备注 | [打开答辩稿](defense/课设答辩_智能科研助理.pptx) · [使用说明](defense/README.md) |
 | `course-report/` | 最新课程报告：47页PDF、完整LaTeX源文件、26幅编号图（21幅学术图及5幅界面图）、29张编号表、数据与编译记录 | [阅读报告](course-report/main.pdf) · [源文件](course-report/main.tex) · [编译说明](course-report/README.md) |
 | `academic-figures/` | 汇报用图册、25幅科研图、16张结果表、Excel与数值快照 | [素材说明](academic-figures/使用说明.md) · [PDF图册](academic-figures/科研助理实验图表集.pdf) |
 | `delivery-final/` | 可编辑的8份Word报告、17页演示PPT及构建配置；保留2026-10-11快照 | [交付文件](delivery-final) |

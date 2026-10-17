@@ -2,12 +2,12 @@
   "date": "2026-10-17",
   "timezone": "Asia/Shanghai",
   "inventory_scope": "Detailed project files; protected local resources are summarized without following links. This Markdown and JSON index are counted separately.",
-  "detailed_project_files": 687,
+  "detailed_project_files": 689,
   "index_files": [
     "reports/maintenance/project-inventory-20261017.json",
     "文件目录清单.md"
   ],
-  "project_bytes_excluding_local_resources": 295636330,
+  "project_bytes_excluding_local_resources": 296026461,
   "moved_groups": 8,
   "pending_cleanup_files": 2837,
   "pending_cleanup_bytes": 3783610584.0,
@@ -101,12 +101,12 @@
     },
     {
       "path": "README.md",
-      "bytes": 15160,
+      "bytes": 15373,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/README.md",
-      "bytes": 1687,
+      "bytes": 1907,
       "git_included_or_eligible": true
     },
     {
@@ -1228,6 +1228,16 @@
       "path": "artifacts/course-report/requirements-report.txt",
       "bytes": 84,
       "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/defense/README.md",
+      "git_included_or_eligible": true,
+      "bytes": 1282
+    },
+    {
+      "path": "artifacts/defense/课设答辩_智能科研助理.pptx",
+      "git_included_or_eligible": true,
+      "bytes": 387005
     },
     {
       "path": "artifacts/delivery-final/Bad Case分析报告.docx",
@@ -3461,7 +3471,7 @@
     },
     {
       "path": "tests/test_frontend_workflows.py",
-      "bytes": 37418,
+      "bytes": 38829,
       "git_included_or_eligible": true
     },
     {
@@ -3505,11 +3515,18 @@
       "git_included_or_eligible": true
     }
   ],
-  "updated_at": "2026-10-17T15:09:59.947819+00:00",
+  "updated_at": "2026-10-17T15:53:00.477154+00:00",
   "report_visual_revision": {
     "pages": 47,
     "figures": 26,
     "numbered_tables": 29,
     "new_model_calls": 0
+  },
+  "current_defense": {
+    "path": "artifacts/defense/课设答辩_智能科研助理.pptx",
+    "slides": 22,
+    "main_slides": 18,
+    "backup_slides": 4,
+    "speaker_notes": 22
   }
 }
