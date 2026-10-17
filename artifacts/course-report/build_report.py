@@ -5,10 +5,12 @@ No model calls, benchmark runs, or bibliography service are required.
 """
 from pathlib import Path
 import json
+import re
 
 HERE=Path(__file__).resolve().parent
 D=json.loads((HERE/'data/report-data.json').read_text(encoding='utf-8'))
 TABLES=D['tables']
+A=json.loads((HERE/'data/advanced-statistics.json').read_text(encoding='utf-8'))
 
 
 class Raw(str):pass
@@ -20,11 +22,22 @@ def esc(s):
     return ''.join(m.get(c,c)for c in str(s))
 
 
-def table(title,label,headers,rows,fmt=None,note=''):
+def table(title,label,headers,rows,fmt=None,note='',best=None):
     fmt=fmt or ('X'+'r'*(len(headers)-1))
-    body='\n'.join(' & '.join(esc(v)for v in row)+r' \\' for row in rows)
+    # Highlight observed quality maxima only within the fixed table comparison.
+    # Counts, latency, and costs are not automatically treated as objectives.
+    display=[list(row)for row in rows]
+    if best:
+        for col,direction in best.items():
+            values=[float(row[col])for row in rows]
+            optimum=(max if direction=='max'else min)(values)
+            for index,value in enumerate(values):
+                if abs(value-optimum)<1e-10:
+                    display[index][col]=Raw(r'\textbf{'+esc(display[index][col])+'}')
+        note+=' '+r'\textbf{粗体}为本表固定口径下的观察最优值（并列保留），不代表总体最优或显著差异。'
+    body='\n'.join(' & '.join(esc(v)for v in row)+r' \\' for row in display)
     return (r'\begin{table}[htbp]\centering'+'\n'+r'\caption{'+title+r'}\label{'+label+'}\n'+
-        r'\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}'+'\n'+
+        r'\ReportTableStyle'+'\n'+
         r'\begin{tabularx}{\linewidth}{@{}'+fmt+r'@{}}\toprule'+'\n'+
         ' & '.join(esc(h)for h in headers)+r' \\ \midrule'+'\n'+body+'\n'+
         r'\bottomrule\end{tabularx}'+'\n'+(r'\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize '+note+r'\end{minipage}'+'\n' if note else '')+
@@ -46,26 +59,47 @@ def dynamic():
     out['PARSERS']=table('三种PDF解析器的实测结果','tab:parsers',['解析器','累计耗时/s','锚点保持','表格块','公式块'],
         [[p['parser'],f(p['parse_ms']/1000,3),f"{p['matched_anchors']}/{p['total_anchors']}",p['table_blocks'],p['formula_blocks']]for p in rows('parsers')],note='每个解析器处理相同10篇论文；锚点保持率是代理指标，不代表完整版面、表格或公式识别准确率。来源E03。')
     out['CHUNKING']=table('同一m3e模型下的五种分块配置比较','tab:chunking',['分块配置','片段数','Hit@5','MRR','Recall@5'],
-        [[p['variant'],p['chunk_count'],f(p['hit_at_5']),f(p['mrr']),f(p['recall_at_5'])]for p in rows('chunking')if 'm3e' in p['model']],note='开发集20题；混合检索（Dense、BM25与RRF），每种切分使用其实际索引。分块单位为项目定义的轻量token，不等同于模型tokenizer。来源E04。')
+        [[p['variant'],p['chunk_count'],f(p['hit_at_5']),f(p['mrr']),f(p['recall_at_5'])]for p in rows('chunking')if 'm3e' in p['model']],best={2:'max',3:'max',4:'max'},note='开发集20题；混合检索（Dense、BM25与RRF），每种切分使用其实际索引。分块单位为项目定义的轻量token，不等同于模型tokenizer。来源E04。')
     out['EMBEDDINGS']=table('Embedding模型质量与查询编码代价','tab:embedding',['模型','维度','Hit@5','MRR','Recall@5','编码/ms'],
-        [[p['model'].split('/')[-1],p['dimension'],f(p['hit_at_5']),f(p['mrr']),f(p['recall_at_5']),f(p['query_encoding_amortized_ms'],2)]for p in rows('embeddings')],note='同342片段、开发集20题、递归512配置。最后一列为20个实际查询的编码总时间除以20，不包含模型加载，亦不是逐请求在线延迟。此表没有比较BGE-M3。来源E05。')
+        [[p['model'].split('/')[-1],p['dimension'],f(p['hit_at_5']),f(p['mrr']),f(p['recall_at_5']),f(p['query_encoding_amortized_ms'],2)]for p in rows('embeddings')],best={2:'max',3:'max',4:'max'},note='同342片段、开发集20题、递归512配置。最后一列为20个实际查询的编码总时间除以20，不包含模型加载，亦不是逐请求在线延迟。此表没有比较BGE-M3。来源E05。')
     out['VECTORS']=table('相同真实向量下的存储后端比较','tab:vectors',['后端','构建/ms','查询均时/ms','Hit@5','MRR','Recall@5'],
-        [[p['backend'],f(p['build_and_persist_ms'],2),f(p['latency_mean_ms'],3),f(p['hit_at_5']),f(p['mrr']),f(p['recall_at_5'])]for p in rows('vectorstores')],note='历史359片段、1024维真实向量及同20个开发集查询；查询时间排除共享编码。删除与恢复探针均通过。规模有限，不能据此证明后端普遍优劣。来源E06。')
+        [[p['backend'],f(p['build_and_persist_ms'],2),f(p['latency_mean_ms'],3),f(p['hit_at_5']),f(p['mrr']),f(p['recall_at_5'])]for p in rows('vectorstores')],best={3:'max',4:'max',5:'max'},note='历史359片段、1024维真实向量及同20个开发集查询；查询时间排除共享编码。删除与恢复探针均通过。规模有限，不能据此证明后端普遍优劣。来源E06。')
     mode={'vector':'向量','hybrid':'混合RRF','hybrid_rerank':'混合加重排'}
     out['RETRIEVAL']=table('冻结测试集上的三档检索结果','tab:retrieval',['模式','Hit@5','MRR','Recall@5','均时/ms','P95/ms'],
-        [[mode[p['mode']],f(p['hit_at_5']),f(p['mrr']),f(p['recall_at_5']),f(p['latency_mean_ms'],2),f(p['latency_p95_ms'],2)]for p in rows('retrieval_test')],note='每模式60题，历史359片段；各模式执行错误数均为0。预计算查询编码不包含在排序耗时内；BGE-M3全部80题查询编码均摊为112.915 ms/题。来源E07。')
+        [[mode[p['mode']],f(p['hit_at_5']),f(p['mrr']),f(p['recall_at_5']),f(p['latency_mean_ms'],2),f(p['latency_p95_ms'],2)]for p in rows('retrieval_test')],best={1:'max',2:'max',3:'max'},note='每模式60题，历史359片段；各模式执行错误数均为0。预计算查询编码不包含在排序耗时内；BGE-M3全部80题查询编码均摊为112.915 ms/题。来源E07。')
+    paired=[]
+    paired_mode={'vector':'向量','hybrid':'混合','hybrid_rerank':'混合+重排'}
+    for p in A['paired_bootstrap']['effects']:
+        percent=p['metric']!='mrr'
+        scale=100 if percent else 1
+        precision=2 if percent else 4
+        metric={'hit_at_5':'Hit@5/百分点','mrr':'MRR/原量纲','recall_at_5':'Recall@5/百分点'}[p['metric']]
+        paired.append([paired_mode[p['from']]+' → '+paired_mode[p['to']],metric,
+                       f"{p['mean_delta']*scale:+.{precision}f}",
+                       '['+f(p['ci95'][0]*scale,precision)+', '+f(p['ci95'][1]*scale,precision)+']'])
+    out['PAIREDEFFECTS']=table('同题配对的检索效果差及其题目级区间','tab:paired-effects',
+        ['比较（后者减前者）','指标/单位',Raw(r'$\Delta$'),'95%区间'],paired,
+        fmt='p{4.1cm}p{3.5cm}rR',note='各比较使用同60题；同次抽样索引应用于全部模式。'+
+        str(A['paired_bootstrap']['replicates'])+'次percentile重采样，seed='+str(A['paired_bootstrap']['seed'])+
+        '。混合指RRF融合；Hit与Recall列按百分点换算，MRR不换算。区间仅刻画题目构成不确定性，不作显著性检验。来源E07及派生统计快照。')
     rrf=rows('rrf_grid')
     out['RRF']=table('开发集RRF常数与截断深度比较','tab:rrf',['RRF常数','评价K','Hit@K','Recall@K','MRR@20'],
         [[p['rrf_k'],p.get('metric_k',p.get('top_k')),f(p.get('hit',p.get('hit_at_k'))),f(p.get('recall',p.get('recall_at_k'))),f(p['mrr_at_20'],6)]for p in rrf],note='同20个开发集问题，复用实际编码和检索排名，无新增模型调用。MRR固定在候选深度20定义，不随评价K重新计算。来源E08。')
     q=D['baseline_ai']; labels={'correctness_1_to_5':'正确性','completeness_1_to_5':'完整性','citation_quality_1_to_5':'引用支撑','fluency_1_to_5':'流畅性'}
     out['AIQUALITY']=table('60条实际短答案的AI辅助质量评审','tab:quality',['维度','均分/5','1分','2分','3分','4分','5分'],
         [[labels[k],f(q['means'][k],2),*[q['score_distribution'][k].get(str(i),0)for i in range(1,6)]]for k in labels],note='每维60条，评分日期2026年10月14日；独立人工评分为0。1—5分是有序量表，不是答案准确率，也不是教师课程总分。来源E09。')
+    cats={'factual':'事实型','comparison':'比较型','synthesis':'综合型','reasoning':'推理型'}
+    out['QUALITYBYCATEGORY']=table('四类题目的AI辅助分维度均分','tab:quality-category',
+        ['题型',Raw('$n$'),'正确性','完整性','引用支撑','流畅性'],
+        [[cats[p['category']],p['n'],*[f(p[k],2)for k in ['correctness','completeness','citation_quality','fluency']]]
+         for p in A['ai_quality']['category_means']],
+        note='均分范围1—5，按题目等权计算；四类样本数合计60。不同题型并非同难度配对任务，不据均分差异推断题型的固有难度。评分来源与表\\ref{tab:quality}一致。来源E09及派生统计快照。')
     param=[p for p in D['generation_quality']['conditions']if p['study']=='parameters']
     out['PARAMETERS']=table('生成参数的质量与成本对比','tab:parameters',[Raw('$T/p/k_s$'),'正确','完整','引用','流畅','生成/s','输出/条'],
-        [[f"{p['temperature']:.1f}/{p['top_p']:.1f}/{p['top_k_sampling']}",*[f(p[k+'_mean'],2)for k in ['correctness','completeness','citation_quality','fluency']],f(p['latency_mean_ms']/1000,3),f(p['completion_tokens_mean'],2)]for p in param],note='各条件仅4道开发集题，每题单次生成，未固定采样seed；输出上限256 token。$k_s$为采样Top-k，与检索返回Top-K不同。质量来源为AI评审。来源E10。')
+        [[f"{p['temperature']:.1f}/{p['top_p']:.1f}/{p['top_k_sampling']}",*[f(p[k+'_mean'],2)for k in ['correctness','completeness','citation_quality','fluency']],f(p['latency_mean_ms']/1000,3),f(p['completion_tokens_mean'],2)]for p in param],best={1:'max',2:'max',3:'max',4:'max'},note='各条件仅4道开发集题，每题单次生成，未固定采样seed；输出上限256 token。$k_s$为采样Top-k，与检索返回Top-K不同。质量来源为AI评审。来源E10。')
     prompt=[p for p in D['generation_quality']['conditions']if p['study']=='prompt']
     out['PROMPT']=table('提示词对照的分维度结果','tab:prompt',['模板','正确性','完整性','引用支撑','流畅性','生成/s'],
-        [['简化对照' if 'naive' in p['condition']else '当前证据约束',*[f(p[k+'_mean'],2)for k in ['correctness','completeness','citation_quality','fluency']],f(p['latency_mean_ms']/1000,3)]for p in prompt],note='每模板4条；当前模板复用参数基线回答，不是额外4次生成。新旧实验合计28个条件记录、24次历史生成调用、17个独立答案评审。来源E10。')
+        [['简化对照' if 'naive' in p['condition']else '当前证据约束',*[f(p[k+'_mean'],2)for k in ['correctness','completeness','citation_quality','fluency']],f(p['latency_mean_ms']/1000,3)]for p in prompt],best={1:'max',2:'max',3:'max',4:'max'},note='每模板4条；当前模板复用参数基线回答，不是额外4次生成。新旧实验合计28个条件记录、24次历史生成调用、17个独立答案评审。来源E10。')
     out['AGENT']=table('固定RAG与Agent探针的实际资源记录','tab:agent',['路径','次数','均时/s','P95/s','输入合计','输出合计'],
         [['固定RAG' if p['condition']=='fixed_rag'else 'Agent',p['run_count'],f(p['latency_mean_ms']/1000,3),f(p['latency_p95_ms']/1000,3),p['prompt_tokens_total'],p['completion_tokens_total']]for p in rows('agent')],note='同5个探针、每路径5次；Agent路由exact-match为1.00，仅说明给定探针的工具选择，不等于答案正确率。计时为冻结检索后的生成与工具流程。来源E11。')
     out['PROBES']=table('本地工具并行与缓存功能探针','tab:probes',['条件','次数','均时/ms','输入token','输出token'],
@@ -87,13 +121,16 @@ TEX=r'''% !TeX program = xelatex
 % UTF-8. Compile twice with XeLaTeX; figures and data are local to this folder.
 \documentclass[UTF8,a4paper,zihao=-4,fontset=fandol]{ctexart}
 \usepackage[top=2.54cm,bottom=2.54cm,left=3.175cm,right=3.175cm,headheight=16pt]{geometry}
-\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,longtable,array,xcolor}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,longtable,array}
+\usepackage[table]{xcolor}
+\usepackage{colortbl,etoolbox}
 \usepackage{caption,subcaption,fancyhdr,enumitem,float,placeins,setspace,listings}
 \usepackage{hyperref}
 \setCJKmainfont{FandolFang-Regular.otf}[BoldFont=FandolHei-Regular.otf,ItalicFont=FandolKai-Regular.otf]
 \definecolor{Navy}{HTML}{17324D}
 \definecolor{Teal}{HTML}{15877F}
 \definecolor{Pale}{HTML}{EDF4F6}
+\definecolor{TableHead}{HTML}{EDF2F5}
 \hypersetup{unicode=true,colorlinks=true,linkcolor=Navy,citecolor=Teal,urlcolor=Teal,
  pdftitle={智能科研助理 基于RAG与Agent的论文知识库问答系统},pdfauthor={赵志国 林骋 林弟伟}}
 \graphicspath{{figures/}}
@@ -107,7 +144,15 @@ TEX=r'''% !TeX program = xelatex
  subsection={format=\heiti\zihao{4}},subsubsection={format=\heiti\zihao{-4}}}
 \renewcommand{\contentsname}{\heiti\zihao{2}目\quad 录}
 \captionsetup{font=small,labelfont=bf,labelsep=quad,skip=6pt}
+\captionsetup[table]{position=top,skip=7pt}
+\setlength{\heavyrulewidth}{.65pt}
+\setlength{\lightrulewidth}{.35pt}
+\newcommand{\ReportTableStyle}{\fontsize{10.5}{14}\selectfont\setstretch{1.15}%
+ \setlength{\tabcolsep}{4.5pt}\renewcommand{\arraystretch}{1.28}}
+\AtBeginEnvironment{table}{\setlength{\abovecaptionskip}{6pt}\setlength{\belowcaptionskip}{7pt}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \setlist[itemize]{leftmargin=2em,itemsep=1pt,topsep=4pt}
 \setlist[enumerate]{leftmargin=2.5em,itemsep=1pt,topsep=4pt}
 \pagestyle{fancy}\fancyhf{}
@@ -117,9 +162,9 @@ TEX=r'''% !TeX program = xelatex
 \renewcommand{\headrulewidth}{0.3pt}
 \lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,keepspaces=true,
  frame=single,rulecolor=\color{black!20},backgroundcolor=\color{Pale},showstringspaces=false}
-\newcommand{\reportfigure}[3]{\begin{figure}[htbp]\centering
- \includegraphics[width=\linewidth,height=.40\textheight,keepaspectratio]{#1}
- \caption{#2}\label{#3}\end{figure}}
+\newcommand{\reportfigure}[4][.48\textheight]{\begin{figure}[htbp]\centering
+ \includegraphics[width=\linewidth,height=#1,keepaspectratio]{#2}
+ \caption{#3}\label{#4}\end{figure}}
 \newcommand{\status}[1]{\textbf{#1}}
 \makeatletter
 \setlength{\@fptop}{0pt}\setlength{\@fpsep}{12pt}\setlength{\@fpbot}{0pt plus 1fil}
@@ -336,7 +381,7 @@ SSE传递状态、来源、文本增量、用量与结束事件；多工具路�
 \subsection{手写Agent与八工具协同}
 注册表对工具名称、必填参数、类型和长度执行schema校验。八项工具的作用见表\ref{tab:tools}。
 \begin{table}[htbp]\centering\caption{工具注册表及边界}\label{tab:tools}\small
-\begin{tabularx}{\linewidth}{@{}p{3.7cm}Y@{}}\toprule 工具 & 能力与限制\\\midrule
+\begin{tabularx}{\linewidth}{@{}p{4.4cm}Y@{}}\toprule 工具 & 能力与限制\\\midrule
 knowledge\_qa & 指定论文范围内的证据问答\\
 paper\_metadata & 读取实际保存的题名、作者、年份等字段\\
 compare\_papers & 两篇论文的结构化比较；条件不齐时不直接排名\\
@@ -442,10 +487,15 @@ m3e的Hit@5为0.4000，高于BGE-large-zh的0.3500；后者MRR较高，说明命
 误差区间采用对实际题目进行5000次percentile bootstrap、固定随机种子20261015。
 图\ref{fig:ci}表示题目抽样不确定性，不是模型多次运行方差，也不据此宣称统计显著。
 \reportfigure{fig08_retrieval_ci.pdf}{60题逐题重采样的95\% percentile区间。每个模式使用同样的实际问题集合；区间不替代重复运行或配对显著性检验。来源E07。}{fig:ci}
+@@PAIREDEFFECTS@@
+图\ref{fig:paired-effects}进一步使用同一题目的模式差值，三组比较的每次重采样均保留题目配对关系。
+差值及其95\%区间用于描述本题集上的效果与题目构成不确定性，不作显著性判定。
+\reportfigure{fig18_paired_effects.pdf}{三组检索模式比较的配对效果。横轴为后者减前者的指标差，线段为题目级配对bootstrap的95\%区间。图中均采用0—1指标的原量纲差值；Hit与Recall在表\ref{tab:paired-effects}换算为百分点，MRR不换算。来源E07及派生统计快照。}{fig:paired-effects}
+\reportfigure[.58\textheight]{fig19_rank_matrix.pdf}{同60题在三种检索模式下的逐题首个相关项名次。题目按四类任务分组，颜色仅对应已检到项；null表示在保存的候选深度内未检到，不能填充为末位名次。来源E07。}{fig:rank-matrix}
 \reportfigure{fig09_retrieval_categories.pdf}{按事实、比较、综合和推理问题分解的Hit@5。各类样本量不同；推理题在重排后仍保留较大漏召回空间。来源E07。}{fig:category}
 
 @@RRF@@
-\reportfigure{fig10_rrf.pdf}{RRF常数与评价截断深度的开发集网格。颜色分别呈现Hit@K和Recall@K，不把MRR@20混写为MRR@K。来源E08。}{fig:rrf}
+\reportfigure{fig10_rrf.pdf}{RRF常数与评价截断深度的开发集网格。图中分别呈现Hit@K与MRR@20；后者按候选深度20计算，不随评价K重新定义。来源E08。}{fig:rrf}
 RRF常数60改为20后，MRR@20由0.314796变为0.324717，而Hit@5为0.40、Recall@5为0.35，均未变化。
 该轮实际优化改善了排名，未解决前五条的漏召回；本文保留这一有限改善而不使用“召回显著提高”的表述。
 
@@ -455,6 +505,8 @@ RRF常数60改为20后，MRR@20由0.314796变为0.324717，而Hit@5为0.40、Rec
 四维均分分别为3.50、2.98、3.03和4.58。该分布说明语言流畅不能替代证据覆盖、数值正确及来源支持。
 评分基于原回答、参考答案、实际引用映射和论文物理页，保留逐题评语，但未开展独立双人盲评或评分一致性分析。
 课程原文要求的人工评分不能由AI来源标签的替换而得到满足；本文据实将该项列为评价限制。
+@@QUALITYBYCATEGORY@@
+\reportfigure{fig20_quality_association.pdf}{AI辅助评分的联合分布与秩相关。气泡依次表示正确性—完整性、正确性—引用支撑、流畅性—正确性的评分组合，面积为题数；热图为Spearman相关。其共同变化不证明因果联系或人工评分一致性。来源E09及派生统计快照。}{fig:quality-association}
 
 @@PARAMETERS@@
 \reportfigure{fig12_gen_parameters.pdf}{生成参数条件的四维AI评分。每条件4题，包含事实、比较、综合和推理；相同输出复用同一评分。来源E10。}{fig:parameters}
@@ -468,6 +520,7 @@ RRF常数60改为20后，MRR@20由0.314796变为0.324717，而Hit@5为0.40、Rec
 事实题中，旧回答正确给出ViT-Base配置，但引用位置与其自写页码不符；当前回答采用实际包含表1的来源，改善了引用支撑。
 另一方面，综合题的冻结Top5均来自T2T，没有CvT原文，多个配置仍将普通ViT机制错误归给CvT。
 该例表明，采样和提示词不能独立修复证据覆盖缺失，应在生成前检验所需论文是否均有可靠来源。
+\reportfigure{fig21_prompt_pairs.pdf}{四题提示词比较的逐题配对分数。连接线对应同一题目，保留改善、持平与退化的实际结果；每题每模板单次生成，不由四题观测推断总体效果。来源E10及派生统计快照。}{fig:prompt-pairs}
 
 \subsection{Agent 效率与本地运行验收}
 @@AGENT@@
@@ -526,7 +579,7 @@ GET & \path{/sessions/<id>/export} & 会话导出\\\bottomrule\end{tabularx}\end
 配置由YAML和环境变量合并，公开配置排除云端API密钥。
 应用默认上下文、输出、检索和Agent预算见表\ref{tab:config}；不同实验覆盖的值写入各自记录，不从当前默认值倒推历史配置。
 \begin{table}[htbp]\centering\caption{主要配置与实验覆盖关系}\label{tab:config}\small
-\begin{tabularx}{\linewidth}{@{}p{4.4cm}p{2cm}Y@{}}\toprule 配置项 & 默认/记录值 & 含义与范围\\\midrule
+\begin{tabularx}{\linewidth}{@{}p{5.1cm}p{1.8cm}Y@{}}\toprule 配置项 & 取值 & 含义与范围\\\midrule
 \texttt{chunk\_size/overlap} & 512/64 & 轻量分块单位；实验另有256、1024\\
 \texttt{candidate\_k/result\_k} & 20/5 & 检索候选与最终来源数量\\
 \texttt{rrf\_k} & 60 & 历史基线；开发集另比较20、100\\
@@ -637,7 +690,7 @@ $env:RAG_OLLAMA_URL = "http://127.0.0.1:11435"
 首次真实编码和模型加载可能明显慢于后续请求；记录应注明是否命中缓存及实际token，而不是直接套用表\ref{tab:local}的单次耗时。
 
 \subsection{证据索引与课程要求对应}
-\begin{small}\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.15}
+\begingroup\ReportTableStyle\setlength{\tabcolsep}{3pt}
 \begin{longtable}{@{}p{.9cm}p{2.6cm}p{9.9cm}@{}}
 \caption{报告数值与实现证据索引}\label{tab:evidence}\\\toprule 编号 & 内容 & 项目中的实际位置\\\midrule\endfirsthead
 \toprule 编号 & 内容 & 项目中的实际位置\\\midrule\endhead
@@ -658,8 +711,8 @@ E14 & 本地实际验收 & \path{reports/deployment/local-20261015/runtime-recor
 E15 & Bad Case & \path{reports/experiments/bad-cases/actual-bad-cases.json}\\
 E16 & 已有测试记录 & \path{reports/testing/}；完整与定向测试时间分别保存，不叠加重叠数量\\
 E17 & 历史界面图 & \path{docs/screenshots/}；本文件夹保留原件及图表来源指纹\\\bottomrule
-\end{longtable}\end{small}
-本报告文件夹中的\path{data/report-data.json}保存制表与绘图使用的数值快照和来源指纹，\path{figures/figure_manifest.json}记录图形及截图来源。
+\end{longtable}\endgroup
+本报告文件夹中的\path{data/report-data.json}保存原始制表与绘图快照，\path{data/advanced-statistics.json}保存同题配对效果和评分分组等派生统计，\path{figures/figure_manifest.json}记录图形及截图来源。
 课程要求中的多格式解析、三分块、两编码模型、三档检索、生成参数、八工具及四类Bad Case分别在第三、四部分对应展开。
 原文的独立人工评分与容器实测尚无完成证据，未因本报告采用AI评审和本地部署而改写为已完成。
 
@@ -672,12 +725,33 @@ E17 & 历史界面图 & \path{docs/screenshots/}；本文件夹保留原件及�
 '''
 
 
+def academic_table_style(text):
+    """Style numbered tables consistently, leaving the official cover grid intact."""
+    def table_block(match):
+        block=match.group(0)
+        block=re.sub(r'\\small(?:\\renewcommand\{\\arraystretch\}\{[^}]+\})?',
+                     lambda _:r'\ReportTableStyle',block,count=1)
+        block=re.sub(r'(?<![A-Za-z])p\{([^{}]+)\}',r'P{\1}',block)
+        return block
+    text=re.sub(r'\\begin\{table\}.*?\\end\{table\}',table_block,text,flags=re.S)
+    text=re.sub(r'\\begin\{longtable\}.*?\\end\{longtable\}',table_block,text,flags=re.S)
+
+    def header(match):
+        cells=match.group('header').strip().split(' & ')
+        return (r'\toprule\rowcolor{TableHead}'+'\n'+
+                ' & '.join(r'\textbf{'+cell.strip()+'}'for cell in cells)+
+                r' \\ \midrule')
+    # Apply the same pale header and emphasis to both longtable head versions.
+    return re.sub(r'\\toprule\s*(?P<header>.*?)\\\\\s*\\midrule',header,text,flags=re.S)
+
+
 def main():
     text=TEX
     for key,value in dynamic().items():text=text.replace('@@'+key+'@@',value)
     if '@@' in text:raise ValueError('Unresolved TeX template placeholder')
+    text=academic_table_style(text)
     (HERE/'main.tex').write_text(text,encoding='utf-8')
-    print(json.dumps({'tex':str(HERE/'main.tex'),'characters':len(text),'figures':text.count('\\reportfigure{')+text.count('{ui05_local.jpg}'),'numbered_tables':text.count('\\begin{table}')+text.count('\\begin{longtable}')},ensure_ascii=False))
+    print(json.dumps({'tex':str(HERE/'main.tex'),'characters':len(text),'figures':len(re.findall(r'\\reportfigure(?:\[[^\]]+\])?\{',text))+text.count('{ui05_local.jpg}'),'numbered_tables':text.count('\\begin{table}')+text.count('\\begin{longtable}')},ensure_ascii=False))
 
 
 if __name__=='__main__':main()

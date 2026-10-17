@@ -166,14 +166,22 @@ flowchart LR
 
 | 材料 | 内容与入口 |
 | :--- | :--- |
-| **最新课程报告** | [39 页 PDF](artifacts/course-report/main.pdf) · [LaTeX 源文件](artifacts/course-report/main.tex) · [编译说明](artifacts/course-report/README.md)；22 幅图、27 张编号表 |
+| **最新课程报告** | [47 页 PDF](artifacts/course-report/main.pdf) · [LaTeX 源文件](artifacts/course-report/main.tex) · [编译说明](artifacts/course-report/README.md)；26 幅编号图（21 幅学术图及 5 幅界面图）、29 张编号表 |
 | **学术图表素材** | [图表目录](artifacts/academic-figures) · [矢量图册](artifacts/academic-figures/科研助理实验图表集.pdf) · [可编辑 Excel](artifacts/academic-figures/学术图表数据与结果.xlsx)；25 幅图、16 张表 |
 | **演示与 Word 材料** | [课程交付目录](artifacts/delivery-final)，含 17 页 PPT、报告、设计、手册及实验附件；保留 2026-10-11 快照 |
 | **设计与使用** | [技术设计](docs/技术设计文档.md) · [用户手册](docs/用户使用手册.md) · [模型与 API](docs/模型与API配置.md) |
 | **课程与验收** | [项目规划](docs/课程实践项目规划.md) · [逐条验收](docs/课程要求逐条验收.md) · [界面验收](docs/界面功能验收.md) · [本地运行](docs/本地127运行验收.md) |
 | **数据与复现** | [论文清单](data/corpus/manifest.json) · [题集](reports/datasets) · [实验记录](reports/experiments) · [图表数据快照](reports/presentation/source-data/experiments.json) |
 
-课程报告文件夹包含全部 TeX、图件、数值快照和编译脚本。图表可从已有记录重新生成，无需重复调用模型：
+**课程报告图表升级（2026-10-17）。** 17幅既有学术图统一重绘，并新增4幅逐题分析：配对Bootstrap效应森林图（10,000次重采样）、60题证据排名矩阵、AI评分计数气泡与Spearman关联图、4题新旧Prompt配对图。图件提供矢量PDF / SVG与高清PNG；源数据快照保持不变，新增模型调用为0。区间表示查询抽样不确定性，评分仍据实标为AI辅助评审。
+
+课程报告文件夹包含全部 TeX、图件、数值快照和编译脚本。报告内的图表可由以下命令重新生成，统一样式及高级分析分别位于 `figure_style.py` 和 `build_advanced_figures.py`，派生结果写入 `data/advanced-statistics.json`：
+
+```powershell
+.venv\Scripts\python.exe artifacts/course-report/build_figures.py
+```
+
+原有汇报图册和结果快照保留独立构建入口，无需重复调用模型：
 
 ```powershell
 .venv\Scripts\python.exe scripts/build_generation_quality_comparison.py

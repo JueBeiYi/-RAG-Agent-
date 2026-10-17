@@ -1,13 +1,15 @@
 {
-  "created_date": "2026-10-15",
+  "created_date": "2026-10-17",
+  "visual_version": "v2",
   "builder": "build_figures.py",
-  "font_size_pt": 11,
+  "font_size_pt": 11.5,
   "palette": [
     "#193A56",
     "#168980",
-    "#D38C3C",
-    "#7F6DAD",
-    "#5688AD"
+    "#C7923A",
+    "#5688AD",
+    "#B85B61",
+    "#81749E"
   ],
   "data_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
   "source_hashes": [
@@ -193,10 +195,11 @@
         "acceptance"
       ],
       "parameters": {},
-      "note": "依据真实模块职责与数据流绘制；箭头表示主要数据或调用关系，不表示并发时序。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 4.65,
-      "raster_dpi": 400
+      "note": "真实模块职责与主要依赖；8个工具、抽取式记忆、检索与模型调用均对应现有实现。箭头不表示并发时序。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 5.0,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig02_dataset",
@@ -212,10 +215,11 @@
         "corpus"
       ],
       "parameters": {},
-      "note": "80题分为20题开发集和60题测试集；物理页统计对应固定arXiv版本。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.35,
-      "raster_dpi": 400
+      "note": "80题按题型分层划分；每篇论文页数来自实际固定版本PDF，不表示独立抽样语料。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.65,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig03_parsers",
@@ -227,13 +231,18 @@
       "source": "data/report-data.json",
       "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
       "source_tables_or_keys": [
-        "parsers"
+        "parsers",
+        "parser_records"
       ],
-      "parameters": {},
-      "note": "30次解析；锚点保留是自动代理指标，不等于版面、表格或公式语义完全正确。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.1,
-      "raster_dpi": 400
+      "parameters": {
+        "runs_per_parser": 10,
+        "boxplot": "median and interquartile range; 1.5 IQR whiskers; all observations drawn"
+      },
+      "note": "每种解析器10个真实逐文档耗时，箱体为四分位距、中心线为中位数，散点为原始测量；锚点恢复不等于公式/表格语义完全正确。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.25,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig04_chunking",
@@ -248,10 +257,11 @@
         "chunking"
       ],
       "parameters": {},
-      "note": "只对比同m3e模型的5种分块变体，不混入不同模型。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.3,
-      "raster_dpi": 400
+      "note": "相同m3e模型下五种真实分块变体，横向小多图同时呈现三项检索指标与索引规模；未将不同编码器混入。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.3,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig05_embeddings",
@@ -266,10 +276,11 @@
         "embeddings"
       ],
       "parameters": {},
-      "note": "查询编码在相同20条查询上比较；没有比较1836条与342条文档的总编码时间。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.25,
-      "raster_dpi": 400
+      "note": "两个模型均在相同342块与20题上比较；查询编码总时间按20题摊销，不冒充逐题在线延迟。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.1,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig06_vectorstores",
@@ -284,10 +295,11 @@
         "vectorstores"
       ],
       "parameters": {},
-      "note": "不含共享向量编码；两种库在此20题上的检索质量相同。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.05,
-      "raster_dpi": 400
+      "note": "同一向量集合的建库、查询、重启操作计时；二者在此20题上的质量指标相同，删除恢复实测通过。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.2,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig07_retrieval",
@@ -299,13 +311,18 @@
       "source": "data/report-data.json",
       "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
       "source_tables_or_keys": [
-        "retrieval_test"
+        "retrieval_test",
+        "retrieval_records"
       ],
-      "parameters": {},
-      "note": "实际60题结果；耗时排除共享查询编码，非完整在线端到端延迟。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.3,
-      "raster_dpi": 400
+      "parameters": {
+        "observations_per_mode": 60,
+        "latency_scope": "ranking only; query encoding excluded"
+      },
+      "note": "左侧为60题指标均值，右侧为同60题实际排序耗时分布；重排成本明显，非全链路在线延迟。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.55,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig08_retrieval_ci",
@@ -335,10 +352,11 @@
           "hybrid_rerank"
         ]
       },
-      "note": "逐题非参数bootstrap百分位区间；仅描述此冻结题集抽样不确定性，不构成显著性检验。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.25,
-      "raster_dpi": 400
+      "note": "逐题非参数bootstrap百分位区间；描述冻结题集的抽样不确定性，不构成显著性检验。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.35,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig09_retrieval_categories",
@@ -353,10 +371,11 @@
         "retrieval_category"
       ],
       "parameters": {},
-      "note": "各问题类别的Hit@5；类别样本量不同，不宜直接比较方差或显著性。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 2.65,
-      "raster_dpi": 400
+      "note": "题型分层的真实Hit@5，固定色标0到1；各题型样本量不同，不能据此直接判断显著性。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 3.9,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig10_rrf",
@@ -371,10 +390,11 @@
         "rrf_grid"
       ],
       "parameters": {},
-      "note": "复用真实向量/BM25排名，无新增模型调用；RRF60到20仅小幅改善MRR，Hit@5与Recall@5不变。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.05,
-      "raster_dpi": 400
+      "note": "复用真实检索排名；RRF60到20仅小幅改善MRR@20，Hit@5与Recall@5不变；图中不将局部坐标放大冒充大幅改进。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.25,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig11_ai_quality",
@@ -390,10 +410,11 @@
         "baseline_ai_distribution"
       ],
       "parameters": {},
-      "note": "AI辅助评审明确保留来源；流畅性不等同事实正确性。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.3,
-      "raster_dpi": 400
+      "note": "60题AI辅助评审的档位分布与均分，不改称独立人工评分；流畅性不能替代事实与引用可靠性。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.55,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig12_gen_parameters",
@@ -414,10 +435,11 @@
         ],
         "case_count_per_condition": 4
       },
-      "note": "5个单因素配置，每配置同4题，各题每配置仅一次历史生成；AI辅助质量评分。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.15,
-      "raster_dpi": 400
+      "note": "每个单因素配置同4题、每题仅生成一次；AI辅助评分；固定1到5色标，不能推断总体最优参数。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.2,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig13_prompt",
@@ -432,10 +454,11 @@
         "prompt_ai_quality"
       ],
       "parameters": {},
-      "note": "当前Prompt复用参数基线的4条回答；引用质量均分2.50到3.50仅描述这4题，不推断总体收益。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.15,
-      "raster_dpi": 400
+      "note": "4题配对模板比较；当前Prompt复用参数基线回答；引用质量2.50到3.50只描述这4题，输出长度变化不等于效率因果效应。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.3,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig14_agent",
@@ -451,10 +474,11 @@
         "generation_records"
       ],
       "parameters": {},
-      "note": "冻结检索输入/生成阶段与真实工具路由样例；Agent在该小样本中减少输入Token但耗时更长，路由匹配不等于答案语义正确。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.25,
-      "raster_dpi": 400
+      "note": "5例固定RAG与Agent的原始耗时及Token；路由匹配是工具选择一致性，不等于答案语义正确；局部小样本不推断总体收益。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.6,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig15_runtime_probes",
@@ -467,13 +491,19 @@
       "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
       "source_tables_or_keys": [
         "parallel",
-        "cache"
+        "cache",
+        "generation_records"
       ],
-      "parameters": {},
-      "note": "并行实验仅本地工具，不是LLM并发；缓存仅精确重复1对请求，不能据此推广语义缓存命中率。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.05,
-      "raster_dpi": 400
+      "parameters": {
+        "parallel_paired_by": "case_id",
+        "parallel_cases": 10,
+        "cache_pairs": 1
+      },
+      "note": "10个相同case_id的本地工具实测连线，非LLM并发；箱体为描述性分布；缓存只有1对冷生成/精确重复请求，不能推广命中率。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.35,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig16_local_run",
@@ -489,12 +519,14 @@
       ],
       "parameters": {
         "sample_count": 1,
-        "timings_overlap": true
+        "timings_overlap": true,
+        "display_origin": "normalized to zero; overlapping timer scopes, not absolute phase starts"
       },
-      "note": "2026-10-15回环本地、独立单篇29块验收请求；耗时口径重叠，不可相加，也不是稳定均值。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 3.05,
-      "raster_dpi": 400
+      "note": "单次本地实际请求，区间计时相互重叠不堆叠、不相加；Token为模型实际返回，不是估算值或稳定均值。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.35,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "fig17_badcase",
@@ -515,14 +547,41 @@
           "检索失败": 16,
           "生成错误": 45,
           "引用错误": 36,
-          "Agent 决策错误": 0,
-          "无明显问题": 13
-        }
+          "Agent 决策错误": 0
+        },
+        "no_labeled_error": 13,
+        "cooccurrence": [
+          [
+            16,
+            16,
+            10,
+            0
+          ],
+          [
+            16,
+            45,
+            34,
+            0
+          ],
+          [
+            10,
+            34,
+            36,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
       },
-      "note": "60题AI评审中的原始多标签计数，标签并非互斥；Agent决策标签为0不等于专项Agent样例无错误。",
-      "native_width_inches": 8.0,
-      "native_height_inches": 2.75,
-      "raster_dpi": 400
+      "note": "60题原始多标签频数与共同出现次数；对角为边际计数、标签非互斥。Agent标签为0仅适用于该基线评审，不能推断专项Agent无错误。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 4.4,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "ui01_library",
@@ -543,7 +602,8 @@
       "note": "2026-10-10历史真实页面，非2026-10-15新生成回答。",
       "native_width_inches": 8.0,
       "native_height_inches": 5.5,
-      "raster_dpi": 400
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "ui02_chat",
@@ -564,7 +624,8 @@
       "note": "2026-10-10历史真实页面，非2026-10-15新生成回答。",
       "native_width_inches": 8.0,
       "native_height_inches": 5.5,
-      "raster_dpi": 400
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "ui03_comparison",
@@ -585,7 +646,8 @@
       "note": "2026-10-10历史真实页面，非2026-10-15新生成回答。",
       "native_width_inches": 8.0,
       "native_height_inches": 5.5,
-      "raster_dpi": 400
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "ui04_evidence",
@@ -606,7 +668,529 @@
       "note": "2026-10-10历史真实页面，非2026-10-15新生成回答。",
       "native_width_inches": 8.0,
       "native_height_inches": 5.5,
-      "raster_dpi": 400
+      "raster_dpi": 400,
+      "visual_version": "v2"
+    },
+    {
+      "id": "fig18_paired_effects",
+      "files": [
+        "figures/fig18_paired_effects.pdf",
+        "figures/fig18_paired_effects.png",
+        "figures/fig18_paired_effects.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "retrieval_records"
+      ],
+      "parameters": {
+        "replicates": 10000,
+        "seed": 20261017,
+        "confidence": 0.95,
+        "case_order": [
+          "VT-C02",
+          "VT-C04",
+          "VT-C05",
+          "VT-C06",
+          "VT-C07",
+          "VT-C09",
+          "VT-C10",
+          "VT-C11",
+          "VT-C12",
+          "VT-C13",
+          "VT-C14",
+          "VT-C15",
+          "VT-C16",
+          "VT-C17",
+          "VT-C18",
+          "VT-C20",
+          "VT-F02",
+          "VT-F03",
+          "VT-F05",
+          "VT-F06",
+          "VT-F08",
+          "VT-F09",
+          "VT-F11",
+          "VT-F12",
+          "VT-F14",
+          "VT-F15",
+          "VT-F17",
+          "VT-F18",
+          "VT-F20",
+          "VT-F21",
+          "VT-F22",
+          "VT-F23",
+          "VT-F24",
+          "VT-F25",
+          "VT-F26",
+          "VT-F27",
+          "VT-F29",
+          "VT-F30",
+          "VT-R02",
+          "VT-R03",
+          "VT-R05",
+          "VT-R06",
+          "VT-R07",
+          "VT-R09",
+          "VT-R10",
+          "VT-R11",
+          "VT-R12",
+          "VT-R13",
+          "VT-R15",
+          "VT-S01",
+          "VT-S02",
+          "VT-S04",
+          "VT-S05",
+          "VT-S06",
+          "VT-S08",
+          "VT-S10",
+          "VT-S11",
+          "VT-S12",
+          "VT-S13",
+          "VT-S15"
+        ],
+        "resampling_unit": "matched case_id",
+        "method": "same query-resampling indices across all modes and metrics; percentile interval",
+        "scope": "conditional query sampling; not repeated-run variance or simultaneous coverage",
+        "effects": [
+          {
+            "from": "vector",
+            "to": "hybrid",
+            "metric": "hit_at_5",
+            "n": 60,
+            "mean_delta": 0.016666666666666666,
+            "ci95": [
+              -0.08333333333333333,
+              0.13333333333333333
+            ],
+            "improved_cases": 6,
+            "unchanged_cases": 49,
+            "worsened_cases": 5
+          },
+          {
+            "from": "vector",
+            "to": "hybrid",
+            "metric": "mrr",
+            "n": 60,
+            "mean_delta": 0.05463063180942438,
+            "ci95": [
+              -0.000824269480519482,
+              0.11388446614230284
+            ],
+            "improved_cases": 22,
+            "unchanged_cases": 23,
+            "worsened_cases": 15
+          },
+          {
+            "from": "vector",
+            "to": "hybrid",
+            "metric": "recall_at_5",
+            "n": 60,
+            "mean_delta": 0.03333333333333333,
+            "ci95": [
+              -0.05,
+              0.125
+            ],
+            "improved_cases": 7,
+            "unchanged_cases": 48,
+            "worsened_cases": 5
+          },
+          {
+            "from": "hybrid",
+            "to": "hybrid_rerank",
+            "metric": "hit_at_5",
+            "n": 60,
+            "mean_delta": 0.18333333333333332,
+            "ci95": [
+              0.08333333333333333,
+              0.3
+            ],
+            "improved_cases": 12,
+            "unchanged_cases": 47,
+            "worsened_cases": 1
+          },
+          {
+            "from": "hybrid",
+            "to": "hybrid_rerank",
+            "metric": "mrr",
+            "n": 60,
+            "mean_delta": 0.07752085877085876,
+            "ci95": [
+              -0.02306549201286043,
+              0.17699111515312171
+            ],
+            "improved_cases": 24,
+            "unchanged_cases": 22,
+            "worsened_cases": 14
+          },
+          {
+            "from": "hybrid",
+            "to": "hybrid_rerank",
+            "metric": "recall_at_5",
+            "n": 60,
+            "mean_delta": 0.11666666666666667,
+            "ci95": [
+              0.03333333333333333,
+              0.2
+            ],
+            "improved_cases": 13,
+            "unchanged_cases": 45,
+            "worsened_cases": 2
+          },
+          {
+            "from": "vector",
+            "to": "hybrid_rerank",
+            "metric": "hit_at_5",
+            "n": 60,
+            "mean_delta": 0.2,
+            "ci95": [
+              0.1,
+              0.31666666666666665
+            ],
+            "improved_cases": 13,
+            "unchanged_cases": 46,
+            "worsened_cases": 1
+          },
+          {
+            "from": "vector",
+            "to": "hybrid_rerank",
+            "metric": "mrr",
+            "n": 60,
+            "mean_delta": 0.13215149058028314,
+            "ci95": [
+              0.042786541191436704,
+              0.22658907560769984
+            ],
+            "improved_cases": 28,
+            "unchanged_cases": 21,
+            "worsened_cases": 11
+          },
+          {
+            "from": "vector",
+            "to": "hybrid_rerank",
+            "metric": "recall_at_5",
+            "n": 60,
+            "mean_delta": 0.15,
+            "ci95": [
+              0.058333333333333334,
+              0.25
+            ],
+            "improved_cases": 15,
+            "unchanged_cases": 42,
+            "worsened_cases": 3
+          }
+        ]
+      },
+      "note": "60题配对查询Bootstrap；同一case_id抽样索引用于所有方法和指标。区间不解释为多次运行方差或总体显著性。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 3.75,
+      "raster_dpi": 400,
+      "visual_version": "v2"
+    },
+    {
+      "id": "fig19_rank_matrix",
+      "files": [
+        "figures/fig19_rank_matrix.pdf",
+        "figures/fig19_rank_matrix.png",
+        "figures/fig19_rank_matrix.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "retrieval_records"
+      ],
+      "parameters": {
+        "category_order": [
+          "factual",
+          "comparison",
+          "synthesis",
+          "reasoning"
+        ],
+        "mode_order": [
+          "vector",
+          "hybrid",
+          "hybrid_rerank"
+        ],
+        "rank_bins": [
+          1,
+          "2-5",
+          "6-10",
+          "11-20",
+          "missing"
+        ],
+        "case_order": [
+          "VT-F02",
+          "VT-F03",
+          "VT-F05",
+          "VT-F06",
+          "VT-F08",
+          "VT-F09",
+          "VT-F11",
+          "VT-F12",
+          "VT-F14",
+          "VT-F15",
+          "VT-F17",
+          "VT-F18",
+          "VT-F20",
+          "VT-F21",
+          "VT-F22",
+          "VT-F23",
+          "VT-F24",
+          "VT-F25",
+          "VT-F26",
+          "VT-F27",
+          "VT-F29",
+          "VT-F30",
+          "VT-C02",
+          "VT-C04",
+          "VT-C05",
+          "VT-C06",
+          "VT-C07",
+          "VT-C09",
+          "VT-C10",
+          "VT-C11",
+          "VT-C12",
+          "VT-C13",
+          "VT-C14",
+          "VT-C15",
+          "VT-C16",
+          "VT-C17",
+          "VT-C18",
+          "VT-C20",
+          "VT-S01",
+          "VT-S02",
+          "VT-S04",
+          "VT-S05",
+          "VT-S06",
+          "VT-S08",
+          "VT-S10",
+          "VT-S11",
+          "VT-S12",
+          "VT-S13",
+          "VT-S15",
+          "VT-R02",
+          "VT-R03",
+          "VT-R05",
+          "VT-R06",
+          "VT-R07",
+          "VT-R09",
+          "VT-R10",
+          "VT-R11",
+          "VT-R12",
+          "VT-R13",
+          "VT-R15"
+        ]
+      },
+      "note": "60题首个相关证据名次；按题型与题号排序，灰格为Top20内未检到，不能映射为名次0。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 5.6,
+      "raster_dpi": 400,
+      "visual_version": "v2"
+    },
+    {
+      "id": "fig20_quality_association",
+      "files": [
+        "figures/fig20_quality_association.pdf",
+        "figures/fig20_quality_association.png",
+        "figures/fig20_quality_association.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "baseline_ai_scores"
+      ],
+      "parameters": {
+        "n": 60,
+        "dimensions": [
+          "correctness",
+          "completeness",
+          "citation_quality",
+          "fluency"
+        ],
+        "spearman_matrix": [
+          [
+            1.0,
+            0.8042903421647281,
+            0.6338918280331001,
+            0.35943306396020025
+          ],
+          [
+            0.8042903421647281,
+            1.0,
+            0.5528413257150088,
+            0.3110909593165723
+          ],
+          [
+            0.6338918280331001,
+            0.5528413257150088,
+            1.0,
+            0.3086438449805979
+          ],
+          [
+            0.35943306396020025,
+            0.3110909593165723,
+            0.3086438449805979,
+            1.0
+          ]
+        ],
+        "category_means": [
+          {
+            "category": "factual",
+            "n": 22,
+            "correctness": 3.909090909090909,
+            "completeness": 3.409090909090909,
+            "citation_quality": 3.4545454545454546,
+            "fluency": 4.7272727272727275
+          },
+          {
+            "category": "comparison",
+            "n": 16,
+            "correctness": 3.0625,
+            "completeness": 2.625,
+            "citation_quality": 2.6875,
+            "fluency": 4.5625
+          },
+          {
+            "category": "synthesis",
+            "n": 11,
+            "correctness": 3.272727272727273,
+            "completeness": 2.272727272727273,
+            "citation_quality": 3.3636363636363638,
+            "fluency": 4.363636363636363
+          },
+          {
+            "category": "reasoning",
+            "n": 11,
+            "correctness": 3.5454545454545454,
+            "completeness": 3.3636363636363638,
+            "citation_quality": 2.3636363636363638,
+            "fluency": 4.545454545454546
+          }
+        ],
+        "high_fluency_low_correctness": 13,
+        "high_fluency_low_citation": 22,
+        "all_dimensions_at_least_4": 13
+      },
+      "note": "离散评分计数气泡和Spearman秩相关；不平滑有序整数评分，不推断因果或独立人工一致性。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 6.1,
+      "raster_dpi": 400,
+      "visual_version": "v2"
+    },
+    {
+      "id": "fig21_prompt_pairs",
+      "files": [
+        "figures/fig21_prompt_pairs.pdf",
+        "figures/fig21_prompt_pairs.png",
+        "figures/fig21_prompt_pairs.svg"
+      ],
+      "source": "data/report-data.json",
+      "source_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+      "source_tables_or_keys": [
+        "quality_records"
+      ],
+      "parameters": {
+        "n": 4,
+        "cases": [
+          {
+            "case_id": "VT-F01",
+            "old": {
+              "correctness": 5,
+              "completeness": 5,
+              "citation_quality": 1,
+              "fluency": 5
+            },
+            "current": {
+              "correctness": 5,
+              "completeness": 5,
+              "citation_quality": 5,
+              "fluency": 5
+            },
+            "delta": {
+              "correctness": 0,
+              "completeness": 0,
+              "citation_quality": 4,
+              "fluency": 0
+            }
+          },
+          {
+            "case_id": "VT-C01",
+            "old": {
+              "correctness": 4,
+              "completeness": 3,
+              "citation_quality": 2,
+              "fluency": 5
+            },
+            "current": {
+              "correctness": 3,
+              "completeness": 3,
+              "citation_quality": 3,
+              "fluency": 5
+            },
+            "delta": {
+              "correctness": -1,
+              "completeness": 0,
+              "citation_quality": 1,
+              "fluency": 0
+            }
+          },
+          {
+            "case_id": "VT-S03",
+            "old": {
+              "correctness": 3,
+              "completeness": 2,
+              "citation_quality": 2,
+              "fluency": 5
+            },
+            "current": {
+              "correctness": 4,
+              "completeness": 3,
+              "citation_quality": 2,
+              "fluency": 5
+            },
+            "delta": {
+              "correctness": 1,
+              "completeness": 1,
+              "citation_quality": 0,
+              "fluency": 0
+            }
+          },
+          {
+            "case_id": "VT-R01",
+            "old": {
+              "correctness": 5,
+              "completeness": 5,
+              "citation_quality": 5,
+              "fluency": 5
+            },
+            "current": {
+              "correctness": 5,
+              "completeness": 5,
+              "citation_quality": 4,
+              "fluency": 5
+            },
+            "delta": {
+              "correctness": 0,
+              "completeness": 0,
+              "citation_quality": -1,
+              "fluency": 0
+            }
+          }
+        ],
+        "mean_changes": {
+          "correctness": 0.0,
+          "completeness": 0.25,
+          "citation_quality": 1.0,
+          "fluency": 0.0
+        },
+        "current_answers_reused_from_parameter_baseline": true,
+        "scope": "four matched dev questions, one answer per condition; exploratory"
+      },
+      "note": "四题新旧Prompt逐题配对；当前Prompt复用参数基线，不增加模型调用，均值提升并不意味着每题均改善。",
+      "native_width_inches": 8.1,
+      "native_height_inches": 3.9,
+      "raster_dpi": 400,
+      "visual_version": "v2"
     },
     {
       "id": "ui05_local",

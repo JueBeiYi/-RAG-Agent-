@@ -1,17 +1,19 @@
 {
-  "generated_at": "2026-10-15T13:52:36.327014+00:00",
+  "generated_at": "2026-10-17T15:09:09.810797+00:00",
   "compiler": "Tectonic 0.17.0+20260731",
   "compiler_provenance": "installed Codex application bundled runtime",
-  "compiler_sha256": "d0f279b9f1d874124919d1030c6f8a2b5ce313a2487fd220f267525faf9b842f",
+  "compiler_sha256": "3926fcbf16b865e53ff072839fa2b7a6fce02877f84dd6d241b6b6f9df8d58ed",
   "entry": "main.tex",
   "command": "tectonic --keep-logs --keep-intermediates main.tex",
   "exit_code": 0,
-  "tex_sha256": "c571fca2149d14bdca88c906001520e5ac59699a136c91a277d805f6b03bbafe",
-  "pdf_sha256": "6c6f5f302d8d9ef162e344af62f71dacc143cb054762bd07f5638207ec0337e5",
+  "tex_sha256": "6bce7c89d051277778ba735cf91b12189a8074a5c35da11d595325e7231802d0",
+  "pdf_sha256": "457c7782a856eacb4028632089520f808740784c550455b160f475d51f9e5726",
+  "data_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+  "visual_version": "v2",
   "checks": {
-    "pdf_pages": 39,
-    "figure_count": 22,
-    "numbered_table_count": 27,
+    "pdf_pages": 47,
+    "figure_count": 26,
+    "numbered_table_count": 29,
     "missing_figures": [],
     "duplicate_labels": [],
     "unresolved_refs": [],
@@ -23,11 +25,14 @@
   },
   "visual_review": {
     "all_pages_rendered": true,
-    "page_count": 39,
-    "status": "reviewed; no remaining clipping, overlap, isolated closing lines or missing glyphs"
+    "page_count": 47,
+    "scientific_figures_reviewed": 21,
+    "annotated_ui_figures_reviewed": 4,
+    "status": "all pages and figure layouts reviewed; no remaining clipping, overlap, isolated headings or missing glyphs"
   },
   "notes": [
-    "The built-in single-source diagnostic compiler cannot include project image files. Final PDF was compiled in the complete local report directory.",
-    "Benign underfull-box spacing notices and a CJK font-family redefinition notice remain in the compile log; no overfull boxes, unresolved references or missing characters."
+    "Frozen input data are byte-identical to the previous report; no new model calls.",
+    "Final PDF was compiled in the complete local report directory.",
+    "Benign underfull-box spacing and CJK font-family redefinition notices remain; no overfull boxes, unresolved references or missing characters."
   ]
 }

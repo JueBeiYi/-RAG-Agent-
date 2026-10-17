@@ -1,0 +1,1228 @@
+{
+  "created_date": "2026-10-17",
+  "data_sha256": "7eb533bce2ce738ee3483a2c80b4ed033967c1109b97f264ff3d3dca63eeaa71",
+  "new_model_calls": 0,
+  "paired_bootstrap": {
+    "replicates": 10000,
+    "seed": 20261017,
+    "confidence": 0.95,
+    "case_order": [
+      "VT-C02",
+      "VT-C04",
+      "VT-C05",
+      "VT-C06",
+      "VT-C07",
+      "VT-C09",
+      "VT-C10",
+      "VT-C11",
+      "VT-C12",
+      "VT-C13",
+      "VT-C14",
+      "VT-C15",
+      "VT-C16",
+      "VT-C17",
+      "VT-C18",
+      "VT-C20",
+      "VT-F02",
+      "VT-F03",
+      "VT-F05",
+      "VT-F06",
+      "VT-F08",
+      "VT-F09",
+      "VT-F11",
+      "VT-F12",
+      "VT-F14",
+      "VT-F15",
+      "VT-F17",
+      "VT-F18",
+      "VT-F20",
+      "VT-F21",
+      "VT-F22",
+      "VT-F23",
+      "VT-F24",
+      "VT-F25",
+      "VT-F26",
+      "VT-F27",
+      "VT-F29",
+      "VT-F30",
+      "VT-R02",
+      "VT-R03",
+      "VT-R05",
+      "VT-R06",
+      "VT-R07",
+      "VT-R09",
+      "VT-R10",
+      "VT-R11",
+      "VT-R12",
+      "VT-R13",
+      "VT-R15",
+      "VT-S01",
+      "VT-S02",
+      "VT-S04",
+      "VT-S05",
+      "VT-S06",
+      "VT-S08",
+      "VT-S10",
+      "VT-S11",
+      "VT-S12",
+      "VT-S13",
+      "VT-S15"
+    ],
+    "resampling_unit": "matched case_id",
+    "method": "same query-resampling indices across all modes and metrics; percentile interval",
+    "scope": "conditional query sampling; not repeated-run variance or simultaneous coverage",
+    "effects": [
+      {
+        "from": "vector",
+        "to": "hybrid",
+        "metric": "hit_at_5",
+        "n": 60,
+        "mean_delta": 0.016666666666666666,
+        "ci95": [
+          -0.08333333333333333,
+          0.13333333333333333
+        ],
+        "improved_cases": 6,
+        "unchanged_cases": 49,
+        "worsened_cases": 5
+      },
+      {
+        "from": "vector",
+        "to": "hybrid",
+        "metric": "mrr",
+        "n": 60,
+        "mean_delta": 0.05463063180942438,
+        "ci95": [
+          -0.000824269480519482,
+          0.11388446614230284
+        ],
+        "improved_cases": 22,
+        "unchanged_cases": 23,
+        "worsened_cases": 15
+      },
+      {
+        "from": "vector",
+        "to": "hybrid",
+        "metric": "recall_at_5",
+        "n": 60,
+        "mean_delta": 0.03333333333333333,
+        "ci95": [
+          -0.05,
+          0.125
+        ],
+        "improved_cases": 7,
+        "unchanged_cases": 48,
+        "worsened_cases": 5
+      },
+      {
+        "from": "hybrid",
+        "to": "hybrid_rerank",
+        "metric": "hit_at_5",
+        "n": 60,
+        "mean_delta": 0.18333333333333332,
+        "ci95": [
+          0.08333333333333333,
+          0.3
+        ],
+        "improved_cases": 12,
+        "unchanged_cases": 47,
+        "worsened_cases": 1
+      },
+      {
+        "from": "hybrid",
+        "to": "hybrid_rerank",
+        "metric": "mrr",
+        "n": 60,
+        "mean_delta": 0.07752085877085876,
+        "ci95": [
+          -0.02306549201286043,
+          0.17699111515312171
+        ],
+        "improved_cases": 24,
+        "unchanged_cases": 22,
+        "worsened_cases": 14
+      },
+      {
+        "from": "hybrid",
+        "to": "hybrid_rerank",
+        "metric": "recall_at_5",
+        "n": 60,
+        "mean_delta": 0.11666666666666667,
+        "ci95": [
+          0.03333333333333333,
+          0.2
+        ],
+        "improved_cases": 13,
+        "unchanged_cases": 45,
+        "worsened_cases": 2
+      },
+      {
+        "from": "vector",
+        "to": "hybrid_rerank",
+        "metric": "hit_at_5",
+        "n": 60,
+        "mean_delta": 0.2,
+        "ci95": [
+          0.1,
+          0.31666666666666665
+        ],
+        "improved_cases": 13,
+        "unchanged_cases": 46,
+        "worsened_cases": 1
+      },
+      {
+        "from": "vector",
+        "to": "hybrid_rerank",
+        "metric": "mrr",
+        "n": 60,
+        "mean_delta": 0.13215149058028314,
+        "ci95": [
+          0.042786541191436704,
+          0.22658907560769984
+        ],
+        "improved_cases": 28,
+        "unchanged_cases": 21,
+        "worsened_cases": 11
+      },
+      {
+        "from": "vector",
+        "to": "hybrid_rerank",
+        "metric": "recall_at_5",
+        "n": 60,
+        "mean_delta": 0.15,
+        "ci95": [
+          0.058333333333333334,
+          0.25
+        ],
+        "improved_cases": 15,
+        "unchanged_cases": 42,
+        "worsened_cases": 3
+      }
+    ]
+  },
+  "rank_matrix": {
+    "mode_order": [
+      "vector",
+      "hybrid",
+      "hybrid_rerank"
+    ],
+    "category_order": [
+      "factual",
+      "comparison",
+      "synthesis",
+      "reasoning"
+    ],
+    "records": [
+      {
+        "case_id": "VT-F02",
+        "category": "factual",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-F03",
+        "category": "factual",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-F05",
+        "category": "factual",
+        "rank": {
+          "vector": 8,
+          "hybrid": 2,
+          "hybrid_rerank": 2
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F06",
+        "category": "factual",
+        "rank": {
+          "vector": 9,
+          "hybrid": 16,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F08",
+        "category": "factual",
+        "rank": {
+          "vector": 3,
+          "hybrid": 3,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F09",
+        "category": "factual",
+        "rank": {
+          "vector": 9,
+          "hybrid": 4,
+          "hybrid_rerank": 18
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-F11",
+        "category": "factual",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-F12",
+        "category": "factual",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F14",
+        "category": "factual",
+        "rank": {
+          "vector": 11,
+          "hybrid": 14,
+          "hybrid_rerank": 16
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-F15",
+        "category": "factual",
+        "rank": {
+          "vector": 2,
+          "hybrid": 1,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F17",
+        "category": "factual",
+        "rank": {
+          "vector": 1,
+          "hybrid": 2,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F18",
+        "category": "factual",
+        "rank": {
+          "vector": 3,
+          "hybrid": 2,
+          "hybrid_rerank": 2
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F20",
+        "category": "factual",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F21",
+        "category": "factual",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 2
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F22",
+        "category": "factual",
+        "rank": {
+          "vector": 5,
+          "hybrid": 8,
+          "hybrid_rerank": 11
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-F23",
+        "category": "factual",
+        "rank": {
+          "vector": 11,
+          "hybrid": 15,
+          "hybrid_rerank": 8
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-F24",
+        "category": "factual",
+        "rank": {
+          "vector": 6,
+          "hybrid": 7,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F25",
+        "category": "factual",
+        "rank": {
+          "vector": 6,
+          "hybrid": 1,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F26",
+        "category": "factual",
+        "rank": {
+          "vector": 7,
+          "hybrid": 11,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F27",
+        "category": "factual",
+        "rank": {
+          "vector": null,
+          "hybrid": 14,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F29",
+        "category": "factual",
+        "rank": {
+          "vector": 3,
+          "hybrid": 2,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-F30",
+        "category": "factual",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-C02",
+        "category": "comparison",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-C04",
+        "category": "comparison",
+        "rank": {
+          "vector": 17,
+          "hybrid": 7,
+          "hybrid_rerank": 8
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-C05",
+        "category": "comparison",
+        "rank": {
+          "vector": 13,
+          "hybrid": 20,
+          "hybrid_rerank": 2
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C06",
+        "category": "comparison",
+        "rank": {
+          "vector": 2,
+          "hybrid": 15,
+          "hybrid_rerank": 2
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C07",
+        "category": "comparison",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C09",
+        "category": "comparison",
+        "rank": {
+          "vector": null,
+          "hybrid": 18,
+          "hybrid_rerank": 16
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-C10",
+        "category": "comparison",
+        "rank": {
+          "vector": 3,
+          "hybrid": 9,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C11",
+        "category": "comparison",
+        "rank": {
+          "vector": 7,
+          "hybrid": 4,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C12",
+        "category": "comparison",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-C13",
+        "category": "comparison",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-C14",
+        "category": "comparison",
+        "rank": {
+          "vector": 8,
+          "hybrid": 7,
+          "hybrid_rerank": 4
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C15",
+        "category": "comparison",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C16",
+        "category": "comparison",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C17",
+        "category": "comparison",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 3
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C18",
+        "category": "comparison",
+        "rank": {
+          "vector": 4,
+          "hybrid": 14,
+          "hybrid_rerank": 4
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-C20",
+        "category": "comparison",
+        "rank": {
+          "vector": 5,
+          "hybrid": 1,
+          "hybrid_rerank": 5
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-S01",
+        "category": "synthesis",
+        "rank": {
+          "vector": null,
+          "hybrid": 16,
+          "hybrid_rerank": 10
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-S02",
+        "category": "synthesis",
+        "rank": {
+          "vector": 3,
+          "hybrid": 3,
+          "hybrid_rerank": 2
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-S04",
+        "category": "synthesis",
+        "rank": {
+          "vector": 8,
+          "hybrid": 13,
+          "hybrid_rerank": 4
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-S05",
+        "category": "synthesis",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-S06",
+        "category": "synthesis",
+        "rank": {
+          "vector": 4,
+          "hybrid": 1,
+          "hybrid_rerank": 5
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-S08",
+        "category": "synthesis",
+        "rank": {
+          "vector": 3,
+          "hybrid": 3,
+          "hybrid_rerank": 4
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-S10",
+        "category": "synthesis",
+        "rank": {
+          "vector": 15,
+          "hybrid": 11,
+          "hybrid_rerank": 11
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-S11",
+        "category": "synthesis",
+        "rank": {
+          "vector": null,
+          "hybrid": 18,
+          "hybrid_rerank": 18
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-S12",
+        "category": "synthesis",
+        "rank": {
+          "vector": 9,
+          "hybrid": 19,
+          "hybrid_rerank": 4
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-S13",
+        "category": "synthesis",
+        "rank": {
+          "vector": 3,
+          "hybrid": 6,
+          "hybrid_rerank": 3
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-S15",
+        "category": "synthesis",
+        "rank": {
+          "vector": 6,
+          "hybrid": 4,
+          "hybrid_rerank": 3
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-R02",
+        "category": "reasoning",
+        "rank": {
+          "vector": 11,
+          "hybrid": 20,
+          "hybrid_rerank": 19
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-R03",
+        "category": "reasoning",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-R05",
+        "category": "reasoning",
+        "rank": {
+          "vector": null,
+          "hybrid": 10,
+          "hybrid_rerank": 13
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-R06",
+        "category": "reasoning",
+        "rank": {
+          "vector": 2,
+          "hybrid": 1,
+          "hybrid_rerank": 4
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-R07",
+        "category": "reasoning",
+        "rank": {
+          "vector": 14,
+          "hybrid": 7,
+          "hybrid_rerank": 8
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-R09",
+        "category": "reasoning",
+        "rank": {
+          "vector": 15,
+          "hybrid": 13,
+          "hybrid_rerank": 8
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-R10",
+        "category": "reasoning",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 2
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-R11",
+        "category": "reasoning",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-R12",
+        "category": "reasoning",
+        "rank": {
+          "vector": 9,
+          "hybrid": 3,
+          "hybrid_rerank": 1
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      },
+      {
+        "case_id": "VT-R13",
+        "category": "reasoning",
+        "rank": {
+          "vector": null,
+          "hybrid": null,
+          "hybrid_rerank": null
+        },
+        "hit_at_5": {
+          "vector": 0.0,
+          "hybrid": 0.0,
+          "hybrid_rerank": 0.0
+        }
+      },
+      {
+        "case_id": "VT-R15",
+        "category": "reasoning",
+        "rank": {
+          "vector": 1,
+          "hybrid": 1,
+          "hybrid_rerank": 3
+        },
+        "hit_at_5": {
+          "vector": 1.0,
+          "hybrid": 1.0,
+          "hybrid_rerank": 1.0
+        }
+      }
+    ],
+    "missing_rank": "not found within the evaluated top-20 list; never rank zero"
+  },
+  "ai_quality": {
+    "n": 60,
+    "dimensions": [
+      "correctness",
+      "completeness",
+      "citation_quality",
+      "fluency"
+    ],
+    "spearman_matrix": [
+      [
+        1.0,
+        0.8042903421647281,
+        0.6338918280331001,
+        0.35943306396020025
+      ],
+      [
+        0.8042903421647281,
+        1.0,
+        0.5528413257150088,
+        0.3110909593165723
+      ],
+      [
+        0.6338918280331001,
+        0.5528413257150088,
+        1.0,
+        0.3086438449805979
+      ],
+      [
+        0.35943306396020025,
+        0.3110909593165723,
+        0.3086438449805979,
+        1.0
+      ]
+    ],
+    "category_means": [
+      {
+        "category": "factual",
+        "n": 22,
+        "correctness": 3.909090909090909,
+        "completeness": 3.409090909090909,
+        "citation_quality": 3.4545454545454546,
+        "fluency": 4.7272727272727275
+      },
+      {
+        "category": "comparison",
+        "n": 16,
+        "correctness": 3.0625,
+        "completeness": 2.625,
+        "citation_quality": 2.6875,
+        "fluency": 4.5625
+      },
+      {
+        "category": "synthesis",
+        "n": 11,
+        "correctness": 3.272727272727273,
+        "completeness": 2.272727272727273,
+        "citation_quality": 3.3636363636363638,
+        "fluency": 4.363636363636363
+      },
+      {
+        "category": "reasoning",
+        "n": 11,
+        "correctness": 3.5454545454545454,
+        "completeness": 3.3636363636363638,
+        "citation_quality": 2.3636363636363638,
+        "fluency": 4.545454545454546
+      }
+    ],
+    "high_fluency_low_correctness": 13,
+    "high_fluency_low_citation": 22,
+    "all_dimensions_at_least_4": 13
+  },
+  "prompt_pairs": {
+    "n": 4,
+    "cases": [
+      {
+        "case_id": "VT-F01",
+        "old": {
+          "correctness": 5,
+          "completeness": 5,
+          "citation_quality": 1,
+          "fluency": 5
+        },
+        "current": {
+          "correctness": 5,
+          "completeness": 5,
+          "citation_quality": 5,
+          "fluency": 5
+        },
+        "delta": {
+          "correctness": 0,
+          "completeness": 0,
+          "citation_quality": 4,
+          "fluency": 0
+        }
+      },
+      {
+        "case_id": "VT-C01",
+        "old": {
+          "correctness": 4,
+          "completeness": 3,
+          "citation_quality": 2,
+          "fluency": 5
+        },
+        "current": {
+          "correctness": 3,
+          "completeness": 3,
+          "citation_quality": 3,
+          "fluency": 5
+        },
+        "delta": {
+          "correctness": -1,
+          "completeness": 0,
+          "citation_quality": 1,
+          "fluency": 0
+        }
+      },
+      {
+        "case_id": "VT-S03",
+        "old": {
+          "correctness": 3,
+          "completeness": 2,
+          "citation_quality": 2,
+          "fluency": 5
+        },
+        "current": {
+          "correctness": 4,
+          "completeness": 3,
+          "citation_quality": 2,
+          "fluency": 5
+        },
+        "delta": {
+          "correctness": 1,
+          "completeness": 1,
+          "citation_quality": 0,
+          "fluency": 0
+        }
+      },
+      {
+        "case_id": "VT-R01",
+        "old": {
+          "correctness": 5,
+          "completeness": 5,
+          "citation_quality": 5,
+          "fluency": 5
+        },
+        "current": {
+          "correctness": 5,
+          "completeness": 5,
+          "citation_quality": 4,
+          "fluency": 5
+        },
+        "delta": {
+          "correctness": 0,
+          "completeness": 0,
+          "citation_quality": -1,
+          "fluency": 0
+        }
+      }
+    ],
+    "mean_changes": {
+      "correctness": 0.0,
+      "completeness": 0.25,
+      "citation_quality": 1.0,
+      "fluency": 0.0
+    },
+    "current_answers_reused_from_parameter_baseline": true,
+    "scope": "four matched dev questions, one answer per condition; exploratory"
+  }
+}

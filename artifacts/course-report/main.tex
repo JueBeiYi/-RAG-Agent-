@@ -2,13 +2,16 @@
 % UTF-8. Compile twice with XeLaTeX; figures and data are local to this folder.
 \documentclass[UTF8,a4paper,zihao=-4,fontset=fandol]{ctexart}
 \usepackage[top=2.54cm,bottom=2.54cm,left=3.175cm,right=3.175cm,headheight=16pt]{geometry}
-\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,longtable,array,xcolor}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,longtable,array}
+\usepackage[table]{xcolor}
+\usepackage{colortbl,etoolbox}
 \usepackage{caption,subcaption,fancyhdr,enumitem,float,placeins,setspace,listings}
 \usepackage{hyperref}
 \setCJKmainfont{FandolFang-Regular.otf}[BoldFont=FandolHei-Regular.otf,ItalicFont=FandolKai-Regular.otf]
 \definecolor{Navy}{HTML}{17324D}
 \definecolor{Teal}{HTML}{15877F}
 \definecolor{Pale}{HTML}{EDF4F6}
+\definecolor{TableHead}{HTML}{EDF2F5}
 \hypersetup{unicode=true,colorlinks=true,linkcolor=Navy,citecolor=Teal,urlcolor=Teal,
  pdftitle={智能科研助理 基于RAG与Agent的论文知识库问答系统},pdfauthor={赵志国 林骋 林弟伟}}
 \graphicspath{{figures/}}
@@ -22,7 +25,15 @@
  subsection={format=\heiti\zihao{4}},subsubsection={format=\heiti\zihao{-4}}}
 \renewcommand{\contentsname}{\heiti\zihao{2}目\quad 录}
 \captionsetup{font=small,labelfont=bf,labelsep=quad,skip=6pt}
+\captionsetup[table]{position=top,skip=7pt}
+\setlength{\heavyrulewidth}{.65pt}
+\setlength{\lightrulewidth}{.35pt}
+\newcommand{\ReportTableStyle}{\fontsize{10.5}{14}\selectfont\setstretch{1.15}%
+ \setlength{\tabcolsep}{4.5pt}\renewcommand{\arraystretch}{1.28}}
+\AtBeginEnvironment{table}{\setlength{\abovecaptionskip}{6pt}\setlength{\belowcaptionskip}{7pt}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \setlist[itemize]{leftmargin=2em,itemsep=1pt,topsep=4pt}
 \setlist[enumerate]{leftmargin=2.5em,itemsep=1pt,topsep=4pt}
 \pagestyle{fancy}\fancyhf{}
@@ -32,9 +43,9 @@
 \renewcommand{\headrulewidth}{0.3pt}
 \lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,keepspaces=true,
  frame=single,rulecolor=\color{black!20},backgroundcolor=\color{Pale},showstringspaces=false}
-\newcommand{\reportfigure}[3]{\begin{figure}[htbp]\centering
- \includegraphics[width=\linewidth,height=.40\textheight,keepaspectratio]{#1}
- \caption{#2}\label{#3}\end{figure}}
+\newcommand{\reportfigure}[4][.48\textheight]{\begin{figure}[htbp]\centering
+ \includegraphics[width=\linewidth,height=#1,keepaspectratio]{#2}
+ \caption{#3}\label{#4}\end{figure}}
 \newcommand{\status}[1]{\textbf{#1}}
 \makeatletter
 \setlength{\@fptop}{0pt}\setlength{\@fpsep}{12pt}\setlength{\@fpbot}{0pt plus 1fil}
@@ -64,7 +75,8 @@
  {\heiti\zihao{2}智能科研助理}\par\vspace{.5cm}
  {\heiti\zihao{3}基于RAG与Agent的论文知识库问答系统}\par\vspace{2cm}
  \renewcommand{\arraystretch}{1.6}
- \begin{tabular}{lll}\toprule 姓名 & 班级 & 学号\\\midrule
+ \begin{tabular}{lll}\toprule\rowcolor{TableHead}
+\textbf{姓名} & \textbf{班级} & \textbf{学号} \\ \midrule
  赵志国 & 人工智能231 & 11523122\\
  林骋 & 人工智能231 & 11523121\\
  林弟伟 & 人工智能232 & 11523120\\\bottomrule\end{tabular}
@@ -131,9 +143,9 @@ RAG通过外部检索证据补充生成模型的参数知识\cite{rag}；ReAct�
 \section{团队分工说明}
 \begin{table}[htbp]\centering
 \caption{成员分工安排与约定贡献比例}\label{tab:team}
-\small\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{\linewidth}{@{}p{2.0cm}p{1.2cm}Yp{1.8cm}r@{}}\toprule
-角色 & 姓名 & 核心职责安排 & 模块 & 比例\\\midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{2.0cm}P{1.2cm}Yp{1.8cm}r@{}}\toprule\rowcolor{TableHead}
+\textbf{角色} & \textbf{姓名} & \textbf{核心职责安排} & \textbf{模块} & \textbf{比例} \\ \midrule
 检索与RAG & 赵志国 & 文档处理、证据检索、生成与服务编排 & 文档与问答 & 40\%\\
 Agent与工具 & 林骋 & 工具注册、路由、记忆及异常终止控制 & Agent & 30\%\\
 交互与评测 & 林弟伟 & 页面流程、实验整理、文档与展示材料 & 集成与评测 & 30\%\\\bottomrule
@@ -146,32 +158,37 @@ Agent与工具 & 林骋 & 工具注册、路由、记忆及异常终止控制 & 
 \section{模块交付物清单}
 交付状态区分代码实现、真实执行和评价来源。以下五表对应课程模块，不将“提供脚本”视为“已完成环境验收”。
 
-\begin{table}[htbp]\centering\caption{模块一 文档处理与检索交付物}\label{tab:module1}\small
-\begin{tabularx}{\linewidth}{@{}p{2.8cm}p{1.7cm}Y@{}}\toprule 交付项 & 状态 & 证据与范围\\\midrule
+\begin{table}[htbp]\centering\caption{模块一 文档处理与检索交付物}\label{tab:module1}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{2.8cm}P{1.7cm}Y@{}}\toprule\rowcolor{TableHead}
+\textbf{交付项} & \textbf{状态} & \textbf{证据与范围} \\ \midrule
 多格式解析与三解析器 & 已实现 & PDF、DOCX、TXT、MD；10篇论文的30次解析记录，E03\\
 三类分块与长度比较 & 已实现 & 固定256/512/1024、递归、句段边界；同20题dev，E04\\
 两类Embedding比较 & 已实现 & m3e与BGE-large-zh；生产另用BGE-M3，E05\\
 向量库与混合重排 & 已实现 & Chroma/FAISS、BM25、手写RRF及CrossEncoder，E06—E08\\\bottomrule\end{tabularx}\end{table}
-\begin{table}[htbp]\centering\caption{模块二 RAG问答交付物}\label{tab:module2}\small
-\begin{tabularx}{\linewidth}{@{}p{2.8cm}p{1.7cm}Y@{}}\toprule 交付项 & 状态 & 证据与范围\\\midrule
+\begin{table}[htbp]\centering\caption{模块二 RAG问答交付物}\label{tab:module2}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{2.8cm}P{1.7cm}Y@{}}\toprule\rowcolor{TableHead}
+\textbf{交付项} & \textbf{状态} & \textbf{证据与范围} \\ \midrule
 提示词与上下文构造 & 已实现 & 预算控制、论文轮转、来源同步裁剪，E10\\
 SSE与引用追溯 & 已实现 & 增量回答、物理页预览、原件哈希核对，E14\\
 缓存与失败处理 & 已实现 & 指纹约束准入、精确重复探针、显式降级，E12\\
 生成参数质量比较 & 已完成AI评审 & 五条件各4题；不作独立人工或显著性声明，E10\\\bottomrule\end{tabularx}\end{table}
-\begin{table}[htbp]\centering\caption{模块三 Agent交付物}\label{tab:module3}\small
-\begin{tabularx}{\linewidth}{@{}p{2.8cm}p{1.7cm}Y@{}}\toprule 交付项 & 状态 & 证据与范围\\\midrule
+\begin{table}[htbp]\centering\caption{模块三 Agent交付物}\label{tab:module3}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{2.8cm}P{1.7cm}Y@{}}\toprule\rowcolor{TableHead}
+\textbf{交付项} & \textbf{状态} & \textbf{证据与范围} \\ \midrule
 手写执行控制器 & 已实现 & schema校验、工具动作与观察、有界终止\\
 八项本地工具 & 已实现 & 问答、元信息、比较、关键词、摘要、时间、计算和目录\\
 记忆与错误恢复 & 已实现 & 会话隔离、窗口与摘录记忆、受限重试\\
 路由与并行探针 & 已实测 & 5个路由样本；20次本地工具执行，E11、E12\\\bottomrule\end{tabularx}\end{table}
-\begin{table}[htbp]\centering\caption{模块四 集成与交互交付物}\label{tab:module4}\small
-\begin{tabularx}{\linewidth}{@{}p{2.8cm}p{1.7cm}Y@{}}\toprule 交付项 & 状态 & 证据与范围\\\midrule
+\begin{table}[htbp]\centering\caption{模块四 集成与交互交付物}\label{tab:module4}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{2.8cm}P{1.7cm}Y@{}}\toprule\rowcolor{TableHead}
+\textbf{交付项} & \textbf{状态} & \textbf{证据与范围} \\ \midrule
 四个工作台页面 & 已实现 & 论文库、问答、比较、实验与运行记录\\
 会话及文档管理 & 已实现 & 上传进度、重试、元信息、会话搜索与导出\\
 运行追踪与统计 & 已实现 & 状态、用量、模型与检索配置快照\\
 本地标准模式验收 & 已通过 & 33类实际检查、0失败；单篇CvT独立工作区，E14\\\bottomrule\end{tabularx}\end{table}
-\begin{table}[htbp]\centering\caption{模块五 评测与材料交付物}\label{tab:module5}\small
-\begin{tabularx}{\linewidth}{@{}p{2.8cm}p{1.7cm}Y@{}}\toprule 交付项 & 状态 & 证据与范围\\\midrule
+\begin{table}[htbp]\centering\caption{模块五 评测与材料交付物}\label{tab:module5}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{2.8cm}P{1.7cm}Y@{}}\toprule\rowcolor{TableHead}
+\textbf{交付项} & \textbf{状态} & \textbf{证据与范围} \\ \midrule
 语料与评测题集 & 已建立 & 10篇固定论文、80题、四类问题，E01、E02\\
 检索指标与Bad Case & 已执行 & 三档test60、四类错误、优化前后记录，E07、E15\\
 答案质量评分 & 部分满足原要求 & 60题AI辅助评分已完成；独立人工评分未执行，E09\\
@@ -250,8 +267,9 @@ SSE传递状态、来源、文本增量、用量与结束事件；多工具路�
 
 \subsection{手写Agent与八工具协同}
 注册表对工具名称、必填参数、类型和长度执行schema校验。八项工具的作用见表\ref{tab:tools}。
-\begin{table}[htbp]\centering\caption{工具注册表及边界}\label{tab:tools}\small
-\begin{tabularx}{\linewidth}{@{}p{3.7cm}Y@{}}\toprule 工具 & 能力与限制\\\midrule
+\begin{table}[htbp]\centering\caption{工具注册表及边界}\label{tab:tools}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{4.4cm}Y@{}}\toprule\rowcolor{TableHead}
+\textbf{工具} & \textbf{能力与限制} \\ \midrule
 knowledge\_qa & 指定论文范围内的证据问答\\
 paper\_metadata & 读取实际保存的题名、作者、年份等字段\\
 compare\_papers & 两篇论文的结构化比较；条件不齐时不直接排名\\
@@ -278,8 +296,9 @@ Agent的System Prompt将角色限定为基于本地论文库的科研助理，�
 会话记忆由近期窗口与旧消息抽取摘录组成，默认最多8条近期消息、1400个估算token；派生记忆与原消息分开保存。
 公开日志只呈现动作、参数、结果、耗时和状态，不输出模型内部思维链。
 
-\begin{table}[htbp]\centering\caption{范围与预算约束下的证据增强执行过程}\label{tab:algorithm}\small
-\begin{tabularx}{\linewidth}{@{}rY@{}}\toprule 步骤 & 执行逻辑\\\midrule
+\begin{table}[htbp]\centering\caption{范围与预算约束下的证据增强执行过程}\label{tab:algorithm}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}rY@{}}\toprule\rowcolor{TableHead}
+\textbf{步骤} & \textbf{执行逻辑} \\ \midrule
 1 & 校验工作区和就绪文档范围，读取有界会话记忆。\\
 2 & 判定普通模型、单一RAG或工具循环路径，并记录所选路径。\\
 3 & 对知识检索生成dense与BM25候选，按名次执行RRF，可选窗口重排。\\
@@ -305,9 +324,9 @@ Agent的System Prompt将角色限定为基于本地论文库的科研助理，�
 语料共169个物理页，保存原始文件哈希；任务是检索论文信息，不复现论文模型的训练或分类准确率。
 \begin{table}[htbp]\centering
 \caption{固定版本论文语料及物理页数}\label{tab:corpus}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xlll@{}}\toprule
-论文简称 & 固定arXiv版本 & 发表信息 & 物理页 \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xlll@{}}\toprule\rowcolor{TableHead}
+\textbf{论文简称} & \textbf{固定arXiv版本} & \textbf{发表信息} & \textbf{物理页} \\ \midrule
 VIT\cite{vit} & 2010.11929v2 & ICLR 2021 & 22 \\
 DEIT\cite{deit} & 2012.12877v2 & ICML 2021 & 22 \\
 SWIN\cite{swin} & 2103.14030v2 & ICCV 2021 & 14 \\
@@ -323,9 +342,9 @@ BEIT\cite{beit} & 2106.08254v2 & ICLR 2022 & 18 \\
 \end{table}
 \begin{table}[htbp]\centering
 \caption{题集构成与固定划分}\label{tab:dataset}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrr@{}}\toprule
-题型 & 开发集 & 测试集 & 总计 \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{题型} & \textbf{开发集} & \textbf{测试集} & \textbf{总计} \\ \midrule
 事实型 & 8 & 22 & 30 \\
 比较型 & 4 & 16 & 20 \\
 综合型 & 4 & 11 & 15 \\
@@ -359,9 +378,9 @@ BEIT\cite{beit} & 2106.08254v2 & ICLR 2022 & 18 \\
 \subsection{解析 分块 模型与向量库实验}
 \begin{table}[htbp]\centering
 \caption{三种PDF解析器的实测结果}\label{tab:parsers}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule
-解析器 & 累计耗时/s & 锚点保持 & 表格块 & 公式块 \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{解析器} & \textbf{累计耗时/s} & \textbf{锚点保持} & \textbf{表格块} & \textbf{公式块} \\ \midrule
 pymupdf & 38.565 & 119/119 & 157 & 119 \\
 pdfplumber & 29.251 & 119/119 & 141 & 231 \\
 pypdf2 & 9.124 & 114/119 & 0 & 1 \\
@@ -374,16 +393,16 @@ PyMuPDF与pdfplumber均保留全部既定锚点，也不能由此推断所有阅
 
 \begin{table}[htbp]\centering
 \caption{同一m3e模型下的五种分块配置比较}\label{tab:chunking}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule
-分块配置 & 片段数 & Hit@5 & MRR & Recall@5 \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{分块配置} & \textbf{片段数} & \textbf{Hit@5} & \textbf{MRR} & \textbf{Recall@5} \\ \midrule
 fixed-256 & 724 & 0.3500 & 0.2921 & 0.3250 \\
 fixed-512 & 314 & 0.4000 & 0.2699 & 0.3750 \\
-fixed-1024 & 150 & 0.5000 & 0.3604 & 0.4000 \\
+fixed-1024 & 150 & \textbf{0.5000} & \textbf{0.3604} & \textbf{0.4000} \\
 recursive-512 & 342 & 0.4000 & 0.2785 & 0.3500 \\
-semantic-512 & 326 & 0.4500 & 0.3078 & 0.4000 \\
+semantic-512 & 326 & 0.4500 & 0.3078 & \textbf{0.4000} \\
 \bottomrule\end{tabularx}
-\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 开发集20题；混合检索（Dense、BM25与RRF），每种切分使用其实际索引。分块单位为项目定义的轻量token，不等同于模型tokenizer。来源E04。\end{minipage}
+\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 开发集20题；混合检索（Dense、BM25与RRF），每种切分使用其实际索引。分块单位为项目定义的轻量token，不等同于模型tokenizer。来源E04。 \textbf{粗体}为本表固定口径下的观察最优值（并列保留），不代表总体最优或显著差异。\end{minipage}
 \end{table}
 \reportfigure{fig04_chunking.pdf}{同一m3e模型和20题开发集上的分块配置比较。每个切分方案具有自己的真实片段索引。来源E04。}{fig:chunking}
 固定1024在该开发集的Hit@5和MRR最高，递归512没有取得最高指标。
@@ -392,13 +411,13 @@ semantic-512 & 326 & 0.4500 & 0.3078 & 0.4000 \\
 
 \begin{table}[htbp]\centering
 \caption{Embedding模型质量与查询编码代价}\label{tab:embedding}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule
-模型 & 维度 & Hit@5 & MRR & Recall@5 & 编码/ms \\ \midrule
-m3e-base & 768 & 0.4000 & 0.2785 & 0.3500 & 43.94 \\
-bge-large-zh-v1.5 & 1024 & 0.3500 & 0.2960 & 0.3000 & 212.43 \\
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{模型} & \textbf{维度} & \textbf{Hit@5} & \textbf{MRR} & \textbf{Recall@5} & \textbf{编码/ms} \\ \midrule
+m3e-base & 768 & \textbf{0.4000} & 0.2785 & \textbf{0.3500} & 43.94 \\
+bge-large-zh-v1.5 & 1024 & 0.3500 & \textbf{0.2960} & 0.3000 & 212.43 \\
 \bottomrule\end{tabularx}
-\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 同342片段、开发集20题、递归512配置。最后一列为20个实际查询的编码总时间除以20，不包含模型加载，亦不是逐请求在线延迟。此表没有比较BGE-M3。来源E05。\end{minipage}
+\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 同342片段、开发集20题、递归512配置。最后一列为20个实际查询的编码总时间除以20，不包含模型加载，亦不是逐请求在线延迟。此表没有比较BGE-M3。来源E05。 \textbf{粗体}为本表固定口径下的观察最优值（并列保留），不代表总体最优或显著差异。\end{minipage}
 \end{table}
 \reportfigure{fig05_embeddings.pdf}{一致递归索引下的模型质量与20题查询编码摊销时间。m3e和BGE-large-zh的MRR及Hit@5各有差异，不能单一排序为全面优劣。来源E05。}{fig:embedding}
 m3e的Hit@5为0.4000，高于BGE-large-zh的0.3500；后者MRR较高，说明命中与排序指标需要分别解释。
@@ -406,13 +425,13 @@ m3e的Hit@5为0.4000，高于BGE-large-zh的0.3500；后者MRR较高，说明命
 
 \begin{table}[htbp]\centering
 \caption{相同真实向量下的存储后端比较}\label{tab:vectors}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule
-后端 & 构建/ms & 查询均时/ms & Hit@5 & MRR & Recall@5 \\ \midrule
-chroma & 1165.03 & 2.291 & 0.3500 & 0.3236 & 0.2750 \\
-faiss & 156.44 & 6.246 & 0.3500 & 0.3236 & 0.2750 \\
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{后端} & \textbf{构建/ms} & \textbf{查询均时/ms} & \textbf{Hit@5} & \textbf{MRR} & \textbf{Recall@5} \\ \midrule
+chroma & 1165.03 & 2.291 & \textbf{0.3500} & \textbf{0.3236} & \textbf{0.2750} \\
+faiss & 156.44 & 6.246 & \textbf{0.3500} & \textbf{0.3236} & \textbf{0.2750} \\
 \bottomrule\end{tabularx}
-\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 历史359片段、1024维真实向量及同20个开发集查询；查询时间排除共享编码。删除与恢复探针均通过。规模有限，不能据此证明后端普遍优劣。来源E06。\end{minipage}
+\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 历史359片段、1024维真实向量及同20个开发集查询；查询时间排除共享编码。删除与恢复探针均通过。规模有限，不能据此证明后端普遍优劣。来源E06。 \textbf{粗体}为本表固定口径下的观察最优值（并列保留），不代表总体最优或显著差异。\end{minipage}
 \end{table}
 \reportfigure{fig06_vectorstores.pdf}{同一359片段与真实向量的后端质量和查询耗时。后端比较复用模型推理，结果仅代表当前规模与实现。来源E06。}{fig:vectors}
 两个后端得到相同的检索质量，但持久化构建和查询耗时不同。
@@ -421,14 +440,14 @@ faiss & 156.44 & 6.246 & 0.3500 & 0.3236 & 0.2750 \\
 \subsection{三档检索消融与参数迭代}
 \begin{table}[htbp]\centering
 \caption{冻结测试集上的三档检索结果}\label{tab:retrieval}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule
-模式 & Hit@5 & MRR & Recall@5 & 均时/ms & P95/ms \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{模式} & \textbf{Hit@5} & \textbf{MRR} & \textbf{Recall@5} & \textbf{均时/ms} & \textbf{P95/ms} \\ \midrule
 向量 & 0.4167 & 0.2992 & 0.3250 & 3.20 & 4.03 \\
 混合RRF & 0.4333 & 0.3538 & 0.3583 & 8.27 & 10.31 \\
-混合加重排 & 0.6167 & 0.4313 & 0.4750 & 16708.41 & 18625.26 \\
+混合加重排 & \textbf{0.6167} & \textbf{0.4313} & \textbf{0.4750} & 16708.41 & 18625.26 \\
 \bottomrule\end{tabularx}
-\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 每模式60题，历史359片段；各模式执行错误数均为0。预计算查询编码不包含在排序耗时内；BGE-M3全部80题查询编码均摊为112.915 ms/题。来源E07。\end{minipage}
+\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 每模式60题，历史359片段；各模式执行错误数均为0。预计算查询编码不包含在排序耗时内；BGE-M3全部80题查询编码均摊为112.915 ms/题。来源E07。 \textbf{粗体}为本表固定口径下的观察最优值（并列保留），不代表总体最优或显著差异。\end{minipage}
 \end{table}
 \reportfigure{fig07_retrieval.pdf}{同一历史359片段与60题测试集上的检索模式消融。重排提高证据覆盖，同时引入CPU推理成本。来源E07。}{fig:retrieval}
 混合加重排的Hit@5较纯向量提高20.00个百分点，较混合RRF提高18.33个百分点，Recall@5也提高。
@@ -436,13 +455,34 @@ faiss & 156.44 & 6.246 & 0.3500 & 0.3236 & 0.2750 \\
 误差区间采用对实际题目进行5000次percentile bootstrap、固定随机种子20261015。
 图\ref{fig:ci}表示题目抽样不确定性，不是模型多次运行方差，也不据此宣称统计显著。
 \reportfigure{fig08_retrieval_ci.pdf}{60题逐题重采样的95\% percentile区间。每个模式使用同样的实际问题集合；区间不替代重复运行或配对显著性检验。来源E07。}{fig:ci}
+\begin{table}[htbp]\centering
+\caption{同题配对的检索效果差及其题目级区间}\label{tab:paired-effects}
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{4.1cm}P{3.5cm}rR@{}}\toprule\rowcolor{TableHead}
+\textbf{比较（后者减前者）} & \textbf{指标/单位} & \textbf{$\Delta$} & \textbf{95\%区间} \\ \midrule
+向量 → 混合 & Hit@5/百分点 & +1.67 & [-8.33, 13.33] \\
+向量 → 混合 & MRR/原量纲 & +0.0546 & [-0.0008, 0.1139] \\
+向量 → 混合 & Recall@5/百分点 & +3.33 & [-5.00, 12.50] \\
+混合 → 混合+重排 & Hit@5/百分点 & +18.33 & [8.33, 30.00] \\
+混合 → 混合+重排 & MRR/原量纲 & +0.0775 & [-0.0231, 0.1770] \\
+混合 → 混合+重排 & Recall@5/百分点 & +11.67 & [3.33, 20.00] \\
+向量 → 混合+重排 & Hit@5/百分点 & +20.00 & [10.00, 31.67] \\
+向量 → 混合+重排 & MRR/原量纲 & +0.1322 & [0.0428, 0.2266] \\
+向量 → 混合+重排 & Recall@5/百分点 & +15.00 & [5.83, 25.00] \\
+\bottomrule\end{tabularx}
+\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 各比较使用同60题；同次抽样索引应用于全部模式。10000次percentile重采样，seed=20261017。混合指RRF融合；Hit与Recall列按百分点换算，MRR不换算。区间仅刻画题目构成不确定性，不作显著性检验。来源E07及派生统计快照。\end{minipage}
+\end{table}
+图\ref{fig:paired-effects}进一步使用同一题目的模式差值，三组比较的每次重采样均保留题目配对关系。
+差值及其95\%区间用于描述本题集上的效果与题目构成不确定性，不作显著性判定。
+\reportfigure{fig18_paired_effects.pdf}{三组检索模式比较的配对效果。横轴为后者减前者的指标差，线段为题目级配对bootstrap的95\%区间。图中均采用0—1指标的原量纲差值；Hit与Recall在表\ref{tab:paired-effects}换算为百分点，MRR不换算。来源E07及派生统计快照。}{fig:paired-effects}
+\reportfigure[.58\textheight]{fig19_rank_matrix.pdf}{同60题在三种检索模式下的逐题首个相关项名次。题目按四类任务分组，颜色仅对应已检到项；null表示在保存的候选深度内未检到，不能填充为末位名次。来源E07。}{fig:rank-matrix}
 \reportfigure{fig09_retrieval_categories.pdf}{按事实、比较、综合和推理问题分解的Hit@5。各类样本量不同；推理题在重排后仍保留较大漏召回空间。来源E07。}{fig:category}
 
 \begin{table}[htbp]\centering
 \caption{开发集RRF常数与截断深度比较}\label{tab:rrf}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule
-RRF常数 & 评价K & Hit@K & Recall@K & MRR@20 \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{RRF常数} & \textbf{评价K} & \textbf{Hit@K} & \textbf{Recall@K} & \textbf{MRR@20} \\ \midrule
 20 & 3 & 0.4000 & 0.3500 & 0.324717 \\
 20 & 5 & 0.4000 & 0.3500 & 0.324717 \\
 20 & 10 & 0.6500 & 0.5750 & 0.324717 \\
@@ -455,16 +495,16 @@ RRF常数 & 评价K & Hit@K & Recall@K & MRR@20 \\ \midrule
 \bottomrule\end{tabularx}
 \par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 同20个开发集问题，复用实际编码和检索排名，无新增模型调用。MRR固定在候选深度20定义，不随评价K重新计算。来源E08。\end{minipage}
 \end{table}
-\reportfigure{fig10_rrf.pdf}{RRF常数与评价截断深度的开发集网格。颜色分别呈现Hit@K和Recall@K，不把MRR@20混写为MRR@K。来源E08。}{fig:rrf}
+\reportfigure{fig10_rrf.pdf}{RRF常数与评价截断深度的开发集网格。图中分别呈现Hit@K与MRR@20；后者按候选深度20计算，不随评价K重新定义。来源E08。}{fig:rrf}
 RRF常数60改为20后，MRR@20由0.314796变为0.324717，而Hit@5为0.40、Recall@5为0.35，均未变化。
 该轮实际优化改善了排名，未解决前五条的漏召回；本文保留这一有限改善而不使用“召回显著提高”的表述。
 
 \subsection{答案质量 生成参数与提示词比较}
 \begin{table}[htbp]\centering
 \caption{60条实际短答案的AI辅助质量评审}\label{tab:quality}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrrrr@{}}\toprule
-维度 & 均分/5 & 1分 & 2分 & 3分 & 4分 & 5分 \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{维度} & \textbf{均分/5} & \textbf{1分} & \textbf{2分} & \textbf{3分} & \textbf{4分} & \textbf{5分} \\ \midrule
 正确性 & 3.50 & 5 & 11 & 13 & 11 & 20 \\
 完整性 & 2.98 & 4 & 21 & 14 & 14 & 7 \\
 引用支撑 & 3.03 & 12 & 13 & 13 & 5 & 17 \\
@@ -476,19 +516,32 @@ RRF常数60改为20后，MRR@20由0.314796变为0.324717，而Hit@5为0.40、Rec
 四维均分分别为3.50、2.98、3.03和4.58。该分布说明语言流畅不能替代证据覆盖、数值正确及来源支持。
 评分基于原回答、参考答案、实际引用映射和论文物理页，保留逐题评语，但未开展独立双人盲评或评分一致性分析。
 课程原文要求的人工评分不能由AI来源标签的替换而得到满足；本文据实将该项列为评价限制。
+\begin{table}[htbp]\centering
+\caption{四类题目的AI辅助分维度均分}\label{tab:quality-category}
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{题型} & \textbf{$n$} & \textbf{正确性} & \textbf{完整性} & \textbf{引用支撑} & \textbf{流畅性} \\ \midrule
+事实型 & 22 & 3.91 & 3.41 & 3.45 & 4.73 \\
+比较型 & 16 & 3.06 & 2.62 & 2.69 & 4.56 \\
+综合型 & 11 & 3.27 & 2.27 & 3.36 & 4.36 \\
+推理型 & 11 & 3.55 & 3.36 & 2.36 & 4.55 \\
+\bottomrule\end{tabularx}
+\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 均分范围1—5，按题目等权计算；四类样本数合计60。不同题型并非同难度配对任务，不据均分差异推断题型的固有难度。评分来源与表\ref{tab:quality}一致。来源E09及派生统计快照。\end{minipage}
+\end{table}
+\reportfigure{fig20_quality_association.pdf}{AI辅助评分的联合分布与秩相关。气泡依次表示正确性—完整性、正确性—引用支撑、流畅性—正确性的评分组合，面积为题数；热图为Spearman相关。其共同变化不证明因果联系或人工评分一致性。来源E09及派生统计快照。}{fig:quality-association}
 
 \begin{table}[htbp]\centering
 \caption{生成参数的质量与成本对比}\label{tab:parameters}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrrrr@{}}\toprule
-$T/p/k_s$ & 正确 & 完整 & 引用 & 流畅 & 生成/s & 输出/条 \\ \midrule
-0.1/0.9/40 & 4.25 & 4.00 & 3.50 & 5.00 & 3.255 & 84.25 \\
-0.0/0.9/40 & 3.75 & 3.75 & 3.50 & 4.75 & 2.503 & 115.00 \\
-0.5/0.9/40 & 3.75 & 3.50 & 3.25 & 5.00 & 1.415 & 59.50 \\
-0.1/0.7/40 & 3.75 & 3.50 & 3.25 & 5.00 & 1.705 & 73.25 \\
-0.1/0.9/20 & 4.25 & 4.00 & 3.50 & 5.00 & 1.885 & 84.25 \\
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{$T/p/k_s$} & \textbf{正确} & \textbf{完整} & \textbf{引用} & \textbf{流畅} & \textbf{生成/s} & \textbf{输出/条} \\ \midrule
+0.1/0.9/40 & \textbf{4.25} & \textbf{4.00} & \textbf{3.50} & \textbf{5.00} & 3.255 & 84.25 \\
+0.0/0.9/40 & 3.75 & 3.75 & \textbf{3.50} & 4.75 & 2.503 & 115.00 \\
+0.5/0.9/40 & 3.75 & 3.50 & 3.25 & \textbf{5.00} & 1.415 & 59.50 \\
+0.1/0.7/40 & 3.75 & 3.50 & 3.25 & \textbf{5.00} & 1.705 & 73.25 \\
+0.1/0.9/20 & \textbf{4.25} & \textbf{4.00} & \textbf{3.50} & \textbf{5.00} & 1.885 & 84.25 \\
 \bottomrule\end{tabularx}
-\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 各条件仅4道开发集题，每题单次生成，未固定采样seed；输出上限256 token。$k_s$为采样Top-k，与检索返回Top-K不同。质量来源为AI评审。来源E10。\end{minipage}
+\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 各条件仅4道开发集题，每题单次生成，未固定采样seed；输出上限256 token。$k_s$为采样Top-k，与检索返回Top-K不同。质量来源为AI评审。来源E10。 \textbf{粗体}为本表固定口径下的观察最优值（并列保留），不代表总体最优或显著差异。\end{minipage}
 \end{table}
 \reportfigure{fig12_gen_parameters.pdf}{生成参数条件的四维AI评分。每条件4题，包含事实、比较、综合和推理；相同输出复用同一评分。来源E10。}{fig:parameters}
 参数实验合计20条真实回答，提示词实验含旧模板4条及复用基线的当前模板4条。
@@ -498,25 +551,26 @@ $T/p/k_s$ & 正确 & 完整 & 引用 & 流畅 & 生成/s & 输出/条 \\ \midrul
 
 \begin{table}[htbp]\centering
 \caption{提示词对照的分维度结果}\label{tab:prompt}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule
-模板 & 正确性 & 完整性 & 引用支撑 & 流畅性 & 生成/s \\ \midrule
-简化对照 & 4.25 & 3.75 & 2.50 & 5.00 & 3.551 \\
-当前证据约束 & 4.25 & 4.00 & 3.50 & 5.00 & 3.255 \\
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{模板} & \textbf{正确性} & \textbf{完整性} & \textbf{引用支撑} & \textbf{流畅性} & \textbf{生成/s} \\ \midrule
+简化对照 & \textbf{4.25} & 3.75 & 2.50 & \textbf{5.00} & 3.551 \\
+当前证据约束 & \textbf{4.25} & \textbf{4.00} & \textbf{3.50} & \textbf{5.00} & 3.255 \\
 \bottomrule\end{tabularx}
-\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 每模板4条；当前模板复用参数基线回答，不是额外4次生成。新旧实验合计28个条件记录、24次历史生成调用、17个独立答案评审。来源E10。\end{minipage}
+\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 每模板4条；当前模板复用参数基线回答，不是额外4次生成。新旧实验合计28个条件记录、24次历史生成调用、17个独立答案评审。来源E10。 \textbf{粗体}为本表固定口径下的观察最优值（并列保留），不代表总体最优或显著差异。\end{minipage}
 \end{table}
 \reportfigure{fig13_prompt.pdf}{简化对照与当前证据约束提示词的比较。正确性均值不变，完整性增加0.25、引用支撑增加1.00分；样本不足以支持普遍优势。来源E10。}{fig:prompt}
 事实题中，旧回答正确给出ViT-Base配置，但引用位置与其自写页码不符；当前回答采用实际包含表1的来源，改善了引用支撑。
 另一方面，综合题的冻结Top5均来自T2T，没有CvT原文，多个配置仍将普通ViT机制错误归给CvT。
 该例表明，采样和提示词不能独立修复证据覆盖缺失，应在生成前检验所需论文是否均有可靠来源。
+\reportfigure{fig21_prompt_pairs.pdf}{四题提示词比较的逐题配对分数。连接线对应同一题目，保留改善、持平与退化的实际结果；每题每模板单次生成，不由四题观测推断总体效果。来源E10及派生统计快照。}{fig:prompt-pairs}
 
 \subsection{Agent 效率与本地运行验收}
 \begin{table}[htbp]\centering
 \caption{固定RAG与Agent探针的实际资源记录}\label{tab:agent}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule
-路径 & 次数 & 均时/s & P95/s & 输入合计 & 输出合计 \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{路径} & \textbf{次数} & \textbf{均时/s} & \textbf{P95/s} & \textbf{输入合计} & \textbf{输出合计} \\ \midrule
 固定RAG & 5 & 1.254 & 1.958 & 18105 & 250 \\
 Agent & 5 & 2.481 & 4.648 & 10109 & 469 \\
 \bottomrule\end{tabularx}
@@ -527,9 +581,9 @@ Agent & 5 & 2.481 & 4.648 & 10109 & 469 \\
 概念、计算、时间、关键词和论文事实五类探针只覆盖部分路由，不能据此给出全任务成功率。
 \begin{table}[htbp]\centering
 \caption{本地工具并行与缓存功能探针}\label{tab:probes}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule
-条件 & 次数 & 均时/ms & 输入token & 输出token \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}\toprule\rowcolor{TableHead}
+\textbf{条件} & \textbf{次数} & \textbf{均时/ms} & \textbf{输入token} & \textbf{输出token} \\ \midrule
 串行本地工具 & 10 & 24.125 & 0 & 0 \\
 双线程本地工具 & 10 & 21.161 & 0 & 0 \\
 缓存冷请求 & 1 & 2955.515 & 3599 & 54 \\
@@ -544,9 +598,9 @@ Agent & 5 & 2.481 & 4.648 & 10109 & 469 \\
 
 \begin{table}[htbp]\centering
 \caption{2026年10月15日本地独立流程验收}\label{tab:local}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}p{3.2cm}X@{}}\toprule
-项目 & 实际记录 \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{3.2cm}X@{}}\toprule\rowcolor{TableHead}
+\textbf{项目} & \textbf{实际记录} \\ \midrule
 文档与片段 & CvT原文PDF，独立工作区29片段 \\
 模型与来源 & research-qwen:7b；knowledge\_rag \\
 运行状态 & 33类检查通过；0失败 \\
@@ -570,8 +624,9 @@ Agent & 5 & 2.481 & 4.648 & 10109 & 469 \\
 \end{figure}
 
 \subsection{Bad Case分析与优化边界}
-\begin{table}[htbp]\centering\caption{四类Bad Case与工程输入窗口问题}\label{tab:badcases}\small
-\begin{tabularx}{\linewidth}{@{}p{2cm}YY@{}}\toprule 类型 & 观察与根因 & 改进及剩余限制\\\midrule
+\begin{table}[htbp]\centering\caption{四类Bad Case与工程输入窗口问题}\label{tab:badcases}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{2cm}YY@{}}\toprule\rowcolor{TableHead}
+\textbf{类型} & \textbf{观察与根因} & \textbf{改进及剩余限制} \\ \midrule
 检索失败 & 相近架构文本干扰，跨语言实体与跨论文覆盖不足 & 混合检索和配置探索；RRF改进只改善MRR，仍有漏召回\\
 生成错误 & 自由格式输出、模型补写数值及事实归属错误 & schema与有界修复；格式可用仍不等于语义正确\\
 引用错误 & 模型自写页码，来源编号与事实对应不严 & 服务器页码和来源核对；断言语义支持仍需复查\\
@@ -588,8 +643,9 @@ Agent决策 & 规划阶段编造文档标识或重复动作 & 固定明确文档
 API封装文档、任务、会话、运行和实验操作。文档任务状态包括queued、running、done与error；文档就绪后才能进入限定范围的检索。
 回答、来源、执行事件与配置快照在同一运行记录中保存，便于从界面回到实际调用。
 部分核心接口见表\ref{tab:api}，精确schema以项目实际API文档为准。
-\begin{table}[htbp]\centering\caption{核心接口及数据用途}\label{tab:api}\small
-\begin{tabularx}{\linewidth}{@{}p{1.2cm}p{5.4cm}Y@{}}\toprule 方法 & 路径 & 作用\\\midrule
+\begin{table}[htbp]\centering\caption{核心接口及数据用途}\label{tab:api}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{1.2cm}P{5.4cm}Y@{}}\toprule\rowcolor{TableHead}
+\textbf{方法} & \textbf{路径} & \textbf{作用} \\ \midrule
 GET & \path{/health} & 存活、模型及检索就绪\\
 GET & \path{/config} & 不含API密钥的公开配置\\
 POST & \path{/documents} & 批量上传及异步索引任务\\
@@ -603,8 +659,9 @@ GET & \path{/sessions/<id>/export} & 会话导出\\\bottomrule\end{tabularx}\end
 \subsection{配置与可复现控制}
 配置由YAML和环境变量合并，公开配置排除云端API密钥。
 应用默认上下文、输出、检索和Agent预算见表\ref{tab:config}；不同实验覆盖的值写入各自记录，不从当前默认值倒推历史配置。
-\begin{table}[htbp]\centering\caption{主要配置与实验覆盖关系}\label{tab:config}\small
-\begin{tabularx}{\linewidth}{@{}p{4.4cm}p{2cm}Y@{}}\toprule 配置项 & 默认/记录值 & 含义与范围\\\midrule
+\begin{table}[htbp]\centering\caption{主要配置与实验覆盖关系}\label{tab:config}\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}P{5.1cm}P{1.8cm}Y@{}}\toprule\rowcolor{TableHead}
+\textbf{配置项} & \textbf{取值} & \textbf{含义与范围} \\ \midrule
 \texttt{chunk\_size/overlap} & 512/64 & 轻量分块单位；实验另有256、1024\\
 \texttt{candidate\_k/result\_k} & 20/5 & 检索候选与最终来源数量\\
 \texttt{rrf\_k} & 60 & 历史基线；开发集另比较20、100\\
@@ -702,9 +759,9 @@ docker/          unverified container deployment configuration
 \end{lstlisting}
 \begin{table}[htbp]\centering
 \caption{报告整理时记录的本地软件环境}\label{tab:environment}
-\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\linewidth}{@{}XlXl@{}}\toprule
-组件 & 版本 & 组件 & 版本 \\ \midrule
+\ReportTableStyle
+\begin{tabularx}{\linewidth}{@{}XlXl@{}}\toprule\rowcolor{TableHead}
+\textbf{组件} & \textbf{版本} & \textbf{组件} & \textbf{版本} \\ \midrule
 Python & 3.12.14 & PyTorch & 2.14.1 \\
 FastAPI & 0.142.2 & Streamlit & 1.65.0 \\
 Sentence Transformers & 5.7.0 & Transformers & 5.19.0 \\
@@ -745,10 +802,12 @@ $env:RAG_OLLAMA_URL = "http://127.0.0.1:11435"
 首次真实编码和模型加载可能明显慢于后续请求；记录应注明是否命中缓存及实际token，而不是直接套用表\ref{tab:local}的单次耗时。
 
 \subsection{证据索引与课程要求对应}
-\begin{small}\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{@{}p{.9cm}p{2.6cm}p{9.9cm}@{}}
-\caption{报告数值与实现证据索引}\label{tab:evidence}\\\toprule 编号 & 内容 & 项目中的实际位置\\\midrule\endfirsthead
-\toprule 编号 & 内容 & 项目中的实际位置\\\midrule\endhead
+\begingroup\ReportTableStyle\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}P{.9cm}P{2.6cm}P{9.9cm}@{}}
+\caption{报告数值与实现证据索引}\label{tab:evidence}\\\toprule\rowcolor{TableHead}
+\textbf{编号} & \textbf{内容} & \textbf{项目中的实际位置} \\ \midrule\endfirsthead
+\toprule\rowcolor{TableHead}
+\textbf{编号} & \textbf{内容} & \textbf{项目中的实际位置} \\ \midrule\endhead
 E01 & 固定论文版本 & \path{data/corpus/manifest.json}\\
 E02 & 80题与划分 & \path{reports/datasets/dataset_manifest.json}\\
 E03 & 三解析器 & \path{reports/experiments/retrieval/parsers/results.json}\\
@@ -766,8 +825,8 @@ E14 & 本地实际验收 & \path{reports/deployment/local-20261015/runtime-recor
 E15 & Bad Case & \path{reports/experiments/bad-cases/actual-bad-cases.json}\\
 E16 & 已有测试记录 & \path{reports/testing/}；完整与定向测试时间分别保存，不叠加重叠数量\\
 E17 & 历史界面图 & \path{docs/screenshots/}；本文件夹保留原件及图表来源指纹\\\bottomrule
-\end{longtable}\end{small}
-本报告文件夹中的\path{data/report-data.json}保存制表与绘图使用的数值快照和来源指纹，\path{figures/figure_manifest.json}记录图形及截图来源。
+\end{longtable}\endgroup
+本报告文件夹中的\path{data/report-data.json}保存原始制表与绘图快照，\path{data/advanced-statistics.json}保存同题配对效果和评分分组等派生统计，\path{figures/figure_manifest.json}记录图形及截图来源。
 课程要求中的多格式解析、三分块、两编码模型、三档检索、生成参数、八工具及四类Bad Case分别在第三、四部分对应展开。
 原文的独立人工评分与容器实测尚无完成证据，未因本报告采用AI评审和本地部署而改写为已完成。
 

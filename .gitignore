@@ -55,3 +55,8 @@ node_modules/
 /docs/references/*.pdf
 /artifacts/packages/
 /artifacts/_cleanup_pending_*/
+
+# Rebuilt LaTeX intermediates are local; sources, PDF and archived log are kept.
+/artifacts/course-report/*.aux
+/artifacts/course-report/*.out
+/artifacts/course-report/*.toc

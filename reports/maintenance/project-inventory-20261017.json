@@ -2,12 +2,12 @@
   "date": "2026-10-17",
   "timezone": "Asia/Shanghai",
   "inventory_scope": "Detailed project files; protected local resources are summarized without following links. This Markdown and JSON index are counted separately.",
-  "detailed_project_files": 671,
+  "detailed_project_files": 687,
   "index_files": [
     "reports/maintenance/project-inventory-20261017.json",
     "文件目录清单.md"
   ],
-  "project_bytes_excluding_local_resources": 286386042,
+  "project_bytes_excluding_local_resources": 295636330,
   "moved_groups": 8,
   "pending_cleanup_files": 2837,
   "pending_cleanup_bytes": 3783610584.0,
@@ -91,12 +91,22 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 1557,
+      "bytes": 1732,
       "git_included_or_eligible": true
     },
     {
       "path": ".streamlit/config.toml",
       "bytes": 219,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 15160,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/README.md",
+      "bytes": 1687,
       "git_included_or_eligible": true
     },
     {
@@ -730,34 +740,54 @@
       "git_included_or_eligible": true
     },
     {
+      "path": "artifacts/course-report/DESIGN.md",
+      "git_included_or_eligible": true,
+      "bytes": 3040
+    },
+    {
+      "path": "artifacts/course-report/README.md",
+      "bytes": 6232,
+      "git_included_or_eligible": true
+    },
+    {
       "path": "artifacts/course-report/build-records/compilation.json",
-      "bytes": 1421,
+      "bytes": 1617,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/build-records/compile-output.txt",
-      "bytes": 3287,
+      "bytes": 1774,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/build-records/main.log",
-      "bytes": 35891,
+      "bytes": 33674,
       "git_included_or_eligible": true
     },
     {
+      "path": "artifacts/course-report/build_advanced_figures.py",
+      "git_included_or_eligible": true,
+      "bytes": 17537
+    },
+    {
       "path": "artifacts/course-report/build_figures.py",
-      "bytes": 25745,
+      "bytes": 33438,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/build_report.py",
-      "bytes": 61084,
+      "bytes": 67231,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/compile.ps1",
       "bytes": 3155,
       "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/data/advanced-statistics.json",
+      "git_included_or_eligible": true,
+      "bytes": 27756
     },
     {
       "path": "artifacts/course-report/data/document-checks.json",
@@ -770,263 +800,328 @@
       "git_included_or_eligible": true
     },
     {
+      "path": "artifacts/course-report/figure_style.py",
+      "git_included_or_eligible": true,
+      "bytes": 4576
+    },
+    {
       "path": "artifacts/course-report/figures/fig01_architecture.pdf",
-      "bytes": 60723,
+      "bytes": 52171,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig01_architecture.png",
-      "bytes": 319848,
+      "bytes": 387595,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig01_architecture.svg",
-      "bytes": 131567,
+      "bytes": 103970,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig02_dataset.pdf",
-      "bytes": 33925,
+      "bytes": 48652,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig02_dataset.png",
-      "bytes": 180881,
+      "bytes": 220644,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig02_dataset.svg",
-      "bytes": 66429,
+      "bytes": 73789,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig03_parsers.pdf",
-      "bytes": 30829,
+      "bytes": 52344,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig03_parsers.png",
-      "bytes": 169377,
+      "bytes": 315574,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig03_parsers.svg",
-      "bytes": 59246,
+      "bytes": 99064,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig04_chunking.pdf",
-      "bytes": 32746,
+      "bytes": 48649,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig04_chunking.png",
-      "bytes": 169699,
+      "bytes": 236043,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig04_chunking.svg",
-      "bytes": 66598,
+      "bytes": 80533,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig05_embeddings.pdf",
-      "bytes": 32828,
+      "bytes": 47728,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig05_embeddings.png",
-      "bytes": 179723,
+      "bytes": 223913,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig05_embeddings.svg",
-      "bytes": 65972,
+      "bytes": 71294,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig06_vectorstores.pdf",
-      "bytes": 32480,
+      "bytes": 50610,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig06_vectorstores.png",
-      "bytes": 154892,
+      "bytes": 250180,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig06_vectorstores.svg",
-      "bytes": 62960,
+      "bytes": 81065,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig07_retrieval.pdf",
-      "bytes": 37668,
+      "bytes": 52868,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig07_retrieval.png",
-      "bytes": 205524,
+      "bytes": 250946,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig07_retrieval.svg",
-      "bytes": 82666,
+      "bytes": 116736,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig08_retrieval_ci.pdf",
-      "bytes": 16310,
+      "bytes": 49863,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig08_retrieval_ci.png",
-      "bytes": 138937,
+      "bytes": 268232,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig08_retrieval_ci.svg",
-      "bytes": 45441,
+      "bytes": 85918,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig09_retrieval_categories.pdf",
-      "bytes": 21741,
+      "bytes": 50848,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig09_retrieval_categories.png",
-      "bytes": 109012,
+      "bytes": 214233,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig09_retrieval_categories.svg",
-      "bytes": 50013,
+      "bytes": 81700,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig10_rrf.pdf",
-      "bytes": 23063,
+      "bytes": 52055,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig10_rrf.png",
-      "bytes": 131133,
+      "bytes": 241966,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig10_rrf.svg",
-      "bytes": 47023,
+      "bytes": 89612,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig11_ai_quality.pdf",
-      "bytes": 32808,
+      "bytes": 48963,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig11_ai_quality.png",
-      "bytes": 208126,
+      "bytes": 279563,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig11_ai_quality.svg",
-      "bytes": 65439,
+      "bytes": 78709,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig12_gen_parameters.pdf",
-      "bytes": 20830,
+      "bytes": 51855,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig12_gen_parameters.png",
-      "bytes": 136194,
+      "bytes": 264189,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig12_gen_parameters.svg",
-      "bytes": 52898,
+      "bytes": 93125,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig13_prompt.pdf",
-      "bytes": 36146,
+      "bytes": 48048,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig13_prompt.png",
-      "bytes": 162591,
+      "bytes": 211560,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig13_prompt.svg",
-      "bytes": 68094,
+      "bytes": 72124,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig14_agent.pdf",
-      "bytes": 35811,
+      "bytes": 51951,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig14_agent.png",
-      "bytes": 163553,
+      "bytes": 258428,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig14_agent.svg",
-      "bytes": 70338,
+      "bytes": 88054,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig15_runtime_probes.pdf",
-      "bytes": 35840,
+      "bytes": 48482,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig15_runtime_probes.png",
-      "bytes": 155608,
+      "bytes": 269977,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig15_runtime_probes.svg",
-      "bytes": 69470,
+      "bytes": 89274,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig16_local_run.pdf",
-      "bytes": 34409,
+      "bytes": 49753,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig16_local_run.png",
-      "bytes": 137725,
+      "bytes": 231784,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig16_local_run.svg",
-      "bytes": 60195,
+      "bytes": 79922,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig17_badcase.pdf",
-      "bytes": 25011,
+      "bytes": 53176,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig17_badcase.png",
-      "bytes": 120879,
+      "bytes": 313626,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/fig17_badcase.svg",
-      "bytes": 46834,
+      "bytes": 94525,
       "git_included_or_eligible": true
     },
     {
+      "path": "artifacts/course-report/figures/fig18_paired_effects.pdf",
+      "git_included_or_eligible": true,
+      "bytes": 51062
+    },
+    {
+      "path": "artifacts/course-report/figures/fig18_paired_effects.png",
+      "git_included_or_eligible": true,
+      "bytes": 215121
+    },
+    {
+      "path": "artifacts/course-report/figures/fig18_paired_effects.svg",
+      "git_included_or_eligible": true,
+      "bytes": 89110
+    },
+    {
+      "path": "artifacts/course-report/figures/fig19_rank_matrix.pdf",
+      "git_included_or_eligible": true,
+      "bytes": 63468
+    },
+    {
+      "path": "artifacts/course-report/figures/fig19_rank_matrix.png",
+      "git_included_or_eligible": true,
+      "bytes": 493385
+    },
+    {
+      "path": "artifacts/course-report/figures/fig19_rank_matrix.svg",
+      "git_included_or_eligible": true,
+      "bytes": 180070
+    },
+    {
+      "path": "artifacts/course-report/figures/fig20_quality_association.pdf",
+      "git_included_or_eligible": true,
+      "bytes": 66398
+    },
+    {
+      "path": "artifacts/course-report/figures/fig20_quality_association.png",
+      "git_included_or_eligible": true,
+      "bytes": 522126
+    },
+    {
+      "path": "artifacts/course-report/figures/fig20_quality_association.svg",
+      "git_included_or_eligible": true,
+      "bytes": 153772
+    },
+    {
+      "path": "artifacts/course-report/figures/fig21_prompt_pairs.pdf",
+      "git_included_or_eligible": true,
+      "bytes": 53442
+    },
+    {
+      "path": "artifacts/course-report/figures/fig21_prompt_pairs.png",
+      "git_included_or_eligible": true,
+      "bytes": 216881
+    },
+    {
+      "path": "artifacts/course-report/figures/fig21_prompt_pairs.svg",
+      "git_included_or_eligible": true,
+      "bytes": 90216
+    },
+    {
       "path": "artifacts/course-report/figures/figure_manifest.json",
-      "bytes": 24109,
+      "bytes": 40807,
       "git_included_or_eligible": true
     },
     {
@@ -1051,12 +1146,12 @@
     },
     {
       "path": "artifacts/course-report/figures/ui01_library.pdf",
-      "bytes": 1130033,
+      "bytes": 1130030,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/ui01_library.png",
-      "bytes": 1375686,
+      "bytes": 1375967,
       "git_included_or_eligible": true
     },
     {
@@ -1066,12 +1161,12 @@
     },
     {
       "path": "artifacts/course-report/figures/ui02_chat.pdf",
-      "bytes": 1213337,
+      "bytes": 1213335,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/ui02_chat.png",
-      "bytes": 1468269,
+      "bytes": 1468735,
       "git_included_or_eligible": true
     },
     {
@@ -1081,12 +1176,12 @@
     },
     {
       "path": "artifacts/course-report/figures/ui03_comparison.pdf",
-      "bytes": 1521948,
+      "bytes": 1521947,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/ui03_comparison.png",
-      "bytes": 1807530,
+      "bytes": 1807850,
       "git_included_or_eligible": true
     },
     {
@@ -1096,12 +1191,12 @@
     },
     {
       "path": "artifacts/course-report/figures/ui04_evidence.pdf",
-      "bytes": 540126,
+      "bytes": 540130,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/figures/ui04_evidence.png",
-      "bytes": 691873,
+      "bytes": 691997,
       "git_included_or_eligible": true
     },
     {
@@ -1116,22 +1211,17 @@
     },
     {
       "path": "artifacts/course-report/main.pdf",
-      "bytes": 5535530,
+      "bytes": 6131160,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/main.tex",
-      "bytes": 64256,
+      "bytes": 70725,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/course-report/package-manifest.json",
-      "bytes": 13921,
-      "git_included_or_eligible": true
-    },
-    {
-      "path": "artifacts/course-report/README.md",
-      "bytes": 4373,
+      "bytes": 16858,
       "git_included_or_eligible": true
     },
     {
@@ -1145,13 +1235,13 @@
       "git_included_or_eligible": true
     },
     {
-      "path": "artifacts/delivery-final/delivery-config.json",
-      "bytes": 12945,
+      "path": "artifacts/delivery-final/Prompt模板设计与实验记录.docx",
+      "bytes": 39901,
       "git_included_or_eligible": true
     },
     {
-      "path": "artifacts/delivery-final/Prompt模板设计与实验记录.docx",
-      "bytes": 39901,
+      "path": "artifacts/delivery-final/delivery-config.json",
+      "bytes": 12945,
       "git_included_or_eligible": true
     },
     {
@@ -1206,13 +1296,8 @@
     },
     {
       "path": "artifacts/packages/课程报告LaTeX完整包.zip",
-      "bytes": 23529951,
+      "bytes": 27572248,
       "git_included_or_eligible": false
-    },
-    {
-      "path": "artifacts/README.md",
-      "bytes": 1198,
-      "git_included_or_eligible": true
     },
     {
       "path": "config.standard.yaml",
@@ -1300,6 +1385,11 @@
       "git_included_or_eligible": false
     },
     {
+      "path": "docker/Dockerfile",
+      "bytes": 983,
+      "git_included_or_eligible": true
+    },
+    {
       "path": "docker/docker-compose.gpu.yml",
       "bytes": 176,
       "git_included_or_eligible": true
@@ -1310,8 +1400,13 @@
       "git_included_or_eligible": true
     },
     {
-      "path": "docker/Dockerfile",
-      "bytes": 983,
+      "path": "docs/Docker实际部署验收.md",
+      "bytes": 2609,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/assets/readme/SOURCES.md",
+      "bytes": 1473,
       "git_included_or_eligible": true
     },
     {
@@ -1346,12 +1441,7 @@
     },
     {
       "path": "docs/assets/readme/retrieval-results.png",
-      "bytes": 205524,
-      "git_included_or_eligible": true
-    },
-    {
-      "path": "docs/assets/readme/SOURCES.md",
-      "bytes": 1473,
+      "bytes": 250946,
       "git_included_or_eligible": true
     },
     {
@@ -1367,11 +1457,6 @@
     {
       "path": "docs/course/项目交付模板.docx",
       "bytes": 20547,
-      "git_included_or_eligible": true
-    },
-    {
-      "path": "docs/Docker实际部署验收.md",
-      "bytes": 2609,
       "git_included_or_eligible": true
     },
     {
@@ -1505,8 +1590,8 @@
       "git_included_or_eligible": true
     },
     {
-      "path": "README.md",
-      "bytes": 14133,
+      "path": "reports/datasets/README.md",
+      "bytes": 5125,
       "git_included_or_eligible": true
     },
     {
@@ -1572,11 +1657,6 @@
     {
       "path": "reports/datasets/pvt_pages.json",
       "bytes": 101002,
-      "git_included_or_eligible": true
-    },
-    {
-      "path": "reports/datasets/README.md",
-      "bytes": 5125,
       "git_included_or_eligible": true
     },
     {
@@ -2010,6 +2090,11 @@
       "git_included_or_eligible": true
     },
     {
+      "path": "reports/experiments/retrieval/README.md",
+      "bytes": 1234,
+      "git_included_or_eligible": true
+    },
+    {
       "path": "reports/experiments/retrieval/chunking/bge-zh/recursive-512/metrics.png",
       "bytes": 39019,
       "git_included_or_eligible": true
@@ -2362,11 +2447,6 @@
     {
       "path": "reports/experiments/retrieval/parsers/results.json",
       "bytes": 19310,
-      "git_included_or_eligible": true
-    },
-    {
-      "path": "reports/experiments/retrieval/README.md",
-      "bytes": 1234,
       "git_included_or_eligible": true
     },
     {
@@ -2730,6 +2810,11 @@
       "git_included_or_eligible": true
     },
     {
+      "path": "reports/ui/standard-acceptance/README.md",
+      "bytes": 1499,
+      "git_included_or_eligible": true
+    },
+    {
       "path": "reports/ui/standard-acceptance/hybrid-record.json",
       "bytes": 925112,
       "git_included_or_eligible": true
@@ -2777,11 +2862,6 @@
     {
       "path": "reports/ui/standard-acceptance/hybrid_rerank.xlsx",
       "bytes": 12380,
-      "git_included_or_eligible": true
-    },
-    {
-      "path": "reports/ui/standard-acceptance/README.md",
-      "bytes": 1499,
       "git_included_or_eligible": true
     },
     {
@@ -3424,5 +3504,12 @@
       "bytes": 3310,
       "git_included_or_eligible": true
     }
-  ]
+  ],
+  "updated_at": "2026-10-17T15:09:59.947819+00:00",
+  "report_visual_revision": {
+    "pages": 47,
+    "figures": 26,
+    "numbered_tables": 29,
+    "new_model_calls": 0
+  }
 }
