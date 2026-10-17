@@ -213,6 +213,29 @@ def trace_visible(at):
     return any("过程" in item.label or "轨迹" in item.label for item in at.expander)
 
 
+def assert_recorded_tool_trace(at, events, tool, display_name):
+    """Match the localized trace to actual persisted calls, inputs and outcomes."""
+    calls = []
+    for item in at.json:
+        payload = json.loads(item.value) if isinstance(item.value, str) else item.value
+        if isinstance(payload, dict):
+            calls.extend(call for step in payload.get("决策步骤", [])
+                         for call in step.get("工具调用", []))
+    starts = [event for event in events if event["type"] == "tool_start" and event.get("tool") == tool]
+    assert starts, f"The saved run must contain a real {tool} call"
+    for start in starts:
+        matching = [call for call in calls if call.get("调用标识") == start["call_id"]]
+        assert matching, f"The displayed trace is missing saved call {start['call_id']}"
+        call = matching[0]
+        assert call["工具"] == display_name
+        assert call["Action 输入"] == start["arguments"]
+        ends = [event for event in events if event["type"] == "tool_end"
+                and event.get("call_id") == start["call_id"]]
+        assert ends, "The saved fixture call must have a completed outcome"
+        assert [item["状态"] for item in call["Observation 结果"]] == [
+            "失败" if event.get("error") else "完成" for event in ends]
+
+
 def connect_workspace(at, url, token):
     click(at, "workspace_settings")
     widget(at, "text_input", "workspace_api_input").set_value(url)
@@ -369,7 +392,8 @@ def test_question_document_selection_evidence_history_navigation_and_token_isola
     answer = next(message for message in reversed(session["messages"]) if message["role"] == "assistant")
     assert answer["citations"] and {citation["document_id"] for citation in answer["citations"]} == {document_id}
     assert trace_visible(at)
-    assert any("knowledge_qa" in str(item.value) for item in at.json)
+    recorded_events = ws.get(f"/runs/{answer['request_id']}")["events"]
+    assert_recorded_tool_trace(at, recorded_events, "knowledge_qa", "知识库问答")
     request_id = answer["request_id"]
     click(at, f"citation_view_{request_id}_0")
     assert at.image, "Opening a real citation should display its original PDF page"
@@ -378,7 +402,7 @@ def test_question_document_selection_evidence_history_navigation_and_token_isola
     navigate(at, "科研问答")
     assert widget(at, "multiselect", "doc_selection").value == [document_id]
     assert trace_visible(at), "Historical answer trace must survive leaving and returning to chat"
-    assert any("knowledge_qa" in str(item.value) for item in at.json), "Restored trace must contain actual recorded tool events"
+    assert_recorded_tool_trace(at, recorded_events, "knowledge_qa", "知识库问答")
     widget(at, "multiselect", "doc_selection").set_value([]).run()
     at.chat_input[0].set_value("计算 `1+2`").run()
     no_exception(at)
@@ -501,7 +525,7 @@ def test_run_replay_export_delete_and_service_offline_recovery(workspace):
     no_exception(at)
     assert "8.0384" in texts(at)
     assert trace_visible(at)
-    assert any("calculator" in str(item.value) for item in at.json)
+    assert_recorded_tool_trace(at, ws.get(f"/runs/{run_id}")["events"], "calculator", "数值计算")
     assert_downloads(at)
     exported = ws.client.get(f"/runs/{run_id}/export", params={"format": "json"})
     exported.raise_for_status()
