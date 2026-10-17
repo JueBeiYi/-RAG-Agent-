@@ -12,7 +12,7 @@
   <a href="https://github.com/JueBeiYi/-RAG-Agent-/actions/workflows/tests.yml"><img src="https://github.com/JueBeiYi/-RAG-Agent-/actions/workflows/tests.yml/badge.svg" alt="Python checks"></a>
 </p>
 
-[快速开始](#快速开始) · [界面预览](#界面预览) · [模型与 API](#模型与-api) · [实测结果](#实测结果) · [报告与文档](#报告与文档)
+[快速开始](#快速开始) · [界面预览](#界面预览) · [模型与 API](#模型与-api) · [实测结果](#实测结果) · [报告与文档](#报告与文档) · [文件目录](文件目录清单.md)
 
 **10 篇固定版本论文 · 80 道评测题 · 8 个本地工具 · 33 类本地验收检查**
 
@@ -166,7 +166,7 @@ flowchart LR
 
 | 材料 | 内容与入口 |
 | :--- | :--- |
-| **最新课程报告** | [39 页 PDF](课程报告_LaTeX_20261015/main.pdf) · [LaTeX 源文件](课程报告_LaTeX_20261015/main.tex) · [编译说明](课程报告_LaTeX_20261015/README.md)；22 幅图、27 张编号表 |
+| **最新课程报告** | [39 页 PDF](artifacts/course-report/main.pdf) · [LaTeX 源文件](artifacts/course-report/main.tex) · [编译说明](artifacts/course-report/README.md)；22 幅图、27 张编号表 |
 | **学术图表素材** | [图表目录](artifacts/academic-figures) · [矢量图册](artifacts/academic-figures/科研助理实验图表集.pdf) · [可编辑 Excel](artifacts/academic-figures/学术图表数据与结果.xlsx)；25 幅图、16 张表 |
 | **演示与 Word 材料** | [课程交付目录](artifacts/delivery-final)，含 17 页 PPT、报告、设计、手册及实验附件；保留 2026-10-11 快照 |
 | **设计与使用** | [技术设计](docs/技术设计文档.md) · [用户手册](docs/用户使用手册.md) · [模型与 API](docs/模型与API配置.md) |
@@ -199,10 +199,16 @@ src/
 └── evaluation/    题集、指标、评分与导出
 scripts/           准备、启动、评测、验收及制图
 tests/             单元、接口、前端与集成检查
+docs/              课程原件、设计说明、使用手册与界面素材
 reports/           实际实验、验收记录与数据快照
-artifacts/         Word / PPT / PDF / Excel 交付材料
-课程报告_LaTeX_20261015/   独立报告源文件与全部图表
+artifacts/
+├── course-report/     最新 LaTeX 报告、PDF 与全部图表
+├── academic-figures/  学术图册、矢量图与 Excel
+├── delivery-final/    可编辑 Word 与演示 PPT
+└── packages/          本地交付压缩包（不上传 Git）
 ```
+
+完整的分类用途、实际文件清单及本地资源保留说明见[文件目录清单](文件目录清单.md)。
 
 <details>
 <summary><b>开发验证与可选部署</b></summary>

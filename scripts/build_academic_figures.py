@@ -529,7 +529,8 @@ def main():
     source_dir=ROOT/"reports/presentation/source-data"
     if source_dir.exists():
         for p in source_dir.glob("*"):
-            if p.suffix in (".csv",".json"): shutil.copy2(p,OUT/"data"/p.name)
+            if p.is_file() and p.name != "raw-results.json" and p.suffix in (".csv",".json"):
+                shutil.copy2(p,OUT/"data"/p.name)
     for p in (EXP/"generation/quality-comparison").glob("*"):
         if p.suffix in (".csv",".json"): shutil.copy2(p,OUT/"data"/p.name)
     manifest={"generated_at":datetime.now().isoformat(),"figure_count":sum(i["kind"]=="figure" for i in atlas.items),

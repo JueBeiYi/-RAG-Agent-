@@ -80,7 +80,7 @@ def build_delivery(config_path: str | Path, *, documents_only: bool = False, ren
     inputs.output.mkdir(parents=True, exist_ok=True)
     build_dir = inputs.output.parent / (".delivery-build-" + uuid.uuid4().hex[:10])
     build_dir.mkdir(parents=True)
-    template = Path(inputs.config.get("course_template", inputs.root / "项目交付模板.docx"))
+    template = Path(inputs.config.get("course_template", inputs.root / "docs/course/项目交付模板.docx"))
     if not template.is_absolute():
         template = inputs.root / template
     contract = f"""# 课程交付模板执行契约

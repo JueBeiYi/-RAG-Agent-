@@ -1,0 +1,3428 @@
+{
+  "date": "2026-10-17",
+  "timezone": "Asia/Shanghai",
+  "inventory_scope": "Detailed project files; protected local resources are summarized without following links. This Markdown and JSON index are counted separately.",
+  "detailed_project_files": 671,
+  "index_files": [
+    "reports/maintenance/project-inventory-20261017.json",
+    "文件目录清单.md"
+  ],
+  "project_bytes_excluding_local_resources": 286386042,
+  "moved_groups": 8,
+  "pending_cleanup_files": 2837,
+  "pending_cleanup_bytes": 3783610584.0,
+  "actual_deleted_files": 0,
+  "reclaimed_bytes": 0,
+  "deletion_status": "blocked by automatic approval review; candidates moved into one local review folder",
+  "protected_local_resources": [
+    {
+      "path": ".git",
+      "purpose": "Git版本历史及对象库，保留",
+      "files": null,
+      "bytes": null,
+      "detailed_children_listed": false
+    },
+    {
+      "path": ".venv",
+      "purpose": "本地Python环境，保留",
+      "files": 55406,
+      "bytes": 1880240978,
+      "detailed_children_listed": false
+    },
+    {
+      "path": ".idea",
+      "purpose": "本地IDE设置，保留",
+      "files": 8,
+      "bytes": 5580,
+      "detailed_children_listed": false
+    },
+    {
+      "path": "data/models",
+      "purpose": "已准备的完整模型及清单，保留",
+      "files": 86,
+      "bytes": 14510662124,
+      "detailed_children_listed": false
+    },
+    {
+      "path": "data/tools",
+      "purpose": "已解压本地工具及清单，保留",
+      "files": 83,
+      "bytes": 1941832505,
+      "detailed_children_listed": false
+    },
+    {
+      "path": "data/runtime",
+      "purpose": "实际工作区、索引、运行状态及authoring工具，保留",
+      "files": 20604,
+      "bytes": 1744141579,
+      "detailed_children_listed": false
+    },
+    {
+      "path": "artifacts/_cleanup_pending_20261017",
+      "purpose": "待手动删除，自动审批未允许实际删除",
+      "files": 2837,
+      "bytes": 3783610584,
+      "detailed_children_listed": false
+    }
+  ],
+  "directory_links_not_followed": [
+    "scripts/academic-workbook-support/node_modules"
+  ],
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 167,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": ".env.example",
+      "bytes": 341,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 356,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "bytes": 421,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 1557,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": ".streamlit/config.toml",
+      "bytes": 219,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/acceptance.csv",
+      "bytes": 28100,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/acceptance_summary.csv",
+      "bytes": 304,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/agent.csv",
+      "bytes": 756,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/ai_quality_condition_summary.csv",
+      "bytes": 783,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/ai_quality_rows.csv",
+      "bytes": 54262,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/ai_quality_rows.json",
+      "bytes": 80355,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/ai_quality_summary.json",
+      "bytes": 7602,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/bad_cases.csv",
+      "bytes": 3971,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/baseline_ai_category.csv",
+      "bytes": 1250,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/baseline_ai_distribution.csv",
+      "bytes": 860,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/baseline_ai_quality.csv",
+      "bytes": 450,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/baseline_ai_scores.csv",
+      "bytes": 98397,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/cache.csv",
+      "bytes": 793,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/chunking.csv",
+      "bytes": 1965,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/corpus.csv",
+      "bytes": 2526,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/dataset.csv",
+      "bytes": 103,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/embedding_batches.csv",
+      "bytes": 1929,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/embeddings.csv",
+      "bytes": 1003,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/experiment_config.csv",
+      "bytes": 42399,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/experiments.json",
+      "bytes": 877941,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/generation_conditions.csv",
+      "bytes": 3386,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/generation_records.csv",
+      "bytes": 61682,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/online.csv",
+      "bytes": 129,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/online_records.csv",
+      "bytes": 7435,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/parallel.csv",
+      "bytes": 747,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/parser_records.csv",
+      "bytes": 5416,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/parsers.csv",
+      "bytes": 306,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/prompt_ai_quality.csv",
+      "bytes": 360,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/quality_conditions.csv",
+      "bytes": 783,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/quality_records.csv",
+      "bytes": 54262,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/retrieval_category.csv",
+      "bytes": 1394,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/retrieval_dev.csv",
+      "bytes": 357,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/retrieval_records.csv",
+      "bytes": 67365,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/retrieval_test.csv",
+      "bytes": 533,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/rrf_grid.csv",
+      "bytes": 444,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/rrf_records.csv",
+      "bytes": 6285,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/data/vectorstores.csv",
+      "bytes": 627,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/01_system_evidence.png",
+      "bytes": 318675,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/01_system_evidence.svg",
+      "bytes": 172218,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/02_corpus.png",
+      "bytes": 245964,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/02_corpus.svg",
+      "bytes": 104438,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/03_dataset.png",
+      "bytes": 240905,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/03_dataset.svg",
+      "bytes": 109965,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/04_retrieval_ablation.png",
+      "bytes": 281563,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/04_retrieval_ablation.svg",
+      "bytes": 110429,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/05_retrieval_uncertainty.png",
+      "bytes": 249876,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/05_retrieval_uncertainty.svg",
+      "bytes": 127389,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/06_category_heatmap.png",
+      "bytes": 281007,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/06_category_heatmap.svg",
+      "bytes": 113024,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/07_score_distribution.png",
+      "bytes": 278672,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/07_score_distribution.svg",
+      "bytes": 135841,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/08_parser_tradeoff.png",
+      "bytes": 317445,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/08_parser_tradeoff.svg",
+      "bytes": 135085,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/09_chunking.png",
+      "bytes": 306166,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/09_chunking.svg",
+      "bytes": 121581,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/10_embedding.png",
+      "bytes": 258108,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/10_embedding.svg",
+      "bytes": 107331,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/11_vectorstores.png",
+      "bytes": 280595,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/11_vectorstores.svg",
+      "bytes": 116014,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/12_rrf_grid.png",
+      "bytes": 326616,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/12_rrf_grid.svg",
+      "bytes": 121923,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/13_baseline_quality.png",
+      "bytes": 248205,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/13_baseline_quality.svg",
+      "bytes": 115314,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/14_quality_distribution.png",
+      "bytes": 262830,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/14_quality_distribution.svg",
+      "bytes": 108255,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/15_quality_by_category.png",
+      "bytes": 278169,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/15_quality_by_category.svg",
+      "bytes": 122924,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/16_generation_parameters.png",
+      "bytes": 310660,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/16_generation_parameters.svg",
+      "bytes": 149029,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/17_prompt_quality.png",
+      "bytes": 264763,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/17_prompt_quality.svg",
+      "bytes": 135887,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/18_agent.png",
+      "bytes": 285674,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/18_agent.svg",
+      "bytes": 120083,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/19_parallel.png",
+      "bytes": 358326,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/19_parallel.svg",
+      "bytes": 115787,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/20_cache.png",
+      "bytes": 233410,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/20_cache.svg",
+      "bytes": 111677,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/21_online_latency.png",
+      "bytes": 274282,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/21_online_latency.svg",
+      "bytes": 115135,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/22_encoding_speed.png",
+      "bytes": 300302,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/22_encoding_speed.svg",
+      "bytes": 124887,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/23_generation_tradeoff.png",
+      "bytes": 281142,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/23_generation_tradeoff.svg",
+      "bytes": 134978,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/24_online_resources.png",
+      "bytes": 277674,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/24_online_resources.svg",
+      "bytes": 113727,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/25_bad_case_profile.png",
+      "bytes": 248454,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/figures/25_bad_case_profile.svg",
+      "bytes": 103833,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T01_retrieval.png",
+      "bytes": 267825,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T01_retrieval.svg",
+      "bytes": 126251,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T02_parsers.png",
+      "bytes": 244604,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T02_parsers.svg",
+      "bytes": 113710,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T03_chunking.png",
+      "bytes": 257147,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T03_chunking.svg",
+      "bytes": 119288,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T04_embeddings.png",
+      "bytes": 228499,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T04_embeddings.svg",
+      "bytes": 114398,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T05_vectorstores.png",
+      "bytes": 188419,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T05_vectorstores.svg",
+      "bytes": 83418,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T06_rrf.png",
+      "bytes": 264002,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T06_rrf.svg",
+      "bytes": 125390,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T07_baseline_quality.png",
+      "bytes": 224535,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T07_baseline_quality.svg",
+      "bytes": 113482,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T08_parameters.png",
+      "bytes": 287210,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T08_parameters.svg",
+      "bytes": 140028,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T09_prompt.png",
+      "bytes": 229202,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T09_prompt.svg",
+      "bytes": 122866,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T10_agent.png",
+      "bytes": 198476,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T10_agent.svg",
+      "bytes": 96701,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T11_runtime.png",
+      "bytes": 238492,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T11_runtime.svg",
+      "bytes": 112070,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T12_experimental_scope.png",
+      "bytes": 456318,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T12_experimental_scope.svg",
+      "bytes": 201829,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T13_key_parameters.png",
+      "bytes": 432132,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T13_key_parameters.svg",
+      "bytes": 167923,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T14_encoding.png",
+      "bytes": 247127,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T14_encoding.svg",
+      "bytes": 117492,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T15_online.png",
+      "bytes": 219070,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T15_online.svg",
+      "bytes": 109349,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T16_bad_case_actions.png",
+      "bytes": 400967,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/tables/T16_bad_case_actions.svg",
+      "bytes": 209766,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/使用说明.md",
+      "bytes": 4513,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/参数与Prompt质量比较.md",
+      "bytes": 5714,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/图表清单.json",
+      "bytes": 32472,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/学术图表交付清单.json",
+      "bytes": 21330,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/学术图表展示.html",
+      "bytes": 78067,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/学术图表数据与结果.xlsx",
+      "bytes": 253527,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/academic-figures/科研助理实验图表集.pdf",
+      "bytes": 468438,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/build-records/compilation.json",
+      "bytes": 1421,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/build-records/compile-output.txt",
+      "bytes": 3287,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/build-records/main.log",
+      "bytes": 35891,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/build_figures.py",
+      "bytes": 25745,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/build_report.py",
+      "bytes": 61084,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/compile.ps1",
+      "bytes": 3155,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/data/document-checks.json",
+      "bytes": 302,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/data/report-data.json",
+      "bytes": 1107895,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig01_architecture.pdf",
+      "bytes": 60723,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig01_architecture.png",
+      "bytes": 319848,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig01_architecture.svg",
+      "bytes": 131567,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig02_dataset.pdf",
+      "bytes": 33925,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig02_dataset.png",
+      "bytes": 180881,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig02_dataset.svg",
+      "bytes": 66429,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig03_parsers.pdf",
+      "bytes": 30829,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig03_parsers.png",
+      "bytes": 169377,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig03_parsers.svg",
+      "bytes": 59246,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig04_chunking.pdf",
+      "bytes": 32746,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig04_chunking.png",
+      "bytes": 169699,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig04_chunking.svg",
+      "bytes": 66598,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig05_embeddings.pdf",
+      "bytes": 32828,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig05_embeddings.png",
+      "bytes": 179723,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig05_embeddings.svg",
+      "bytes": 65972,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig06_vectorstores.pdf",
+      "bytes": 32480,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig06_vectorstores.png",
+      "bytes": 154892,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig06_vectorstores.svg",
+      "bytes": 62960,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig07_retrieval.pdf",
+      "bytes": 37668,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig07_retrieval.png",
+      "bytes": 205524,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig07_retrieval.svg",
+      "bytes": 82666,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig08_retrieval_ci.pdf",
+      "bytes": 16310,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig08_retrieval_ci.png",
+      "bytes": 138937,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig08_retrieval_ci.svg",
+      "bytes": 45441,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig09_retrieval_categories.pdf",
+      "bytes": 21741,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig09_retrieval_categories.png",
+      "bytes": 109012,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig09_retrieval_categories.svg",
+      "bytes": 50013,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig10_rrf.pdf",
+      "bytes": 23063,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig10_rrf.png",
+      "bytes": 131133,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig10_rrf.svg",
+      "bytes": 47023,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig11_ai_quality.pdf",
+      "bytes": 32808,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig11_ai_quality.png",
+      "bytes": 208126,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig11_ai_quality.svg",
+      "bytes": 65439,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig12_gen_parameters.pdf",
+      "bytes": 20830,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig12_gen_parameters.png",
+      "bytes": 136194,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig12_gen_parameters.svg",
+      "bytes": 52898,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig13_prompt.pdf",
+      "bytes": 36146,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig13_prompt.png",
+      "bytes": 162591,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig13_prompt.svg",
+      "bytes": 68094,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig14_agent.pdf",
+      "bytes": 35811,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig14_agent.png",
+      "bytes": 163553,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig14_agent.svg",
+      "bytes": 70338,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig15_runtime_probes.pdf",
+      "bytes": 35840,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig15_runtime_probes.png",
+      "bytes": 155608,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig15_runtime_probes.svg",
+      "bytes": 69470,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig16_local_run.pdf",
+      "bytes": 34409,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig16_local_run.png",
+      "bytes": 137725,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig16_local_run.svg",
+      "bytes": 60195,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig17_badcase.pdf",
+      "bytes": 25011,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig17_badcase.png",
+      "bytes": 120879,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/fig17_badcase.svg",
+      "bytes": 46834,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/figure_manifest.json",
+      "bytes": 24109,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/original-ui/新版原文证据.jpg",
+      "bytes": 44961,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/original-ui/新版科研问答.jpg",
+      "bytes": 78930,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/original-ui/新版论文对比.jpg",
+      "bytes": 91232,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/original-ui/新版论文库.jpg",
+      "bytes": 72693,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui01_library.pdf",
+      "bytes": 1130033,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui01_library.png",
+      "bytes": 1375686,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui01_library.svg",
+      "bytes": 1678491,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui02_chat.pdf",
+      "bytes": 1213337,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui02_chat.png",
+      "bytes": 1468269,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui02_chat.svg",
+      "bytes": 1785886,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui03_comparison.pdf",
+      "bytes": 1521948,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui03_comparison.png",
+      "bytes": 1807530,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui03_comparison.svg",
+      "bytes": 2258026,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui04_evidence.pdf",
+      "bytes": 540126,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui04_evidence.png",
+      "bytes": 691873,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui04_evidence.svg",
+      "bytes": 769334,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/figures/ui05_local.jpg",
+      "bytes": 29002,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/main.pdf",
+      "bytes": 5535530,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/main.tex",
+      "bytes": 64256,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/package-manifest.json",
+      "bytes": 13921,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/README.md",
+      "bytes": 4373,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/course-report/requirements-report.txt",
+      "bytes": 84,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/Bad Case分析报告.docx",
+      "bytes": 39773,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/delivery-config.json",
+      "bytes": 12945,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/Prompt模板设计与实验记录.docx",
+      "bytes": 39901,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/交付状态.json",
+      "bytes": 37100,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/分块策略对比实验报告.docx",
+      "bytes": 39320,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/实验与BadCase附件.docx",
+      "bytes": 44009,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/技术设计文档.docx",
+      "bytes": 121028,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/演示PPT.pptx",
+      "bytes": 428866,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/用户手册.docx",
+      "bytes": 395237,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/系统评测报告.docx",
+      "bytes": 113157,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/delivery-final/课程报告.docx",
+      "bytes": 454604,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/packages/学术图表与数据完整包.zip",
+      "bytes": 25033824,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "artifacts/packages/本地127运行验收记录.zip",
+      "bytes": 421185,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "artifacts/packages/课程报告LaTeX完整包.zip",
+      "bytes": 23529951,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "artifacts/README.md",
+      "bytes": 1198,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "config.standard.yaml",
+      "bytes": 799,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "config.yaml",
+      "bytes": 769,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "data/corpus/beit_2106.08254v2.pdf",
+      "bytes": 934517,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/corpus/cait_2103.17239v2.pdf",
+      "bytes": 2686054,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/corpus/crossvit_2103.14899v2.pdf",
+      "bytes": 1442777,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/corpus/cvt_2103.15808v1.pdf",
+      "bytes": 990969,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/corpus/deit_2012.12877v2.pdf",
+      "bytes": 558744,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/corpus/levit_2104.01136v2.pdf",
+      "bytes": 694201,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/corpus/manifest.json",
+      "bytes": 26770,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "data/corpus/pvt_2102.12122v2.pdf",
+      "bytes": 1090914,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/corpus/swin_2103.14030v2.pdf",
+      "bytes": 1360315,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/corpus/t2t_2101.11986v3.pdf",
+      "bytes": 10770191,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/corpus/vit_2010.11929v2.pdf",
+      "bytes": 3743814,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "data/demo/DEMO_研究报告A.md",
+      "bytes": 571,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "data/demo/DEMO_研究报告B.md",
+      "bytes": 744,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "data/demo/DEMO_阅读指南.md",
+      "bytes": 505,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "data/demo/workspace.json",
+      "bytes": 82,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "docker/docker-compose.gpu.yml",
+      "bytes": 176,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docker/docker-compose.yml",
+      "bytes": 2377,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docker/Dockerfile",
+      "bytes": 983,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/assets/readme/chat.jpg",
+      "bytes": 78930,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/assets/readme/comparison.jpg",
+      "bytes": 91232,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/assets/readme/evidence.jpg",
+      "bytes": 44961,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/assets/readme/hero.svg",
+      "bytes": 4003,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/assets/readme/library.jpg",
+      "bytes": 72693,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/assets/readme/manifest.json",
+      "bytes": 2118,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/assets/readme/retrieval-results.png",
+      "bytes": 205524,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/assets/readme/SOURCES.md",
+      "bytes": 1473,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/course/README.md",
+      "bytes": 424,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/course/南京农业大学课程实践.docx",
+      "bytes": 52220,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/course/项目交付模板.docx",
+      "bytes": 20547,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/Docker实际部署验收.md",
+      "bytes": 2609,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/references/AI编程与华为云码道概览.pdf",
+      "bytes": 2471100,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "docs/references/README.md",
+      "bytes": 322,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/references/大模型应用技术.pdf",
+      "bytes": 3016099,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "docs/screenshots/新版原文证据.jpg",
+      "bytes": 44961,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/screenshots/新版科研问答.jpg",
+      "bytes": 78930,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/screenshots/新版论文对比.jpg",
+      "bytes": 91232,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/screenshots/新版论文库.jpg",
+      "bytes": 72693,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/screenshots/最终界面.jpg",
+      "bytes": 75220,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/screenshots/真实检索实验.jpg",
+      "bytes": 70201,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/screenshots/真实论文原页.jpg",
+      "bytes": 120871,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/screenshots/论文库界面.jpg",
+      "bytes": 54024,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/交付材料说明.md",
+      "bytes": 6520,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/人工评分说明.md",
+      "bytes": 2650,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/剩余任务与验收结论.md",
+      "bytes": 5267,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/实现与验证记录.md",
+      "bytes": 3657,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/技术设计文档.md",
+      "bytes": 4347,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/本地127运行验收.md",
+      "bytes": 3386,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/模型与API配置.md",
+      "bytes": 3244,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/生成与Agent实验记录.md",
+      "bytes": 1808,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/生成参数与Prompt质量比较.md",
+      "bytes": 5714,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/用户使用手册.md",
+      "bytes": 6766,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/界面功能验收.md",
+      "bytes": 9319,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/评测说明.md",
+      "bytes": 9734,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/课程实践项目规划.md",
+      "bytes": 39986,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "docs/课程要求逐条验收.md",
+      "bytes": 21212,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 482,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 14133,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/beit_pages.json",
+      "bytes": 69002,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/cait_pages.json",
+      "bytes": 82936,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/crossvit_pages.json",
+      "bytes": 76714,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/cvt_pages.json",
+      "bytes": 67795,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/dataset_manifest.json",
+      "bytes": 1331,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/deit_pages.json",
+      "bytes": 64817,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/human_review_sheet.csv",
+      "bytes": 25682,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/levit_pages.json",
+      "bytes": 84045,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/previews/cvt_p08.png",
+      "bytes": 448848,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/previews/pvt_p07.png",
+      "bytes": 584441,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/previews/swin_p08.png",
+      "bytes": 561735,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/previews/t2t_p06.png",
+      "bytes": 560510,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/pvt_pages.json",
+      "bytes": 101002,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/README.md",
+      "bytes": 5125,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/source_checked_cases.py",
+      "bytes": 32177,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/source_validation.json",
+      "bytes": 88150,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/standard/import_validation_summary.json",
+      "bytes": 325,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/standard/index-map.json",
+      "bytes": 1543,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/standard/index_validation.json",
+      "bytes": 18707,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/standard/vision_transformer_80_mapped.jsonl",
+      "bytes": 117479,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/standard/vision_transformer_80_mapped_dev.jsonl",
+      "bytes": 28582,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/standard/vision_transformer_80_mapped_test.jsonl",
+      "bytes": 88897,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/swin_pages.json",
+      "bytes": 95076,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/t2t_pages.json",
+      "bytes": 73330,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/vision_transformer_80.jsonl",
+      "bytes": 113980,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/vision_transformer_dev.jsonl",
+      "bytes": 27751,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/vision_transformer_test.jsonl",
+      "bytes": 86229,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/datasets/vit_pages.json",
+      "bytes": 91430,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/docker/host-20261015/compose-demo-config.json",
+      "bytes": 3305,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/docker/host-20261015/compose-standard-config.json",
+      "bytes": 3786,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/docker/host-20261015/host-setup-transcript.txt",
+      "bytes": 1365,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/docker/host-20261015/host-setup.json",
+      "bytes": 4325,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/docker/host-20261015/runtime-probe.json",
+      "bytes": 3022,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/docker/host-20261015/static-validation.json",
+      "bytes": 204,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/docker/host-20261015/wsl-msi.log",
+      "bytes": 1641446,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/deployment/docker/restart-preflight-20261015/deployment.json",
+      "bytes": 348,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/acceptance.json",
+      "bytes": 173656,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/citation-page-preview.png",
+      "bytes": 225573,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-chunks-before-0.json",
+      "bytes": 240087,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-citation-page-preview.json",
+      "bytes": 491,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-create-session.json",
+      "bytes": 546,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-document-ready.json",
+      "bytes": 3104,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-frontend-health.json",
+      "bytes": 276,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-indexing-job.json",
+      "bytes": 676,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-initial-health-poll.json",
+      "bytes": 2263,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-persisted-run.json",
+      "bytes": 230924,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-persisted-session.json",
+      "bytes": 48684,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-public-config.json",
+      "bytes": 1636,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-rag-stream.json",
+      "bytes": 143922,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-session-export.json",
+      "bytes": 48671,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-source-download.json",
+      "bytes": 445,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/http-upload.json",
+      "bytes": 1294,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/rag-events.json",
+      "bytes": 170673,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/acceptance/验收记录.md",
+      "bytes": 5072,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/api.stderr.log",
+      "bytes": 1141,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/deployment/local-20261015/api.stdout.log",
+      "bytes": 5948,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/deployment/local-20261015/health.json",
+      "bytes": 1881,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/ollama-11435.stderr.log",
+      "bytes": 21981,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/deployment/local-20261015/ollama-11435.stdout.log",
+      "bytes": 1097,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/deployment/local-20261015/ollama-model-ps.json",
+      "bytes": 22,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/processes-and-listeners.json",
+      "bytes": 1400,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/runtime-record.json",
+      "bytes": 2379,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/start-transcript.txt",
+      "bytes": 1828,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/ui.stderr.log",
+      "bytes": 66,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/deployment/local-20261015/ui.stdout.log",
+      "bytes": 92,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/deployment/local-20261015/本地界面运行截图.jpg",
+      "bytes": 29002,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/证据清单.json",
+      "bytes": 5336,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/deployment/local-20261015/运行记录.md",
+      "bytes": 3304,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/bad-cases/actual-bad-cases.json",
+      "bytes": 5016,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/.runtime/state.sqlite3",
+      "bytes": 2916352,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/experiments/generation/.runtime/state.sqlite3-shm",
+      "bytes": 32768,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/experiments/generation/.runtime/state.sqlite3-wal",
+      "bytes": 0,
+      "git_included_or_eligible": false
+    },
+    {
+      "path": "reports/experiments/generation/agent/results.json",
+      "bytes": 480053,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/baseline/ai_review_summary.json",
+      "bytes": 1314,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/baseline/ai_scored_results.json",
+      "bytes": 3308173,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/baseline/human_scoring_60.csv",
+      "bytes": 98397,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/baseline/identity.json",
+      "bytes": 2548,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/baseline/records.jsonl",
+      "bytes": 2233089,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/baseline/results.json",
+      "bytes": 3245669,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/cache/results.json",
+      "bytes": 76571,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/figures/agent.png",
+      "bytes": 30768,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/figures/cache.png",
+      "bytes": 36497,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/figures/parallel.png",
+      "bytes": 27738,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/figures/parameters.png",
+      "bytes": 44399,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/figures/prompt.png",
+      "bytes": 45049,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/fixed_contexts.json",
+      "bytes": 4475992,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/parallel/results.json",
+      "bytes": 182498,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/parameters/identity.json",
+      "bytes": 3101,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/parameters/records.jsonl",
+      "bytes": 785110,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/parameters/results.json",
+      "bytes": 1171365,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/prepared_inputs.json",
+      "bytes": 9210,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/prompt/identity.json",
+      "bytes": 2546,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/prompt/records.jsonl",
+      "bytes": 160163,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/prompt/results.json",
+      "bytes": 480419,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/quality-comparison/ai_quality_condition_summary.csv",
+      "bytes": 783,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/quality-comparison/ai_quality_rows.csv",
+      "bytes": 54262,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/quality-comparison/ai_quality_rows.json",
+      "bytes": 80355,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/quality-comparison/ai_quality_summary.json",
+      "bytes": 7602,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/generation/study_manifest.json",
+      "bytes": 7935,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/online-functionality/results.json",
+      "bytes": 11670,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/bge-zh/recursive-512/metrics.png",
+      "bytes": 39019,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/bge-zh/recursive-512/results.csv",
+      "bytes": 29792,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/bge-zh/recursive-512/results.json",
+      "bytes": 4304779,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/bge-zh/recursive-512/results.xlsx",
+      "bytes": 21827,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/bge-zh/recursive-512/top1_scores.png",
+      "bytes": 22290,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-1024/metrics.png",
+      "bytes": 37118,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-1024/results.csv",
+      "bytes": 29578,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-1024/results.json",
+      "bytes": 8581431,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-1024/results.xlsx",
+      "bytes": 20937,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-1024/top1_scores.png",
+      "bytes": 27181,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-256/metrics.png",
+      "bytes": 38773,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-256/results.csv",
+      "bytes": 30332,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-256/results.json",
+      "bytes": 2748648,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-256/results.xlsx",
+      "bytes": 24010,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-256/top1_scores.png",
+      "bytes": 26898,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-512/metrics.png",
+      "bytes": 34435,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-512/results.csv",
+      "bytes": 29790,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-512/results.json",
+      "bytes": 4755999,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-512/results.xlsx",
+      "bytes": 22292,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/fixed-512/top1_scores.png",
+      "bytes": 26678,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/recursive-512/metrics.png",
+      "bytes": 39391,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/recursive-512/results.csv",
+      "bytes": 29726,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/recursive-512/results.json",
+      "bytes": 4545648,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/recursive-512/results.xlsx",
+      "bytes": 22607,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/recursive-512/top1_scores.png",
+      "bytes": 23557,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/semantic-512/metrics.png",
+      "bytes": 38385,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/semantic-512/results.csv",
+      "bytes": 29855,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/semantic-512/results.json",
+      "bytes": 4664351,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/semantic-512/results.xlsx",
+      "bytes": 22653,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking/m3e/semantic-512/top1_scores.png",
+      "bytes": 23107,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/chunking_dev.csv",
+      "bytes": 768,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/dev-parameters/comparison.csv",
+      "bytes": 444,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/dev-parameters/results.json",
+      "bytes": 35479,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/embedding_dev.csv",
+      "bytes": 402,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/encoding/bge-zh/comparison.json",
+      "bytes": 394,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/encoding/bge-zh/results.json",
+      "bytes": 2879,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/encoding/m3e/comparison.json",
+      "bytes": 1920,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/encoding/m3e/results.json",
+      "bytes": 6542,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/frozen/hybrid.jsonl",
+      "bytes": 13291585,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/frozen/hybrid_rerank.jsonl",
+      "bytes": 9947537,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/frozen/metadata.json",
+      "bytes": 2987,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/frozen/vector.jsonl",
+      "bytes": 13470691,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/hybrid/metrics.png",
+      "bytes": 40450,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/hybrid/results.csv",
+      "bytes": 31853,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/hybrid/results.json",
+      "bytes": 4273375,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/hybrid/results.xlsx",
+      "bytes": 23003,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/hybrid/top1_scores.png",
+      "bytes": 22942,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/vector/metrics.png",
+      "bytes": 35069,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/vector/results.csv",
+      "bytes": 31504,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/vector/results.json",
+      "bytes": 4322243,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/vector/results.xlsx",
+      "bytes": 22817,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/dev/vector/top1_scores.png",
+      "bytes": 27154,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid/metrics.png",
+      "bytes": 35936,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid/results.csv",
+      "bytes": 95843,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid/results.json",
+      "bytes": 12530326,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid/results.xlsx",
+      "bytes": 45434,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid/top1_scores.png",
+      "bytes": 23419,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid_rerank/metrics.png",
+      "bytes": 42361,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid_rerank/results.csv",
+      "bytes": 96784,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid_rerank/results.json",
+      "bytes": 12312942,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid_rerank/results.xlsx",
+      "bytes": 45731,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/hybrid_rerank/top1_scores.png",
+      "bytes": 21715,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/vector/metrics.png",
+      "bytes": 38554,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/vector/results.csv",
+      "bytes": 95042,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/vector/results.json",
+      "bytes": 12711336,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/vector/results.xlsx",
+      "bytes": 44319,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3/test/vector/top1_scores.png",
+      "bytes": 23242,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/m3_test.csv",
+      "bytes": 509,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/parsers/comparison.csv",
+      "bytes": 306,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/parsers/records.csv",
+      "bytes": 5416,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/parsers/results.json",
+      "bytes": 19310,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/README.md",
+      "bytes": 1234,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/results.json",
+      "bytes": 5650,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/chroma/metrics.png",
+      "bytes": 35348,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/chroma/results.csv",
+      "bytes": 29360,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/chroma/results.json",
+      "bytes": 4218813,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/chroma/results.xlsx",
+      "bytes": 21286,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/chroma/top1_scores.png",
+      "bytes": 27154,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/comparison.csv",
+      "bytes": 627,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/faiss/metrics.png",
+      "bytes": 40225,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/faiss/results.csv",
+      "bytes": 29352,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/faiss/results.json",
+      "bytes": 4218781,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/faiss/results.xlsx",
+      "bytes": 21289,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/faiss/top1_scores.png",
+      "bytes": 27154,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/experiments/retrieval/vectorstores/results.json",
+      "bytes": 1740,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/maintenance/cleanup-20261017.json",
+      "bytes": 45756,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/maintenance/cleanup-plan-20261017.json",
+      "bytes": 27563,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/qa/figure-verification.json",
+      "bytes": 496,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/qa/workbook/export-verification.json",
+      "bytes": 1247,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/qa/workbook/verification.json",
+      "bytes": 7715,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/acceptance.csv",
+      "bytes": 28100,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/acceptance_summary.csv",
+      "bytes": 304,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/agent.csv",
+      "bytes": 756,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/bad_cases.csv",
+      "bytes": 3971,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/baseline_ai_category.csv",
+      "bytes": 1250,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/baseline_ai_distribution.csv",
+      "bytes": 860,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/baseline_ai_quality.csv",
+      "bytes": 450,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/baseline_ai_scores.csv",
+      "bytes": 98397,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/cache.csv",
+      "bytes": 793,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/chunking.csv",
+      "bytes": 1965,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/corpus.csv",
+      "bytes": 2526,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/dataset.csv",
+      "bytes": 103,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/embedding_batches.csv",
+      "bytes": 1929,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/embeddings.csv",
+      "bytes": 1003,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/experiment_config.csv",
+      "bytes": 42399,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/experiments.json",
+      "bytes": 877941,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/generation_conditions.csv",
+      "bytes": 3386,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/generation_records.csv",
+      "bytes": 61682,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/online.csv",
+      "bytes": 129,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/online_records.csv",
+      "bytes": 7435,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/parallel.csv",
+      "bytes": 747,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/parser_records.csv",
+      "bytes": 5416,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/parsers.csv",
+      "bytes": 306,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/prompt_ai_quality.csv",
+      "bytes": 360,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/quality_conditions.csv",
+      "bytes": 783,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/quality_records.csv",
+      "bytes": 54262,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/retrieval_category.csv",
+      "bytes": 1394,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/retrieval_dev.csv",
+      "bytes": 357,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/retrieval_records.csv",
+      "bytes": 67365,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/retrieval_test.csv",
+      "bytes": 533,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/rrf_grid.csv",
+      "bytes": 444,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/rrf_records.csv",
+      "bytes": 6285,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/presentation/source-data/vectorstores.csv",
+      "bytes": 627,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/requirements/course-audit.json",
+      "bytes": 153054,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/requirements/course-source.json",
+      "bytes": 47834,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/requirements/current-standard-index.json",
+      "bytes": 821,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/requirements/delivery-implementation-manifest.json",
+      "bytes": 2693,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/requirements/delivery-privacy-check.json",
+      "bytes": 204,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/requirements/git-history.txt",
+      "bytes": 590,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/requirements/implementation-audit.json",
+      "bytes": 137159,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/agent-generation-final-20261010.json",
+      "bytes": 283,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/agent-generation-final-20261010.xml",
+      "bytes": 11026,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/ai-review-20261014.xml",
+      "bytes": 718,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/full-suite-20261010-pre-comparison-fix.json",
+      "bytes": 179,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/full-suite-20261010-pre-comparison-fix.xml",
+      "bytes": 20651,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/full-suite-20261010.xml",
+      "bytes": 20651,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/per-tool-usage-20261010.xml",
+      "bytes": 620,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/recursive-requirement-20261010.xml",
+      "bytes": 901,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/requirement-gaps-20261010.xml",
+      "bytes": 1114,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/review-final-20261011.xml",
+      "bytes": 592,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/ui-final-critical-20261010.json",
+      "bytes": 339,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/testing/ui-final-critical-20261010.xml",
+      "bytes": 13306,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/browser-standard-20261010.json",
+      "bytes": 8839,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance-4.jsonl",
+      "bytes": 5879,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid-record.json",
+      "bytes": 925112,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid-submission.json",
+      "bytes": 165,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid.csv",
+      "bytes": 5817,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid.json",
+      "bytes": 873937,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid.xlsx",
+      "bytes": 12385,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid_rerank-record.json",
+      "bytes": 926337,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid_rerank-submission.json",
+      "bytes": 172,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid_rerank.csv",
+      "bytes": 5792,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid_rerank.json",
+      "bytes": 875155,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/hybrid_rerank.xlsx",
+      "bytes": 12380,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/README.md",
+      "bytes": 1499,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/summary.json",
+      "bytes": 8005,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/vector-record.json",
+      "bytes": 944406,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/vector-submission.json",
+      "bytes": 165,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/vector.csv",
+      "bytes": 5801,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/vector.json",
+      "bytes": 891794,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/standard-acceptance/vector.xlsx",
+      "bytes": 12236,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/workflow-tests-20261009.json",
+      "bytes": 4519,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "reports/ui/workflow-tests-20261010.json",
+      "bytes": 4750,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "requirements-models.txt",
+      "bytes": 85,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "requirements-tested.txt",
+      "bytes": 2718,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 347,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/academic-workbook-support/runtime.mjs",
+      "bytes": 64,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/academic-workbook-support/verify_xlsx.py",
+      "bytes": 2409,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/audit_implementation.py",
+      "bytes": 32303,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/benchmark_retrieval.py",
+      "bytes": 3632,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/bootstrap_ollama.py",
+      "bytes": 4620,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/build_academic_figures.py",
+      "bytes": 58146,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/build_academic_workbook.mjs",
+      "bytes": 24140,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/build_acceptance_materials.py",
+      "bytes": 9966,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/build_course_audit.py",
+      "bytes": 13817,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/build_dataset.py",
+      "bytes": 6646,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/build_delivery.py",
+      "bytes": 1106,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/build_generation_quality_comparison.py",
+      "bytes": 13738,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/build_local_run_report.py",
+      "bytes": 6747,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/build_report.py",
+      "bytes": 6735,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/capture_docker_host_state.py",
+      "bytes": 1901,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/check_ui_workflows.py",
+      "bytes": 3361,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/collect_presentation_data.py",
+      "bytes": 21874,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/complete_docker_acceptance.ps1",
+      "bytes": 5672,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/deploy_docker.ps1",
+      "bytes": 3568,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/evaluate.py",
+      "bytes": 239,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/finalize_delivery_inputs.py",
+      "bytes": 3904,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/finish_required_studies.py",
+      "bytes": 1871,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/package_academic_figures.py",
+      "bytes": 3406,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/package_submission.py",
+      "bytes": 4841,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/prepare_corpus.py",
+      "bytes": 24219,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/prepare_docker_host.ps1",
+      "bytes": 7287,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/prepare_models.py",
+      "bytes": 3869,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/prepare_qwen_gguf.py",
+      "bytes": 19718,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/rebuild_standard_index.py",
+      "bytes": 3522,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/record_local_runtime.ps1",
+      "bytes": 4110,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/review_results.py",
+      "bytes": 913,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/run_course_generation.py",
+      "bytes": 50315,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/sanitize_delivery.py",
+      "bytes": 3133,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/seed_demo.py",
+      "bytes": 3909,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/setup.ps1",
+      "bytes": 1033,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/smoke_ui.py",
+      "bytes": 1094,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/start.ps1",
+      "bytes": 8141,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/stop.ps1",
+      "bytes": 1402,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/verify_academic_figures.py",
+      "bytes": 2529,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/verify_docker_deployment.py",
+      "bytes": 23039,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "scripts/verify_local_deployment.py",
+      "bytes": 11405,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/__init__.py",
+      "bytes": 41,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/agent/__init__.py",
+      "bytes": 137,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/agent/catalog.py",
+      "bytes": 4520,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/agent/executor.py",
+      "bytes": 5406,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/agent/memory.py",
+      "bytes": 3951,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/agent/react_loop.py",
+      "bytes": 44570,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/agent/registry.py",
+      "bytes": 4215,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/agent/router.py",
+      "bytes": 6328,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/agent/tools/__init__.py",
+      "bytes": 66,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/agent/tools/local.py",
+      "bytes": 56289,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/api/__init__.py",
+      "bytes": 0,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/api/main.py",
+      "bytes": 20329,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/chunking/__init__.py",
+      "bytes": 95,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/chunking/strategies.py",
+      "bytes": 8277,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/core/__init__.py",
+      "bytes": 0,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/core/config.py",
+      "bytes": 3688,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/core/schemas.py",
+      "bytes": 2285,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/core/storage.py",
+      "bytes": 8600,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/data_loader/__init__.py",
+      "bytes": 172,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/data_loader/loaders.py",
+      "bytes": 16827,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/delivery/__init__.py",
+      "bytes": 178,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/delivery/build.py",
+      "bytes": 10106,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/delivery/documents.py",
+      "bytes": 44024,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/delivery/inputs.py",
+      "bytes": 11695,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/delivery/presentation.mjs",
+      "bytes": 15307,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/delivery/render_with_explicit_tools.py",
+      "bytes": 1228,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/evaluation/__init__.py",
+      "bytes": 313,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/evaluation/cli.py",
+      "bytes": 10370,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/evaluation/dataset.py",
+      "bytes": 2482,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/evaluation/generation.py",
+      "bytes": 12423,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/evaluation/metrics.py",
+      "bytes": 4522,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/evaluation/retrieval.py",
+      "bytes": 53686,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/evaluation/review.py",
+      "bytes": 3798,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/evaluation/runner.py",
+      "bytes": 11989,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/frontend/__init__.py",
+      "bytes": 46,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/frontend/app.py",
+      "bytes": 3656,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/frontend/client.py",
+      "bytes": 5032,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/frontend/sections_chat.py",
+      "bytes": 25211,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/frontend/sections_experiments.py",
+      "bytes": 19697,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/frontend/sections_library.py",
+      "bytes": 15960,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/frontend/state.py",
+      "bytes": 3666,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/frontend/ui.py",
+      "bytes": 19236,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/generation/__init__.py",
+      "bytes": 0,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/generation/cache.py",
+      "bytes": 3158,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/generation/context.py",
+      "bytes": 6708,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/generation/llm_client.py",
+      "bytes": 10460,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/generation/rag_pipeline.py",
+      "bytes": 7827,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/observability/__init__.py",
+      "bytes": 0,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/observability/logger.py",
+      "bytes": 612,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/retrieval/__init__.py",
+      "bytes": 121,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/retrieval/embeddings.py",
+      "bytes": 8208,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/retrieval/engine.py",
+      "bytes": 10624,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/retrieval/reranking.py",
+      "bytes": 4629,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/retrieval/rrf.py",
+      "bytes": 990,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/retrieval/token_windows.py",
+      "bytes": 7243,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/retrieval/tokenization.py",
+      "bytes": 1552,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/retrieval/vectorstores.py",
+      "bytes": 13799,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/services/__init__.py",
+      "bytes": 0,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/services/application.py",
+      "bytes": 18573,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "src/services/exporting.py",
+      "bytes": 1898,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_agent.py",
+      "bytes": 56738,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_api.py",
+      "bytes": 4259,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_core.py",
+      "bytes": 1873,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_delivery.py",
+      "bytes": 3398,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_evaluation.py",
+      "bytes": 6064,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_frontend_edge_cases.py",
+      "bytes": 7222,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_frontend_selection_sync.py",
+      "bytes": 7773,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_frontend_workflows.py",
+      "bytes": 37418,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_generation.py",
+      "bytes": 8126,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_lifecycle.py",
+      "bytes": 2234,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_loaders.py",
+      "bytes": 5577,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_package_submission.py",
+      "bytes": 2846,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_retrieval.py",
+      "bytes": 14587,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_retry_options.py",
+      "bytes": 1400,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_reviews.py",
+      "bytes": 3950,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "tests/test_token_windows.py",
+      "bytes": 3310,
+      "git_included_or_eligible": true
+    }
+  ]
+}

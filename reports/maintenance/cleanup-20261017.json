@@ -1,0 +1,1095 @@
+{
+  "date": "2026-10-17",
+  "timezone": "Asia/Shanghai",
+  "status": "organized_deletion_blocked_by_automatic_review",
+  "moves": [
+    {
+      "from": "南京农业大学课程实践.docx",
+      "to": "docs/course/南京农业大学课程实践.docx",
+      "sha256": "F62798820CAFC546C593A74BFD599352D84F5AEECAA7D0415D8CBA3C766089F9",
+      "status": "moved"
+    },
+    {
+      "from": "项目交付模板.docx",
+      "to": "docs/course/项目交付模板.docx",
+      "sha256": "A5516421466D4D75CE1EE253C588C0277753F7A6D1FED7957F2B27C7DE3F67E8",
+      "status": "moved"
+    },
+    {
+      "from": "大模型应用技术.pdf",
+      "to": "docs/references/大模型应用技术.pdf",
+      "sha256": "94A214A3396ECB696658A93D614C942BB2BE318F3FDC91F3476FC3D89754F2E8",
+      "status": "moved"
+    },
+    {
+      "from": "AI编程与华为云码道概览.pdf",
+      "to": "docs/references/AI编程与华为云码道概览.pdf",
+      "sha256": "AB70FE3C93E886D6F32CCEB46E2446A29DF3067067AB540F863CB75378E0D524",
+      "status": "moved"
+    },
+    {
+      "from": "课程报告_LaTeX_20261015",
+      "to": "artifacts/course-report",
+      "sha256": null,
+      "status": "moved"
+    },
+    {
+      "from": "artifacts/学术图表与数据完整包.zip",
+      "to": "artifacts/packages/学术图表与数据完整包.zip",
+      "sha256": "E6AE006E8C70B6008E5ED5F7F85568CECC1265D92EC002F7775D5D487D3E0CC9",
+      "status": "moved"
+    },
+    {
+      "from": "artifacts/本地127运行验收记录.zip",
+      "to": "artifacts/packages/本地127运行验收记录.zip",
+      "sha256": "7750414600D1670887102B2AE00190D7663A2E8F236CACE40E07E9AB11224233",
+      "status": "moved"
+    },
+    {
+      "from": "artifacts/课程报告LaTeX完整包.zip",
+      "to": "artifacts/packages/课程报告LaTeX完整包.zip",
+      "sha256": "11C8BEA7877E29B3719F79A0D6E2BAE2B4427035E34A4F59F5DCF219D099A25C",
+      "status": "moved"
+    }
+  ],
+  "deletions": [],
+  "preserved": [
+    ".git",
+    ".venv",
+    "data/models",
+    "data/tools/ollama-v0.40.1",
+    "data/runtime/standard",
+    "reports/experiments",
+    "artifacts/delivery-final",
+    "artifacts/academic-figures",
+    "artifacts/course-report"
+  ],
+  "quarantined": [
+    {
+      "original": ".test-artifacts",
+      "review_path": "artifacts/_cleanup_pending_20261017/.test-artifacts",
+      "files": 457,
+      "bytes": 34488320,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": ".test-tmp-retrieval-1",
+      "review_path": "artifacts/_cleanup_pending_20261017/.test-tmp-retrieval-1",
+      "files": 19,
+      "bytes": 502333,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": ".pytest_cache",
+      "review_path": "artifacts/_cleanup_pending_20261017/.pytest_cache",
+      "files": 5,
+      "bytes": 18242,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/.delivery-reference-render",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/.delivery-reference-render",
+      "files": 15,
+      "bytes": 1505590,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/.delivery-stage-output",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/.delivery-stage-output",
+      "files": 9,
+      "bytes": 1648547,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/delivery-build",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/delivery-build",
+      "files": 0,
+      "bytes": 0,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/delivery-qa",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/delivery-qa",
+      "files": 0,
+      "bytes": 0,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/test-tmp",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/test-tmp",
+      "files": 13,
+      "bytes": 4352,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/course-submission",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/course-submission",
+      "files": 3,
+      "bytes": 65032042,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/delivery-qa-config.json",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/delivery-qa-config.json",
+      "files": 1,
+      "bytes": 1086,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/academic-figures/workbook-previews",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/academic-figures/workbook-previews",
+      "files": 0,
+      "bytes": 0,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "docs/report-drafts",
+      "review_path": "artifacts/_cleanup_pending_20261017/docs/report-drafts",
+      "files": 2,
+      "bytes": 24964,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/testing/latex-figures-20261015",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/testing/latex-figures-20261015",
+      "files": 7,
+      "bytes": 1888894,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/testing/latex-report-20261015",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/testing/latex-report-20261015",
+      "files": 45,
+      "bytes": 6310069,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": ".chart-data-3himWo",
+      "review_path": "artifacts/_cleanup_pending_20261017/.chart-data-3himWo",
+      "files": 2,
+      "bytes": 427644,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": ".chart-data-aPt96W",
+      "review_path": "artifacts/_cleanup_pending_20261017/.chart-data-aPt96W",
+      "files": 2,
+      "bytes": 428675,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": ".chart-data-JcVtSp",
+      "review_path": "artifacts/_cleanup_pending_20261017/.chart-data-JcVtSp",
+      "files": 2,
+      "bytes": 429935,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": ".chart-data-KEQ3e2",
+      "review_path": "artifacts/_cleanup_pending_20261017/.chart-data-KEQ3e2",
+      "files": 2,
+      "bytes": 428694,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": ".chart-data-lwdMdV",
+      "review_path": "artifacts/_cleanup_pending_20261017/.chart-data-lwdMdV",
+      "files": 0,
+      "bytes": 0,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": ".chart-data-Uekun6",
+      "review_path": "artifacts/_cleanup_pending_20261017/.chart-data-Uekun6",
+      "files": 2,
+      "bytes": 429687,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/.delivery-build-10839ff41c",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/.delivery-build-10839ff41c",
+      "files": 23,
+      "bytes": 2389834,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/.delivery-build-4bdc22bd90",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/.delivery-build-4bdc22bd90",
+      "files": 23,
+      "bytes": 30510406,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/.delivery-build-92522aa89c",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/.delivery-build-92522aa89c",
+      "files": 15,
+      "bytes": 681034,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/.delivery-build-d1a468d477",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/.delivery-build-d1a468d477",
+      "files": 26,
+      "bytes": 2407623,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/.delivery-build-d1f70d6b31",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/.delivery-build-d1f70d6b31",
+      "files": 83,
+      "bytes": 18680685,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/.delivery-build-f38902c735",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/.delivery-build-f38902c735",
+      "files": 23,
+      "bytes": 30512553,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/.delivery-build-fbc393da83",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/.delivery-build-fbc393da83",
+      "files": 84,
+      "bytes": 18950804,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-api1",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-api1",
+      "files": 8,
+      "bytes": 224659,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-complete-ui",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-complete-ui",
+      "files": 105,
+      "bytes": 4770362,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-core2",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-core2",
+      "files": 3,
+      "bytes": 147491,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-final",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-final",
+      "files": 80,
+      "bytes": 3872885,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-final-citations",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-final-citations",
+      "files": 11,
+      "bytes": 443325,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-finalcore",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-finalcore",
+      "files": 8,
+      "bytes": 409648,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-full1",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-full1",
+      "files": 73,
+      "bytes": 3537290,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-initial",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-initial",
+      "files": 22,
+      "bytes": 649824,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-interface-backend",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-interface-backend",
+      "files": 52,
+      "bytes": 3261447,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-page-locations",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-page-locations",
+      "files": 3,
+      "bytes": 221184,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-requirement-gap",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-requirement-gap",
+      "files": 5,
+      "bytes": 368640,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-requirement-gap-final",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-requirement-gap-final",
+      "files": 7,
+      "bytes": 516096,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-retrieval-2",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-retrieval-2",
+      "files": 19,
+      "bytes": 502333,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-retrieval-3",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-retrieval-3",
+      "files": 19,
+      "bytes": 502333,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-retrieval-4",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-retrieval-4",
+      "files": 22,
+      "bytes": 595682,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-retrieval-5",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-retrieval-5",
+      "files": 28,
+      "bytes": 697400,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-retrieval-6",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-retrieval-6",
+      "files": 34,
+      "bytes": 1135836,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-supplement-reviews",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-supplement-reviews",
+      "files": 2,
+      "bytes": 338,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-token-rust-20261011",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-token-rust-20261011",
+      "files": 0,
+      "bytes": 0,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-token-window-20261011",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-token-window-20261011",
+      "files": 0,
+      "bytes": 0,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-tool-usage-gap",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-tool-usage-gap",
+      "files": 3,
+      "bytes": 221184,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-ui-core-final",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-ui-core-final",
+      "files": 18,
+      "bytes": 632031,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/pytest-ui-final-settings",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/pytest-ui-final-settings",
+      "files": 28,
+      "bytes": 1197863,
+      "reason": "历史隔离沙箱或制图/构建临时目录",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/ui-tests",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/ui-tests",
+      "files": 1266,
+      "bytes": 43382438,
+      "reason": "隔离demo测试沙箱，正式工作流记录另存reports/ui",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/github-diff-check.txt",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/github-diff-check.txt",
+      "files": 1,
+      "bytes": 50725338,
+      "reason": "GitHub同步阶段临时diff输出",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/docker-host-installers",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/docker-host-installers",
+      "files": 2,
+      "bytes": 1004386736,
+      "reason": "已取消Docker验收，只清理下载的安装介质",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/tools/v0.40.1-ollama-windows-amd64.zip",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/tools/v0.40.1-ollama-windows-amd64.zip",
+      "files": 1,
+      "bytes": 1468106988,
+      "reason": "82个已解压成员均已核对存在，便携程序和清单保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/runtime/delivery-renderer/LibreOffice_25.8.3.2_Win_x86-64.msi",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/runtime/delivery-renderer/LibreOffice_25.8.3.2_Win_x86-64.msi",
+      "files": 1,
+      "bytes": 365391872,
+      "reason": "已解压安装介质，extracted目录内实际渲染器保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "data/models/qwen-gguf/.cache/huggingface/download/VOWYvhaxgB2j3yBi5cDxK79uuTY=.dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db.cad35aa7.incomplete",
+      "review_path": "artifacts/_cleanup_pending_20261017/data/models/qwen-gguf/.cache/huggingface/download/VOWYvhaxgB2j3yBi5cDxK79uuTY=.dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db.cad35aa7.incomplete",
+      "files": 1,
+      "bytes": 429304944,
+      "reason": "对应完整GGUF已经官方校验并成功导入，仅删除旧下载半成品",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/source-data/raw-results.json",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/source-data/raw-results.json",
+      "files": 1,
+      "bytes": 85224998,
+      "reason": "无人消费的重复聚合；原始实验与规范化数据/来源指纹保留",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "artifacts/academic-figures/data/raw-results.json",
+      "review_path": "artifacts/_cleanup_pending_20261017/artifacts/academic-figures/data/raw-results.json",
+      "files": 1,
+      "bytes": 85224998,
+      "reason": "同上重复聚合",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/__pycache__",
+      "files": 1,
+      "bytes": 161,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/agent/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/agent/__pycache__",
+      "files": 7,
+      "bytes": 93881,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/agent/tools/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/agent/tools/__pycache__",
+      "files": 2,
+      "bytes": 80552,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/api/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/api/__pycache__",
+      "files": 2,
+      "bytes": 35221,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/chunking/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/chunking/__pycache__",
+      "files": 2,
+      "bytes": 11199,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/core/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/core/__pycache__",
+      "files": 4,
+      "bytes": 26878,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/data_loader/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/data_loader/__pycache__",
+      "files": 2,
+      "bytes": 28125,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/delivery/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/delivery/__pycache__",
+      "files": 5,
+      "bytes": 100210,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/evaluation/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/evaluation/__pycache__",
+      "files": 8,
+      "bytes": 147144,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/frontend/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/frontend/__pycache__",
+      "files": 8,
+      "bytes": 153575,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/generation/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/generation/__pycache__",
+      "files": 5,
+      "bytes": 44282,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/observability/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/observability/__pycache__",
+      "files": 2,
+      "bytes": 1464,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/retrieval/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/retrieval/__pycache__",
+      "files": 8,
+      "bytes": 75400,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "src/services/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/src/services/__pycache__",
+      "files": 3,
+      "bytes": 33067,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "scripts/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/scripts/__pycache__",
+      "files": 22,
+      "bytes": 372151,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "tests/__pycache__",
+      "review_path": "artifacts/_cleanup_pending_20261017/tests/__pycache__",
+      "files": 17,
+      "bytes": 741751,
+      "reason": "Python可重建字节码缓存",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/图册总览-1.jpg",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/图册总览-1.jpg",
+      "files": 1,
+      "bytes": 386698,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/图册总览-2.jpg",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/图册总览-2.jpg",
+      "files": 1,
+      "bytes": 351079,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-01.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-01.png",
+      "files": 1,
+      "bytes": 36778,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-02.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-02.png",
+      "files": 1,
+      "bytes": 28298,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-03.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-03.png",
+      "files": 1,
+      "bytes": 27387,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-04.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-04.png",
+      "files": 1,
+      "bytes": 31004,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-05.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-05.png",
+      "files": 1,
+      "bytes": 35009,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-06.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-06.png",
+      "files": 1,
+      "bytes": 33726,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-07.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-07.png",
+      "files": 1,
+      "bytes": 32017,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-08.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-08.png",
+      "files": 1,
+      "bytes": 28472,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-09.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-09.png",
+      "files": 1,
+      "bytes": 36319,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-10.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-10.png",
+      "files": 1,
+      "bytes": 28157,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-11.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-11.png",
+      "files": 1,
+      "bytes": 32265,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-12.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-12.png",
+      "files": 1,
+      "bytes": 30879,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-13.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-13.png",
+      "files": 1,
+      "bytes": 28025,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-14.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-14.png",
+      "files": 1,
+      "bytes": 28908,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-15.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-15.png",
+      "files": 1,
+      "bytes": 32396,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-16.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-16.png",
+      "files": 1,
+      "bytes": 20636,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-17.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-17.png",
+      "files": 1,
+      "bytes": 38433,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-18.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-18.png",
+      "files": 1,
+      "bytes": 32384,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-19.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-19.png",
+      "files": 1,
+      "bytes": 30153,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-20.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-20.png",
+      "files": 1,
+      "bytes": 29300,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-21.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-21.png",
+      "files": 1,
+      "bytes": 35176,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-22.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-22.png",
+      "files": 1,
+      "bytes": 25264,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-23.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-23.png",
+      "files": 1,
+      "bytes": 36149,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-24.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-24.png",
+      "files": 1,
+      "bytes": 32190,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-25.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-25.png",
+      "files": 1,
+      "bytes": 32221,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-26.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-26.png",
+      "files": 1,
+      "bytes": 25441,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-27.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-27.png",
+      "files": 1,
+      "bytes": 34425,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-28.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-28.png",
+      "files": 1,
+      "bytes": 24748,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-29.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-29.png",
+      "files": 1,
+      "bytes": 36335,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-30.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-30.png",
+      "files": 1,
+      "bytes": 27207,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-31.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-31.png",
+      "files": 1,
+      "bytes": 31393,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-32.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-32.png",
+      "files": 1,
+      "bytes": 26981,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-33.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-33.png",
+      "files": 1,
+      "bytes": 36341,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-34.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-34.png",
+      "files": 1,
+      "bytes": 28813,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-35.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-35.png",
+      "files": 1,
+      "bytes": 33395,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-36.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-36.png",
+      "files": 1,
+      "bytes": 30347,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-37.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-37.png",
+      "files": 1,
+      "bytes": 24173,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-38.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-38.png",
+      "files": 1,
+      "bytes": 29156,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-39.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-39.png",
+      "files": 1,
+      "bytes": 47553,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-40.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-40.png",
+      "files": 1,
+      "bytes": 52142,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/pdf/page-41.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/pdf/page-41.png",
+      "files": 1,
+      "bytes": 46667,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/workbook/workbook-Agent与运行.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/workbook/workbook-Agent与运行.png",
+      "files": 1,
+      "bytes": 124745,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/workbook/workbook-总览.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/workbook/workbook-总览.png",
+      "files": 1,
+      "bytes": 205427,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/workbook/workbook-文档与索引.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/workbook/workbook-文档与索引.png",
+      "files": 1,
+      "bytes": 123264,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/workbook/workbook-来源与方法.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/workbook/workbook-来源与方法.png",
+      "files": 1,
+      "bytes": 78456,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/workbook/workbook-检索与优化.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/workbook/workbook-检索与优化.png",
+      "files": 1,
+      "bytes": 117819,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/workbook/workbook-生成与Prompt.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/workbook/workbook-生成与Prompt.png",
+      "files": 1,
+      "bytes": 158699,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/workbook/workbook-逐题结果.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/workbook/workbook-逐题结果.png",
+      "files": 1,
+      "bytes": 615547,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/workbook/workbook-配置与数据.png",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/workbook/workbook-配置与数据.png",
+      "files": 1,
+      "bytes": 228858,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    },
+    {
+      "original": "reports/presentation/qa/workbook/xlsx.inspect.ndjson",
+      "review_path": "artifacts/_cleanup_pending_20261017/reports/presentation/qa/workbook/xlsx.inspect.ndjson",
+      "files": 1,
+      "bytes": 4600092,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果",
+      "status": "moved_for_manual_deletion"
+    }
+  ],
+  "deletion_review": {
+    "attempts": 2,
+    "result": "blocked by policy",
+    "actual_deleted_files": 0,
+    "reclaimed_bytes": 0,
+    "review_folder": "artifacts/_cleanup_pending_20261017"
+  },
+  "pending_bytes": 3783610584.0,
+  "verification": {
+    "report_manifest_files_verified": 81,
+    "report_hash_mismatches": 0,
+    "relocated_source_file_hashes_verified": true,
+    "targeted_tests_passed": 12,
+    "python_syntax_checks_passed": 9,
+    "application_models_regenerated": false,
+    "raw_experimental_evidence_preserved": true,
+    "directory_links_followed": false
+  }
+}

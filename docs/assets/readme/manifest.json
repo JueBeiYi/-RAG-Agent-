@@ -47,7 +47,7 @@
     },
     {
       "asset": "retrieval-results.png",
-      "source": "课程报告_LaTeX_20261015/figures/fig07_retrieval.png",
+      "source": "artifacts/course-report/figures/fig07_retrieval.png",
       "sha256": "951f677894505da21254155383b0381cf4431484c2a0cbf3a3b5c3158a6b4a7c",
       "source_sha256": "951f677894505da21254155383b0381cf4431484c2a0cbf3a3b5c3158a6b4a7c",
       "size": [

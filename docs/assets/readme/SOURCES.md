@@ -10,7 +10,7 @@
 | `chat.jpg` | `docs/screenshots/新版科研问答.jpg` | 论文问答与来源引用 |
 | `comparison.jpg` | `docs/screenshots/新版论文对比.jpg` | 基于原文证据的论文对比 |
 | `evidence.jpg` | `docs/screenshots/新版原文证据.jpg` | 引用片段对应的 PDF 物理页 |
-| `retrieval-results.png` | `课程报告_LaTeX_20261015/figures/fig07_retrieval.png` | 历史冻结索引上的检索评测结果 |
+| `retrieval-results.png` | `artifacts/course-report/figures/fig07_retrieval.png` | 历史冻结索引上的检索评测结果 |
 
 四张界面图为开发阶段的真实截图。`library.jpg` 中的 359 个检索片段属于截图当时的索引快照，不代表当前默认索引规模。已检查这些图片，未发现 API Key 或工作区令牌；短文档编号是界面内的文献记录标识。
 

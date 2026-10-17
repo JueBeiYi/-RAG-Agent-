@@ -1,5 +1,5 @@
 # Evidence hashes and the standalone report package refer to exact file bytes.
-/课程报告_LaTeX_20261015/** -text whitespace=cr-at-eol
+/artifacts/course-report/** -text whitespace=cr-at-eol
 /reports/deployment/** -text whitespace=cr-at-eol
 /reports/presentation/source-data/** -text whitespace=cr-at-eol
 /artifacts/academic-figures/** -text whitespace=cr-at-eol

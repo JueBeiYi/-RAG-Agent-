@@ -1,0 +1,52 @@
+{
+  "file": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\academic-figures\\学术图表数据与结果.xlsx",
+  "bytes": 253527,
+  "sha256": "fefd9ea24227bd4c2f293a666643d496225bee300d767deb07322debde47ffa0",
+  "sheets": [
+    "总览",
+    "检索与优化",
+    "文档与索引",
+    "生成与Prompt",
+    "Agent与运行",
+    "逐题结果",
+    "配置与数据",
+    "来源与方法"
+  ],
+  "native_numeric_cells": 6520,
+  "formula_cells": 23,
+  "formula_errors": [],
+  "native_charts": [
+    {
+      "part": "xl/drawings/charts/chart1.xml",
+      "cell_references": [
+        "'总览'!$A$7:$A$9",
+        "'总览'!$B$7:$B$9",
+        "'总览'!$A$7:$A$9",
+        "'总览'!$C$7:$C$9",
+        "'总览'!$A$7:$A$9",
+        "'总览'!$D$7:$D$9"
+      ],
+      "colors": [
+        "087F8C",
+        "D88C3A",
+        "142D4E",
+        "CCCCCC",
+        "CCCCCC",
+        "D9D9D9"
+      ]
+    },
+    {
+      "part": "xl/drawings/charts/chart2.xml",
+      "cell_references": [
+        "'总览'!$A$17:$A$20",
+        "'总览'!$B$17:$B$20"
+      ],
+      "colors": [
+        "087F8C",
+        "CCCCCC",
+        "CCCCCC",
+        "D9D9D9"
+      ]
+    }
+  ]
+}

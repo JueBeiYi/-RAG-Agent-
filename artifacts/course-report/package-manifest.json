@@ -1,6 +1,6 @@
 {
   "created_at": "2026-10-15T13:52:36.465140+00:00",
-  "folder": "课程报告_LaTeX_20261015",
+  "folder": "course-report",
   "file_count": 81,
   "files": [
     {
@@ -408,5 +408,8 @@
       "bytes": 84,
       "sha256": "ace8492e6dc01582eae04e4b314ec542b2b9859cd8b7c2b83834084ec8d161ae"
     }
-  ]
+  ],
+  "original_folder": "课程报告_LaTeX_20261015",
+  "relocated_on": "2026-10-17",
+  "relocation_note": "Directory only relocated; delivered report contents and compilation hashes are unchanged."
 }

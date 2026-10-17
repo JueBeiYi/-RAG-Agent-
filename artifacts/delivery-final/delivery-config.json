@@ -1,7 +1,7 @@
 {
   "project_root": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-",
   "output_dir": "D:\\codex workshop\\personal page\\RAG Agent ass\\-RAG-Agent-\\artifacts\\delivery-final",
-  "course_template": "项目交付模板.docx",
+  "course_template": "docs/course/项目交付模板.docx",
   "project": {
     "title": "智能科研助理 基于RAG与Agent的论文知识库问答系统",
     "course": "生产实习",

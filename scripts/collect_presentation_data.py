@@ -18,7 +18,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "reports/presentation/source-data"
 TABLES: dict = {}
-RAW: dict = {}
+SOURCE_CONFIGS: dict = {}
 SOURCES: dict = {}
 
 
@@ -48,7 +48,16 @@ def read(path):
     raw = path.read_bytes()
     SOURCES[name] = {"path": name, "sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw)}
     obj = json.loads(raw.decode("utf-8-sig"))
-    RAW[name] = sanitize(obj)
+    if isinstance(obj, dict) and "config" in obj:
+        # Keep only metadata needed by experiment_config, not duplicate full
+        # result payloads (the original measured records remain in reports/).
+        SOURCE_CONFIGS[name] = sanitize({
+            "study": obj.get("study", obj.get("kind")), "source_path": name,
+            "created_at": obj.get("created_at"), "index_version": obj.get("index_version"),
+            "config_hash": obj.get("config_hash"), "dataset_hash": obj.get("dataset_hash"),
+            "corpus_hash": obj.get("corpus_hash"), "config": obj.get("config"),
+            "models": obj.get("models"), "scope": obj.get("measurement_scope", obj.get("split")),
+        })
     return obj
 
 
@@ -175,13 +184,7 @@ def main():
     table("acceptance", "课程逐条验收证据快照", [{k: r.get(k) for k in ["id", "source_paragraph_id", "module", "requirement", "source_text", "mandatory", "implementation_status", "execution_status", "evidence_paths", "interpretation", "pending"]} for r in audit["requirements"]], ["读取源验收表时的状态快照，不能作为最终完成率。", "可选/不适用项不能计入强制任务完成率；AI评分仍保留来源属性。"], [auditpath])
     table("acceptance_summary", "验收证据状态分布", [{"execution_status": k, "requirement_count": v} for k, v in Counter(r["execution_status"] for r in audit["requirements"]).items()], ["108条记录包含背景解释、可选项和交付要求，不是108个同权重评分项。", "状态为源验收表快照，生成参数评分补充结果另列。"], [auditpath])
     known_configs = {r["source_path"] for r in configs}
-    for name, x in RAW.items():
-        if isinstance(x, dict) and "config" in x and name not in known_configs:
-            configs.append({"study": x.get("study", x.get("kind")), "source_path": name,
-                            "created_at": x.get("created_at"), "index_version": x.get("index_version"),
-                            "config_hash": x.get("config_hash"), "dataset_hash": x.get("dataset_hash"),
-                            "corpus_hash": x.get("corpus_hash"), "config": x.get("config"),
-                            "models": x.get("models"), "scope": x.get("measurement_scope", x.get("split"))})
+    configs.extend(value for name, value in SOURCE_CONFIGS.items() if name not in known_configs)
     table("experiment_config", "实验参数、模型和版本", configs, ["完整真实配置与模型revision保留，路径已去除本机根目录。", "此表声明的是历史实验配置，不宣称等同于最新生产默认值。"], [r["source_path"] for r in configs])
     quality_summary_path = "reports/experiments/generation/quality-comparison/ai_quality_summary.json"
     quality_rows_path = "reports/experiments/generation/quality-comparison/ai_quality_rows.json"
@@ -216,7 +219,6 @@ def main():
               "policy": {"no_new_model_runs": True, "missing_values": "null", "scoring_method": "ai_assisted", "user_accepts_ai_as_project_evaluation": True, "actual_human_review_not_claimed": True},
               "tables": TABLES, "experimental_scopes": scopes, "source_hashes": list(SOURCES.values())}
     (OUT / "experiments.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    (OUT / "raw-results.json").write_text(json.dumps(RAW, ensure_ascii=False, indent=2), encoding="utf-8")
     for key, t in TABLES.items():
         with (OUT / f"{key}.csv").open("w", encoding="utf-8-sig", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=t["columns"], extrasaction="ignore")

@@ -77,7 +77,8 @@ def main():
         proof["files"].append({"path":str(p.relative_to(EVIDENCE)).replace("\\","/"),"bytes":len(raw),"sha256":hashlib.sha256(raw).hexdigest()})
     proof["known_private_workspace_values_found"]=0
     (EVIDENCE/"证据清单.json").write_text(json.dumps(proof,ensure_ascii=False,indent=2),encoding="utf-8")
-    target=ROOT/"artifacts/本地127运行验收记录.zip"
+    target=ROOT/"artifacts/packages/本地127运行验收记录.zip"
+    target.parent.mkdir(parents=True,exist_ok=True)
     with zipfile.ZipFile(target,"w",zipfile.ZIP_DEFLATED) as z:
         for p in sorted(EVIDENCE.rglob("*")):
             if p.is_file():z.write(p,"本地127运行验收记录/"+str(p.relative_to(EVIDENCE)).replace("\\","/"))

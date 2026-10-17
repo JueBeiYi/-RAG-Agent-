@@ -17,7 +17,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "南京农业大学课程实践.docx"
+SOURCE = ROOT / "docs/course/南京农业大学课程实践.docx"
 OUTPUT = ROOT / "reports/requirements/implementation-audit.json"
 BASELINE = "reports/testing/full-suite-20261010.xml"
 TARGETED = "reports/testing/requirement-gaps-20261010.xml"

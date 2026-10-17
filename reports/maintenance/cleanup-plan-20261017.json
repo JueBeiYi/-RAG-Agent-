@@ -1,0 +1,889 @@
+{
+  "date": "2026-10-17",
+  "targets": [
+    {
+      "path": ".test-artifacts",
+      "kind": "directory",
+      "files": 457,
+      "bytes": 34488320,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": ".test-tmp-retrieval-1",
+      "kind": "directory",
+      "files": 19,
+      "bytes": 502333,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": ".pytest_cache",
+      "kind": "directory",
+      "files": 5,
+      "bytes": 18242,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "artifacts/.delivery-reference-render",
+      "kind": "directory",
+      "files": 15,
+      "bytes": 1505590,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "artifacts/.delivery-stage-output",
+      "kind": "directory",
+      "files": 9,
+      "bytes": 1648547,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "artifacts/delivery-build",
+      "kind": "directory",
+      "files": 0,
+      "bytes": 0,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "artifacts/delivery-qa",
+      "kind": "directory",
+      "files": 0,
+      "bytes": 0,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "artifacts/test-tmp",
+      "kind": "directory",
+      "files": 13,
+      "bytes": 4352,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "artifacts/course-submission",
+      "kind": "directory",
+      "files": 3,
+      "bytes": 65032042,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "artifacts/delivery-qa-config.json",
+      "kind": "file",
+      "files": 1,
+      "bytes": 1086,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "artifacts/academic-figures/workbook-previews",
+      "kind": "directory",
+      "files": 0,
+      "bytes": 0,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "docs/report-drafts",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 24964,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "reports/testing/latex-figures-20261015",
+      "kind": "directory",
+      "files": 7,
+      "bytes": 1888894,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": "reports/testing/latex-report-20261015",
+      "kind": "directory",
+      "files": 45,
+      "bytes": 6310069,
+      "reason": "可重建的构建、测试、草稿或渲染临时产物；正式成果与证据保留"
+    },
+    {
+      "path": ".chart-data-3himWo",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 427644,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": ".chart-data-aPt96W",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 428675,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": ".chart-data-JcVtSp",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 429935,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": ".chart-data-KEQ3e2",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 428694,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": ".chart-data-lwdMdV",
+      "kind": "directory",
+      "files": 0,
+      "bytes": 0,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": ".chart-data-Uekun6",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 429687,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "artifacts/.delivery-build-10839ff41c",
+      "kind": "directory",
+      "files": 23,
+      "bytes": 2389834,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "artifacts/.delivery-build-4bdc22bd90",
+      "kind": "directory",
+      "files": 23,
+      "bytes": 30510406,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "artifacts/.delivery-build-92522aa89c",
+      "kind": "directory",
+      "files": 15,
+      "bytes": 681034,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "artifacts/.delivery-build-d1a468d477",
+      "kind": "directory",
+      "files": 26,
+      "bytes": 2407623,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "artifacts/.delivery-build-d1f70d6b31",
+      "kind": "directory",
+      "files": 83,
+      "bytes": 18680685,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "artifacts/.delivery-build-f38902c735",
+      "kind": "directory",
+      "files": 23,
+      "bytes": 30512553,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "artifacts/.delivery-build-fbc393da83",
+      "kind": "directory",
+      "files": 84,
+      "bytes": 18950804,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-api1",
+      "kind": "directory",
+      "files": 8,
+      "bytes": 224659,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-complete-ui",
+      "kind": "directory",
+      "files": 105,
+      "bytes": 4770362,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-core2",
+      "kind": "directory",
+      "files": 3,
+      "bytes": 147491,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-final",
+      "kind": "directory",
+      "files": 80,
+      "bytes": 3872885,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-final-citations",
+      "kind": "directory",
+      "files": 11,
+      "bytes": 443325,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-finalcore",
+      "kind": "directory",
+      "files": 8,
+      "bytes": 409648,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-full1",
+      "kind": "directory",
+      "files": 73,
+      "bytes": 3537290,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-initial",
+      "kind": "directory",
+      "files": 22,
+      "bytes": 649824,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-interface-backend",
+      "kind": "directory",
+      "files": 52,
+      "bytes": 3261447,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-page-locations",
+      "kind": "directory",
+      "files": 3,
+      "bytes": 221184,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-requirement-gap",
+      "kind": "directory",
+      "files": 5,
+      "bytes": 368640,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-requirement-gap-final",
+      "kind": "directory",
+      "files": 7,
+      "bytes": 516096,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-retrieval-2",
+      "kind": "directory",
+      "files": 19,
+      "bytes": 502333,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-retrieval-3",
+      "kind": "directory",
+      "files": 19,
+      "bytes": 502333,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-retrieval-4",
+      "kind": "directory",
+      "files": 22,
+      "bytes": 595682,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-retrieval-5",
+      "kind": "directory",
+      "files": 28,
+      "bytes": 697400,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-retrieval-6",
+      "kind": "directory",
+      "files": 34,
+      "bytes": 1135836,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-supplement-reviews",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 338,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-token-rust-20261011",
+      "kind": "directory",
+      "files": 0,
+      "bytes": 0,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-token-window-20261011",
+      "kind": "directory",
+      "files": 0,
+      "bytes": 0,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-tool-usage-gap",
+      "kind": "directory",
+      "files": 3,
+      "bytes": 221184,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-ui-core-final",
+      "kind": "directory",
+      "files": 18,
+      "bytes": 632031,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/pytest-ui-final-settings",
+      "kind": "directory",
+      "files": 28,
+      "bytes": 1197863,
+      "reason": "历史隔离沙箱或制图/构建临时目录"
+    },
+    {
+      "path": "data/runtime/ui-tests",
+      "kind": "directory",
+      "files": 1266,
+      "bytes": 43382438,
+      "reason": "隔离demo测试沙箱，正式工作流记录另存reports/ui"
+    },
+    {
+      "path": "data/runtime/github-diff-check.txt",
+      "kind": "file",
+      "files": 1,
+      "bytes": 50725338,
+      "reason": "GitHub同步阶段临时diff输出"
+    },
+    {
+      "path": "data/runtime/docker-host-installers",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 1004386736,
+      "reason": "已取消Docker验收，只清理下载的安装介质"
+    },
+    {
+      "path": "data/tools/v0.40.1-ollama-windows-amd64.zip",
+      "kind": "file",
+      "files": 1,
+      "bytes": 1468106988,
+      "reason": "82个已解压成员均已核对存在，便携程序和清单保留"
+    },
+    {
+      "path": "data/runtime/delivery-renderer/LibreOffice_25.8.3.2_Win_x86-64.msi",
+      "kind": "file",
+      "files": 1,
+      "bytes": 365391872,
+      "reason": "已解压安装介质，extracted目录内实际渲染器保留"
+    },
+    {
+      "path": "data/models/qwen-gguf/.cache/huggingface/download/VOWYvhaxgB2j3yBi5cDxK79uuTY=.dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db.cad35aa7.incomplete",
+      "kind": "file",
+      "files": 1,
+      "bytes": 429304944,
+      "reason": "对应完整GGUF已经官方校验并成功导入，仅删除旧下载半成品"
+    },
+    {
+      "path": "reports/presentation/source-data/raw-results.json",
+      "kind": "file",
+      "files": 1,
+      "bytes": 85224998,
+      "reason": "无人消费的重复聚合；原始实验与规范化数据/来源指纹保留"
+    },
+    {
+      "path": "artifacts/academic-figures/data/raw-results.json",
+      "kind": "file",
+      "files": 1,
+      "bytes": 85224998,
+      "reason": "同上重复聚合"
+    },
+    {
+      "path": "src/__pycache__",
+      "kind": "directory",
+      "files": 1,
+      "bytes": 161,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/agent/__pycache__",
+      "kind": "directory",
+      "files": 7,
+      "bytes": 93881,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/agent/tools/__pycache__",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 80552,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/api/__pycache__",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 35221,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/chunking/__pycache__",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 11199,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/core/__pycache__",
+      "kind": "directory",
+      "files": 4,
+      "bytes": 26878,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/data_loader/__pycache__",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 28125,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/delivery/__pycache__",
+      "kind": "directory",
+      "files": 5,
+      "bytes": 100210,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/evaluation/__pycache__",
+      "kind": "directory",
+      "files": 8,
+      "bytes": 147144,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/frontend/__pycache__",
+      "kind": "directory",
+      "files": 8,
+      "bytes": 153575,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/generation/__pycache__",
+      "kind": "directory",
+      "files": 5,
+      "bytes": 44282,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/observability/__pycache__",
+      "kind": "directory",
+      "files": 2,
+      "bytes": 1464,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/retrieval/__pycache__",
+      "kind": "directory",
+      "files": 8,
+      "bytes": 75400,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "src/services/__pycache__",
+      "kind": "directory",
+      "files": 3,
+      "bytes": 33067,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "scripts/__pycache__",
+      "kind": "directory",
+      "files": 22,
+      "bytes": 372151,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "tests/__pycache__",
+      "kind": "directory",
+      "files": 17,
+      "bytes": 741751,
+      "reason": "Python可重建字节码缓存"
+    },
+    {
+      "path": "reports/presentation/qa/图册总览-1.jpg",
+      "kind": "file",
+      "files": 1,
+      "bytes": 386698,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/图册总览-2.jpg",
+      "kind": "file",
+      "files": 1,
+      "bytes": 351079,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-01.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 36778,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-02.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 28298,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-03.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 27387,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-04.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 31004,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-05.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 35009,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-06.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 33726,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-07.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 32017,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-08.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 28472,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-09.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 36319,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-10.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 28157,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-11.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 32265,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-12.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 30879,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-13.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 28025,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-14.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 28908,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-15.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 32396,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-16.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 20636,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-17.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 38433,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-18.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 32384,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-19.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 30153,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-20.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 29300,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-21.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 35176,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-22.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 25264,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-23.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 36149,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-24.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 32190,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-25.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 32221,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-26.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 25441,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-27.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 34425,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-28.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 24748,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-29.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 36335,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-30.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 27207,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-31.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 31393,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-32.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 26981,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-33.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 36341,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-34.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 28813,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-35.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 33395,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-36.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 30347,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-37.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 24173,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-38.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 29156,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-39.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 47553,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-40.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 52142,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/pdf/page-41.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 46667,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/workbook/workbook-Agent与运行.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 124745,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/workbook/workbook-总览.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 205427,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/workbook/workbook-文档与索引.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 123264,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/workbook/workbook-来源与方法.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 78456,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/workbook/workbook-检索与优化.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 117819,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/workbook/workbook-生成与Prompt.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 158699,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/workbook/workbook-逐题结果.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 615547,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/workbook/workbook-配置与数据.png",
+      "kind": "file",
+      "files": 1,
+      "bytes": 228858,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    },
+    {
+      "path": "reports/presentation/qa/workbook/xlsx.inspect.ndjson",
+      "kind": "file",
+      "files": 1,
+      "bytes": 4600092,
+      "reason": "可重建渲染图片/检查展开内容，保留全部JSON验证结果"
+    }
+  ],
+  "total_bytes": 3783610584,
+  "total_files": 2837
+}

@@ -1,0 +1,329 @@
+{
+  "source": "reports\\presentation\\source-data\\experiments.json",
+  "tables": [
+    {
+      "id": "retrieval_test",
+      "sheet": "检索与优化",
+      "rows": 3,
+      "columns": 12,
+      "range": "A8:L11"
+    },
+    {
+      "id": "retrieval_dev",
+      "sheet": "检索与优化",
+      "rows": 2,
+      "columns": 12,
+      "range": "A25:L27"
+    },
+    {
+      "id": "retrieval_category",
+      "sheet": "检索与优化",
+      "rows": 20,
+      "columns": 7,
+      "range": "A40:G60"
+    },
+    {
+      "id": "rrf_grid",
+      "sheet": "检索与优化",
+      "rows": 9,
+      "columns": 7,
+      "range": "A75:G84"
+    },
+    {
+      "id": "retrieval_records",
+      "sheet": "检索与优化",
+      "rows": 220,
+      "columns": 20,
+      "range": "A95:T315"
+    },
+    {
+      "id": "rrf_records",
+      "sheet": "检索与优化",
+      "rows": 180,
+      "columns": 7,
+      "range": "A329:G509"
+    },
+    {
+      "id": "parsers",
+      "sheet": "文档与索引",
+      "rows": 3,
+      "columns": 10,
+      "range": "A8:J11"
+    },
+    {
+      "id": "chunking",
+      "sheet": "文档与索引",
+      "rows": 6,
+      "columns": 18,
+      "range": "A23:R29"
+    },
+    {
+      "id": "embeddings",
+      "sheet": "文档与索引",
+      "rows": 2,
+      "columns": 24,
+      "range": "A48:X50"
+    },
+    {
+      "id": "vectorstores",
+      "sheet": "文档与索引",
+      "rows": 2,
+      "columns": 18,
+      "range": "A69:R71"
+    },
+    {
+      "id": "parser_records",
+      "sheet": "文档与索引",
+      "rows": 30,
+      "columns": 15,
+      "range": "A83:O113"
+    },
+    {
+      "id": "embedding_batches",
+      "sheet": "文档与索引",
+      "rows": 35,
+      "columns": 6,
+      "range": "A123:F158"
+    },
+    {
+      "id": "quality_conditions",
+      "sheet": "生成与Prompt",
+      "rows": 7,
+      "columns": 13,
+      "range": "A8:M15"
+    },
+    {
+      "id": "prompt_ai_quality",
+      "sheet": "生成与Prompt",
+      "rows": 2,
+      "columns": 13,
+      "range": "A29:M31"
+    },
+    {
+      "id": "generation_conditions",
+      "sheet": "生成与Prompt",
+      "rows": 14,
+      "columns": 30,
+      "range": "A44:AD58"
+    },
+    {
+      "id": "baseline_ai_quality",
+      "sheet": "生成与Prompt",
+      "rows": 4,
+      "columns": 10,
+      "range": "A77:J81"
+    },
+    {
+      "id": "baseline_ai_distribution",
+      "sheet": "生成与Prompt",
+      "rows": 20,
+      "columns": 4,
+      "range": "A93:D113"
+    },
+    {
+      "id": "baseline_ai_category",
+      "sheet": "生成与Prompt",
+      "rows": 16,
+      "columns": 7,
+      "range": "A122:G138"
+    },
+    {
+      "id": "agent",
+      "sheet": "Agent与运行",
+      "rows": 2,
+      "columns": 21,
+      "range": "A8:U10"
+    },
+    {
+      "id": "parallel",
+      "sheet": "Agent与运行",
+      "rows": 2,
+      "columns": 20,
+      "range": "A20:T22"
+    },
+    {
+      "id": "cache",
+      "sheet": "Agent与运行",
+      "rows": 2,
+      "columns": 20,
+      "range": "A32:T34"
+    },
+    {
+      "id": "online",
+      "sheet": "Agent与运行",
+      "rows": 1,
+      "columns": 5,
+      "range": "A45:E46"
+    },
+    {
+      "id": "online_records",
+      "sheet": "Agent与运行",
+      "rows": 10,
+      "columns": 13,
+      "range": "A58:M68"
+    },
+    {
+      "id": "baseline_ai_scores",
+      "sheet": "逐题结果",
+      "rows": 60,
+      "columns": 24,
+      "range": "A8:X68"
+    },
+    {
+      "id": "generation_records",
+      "sheet": "逐题结果",
+      "rows": 120,
+      "columns": 22,
+      "range": "A78:V198"
+    },
+    {
+      "id": "quality_records",
+      "sheet": "逐题结果",
+      "rows": 28,
+      "columns": 26,
+      "range": "A213:Z241"
+    },
+    {
+      "id": "corpus",
+      "sheet": "配置与数据",
+      "rows": 10,
+      "columns": 10,
+      "range": "A8:J18"
+    },
+    {
+      "id": "dataset",
+      "sheet": "配置与数据",
+      "rows": 4,
+      "columns": 4,
+      "range": "A28:D32"
+    },
+    {
+      "id": "experiment_config",
+      "sheet": "配置与数据",
+      "rows": 18,
+      "columns": 10,
+      "range": "A42:J60"
+    },
+    {
+      "id": "bad_cases",
+      "sheet": "配置与数据",
+      "rows": 5,
+      "columns": 10,
+      "range": "A87:J92"
+    },
+    {
+      "id": "acceptance_summary",
+      "sheet": "配置与数据",
+      "rows": 9,
+      "columns": 2,
+      "range": "A101:B110"
+    },
+    {
+      "id": "acceptance",
+      "sheet": "配置与数据",
+      "rows": 108,
+      "columns": 11,
+      "range": "A120:K228"
+    },
+    {
+      "id": "__scopes",
+      "sheet": "来源与方法",
+      "rows": 7,
+      "columns": 17,
+      "range": "A8:Q15"
+    },
+    {
+      "id": "__hashes",
+      "sheet": "来源与方法",
+      "rows": 33,
+      "columns": 3,
+      "range": "A22:C55"
+    }
+  ],
+  "previews": [
+    {
+      "sheetName": "总览",
+      "range": "A1:N40",
+      "file": "workbook-总览.png"
+    },
+    {
+      "sheetName": "检索与优化",
+      "range": "A1:H24",
+      "file": "workbook-检索与优化.png"
+    },
+    {
+      "sheetName": "文档与索引",
+      "range": "A1:H24",
+      "file": "workbook-文档与索引.png"
+    },
+    {
+      "sheetName": "生成与Prompt",
+      "range": "A1:H24",
+      "file": "workbook-生成与Prompt.png"
+    },
+    {
+      "sheetName": "Agent与运行",
+      "range": "A1:H24",
+      "file": "workbook-Agent与运行.png"
+    },
+    {
+      "sheetName": "逐题结果",
+      "range": "A1:H24",
+      "file": "workbook-逐题结果.png"
+    },
+    {
+      "sheetName": "配置与数据",
+      "range": "A1:H24",
+      "file": "workbook-配置与数据.png"
+    },
+    {
+      "sheetName": "来源与方法",
+      "range": "A1:D20",
+      "file": "workbook-来源与方法.png"
+    }
+  ],
+  "sheets": [
+    {
+      "name": "总览",
+      "lastRow": 40,
+      "columnCount": 14
+    },
+    {
+      "name": "检索与优化",
+      "lastRow": 517,
+      "columnCount": 20
+    },
+    {
+      "name": "文档与索引",
+      "lastRow": 166,
+      "columnCount": 24
+    },
+    {
+      "name": "生成与Prompt",
+      "lastRow": 147,
+      "columnCount": 30
+    },
+    {
+      "name": "Agent与运行",
+      "lastRow": 77,
+      "columnCount": 21
+    },
+    {
+      "name": "逐题结果",
+      "lastRow": 252,
+      "columnCount": 26
+    },
+    {
+      "name": "配置与数据",
+      "lastRow": 236,
+      "columnCount": 14
+    },
+    {
+      "name": "来源与方法",
+      "lastRow": 62,
+      "columnCount": 12
+    }
+  ],
+  "overview_inspect": "{\"kind\":\"region\",\"sheet\":\"总览\",\"address\":\"A6:E9\",\"rows\":4,\"cols\":5,\"nonEmpty\":20,\"text\":20,\"maxTextLength\":19,\"preview\":[[\"检索模式\",\"Hit@5\",\"MRR\",\"Recall@5\",\"测试题数\"],[\"vector\",\"0.4166666666666667\",\"0.2991954641219347\",\"0.325\",\"60\"],[\"hybrid\",\"0.43333333333333335\",\"0.3538260959313591\",\"0.35833333333333334\",\"60\"],[\"hybrid_rerank\",\"0.6166666666666667\",\"0.43134695470221784\",\"0.475\",\"60\"]],\"previewAddress\":\"A6:E9\",\"previewRows\":4,\"previewCols\":5}\n{\"kind\":\"region\",\"sheet\":\"总览\",\"address\":\"A16:E20\",\"rows\":5,\"cols\":5,\"nonEmpty\":15,\"blank\":10,\"text\":15,\"maxTextLength\":18,\"preview\":[[\"基线答案质量\",\"AI均分 (1–5)\",\"评分题数\",null,null],[\"正确性 (1–5)\",\"3.5\",\"60\",null,null],[\"完整性 (1–5)\",\"2.9833333333333334\",\"60\",null,null],[\"引用准确性 (1–5)\",\"3.033333333333333\",\"60\",null,null],[\"流畅性 (1–5)\",\"4.583333333333333\",\"60\",null,null]],\"previewAddress\":\"A16:E20\",\"previewRows\":5,\"previewCols\":5}",
+  "error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+}

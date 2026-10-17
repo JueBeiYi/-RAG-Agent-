@@ -31,7 +31,12 @@ reports/runs/
 /artifacts/delivery-qa-config.json
 /artifacts/*.zip
 /docs/report-drafts/
-/reports/presentation/qa/
+/reports/presentation/qa/*
+!/reports/presentation/qa/figure-verification.json
+!/reports/presentation/qa/workbook/
+/reports/presentation/qa/workbook/*
+!/reports/presentation/qa/workbook/verification.json
+!/reports/presentation/qa/workbook/export-verification.json
 /reports/testing/latex-*/
 /artifacts/academic-figures/workbook-previews/
 
@@ -40,8 +45,13 @@ reports/runs/
 /artifacts/academic-figures/data/raw-results.json
 
 # Preserve the single sanitized report compilation log with its delivery manifest.
-!/课程报告_LaTeX_20261015/build-records/main.log
+!/artifacts/course-report/build-records/main.log
 
 # Embedded experiment runtime databases and caches are machine-local.
 **/.runtime/
 node_modules/
+
+# Organized local teaching materials, delivery archives and review-only cleanup.
+/docs/references/*.pdf
+/artifacts/packages/
+/artifacts/_cleanup_pending_*/

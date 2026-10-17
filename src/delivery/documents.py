@@ -285,7 +285,7 @@ def _bad_case_rows(inputs):
 
 def build_documents(inputs: DeliveryInputs, architecture: Path | None = None, retrieval_chart: Path | None = None) -> dict[str, str]:
     inputs.output.mkdir(parents=True, exist_ok=True)
-    template = Path(inputs.config.get("course_template", inputs.root / "项目交付模板.docx"))
+    template = Path(inputs.config.get("course_template", inputs.root / "docs/course/项目交付模板.docx"))
     if not template.is_absolute():
         template = inputs.root / template
     if not template.is_file():

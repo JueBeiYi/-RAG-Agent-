@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-15T17:01:22.339857",
+  "saved_png_count": 41,
+  "png_sizes": [
+    [
+      4000,
+      2250
+    ]
+  ],
+  "svg_count": 41,
+  "pdf_pages": 41,
+  "source_sha256_count": 30,
+  "source_hashes_match": true,
+  "pdf_cjk_text_extracts": true,
+  "workbook_present": true,
+  "visual_review": "completed_all_41_rendered_pages_and_full_resolution_parameter_figure_table",
+  "reviewed_pdf_sha256": "f53ced45a695e81dbdd5f4d7016fe8e9b568358aa2aa34b0bb2961df4ca744da"
+}
