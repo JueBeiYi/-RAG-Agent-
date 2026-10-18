@@ -2,12 +2,12 @@
   "date": "2026-10-17",
   "timezone": "Asia/Shanghai",
   "inventory_scope": "Detailed project files; protected local resources are summarized without following links. This Markdown and JSON index are counted separately.",
-  "detailed_project_files": 689,
+  "detailed_project_files": 690,
   "index_files": [
     "reports/maintenance/project-inventory-20261017.json",
     "文件目录清单.md"
   ],
-  "project_bytes_excluding_local_resources": 296026461,
+  "project_bytes_excluding_local_resources": 300078953,
   "moved_groups": 8,
   "pending_cleanup_files": 2837,
   "pending_cleanup_bytes": 3783610584.0,
@@ -101,12 +101,12 @@
     },
     {
       "path": "README.md",
-      "bytes": 15373,
+      "bytes": 15781,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/README.md",
-      "bytes": 1907,
+      "bytes": 2155,
       "git_included_or_eligible": true
     },
     {
@@ -1232,12 +1232,17 @@
     {
       "path": "artifacts/defense/README.md",
       "git_included_or_eligible": true,
-      "bytes": 1282
+      "bytes": 1435
     },
     {
       "path": "artifacts/defense/课设答辩_智能科研助理.pptx",
       "git_included_or_eligible": true,
       "bytes": 387005
+    },
+    {
+      "path": "artifacts/defense/课设答辩_智能科研助理_图表优化版.pptx",
+      "bytes": 4051683,
+      "git_included_or_eligible": true
     },
     {
       "path": "artifacts/delivery-final/Bad Case分析报告.docx",
@@ -3515,7 +3520,7 @@
       "git_included_or_eligible": true
     }
   ],
-  "updated_at": "2026-10-17T15:53:00.477154+00:00",
+  "updated_at": "2026-10-18T04:23:08.420305+00:00",
   "report_visual_revision": {
     "pages": 47,
     "figures": 26,
@@ -3523,10 +3528,14 @@
     "new_model_calls": 0
   },
   "current_defense": {
-    "path": "artifacts/defense/课设答辩_智能科研助理.pptx",
-    "slides": 22,
+    "path": "artifacts/defense/课设答辩_智能科研助理_图表优化版.pptx",
+    "slides": 24,
     "main_slides": 18,
-    "backup_slides": 4,
-    "speaker_notes": 22
+    "backup_slides": 6,
+    "speaker_notes": 24,
+    "report_figure_sources": 12,
+    "native_charts": 1,
+    "native_tables": 4,
+    "source_deck_preserved": "artifacts/defense/课设答辩_智能科研助理.pptx"
   }
 }

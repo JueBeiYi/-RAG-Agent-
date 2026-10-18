@@ -2,7 +2,7 @@
 
 | 目录 | 内容 | 使用入口 |
 | --- | --- | --- |
-| `defense/` | 当前课设答辩：22页可编辑PPT，18页主体、4页备答，含逐页讲稿与来源备注 | [打开答辩稿](defense/课设答辩_智能科研助理.pptx) · [使用说明](defense/README.md) |
+| `defense/` | 当前课设答辩：24页图表优化版，18页主讲、6页备答，24页均含讲稿与来源备注；原22页保留为历史版 | [打开答辩稿](defense/课设答辩_智能科研助理_图表优化版.pptx) · [使用说明](defense/README.md) |
 | `course-report/` | 最新课程报告：47页PDF、完整LaTeX源文件、26幅编号图（21幅学术图及5幅界面图）、29张编号表、数据与编译记录 | [阅读报告](course-report/main.pdf) · [源文件](course-report/main.tex) · [编译说明](course-report/README.md) |
 | `academic-figures/` | 汇报用图册、25幅科研图、16张结果表、Excel与数值快照 | [素材说明](academic-figures/使用说明.md) · [PDF图册](academic-figures/科研助理实验图表集.pdf) |
 | `delivery-final/` | 可编辑的8份Word报告、17页演示PPT及构建配置；保留2026-10-11快照 | [交付文件](delivery-final) |
@@ -10,5 +10,7 @@
 | `_cleanup_pending_20261017/` | 2026-10-17归集的临时、重复与安装介质文件，等待手动删除 | 不上传Git；参见[清理记录](../reports/maintenance/cleanup-20261017.json) |
 
 原始实验及实际运行证据位于 `reports/`，课程原件位于 `docs/course/`。完整目录见[文件目录清单](../文件目录清单.md)。
+
+答辩稿复用报告12幅学术图，采用原始高分辨率PNG及PowerPoint原生裁剪，图内数据不可直接编辑。原生文字、架构图、1幅原生图表和4张表格可编辑。
 
 2026-10-17课程报告图表升级：17幅学术图统一重绘，新增配对Bootstrap效应森林图、60题证据排名矩阵、AI评分气泡与Spearman关联图、4题Prompt配对图。新增分析使用冻结记录，未增加模型调用；源码与派生统计随报告目录提供。评分仍为AI辅助评审，未表述为独立人工评分。`academic-figures/` 与 `delivery-final/` 保留各自原有版本及数量。
