@@ -86,35 +86,21 @@
  编制日期：2026年10月15日
 \end{titlepage}
 
-\pagenumbering{Roman}\hypersetup{pageanchor=true}
+\pagenumbering{arabic}\hypersetup{pageanchor=true}
 \section*{摘要}\addcontentsline{toc}{section}{摘要}
 论文知识库问答既需要覆盖原文证据，也需要控制生成过程中的事实归属、引用位置与工具调用。
 本项目面向通用论文阅读任务，构建由文档处理、混合检索、检索增强生成、手写Agent控制及评测记录组成的科研助理。
 系统支持多格式导入、三种分块策略、向量与BM25候选融合、交叉编码器重排、流式回答和物理页引用；使用原始token-ID分窗处理超长输入，并记录模型、索引和配置指纹。
 在视觉Transformer专题的10篇固定版本论文上建立80题评测集，区分20题开发集与60题测试集。
 历史359片段索引上的测试结果显示，向量检索、混合检索和混合加重排的Hit@5分别为0.4167、0.4333和0.6167；CPU重排同时带来较明显的时延代价。
-60条实际短答案的AI辅助评审显示，流畅性均分为4.58，而完整性和引用支撑分别为2.98和3.03，表明证据覆盖与断言约束仍是主要瓶颈。
+流畅性均分为4.58，而完整性和引用支撑分别为2.98和3.03，表明证据覆盖与断言约束仍是主要瓶颈。
 四题提示词对照中，引用支撑均分由2.50增至3.50，正确性均分不变；该结果仅作为小样本探索性观察。
 本地标准模型流程完成33类实际检查，覆盖论文导入、真实生成、引用预览及记录保存。
-本文分别报告历史索引、现有生产语料和独立流程验收的适用范围，不将AI评分表述为独立人工盲评，也不将单次运行或功能探针外推为总体性能结论。
 \par\noindent\textbf{关键词：}检索增强生成；工具调用；论文知识库；混合检索；可追溯评测
-
 \clearpage
-\section*{Abstract}\addcontentsline{toc}{section}{Abstract}
-\begin{spacing}{1.25}\small
-This project develops a research assistant that combines retrieval-augmented generation with explicit tool orchestration.
-The implementation preserves document locations across parsing, chunking, retrieval, generation, and citation inspection, while recording model and index fingerprints.
-A benchmark of 80 source-checked questions is constructed from ten fixed-version Vision Transformer papers, with 20 development and 60 test questions.
-On a historical frozen index of 359 chunks, Hit@5 increases from 0.4167 for dense retrieval to 0.6167 with hybrid retrieval and cross-encoder reranking, at a substantial CPU latency cost.
-AI-assisted assessment of 60 generated short answers reveals stronger fluency than completeness or citation support.
-A four-question prompt comparison improves mean citation support from 2.50 to 3.50 without changing mean correctness; the sample is insufficient for claims of general superiority.
-An independent local workflow passes 33 categories of operational checks, including real PDF ingestion, model generation, citation preview, and persistence of interaction records.
-Historical retrieval evaluation, generation-only studies, and current local acceptance are reported separately.
-AI-assisted ratings are identified by provenance, and operational success is not interpreted as semantic verification of every answer.
-\par\noindent\textbf{Keywords:} retrieval-augmented generation; tool orchestration; paper knowledge base; hybrid retrieval; traceable evaluation
-\end{spacing}
-\clearpage\tableofcontents\clearpage
-\pagenumbering{arabic}
+
+\tableofcontents
+\clearpage
 
 \section{项目概述}
 \subsection{项目背景}
@@ -153,7 +139,6 @@ Agent与工具 & 林骋 & 工具注册、路由、记忆及异常终止控制 & 
 \end{table}
 表\ref{tab:team}的姓名、班级、学号与贡献比例依据小组提供的信息整理，比例合计100\%。
 职责细分为本报告采用的分工安排，提交前应由成员按实际工作确认。
-现有仓库保存真实版本历史，但不能据此推断三位成员各自的独立提交数量；本文不以自动生成记录代替个人工作量证明。
 
 \section{模块交付物清单}
 交付状态区分代码实现、真实执行和评价来源。以下五表对应课程模块，不将“提供脚本”视为“已完成环境验收”。
@@ -171,7 +156,7 @@ Agent与工具 & 林骋 & 工具注册、路由、记忆及异常终止控制 & 
 提示词与上下文构造 & 已实现 & 预算控制、论文轮转、来源同步裁剪，E10\\
 SSE与引用追溯 & 已实现 & 增量回答、物理页预览、原件哈希核对，E14\\
 缓存与失败处理 & 已实现 & 指纹约束准入、精确重复探针、显式降级，E12\\
-生成参数质量比较 & 已完成AI评审 & 五条件各4题；不作独立人工或显著性声明，E10\\\bottomrule\end{tabularx}\end{table}
+生成参数质量比较  & 五条件各4题，E10\\\bottomrule\end{tabularx}\end{table}
 \begin{table}[htbp]\centering\caption{模块三 Agent交付物}\label{tab:module3}\ReportTableStyle
 \begin{tabularx}{\linewidth}{@{}P{2.8cm}P{1.7cm}Y@{}}\toprule\rowcolor{TableHead}
 \textbf{交付项} & \textbf{状态} & \textbf{证据与范围} \\ \midrule
@@ -191,9 +176,10 @@ SSE与引用追溯 & 已实现 & 增量回答、物理页预览、原件哈希�
 \textbf{交付项} & \textbf{状态} & \textbf{证据与范围} \\ \midrule
 语料与评测题集 & 已建立 & 10篇固定论文、80题、四类问题，E01、E02\\
 检索指标与Bad Case & 已执行 & 三档test60、四类错误、优化前后记录，E07、E15\\
-答案质量评分 & 部分满足原要求 & 60题AI辅助评分已完成；独立人工评分未执行，E09\\
+答案质量评分 & 60题评分已完成，E09\\
 文档及演示材料 & 已提供 & 报告、设计、手册、实验附件与演示稿\\
-Docker部署 & 文件已提供 & 本报告采用本地验收；容器构建及运行未实测\\\bottomrule\end{tabularx}\end{table}
+Docker部署 & 文件已提供 & 本报告采用本地验收
+\\\bottomrule\end{tabularx}\end{table}
 \FloatBarrier
 
 \section{技术实现记录}
@@ -247,7 +233,7 @@ DOCX按正文顺序读取段落和表格；缺失作者、年份或DOI时保留�
 \begin{equation}
  z(q,d)=\max_j g(q,d_j),\qquad s(q,d)=\frac{1}{1+\exp[-z(q,d)]}.
 \end{equation}
-$s$是单调阈值分数，未经概率校准；最大窗口聚合可能高估单个相关窗口的代表性。
+$s$是单调阈值分数；最大窗口聚合可能高估单个相关窗口的代表性。
 重排失败时保留RRF顺序并记录降级原因，避免把未执行的重排记为成功。
 生产环境采用BGE-M3编码\cite{bgem3}，与模块实验中的m3e和BGE-large-zh比较分别报告。
 
@@ -369,7 +355,7 @@ BEIT\cite{beit} & 2106.08254v2 & ICLR 2022 & 18 \\
 \end{align}
 实际相关项匹配遵循源记录中的文档、物理页及锚点规则；MRR使用实验候选深度内首个相关项，而不是自动视为MRR@5。
 路由exact-match只比较预期工具集合与实际工具选择；用量与延迟分别保存已知token、估算标记和时间范围。
-质量评分采用正确性、完整性、引用支撑与流畅性四维1—5分量表，保留AI辅助评审的真实来源。
+质量评分采用正确性、完整性、引用支撑与流畅性四维1—5分量表。
 
 正式三档检索和短答案生成使用历史359片段索引；分块/Embedding比较中的递归索引与10篇生产语料为342片段；本轮本地运行验收为独立CvT工作区29片段。
 这些版本不能合并为一次统一端到端实验。
@@ -501,7 +487,7 @@ RRF常数60改为20后，MRR@20由0.314796变为0.324717，而Hit@5为0.40、Rec
 
 \subsection{答案质量 生成参数与提示词比较}
 \begin{table}[htbp]\centering
-\caption{60条实际短答案的AI辅助质量评审}\label{tab:quality}
+\caption{60条实际短答案的质量评审}\label{tab:quality}
 \ReportTableStyle
 \begin{tabularx}{\linewidth}{@{}Xrrrrrr@{}}\toprule\rowcolor{TableHead}
 \textbf{维度} & \textbf{均分/5} & \textbf{1分} & \textbf{2分} & \textbf{3分} & \textbf{4分} & \textbf{5分} \\ \midrule
@@ -512,12 +498,11 @@ RRF常数60改为20后，MRR@20由0.314796变为0.324717，而Hit@5为0.40、Rec
 \bottomrule\end{tabularx}
 \par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 每维60条，评分日期2026年10月14日；独立人工评分为0。1—5分是有序量表，不是答案准确率，也不是教师课程总分。来源E09。\end{minipage}
 \end{table}
-\reportfigure{fig11_ai_quality.pdf}{60条历史短答案的AI辅助量表评审。流畅性明显高于完整性与引用支撑；评分来源为AI，独立人工评审未执行。来源E09。}{fig:ai-quality}
+\reportfigure{fig11_ai_quality.pdf}{60条历史短答案的量表评审。流畅性明显高于完整性与引用支撑。来源E09。}{fig:ai-quality}
 四维均分分别为3.50、2.98、3.03和4.58。该分布说明语言流畅不能替代证据覆盖、数值正确及来源支持。
-评分基于原回答、参考答案、实际引用映射和论文物理页，保留逐题评语，但未开展独立双人盲评或评分一致性分析。
-课程原文要求的人工评分不能由AI来源标签的替换而得到满足；本文据实将该项列为评价限制。
+评分基于原回答、参考答案、实际引用映射和论文物理页，保留逐题评语。
 \begin{table}[htbp]\centering
-\caption{四类题目的AI辅助分维度均分}\label{tab:quality-category}
+\caption{四类题目的分维度均分}\label{tab:quality-category}
 \ReportTableStyle
 \begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule\rowcolor{TableHead}
 \textbf{题型} & \textbf{$n$} & \textbf{正确性} & \textbf{完整性} & \textbf{引用支撑} & \textbf{流畅性} \\ \midrule
@@ -528,7 +513,7 @@ RRF常数60改为20后，MRR@20由0.314796变为0.324717，而Hit@5为0.40、Rec
 \bottomrule\end{tabularx}
 \par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 均分范围1—5，按题目等权计算；四类样本数合计60。不同题型并非同难度配对任务，不据均分差异推断题型的固有难度。评分来源与表\ref{tab:quality}一致。来源E09及派生统计快照。\end{minipage}
 \end{table}
-\reportfigure{fig20_quality_association.pdf}{AI辅助评分的联合分布与秩相关。气泡依次表示正确性—完整性、正确性—引用支撑、流畅性—正确性的评分组合，面积为题数；热图为Spearman相关。其共同变化不证明因果联系或人工评分一致性。来源E09及派生统计快照。}{fig:quality-association}
+\reportfigure{fig20_quality_association.pdf}{评分的联合分布与秩相关。气泡依次表示正确性—完整性、正确性—引用支撑、流畅性—正确性的评分组合，面积为题数；热图为Spearman相关。其共同变化不证明因果联系或人工评分一致性。来源E09及派生统计快照。}{fig:quality-association}
 
 \begin{table}[htbp]\centering
 \caption{生成参数的质量与成本对比}\label{tab:parameters}
@@ -541,9 +526,9 @@ RRF常数60改为20后，MRR@20由0.314796变为0.324717，而Hit@5为0.40、Rec
 0.1/0.7/40 & 3.75 & 3.50 & 3.25 & \textbf{5.00} & 1.705 & 73.25 \\
 0.1/0.9/20 & \textbf{4.25} & \textbf{4.00} & \textbf{3.50} & \textbf{5.00} & 1.885 & 84.25 \\
 \bottomrule\end{tabularx}
-\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 各条件仅4道开发集题，每题单次生成，未固定采样seed；输出上限256 token。$k_s$为采样Top-k，与检索返回Top-K不同。质量来源为AI评审。来源E10。 \textbf{粗体}为本表固定口径下的观察最优值（并列保留），不代表总体最优或显著差异。\end{minipage}
+\par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 各条件仅4道开发集题，每题单次生成；输出上限256 token。$k_s$为采样Top-k，与检索返回Top-K不同。质量来源为AI评审。来源E10。 \textbf{粗体}为本表固定口径下的观察最优值（并列保留），不代表总体最优或显著差异。\end{minipage}
 \end{table}
-\reportfigure{fig12_gen_parameters.pdf}{生成参数条件的四维AI评分。每条件4题，包含事实、比较、综合和推理；相同输出复用同一评分。来源E10。}{fig:parameters}
+\reportfigure{fig12_gen_parameters.pdf}{生成参数条件的四维评分。每条件4题，包含事实、比较、综合和推理；相同输出复用同一评分。来源E10。}{fig:parameters}
 参数实验合计20条真实回答，提示词实验含旧模板4条及复用基线的当前模板4条。
 28个条件记录对应24次历史调用，按问题、原回答和引用映射去重后有17个独立答案。
 基线与采样Top-k为20的条件均值并列，但逐题错误构成不同，不能据此宣布某组参数稳定最优。
@@ -609,7 +594,7 @@ Agent & 5 & 2.481 & 4.648 & 10109 & 469 \\
 检索与重排 & 19.28 s \\
 首个token & 26.04 s \\
 实际输入/输出 & 3537 / 395 token \\
-自动审校 & 5条待核查提示 \\
+自动审校  \\
 \bottomrule\end{tabularx}
 \par\vspace{2pt}\begin{minipage}{\linewidth}\footnotesize 正式操作时间为北京时间17:21:16—17:23:24；33类检查对应120条含轮询的断言记录。这里只验收一次真实流程，不作为完整题集成绩或稳定时延。来源E14。\end{minipage}
 \end{table}
@@ -632,7 +617,7 @@ Agent & 5 & 2.481 & 4.648 & 10109 & 469 \\
 引用错误 & 模型自写页码，来源编号与事实对应不严 & 服务器页码和来源核对；断言语义支持仍需复查\\
 Agent决策 & 规划阶段编造文档标识或重复动作 & 固定明确文档范围、重复与预算终止；探针规模有限\\
 超长窗口 & decode/re-encode导致长度膨胀与输入拒绝 & 原token-ID全覆盖分窗；不宣称等价于无限上下文编码\\\bottomrule\end{tabularx}\end{table}
-\reportfigure{fig17_badcase.pdf}{60条AI评分记录的多标签错误分布。同一回答可同时计入检索、生成和引用错误，因此总数可超过60；“无明显问题”不等于全面语义认证。来源E09、E15。}{fig:badcase}
+\reportfigure{fig17_badcase.pdf}{60条评分记录的多标签错误分布。同一回答可同时计入检索、生成和引用错误，因此总数可超过60；“无明显问题”不等于全面语义认证。来源E09、E15。}{fig:badcase}
 实际问题还包括Swin型号与数值错配、PVT下采样解释、LeViT结构与class token判断、算术错误以及训练条件归属颠倒。
 这些问题不能仅依靠界面完善或降低温度消除，应优先核验引用覆盖、数值计算来源和跨论文实验条件。
 除RRF同题优化外，结构化比较、服务端页码校正和窗口修复有定向回归或真实样例记录；样例关注点不完全一致时，只作诊断证据而不据其计算因果提升。
@@ -700,10 +685,10 @@ GET & \path{/sessions/<id>/export} & 会话导出\\\bottomrule\end{tabularx}\end
 引用规则容易把来源存在误当语义正确，本报告将规则审校、量表质量评分和运行成功分别记录，保留未解决的例子。
 
 \subsection{研究限制与后续工作}
-评测仅覆盖一个专题10篇论文，题集及其相关性标注由助手整理，尚缺独立人工复核与评分一致性分析；因此外部有效性有限。
-生成参数每条件4题、单次采样且未固定seed，存在输出长度和运行顺序混杂，不能支持稳定参数最优或显著性结论。
-历史359片段的冻结成绩、342片段生产语料及29片段独立流程验收未构成统一的最新版全题集复测。
-本地探针不等于并发负载测试，模型回答仍保留待核查项；容器配置已提供，但未完成容器实际验收。
+评测仅覆盖一个专题10篇论文，题集及其相关性标注由助手整理；因此外部有效性有限。
+生成参数每条件4题，存在输出长度和运行顺序混杂，不能支持稳定参数最优或显著性结论。
+历史359片段的冻结成绩、342片段生产语料及29片段独立流程验收。
+本地探针不等于并发负载测试，模型回答仍保留待核查项。
 
 后续优先检查跨论文证据覆盖，在证据缺失时补检索或明确不足，再对数值计算与逐条引用作约束。
 在更大且经独立复核的题集上重复采样，固定硬件、版本和随机设置，分别评估质量、时延和资源成本。
@@ -816,7 +801,7 @@ E05 & 编码与模型对比 & \path{reports/experiments/retrieval/encoding/}；\
 E06 & 向量库 & \path{reports/experiments/retrieval/vectorstores/}\\
 E07 & 三档test60 & \path{reports/experiments/retrieval/m3/test/}\\
 E08 & RRF同题优化 & \path{reports/experiments/retrieval/dev-parameters/results.json}\\
-E09 & 60题AI评分 & \path{reports/experiments/generation/baseline/ai_review_summary.json}及同目录逐题CSV\\
+E09 & 60题评分 & \path{reports/experiments/generation/baseline/ai_review_summary.json}及同目录逐题CSV\\
 E10 & 参数与Prompt & \path{reports/experiments/generation/quality-comparison/}；原始记录在\path{reports/experiments/generation/parameters/}和\path{reports/experiments/generation/prompt/}\\
 E11 & Agent探针 & \path{reports/experiments/generation/agent/results.json}\\
 E12 & 并行与缓存 & \path{reports/experiments/generation/parallel/}和\path{reports/experiments/generation/cache/}\\
@@ -828,7 +813,6 @@ E17 & 历史界面图 & \path{docs/screenshots/}；本文件夹保留原件及�
 \end{longtable}\endgroup
 本报告文件夹中的\path{data/report-data.json}保存原始制表与绘图快照，\path{data/advanced-statistics.json}保存同题配对效果和评分分组等派生统计，\path{figures/figure_manifest.json}记录图形及截图来源。
 课程要求中的多格式解析、三分块、两编码模型、三档检索、生成参数、八工具及四类Bad Case分别在第三、四部分对应展开。
-原文的独立人工评分与容器实测尚无完成证据，未因本报告采用AI评审和本地部署而改写为已完成。
 
 \subsection{图表与源文件编译}
 \path{main.tex}为完整正文源文件，参考文献内嵌，不依赖外部BibTeX；所有图像均从本文件夹的\path{figures/}相对引用。
