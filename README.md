@@ -168,6 +168,7 @@ flowchart LR
 | :--- | :--- |
 | **课设答辩PPT** | [当前22页答辩稿](artifacts/defense/课设答辩_智能科研助理.pptx) · [使用说明](artifacts/defense/README.md)；用户修订版，含讲稿与来源备注 |
 | **最新课程报告** | [46 页 PDF](artifacts/course-report/main.pdf) · [LaTeX 源文件](artifacts/course-report/main.tex) · [编译说明](artifacts/course-report/README.md)；用户修订版，图表与实验材料见报告目录 |
+| **用户使用手册** | [Word](artifacts/user-manual/智能科研助理用户使用手册.docx) · [PDF](artifacts/user-manual/智能科研助理用户使用手册.pdf) · [在线版](docs/用户使用手册.md)；安装部署、模型API、界面操作、备份与常见问题 |
 | **学术图表素材** | [图表目录](artifacts/academic-figures) · [矢量图册](artifacts/academic-figures/科研助理实验图表集.pdf) · [可编辑 Excel](artifacts/academic-figures/学术图表数据与结果.xlsx)；25 幅图、16 张表 |
 | **演示与 Word 材料** | [课程交付目录](artifacts/delivery-final)，含 17 页 PPT、报告、设计、手册及实验附件；保留 2026-10-11 快照 |
 | **设计与使用** | [技术设计](docs/技术设计文档.md) · [用户手册](docs/用户使用手册.md) · [模型与 API](docs/模型与API配置.md) |

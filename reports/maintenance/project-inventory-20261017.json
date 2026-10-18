@@ -2,12 +2,12 @@
   "date": "2026-10-17",
   "timezone": "Asia/Shanghai",
   "inventory_scope": "Detailed project files; protected local resources are summarized without following links. This Markdown and JSON index are counted separately.",
-  "detailed_project_files": 689,
+  "detailed_project_files": 692,
   "index_files": [
     "reports/maintenance/project-inventory-20261017.json",
     "文件目录清单.md"
   ],
-  "project_bytes_excluding_local_resources": 299604793,
+  "project_bytes_excluding_local_resources": 301083697,
   "moved_groups": 8,
   "pending_cleanup_files": 2837,
   "pending_cleanup_bytes": 3783610584.0,
@@ -101,12 +101,12 @@
     },
     {
       "path": "README.md",
-      "bytes": 15707,
+      "bytes": 15991,
       "git_included_or_eligible": true
     },
     {
       "path": "artifacts/README.md",
-      "bytes": 1960,
+      "bytes": 2243,
       "git_included_or_eligible": true
     },
     {
@@ -1310,6 +1310,21 @@
       "git_included_or_eligible": false
     },
     {
+      "path": "artifacts/user-manual/README.md",
+      "bytes": 713,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/user-manual/智能科研助理用户使用手册.docx",
+      "bytes": 346986,
+      "git_included_or_eligible": true
+    },
+    {
+      "path": "artifacts/user-manual/智能科研助理用户使用手册.pdf",
+      "bytes": 1105259,
+      "git_included_or_eligible": true
+    },
+    {
       "path": "config.standard.yaml",
       "bytes": 799,
       "git_included_or_eligible": true
@@ -1571,7 +1586,7 @@
     },
     {
       "path": "docs/用户使用手册.md",
-      "bytes": 6766,
+      "bytes": 32145,
       "git_included_or_eligible": true
     },
     {
@@ -3515,7 +3530,7 @@
       "git_included_or_eligible": true
     }
   ],
-  "updated_at": "2026-10-18T06:03:33.407984+00:00",
+  "updated_at": "2026-10-18T06:41:06.308384+00:00",
   "report_visual_revision": {
     "pages": 47,
     "figures": 26,
@@ -3536,5 +3551,14 @@
     "pages": 46,
     "revision": "user-edited",
     "regenerated_during_sync": false
+  },
+  "current_user_manual": {
+    "source": "docs/用户使用手册.md",
+    "word": "artifacts/user-manual/智能科研助理用户使用手册.docx",
+    "pdf": "artifacts/user-manual/智能科研助理用户使用手册.pdf",
+    "pages": 19,
+    "chapters": 12,
+    "screenshots": 4,
+    "faq_items": 16
   }
 }
